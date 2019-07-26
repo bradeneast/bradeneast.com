@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <h1>I'm a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+    </noscript>
+    <script type="text/javascript" src="/scripts/insertHeader.js"></script>
+</head>
+
+<body onload="document.body.classList.add('loaded')">
+    <section class="section fullwidth" style="align-content: flex-end;">
+        <div class="background-image">
+            <img src="/images/about/chess.jpg" alt="">
+        </div>
+        <span class="sub-nav" id="sub-nav">
+        </span>
+    </section>
+
+    <section id="intro">
+        <template id="intro-template">
+            <div class="section align-items alternate-sides">
+                <span class="blow-up center" data-icon data-scroll></span>
+                <span class="center limited-width" data-scroll>
+                    <h2 data-headline></h2>
+                    <h1 data-byline></h1>
+                    <p class="limited-width" data-body></p>
+                </span>
+            </div>
+        </template>
+    </section>
+
+    <section class="section grid fullwidth" style="align-items: center; --item-height: 32rem; --item-width: 20rem;" id="testimonials">
+        <template id="testimonials-template">
+            <div class="testimonial pad">
+                <span class="module-text">
+                    <h2 class="center" data-byline data-scroll></h2>
+                    <p class="center" data-body data-scroll></p>
+                    <p class="strong center" data-author data-scroll></p>
+                </span>
+            </div>
+        </template>
+    </section>
+
+    <section class="section" id="features">
+        <template id="features-template">
+            <div class="section__body pad">
+                <h1 data-byline data-scroll></h1>
+                <h2 data-body data-scroll></h2>
+            </div>
+            <div class="pad" data-image data-scroll></div>
+        </template>
+    </section>
+</body>
+
+<footer>
+</footer>
+<script type="text/javascript" src="/scripts/insertnav.js"></script>
+<script type="text/javascript" src="/scripts/insertfooter.js"></script>
+<script type="text/javascript" src="/scripts/main.js"></script>
+<script type="text/javascript" src="/scripts/fetchstuff.js"></script>
+<script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+<script>
+    fetchAndInsert('../_content/brand-strategy.json', 'intro', 'intro', 'intro-template', parseLocalContent);
+    fetchAndInsert('../_content/brand-strategy.json', 'features', 'features', 'features-template', parseLocalContent);
+    fetchAndInsert('../_content/testimonials.json', null, 'testimonials', 'testimonials-template', parseLocalContent);
+
+    setTimeout(() => {
+        initScrollFX();
+    }, 1000);
+</script>
+
+</html>

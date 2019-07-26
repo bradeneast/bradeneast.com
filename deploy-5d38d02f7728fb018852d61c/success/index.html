@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <h1>I'm a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+    </noscript>
+    <script type="text/javascript" src="/scripts/insertHeader.js"></script>
+</head>
+
+<body onload="document.body.classList.add('loaded')">
+    <section class="section align-items" id="success" data-scroll>
+        <div class="section__body pad">
+            <h2>success!</h2>
+            <h1>Thanks for reaching out.</h1>
+            <p>I don't use an automatic email service, but I do check my inbox regularly. You should hear from me any time now.</p>
+        </div>
+    </section>
+</body>
+
+<footer>
+</footer>
+
+<script type="text/javascript" src="/scripts/insertNav.js"></script>
+<script type="text/javascript" src="/scripts/insertFooter.js"></script>
+<script type="text/javascript" src="/scripts/main.js"></script>
+<script src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+<script>
+    setTimeout(() => {
+        initScrollFX();
+    }, 1000);
+</script>
+
+</html>

@@ -1,0 +1,140 @@
+.post {
+    margin-bottom: var(--PAD-L);
+
+    .content {
+        margin: var(--PAD-L) 0;
+        display: flex;
+    }
+
+    .meta {
+        flex-shrink: 1;
+        min-width: 25vw;
+        max-width: 25vw;
+        margin-right: calc(var(--PAD-L) + 5vw);
+        margin-bottom: var(--PAD-M);
+    }
+
+    .tags {
+        margin: .5rem 0;
+    }
+
+    &.partial {
+        margin-left: calc(var(--PAD-M) * -1);
+        margin-right: calc(var(--PAD-M) * -1);
+        padding: 0 var(--PAD-M);
+
+        &:hover,
+        &:focus-within {
+            box-shadow: inset 5px 0 0 0 var(--CL-A3);
+        }
+
+        .body::first-letter {
+            all: unset;
+            color: inherit;
+        }
+
+        .tags {
+            margin: 0 0 .5rem 0;
+        }
+
+        .link,
+        .link .title {
+            color: var(--CL-G7);
+            transition: .1s ease;
+
+            &:hover,
+            &:focus,
+            &:hover *,
+            &:focus * {
+                color: var(--CL-A1);
+            }
+        }
+    }
+
+    .body {
+        font-size: 1.2rem;
+        max-width: 50rem;
+        text-align: left;
+        line-height: 1.6;
+        color: var(--CL-G5);
+
+        &::first-letter {
+            font-size: 135%;
+            font-weight: 900;
+            font-family: var(--FF-2);
+            float: left;
+            line-height: .6;
+            color: var(--CL-0);
+            padding: .7em .65em .65em .7em;
+            margin: .18em .3em .1em 0;
+            background-color: var(--CL-A3);
+            clip-path: url(/images/svg/wavy-mask.svg);
+        }
+
+        h2 {
+            margin: var(--PAD-S) 0;
+            color: var(--CL-G7);
+        }
+
+        a {
+            color: var(--CL-G7);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--CL-A3);
+            }
+
+            &:visited {
+                color: var(--CL-A1);
+
+                &:hover {
+                    color: var(--CL-A3);
+                }
+            }
+        }
+
+        br {
+            display: block;
+            content: '';
+            height: 1em;
+        }
+
+        em,
+        ul,
+        li {
+            color: inherit;
+        }
+
+        ul {
+            margin: var(--PAD-S) 0;
+        }
+
+        li {
+            margin-left: var(--PAD-S);
+            list-style-image: url(/images/svg/list-icon.svg);
+        }
+
+        img {
+            object-fit: contain;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: $mq) {
+    .post {
+        .content {
+            flex-flow: row wrap;
+        }
+
+        &.partial {
+            margin: 0 0 var(--PAD-L) 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .meta {
+            max-width: 100%;
+        }
+    }
+}

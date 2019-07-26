@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <h1>I'm a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+    </noscript>
+    <link rel="preload" href="/scripts/insertfooter.js" as="script">
+    <link rel="preload" href="/scripts/insertnav.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/main.css" as="style">
+    <script src="/scripts/insertHeader.js"></script>
+</head>
+
+<body onload="document.body.classList.add('loaded')">
+
+    <section class="hero section fullwidth">
+        <div class="hero-text" style="background-image: url(/images/about/me-blue.jpg)">
+            <h1 data-scroll>I'm Braden.</h1>
+            <h2 class="tagline" data-scroll>I help nonprofits take control of their identity through stellar branding and design.</h2>
+            <div class="squiggle-block"></div>
+            <p class="hero-contact">bradeneastdesign@gmail.com</p>
+            <br>
+        </div>
+
+        <ul class="hero-aside" id="services">
+            <li class="align-items align-content" data-scroll>
+                <div>
+                    <h3>Identity Design</h3>
+                    <p>Designing articulate visuals and sturdy brand guidelines for new companies and those who choose to rebrand.</p>
+                    <button aria-label="Learn more about my identity design services" onclick="window.location.href = '/about/identity-design/';">Learn More</button>
+                </div>
+            </li>
+            <li class="align-items align-content" data-scroll>
+                <div>
+                    <h3>Brand Strategy</h3>
+                    <p>Taking methodical steps to discover brand personality and leverage brand stories toward company goals.</p>
+                    <button aria-label="Learn more about my brand strategy services" onclick="window.location.href = '/about/brand-strategy/';">Learn More</button>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="section" id="work">
+        <span class="center pad">
+            <h1 class="center">My Work</h1>
+        </span>
+        <div class="grid" id="projects">
+            <div class="loading"></div>
+            <div class="error">Didn't load! No projects to show :(</div>
+            <template id="project-template">
+                <div class="item">
+                    <a href="#" data-scroll>
+                        <div data-image></div>
+                        <div data-meta>
+                            <div class="squiggle-block"></div>
+                            <h2 data-title></h2>
+                            <p data-labels></p>
+                        </div>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </section>
+</body>
+
+<footer>
+</footer>
+<script type="text/javascript" src="/scripts/insertnav.js"></script>
+<script type="text/javascript" src="/scripts/insertfooter.js"></script>
+<script type="text/javascript" src="/scripts/main.js"></script>
+<script type="text/javascript" src="/scripts/fetchstuff.js"></script>
+<script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+<script>
+    // Fetch settings
+    const wrapperID = 'projects';
+    const templateID = 'project-template';
+    const dataSubset = 'items';
+    const parseMethod = parseBlogContent;
+
+    fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID, templateID, parseMethod);
+
+    setTimeout(() => {
+        initScrollFX();
+    }, 1000);
+</script>
+
+</html>

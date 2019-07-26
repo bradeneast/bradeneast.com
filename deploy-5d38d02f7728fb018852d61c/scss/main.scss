@@ -1,0 +1,339 @@
+:root {
+    --CL-1: #0a0a0a;
+    --CL-0: #ffffff;
+    --CL-SHADE: rgba(0, 0, 0, 0.239);
+    --CL-SHADE-DARKER: rgba(0, 0, 0, 0.431);
+    --CL-SHADE-DARKEST: rgba(0, 0, 0, 0.671);
+    --CL-TINT: rgba(255, 255, 255, 0.5);
+    --CL-A1: #8f9dac;
+    --CL-A2: #9fbcce;
+    --CL-A3: #a8d3db;
+    --CL-G1: #e0e0e0;
+    --CL-G2: #b6b6b6;
+    --CL-G3: #979797;
+    --CL-G4: #757575;
+    --CL-G5: #5f5f5f;
+    --CL-G6: #444444;
+    --CL-G7: #292929;
+    --TR-S: 0.25s ease;
+    --TR-M: 0.58s ease;
+    --TR-L: .7s ease-out;
+    --PAD-S: 2rem;
+    --PAD-M: 3rem;
+    --PAD-L: 5rem;
+    --BDR: 4px;
+    --SHADOW: 2px 2px 3px -1px var(--CL-SHADE);
+}
+
+// SCSS variables
+$mq: 60em;
+
+// MS Edge Deprecation Notice
+@supports (-ms-ime-align:auto) {
+
+    body {
+        display: none;
+    }
+
+    html {
+        max-height: 100vh;
+        max-height: 100vw;
+        overflow: hidden;
+    }
+
+    html::before {
+        position: fixed;
+        content: "You're using an outdated browser! Please switch to a recent version of Chrome, Firefox, or Safari for the best experience on this website.";
+        display: block;
+        padding-top: 49vh;
+        text-align: center;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        color: black;
+        z-index: 99;
+    }
+}
+
+body:not(.loaded) {
+    opacity: 0;
+}
+
+body.loaded {
+    transition: var(--TR-M);
+    opacity: 1;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: var(--CL-1);
+    text-align: left;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-width: 1080px;
+    overflow: hidden;
+}
+
+[data-icon] {
+    margin-right: var(--PAD-M);
+    width: 8rem;
+    will-change: transform;
+}
+
+// general layout stuff
+
+body,
+html {
+    opacity: 1;
+    background-color: var(--CL-0);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        background-color: var(--CL-G1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--CL-G3);
+    }
+}
+
+body {
+    position: relative;
+    display: grid;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.section {
+    --spacing: 3rem;
+    --hero-height: calc(64vh - var(--spacing));
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    min-height: var(--hero-height);
+    margin-bottom: calc(var(--spacing) * .5);
+    padding-top: calc(var(--spacing) * .5);
+    transition: var(--TR-M);
+    padding: var(--PAD-M);
+
+    * {
+        z-index: 1;
+    }
+
+    &__body {
+        width: 100%;
+        max-width: 1080px;
+    }
+
+    &.fullwidth {
+        padding: 0;
+    }
+}
+
+.hero {
+    flex-flow: row nowrap;
+    min-height: 50rem;
+
+    .hero-text {
+        position: relative;
+        display: flex;
+        align-content: flex-end;
+        flex-flow: row wrap;
+        flex-basis: 1fr;
+        height: 100vh;
+        background-size: cover;
+        background-color: var(--CL-0);
+        background-position: center;
+        background-blend-mode: multiply;
+        padding: var(--PAD-M);
+        filter: grayscale(1);
+
+        * {
+            color: var(--CL-0);
+        }
+
+        .hero-contact {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: rotate(-90deg) translateY(700%);
+            transform-origin: top left;
+        }
+
+        .tagline {
+            margin-right: 12vw;
+            min-width: 15rem;
+        }
+    }
+
+    .hero-aside {
+        flex-shrink: 1;
+        padding: var(--PAD-M) var(--PAD-L);
+        width: 100%;
+        min-width: 20rem;
+        height: 100vh;
+        min-height: 44rem;
+        justify-self: flex-end;
+        display: grid;
+        grid-gap: var(--PAD-L);
+        align-content: end;
+        align-items: end;
+        background: var(--CL-0);
+
+        li {
+            position: relative;
+
+            .li__text {
+                z-index: 2;
+                max-width: 30rem;
+            }
+        }
+    }
+}
+
+.cta {
+    background-image: url(/images/svg/squiggle.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    align-content: center;
+    height: 75vh;
+
+    &__link,
+    &__link:hover,
+    &__link:focus {
+        color: inherit;
+    }
+}
+
+// imports
+
+@import 'typography', 'nav', 'buttons', 'forms', 'posts', 'grids', 'animations', 'object-oriented';
+
+footer {
+    position: relative;
+    align-self: end;
+    padding: var(--PAD-S) var(--PAD-M) .5rem var(--PAD-M);
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--CL-G2);
+
+    & * {
+        color: inherit;
+    }
+
+    .socials {
+        display: block;
+        line-height: 1.5;
+
+        &::before {
+            display: block;
+            content: url(/images/svg/squiggle.svg);
+            width: 4rem;
+            margin: 0 auto;
+        }
+
+        a {
+            display: inline-block;
+            margin: .2rem .2rem 0 .2rem;
+
+            [data-icon] {
+                width: 1.1rem;
+                margin: 0;
+                font-weight: 400;
+                transition: var(--TR-S);
+            }
+
+            &:hover [data-icon],
+            &:focus [data-icon] {
+                color: var(--CL-1);
+            }
+        }
+    }
+}
+
+// mobile styles
+
+@media screen and (max-width: $mq) {
+    :root {
+        --PAD-S: 1rem;
+        --PAD-M: 1.5rem;
+        --PAD-L: 2.1rem;
+        --SHADOW: 3px 3px 6px 0 var(--CL-SHADE-DARKER);
+    }
+
+    .down-arrow {
+        display: none;
+    }
+
+    .section {
+        --hero-height: 50vh;
+        --spacing: 10rem;
+        width: 100%;
+        min-height: 0;
+
+        &__body {
+            padding: 0;
+            min-width: 0;
+        }
+
+        &.fullwidth {
+            padding: 0;
+        }
+
+        &:first-of-type {
+            margin-top: var(--PAD-L);
+            min-height: 20rem;
+        }
+    }
+
+    .image {
+        margin: var(--PAD-S) 0;
+    }
+
+    [data-icon] {
+        width: 6rem;
+        margin-bottom: var(--PAD-M);
+    }
+
+    .hero {
+        flex-flow: row wrap;
+        min-height: 0;
+
+        .hero-aside {
+            height: auto;
+        }
+
+        .hero-text {
+            text-align: left !important;
+            margin: 0;
+            padding: var(--PAD-L);
+            background-position: center;
+            background-attachment: local;
+            height: 85vh;
+
+            .squiggle-block {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
