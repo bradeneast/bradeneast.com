@@ -1,0 +1,109 @@
+[data-scroll=in] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: var(--TR-L);
+}
+
+[data-scroll-dir-y="-1"] [data-scroll=out] {
+    --visible-y: 10vh;
+    opacity: 0;
+    transform: translateY(-3rem);
+    transition: var(--TR-L);
+}
+
+[data-scroll-dir-y="1"] [data-scroll=out] {
+    --visible-y: -10vh;
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: var(--TR-L);
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+}
+
+.loading,
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden;
+}
+
+.loading {
+    width: 5rem;
+    height: 2rem;
+    background-image: url(/images/svg/squiggle-pattern.svg);
+    background-size: cover;
+    animation: loading 7s linear forwards running;
+
+    &::after {
+        position: absolute;
+        display: block;
+        width: 60vw;
+        bottom: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        content: 'stopping for coffee..';
+        font-weight: 700;
+        text-align: center;
+        color: var(--CL-G6);
+    }
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    z-index: 9;
+    font-weight: 700;
+    color: var(--CL-G6);
+    opacity: 0;
+    will-change: opacity;
+    animation: show .1s ease 7s forwards running;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    from {
+        background-position-x: 0%;
+        opacity: 1;
+    }
+
+    to {
+        background-position-x: 999%;
+        opacity: 0;
+    }
+}

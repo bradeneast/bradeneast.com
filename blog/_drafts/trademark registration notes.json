@@ -1,0 +1,39 @@
+{
+    "What is a trademark?": {
+        "definition": "A trademark is a any word, slogan, symbol, design, or combination of these that identifies the source of your goods and services and distinguishes them from the goods and services of another party",
+        "summed up": "The only purpose of a trademark is to identify and distinguish",
+        "ps": "A trademark can be a sound, a color, a smell, or anything that identifies and distinguishes your brand.",
+        "difference between trademark and a patent?": "Patents protect inventions, copyrights protect artistic and literary works. All three protect intellectual property",
+        "what's an example?": "Samsung might use a patent to protect their phone technology, a trademark to protect their logo, and a copyright to protect their commercial for that phone.",
+        "domain names and business names": "A domain name can function as a trademark, but domain registration is not federal trademark registration.  Likewise, a business name can function as a trademark, but registration of the business name does not automatically count as a trademark registration."
+    },
+    "Why does federal registration matter?": {
+        "common law trademark": "rights are limited to a geographical area in which the business is",
+        "federal registration provides...": [
+            "legal presumption that you're the owner of the mark",
+            "legal presumption of exclusive right to use the mark",
+            "puts the public on notice of ownership of the mark",
+            "mark listed in the USTPO database",
+            "registration with U.S. Customs and border protection",
+            "right to bring legal action against a confusingly similar mark in federal court",
+            "an opportunity to apply for trademark registration in foreign countries",
+            "right to use the registered trademark symbol"
+        ],
+        "summed up": "registering a trademark means you're calling dibs on the way people know and recognize your business. You're putting your stake in the ground for that logo."
+    },
+    "How to do it": {
+        "prerequisites": [
+            "not every mark will register and the mark can still be challenged",
+            "avoid likelihood of confusion - if your mark looks, sounds, or smells too much like another mark, the USPTO might interpret them as having similar meanings and creating similar commercial impressions. If consumers might believe the goods and services are coming from the same source, the trademark would not do its job of uniquely distinguishing and identifying your business"
+        ],
+        "trademark clearance search": "trademark electronic search system, state trademark databases, business name databases, google",
+        "strength of the mark": [
+            "how legally defensible is the mark?",
+            "generic marks are common, everyday names for goods and services, e.g. bike for a bicycle shop",
+            "descriptive marks are still very common, but are more like using creamy for a yogurt stand",
+            "fanciful marks are invented words without a dictionary definition, e.g. microsoft, cusinart",
+            "arbitrary marks are also strong, even though they have a dictionary definition, it's not associated with the goods or services, e.g. apple, blackberry, tesla",
+            "PS - it's especially dangerous to use a generic or descriptive mark, because you cannot defend that consumers have come to understand that your mark means ONLY your particular goods and services - not just the goods and services from anyone e.g. Zipper, Escalator, YoYo"
+        ]
+    }
+}

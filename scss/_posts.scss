@@ -1,0 +1,206 @@
+.post-nav {
+    padding-top: 0;
+    margin-top: 0;
+    min-height: 30vh;
+
+    #previous-post,
+    #next-post {
+        position: relative;
+        text-align: left;
+        width: 50%;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: 'previous';
+            font-weight: 700;
+            color: var(--CL-G2);
+            transform: translateY(-100%);
+        }
+    }
+
+    #next-post {
+        text-align: right;
+
+        &::before {
+            content: 'next';
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+.post {
+    margin-bottom: var(--PAD-L);
+
+    .content {
+        margin: var(--PAD-L) 0;
+        display: flex;
+    }
+
+    .meta {
+        flex-shrink: 1;
+        min-width: 25vw;
+        max-width: 25vw;
+        margin-right: calc(var(--PAD-L) + 5vw);
+        margin-bottom: var(--PAD-M);
+    }
+
+    .tags {
+        margin: .5rem 0;
+    }
+
+    &.partial {
+        margin-left: calc(var(--PAD-M) * -1);
+        margin-right: calc(var(--PAD-M) * -1);
+        padding: 0 var(--PAD-M);
+
+        &:hover,
+        &:focus-within {
+            box-shadow: inset 5px 0 0 0 var(--CL-A2);
+        }
+
+        .read-more {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        li {
+            list-style-type: disc;
+            margin-left: var(--PAD-S);
+            font-size: 1.2rem;
+            color: var(--CL-G5);
+        }
+
+        .body::first-letter {
+            all: unset;
+            color: inherit;
+        }
+
+        .tags {
+            margin: 0 0 .5rem 0;
+        }
+
+        .link,
+        .link .title {
+            color: var(--CL-G7);
+            transition: .1s ease;
+
+            &:hover,
+            &:focus,
+            &:hover *,
+            &:focus * {
+                color: var(--CL-A1);
+            }
+        }
+    }
+
+    .body {
+        font-size: 1.2rem;
+        max-width: 50rem;
+        text-align: left;
+        line-height: 1.6;
+        color: var(--CL-G5);
+
+        &::first-letter {
+            font-size: 135%;
+            font-weight: 900;
+            font-family: var(--FF-2);
+            float: left;
+            line-height: .6;
+            color: var(--CL-0);
+            padding: .7em .65em .65em .7em;
+            margin: .18em .3em .1em 0;
+            background-color: var(--CL-A2);
+            clip-path: url(/images/svg/wavy-mask.svg);
+        }
+
+        h2 {
+            margin: var(--PAD-S) 0;
+            color: var(--CL-G7);
+        }
+
+        a {
+            color: var(--CL-G7);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--CL-A3);
+            }
+
+            &:visited {
+                color: var(--CL-A1);
+
+                &:hover {
+                    color: var(--CL-A3);
+                }
+            }
+        }
+
+        br {
+            display: block;
+            content: '';
+            height: 1em;
+        }
+
+        em,
+        ul,
+        li {
+            color: inherit;
+        }
+
+        ul {
+            margin: var(--PAD-S) 0;
+        }
+
+        li {
+            margin-left: var(--PAD-S);
+            list-style-type: disc;
+        }
+
+        img {
+            object-fit: contain;
+            height: auto;
+        }
+
+        div.separator {
+            margin: var(--PAD-L) 0;
+        }
+    }
+}
+
+@media screen and (max-width: $mq) {
+    .post-nav {
+        flex-flow: row wrap;
+
+        #next-post,
+        #previous-post {
+            width: 100%;
+            margin-top: var(--PAD-M);
+            margin-bottom: var(--PAD-M);
+        }
+
+        #next-post {
+            order: -1;
+        }
+    }
+
+    .post {
+        .content {
+            flex-flow: row wrap;
+        }
+
+        &.partial,
+        &.partial:hover,
+        &.partial:focus {
+            margin: 0 0 var(--PAD-L) 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .meta {
+            max-width: 100%;
+        }
+    }
+}

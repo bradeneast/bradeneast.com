@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: auto">
+
+<head>
+    <noscript>
+        <h1>I'm a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+    </noscript>
+    <link rel="preload" href="/scripts/insertfooter.js" as="script">
+    <link rel="preload" href="/scripts/insertnav.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/main.css" as="style">
+    <script src="/scripts/insertHeader.js"></script>
+</head>
+
+<body onload="document.body.classList.add('loaded')" style="scroll-behavior: auto">
+
+    <section class="section" style="padding-top: 30vh;" id="work">
+        <div class="loading"></div>
+        <div class="error">Didn't load! No projects to show :(</div>
+
+        <template id="current-template">
+            <div class="post center">
+                <h1 class="title" data-title></h1>
+                <div class="content">
+                    <span class="meta">
+                        <h2 class="tags" data-labels></h2>
+                    </span>
+                    <p class="body" data-content></p>
+                </div>
+            </div>
+        </template>
+    </section>
+    <section class="section" id="more">
+        <span class="center pad">
+            <h1 class="center">More Projects</h1>
+        </span>
+        <div class="grid" id="more-projects">
+            <div class="loading"></div>
+            <div class="error">Didn't load! No projects to show :(</div>
+            <template id="project-template">
+                <div class="item">
+                    <a href="#" data-scroll>
+                        <div data-image></div>
+                        <div data-meta>
+                            <h2 class="center" data-title></h2>
+                            <p class="center" data-labels></p>
+                        </div>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </section>
+
+</body>
+<footer>
+</footer>
+<script type="text/javascript" src="/scripts/insertnav.js"></script>
+<script type="text/javascript" src="/scripts/insertfooter.js"></script>
+<script type="text/javascript" src="/scripts/main.js"></script>
+<script type="text/javascript" src="/scripts/fetchstuff.js"></script>
+<script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+<script>
+    // Fetch options
+    const wrapperID = 'work';
+    const templateID = 'current-template';
+    const dataSubset = 'items';
+    const parseMethod = parseBlogContent;
+    const wrapperID_2 = 'more-projects';
+    const templateID_2 = 'project-template';
+    const wrapper_2 = document.getElementById(wrapperID_2);
+
+    // Fetches post data from Blogger API
+    let fetched = fetchStuff(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset);
+
+    // Inserts current post data to main body
+    insertCurrentContent(wrapperID, templateID, fetched, parseMethod);
+
+    // Inserts projects other than the current project to 'More Projects section
+    fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID_2, templateID_2, parseMethod);
+
+    // Runs on hashchange - Displays current project and replaces it with others in 'More Projects' section
+    window.addEventListener('hashchange', function () {
+        insertCurrentContent(wrapperID, templateID, fetched, parseMethod);
+        window.scrollTo(0, 0);
+        Array.from(wrapper_2.children).forEach(child => {
+            if (child.id != templateID_2) {
+                child.remove();
+            }
+        });
+        fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID_2, templateID_2, parseMethod);
+    })
+
+    setTimeout(() => {
+        initScrollFX();
+    }, 1000);
+</script>
+
+</html>
