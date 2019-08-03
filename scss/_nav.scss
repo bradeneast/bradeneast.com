@@ -1,5 +1,5 @@
 nav {
-    --logo-width: 2.1rem;
+    --logo-width: 10rem;
     overflow-x: hidden;
     position: fixed;
     z-index: 99;
@@ -13,36 +13,43 @@ nav {
     padding: 10px var(--PAD-M);
     color: var(--CL-G4);
     transition: var(--TR-M);
-    // background-color: var(--CL-0);
 
     .logo {
+        position: relative;
         width: var(--logo-width);
-        transform: translate(-8px, 2px);
+        height: 4rem;
         margin-right: auto;
         transition: var(--TR-S) .3s;
 
-        .b-icon {
-            fill: var(--CL-G7);
-            stroke-width: .8px;
-            stroke: var(--CL-G7);
-            transition: var(--TR-M);
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .ribbon {
+        .logo-wordmark,
+        .logo-wordmark path {
+            fill: var(--CL-A3);
+            transition: var(--TR-S) .3s;
+        }
+
+        .logo-squiggle {
+            transform: translateX(-4.3rem);
             fill: var(--CL-A1);
-            clip-path: polygon(0 0, 0 0, 0 0, 0 0, 0 0);
-            transition: var(--TR-M);
+            clip-path: polygon(0 0, 0 0, 100% 0, 0 0, 0 0);
+            transition: var(--TR-L) .1s;
         }
 
         &:hover,
         &:focus {
-            .ribbon {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+            .logo-wordmark {
+                transition: var(--TR-M);
+                transform: translateX(1.1rem);
             }
 
-            .b-icon {
-                fill: var(--CL-A2);
-                stroke: var(--CL-A2);
+            .logo-squiggle {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+                transition: var(--TR-M);
             }
         }
     }
@@ -156,7 +163,7 @@ nav {
         height: 3px;
         transform: translateY(-50%);
         top: calc(50% - 7px);
-        background: var(--CL-G7);
+        background: var(--CL-A3);
         transition: var(--TR-S);
         backface-visibility: hidden;
         will-change: transform;
@@ -243,17 +250,29 @@ nav {
 @media screen and (max-width: $mq) {
 
     nav {
-        --logo-width: 2rem;
         padding: 14px var(--PAD-M) 9px var(--PAD-M);
+        background-color: var(--CL-0);
 
         .logo {
             transform: translateX(-150%) scale(.6);
             margin-left: calc(var(--logo-width) * -2);
             opacity: 0;
+            height: 2.4rem;
+
+            &:hover,
+            &:focus {
+                .logo-squiggle {
+                    clip-path: polygon(0 0, 0 0, 0 0);
+                }
+
+                .logo-wordmark {
+                    transform: translate(0, 0);
+                }
+            }
         }
 
         &.compact {
-            background: transparent;
+            background: var(--CL-0);
 
             .logo {
                 width: var(--logo-width);
@@ -300,6 +319,7 @@ nav {
 
     #nav-toggle:checked~nav.compact .logo {
         transform: translateX(-150%) scale(.5);
+        width: 0;
         opacity: 0;
         transition-delay: 0s;
     }
