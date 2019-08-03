@@ -9,12 +9,12 @@ body:not(.loaded) {
 
 body.loaded {
     opacity: 1;
-    transition: var(--TR-M);
+    transition: var(--TR-S);
 
     .section {
         opacity: 1;
         transform: translate(0, 0);
-        transition: var(--TR-M) .1s;
+        transition: var(--TR-M);
     }
 }
 

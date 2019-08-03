@@ -1149,13 +1149,13 @@ body:not(.loaded) .section {
 
 body.loaded {
   opacity: 1;
-  transition: var(--TR-M);
+  transition: var(--TR-S);
 }
 
 body.loaded .section {
   opacity: 1;
   transform: translate(0, 0);
-  transition: var(--TR-M) 0.1s;
+  transition: var(--TR-M);
 }
 
 [data-scroll=in] {
@@ -1563,7 +1563,7 @@ footer .socials a:focus [data-icon] {
     padding: 0;
   }
   .section:first-of-type {
-    margin-top: var(--PAD-L);
+    margin-top: 4rem;
     min-height: 20rem;
   }
   .image {
