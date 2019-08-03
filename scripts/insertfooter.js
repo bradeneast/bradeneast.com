@@ -9,9 +9,9 @@ if (document.querySelector('footer')) {
                 If you're interested in having me work on your branding or design project, please reach out &ndash; I'd love to work with you.
             </h3>
             <br />
-            <a class="center cta__link" href="mailto:bradeneastdesign@gmail.com">
-                bradeneastdesign@gmail.com
-            </a>
+            <div class="cta__link">
+                <a class="center" href="mailto:bradeneastdesign@gmail.com">bradeneastdesign@gmail.com</a>
+            </div>
         </div>
     </section>
     `);

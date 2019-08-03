@@ -15,7 +15,7 @@
     --CL-G5: #5f5f5f;
     --CL-G6: #444444;
     --CL-G7: #292929;
-    --TR-S: 0.25s cubic-bezier(.1, .2, .3, 1);
+    --TR-S: 0.19s cubic-bezier(.1, .2, .3, 1);
     --TR-M: 0.38s cubic-bezier(.1, .2, .3, 1);
     --TR-L: .7s cubic-bezier(.2, .3, .4, 1);
     --PAD-S: 2rem;
@@ -229,35 +229,16 @@ body {
     }
 
     &__link {
-        cursor: pointer;
+        display: flex;
         font-size: var(--FS-M);
         font-weight: 700;
         color: var(--CL-1);
         width: 100%;
 
-        &::before,
-        &::after {
-            // content: url(/images/svg/squiggle-pattern.svg);
-            // display: block;
-            // width: 100%;
-            // transition: var(--TR-L);
-        }
-
-        &::before {
-            clip-path: polygon(0 0, 0 0, 0 100, 0 100);
-        }
-
-        &::after {
-            clip-path: polygon(0 0, 100 0, 100 0, 0 0);
-        }
-
         &:hover,
         &:focus {
-            color: var(--CL-A3);
-
-            &::before,
-            &::after {
-                clip-path: polygon(0 0, 100 0, 100 100, 0 100);
+            a {
+                color: var(--CL-1);
             }
         }
     }
