@@ -11,7 +11,7 @@ nav {
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-end;
-    padding: 10px var(--PAD-M);
+    padding: 15px var(--PAD-M);
     color: var(--CL-G4);
     transition: var(--TR-M);
 
@@ -30,7 +30,6 @@ nav {
 
         .logo-icon {
             fill: var(--CL-A3);
-            transition: var(--TR-S);
         }
 
         .logo-squiggle {
@@ -42,6 +41,7 @@ nav {
         &:hover,
         &:focus {
             .logo-icon {
+                transition: var(--TR-S);
                 fill: var(--CL-A2);
             }
 
