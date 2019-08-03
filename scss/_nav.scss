@@ -1,5 +1,6 @@
 nav {
-    --logo-width: 10rem;
+    --logo-height: 2.5rem;
+    --logo-width: 2.5rem;
     overflow-x: hidden;
     position: fixed;
     z-index: 99;
@@ -17,7 +18,7 @@ nav {
     .logo {
         position: relative;
         width: var(--logo-width);
-        height: 4rem;
+        height: var(--logo-height);
         margin-right: auto;
         transition: var(--TR-S) .3s;
 
@@ -27,28 +28,25 @@ nav {
             left: 0;
         }
 
-        .logo-wordmark,
-        .logo-wordmark path {
+        .logo-icon {
             fill: var(--CL-A3);
-            transition: var(--TR-S) .3s;
+            transition: var(--TR-S);
         }
 
         .logo-squiggle {
-            transform: translateX(-4.3rem);
             fill: var(--CL-A1);
-            clip-path: polygon(0 0, 0 0, 100% 0, 0 0, 0 0);
             transition: var(--TR-L) .1s;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
         }
 
         &:hover,
         &:focus {
-            .logo-wordmark {
-                transition: var(--TR-M);
-                transform: translateX(1.1rem);
+            .logo-icon {
+                fill: var(--CL-A2);
             }
 
             .logo-squiggle {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+                clip-path: polygon(0 0, 0 0, 0 0, 0 0, 0 0);
                 transition: var(--TR-M);
             }
         }
@@ -70,12 +68,13 @@ nav {
         text-transform: uppercase;
         font-weight: 700;
         font-size: .9rem;
+        color: var(--CL-A3);
         transition: opacity var(--TR-S) .3s, transform var(--TR-S), color var(--TR-M), margin var(--TR-S) .3s;
 
         &:hover,
         &:focus,
         &.active {
-            color: var(--CL-A3);
+            color: var(--CL-A1);
         }
     }
 
