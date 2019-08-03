@@ -213,24 +213,36 @@ body {
   margin-bottom: 0;
   align-content: center;
   height: 75vh;
+  color: var(--CL-A3);
+}
+
+.cta div,
+.cta div h3 {
+  color: inherit;
 }
 
 .cta__link {
-  display: inline-block;
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: var(--FS-M);
   font-weight: 700;
-  padding: 1.2rem 1.5rem;
-  color: var(--CL-G4);
-  border: var(--BDR) solid var(--CL-0);
-  box-shadow: var(--SHADOW);
-  transition: var(--TR-S);
+  color: var(--CL-1);
+  width: 100%;
+}
+
+.cta__link::before {
+  clip-path: polygon(0 0, 0 0, 0 100, 0 100);
+}
+
+.cta__link::after {
+  clip-path: polygon(0 0, 100 0, 100 0, 0 0);
 }
 
 .cta__link:hover, .cta__link:focus {
   color: var(--CL-A3);
-  border-color: var(--CL-A1);
-  background-color: var(--CL-0);
+}
+
+.cta__link:hover::before, .cta__link:hover::after, .cta__link:focus::before, .cta__link:focus::after {
+  clip-path: polygon(0 0, 100 0, 100 100, 0 100);
 }
 
 @font-face {

@@ -221,23 +221,44 @@ body {
     margin-bottom: 0;
     align-content: center;
     height: 75vh;
+    color: var(--CL-A3);
+
+    div,
+    div h3 {
+        color: inherit;
+    }
 
     &__link {
-        display: inline-block;
         cursor: pointer;
-        font-size: 1.3rem;
+        font-size: var(--FS-M);
         font-weight: 700;
-        padding: 1.2rem 1.5rem;
-        color: var(--CL-G4);
-        border: var(--BDR) solid var(--CL-0);
-        box-shadow: var(--SHADOW);
-        transition: var(--TR-S);
+        color: var(--CL-1);
+        width: 100%;
+
+        &::before,
+        &::after {
+            // content: url(/images/svg/squiggle-pattern.svg);
+            // display: block;
+            // width: 100%;
+            // transition: var(--TR-L);
+        }
+
+        &::before {
+            clip-path: polygon(0 0, 0 0, 0 100, 0 100);
+        }
+
+        &::after {
+            clip-path: polygon(0 0, 100 0, 100 0, 0 0);
+        }
 
         &:hover,
         &:focus {
             color: var(--CL-A3);
-            border-color: var(--CL-A1);
-            background-color: var(--CL-0);
+
+            &::before,
+            &::after {
+                clip-path: polygon(0 0, 100 0, 100 100, 0 100);
+            }
         }
     }
 }

@@ -142,6 +142,9 @@ blogFeedPages.forEach(page => {
         Object.keys(post).forEach(key => {
             const e = newPost.find(`.${key}`);
             let value = post[key];
+            if (Array.isArray(value)) {
+                value = value.join(', ');
+            }
             if (e && key == 'body') {
                 value = value.substr(0, 180) + '...';
                 e.append(value);

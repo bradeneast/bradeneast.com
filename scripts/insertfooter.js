@@ -5,10 +5,13 @@ if (document.querySelector('footer')) {
         footer.insertAdjacentHTML('beforebegin', `
     <section class="section cta">
         <div class="section__body limited-width center" data-scroll>
-            <h3 class="pad center">
-                If you're interested in having me work on your branding or design project, please feel free to reach out &ndash; I'd love to work with you.
+            <h3 class="center">
+                If you're interested in having me work on your branding or design project, please reach out &ndash; I'd love to work with you.
             </h3>
-            <div tabindex="0" class="cta__link center">braden<wbr>east<wbr>design<wbr>@gmail.com</div>
+            <br />
+            <a class="center cta__link" href="mailto:bradeneastdesign@gmail.com">
+                bradeneastdesign@gmail.com
+            </a>
         </div>
     </section>
     `);
