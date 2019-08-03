@@ -6,11 +6,11 @@ function insertHeader(url, pageTitle) {
     const siteTitle = 'Braden East';
     pageTitle = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);
     if (pageTitle === '' || pageTitle == null || url.split('/').length <= 4) {
-        pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + 'Visual design solutions for nonprofits';
+        pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + 'Visual design solutions for focused brands';
     } else {
         pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageTitle;
     }
-    const tagline = 'Helping nonprofits take control of their identity through branding and design.';
+    const tagline = 'Helping focused businesses take control of their identity through branding and design.';
     const socialImage = 'https://bradeneast.com/images/me-cropped-square.jpg';
     document.head.insertAdjacentHTML('beforeend', `
 

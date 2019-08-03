@@ -103,13 +103,13 @@ posts.forEach((post, index) => {
     const nextPost = posts[index + 1];
     const nextElem = $('#next-post');
     if (prevPost) {
-        prevElem.append(prevPost.title);
+        prevElem.find('.link-title').append(prevPost.title);
         prevElem.attr('href', `/blog/${prevPost.link}`);
     } else {
         prevElem.attr('style', 'opacity: 0');
     }
     if (nextPost) {
-        nextElem.append(nextPost.title);
+        nextElem.find('.link-title').append(nextPost.title);
         nextElem.attr('href', `/blog/${nextPost.link}`);
     } else {
         nextElem.attr('style', 'opacity: 0');

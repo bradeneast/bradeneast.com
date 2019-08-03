@@ -10,7 +10,7 @@ if (document.querySelector('footer')) {
             </h3>
             <br />
             <div class="cta__link">
-                <a class="center" href="mailto:bradeneastdesign@gmail.com">bradeneastdesign@gmail.com</a>
+                <a class="center" href="mailto:bradeneastdesign@gmail.com">bradeneast<wbr>design@gmail.com</a>
             </div>
         </div>
     </section>

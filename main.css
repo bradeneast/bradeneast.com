@@ -36,7 +36,7 @@
   }
   html::before {
     position: fixed;
-    content: "You're using an outdated browser! Please switch to a recent version of Chrome, Firefox, or Safari for the best experience on this website.";
+    content: "You might be using Edge! Please switch to Chrome, Firefox, or Safari to browse my website.";
     display: block;
     padding-top: 49vh;
     text-align: center;
@@ -403,6 +403,7 @@ nav .logo {
   width: var(--logo-width);
   height: var(--logo-height);
   margin-right: auto;
+  margin-left: -5px;
   transition: var(--TR-S) 0.3s;
 }
 
@@ -817,20 +818,51 @@ input[type=checkbox]:checked + label {
 }
 
 .post-nav {
-  padding-top: 0;
+  padding-top: var(--PAD-M);
   margin-top: 0;
   min-height: 30vh;
+  overflow: hidden;
 }
 
 .post-nav #previous-post,
 .post-nav #next-post {
-  position: relative;
-  text-align: left;
   width: 50%;
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
 }
 
-.post-nav #previous-post::before,
-.post-nav #next-post::before {
+.post-nav #previous-post .link-title,
+.post-nav #next-post .link-title {
+  position: relative;
+  text-align: left;
+  color: var(--CL-A1);
+  font-weight: 700;
+  font-size: var(--FS-M);
+  transform: translateX(-1rem);
+  margin-left: 1rem;
+  transition: var(--TR-M) 0.1s;
+}
+
+.post-nav #previous-post .link-title svg,
+.post-nav #next-post .link-title svg {
+  position: absolute;
+  width: 2.1rem;
+  height: 2.1rem;
+  top: -50%;
+  left: -2.8rem;
+  opacity: 0;
+  transform: translateX(calc(var(--PAD-M) * -1)) scale(0.84);
+  transition: var(--TR-M);
+}
+
+.post-nav #previous-post .link-title svg polyline,
+.post-nav #next-post .link-title svg polyline {
+  stroke: var(--CL-A1);
+}
+
+.post-nav #previous-post .link-title::before,
+.post-nav #next-post .link-title::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -840,11 +872,38 @@ input[type=checkbox]:checked + label {
   transform: translateY(-100%);
 }
 
-.post-nav #next-post {
-  text-align: right;
+.post-nav #previous-post:hover,
+.post-nav #next-post:hover {
+  color: var(--CL-A3);
 }
 
-.post-nav #next-post::before {
+.post-nav #previous-post:hover .link-title,
+.post-nav #previous-post:hover .link-title svg,
+.post-nav #next-post:hover .link-title,
+.post-nav #next-post:hover .link-title svg {
+  color: var(--CL-A3);
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.post-nav #next-post {
+  justify-content: flex-end;
+}
+
+.post-nav #next-post .link-title {
+  text-align: right;
+  transform: translateX(1rem);
+  margin: 0;
+  margin-right: 1rem;
+}
+
+.post-nav #next-post .link-title svg {
+  left: auto;
+  right: -2.8rem;
+  transform: translateX(var(--PAD-M)) scale(0.84);
+}
+
+.post-nav #next-post .link-title::before {
   content: 'next';
   left: auto;
   right: 0;

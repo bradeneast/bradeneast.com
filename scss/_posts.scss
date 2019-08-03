@@ -1,32 +1,84 @@
 .post-nav {
-    padding-top: 0;
+    padding-top: var(--PAD-M);
     margin-top: 0;
     min-height: 30vh;
+    overflow: hidden;
 
     #previous-post,
     #next-post {
-        position: relative;
-        text-align: left;
         width: 50%;
+        min-height: 12rem;
+        display: flex;
+        align-items: center;
 
-        &::before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: 'previous';
+        .link-title {
+            position: relative;
+            text-align: left;
+            color: var(--CL-A1);
             font-weight: 700;
-            color: var(--CL-G2);
-            transform: translateY(-100%);
+            font-size: var(--FS-M);
+            transform: translateX(-1rem);
+            margin-left: 1rem;
+            transition: var(--TR-M) .1s;
+
+            svg {
+                position: absolute;
+                width: 2.1rem;
+                height: 2.1rem;
+                top: -50%;
+                left: -2.8rem;
+                opacity: 0;
+                transform: translateX(calc(var(--PAD-M) * -1)) scale(.84);
+                transition: var(--TR-M);
+
+                & polyline {
+                    stroke: var(--CL-A1);
+                }
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: 'previous';
+                font-weight: 700;
+                color: var(--CL-G2);
+                transform: translateY(-100%);
+            }
+        }
+
+        &:hover {
+            color: var(--CL-A3);
+
+            .link-title,
+            .link-title svg {
+                color: var(--CL-A3);
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
         }
     }
 
     #next-post {
-        text-align: right;
+        justify-content: flex-end;
 
-        &::before {
-            content: 'next';
-            left: auto;
-            right: 0;
+        .link-title {
+            text-align: right;
+            transform: translateX(1rem);
+            margin: 0;
+            margin-right: 1rem;
+
+            svg {
+                left: auto;
+                right: -2.8rem;
+                transform: translateX(var(--PAD-M)) scale(.84);
+            }
+
+            &::before {
+                content: 'next';
+                left: auto;
+                right: 0;
+            }
         }
     }
 }
