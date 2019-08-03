@@ -55,15 +55,6 @@ $mq: 60em;
     }
 }
 
-body:not(.loaded) {
-    opacity: 0;
-}
-
-body.loaded {
-    transition: var(--TR-M);
-    opacity: 1;
-}
-
 *:focus,
 *:focus-within {
     outline-color: var(--CL-A1) !important;

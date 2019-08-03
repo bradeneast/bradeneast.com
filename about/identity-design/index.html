@@ -56,17 +56,14 @@
 <footer>
 </footer>
 <script type="text/javascript" src="/scripts/insertnav.js"></script>
-<script type="text/javascript" src="/scripts/fetchstuff.js"></script>
 <script type="text/javascript" src="/scripts/insertfooter.js"></script>
-<script type="text/javascript" src="/scripts/main.js"></script>
+<script defer type="text/javascript" src="/scripts/main.js"></script>
+<script type="text/javascript" src="/scripts/fetchstuff.js"></script>
 <script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
 <script>
     fetchAndInsert('../_content/identity-design.json', 'intro', 'intro', 'intro-template', parseLocalContent);
     fetchAndInsert('../_content/identity-design.json', 'features', 'features', 'features-template', parseLocalContent);
     fetchAndInsert('../_content/testimonials.json', null, 'testimonials', 'testimonials-template', parseLocalContent);
-    setTimeout(() => {
-        initScrollFX();
-    }, 1000);
 </script>
 
 </html>

@@ -48,15 +48,6 @@
   }
 }
 
-body:not(.loaded) {
-  opacity: 0;
-}
-
-body.loaded {
-  transition: var(--TR-M);
-  opacity: 1;
-}
-
 *:focus,
 *:focus-within {
   outline-color: var(--CL-A1) !important;
@@ -404,7 +395,6 @@ nav {
   padding: 10px var(--PAD-M);
   color: var(--CL-G4);
   transition: var(--TR-M);
-  background-color: var(--CL-0);
 }
 
 nav .logo {
@@ -1146,6 +1136,26 @@ input[type=checkbox]:checked + label {
   .grid {
     display: block;
   }
+}
+
+body:not(.loaded) {
+  opacity: 0;
+}
+
+body:not(.loaded) .section {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+body.loaded {
+  opacity: 1;
+  transition: var(--TR-M);
+}
+
+body.loaded .section {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: var(--TR-M) 0.1s;
 }
 
 [data-scroll=in] {

@@ -1,3 +1,23 @@
+body:not(.loaded) {
+    opacity: 0;
+
+    .section {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+}
+
+body.loaded {
+    opacity: 1;
+    transition: var(--TR-M);
+
+    .section {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition: var(--TR-M) .1s;
+    }
+}
+
 [data-scroll=in] {
     opacity: 1;
     transform: translateY(0);

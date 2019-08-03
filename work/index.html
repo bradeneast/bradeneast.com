@@ -56,7 +56,7 @@
 </footer>
 <script type="text/javascript" src="/scripts/insertnav.js"></script>
 <script type="text/javascript" src="/scripts/insertfooter.js"></script>
-<script type="text/javascript" src="/scripts/main.js"></script>
+<script defer type="text/javascript" src="/scripts/main.js"></script>
 <script type="text/javascript" src="/scripts/fetchstuff.js"></script>
 <script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
 <script>
@@ -89,10 +89,6 @@
         });
         fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID_2, templateID_2, parseMethod);
     })
-
-    setTimeout(() => {
-        initScrollFX();
-    }, 1000);
 </script>
 
 </html>

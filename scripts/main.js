@@ -179,6 +179,10 @@ function initScrollFX() {
     })
 }
 
+setTimeout(() => {
+    initScrollFX();
+}, 1000);
+
 // STYLISH: clears style, width, and height attributes from all img elements
 function clearImageFormatting() {
     const images = document.querySelectorAll('img');
