@@ -174,6 +174,7 @@ function initScrollFX() {
         addIfScrolled(upDownArrow, 'class', null, 'up', 600);
     })
     ScrollOut({
+        once: true,
         threshold: .05
     })
 }
