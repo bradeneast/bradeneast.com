@@ -257,17 +257,6 @@ nav {
             margin-left: calc(var(--logo-width) * -2);
             opacity: 0;
             height: 2.4rem;
-
-            &:hover,
-            &:focus {
-                .logo-squiggle {
-                    clip-path: polygon(0 0, 0 0, 0 0);
-                }
-
-                .logo-wordmark {
-                    transform: translate(0, 0);
-                }
-            }
         }
 
         &.compact {
@@ -318,7 +307,6 @@ nav {
 
     #nav-toggle:checked~nav.compact .logo {
         transform: translateX(-150%) scale(.5);
-        width: 0;
         opacity: 0;
         transition-delay: 0s;
     }

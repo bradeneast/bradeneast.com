@@ -633,12 +633,6 @@ nav.compact #hamburger {
     opacity: 0;
     height: 2.4rem;
   }
-  nav .logo:hover .logo-squiggle, nav .logo:focus .logo-squiggle {
-    clip-path: polygon(0 0, 0 0, 0 0);
-  }
-  nav .logo:hover .logo-wordmark, nav .logo:focus .logo-wordmark {
-    transform: translate(0, 0);
-  }
   nav.compact {
     background: var(--CL-0);
   }
@@ -676,7 +670,6 @@ nav.compact #hamburger {
   }
   #nav-toggle:checked ~ nav.compact .logo {
     transform: translateX(-150%) scale(0.5);
-    width: 0;
     opacity: 0;
     transition-delay: 0s;
   }
