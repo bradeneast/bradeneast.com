@@ -884,6 +884,7 @@ input[type=checkbox]:checked + label {
 }
 
 .post-nav #next-post {
+  margin-left: auto;
   justify-content: flex-end;
 }
 
