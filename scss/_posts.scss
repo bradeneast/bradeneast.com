@@ -174,17 +174,20 @@
         }
 
         a {
-            color: var(--CL-G7);
+            color: var(--CL-A3);
             text-decoration: underline;
+            font-weight: 700;
 
-            &:hover {
-                color: var(--CL-A3);
+            &:hover,
+            &:focus {
+                color: var(--CL-A1);
             }
 
             &:visited {
                 color: var(--CL-A1);
 
-                &:hover {
+                &:hover,
+                &:focus {
                     color: var(--CL-A3);
                 }
             }
@@ -202,6 +205,7 @@
             color: inherit;
         }
 
+        p,
         ul {
             margin: var(--PAD-S) 0;
         }
