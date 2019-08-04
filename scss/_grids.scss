@@ -88,12 +88,9 @@
     }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: $mq) {
     .grid {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: auto;
-        align-items: start;
-        align-content: start;
+        display: block;
 
         .item>a {
             position: relative;
@@ -127,11 +124,5 @@
                 height: auto;
             }
         }
-    }
-}
-
-@media screen and (max-width: $mq) {
-    .grid {
-        display: block;
     }
 }
