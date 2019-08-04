@@ -15,6 +15,7 @@ const templateName = '_posttemplate.html';
 const postTemplate = blogDir + templateName;
 
 // DEPENDENCIES
+const commonmark = require('commonmark');
 const htmlparser = require('htmlparser2');
 const cheerio = require('cheerio');
 
@@ -47,13 +48,29 @@ fs.readdirSync(blogDir).forEach(dir => {
 
 // CREATES JSON ARRAY OF BLOG POSTS
 let posts = [];
-fs.readdirSync(postDir).forEach(item => {
-    const postName = path.basename(item, '.json');
-    if (postName != templateName) {
-        const postContent = JSON.parse(fs.readFileSync(`${postDir + postName}.json`, 'utf8'));
-        posts.push(postContent);
+
+fs.readdirSync(postDir).forEach(post => {
+    const reader = new commonmark.Parser({ smart: true });
+    const writer = new commonmark.HtmlRenderer({ softbreak: '<br />' });
+    const parsed = reader.parse(fs.readFileSync(postDir + post, 'utf8'));
+    const output = writer.render(parsed);
+    const dom = htmlparser.parseDOM(output, { decodeEntities: true });
+    const $ = cheerio.load(dom);
+    let postJSON = {
+        "title": "",
+        "date": "",
+        "tags": [],
+        "body": "",
     }
+    postJSON.title = $('h1').contents().text();
+    postJSON.date = $('h2').contents().text();
+    postJSON.tags = $('h3').contents().text();
+    $('p').map(function (i, p) {
+        postJSON.body += $(this).text() + '<br />';
+    })
+    posts.push(postJSON);
 })
+
 posts.forEach(post => {
     post.link = encodeURI(post.title).replace(/%20|#/g, '-').replace(/\(|\)/g, '').replace(/--/g, '-').toLowerCase();
 })
