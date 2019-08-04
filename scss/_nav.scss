@@ -312,10 +312,7 @@ nav {
         transition-delay: 0s;
     }
 
-    #up-down svg polyline,
-    #up-down:focus svg polyline,
-    #up-down:hover svg polyline {
-        stroke-width: 2px;
-        color: var(--CL-G3);
+    #up-down {
+        display: none;
     }
 }

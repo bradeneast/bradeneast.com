@@ -106,8 +106,10 @@
             margin-bottom: calc(var(--PAD-L) * 2);
 
             &:hover,
-            &:focus {
+            &:focus,
+            &:focus-within {
                 border: none;
+                background: transparent;
             }
 
             [data-image],

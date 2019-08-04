@@ -231,6 +231,17 @@
             width: 100%;
             margin-top: var(--PAD-M);
             margin-bottom: var(--PAD-M);
+
+            &:hover .link-title svg,
+            &:focus .link-title svg {
+                opacity: 0;
+            }
+
+            .link-title {
+                margin: 0;
+                transform: translate(0, 0);
+                color: var(--CL-A3);
+            }
         }
 
         #next-post {

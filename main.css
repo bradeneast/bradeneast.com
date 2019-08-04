@@ -674,11 +674,8 @@ nav.compact #hamburger {
     opacity: 0;
     transition-delay: 0s;
   }
-  #up-down svg polyline,
-  #up-down:focus svg polyline,
-  #up-down:hover svg polyline {
-    stroke-width: 2px;
-    color: var(--CL-G3);
+  #up-down {
+    display: none;
   }
 }
 
@@ -1060,6 +1057,18 @@ input[type=checkbox]:checked + label {
     margin-top: var(--PAD-M);
     margin-bottom: var(--PAD-M);
   }
+  .post-nav #next-post:hover .link-title svg,
+  .post-nav #next-post:focus .link-title svg,
+  .post-nav #previous-post:hover .link-title svg,
+  .post-nav #previous-post:focus .link-title svg {
+    opacity: 0;
+  }
+  .post-nav #next-post .link-title,
+  .post-nav #previous-post .link-title {
+    margin: 0;
+    transform: translate(0, 0);
+    color: var(--CL-A3);
+  }
   .post-nav #next-post {
     order: -1;
   }
@@ -1181,8 +1190,9 @@ input[type=checkbox]:checked + label {
     overflow: visible;
     margin-bottom: calc(var(--PAD-L) * 2);
   }
-  .grid .item > a:hover, .grid .item > a:focus {
+  .grid .item > a:hover, .grid .item > a:focus, .grid .item > a:focus-within {
     border: none;
+    background: transparent;
   }
   .grid .item > a [data-image],
   .grid .item > a [data-image] > img {
