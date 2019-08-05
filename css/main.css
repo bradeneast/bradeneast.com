@@ -971,16 +971,25 @@ input[type=checkbox]:checked + label {
   transition: var(--TR-M) 0.1s;
 }
 
+.post-nav #previous-post .link-title .label,
+.post-nav #next-post .link-title .label {
+  text-align: inherit;
+  display: block;
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--CL-G2);
+}
+
 .post-nav #previous-post .link-title svg,
 .post-nav #next-post .link-title svg {
   position: absolute;
   width: 2.1rem;
   height: 2.1rem;
-  top: -50%;
+  top: 50%;
   left: -2.8rem;
   opacity: 0;
-  -webkit-transform: translateX(calc(var(--PAD-M) * -1)) scale(0.84);
-          transform: translateX(calc(var(--PAD-M) * -1)) scale(0.84);
+  -webkit-transform: translateX(calc(var(--PAD-M) * -1)) translateY(-50%) scale(0.84);
+          transform: translateX(calc(var(--PAD-M) * -1)) translateY(-50%) scale(0.84);
   -webkit-transition: var(--TR-M);
   transition: var(--TR-M);
 }
@@ -988,18 +997,6 @@ input[type=checkbox]:checked + label {
 .post-nav #previous-post .link-title svg polyline,
 .post-nav #next-post .link-title svg polyline {
   stroke: var(--CL-A1);
-}
-
-.post-nav #previous-post .link-title::before,
-.post-nav #next-post .link-title::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: 'previous';
-  font-weight: 700;
-  color: var(--CL-G2);
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
 }
 
 .post-nav #previous-post:hover,
@@ -1015,6 +1012,12 @@ input[type=checkbox]:checked + label {
   opacity: 1;
   -webkit-transform: translateX(0) scale(1);
           transform: translateX(0) scale(1);
+}
+
+.post-nav #previous-post:hover .link-title svg,
+.post-nav #next-post:hover .link-title svg {
+  -webkit-transform: translateX(0) translateY(-50%) scale(1);
+          transform: translateX(0) translateY(-50%) scale(1);
 }
 
 .post-nav #next-post {
@@ -1035,14 +1038,8 @@ input[type=checkbox]:checked + label {
 .post-nav #next-post .link-title svg {
   left: auto;
   right: -2.8rem;
-  -webkit-transform: translateX(var(--PAD-M)) scale(0.84);
-          transform: translateX(var(--PAD-M)) scale(0.84);
-}
-
-.post-nav #next-post .link-title::before {
-  content: 'next';
-  left: auto;
-  right: 0;
+  -webkit-transform: translateX(var(--PAD-M)) translateY(-50%) scale(0.84);
+          transform: translateX(var(--PAD-M)) translateY(-50%) scale(0.84);
 }
 
 .post {

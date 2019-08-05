@@ -21,29 +21,27 @@
             margin-left: 1rem;
             transition: var(--TR-M) .1s;
 
+            .label {
+                text-align: inherit;
+                display: block;
+                font-size: 1em;
+                font-weight: 700;
+                color: var(--CL-G2);
+            }
+
             svg {
                 position: absolute;
                 width: 2.1rem;
                 height: 2.1rem;
-                top: -50%;
+                top: 50%;
                 left: -2.8rem;
                 opacity: 0;
-                transform: translateX(calc(var(--PAD-M) * -1)) scale(.84);
+                transform: translateX(calc(var(--PAD-M) * -1)) translateY(-50%) scale(.84);
                 transition: var(--TR-M);
 
                 & polyline {
                     stroke: var(--CL-A1);
                 }
-            }
-
-            &::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                content: 'previous';
-                font-weight: 700;
-                color: var(--CL-G2);
-                transform: translateY(-100%);
             }
         }
 
@@ -55,6 +53,10 @@
                 color: var(--CL-A3);
                 opacity: 1;
                 transform: translateX(0) scale(1);
+            }
+
+            .link-title svg {
+                transform: translateX(0) translateY(-50%) scale(1);
             }
         }
     }
@@ -72,13 +74,7 @@
             svg {
                 left: auto;
                 right: -2.8rem;
-                transform: translateX(var(--PAD-M)) scale(.84);
-            }
-
-            &::before {
-                content: 'next';
-                left: auto;
-                right: 0;
+                transform: translateX(var(--PAD-M)) translateY(-50%) scale(.84);
             }
         }
     }
