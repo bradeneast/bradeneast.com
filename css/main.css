@@ -644,7 +644,7 @@ nav.compact #hamburger {
   z-index: 1;
   padding-left: var(--PAD-M);
   background-color: var(--CL-0);
-  border-radius: 0 1rem 0 0;
+  border-radius: 0 5px 0 0;
 }
 
 .sub-nav__item {
@@ -755,10 +755,8 @@ nav.compact #hamburger {
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    -webkit-transform: translateY(var(--PAD-L)) !important;
-            transform: translateY(var(--PAD-L)) !important;
     padding: 0 0 var(--PAD-M) 0;
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 0 5px 5px 0;
   }
   .sub-nav__item {
     margin: var(--PAD-M) 0 0 0;

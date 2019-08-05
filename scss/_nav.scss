@@ -181,7 +181,7 @@ nav {
     z-index: 1;
     padding-left: var(--PAD-M);
     background-color: var(--CL-0);
-    border-radius: 0 1rem 0 0;
+    border-radius: 0 5px 0 0;
 
     &__item {
         font-size: 1.4rem;
@@ -289,9 +289,8 @@ nav {
 
     .sub-nav {
         flex-flow: column nowrap;
-        transform: translateY(var(--PAD-L)) !important;
         padding: 0 0 var(--PAD-M) 0;
-        border-radius: 0 1rem 1rem 0;
+        border-radius: 0 5px 5px 0;
 
         &__item {
             margin: var(--PAD-M) 0 0 0;

@@ -74,7 +74,7 @@ blogPosts.forEach(post => {
 
 ```
 
-There is so incredibly much you can do with the `Object.keys()` method. It's what makes this approach flexible and dynamic, because you only have to pay attention to naming in your original HTML template.
+There is so much you can do with the `Object.keys()` method. It's what makes this approach flexible and dynamic, because you only have to pay attention to naming in your original HTML template.
 
 Try it out [on CodePen](https://codepen.io/bradeneast/pen/YmEBGY) and let me know what you use the `Object.keys()` method for, or if there's a better way to accomplish the same thing.
 
