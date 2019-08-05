@@ -996,6 +996,15 @@ input[type=checkbox]:checked + label {
   clip-path: url(/images/svg/wavy-mask.svg);
 }
 
+.post .body pre {
+  padding: var(--PAD-S);
+  margin: var(--PAD-M) 0;
+  border: var(--BDR) solid var(--CL-G1);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
 .post .body h2 {
   margin: var(--PAD-S) 0;
   color: var(--CL-G7);

@@ -66,7 +66,7 @@ fs.readdirSync(postDir).forEach(post => {
     postJSON.title = $('h1').contents().text();
     postJSON.date = $('h2').contents().text();
     postJSON.tags = $('h3').contents().text();
-    postJSON.body = String(output).replace(/\n/g, '').replace(/<h1>.*?<\/h3>/g, '');
+    postJSON.body = String(output).replace(/<h1>.*?<\/h3>/gs, '');
     posts.push(postJSON);
 })
 
