@@ -2,11 +2,11 @@
 ## 2019/08/04
 ### web, javascript, html
 
-This kind of thing is great for when you need to display a list of posts or projects.  It uses the ```Object.keys()``` method to figure out what elements to look for, so it won't break if you use it for multiple kinds of objects and elements with varying names.
+Ever needed to display a list of ever-changing posts or projects with ever-changing features?  Since I like to keep those things tucked away in a JSON file, I use approach that calls the javascript `Object.keys()` method.
 
-I'm an advocate that if you're doing your own content management, you probably want to keep your data in JSON format, or a format that's easily converted to JSON. Because it's based on Javascript, there are loads of native methods that work on JSON data out (sorting, looping through arrays, etc). Not to mention Javascript comes with a built-in JSON parser.
+In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with `if` statements, so you can use it with multiple kinds of objects and elements.
 
-To start, you'll need a little html to grab them with your javascript. I like to name mine as clearly and self-explanatorily as possible. It saves me time explaining to my future self what's going on, without having to write as many comments.
+Let's start with some barebones HTML to referenc in the javascript.
 
 ```html
 
@@ -22,6 +22,10 @@ To start, you'll need a little html to grab them with your javascript. I like to
 
 ```
 
+Next, you'll need some data to work with. If this works, its final resting place will be wrapped cozily inside the proper tags in our HTML.
+
+I'm an advocate of JSON format for anyone doing their own content management, but any format that's easily converted to JSON will work. Because it's based on Javascript, there are plenty of native methods that work on JSON data out of the box. We'll make use of those in the example.
+
 ```javascript
 
 const blogPosts = [
@@ -36,6 +40,14 @@ const blogPosts = [
         "body": "Today I'm writing a post about javascript."
     }
 ];
+
+```
+
+Here's where the magic happens.
+
+Summed up, we're copying everything inside our template, looping over each key in the post object, and appending the element with a class name matching that key.  We do this for each post, and viola!
+
+```javascript
 
 const postWrapper = document.getElementById('postWrapper');
 const template = postWrapper.getElementById('template');
@@ -62,9 +74,11 @@ blogPosts.forEach(post => {
 
 ```
 
-That's pretty much it! Because this approach is so flexible, you can use it for almost any kind of JSON data. The only place you have to match key names is in your HTML markup.
+There is so incredibly much you can do with the `Object.keys()` method. It's what makes this approach flexible and dynamic, because you only have to pay attention to naming in your original HTML template.
 
-Here it is without all my ugly comments:
+Try it out and let me know what you were able to use it for.
+
+Here it is without all the comments:
 
 ```javascript
 

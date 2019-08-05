@@ -18,6 +18,7 @@ const postTemplate = blogDir + templateName;
 const commonmark = require('commonmark');
 const htmlparser = require('htmlparser2');
 const cheerio = require('cheerio');
+const prism = require('prismjs');
 
 // HELPERS
 // Sorts array of objects by the value of the property you pass
@@ -46,7 +47,7 @@ fs.readdirSync(blogDir).forEach(dir => {
 })
 
 
-// CREATES JSON ARRAY OF BLOG POSTS
+// CREATES JSON ARRAY OF BLOG POSTS WITH APPROPRIATE KEY/VALUE PAIRS
 let posts = [];
 
 fs.readdirSync(postDir).forEach(post => {
@@ -59,14 +60,30 @@ fs.readdirSync(postDir).forEach(post => {
     const reader = new commonmark.Parser({ smart: true });
     const writer = new commonmark.HtmlRenderer({ softbreak: '<br />' });
     const parsed = reader.parse(fs.readFileSync(postDir + post, 'utf8'));
-    const output = writer.render(parsed);
+    let output = writer.render(parsed);
     const dom = htmlparser.parseDOM(output, { decodeEntities: true });
     const $ = cheerio.load(dom);
 
     postJSON.title = $('h1').contents().text();
     postJSON.date = $('h2').contents().text();
     postJSON.tags = $('h3').contents().text();
-    postJSON.body = String(output).replace(/<h1>.*?<\/h3>/gs, '');
+
+    // Highlights code snippets with PrismJS
+    const codeSnippets = $('code');
+    codeSnippets.each(function (i, e) {
+        const snippetText = $(this).text();
+        if (e.attribs.class == 'language-html') {
+            $(this).empty().append(Prism.highlight(snippetText, Prism.languages.markup));
+        }
+        if (e.attribs.class == 'language-javascript') {
+            $(this).empty().append(Prism.highlight(snippetText, Prism.languages.javascript));
+        }
+        if (e.attribs.class == 'language-css') {
+            $(this).empty().append(Prism.highlight(snippetText, Prism.languages.css));
+        }
+    })
+
+    postJSON.body = String($.html()).replace(/<h1>.*?<\/h3>/gs, '');
     posts.push(postJSON);
 })
 

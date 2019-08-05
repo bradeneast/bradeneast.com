@@ -8,7 +8,8 @@
     <link rel="preload" href="/scripts/insertfooter.js" as="script">
     <link rel="preload" href="/scripts/insertnav.js" as="script">
     <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" href="/main.css" as="style">
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/prism.css">
     <script src="/scripts/insertHeader.js"></script>
 </head>
 
@@ -45,14 +46,14 @@ Thanks for reading! If you learned something useful, <a target="_blank" href="ht
     </section>
 
     <section class="section post-nav">
-        <a href="/blog/the-logo-manifesto" id="previous-post">
+        <a href="/blog/the-logo-manifesto" id="previous-post" data-scroll>
             <div class="link-title">
                 <svg viewbox="0 0 9 18">
                     <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="8,1 0,9 8,17">
                 </polyline></svg>
             The Logo Manifesto</div>
         </a>
-        <a href id="next-post" style="display: none">
+        <a href id="next-post" data-scroll style="display: none">
             <div class="link-title">
                 <svg viewbox="0 0 9 18">
                     <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,1 9,9 1,17">

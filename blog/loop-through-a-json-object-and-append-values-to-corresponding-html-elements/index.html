@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <h1>I&apos;m a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+    </noscript>
+    <link rel="preload" href="/scripts/insertfooter.js" as="script">
+    <link rel="preload" href="/scripts/insertnav.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/prism.css">
+    <script src="/scripts/insertHeader.js"></script>
+</head>
+
+<body onload="document.body.classList.add(`loaded`)">
+
+    <section class="section post" style="padding-top: 30vh;">
+        <h1 class="title">Loop through a JSON object and append values to corresponding HTML elements</h1>
+        <div class="content">
+            <span class="meta">
+                <h4 class="date">2019/08/04</h4>
+                <h2 class="tags">web, javascript, html</h2>
+            </span>
+            <div class="main">
+                <div class="body">
+<p>Ever needed to display a list of ever-changing posts or projects with ever-changing features?  Since I like to keep those things tucked away in a JSON file, I use approach that calls the javascript <code>Object.keys()</code> method.</p>
+<p>In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with <code>if</code> statements, so you can use it with multiple kinds of objects and elements.</p>
+<p>Let&#x2019;s start with some barebones HTML to referenc in the javascript.</p>
+<pre><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>postWrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>template<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>date<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>body<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre>
+<p>Next, you&#x2019;ll need some data to work with. If this works, its final resting place will be wrapped cozily inside the proper tags in our HTML.</p>
+<p>I&#x2019;m an advocate of JSON format for anyone doing their own content management, but any format that&#x2019;s easily converted to JSON will work. Because it&#x2019;s based on Javascript, there are plenty of native methods that work on JSON data out of the box. We&#x2019;ll make use of those in the example.</p>
+<pre><code class="language-javascript">
+<span class="token keyword">const</span> blogPosts <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token string">&quot;title&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Post 1&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;date&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1997/03/22&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;body&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Today I was born.&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token string">&quot;title&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Post 2&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;date&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;2019/08/05&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;body&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Today I&apos;m writing a post about javascript.&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+</code></pre>
+<p>Here&#x2019;s where the magic happens.</p>
+<p>Summed up, we&#x2019;re copying everything inside our template, looping over each key in the post object, and appending the element with a class name matching that key.  We do this for each post, and viola!</p>
+<pre><code class="language-javascript">
+<span class="token keyword">const</span> postWrapper <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;postWrapper&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> template <span class="token operator">=</span> postWrapper<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;template&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+blogPosts<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">post</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// this gives us a copy of the template (&apos;true&apos; is for a deep copy, which includes all descendants of the parent)</span>
+    <span class="token keyword">let</span> postFragment <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">importNode</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Object.keys() returns [&apos;title&apos;, &apos;date&apos;, &apos;body&apos;] because that&apos;s what we&apos;ve named the key/value pairs for each post in our JSON</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// looks for elements with a class name matching the key</span>
+        <span class="token keyword">const</span> correspondingElement <span class="token operator">=</span> postFragment<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// if a corresponding element is found</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>correspondingElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            correspondingElement<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&apos;beforeend&apos;</span><span class="token punctuation">,</span> post<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// sticks our modified version of the template back in the DOM, at the end of our wrapper</span>
+    postWrapper<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>postFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre>
+<p>There is so incredibly much you can do with the <code>Object.keys()</code> method. It&#x2019;s what makes this approach flexible and dynamic, because you only have to pay attention to naming in your original HTML template.</p>
+<p>Try it out and let me know what you were able to use it for.</p>
+<p>Here it is without all the comments:</p>
+<pre><code class="language-javascript">
+<span class="token keyword">const</span> postWrapper <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;postWrapper&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> template <span class="token operator">=</span> postWrapper<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;template&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+blogPosts<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">post</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> postFragment <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">importNode</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> correspondingElement <span class="token operator">=</span> postFragment<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>correspondingElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            correspondingElement<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&apos;beforeend&apos;</span><span class="token punctuation">,</span> post<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    postWrapper<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>postFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre>
+Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Loop%20through%20a%20json%20object%20and%20append%20values%20to%20corresponding%20html%20elements%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/loop-through-a-json-object-and-append-values-to-corresponding-html-elements">share this article</a> with your followers. I appreciate it!</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section post-nav">
+        <a href id="previous-post" data-scroll style="display: none">
+            <div class="link-title">
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="8,1 0,9 8,17">
+                </polyline></svg>
+            </div>
+        </a>
+        <a href="/blog/the-logo-manifesto" id="next-post" data-scroll>
+            <div class="link-title">
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,1 9,9 1,17">
+                </polyline></svg>
+            The Logo Manifesto</div>
+        </a>
+    </section>
+
+</body>
+
+<footer>
+</footer>
+<script type="text/javascript" src="/scripts/insertnav.js"></script>
+<script type="text/javascript" src="/scripts/insertfooter.js"></script>
+<script defer type="text/javascript" src="/scripts/main.js"></script>
+<script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+
+</html>
