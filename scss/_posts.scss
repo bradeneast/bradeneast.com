@@ -269,6 +269,12 @@
             flex-flow: row wrap;
         }
 
+        code[class*="language-"],
+        pre[class*="language-"] {
+            font-size: .8em;
+            word-break: break-all;
+        }
+
         &.partial,
         &.partial:hover,
         &.partial:focus {

@@ -1,8 +1,8 @@
-# Loop through a JSON object and append values to corresponding HTML elements
+# Append JSON values to matching HTML elements with Object.keys()
 ## 2019/08/04
 ### web, javascript, html
 
-Ever needed to display a list of ever-changing posts or projects with ever-changing features?  Since I like to keep those things tucked away in a JSON file, I use approach that calls the javascript `Object.keys()` method.
+Ever needed to display a list of ever-changing posts or projects with ever-changing features?  Since I like to keep those things tucked away in a JSON file, I often retrieve them with an approach that calls the javascript `Object.keys()` method.
 
 In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with `if` statements, so you can use it with multiple kinds of objects and elements.
 
@@ -11,14 +11,14 @@ Let's start with some barebones HTML to referenc in the javascript.
 ```html
 
 <main id="postWrapper">
-    <template id="template">
+    <template>
         <div class="post">
             <h1 class="title"></h1>
             <h2 class="date"></h2>
             <p class="body"></p>
         </div>
     </template>
-<main>
+</main>
 
 ```
 
@@ -50,7 +50,7 @@ Summed up, we're copying everything inside our template, looping over each key i
 ```javascript
 
 const postWrapper = document.getElementById('postWrapper');
-const template = postWrapper.getElementById('template');
+const template = postWrapper.querySelector('template');
 
 blogPosts.forEach(post => {
     // this gives us a copy of the template ('true' is for a deep copy, which includes all descendants of the parent)
@@ -76,14 +76,14 @@ blogPosts.forEach(post => {
 
 There is so incredibly much you can do with the `Object.keys()` method. It's what makes this approach flexible and dynamic, because you only have to pay attention to naming in your original HTML template.
 
-Try it out and let me know what you were able to use it for.
+Try it out [on CodePen](https://codepen.io/bradeneast/pen/YmEBGY) and let me know what you use the `Object.keys()` method for, or if there's a better way to accomplish the same thing.
 
-Here it is without all the comments:
+Just need the JS snippet? Here it is without all the comments:
 
 ```javascript
 
 const postWrapper = document.getElementById('postWrapper');
-const template = postWrapper.getElementById('template');
+const template = postWrapper.querySelector('template');
 
 blogPosts.forEach(post => {
     let postFragment = document.importNode(template.content, true);
