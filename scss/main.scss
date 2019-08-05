@@ -154,10 +154,10 @@ body {
         flex-flow: row wrap;
         flex-basis: 1fr;
         height: 100vh;
+        width: 100%;
         background-size: cover;
         background-position: center;
         background-color: var(--CL-G1);
-        // background-blend-mode: multiply;
         padding: var(--PAD-M);
 
         * {

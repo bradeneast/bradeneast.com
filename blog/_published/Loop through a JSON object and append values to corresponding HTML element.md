@@ -1,8 +1,8 @@
 # Append JSON values to matching HTML elements with Object.keys()
 ## 2019/08/04
-### web, javascript, html
+### web development, javascript, html
 
-Ever needed to display a list of ever-changing posts or projects with ever-changing features?  Since I like to keep those things tucked away in a JSON file, I often retrieve them with an approach that calls the javascript `Object.keys()` method.
+Ever needed to display a dynamic list of posts or projects?  Since I like to keep those things tucked away in a JSON file, I often retrieve them with an approach that calls the javascript `Object.keys()` method.
 
 In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with `if` statements, so you can use it with multiple kinds of objects and elements.
 

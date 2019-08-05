@@ -1,6 +1,6 @@
 # Ditch the white board - A better tool for collaborating in a rebrand
 ## 2019/07/23
-### branding, brand strategy, business
+### branding, business
 
 Let's talk about how to get on the same page during the branding process. When we're personally invested in a project, as business owners and designers, we need a chance to look objectively at the challenges facing our brand.
 

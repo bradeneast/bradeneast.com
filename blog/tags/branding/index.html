@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <noscript>
         <h1>I&apos;m a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
@@ -8,18 +9,20 @@
     <link rel="preload" href="/scripts/insertnav.js" as="script">
     <link rel="preload" href="/scripts/main.js" as="script">
     <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/prism.css">
     <script src="/scripts/insertHeader.js"></script>
 </head>
+
 <body onload="document.body.classList.add(`loaded`)">
     <main>
-        <section class="hero section fullwidth">
-            <div class="hero-text" style="background-color: var(--CL-A2); background-image: url(/images/svg/squiggle-grey.svg); filter: none; background-blend-mode: color-burn;">
-                <h1 data-scroll>Welcome to my blog.</h1>
-                <h2 class="tagline" data-scroll>Here&apos;s where I write for designers, developers, and business owners ready to execute their ideas.</h2>
+        <section class="hero section" style="margin-top: 30vh;">
+            <div class="pad">
+                <h1 class="tagName" style="margin-top: 0;" data-scroll>branding</h1>
+                <h2 data-scroll>Enjoy a collection of posts I&apos;ve written about <span style="color: inherit" class="tagName">branding</span>.</h2>
                 <div class="squiggle-block"></div>
                 <br>
             </div>
-            <ul class="hero-aside" style="height: auto; padding-top: 30vh;" id="blogFeed">
+            <ul class="pad" id="blogFeed">
                 <template class="template">
                     <li class="post partial align-items align-content" data-scroll>
                         <div>
@@ -32,17 +35,7 @@
                         </div>
                     </li>
                 </template>
-                    <li class="post partial align-items align-content" data-scroll>
-                        <div>
-                            <a class="link" href="/blog/append-json-values-to-matching-html-elements-with-object.keys">
-                                <h3 class="title">Append JSON values to matching HTML elements with Object.keys()</h3>
-                            </a>
-                            <h4 class="tags">web development, javascript, html</h4>
-                            <div class="body">
-<p>Ever needed to display a dynamic list of posts or projects?  Since I like to keep those things tucked away in a JSON file, I often retrieve them with an approach that calls the javascript <code>Object.keys()</code> method.</p></div>
-                            <a class="link read-more" href="/blog/append-json-values-to-matching-html-elements-with-object.keys">Read More</a>
-                        </div>
-                    </li>
+            
                     <li class="post partial align-items align-content" data-scroll>
                         <div>
                             <a class="link" href="/blog/the-logo-manifesto">
@@ -54,6 +47,7 @@
                             <a class="link read-more" href="/blog/the-logo-manifesto">Read More</a>
                         </div>
                     </li>
+                
                     <li class="post partial align-items align-content" data-scroll>
                         <div>
                             <a class="link" href="/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand">
@@ -68,11 +62,14 @@
                 </ul>
         </section>
     </main>
+
 </body>
+
 <footer>
 </footer>
 <script type="text/javascript" src="/scripts/insertnav.js"></script>
 <script type="text/javascript" src="/scripts/insertfooter.js"></script>
 <script defer type="text/javascript" src="/scripts/main.js"></script>
-<script defer type="text/javascript" src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+<script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+
 </html>

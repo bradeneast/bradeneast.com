@@ -34,6 +34,31 @@ function dynamicSort(property) {
     }
 }
 
+// Adds a post excerpt to the specified wrapper
+function addToPostFeed(post, wrapper, $) {
+
+    // Clones partial post template
+    let newPost = $('template').contents().clone();
+
+    // Inserts json values based on classnames matching the key
+    Object.keys(post).forEach(key => {
+        const e = newPost.find(`.${key}`);
+        let value = post[key];
+        if (Array.isArray(value)) {
+            value = value.join(', ');
+        }
+        if (e && key == 'body') {
+            value = value.substr(0, value.indexOf('</p>') + 4);
+            e.append(value);
+        } else if (e && key == 'link') {
+            e.attr('href', '/blog/' + value);
+        } else if (e) {
+            e.append(value);
+        }
+    });
+    wrapper.append(newPost);
+}
+
 
 // STUFF HAPPENS BELOW THIS LINE
 /////////////////////////////////////////////////////////////////
@@ -49,6 +74,7 @@ fs.readdirSync(blogDir).forEach(dir => {
 
 // CREATES JSON ARRAY OF BLOG POSTS WITH APPROPRIATE KEY/VALUE PAIRS
 let posts = [];
+let tags = [];
 
 fs.readdirSync(postDir).forEach(post => {
     let postJSON = {
@@ -57,11 +83,17 @@ fs.readdirSync(postDir).forEach(post => {
         "tags": [],
         "body": "",
     }
-    const reader = new commonmark.Parser({ smart: true });
-    const writer = new commonmark.HtmlRenderer({ softbreak: '<br />' });
+    const reader = new commonmark.Parser({
+        smart: true
+    });
+    const writer = new commonmark.HtmlRenderer({
+        softbreak: '<br />'
+    });
     const parsed = reader.parse(fs.readFileSync(postDir + post, 'utf8'));
     let output = writer.render(parsed);
-    const dom = htmlparser.parseDOM(output, { decodeEntities: true });
+    const dom = htmlparser.parseDOM(output, {
+        decodeEntities: true
+    });
     const $ = cheerio.load(dom);
 
     postJSON.title = $('h1').contents().text();
@@ -87,9 +119,19 @@ fs.readdirSync(postDir).forEach(post => {
     posts.push(postJSON);
 })
 
+
+// PUSHES ALL TAGS TO ARRAY AND GENERATES A POST LINK FROM POST TITLE
 posts.forEach(post => {
+    post.tags.split(', ').map(tag => {
+        tags.push(tag)
+    });
     post.link = encodeURI(post.title).replace(/%20|#/g, '-').replace(/\(|\)/g, '').replace(/--/g, '-').toLowerCase();
 })
+
+
+// REMOVES DUPLICATE TAGS
+tags = [...new Set(tags)];
+
 
 // SORTS ARRAY OF BLOG POSTS BY DATE
 posts = posts.sort(dynamicSort('date')).reverse();
@@ -101,7 +143,7 @@ posts.forEach((post, index) => {
     // Copies post from template
     let postLocation = blogDir + post.link;
     fs.mkdirSync(postLocation);
-    postLocation = postLocation + '/index.html';
+    postLocation += '/index.html';
     fs.copyFileSync(postTemplate, postLocation);
     console.log('new post created from template');
 
@@ -163,34 +205,48 @@ blogFeedPages.forEach(page => {
         decodeEntities: true
     });
     const $ = cheerio.load(dom);
-    const feedElem = $('#blogFeed');
-    feedElem.children().not('template').remove();
+    const wrapper = $('#blogFeed');
+    wrapper.children().not('template').remove();
 
     posts.forEach(post => {
-
-        // Clones partial post template
-        const newPost = feedElem.find('template').contents().clone();
-
-        // Inserts json values based on classnames matching the key
-        Object.keys(post).forEach(key => {
-            const e = newPost.find(`.${key}`);
-            let value = post[key];
-            if (Array.isArray(value)) {
-                value = value.join(', ');
-            }
-            if (e && key == 'body') {
-                value = value.substr(0, value.indexOf('</p>') + 4);
-                e.append(value);
-            } else if (e && key == 'link') {
-                e.attr('href', value);
-            } else if (e) {
-                e.append(value);
-            }
-        });
-        feedElem.append(newPost);
+        addToPostFeed(post, wrapper, $);
     })
 
-    fs.writeFileSync(page, $.html());
+    fs.writeFileSync(page, String($.html()).replace(/\n\s*\n/g, '\n'));
+})
+
+
+// CREATES AN INDEX PAGE FOR EACH UNIQUE TAG
+fs.mkdirSync(blogDir + 'tags');
+
+tags.forEach(tag => {
+
+    // Copies tag page from template
+    let tagName = encodeURI(tag).replace(/\%20+/g, '-');
+    let location = `${blogDir}tags/${tagName}`;
+    fs.mkdirSync(location);
+    location += '/index.html';
+    fs.copyFileSync(`${blogDir}_tagtemplate.html`, location);
+    console.log(`tag directory created for ${tag}`);
+
+    // Parses post page html
+    const dom = htmlparser.parseDOM(fs.readFileSync(location), {
+        decodeEntities: true
+    });
+    const $ = cheerio.load(dom);
+    $('.tagName').each(function (i, e) {
+        $(this).append(tag);
+    });
+    const wrapper = $('#blogFeed');
+
+    posts.forEach(post => {
+        if (post.tags.includes(tag)) {
+            addToPostFeed(post, wrapper, $);
+        }
+    })
+
+    fs.writeFileSync(location, $.html());
+
 })
 
 console.timeEnd('>> BUILD COMPLETE');
