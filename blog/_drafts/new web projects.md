@@ -1,0 +1,2 @@
+ - A single page app with routing done in vanilla JavaScript
+ - A place to bookmark web pages I like that uses local storage for memory
