@@ -69,13 +69,13 @@ nav {
         text-transform: uppercase;
         font-weight: 700;
         font-size: .9rem;
-        color: var(--CL-A3);
+        color: var(--CL-A1);
         transition: opacity var(--TR-S) .3s, transform var(--TR-S), color var(--TR-M), margin var(--TR-S) .3s;
 
         &:hover,
         &:focus,
         &.active {
-            color: var(--CL-A1);
+            color: var(--CL-A3);
         }
     }
 

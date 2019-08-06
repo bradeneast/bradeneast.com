@@ -9,7 +9,11 @@ function fetchAndInsert(request, dataSubset, wrapperID, templateID, parseMethod)
 
 function fetchStuff(request, dataSubset) {
     return fetch(request).then(resp => resp.json()).then(data => {
-        if (data[dataSubset]) { return data[dataSubset] } else { return data }
+        if (data[dataSubset]) {
+            return data[dataSubset]
+        } else {
+            return data
+        }
     })
 }
 
@@ -51,20 +55,20 @@ function insertAllContent(wrapperID, templateID, promise, parseMethod) {
     const wrapper = document.getElementById(wrapperID);
     const template = document.getElementById(templateID);
     promise.then(data => {
-        data.forEach(item => {
-            if (!item.title || !checkIfCurrent(item)) {
-                let newObject = document.importNode(template.content, true);
-                Object.keys(item).forEach(key => {
-                    if (item[key]) {
-                        parseMethod(item[key], key, newObject);
-                    }
-                });
-                newObject.querySelector('div').id = encodeURI(item.title);
-                wrapper.appendChild(newObject);
-                clearImageFormatting();
-            }
+            data.forEach(item => {
+                if (!item.title || !checkIfCurrent(item)) {
+                    let newObject = document.importNode(template.content, true);
+                    Object.keys(item).forEach(key => {
+                        if (item[key]) {
+                            parseMethod(item[key], key, newObject);
+                        }
+                    });
+                    newObject.querySelector('div').id = encodeURI(item.title);
+                    wrapper.appendChild(newObject);
+                    clearImageFormatting();
+                }
+            })
         })
-    })
         .then(function () {
             removeIfFound('.loading', wrapperID);
             removeIfFound('.error', wrapperID);

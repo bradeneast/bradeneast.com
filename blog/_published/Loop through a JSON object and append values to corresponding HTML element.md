@@ -45,7 +45,7 @@ const blogPosts = [
 
 Here's where the magic happens.
 
-Summed up, we're copying everything inside our template, looping over each key in the post object, and appending the element with a class name matching that key.  We do this for each post, and viola!
+In short, we're copying everything inside our template, looping over each key in the post object, and appending the element with a class name matching that key.  We do this for each post, and viola!
 
 ```javascript
 

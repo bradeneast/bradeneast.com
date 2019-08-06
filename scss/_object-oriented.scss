@@ -88,6 +88,10 @@
     width: 3.6rem;
     margin-top: calc(var(--PAD-S) / 2);
     transform: translateX(-.4rem);
+
+    &.dark {
+        content: url(/images/svg/squiggle-dark.svg);
+    }
 }
 
 .testimonial {

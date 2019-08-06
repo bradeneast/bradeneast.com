@@ -160,8 +160,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -173,7 +173,18 @@ body {
   background-size: cover;
   background-position: center;
   background-color: var(--CL-G1);
+  border-radius: 0 0 5px 0;
   padding: var(--PAD-M);
+}
+
+.hero .hero-text::before, .hero .hero-text::after {
+  display: block;
+  content: url(/images/svg/wave-white.svg);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 101%;
+  z-index: 1;
 }
 
 .hero .hero-text * {
@@ -181,6 +192,7 @@ body {
 }
 
 .hero .hero-text .hero-contact {
+  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -512,7 +524,7 @@ nav .nav-item {
   text-transform: uppercase;
   font-weight: 700;
   font-size: .9rem;
-  color: var(--CL-A3);
+  color: var(--CL-A1);
   -webkit-transition: opacity var(--TR-S) 0.3s, color var(--TR-M), margin var(--TR-S) 0.3s, -webkit-transform var(--TR-S);
   transition: opacity var(--TR-S) 0.3s, color var(--TR-M), margin var(--TR-S) 0.3s, -webkit-transform var(--TR-S);
   transition: opacity var(--TR-S) 0.3s, transform var(--TR-S), color var(--TR-M), margin var(--TR-S) 0.3s;
@@ -520,7 +532,7 @@ nav .nav-item {
 }
 
 nav .nav-item:hover, nav .nav-item:focus, nav .nav-item.active {
-  color: var(--CL-A1);
+  color: var(--CL-A3);
 }
 
 nav.compact {
@@ -1713,6 +1725,10 @@ body.loaded .section {
           transform: translateX(-0.4rem);
 }
 
+.squiggle-block.dark {
+  content: url(/images/svg/squiggle-dark.svg);
+}
+
 .testimonial {
   height: auto;
   display: -ms-grid;
@@ -1938,6 +1954,7 @@ footer .socials a:focus [data-icon] {
   }
   .section:first-of-type {
     margin-top: 4rem;
+    margin-bottom: var(--PAD-M);
     min-height: 20rem;
   }
   .image {

@@ -150,7 +150,7 @@ body {
     .hero-text {
         position: relative;
         display: flex;
-        align-content: flex-end;
+        align-content: center;
         flex-flow: row wrap;
         flex-basis: 1fr;
         height: 100vh;
@@ -158,13 +158,26 @@ body {
         background-size: cover;
         background-position: center;
         background-color: var(--CL-G1);
+        border-radius: 0 0 5px 0;
         padding: var(--PAD-M);
+
+        &::before,
+        &::after {
+            display: block;
+            content: url(/images/svg/wave-white.svg);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 101%;
+            z-index: 1;
+        }
 
         * {
             color: var(--CL-0);
         }
 
         .hero-contact {
+            display: none;
             position: absolute;
             bottom: 0;
             right: 0;
@@ -313,6 +326,7 @@ footer {
 
         &:first-of-type {
             margin-top: 4rem;
+            margin-bottom: var(--PAD-M);
             min-height: 20rem;
         }
     }
