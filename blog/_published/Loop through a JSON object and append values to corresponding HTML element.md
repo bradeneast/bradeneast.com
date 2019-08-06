@@ -2,11 +2,11 @@
 ## 2019/08/04
 ### web development, javascript, html
 
-Ever needed to display a dynamic list of posts or projects?  Since I like to keep those things tucked away in a JSON file, I often retrieve them with an approach that calls the javascript `Object.keys()` method.
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I'm wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript `Object.keys()` method.
 
 In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with `if` statements, so you can use it with multiple kinds of objects and elements.
 
-Let's start with some barebones HTML to referenc in the javascript.
+Let's start with some barebones HTML to reference in the javascript.
 
 ```html
 
