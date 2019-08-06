@@ -25,7 +25,7 @@
             <div class="main">
                 <div class="body">
 <p>Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript <code>Object.keys()</code> method.</p>
-<p>In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with <code>if</code> statements, so you can use it with multiple kinds of objects and elements.</p>
+<p>In a nutshell, we want to look for class names on DOM elements that match keys in a given JSON object.  Then, we want to get the value for that key and stick it into the matching element.  We also want it to be dynamic and customizable, so we can use it on multiple kinds of objects and elements.</p>
 <p>Let&#x2019;s start with some barebones HTML to reference in the javascript.</p>
 <pre><code class="language-html">
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>postWrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -39,7 +39,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
 
 </code></pre>
-<p>Next, you&#x2019;ll need some data to work with. If this works, its final resting place will be wrapped cozily inside the proper tags in our HTML.</p>
+<p>Next, you&#x2019;ll need some data to work with. The goal is for it to end up wrapped cozily inside the proper tags in our HTML.</p>
 <p>I&#x2019;m an advocate of JSON format for anyone doing their own content management, but any format that&#x2019;s easily converted to JSON will work. Because it&#x2019;s based on Javascript, there are plenty of native methods that work on JSON data out of the box. We&#x2019;ll make use of those in the example.</p>
 <pre><code class="language-javascript">
 <span class="token keyword">const</span> blogPosts <span class="token operator">=</span> <span class="token punctuation">[</span>

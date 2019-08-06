@@ -4,7 +4,7 @@
 
 Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I'm wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript `Object.keys()` method.
 
-In a nutshell, it figures out what class names to look for on DOM elements, and inserts the corresponding JSON value.  It can be customized with `if` statements, so you can use it with multiple kinds of objects and elements.
+In a nutshell, we want to look for class names on DOM elements that match keys in a given JSON object.  Then, we want to get the value for that key and stick it into the matching element.  We also want it to be dynamic and customizable, so we can use it on multiple kinds of objects and elements.
 
 Let's start with some barebones HTML to reference in the javascript.
 
@@ -22,7 +22,7 @@ Let's start with some barebones HTML to reference in the javascript.
 
 ```
 
-Next, you'll need some data to work with. If this works, its final resting place will be wrapped cozily inside the proper tags in our HTML.
+Next, you'll need some data to work with. The goal is for it to end up wrapped cozily inside the proper tags in our HTML.
 
 I'm an advocate of JSON format for anyone doing their own content management, but any format that's easily converted to JSON will work. Because it's based on Javascript, there are plenty of native methods that work on JSON data out of the box. We'll make use of those in the example.
 
