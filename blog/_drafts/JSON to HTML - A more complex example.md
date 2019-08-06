@@ -2,7 +2,7 @@
 ## 2019/08/07
 ### web development, javascript, html
 
-Recently I wrote about how to easily get values from a JSON object and place them inside elements with a matching classname in your HTML.
+Recently, I wrote about how to easily get values from a JSON object and place them inside elements with a matching classname in your HTML.
 
 [Read it here,](/blog/append-json-values-to-matching-html-elements-with-object.keys) or just see the original method below.
 
@@ -27,9 +27,12 @@ blogPosts.forEach(post => {
 
 ```
 
-Just one layer of `Object.keys()` data is great and all, but what if we want to do something a little more complex, like handle urls, or arrays?  Let's set up a variation of the original.quick and easy transfer of that data into our HTML.
+This is great and all, but what if we want to do something a little more complex, like handle urls, arrays, or nested objects?  Let's face it - API data is rarely in the exact format we'd like for our specific application.
 
 For example, how would you generate a grid layout of movies with self-links and thumbnails from the JSON below?
+
+#### Handling urls
+Let's add an `if` statement to our original code that will check if the value we're working with is a link.
 
 ```javascript
 // Array of movie titles
