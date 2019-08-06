@@ -18,7 +18,7 @@ const postTemplate = blogDir + templateName;
 const commonmark = require('commonmark');
 const htmlparser = require('htmlparser2');
 const cheerio = require('cheerio');
-const prism = require('prismjs');
+const Prism = require('prismjs');
 
 // HELPERS
 // Sorts array of objects by the value of the property you pass
@@ -120,7 +120,7 @@ fs.readdirSync(postDir).forEach(post => {
 })
 
 
-// PUSHES ALL TAGS TO ARRAY AND GENERATES A POST LINK FROM POST TITLE
+// PUSHES ALL TAGS TO TAGS ARRAY AND GENERATES A POST LINK FROM POST TITLE
 posts.forEach(post => {
     post.tags.split(', ').map(tag => {
         tags.push(tag)
@@ -157,8 +157,12 @@ posts.forEach((post, index) => {
     Object.keys(post).forEach(key => {
         const e = $(`.${key}`);
         let value = post[key];
-        if (Array.isArray(value)) {
-            value = value.join(', ');
+        if (key == 'tags') {
+            const tags = [];
+            value.split(', ').forEach(tag => {
+                tags.push(`<a href="/blog/tags/${encodeURI(tag).replace(/\%20+/g, '-')}">${tag}</a>`);
+            })
+            value = tags.join(', ');
         }
         if (value && e) {
             e.append(value);
@@ -166,7 +170,7 @@ posts.forEach((post, index) => {
                 let title = post.link.replace(/--/g, ': ').replace(/-/g, '%20');
                 title = title.charAt(0).toUpperCase() + title.slice(1);
                 const url = 'https://bradeneast.com/blog/' + post.link;
-                e.append(`Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${title}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!`);
+                e.append(`<span class="post-cta">Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${title}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</span>`);
                 console.log('cta appended to post body');
             }
         }
@@ -246,7 +250,6 @@ tags.forEach(tag => {
     })
 
     fs.writeFileSync(location, $.html());
-
 })
 
 console.timeEnd('>> BUILD COMPLETE');

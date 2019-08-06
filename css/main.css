@@ -1203,6 +1203,14 @@ input[type=checkbox]:checked + label {
   margin: var(--PAD-L) 0;
 }
 
+.post .body .post-cta {
+  display: block;
+  padding-left: var(--PAD-S);
+  -webkit-box-shadow: inset 5px 0 0 0 var(--CL-A3);
+          box-shadow: inset 5px 0 0 0 var(--CL-A3);
+  color: inherit;
+}
+
 @media screen and (max-width: 60em) {
   .post-nav {
     -webkit-box-orient: horizontal;

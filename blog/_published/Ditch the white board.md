@@ -23,4 +23,4 @@ On top of that, I can do things like
  - categorize lists by tag
  - tag certain collaborators on a list item that needs their attention
 
-The list goes on, but next time you're tempted to use a white board, consider a cloud-based tool! [Taskade is my favorite](https://www.taskade.com/u/bradeneast/recommend) because of how immediate and personal it feels, but try them all and see what works for you. You have lots of options out there, like [Evernote](https://www.evernote.com) or [Google Keep](https://keep.google.com). Let me know what you liked best.
+The list goes on, but next time you're tempted to use a white board, consider a cloud-based tool. This post isn't sponsored by Taskade, I just prefer it to the other options like [Evernote](https://www.evernote.com) or [Google Keep](https://keep.google.com). Try them all and see what works for you.  Then, let me know what you use for client notes or strategy sessions and why you like it.
