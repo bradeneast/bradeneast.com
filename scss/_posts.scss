@@ -180,6 +180,11 @@
             color: var(--CL-G7);
         }
 
+        h4 {
+            font-size: var(--FS-M);
+            margin: var(--PAD-L) 0 0 0;
+        }
+
         a {
             color: var(--CL-A3);
             text-decoration: underline;
@@ -208,6 +213,7 @@
 
         em,
         ul,
+        ol,
         li {
             color: inherit;
         }

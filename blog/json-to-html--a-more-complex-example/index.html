@@ -9,7 +9,7 @@
     <link rel="preload" href="/scripts/insertnav.js" as="script">
     <link rel="preload" href="/scripts/main.js" as="script">
     <link rel="preload" href="/css/main.css" as="style">
-    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="preload" href="/css/prism.css" as="style">
     <script src="/scripts/insertHeader.js"></script>
 </head>
 
@@ -24,37 +24,37 @@
             </span>
             <div class="main">
                 <div class="body">
-<p>With this function, you&#x2019;ll be able to insert any JSON into an HTML template in a way that&#x2019;s quick and performant.</p>
-<p>Recently, I wrote about how to easily get values from a JSON object and place them inside elements with a matching classname in your HTML.</p>
-<p><a href="/blog/append-json-values-to-matching-html-elements-with-object.keys">You can read it here.</a></p>
-<p>That approach is great and all, but API&#x2019;s will never respond with exactly what we need in the format we need. What if we want our HTML template to populate with data that&#x2019;s a little more complex, like urls, arrays, and nested objects?</p>
-<p>For example, how would you generate a collection of movies with self-links and thumbnails from the JSON below?</p>
+<p>No developer wants to debug code written for a single purpose and use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don&#x2019;t have to write (or rewrite).</p>
+<p>Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using <code>Object.keys()</code>. Let&#x2019;s expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because none of us want to deal with a special function for that one value nested inside 5 other objects.</p>
+<p>If you feel a bit lost, take a glance at the <a href="/blog/append-json-values-to-matching-html-elements-with-object.keys">simpler approach</a> and then come back.</p>
+<p>Let&#x2019;s face it, API&#x2019;s almost never give us responses in the format we&#x2019;d really like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Worse yet, what if the API you&#x2019;re calling changes their response structure?</p>
+<p><img src="/images/blog/this-is-fine.gif" alt="This is fine gif"></p>
+<p>You might as well burn everything to the ground and start over.  Fortunately, there&#x2019;s a way to loop through multiple layers of JSON without too much excess javascript. Take this example:</p>
 <pre><code class="language-javascript"><span class="token comment">// Array of movies</span>
 <span class="token punctuation">[</span><span class="token punctuation">{</span>
         <span class="token string">&quot;title&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Star Wars Episode I&quot;</span><span class="token punctuation">,</span>
         <span class="token string">&quot;subtitle&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;The Phantom Menace&quot;</span><span class="token punctuation">,</span>
         <span class="token string">&quot;meta&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
             <span class="token string">&quot;link&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;https://www.imdb.com/title/tt0120915/&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;thumbnail&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;https://m.media-amazon.com/images/M/MV5BMTM1NTQzNDU3OV5BMl5BanBnXkFtZTcwODcyMzA4NA@@._V1_SY1000_CR0,0,1513,1000_AL_.jpg&quot;</span><span class="token punctuation">,</span>
             <span class="token string">&quot;tags&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
                 <span class="token string">&quot;tatooine&quot;</span><span class="token punctuation">,</span>
                 <span class="token string">&quot;podracing&quot;</span><span class="token punctuation">,</span>
                 <span class="token string">&quot;gungans&quot;</span><span class="token punctuation">,</span>
                 <span class="token string">&quot;naboo&quot;</span>
-            <span class="token punctuation">]</span><span class="token punctuation">,</span>
-            <span class="token string">&quot;thumbnail&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;https://m.media-amazon.com/images/M/MV5BMTM1NTQzNDU3OV5BMl5BanBnXkFtZTcwODcyMzA4NA@@._V1_SY1000_CR0,0,1513,1000_AL_.jpg&quot;</span>
+            <span class="token punctuation">]</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token comment">///...more movies</span>
 <span class="token punctuation">]</span>
 </code></pre>
-<p>Our first option doesn&#x2019;t account for two things that are pretty common in JSON:</p>
+<p>The simple option doesn&#x2019;t account for two things that are pretty common in JSON, shown above:</p>
 <ol>
 <li>Nested objects</li>
-<li>URLs (for images or links) that need to be added to an attribute, not inserted as text</li>
+<li>URLs (for images or links) that need to be added to an attribute of the matching element, not inserted as text</li>
 </ol>
-<p>Obviously we want this function to work on as many structures as possible, so it won&#x2019;t break if there&#x2019;s a change in our JSON.</p>
 <h4>Handling urls</h4>
-<p>We know that a URL has to be a string, so let&#x2019;s start with an <code>if</code> statement that will check if the value is a string.  Then, we&#x2019;ll check if the string begins with &#x2018;http&#x2019;, or if the object key is called &#x2018;link&#x2019;. If so, we&#x2019;ll make sure it&#x2019;s not an image, then add set the <code>href</code> value on the matching HTML element.</p>
+<p>We know that a URL has to be a string, so let&#x2019;s start with an <code>if</code> statement that will check if the value is a string.  Then, we&#x2019;ll check if the string begins with &#x2018;http&#x2019;. If so, we&#x2019;ll make sure it&#x2019;s not an image, then add set the <code>href</code> value on the matching HTML element.</p>
 <p>If the URL does reference an image, we&#x2019;ll set it as the background on the matching element. Sometimes, you might want this to be the <code>src</code> value on an <code>img</code> tag, but the same principle applies.</p>
 <pre><code class="language-javascript"><span class="token keyword">let</span> element <span class="token operator">=</span> container<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -105,13 +105,7 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <p>So, we solved the URL problem with a couple of <code>if</code> statements, and then collected our code in a function that can be invoked as many times as there are layers of JSON data.</p>
-<p>Try out the demo on CodePen below!</p>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="result" data-user="bradeneast" data-slug-hash="KOQMBN" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="More JSON to HTML with Object.keys()">
-  <span>See the Pen <a href="https://codepen.io/bradeneast/pen/KOQMBN/">
-  More JSON to HTML with Object.keys()</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p><a href="https://codepen.io/bradeneast/pen/KOQMBN/">Try out the demo on CodePen!</a></p>
 <p>Just here for the snippet?  Here it is without all the comments.</p>
 <pre><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">loopThroughKeys</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> container</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>

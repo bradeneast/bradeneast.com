@@ -1165,6 +1165,11 @@ input[type=checkbox]:checked + label {
   color: var(--CL-G7);
 }
 
+.post .body h4 {
+  font-size: var(--FS-M);
+  margin: var(--PAD-L) 0 0 0;
+}
+
 .post .body a {
   color: var(--CL-A3);
   text-decoration: underline;
@@ -1191,6 +1196,7 @@ input[type=checkbox]:checked + label {
 
 .post .body em,
 .post .body ul,
+.post .body ol,
 .post .body li {
   color: inherit;
 }
