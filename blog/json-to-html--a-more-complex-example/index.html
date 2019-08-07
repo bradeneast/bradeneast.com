@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <h1>I&apos;m a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+    </noscript>
+    <link rel="preload" href="/scripts/insertfooter.js" as="script">
+    <link rel="preload" href="/scripts/insertnav.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/prism.css">
+    <script src="/scripts/insertHeader.js"></script>
+</head>
+
+<body onload="document.body.classList.add(`loaded`)">
+
+    <section class="section post" style="padding-top: 30vh;">
+        <h1 class="title">JSON to HTML - A more complex example</h1>
+        <div class="content">
+            <span class="meta">
+                <h4 class="date">2019/08/07</h4>
+                <h2 class="tags"><a href="/blog/tags/web-development">web development</a>, <a href="/blog/tags/javascript">javascript</a>, <a href="/blog/tags/html">html</a></h2>
+            </span>
+            <div class="main">
+                <div class="body">
+<p>With this function, you&#x2019;ll be able to insert any JSON into an HTML template in a way that&#x2019;s quick and performant.</p>
+<p>Recently, I wrote about how to easily get values from a JSON object and place them inside elements with a matching classname in your HTML.</p>
+<p><a href="/blog/append-json-values-to-matching-html-elements-with-object.keys">You can read it here.</a></p>
+<p>That approach is great and all, but API&#x2019;s will never respond with exactly what we need in the format we need. What if we want our HTML template to populate with data that&#x2019;s a little more complex, like urls, arrays, and nested objects?</p>
+<p>For example, how would you generate a collection of movies with self-links and thumbnails from the JSON below?</p>
+<pre><code class="language-javascript"><span class="token comment">// Array of movies</span>
+<span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token string">&quot;title&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Star Wars Episode I&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;subtitle&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;The Phantom Menace&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;meta&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;link&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;https://www.imdb.com/title/tt0120915/&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;tags&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;tatooine&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;podracing&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;gungans&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;naboo&quot;</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;thumbnail&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;https://m.media-amazon.com/images/M/MV5BMTM1NTQzNDU3OV5BMl5BanBnXkFtZTcwODcyMzA4NA@@._V1_SY1000_CR0,0,1513,1000_AL_.jpg&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">///...more movies</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>Our first option doesn&#x2019;t account for two things that are pretty common in JSON:</p>
+<ol>
+<li>Nested objects</li>
+<li>URLs (for images or links) that need to be added to an attribute, not inserted as text</li>
+</ol>
+<p>Obviously we want this function to work on as many structures as possible, so it won&#x2019;t break if there&#x2019;s a change in our JSON.</p>
+<h4>Handling urls</h4>
+<p>We know that a URL has to be a string, so let&#x2019;s start with an <code>if</code> statement that will check if the value is a string.  Then, we&#x2019;ll check if the string begins with &#x2018;http&#x2019;, or if the object key is called &#x2018;link&#x2019;. If so, we&#x2019;ll make sure it&#x2019;s not an image, then add set the <code>href</code> value on the matching HTML element.</p>
+<p>If the URL does reference an image, we&#x2019;ll set it as the background on the matching element. Sometimes, you might want this to be the <code>src</code> value on an <code>img</code> tag, but the same principle applies.</p>
+<pre><code class="language-javascript"><span class="token keyword">let</span> element <span class="token operator">=</span> container<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// check if value is a string</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;string&apos;</span> <span class="token operator">&amp;&amp;</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// check if string is a url</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;http&apos;</span> <span class="token operator">||</span> key <span class="token operator">==</span> <span class="token string">&apos;link&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// check if url is an image with .match() and some basic regex</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/\.*(jpg|png|svg|gif|webp)/g</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            element<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&apos;href&apos;</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            element<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&apos;style&apos;</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">background-image: url(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">);</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// if not a link, do the standard thing</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        element<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&apos;beforeend&apos;</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4>Handling nested objects &amp; arrays</h4>
+<p>Now, let&#x2019;s deal with the problem of how to loop through X layers of nested JSON and append the appropriate values to our HTML.  It&#x2019;s easier than you might think.</p>
+<p>We need to be able to check if the value is an array.  With an array of strings, we can just use <code>array.join()</code> to combine the array into a single string.  In other situations, we&#x2019;d add a check to see if the array contained more objects to loop through.</p>
+<pre><code class="language-javascript"><span class="token comment">// first, we&apos;ll make the whole thing a function</span>
+<span class="token keyword">function</span> <span class="token function">loopThroughKeys</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> container</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> element <span class="token operator">=</span> container<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// check if value is a string</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;string&quot;</span> <span class="token operator">&amp;&amp;</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// stuff happens...</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// if value is an array, join it with a comma and a space (objects nested inside arrays would be handled a little differently)</span>
+      object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      element<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&quot;beforeend&quot;</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// if value is an object, perform this function again on that object</span>
+      <span class="token function">loopThroughKeys</span><span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> container<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>So, we solved the URL problem with a couple of <code>if</code> statements, and then collected our code in a function that can be invoked as many times as there are layers of JSON data.</p>
+<p>Try out the demo on CodePen below!</p>
+<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="result" data-user="bradeneast" data-slug-hash="KOQMBN" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="More JSON to HTML with Object.keys()">
+  <span>See the Pen <a href="https://codepen.io/bradeneast/pen/KOQMBN/">
+  More JSON to HTML with Object.keys()</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>Just here for the snippet?  Here it is without all the comments.</p>
+<pre><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">loopThroughKeys</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> container</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> element <span class="token operator">=</span> container<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;string&quot;</span> <span class="token operator">&amp;&amp;</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;http&quot;</span> <span class="token operator">||</span> key <span class="token operator">==</span> <span class="token string">&quot;link&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/\.*(jpg|png|svg|gif|webp)/g</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          element<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;href&quot;</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          element<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;style&quot;</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">background-image: url(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">);</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        element<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&quot;beforeend&quot;</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      element<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&quot;beforeend&quot;</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">loopThroughKeys</span><span class="token punctuation">(</span>object<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> container<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<span class="post-cta">Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Json%20to%20html: a%20more%20complex%20example%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/json-to-html--a-more-complex-example">share this article</a> with your followers. I appreciate it!</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section post-nav">
+        <a href id="previous-post" data-scroll style="display: none">
+            <div class="link-title">
+                <div class="label">previous</div>
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="8,1 0,9 8,17">
+                </polyline></svg>
+            </div>
+        </a>
+        <a href="/blog/append-json-values-to-matching-html-elements-with-object.keys" id="next-post" data-scroll>
+            <div class="link-title">
+                <div class="label">next</div>
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,1 9,9 1,17">
+                </polyline></svg>
+            Append JSON values to matching HTML elements with Object.keys()</div>
+        </a>
+    </section>
+
+</body>
+
+<footer>
+</footer>
+<script type="text/javascript" src="/scripts/insertnav.js"></script>
+<script type="text/javascript" src="/scripts/insertfooter.js"></script>
+<script defer type="text/javascript" src="/scripts/main.js"></script>
+<script defer src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
+
+</html>
