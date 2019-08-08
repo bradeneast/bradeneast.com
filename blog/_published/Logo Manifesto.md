@@ -2,7 +2,7 @@
 ## 2019/07/29
 ### graphic design, branding
 
-This manifesto is to get me into the headspace for thinking outside the box and designing innovative, fully realized logo marks.
+This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.
 
  - A logo is always static, but how it’s used can be dynamic.
  - The job of a logo is to identify, not explain.
