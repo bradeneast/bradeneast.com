@@ -4,7 +4,6 @@ body:not(.loaded) {
 
     .section {
         opacity: 0;
-        transform: translateY(2rem);
     }
 }
 
@@ -17,16 +16,6 @@ body.loaded {
         transform: translate(0, 0);
         transition: var(--TR-M);
     }
-}
-
-.slide-in {
-    will-change: transform;
-    backface-visibility: hidden;
-    opacity: 0;
-    transform: translateY(10%) translate3d(0, 0, 0);
-    transition-duration: 0s;
-    animation: translate .8s ease 0s forwards running;
-    animation-name: translate, fade-in;
 }
 
 [data-scroll=in] {
@@ -108,11 +97,5 @@ body.loaded {
     to {
         background-position-x: 999%;
         opacity: 0;
-    }
-}
-
-@keyframes translate {
-    to {
-        transform: translate(0, 0) translate3d(0, 0, 0);
     }
 }
