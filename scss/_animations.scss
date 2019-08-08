@@ -1,5 +1,6 @@
 body:not(.loaded) {
     opacity: 0;
+    transition: var(--TR-S);
 
     .section {
         opacity: 0;
@@ -16,6 +17,16 @@ body.loaded {
         transform: translate(0, 0);
         transition: var(--TR-M);
     }
+}
+
+.slide-in {
+    will-change: transform;
+    backface-visibility: hidden;
+    opacity: 0;
+    transform: translateY(10%) translate3d(0, 0, 0);
+    transition-duration: 0s;
+    animation: translate .8s ease 0s forwards running;
+    animation-name: translate, fade-in;
 }
 
 [data-scroll=in] {
@@ -36,30 +47,6 @@ body.loaded {
     opacity: 0;
     transform: translateY(3rem);
     transition: var(--TR-L);
-}
-
-@keyframes fade-in {
-    from {
-        transform: translateY(2rem);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(2rem);
-        opacity: 0;
-    }
 }
 
 .loading,
@@ -103,14 +90,10 @@ body.loaded {
     color: var(--CL-G6);
     opacity: 0;
     will-change: opacity;
-    animation: show .1s ease 7s forwards running;
+    animation: fade-in .1s ease 7s forwards running;
 }
 
-@keyframes show {
-    from {
-        opacity: 0;
-    }
-
+@keyframes fade-in {
     to {
         opacity: 1;
     }
@@ -125,5 +108,11 @@ body.loaded {
     to {
         background-position-x: 999%;
         opacity: 0;
+    }
+}
+
+@keyframes translate {
+    to {
+        transform: translate(0, 0) translate3d(0, 0, 0);
     }
 }

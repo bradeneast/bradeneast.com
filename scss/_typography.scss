@@ -80,16 +80,25 @@ h4 {
 }
 
 a {
-    color: inherit;
+    color: var(--CL-A3);
     position: relative;
     font-family: var(--FF-1);
+    font-weight: 700;
     text-decoration: none;
     transition: var(--TR-S);
 
     &:hover,
     &:focus {
-        outline-color: var(--CL-A3);
-        color: var(--CL-A3);
+        color: var(--CL-A1);
+    }
+
+    &:visited {
+        color: var(--CL-A1);
+
+        &:hover,
+        &:focus {
+            color: var(--CL-A3);
+        }
     }
 }
 
@@ -105,12 +114,19 @@ p {
         height: var(--PAD-S);
     }
 
-    &+ul {
+    a {
+        color: var(--CL-A3);
+        text-decoration: underline;
+    }
+
+    &+ul,
+    &+ol {
         margin: var(--PAD-S) 0;
         margin-left: var(--PAD-S);
         color: var(--CL-G5);
 
         li {
+            margin: .5em 0;
             list-style-type: disc;
             color: inherit;
 
@@ -144,7 +160,7 @@ strong,
     }
 
     h1.center {
-        transform: translateX(12px);
+        transform: translateX(10px);
     }
 
     h2 {

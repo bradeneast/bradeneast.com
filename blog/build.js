@@ -170,7 +170,7 @@ posts.forEach((post, index) => {
                 let title = post.link.replace(/--/g, ': ').replace(/-/g, '%20');
                 title = title.charAt(0).toUpperCase() + title.slice(1);
                 const url = 'https://bradeneast.com/blog/' + post.link;
-                e.append(`<span class="post-cta">Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${title}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</span>`);
+                e.append(`<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${title}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</p></span>`);
                 console.log('cta appended to post body');
             }
         }

@@ -165,6 +165,15 @@ function populateSubNav(area) {
         })
 }
 
+// STYLISH: staggers transitions for multiple children
+const staggerParents = document.querySelectorAll('[data-stagger]');
+staggerParents.forEach(parent => {
+    Array.from(parent.children).forEach((child, index) => {
+        child.style.transitionDelay = index * .1 + 's';
+        child.style.animationDelay = index * .1 + 's';
+    })
+})
+
 // STYLISH: adds and removes scroll-dependent classes
 function initScrollFX() {
     var upDownArrow = document.getElementById('up-down');

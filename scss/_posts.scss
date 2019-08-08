@@ -185,26 +185,6 @@
             margin: var(--PAD-L) 0 0 0;
         }
 
-        a {
-            color: var(--CL-A3);
-            text-decoration: underline;
-            font-weight: 700;
-
-            &:hover,
-            &:focus {
-                color: var(--CL-A1);
-            }
-
-            &:visited {
-                color: var(--CL-A1);
-
-                &:hover,
-                &:focus {
-                    color: var(--CL-A3);
-                }
-            }
-        }
-
         br {
             display: block;
             content: '';

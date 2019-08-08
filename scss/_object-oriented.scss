@@ -213,40 +213,4 @@
             }
         }
     }
-
-    .services {
-        justify-content: start;
-        justify-items: start;
-        margin-top: calc(var(--PAD-L) * 3);
-        grid-gap: calc(var(--PAD-L) * 2);
-        max-width: calc(100vw - (var(--PAD-M) * 2)) !important;
-
-        li {
-            flex-flow: row wrap;
-            --color: var(--CL-1);
-            --text-color: var(--CL-1);
-            border-color: var(--CL-A3);
-            padding: 0 0 0 var(--PAD-M);
-            margin-bottom: var(--PAD-L);
-            width: 100%;
-            outline: none;
-            max-height: none;
-            max-width: calc(100vw - (var(--PAD-M) * 2)) !important;
-            border-left: var(--BDR) solid var(--CL-A3);
-
-            .li__text {
-                padding-right: 0;
-            }
-
-            .blow-up {
-                display: block;
-                left: 0;
-                bottom: 0;
-
-                [data-icon] {
-                    max-width: 14rem !important;
-                }
-            }
-        }
-    }
 }
