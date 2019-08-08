@@ -24,10 +24,10 @@
             </span>
             <div class="main">
                 <div class="body">
-<p>No developer wants to debug code written for a single purpose and use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don&#x2019;t have to write (or rewrite).</p>
-<p>Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using <code>Object.keys()</code>. Let&#x2019;s expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because none of us want to deal with a special function for that one value nested inside 5 other objects.</p>
-<p>If you feel a bit lost, take a glance at the <a href="/blog/append-json-values-to-matching-html-elements-with-object.keys">simpler approach</a> and then come back.</p>
-<p>Let&#x2019;s face it, API&#x2019;s almost never give us responses in the format we&#x2019;d really like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Worse yet, what if the API you&#x2019;re calling changes their response structure?</p>
+<p>No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don&#x2019;t have to write (or rewrite).</p>
+<p>Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using <code>Object.keys()</code>. Let&#x2019;s expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because sometimes we have to get that one value nested inside 5 other objects.</p>
+<p>If you feel a bit lost, take a glance at the <a href="/blog/append-json-values-to-matching-html-elements-with-object.keys">simpler approach</a> and then come back and join me.</p>
+<p>Let&#x2019;s make the safe assumption that an API isn&#x2019;t give us a responses in the exact format we&#x2019;d like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Or, what if the API changes their response structure?</p>
 <p><img src="/images/blog/this-is-fine.gif" alt="This is fine gif"></p>
 <p>You might as well burn everything to the ground and start over.  Fortunately, there&#x2019;s a way to loop through multiple layers of JSON without too much excess javascript. Take this example:</p>
 <pre><code class="language-javascript"><span class="token comment">// Array of movies</span>
@@ -48,7 +48,7 @@
     <span class="token comment">///...more movies</span>
 <span class="token punctuation">]</span>
 </code></pre>
-<p>The simple option doesn&#x2019;t account for two things that are pretty common in JSON, shown above:</p>
+<p>The simple way I talked about before doesn&#x2019;t account for two things that are pretty common in JSON, shown above:</p>
 <ol>
 <li>Nested objects</li>
 <li>URLs (for images or links) that need to be added to an attribute of the matching element, not inserted as text</li>

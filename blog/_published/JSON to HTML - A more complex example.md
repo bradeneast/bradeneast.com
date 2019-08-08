@@ -2,13 +2,13 @@
 ## 2019/08/07
 ### web development, javascript, html
 
-No developer wants to debug code written for a single purpose and use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don't have to write (or rewrite).
+No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don't have to write (or rewrite).
 
-Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using `Object.keys()`. Let's expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because none of us want to deal with a special function for that one value nested inside 5 other objects.
+Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using `Object.keys()`. Let's expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because sometimes we have to get that one value nested inside 5 other objects.
 
-If you feel a bit lost, take a glance at the [simpler approach](/blog/append-json-values-to-matching-html-elements-with-object.keys) and then come back.
+If you feel a bit lost, take a glance at the [simpler approach](/blog/append-json-values-to-matching-html-elements-with-object.keys) and then come back and join me.
 
-Let's face it, API's almost never give us responses in the format we'd really like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Worse yet, what if the API you're calling changes their response structure?
+Let's make the safe assumption that an API isn't give us a responses in the exact format we'd like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Or, what if the API changes their response structure?
 
 ![This is fine gif](/images/blog/this-is-fine.gif)
 
@@ -34,7 +34,7 @@ You might as well burn everything to the ground and start over.  Fortunately, th
 ]
 ```
 
-The simple option doesn't account for two things that are pretty common in JSON, shown above:
+The simple way I talked about before doesn't account for two things that are pretty common in JSON, shown above:
 1. Nested objects
 2. URLs (for images or links) that need to be added to an attribute of the matching element, not inserted as text
 
