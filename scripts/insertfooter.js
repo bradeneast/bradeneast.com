@@ -6,11 +6,11 @@ if (document.querySelector('footer')) {
     <section class="section cta">
         <div class="section__body limited-width center" data-scroll>
             <h3 class="center">
-                If you're interested in having me work on your branding or design project, please reach out &ndash; I'd love to work with you.
+                Let's work together! If you're interested in bringing me on your branding or design project, please reach out &ndash; I'd love to work with you.
             </h3>
             <br />
             <div class="cta__link">
-                <a class="center" href="mailto:bradeneastdesign@gmail.com">bradeneast<wbr>design@gmail.com</a>
+                <a class="center" href="mailto:bradeneastdesign@gmail.com">HIRE BRADEN</a>
             </div>
         </div>
     </section>
