@@ -183,25 +183,12 @@ body {
   position: absolute;
   bottom: -10px;
   left: 0;
-  width: 100%;
+  width: 101%;
   z-index: 1;
 }
 
 .hero .hero-text * {
   color: var(--CL-0);
-}
-
-.hero .hero-text .hero-contact {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  -webkit-transform: rotate(-90deg) translateY(700%);
-          transform: rotate(-90deg) translateY(700%);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
 }
 
 .hero .hero-text .tagline {
@@ -1889,12 +1876,15 @@ footer .socials a:focus [data-icon] {
   .hero .hero-text {
     text-align: left !important;
     margin: 0;
-    padding: var(--PAD-L);
+    padding: var(--PAD-L) var(--PAD-L) var(--PAD-S) var(--PAD-L);
     background-position: center;
     background-attachment: local;
     height: 85vh;
   }
   .hero .hero-text .squiggle-block {
     margin-top: 1rem;
+  }
+  .hero .hero-text::before, .hero .hero-text::after {
+    width: 100%;
   }
 }
