@@ -30,10 +30,10 @@ document.body.insertAdjacentHTML('beforeend',
     <section class="description">
         <h1>Was this resource helpful for you?</h1>
         <p>If you're using this free tool, you or someone you know might be interested in branding your business for optimal impact. I can help with that.
-            <br />&nbsp;<br />
-            More about me: <a href="https://www.bradeneast.com" target="_blank">bradeneast.com</a>
-            <br>
+            <br>&nbsp;<br>
             Reach me here: <a href="mailto:bradeneastdesign@gmail.com">bradeneastdesign@gmail.com</a>
+            <br>
+            More about me: <a href="https://www.bradeneast.com" target="_blank">bradeneast.com</a>
         </p>
         <br>
         <div class="socials center">
