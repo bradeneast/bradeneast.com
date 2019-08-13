@@ -7,10 +7,6 @@ document.body.insertAdjacentHTML('beforeend',
             max-width: 36rem;
         }
 
-        .socials {
-            margin-top: 2rem;
-        }
-
         .socials a {
             text-decoration: none;
         }
@@ -39,6 +35,7 @@ document.body.insertAdjacentHTML('beforeend',
             <br>
             Reach me here: <a href="mailto:bradeneastdesign@gmail.com">bradeneastdesign@gmail.com</a>
         </p>
+        <br>
         <div class="socials center">
             <a href="https://www.behance.net/bradeneastdesign" aria-label="my behance profile" target="_blank">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
