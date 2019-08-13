@@ -1,4 +1,4 @@
-document.body.insertAdjacentHTML('beforeend'
+document.body.insertAdjacentHTML('beforeend',
     `
     <style>
         .description {
