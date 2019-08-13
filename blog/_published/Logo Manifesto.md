@@ -1,6 +1,6 @@
 # The Logo Manifesto
 ## 2019/07/29
-### graphic design, branding
+### design, branding
 
 This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.
 
