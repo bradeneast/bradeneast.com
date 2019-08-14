@@ -103,6 +103,8 @@
     &.partial {
         margin-left: calc(var(--PAD-M) * -1);
         margin-right: calc(var(--PAD-M) * -1);
+        margin-bottom: var(--PAD-S);
+        transition: var(--TR-S);
         padding: 0 var(--PAD-M);
 
         &:hover,
@@ -169,7 +171,6 @@
             padding: var(--PAD-S);
             margin: var(--PAD-M) 0;
             border: var(--BDR) solid var(--CL-G1);
-            border-radius: 4px;
             white-space: pre-wrap;
             word-wrap: break-word;
             line-height: 1.4;

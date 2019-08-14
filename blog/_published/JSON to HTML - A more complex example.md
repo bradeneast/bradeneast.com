@@ -99,7 +99,7 @@ function loopThroughKeys(object, container) {
 
 So, we solved the URL problem with a couple of `if` statements, and then collected our code in a function that can be invoked as many times as there are layers of JSON data.
 
-[Try out the demo on CodePen!](https://codepen.io/bradeneast/pen/KOQMBN/)
+[Try out the demo on CodePen.](https://codepen.io/bradeneast/pen/KOQMBN/)
 
 Just here for the snippet?  Here it is without all the comments.
 

@@ -206,52 +206,55 @@ body {
     }
 }
 
-.cta {
-    background-image: url(/images/svg/squiggle-grey.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 0;
-    align-content: center;
-    height: 75vh;
-    color: var(--CL-A3);
-
-    div,
-    div h3 {
-        color: inherit;
-    }
-
-    &__link {
-        display: flex;
-        font-size: var(--FS-M);
-        font-weight: 700;
-        color: var(--CL-1);
-        width: 100%;
-
-        &:hover,
-        &:focus {
-            a {
-                color: var(--CL-1);
-            }
-        }
-    }
-}
-
 // imports
 
 @import 'typography', 'nav', 'buttons', 'forms', 'posts', 'grids', 'animations', 'object-oriented';
 
 footer {
+    display: flex;
+    align-items: center;
+    align-content: center;
     position: relative;
     align-self: end;
-    padding: var(--PAD-S) var(--PAD-M) .5rem var(--PAD-M);
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
+    text-align: right;
+    padding: var(--PAD-L) var(--PAD-M) .5rem var(--PAD-M);
     color: var(--CL-G2);
 
     & * {
         color: inherit;
+        text-align: inherit;
+    }
+
+    .cta {
+        max-width: 36rem;
+        justify-self: flex-start;
+        text-align: left;
+        margin-right: auto;
+        color: var(--CL-A3);
+
+        div,
+        div h3 {
+            color: inherit;
+        }
+
+        &__link {
+            display: inline-block;
+            margin: .4rem 12px 12px 0;
+            padding: 1rem 1.2rem;
+            font-size: var(--FS-M);
+            font-weight: 700;
+            color: var(--CL-G2);
+            border: calc(var(--BDR) - 1px) solid var(--CL-G2);
+            background-color: transparent;
+            transition: var(--TR-M);
+
+            &:hover,
+            &:focus {
+                color: var(--CL-G5);
+                border-color: var(--CL-G1);
+                background-color: var(--CL-G1);
+            }
+        }
     }
 
     .socials {
@@ -340,10 +343,12 @@ footer {
         .hero-text {
             text-align: left !important;
             margin: 0;
-            padding: var(--PAD-L) var(--PAD-L) var(--PAD-S) var(--PAD-L);
+            padding: var(--PAD-L);
             background-position: center;
             background-attachment: local;
             height: 85vh;
+            align-items: flex-end;
+            align-content: flex-end;
 
             .squiggle-block {
                 margin-top: 1rem;
@@ -353,6 +358,15 @@ footer {
             &::after {
                 width: 100%;
             }
+        }
+    }
+
+    footer {
+        flex-flow: row wrap;
+        text-align: center;
+
+        .cta {
+            margin-bottom: var(--PAD-L);
         }
     }
 }

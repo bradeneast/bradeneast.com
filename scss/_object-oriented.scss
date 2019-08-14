@@ -40,6 +40,10 @@
     }
 }
 
+.body-image {
+    max-width: 20rem;
+}
+
 .move-left {
     transform: translateX(-50%);
 }
@@ -82,17 +86,17 @@
     order: -1;
 }
 
-.squiggle-block {
-    display: block;
-    content: url(/images/svg/squiggle.svg);
-    width: 3.6rem;
-    margin-top: calc(var(--PAD-S) / 2);
-    transform: translateX(-.4rem);
+// .squiggle-block {
+//     display: block;
+//     content: url(/images/svg/squiggle.svg);
+//     width: 3.6rem;
+//     margin-top: calc(var(--PAD-S) / 2);
+//     transform: translateX(-.4rem);
 
-    &.dark {
-        content: url(/images/svg/squiggle-dark.svg);
-    }
-}
+//     &.dark {
+//         content: url(/images/svg/squiggle-dark.svg);
+//     }
+// }
 
 .testimonial {
     height: auto;
@@ -185,7 +189,7 @@
 
     .body-image {
         order: -1;
-        max-height: 90vh;
+        max-width: 100%;
     }
 
     .pad {
