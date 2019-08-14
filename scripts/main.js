@@ -167,11 +167,17 @@ function populateSubNav(area) {
 
 // STYLISH: adds and removes scroll-dependent classes
 function initScrollFX() {
-    var upDownArrow = document.getElementById('up-down');
+    const footerHeight = document.querySelector('footer').offsetHeight;
+    let bodyHeight = document.body.offsetHeight;
+    const upDownArrow = document.getElementById('up-down');
 
     window.addEventListener('scroll', function () {
         addIfScrolled(topNav, 'class', null, 'compact', 600);
         addIfScrolled(upDownArrow, 'class', null, 'up', 600);
+
+        if (window.scrollY >= bodyHeight - footerHeight - window.innerHeight) {
+            upDownArrow.classList.remove('up');
+        }
     })
     ScrollOut({
         once: true,

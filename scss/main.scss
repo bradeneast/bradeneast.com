@@ -197,6 +197,7 @@ body {
 
         li {
             position: relative;
+            margin-right: var(--PAD-M);
 
             .li__text {
                 z-index: 2;
@@ -230,6 +231,7 @@ footer {
         justify-self: flex-start;
         text-align: left;
         margin-right: auto;
+        margin-left: var(--PAD-M);
         color: var(--CL-A3);
 
         div,

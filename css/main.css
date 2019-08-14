@@ -217,6 +217,7 @@ body {
 
 .hero .hero-aside li {
   position: relative;
+  margin-right: var(--PAD-M);
 }
 
 .hero .hero-aside li .li__text {
@@ -666,7 +667,7 @@ nav.compact #hamburger {
   height: 2.1rem;
   bottom: var(--PAD-S);
   right: var(--PAD-M);
-  cursor: pointer;
+  pointer-events: none;
 }
 
 #up-down svg polyline {
@@ -678,6 +679,11 @@ nav.compact #hamburger {
   -webkit-transform-origin: center;
           transform-origin: center;
   opacity: 0;
+}
+
+#up-down.up {
+  cursor: pointer;
+  pointer-events: all;
 }
 
 #up-down.up svg polyline {
@@ -1244,7 +1250,7 @@ input[type=checkbox]:checked + label {
 }
 
 .grid {
-  --item-width: 540px;
+  --item-width: 480px;
   --item-height: 480px;
   width: 100%;
   display: -ms-grid;
@@ -1643,9 +1649,6 @@ body.loaded .section {
 
 .testimonial:nth-of-type(2) {
   border: var(--BDR) solid var(--CL-G1);
-  border-radius: 5px;
-  -webkit-box-shadow: var(--SHADOW);
-          box-shadow: var(--SHADOW);
 }
 
 .testimonial:nth-of-type(2) .byline {
@@ -1773,6 +1776,7 @@ footer .cta {
   justify-self: flex-start;
   text-align: left;
   margin-right: auto;
+  margin-left: var(--PAD-M);
   color: var(--CL-A3);
 }
 

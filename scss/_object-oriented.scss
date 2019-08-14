@@ -86,18 +86,6 @@
     order: -1;
 }
 
-// .squiggle-block {
-//     display: block;
-//     content: url(/images/svg/squiggle.svg);
-//     width: 3.6rem;
-//     margin-top: calc(var(--PAD-S) / 2);
-//     transform: translateX(-.4rem);
-
-//     &.dark {
-//         content: url(/images/svg/squiggle-dark.svg);
-//     }
-// }
-
 .testimonial {
     height: auto;
     display: grid;
@@ -112,8 +100,6 @@
 
 .testimonial:nth-of-type(2) {
     border: var(--BDR) solid var(--CL-G1);
-    border-radius: 5px;
-    box-shadow: var(--SHADOW);
 
     .byline {
         color: var(--CL-1);

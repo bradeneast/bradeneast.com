@@ -217,7 +217,7 @@ nav {
     height: 2.1rem;
     bottom: var(--PAD-S);
     right: var(--PAD-M);
-    cursor: pointer;
+    pointer-events: none;
 
     svg polyline {
         color: var(--CL-G2);
@@ -225,6 +225,11 @@ nav {
         backface-visibility: hidden;
         transform-origin: center;
         opacity: 0;
+    }
+
+    &.up {
+        cursor: pointer;
+        pointer-events: all;
     }
 
     &.up svg polyline {
