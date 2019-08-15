@@ -161,6 +161,10 @@ body {
         border-radius: 0 0 5px 0;
         padding: var(--PAD-M);
 
+        >:last-child {
+            margin-bottom: var(--PAD-L);
+        }
+
         &::before,
         &::after {
             display: block;
@@ -261,14 +265,8 @@ footer {
 
     .socials {
         display: block;
+        margin-top: var(--PAD-S);
         line-height: 1.5;
-
-        &::before {
-            display: block;
-            content: url(/images/svg/squiggle.svg);
-            width: 4rem;
-            margin: 0 auto;
-        }
 
         a {
             display: inline-block;

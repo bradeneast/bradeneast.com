@@ -177,6 +177,10 @@ body {
   padding: var(--PAD-M);
 }
 
+.hero .hero-text > :last-child {
+  margin-bottom: var(--PAD-L);
+}
+
 .hero .hero-text::before, .hero .hero-text::after {
   display: block;
   content: url(/images/svg/wave-white.svg);
@@ -1806,14 +1810,8 @@ footer .cta__link:hover, footer .cta__link:focus {
 
 footer .socials {
   display: block;
+  margin-top: var(--PAD-S);
   line-height: 1.5;
-}
-
-footer .socials::before {
-  display: block;
-  content: url(/images/svg/squiggle.svg);
-  width: 4rem;
-  margin: 0 auto;
 }
 
 footer .socials a {
