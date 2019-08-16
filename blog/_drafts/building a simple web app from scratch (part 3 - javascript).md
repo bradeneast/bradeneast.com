@@ -42,3 +42,5 @@ fetch(`/icons.json`)
 So, we created our array of search terms, and added two properties to each object.
 1. The term itself
 2. The index where that term was found in the big array.
+
+Now that we have an index associated with each search term, we can get the icon svg data directly with `bigAF[index].svg` later. Using `Array[index]` is much faster than looping over that same array.
