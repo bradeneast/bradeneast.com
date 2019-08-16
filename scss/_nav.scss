@@ -252,6 +252,37 @@ nav {
     }
 }
 
+// MS Edge styles
+@supports (-ms-ime-align:auto) {
+    nav .logo .logo-icon {
+        display: none;
+    }
+
+    nav.compact {
+        background-color: transparent;
+
+        .nav-items-container {
+            transform: translateX(0);
+        }
+
+        .nav-item {
+            opacity: 1;
+            margin-left: var(--PAD-S);
+            transform: scale(1);
+            cursor: pointer;
+            transition: all var(--TR-S);
+        }
+
+        #hamburger {
+            display: none;
+        }
+    }
+
+    #up-down {
+        display: none;
+    }
+}
+
 @media screen and (max-width: $mq) {
 
     nav {
