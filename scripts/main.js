@@ -199,11 +199,13 @@ function clearImageFormatting() {
         image.removeAttribute('style');
         image.removeAttribute('width');
         image.removeAttribute('height');
+        image.setAttribute('loading', 'lazy');
     })
 }
 
-// ACCESSIBILITY: adds alt attribute to img elements dynamically from src attribute
+// ACCESSIBILITY: adds alt and lazy loading attributes to img elements
 document.querySelectorAll('img').forEach(e => {
+    image.setAttribute('loading', 'lazy');
     if (!e.getAttribute('alt')) {
         const source = decodeURIComponent(e.getAttribute('src'));
         const title = (source.split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
