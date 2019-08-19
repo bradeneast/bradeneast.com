@@ -31,7 +31,7 @@ function insertMeta(url, pageTitle) {
         pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageTitle;
     }
     const tagline = 'Helping focused businesses take control of their identity through branding and design.';
-    const socialImage = 'https://bradeneast.com/images/me-cropped-square.jpg';
+    const socialImage = 'https://bradeneast.com/images/me-grey-wall-square.jpg';
 
     document.head.insertAdjacentHTML('beforeend', `
 
