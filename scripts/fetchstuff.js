@@ -30,16 +30,16 @@ function insertCurrentContent(wrapperID, templateID, promise, parseMethod) {
     const wrapper = document.getElementById(wrapperID);
     const template = document.getElementById(templateID);
     promise.then(data => {
-        data.forEach(item => {
+        data.map(item => {
             if (checkIfCurrent(item)) {
                 let newObject = document.importNode(template.content, true);
-                Object.keys(item).forEach(key => {
+                Object.keys(item).map(key => {
                     if (item[key]) {
                         parseMethod(item[key], key, newObject);
                     }
                 });
                 let wrapperChildren = Array.from(wrapper.children);
-                wrapperChildren.forEach(child => {
+                wrapperChildren.map(child => {
                     if (child.id != templateID) {
                         child.remove();
                     }
@@ -55,10 +55,10 @@ function insertAllContent(wrapperID, templateID, promise, parseMethod) {
     const wrapper = document.getElementById(wrapperID);
     const template = document.getElementById(templateID);
     promise.then(data => {
-            data.forEach(item => {
+            data.map(item => {
                 if (!item.title || !checkIfCurrent(item)) {
                     let newObject = document.importNode(template.content, true);
-                    Object.keys(item).forEach(key => {
+                    Object.keys(item).map(key => {
                         if (item[key]) {
                             parseMethod(item[key], key, newObject);
                         }
@@ -75,7 +75,7 @@ function insertAllContent(wrapperID, templateID, promise, parseMethod) {
         })
 }
 
-// Messiness that reads Blogger API json data (called by insertContent() function)
+// Messiness that reads Blogger's post body (called by insertContent() function)
 function parseBlogContent(content, contentName, container) {
     let e = container.querySelector(`[data-${contentName}]`);
 

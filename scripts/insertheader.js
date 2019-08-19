@@ -1,6 +1,6 @@
 const url = 'https://bradeneast.com' + window.location.pathname;
 let pageTitle = url.split('/').reverse()[1].replace(/-/g, ' ').replace(/%20/g, ' ');
-const preloads = ['/css/main.css', '/scripts/insertfooter.js', '/scripts/insertnav.js', '/scripts/main.js'];
+const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/insertnav.js', '/scripts/main.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
 const polyFill = 'https://polyfill.io/v3/polyfill.min.js';
 
 insertPreloads(preloads);
@@ -12,9 +12,10 @@ function insertPreloads(paths) {
         let link = document.createElement('link');
         link.setAttribute('rel', 'preload');
         link.setAttribute('href', path);
-        if (path.split('.')[1] == 'js') {
+        sourceType = path.split('.').reverse()[0];
+        if (sourceType == 'js') {
             link.setAttribute('as', 'script')
-        } else if (path.split('.')[1] == 'css') {
+        } else if (sourceType == 'css') {
             link.setAttribute('as', 'style');
         }
         document.head.appendChild(link);

@@ -1,6 +1,6 @@
 # JSON to HTML - A more complex example
 ## 2019/08/07
-### web development, javascript, html
+### javascript, html
 
 No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don't have to write (or rewrite).
 

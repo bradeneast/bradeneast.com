@@ -17,7 +17,7 @@ var nav = `
         </svg>
     </a>
     <div class="nav-items-container">
-        <label tabindex="0" role="button" for="nav-toggle" id="hamburger" onkeypress="toggleNav()"></label>
+        <label tabindex="0" role="button" aria-label="toggle navigation menu" for="nav-toggle" id="hamburger" onkeypress="toggleNav()"></label>
         <a class="nav-item" href="/#work">Work</a>
         <a class="nav-item" href="/about/me">About</a>
         <a class="nav-item" href="/blog">Blog</a>

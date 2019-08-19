@@ -53,7 +53,7 @@ function addIfScrolled(element, attribute, oldValue, newValue, threshold) {
 function capitalize(string) {
     var words = string.split(' ');
     var newWords = [];
-    words.forEach(word => {
+    words.map(word => {
         newWords.push(word.charAt(0).toUpperCase() + word.slice(1));
     })
     return newWords.join().replace(/,/g, ' ');
@@ -81,7 +81,7 @@ function getSum(total, n) {
 function removeElementsBySelector(selector) {
     if (document.querySelectorAll(selector)) {
         var selected = Array.from(document.querySelectorAll(selector));
-        selected.forEach(e => {
+        selected.map(e => {
             e.remove();
         })
     }
@@ -92,7 +92,7 @@ if (document.querySelector('form')) {
     const contactForm = document.getElementById('contact-form');
     var inputs = Array.from(contactForm.querySelectorAll('input'));
 
-    inputs.forEach((input) => {
+    inputs.map(input => {
         var inputLabel = document.createElement('label');
         inputLabel.setAttribute('for', input.id);
         inputLabel.innerHTML = input.id.replace(/-/g, '&nbsp;');
@@ -119,7 +119,7 @@ if (document.querySelector('nav')) {
     var navItems = Array.from(topNav.querySelectorAll('.nav-item'));
 
     function checkActiveLinks() {
-        navItems.forEach((link) => {
+        navItems.map(link => {
             var linkTitle = link.innerHTML.split('<svg')[0];
 
             if (getURL().toUpperCase().includes(linkTitle.toUpperCase())) {
@@ -135,7 +135,7 @@ if (document.querySelector('nav')) {
         checkActiveLinks();
     }
 
-    navItems.forEach(link => {
+    navItems.map(link => {
         link.addEventListener('click', function () {
             setTimeout(() => {
                 checkActiveLinks();
@@ -155,7 +155,7 @@ function populateSubNav(area) {
     fetch('/sitemap.json')
         .then(response => response.json())
         .then(siteMap => {
-            siteMap[area].forEach(page => {
+            siteMap[area].map(page => {
                 var subNavItem = document.createElement('a');
                 subNavItem.setAttribute('href', `/${area}/${page.replace(/ /g, '-')}`);
                 subNavItem.classList.add('sub-nav__item');
@@ -199,5 +199,9 @@ function clearImageFormatting() {
         image.removeAttribute('style');
         image.removeAttribute('width');
         image.removeAttribute('height');
+        let alt = image.getAttribute('alt');
+        if (!alt || alt.length <= 0) {
+            image.setAttribute('alt', decodeURI(image.getAttribute('src').replace(/%[0-9]([B]|[0-9]+)/g, ' ').replace(/\s+/g, ' ')).split('/').pop());
+        }
     })
 }
