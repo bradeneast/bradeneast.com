@@ -201,7 +201,7 @@ function clearImageFormatting() {
         image.removeAttribute('height');
         let alt = image.getAttribute('alt');
         if (!alt || alt.length <= 0) {
-            image.setAttribute('alt', decodeURI(image.getAttribute('src').replace(/%[0-9]([B]|[0-9]+)/g, ' ').replace(/\s+/g, ' ')).split('/').pop());
+            image.setAttribute('alt', decodeURIComponent(decodeURIComponent(image.getAttribute('src')).replace(/\+/g, ' ').split('/').pop()));
         }
     })
 }
