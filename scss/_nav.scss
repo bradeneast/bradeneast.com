@@ -321,6 +321,10 @@ nav {
         margin-left: calc(var(--logo-width) * -2);
         opacity: 0;
         transition-delay: 0s;
+
+        .logo-icon {
+            display: none;
+        }
     }
 
     .sub-nav {

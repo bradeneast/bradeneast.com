@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/prism.css">
     </noscript>
-    <script type="text/javascript" src="/scripts/insertHeader.js"></script>
+    <script type="text/javascript" src="/scripts/insertheader.js"></script>
 </head>
 
 <body>
@@ -59,24 +59,20 @@
             </div>
         </section>
     </main>
+
+    <script type="text/javascript" src="/scripts/insertfooter.js"></script>
+    <script type="text/javascript" src="/scripts/fetchstuff.js"></script>
+
+    <script defer>
+        // Fetch options
+        let wrapperID = 'projects';
+        let templateID = 'project-template';
+        let dataSubset = 'items';
+        let parseMethod = parseBlogContent;
+
+        fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID, templateID, parseMethod);
+    </script>
+
 </body>
-
-<footer>
-</footer>
-<script type="text/javascript" src="/scripts/insertnav.js"></script>
-<script type="text/javascript" src="/scripts/insertfooter.js"></script>
-<script type="text/javascript" src="/scripts/fetchstuff.js"></script>
-<script defer type="text/javascript" src="/scripts/main.js"></script>
-<script defer type="text/javascript" src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js"></script>
-
-<script>
-    // Fetch options
-    let wrapperID = 'projects';
-    let templateID = 'project-template';
-    let dataSubset = 'items';
-    let parseMethod = parseBlogContent;
-
-    fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID, templateID, parseMethod);
-</script>
 
 </html>
