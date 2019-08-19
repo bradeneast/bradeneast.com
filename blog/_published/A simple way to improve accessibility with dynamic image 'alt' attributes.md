@@ -1,4 +1,4 @@
-# A quick way to improve accessibility - get alt attributes from img src with vanilla javascript
+# A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript
 ## 2019/08/24
 ### javascript, html
 
