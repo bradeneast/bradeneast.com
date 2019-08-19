@@ -1,4 +1,4 @@
-# JSON to HTML - A more complex example
+# JSON to HTML - Nested objects and URLs
 ## 2019/08/07
 ### javascript, html
 

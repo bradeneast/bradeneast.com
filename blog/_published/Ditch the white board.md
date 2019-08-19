@@ -12,7 +12,7 @@ Meetings in general are a headache, so when I have to attend one, I want it to b
 
 The best tool I've found by far is [Taskade](https://www.taskade.com/u/bradeneast/recommend). For my meetings with clients, it is so important that we have a way to append the notes from a strategy session. Otherwise, things we might remember later are never addressed or get lost in a sea of email. I've used Google Docs before, but feels impersonal and messy. Taskade is list-oriented, which means there's more structure and organization to your notes from the get-go.
 
-![Image](/images/blog/taskade-1.png)
+![taskade screenshot wide](/images/blog/taskade-1.png)
 
 Because Taskade is just as accessible on my phone as in my browser, I find it extremely easy to add or modify notes when inspiration strikes. It all updates live, and collaborators will be notified about the changes.
 

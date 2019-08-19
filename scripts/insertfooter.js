@@ -17,7 +17,7 @@ if (document.querySelector('footer')) {
     footer.insertAdjacentHTML('beforeend', `
         <div>
             <div class="body-image">
-                <img src="/images/me-cropped-square.jpg" alt="Exploring the Witchita Mountains | Shot by my beautiful bride" />
+                <img src="/images/me-cropped-square.jpg" alt="Braden East Headshot" />
             </div>
             <span class="socials">
                 <a href="https://www.behance.net/bradeneastdesign" aria-label="my behance profile" target="_blank">

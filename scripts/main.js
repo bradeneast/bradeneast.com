@@ -199,9 +199,14 @@ function clearImageFormatting() {
         image.removeAttribute('style');
         image.removeAttribute('width');
         image.removeAttribute('height');
-        let alt = image.getAttribute('alt');
-        if (!alt || alt.length <= 0) {
-            image.setAttribute('alt', decodeURIComponent(decodeURIComponent(image.getAttribute('src')).replace(/\+/g, ' ').split('/').pop()));
-        }
     })
 }
+
+// ACCESSIBILITY: adds alt attribute to img elements dynamically from src attribute
+document.querySelectorAll('img').forEach(e => {
+    if (!e.getAttribute('alt')) {
+        const source = decodeURIComponent(e.getAttribute('src'));
+        const title = (source.split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
+        e.setAttribute('alt', title);
+    }
+})
