@@ -1,5 +1,5 @@
 # A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript
-## 2019/08/24
+## 2019/08/19
 ### javascript, html
 
 I'm a B-minus student when it comes to accessibility on web projects.
