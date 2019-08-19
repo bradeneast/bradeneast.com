@@ -41,7 +41,7 @@ function addToPostFeed(post, wrapper, $) {
     let newPost = $('template').contents().clone();
 
     // Inserts json values based on classnames matching the key
-    Object.keys(post).forEach(key => {
+    Object.keys(post).map(key => {
         const e = newPost.find(`.${key}`);
         let value = post[key];
         if (Array.isArray(value)) {
@@ -65,7 +65,7 @@ function addToPostFeed(post, wrapper, $) {
 
 
 // CLEARS POSTS FROM BLOG DIRECTORY
-fs.readdirSync(blogDir).forEach(dir => {
+fs.readdirSync(blogDir).map(dir => {
     if (fs.lstatSync(blogDir + dir).isDirectory() && path.basename(blogDir + dir).charAt(0) !== '_') {
         fs.removeSync(blogDir + dir);
     }
@@ -76,7 +76,7 @@ fs.readdirSync(blogDir).forEach(dir => {
 let posts = [];
 let tags = [];
 
-fs.readdirSync(postDir).forEach(post => {
+fs.readdirSync(postDir).map(post => {
     let postJSON = {
         "title": "",
         "date": "",
@@ -121,7 +121,7 @@ fs.readdirSync(postDir).forEach(post => {
 
 
 // PUSHES ALL TAGS TO TAGS ARRAY AND GENERATES A POST LINK FROM POST TITLE
-posts.forEach(post => {
+posts.map(post => {
     post.tags.split(', ').map(tag => {
         tags.push(tag)
     });
@@ -138,7 +138,7 @@ posts = posts.sort(dynamicSort('date')).reverse();
 
 
 // GENERATES NEW POST FROM TEMPLATE
-posts.forEach((post, index) => {
+posts.map((post, index) => {
 
     // Copies post from template
     let postLocation = blogDir + post.link;
@@ -154,12 +154,12 @@ posts.forEach((post, index) => {
     const $ = cheerio.load(dom);
 
     // Inserts json values based on classnames matching the key
-    Object.keys(post).forEach(key => {
+    Object.keys(post).map(key => {
         const e = $(`.${key}`);
         let value = post[key];
         if (key == 'tags') {
             const tags = [];
-            value.split(', ').forEach(tag => {
+            value.split(', ').map(tag => {
                 tags.push(`<a href="/blog/tags/${encodeURI(tag).replace(/\%20+/g, '-')}">${tag}</a>`);
             })
             value = tags.join(', ');
@@ -202,7 +202,7 @@ posts.forEach((post, index) => {
 
 // ADDS POSTS TO HOMEPAGE
 const blogFeedPages = ['../blog/index.html'];
-blogFeedPages.forEach(page => {
+blogFeedPages.map(page => {
 
     // Parses page containing blog feed
     const dom = htmlparser.parseDOM(fs.readFileSync(page), {
@@ -212,7 +212,7 @@ blogFeedPages.forEach(page => {
     const wrapper = $('#blogFeed');
     wrapper.children().not('template').remove();
 
-    posts.forEach(post => {
+    posts.map(post => {
         addToPostFeed(post, wrapper, $);
     })
 
@@ -223,7 +223,7 @@ blogFeedPages.forEach(page => {
 // CREATES AN INDEX PAGE FOR EACH UNIQUE TAG
 fs.mkdirSync(blogDir + 'tags');
 
-tags.forEach(tag => {
+tags.map(tag => {
 
     // Copies tag page from template
     let tagName = encodeURI(tag).replace(/\%20+/g, '-');
@@ -243,7 +243,7 @@ tags.forEach(tag => {
     });
     const wrapper = $('#blogFeed');
 
-    posts.forEach(post => {
+    posts.map(post => {
         if (post.tags.includes(tag)) {
             addToPostFeed(post, wrapper, $);
         }

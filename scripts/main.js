@@ -109,6 +109,9 @@ if (document.querySelector('form')) {
     })
 }
 
+// STYLISH: sets onload attribute of body element to add loaded class
+document.body.setAttribute('onload', 'document.body.classList.add(`loaded`)');
+
 const topNav = document.getElementById('nav');
 if (document.querySelector('nav')) {
 

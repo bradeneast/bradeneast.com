@@ -1,8 +1,27 @@
 const url = 'https://bradeneast.com' + window.location.pathname;
 let pageTitle = url.split('/').reverse()[1].replace(/-/g, ' ').replace(/%20/g, ' ');
-insertHeader(url, pageTitle);
+const preloads = ['/css/main.css', '/scripts/insertfooter.js', '/scripts/insertnav.js', '/scripts/main.js'];
+const polyFill = 'https://polyfill.io/v3/polyfill.min.js';
 
-function insertHeader(url, pageTitle) {
+insertPreloads(preloads);
+insertMeta(url, pageTitle);
+insertPolyfills(polyFill);
+
+function insertPreloads(paths) {
+    paths.map(path => {
+        let link = document.createElement('link');
+        link.setAttribute('rel', 'preload');
+        link.setAttribute('href', path);
+        if (path.split('.')[1] == 'js') {
+            link.setAttribute('as', 'script')
+        } else if (path.split('.')[1] == 'css') {
+            link.setAttribute('as', 'style');
+        }
+        document.head.appendChild(link);
+    })
+}
+
+function insertMeta(url, pageTitle) {
     const siteTitle = 'Braden East';
     pageTitle = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);
     if (pageTitle === '' || pageTitle == null || url.split('/').length <= 4) {
@@ -12,6 +31,7 @@ function insertHeader(url, pageTitle) {
     }
     const tagline = 'Helping focused businesses take control of their identity through branding and design.';
     const socialImage = 'https://bradeneast.com/images/me-cropped-square.jpg';
+
     document.head.insertAdjacentHTML('beforeend', `
 
         <!-- Start SEO Framework -->
@@ -42,4 +62,11 @@ function insertHeader(url, pageTitle) {
         <link rel="stylesheet" type="text/css" href="/css/main.css" />
         <link rel="stylesheet" href="/css/prism.css">
     `);
+}
+
+function insertPolyfills(source) {
+    const polyFill = document.createElement('script');
+    polyFill.setAttribute('src', source);
+    polyFill.setAttribute('crossorigin', 'anonymous');
+    document.head.appendChild(polyFill);
 }

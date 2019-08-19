@@ -4,21 +4,18 @@
 <head>
     <noscript>
         <h1>I&apos;m a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/prism.css">
     </noscript>
-    <link rel="preload" href="/scripts/insertfooter.js" as="script">
-    <link rel="preload" href="/scripts/insertnav.js" as="script">
-    <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" href="/css/main.css" as="style">
-    <link rel="stylesheet" href="/css/prism.css">
-    <script src="/scripts/insertHeader.js"></script>
+    <script type="text/javascript" src="/scripts/insertHeader.js"></script>
 </head>
 
-<body onload="document.body.classList.add(`loaded`)">
+<body>
     <main>
         <section class="hero section" style="margin-top: 30vh;">
             <div class="pad">
                 <h1 class="tagName" style="margin-top: 0;" data-scroll>javascript</h1>
-                <h2 data-scroll>Enjoy a collection of posts I&apos;ve written about <span style="color: inherit" class="tagName">javascript</span>.</h2>
+                <h2 data-scroll>Enjoy a curated collection of posts I&apos;ve written on this subject.</h2>
             </div>
             <ul class="pad" id="blogFeed">
                 <template class="template">
