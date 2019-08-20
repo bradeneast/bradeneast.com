@@ -8,7 +8,7 @@ No matter how hard I try, I'm always adding `aria-label` and `tabindex` and `rol
 
 ![over and over gif](/images/blog/over-and-over.gif)
 
-That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alts are so important](https://moz.com/learn/seo/alt-text), I was overwhelmed at yet another detail to manage for better SEO and accessibility.
+That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alts are so important](https://moz.com/learn/seo/alt-text), I was annoyed at yet another detail to manage for better SEO and accessibility.
 
 Today, let's look at how to solve that problem by adding accessible `alt` attribute values to our `img` elements with vanilla javascript.
 
@@ -34,7 +34,7 @@ Check out the example HTML below.
 
 We have a delicious-looking gallery of asian-american food here. You probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that cdn's can read, but we can't.
 
-We want to isolate just the image titles. To help us do that, we'll use some fun vanilla javascript methods like `split()`, `shift()`, and `pop()`.
+We want to isolate just the image titles. To help us do that, we'll use some fun native javascript methods that honestly sound like dance moves: `split()`, `shift()`, and `pop()`.
 
 First, let's grab the `img` elements with a `querySelectorAll()`.
 

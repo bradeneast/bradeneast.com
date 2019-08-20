@@ -118,6 +118,7 @@ if (document.querySelector('form')) {
 document.body.setAttribute('onload', 'document.body.classList.add(`loaded`)');
 
 const topNav = document.getElementById('nav');
+console.log(topNav);
 if (document.querySelector('nav')) {
 
     // STYLISH: checks url and adds 'active' class to nav links that match
@@ -178,6 +179,7 @@ function initScrollFX() {
     const footerHeight = document.querySelector('footer').offsetHeight;
     let bodyHeight = document.body.offsetHeight;
     const upDownArrow = document.getElementById('up-down');
+    const waveOverlays = document.querySelectorAll('.wave-overlay');
 
     window.addEventListener('scroll', function () {
         addIfScrolled(topNav, 'class', null, 'compact', 600);
@@ -186,7 +188,13 @@ function initScrollFX() {
         if (window.scrollY >= bodyHeight - footerHeight - window.innerHeight) {
             upDownArrow.classList.remove('up');
         }
+        if (waveOverlays) {
+            waveOverlays.forEach(e => {
+                e.style.setProperty('--overlay-position', window.scrollY + 'px');
+            })
+        }
     })
+
     ScrollOut({
         once: true,
         threshold: .05

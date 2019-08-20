@@ -107,40 +107,26 @@
     }
 }
 
-.focal {
-    --text-color: var(--CL-G4);
-    --border-color: var(--CL-A3);
-    border: var(--BDR) solid var(--CL-G1);
-    transition: var(--TR-M);
+.wave-overlay {
+    --overlay-position: 50%;
 
-    button,
-    input[type=submit] {
-        border-color: var(--CL-G2);
-        color: var(--CL-G2);
-
-        &:hover,
-        &:focus {
-            border-color: var(--border-color);
-            color: var(--text-color);
-        }
-    }
-
-    &:hover,
-    &:focus,
-    &:focus-within {
-        --text-color: var(--CL-G6);
-        border-color: var(--CL-A3);
-        outline: none;
-
-        label {
-            color: var(--CL-G4);
-        }
-    }
-
-    & * {
-        outline: none;
-        color: var(--text-color);
-        transition: var(--TR-M), font-size 0s;
+    &::after {
+        display: block;
+        content: '';
+        background: url(/images/svg/wave.svg);
+        background-position-y: bottom;
+        background-position-x: var(--overlay-position);
+        background-size: contain;
+        position: absolute;
+        background-repeat: repeat-x;
+        height: 80%;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        transition: var(--TR-M);
     }
 }
 

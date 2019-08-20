@@ -5,7 +5,6 @@ const scripts = ['/scripts/main.js', '/scripts/insertnav.js', 'https://unpkg.com
 scripts.map(script => {
     e = document.createElement('script');
     e.setAttribute('src', script);
-    e.setAttribute('defer', true);
     document.body.appendChild(e);
 })
 footer.insertAdjacentHTML('afterbegin', `
