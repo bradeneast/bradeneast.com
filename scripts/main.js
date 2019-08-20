@@ -92,7 +92,7 @@ function toggleNav() {
 
 const nav = document.createElement('nav');
 let navToggle = '<input tabindex="-1" aria-label="toggle navigation" type="checkbox" id="nav-toggle" />';
-let navItems = `
+let navItemsContainer = `
     <div class="nav-items-container">
         <label tabindex="0" role="button" aria-label="toggle navigation menu" for="nav-toggle" id="hamburger" onkeypress="toggleNav()"></label>
         <a class="nav-item" href="/#work">Work</a>
@@ -110,22 +110,16 @@ const logo = `
         </svg>
     </a>
     `
-const upDown = `
-    <button id="up-down" tabindex="-1" aria-hidden="true" onclick="window.location.href = '#';">
-        <svg viewBox="0 0 18 9">
-            <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,8 9,0 17,8">
-        </svg>
-    </button>    
-    `
-nav.id = 'nav';
+const upDown = `<button id="up-down" tabindex="-1" aria-hidden="true" onclick="window.location.href = '#';"><svg viewBox="0 0 18 9"><polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,8 9,0 17,8"></svg></button>`;
+nav.setAttribute('id', 'nav');
 nav.insertAdjacentHTML('beforeend', logo);
-nav.insertAdjacentHTML('beforeend', navItems);
-document.body.insertAdjacentElement('afterbegin', nav);
+nav.insertAdjacentHTML('beforeend', navItemsContainer);
 document.body.insertAdjacentHTML('afterbegin', navToggle);
 document.body.insertAdjacentHTML('afterbegin', upDown);
+document.body.appendChild(nav);
 
 // checks url and adds 'active' class to nav links that match
-navItems = Array.from(nav.querySelectorAll('.nav-item'));
+navItems = Array.from(document.querySelectorAll('.nav-item'));
 
 function checkActiveLinks() {
     navItems.map(link => {
@@ -140,8 +134,8 @@ function checkActiveLinks() {
     })
 }
 checkActiveLinks();
-navItems.map(link => {
-    link.addEventListener('click', function () {
+navItems.map(item => {
+    item.addEventListener('click', function () {
         setTimeout(() => {
             checkActiveLinks();
         }, 100);
