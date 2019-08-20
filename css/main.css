@@ -1555,6 +1555,7 @@ body.loaded .section {
           transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  will-change: background-position-x;
   -webkit-transition: var(--TR-M);
   transition: var(--TR-M);
 }

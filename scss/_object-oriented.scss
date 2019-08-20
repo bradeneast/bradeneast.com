@@ -126,6 +126,7 @@
         z-index: 1;
         transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
+        will-change: background-position-x;
         transition: var(--TR-M);
     }
 }

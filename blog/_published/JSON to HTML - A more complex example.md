@@ -1,4 +1,4 @@
-# JSON to HTML - Nested objects and URLs
+# Converting JSON to HTML - Nested objects and URLs
 ## 2019/08/07
 ### javascript, html
 

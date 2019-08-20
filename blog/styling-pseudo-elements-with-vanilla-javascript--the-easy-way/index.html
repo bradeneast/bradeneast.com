@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <h1>I&apos;m a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/prism.css">
+    </noscript>
+    <script type="text/javascript" src="/scripts/insertheader.js"></script>
+</head>
+
+<body>
+
+    <section class="section post" style="padding-top: 30vh;">
+        <h1 class="title">Styling pseudo elements with vanilla javascript - the easy way</h1>
+        <div class="content">
+            <span class="meta">
+                <h4 class="date">2019/09/20</h4>
+                <h2 class="tags"><a href="/blog/tags/html">html</a>, <a href="/blog/tags/css">css</a>, <a href="/blog/tags/javascript">javascript</a></h2>
+            </span>
+            <div class="main">
+                <div class="body">
+<p>Let&#x2019;s say we want to have a wavy background overlay on a section with another background image already. We could use multiple, comma-separated backgrounds, but only if we want to accept the same sizing and position for each background.</p>
+<p>Let&#x2019;s say we needed more flexibility than that, and we&#x2019;re also using it in a lot of places.  In this case, it makes sense to add our wavy background overlay with a <code>::before</code> or <code>::after</code> psuedo element.</p>
+<pre><code class="language-css"><span class="token selector">.wavy-background</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> dodgerblue<span class="token punctuation">,</span> royalblue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.wavy-background::after</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/images/svg/wave.svg<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+    
+    <span class="token property">background-position</span><span class="token punctuation">:</span> bottom center<span class="token punctuation">;</span> <span class="token comment">/* Here&apos;s what we want to animate */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Everything is looking great, until we decide we want to animate the waves as the user scrolls.</p>
+<p><img src="/images/blog/squidward-dance.gif" alt="squidward dancing gif"></p>
+<p>To do that, we have to introduce a little Javascript, which doesn&#x2019;t have a way to select pseudo elements. We could make it an ordinary element, but that would mean extra markup and more copying and pasting.</p>
+<p>Instead, let&#x2019;s add a custom property (CSS variable) to the parent element, and let the pseudo element inherit the property we want to animate.</p>
+<pre><code class="language-css"><span class="token selector">.wavy-background</span> <span class="token punctuation">{</span>
+    <span class="token property">--bg-position</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span> <span class="token comment">/* we&apos;ll set 50% to be the default value until it&apos;s changed */</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> dodgerblue<span class="token punctuation">,</span> royalblue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.wavy-background::after</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/images/svg/wave.svg<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">background-position-y</span><span class="token punctuation">:</span> bottom<span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> repeat-x<span class="token punctuation">;</span>
+
+    <span class="token property">background-position-x</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bg-position<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* this will take the value of the custom property we added on the parent class */</span>
+
+    <span class="token comment">/* these properties added for smoother motion and better performance */</span>
+    <span class="token property">backface-visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">will-change</span><span class="token punctuation">:</span> background-position-x<span class="token punctuation">;</span>
+    <span class="token property">transition</span><span class="token punctuation">:</span> background-position-x .5s ease<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>That&#x2019;s it for the CSS.  We specified that we only want our background to repeat horizontally, and then added <code>will-change</code> for a faster framerate as the layer moves.  We also split <code>background-position</code> into X and Y for readability.</p>
+<p>For the Javascript, we&#x2019;ll just add a scroll event listener, and set the custom property on the parent element.</p>
+<pre><code class="language-javascript"><span class="token keyword">const</span> wavySections <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&apos;.wavy-background&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;scroll&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    wavySections<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        element<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&apos;--bg-position&apos;</span><span class="token punctuation">,</span> window<span class="token punctuation">.</span>scrollY <span class="token operator">+</span> <span class="token string">&apos;px&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>In the DOM, it should look something like this.</p>
+<p><img src="/images/blog/animating-background-position-of-a-pseudo-element.gif" alt="animating-background-position-of-a-pseudo-element"></p>
+<p>That&#x2019;s how to style pseudo elements vanilla Javascript. Keep in mind that this method is best for progressive enhancements because it requires <a href="https://caniuse.com/#feat=css-variables">CSS variable support</a>.</p>
+<p>Here&#x2019;s the <a href="https://codepen.io/bradeneast/pen/rNBWNBK">demo on CodePen</a>.</p>
+<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Styling%20pseudo%20elements%20with%20vanilla%20javascript: the%20easy%20way%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way">share this article</a> with your followers. I appreciate it!</p></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section post-nav">
+        <a href id="previous-post" style="display: none">
+            <div class="link-title">
+                <div class="label">previous</div>
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="8,1 0,9 8,17">
+                </polyline></svg>
+            </div>
+        </a>
+        <a href="/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript" id="next-post">
+            <div class="link-title">
+                <div class="label">next</div>
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,1 9,9 1,17">
+                </polyline></svg>
+            A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript</div>
+        </a>
+    </section>
+
+    <script type="text/javascript" src="/scripts/insertfooter.js"></script>
+
+</body>
+
+</html>
