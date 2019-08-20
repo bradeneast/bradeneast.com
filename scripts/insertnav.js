@@ -25,7 +25,7 @@ var nav = `
 </nav>`;
 document.body.insertAdjacentHTML('afterbegin', nav);
 document.body.insertAdjacentHTML('afterbegin', `
-    <input tab-index="-1" aria-label="toggle navigation" type="checkbox" id="nav-toggle">
+    <input tabindex="-1" aria-label="toggle navigation" type="checkbox" id="nav-toggle">
     <button id="up-down" aria-label="Back to top" onclick="window.location.href = '#';">
         <svg viewBox="0 0 18 9">
             <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,8 9,0 17,8">

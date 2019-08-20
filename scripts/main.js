@@ -87,6 +87,11 @@ function removeElementsBySelector(selector) {
     }
 }
 
+// HELPERS: gets image title from image url
+function getTitleFromSource(string) {
+    return (decodeURIComponent(string).split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
+}
+
 // FORMS: adds labels for form inputs based on input ID
 if (document.querySelector('form')) {
     const contactForm = document.getElementById('contact-form');
@@ -205,10 +210,17 @@ function clearImageFormatting() {
 
 // ACCESSIBILITY: adds alt and lazy loading attributes to img elements
 document.querySelectorAll('img').forEach(e => {
-    image.setAttribute('loading', 'lazy');
+    e.setAttribute('loading', 'lazy');
     if (!e.getAttribute('alt')) {
-        const source = decodeURIComponent(e.getAttribute('src'));
-        const title = (source.split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
-        e.setAttribute('alt', title);
+        e.setAttribute('alt', getTitleFromSource(e.getAttribute('src')));
     }
+})
+
+// ACCESSIBILITY: adds aria label to each heading element with text content
+const ariaElems = ['h1', 'h2', 'h3'];
+ariaElems.map(tag => {
+    document.querySelectorAll(tag).forEach(e => {
+        e.setAttribute('aria-label', e.textContent);
+        e.setAttribute('tabindex', 0);
+    })
 })
