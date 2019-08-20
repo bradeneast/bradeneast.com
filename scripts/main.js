@@ -94,38 +94,6 @@ if (document.querySelector('form')) {
 // STYLISH: sets onload attribute of body element to add loaded class
 document.body.setAttribute('onload', 'document.body.classList.add(`loaded`)');
 
-let topNav = document.getElementById('nav');
-if (topNav) {
-
-    // STYLISH: checks url and adds 'active' class to nav links that match
-    let navItems = Array.from(topNav.querySelectorAll('.nav-item'));
-
-    function checkActiveLinks() {
-        navItems.map(link => {
-            var linkTitle = link.innerHTML.split('<svg')[0];
-
-            if (getURL().toUpperCase().includes(linkTitle.toUpperCase())) {
-                link.classList.add('active');
-            }
-            if (!getURL().toUpperCase().includes(linkTitle.toUpperCase())) {
-                link.classList.remove('active');
-            }
-        })
-    }
-
-    if (topNav.querySelector('.nav-item')) {
-        checkActiveLinks();
-    }
-
-    navItems.map(link => {
-        link.addEventListener('click', function () {
-            setTimeout(() => {
-                checkActiveLinks();
-            }, 100);
-        })
-    })
-}
-
 // STYLISH: populates sub nav and indicates active page
 const pageArea = window.location.pathname.split('/').reverse()[2];
 if (document.getElementById('sub-nav')) {
@@ -152,7 +120,7 @@ function populateSubNav(area) {
 
 // HELPERS: change element classes if window is scrolled past a given threshold (in pixels)
 function addClassIfScrolled(element, className, threshold) {
-    let y = window.scrollY;
+    let y = Math.round(window.scrollY);
     if (y > threshold) {
         element.classList.add(className);
     }
@@ -161,14 +129,47 @@ function addClassIfScrolled(element, className, threshold) {
     }
 }
 
-// STYLISH: adds and removes scroll-dependent classes
-function initScrollFX() {
+// SCROLL EFFECTS
+setTimeout(() => {
+
+    let topNav = document.getElementById('nav');
+    if (topNav) {
+
+        // STYLISH: checks url and adds 'active' class to nav links that match
+        let navItems = Array.from(topNav.querySelectorAll('.nav-item'));
+
+        function checkActiveLinks() {
+            navItems.map(link => {
+                var linkTitle = link.innerHTML.split('<svg')[0];
+
+                if (getURL().toUpperCase().includes(linkTitle.toUpperCase())) {
+                    link.classList.add('active');
+                }
+                if (!getURL().toUpperCase().includes(linkTitle.toUpperCase())) {
+                    link.classList.remove('active');
+                }
+            })
+        }
+
+        if (topNav.querySelector('.nav-item')) {
+            checkActiveLinks();
+        }
+
+        navItems.map(link => {
+            link.addEventListener('click', function () {
+                setTimeout(() => {
+                    checkActiveLinks();
+                }, 100);
+            })
+        })
+    }
+
     const footerHeight = document.querySelector('footer').offsetHeight;
     let bodyHeight = document.body.offsetHeight;
     const upDownArrow = document.getElementById('up-down');
     const waveOverlays = document.querySelectorAll('.wave-overlay');
 
-    function runScrollFX() {
+    window.addEventListener('scroll', function (e) {
         addClassIfScrolled(topNav, 'compact', 600);
         addClassIfScrolled(upDownArrow, 'up', 600);
 
@@ -177,27 +178,17 @@ function initScrollFX() {
         }
         if (waveOverlays) {
             waveOverlays.forEach(e => {
-                e.style.setProperty('--overlay-position', window.scrollY + 'px');
+                e.style.setProperty('--overlay-position', Math.round(window.scrollY) + 'px');
             })
         }
-    }
-
-    window.addEventListener('scroll', function () {
-        runScrollFX();
-    });
-    window.addEventListener('touchmove', function () {
-        runScrollFX();
     });
 
     ScrollOut({
         once: true,
         threshold: .1
     })
-}
 
-setTimeout(() => {
-    initScrollFX();
-}, 1000);
+}, 1000)
 
 // ACCESSIBILITY: adds alt and lazy loading attributes to img elements
 document.querySelectorAll('img').forEach(e => {
