@@ -1,10 +1,20 @@
 const footer = document.createElement('footer');
 const path = window.location.pathname.replace(/\//g, '');
-const scripts = ['/scripts/main.js', '/scripts/insertnav.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
+const scripts = [{
+    path: '/scripts/main.js',
+    defer: true
+}, {
+    path: '/scripts/insertnav.js',
+    defer: false
+}, {
+    path: 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js',
+    defer: false
+}];
 
 scripts.map(script => {
     e = document.createElement('script');
-    e.setAttribute('src', script);
+    e.setAttribute('src', script.path);
+    e.setAttribute('defer', script.defer);
     document.body.appendChild(e);
 })
 footer.insertAdjacentHTML('afterbegin', `

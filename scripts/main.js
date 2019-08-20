@@ -26,29 +26,6 @@ function prevUntil(elem, selector) {
     return p;
 }
 
-// HELPERS: change element classes or ids if window is scrolled past a given threshold (in pixels)
-function addIfScrolled(element, attribute, oldValue, newValue, threshold) {
-    var p = window.scrollY;
-
-    if (attribute === 'class') {
-        if (p > threshold) {
-            element.classList.add(newValue);
-        }
-        if (p < threshold) {
-            element.classList.remove(newValue);
-        }
-    }
-
-    if (attribute !== 'class') {
-        if (p > threshold) {
-            element.setAttribute(attribute, newValue);
-        }
-        if (p < threshold) {
-            element.setAttribute(attribute, oldValue);
-        }
-    }
-}
-
 // HELPERS: capitalizes first letter of a string
 function capitalize(string) {
     var words = string.split(' ');
@@ -87,6 +64,16 @@ function removeElementsBySelector(selector) {
     }
 }
 
+// HELPERS: change element classes or ids if window is scrolled past a given threshold (in pixels)
+function addClassIfScrolled(positionY, element, className, threshold) {
+    if (positionY > threshold) {
+        element.classList.add(className);
+    }
+    if (positionY < threshold) {
+        element.classList.remove(className);
+    }
+}
+
 // HELPERS: gets image title from image url
 function getTitleFromSource(string) {
     return (decodeURIComponent(string).split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
@@ -117,12 +104,11 @@ if (document.querySelector('form')) {
 // STYLISH: sets onload attribute of body element to add loaded class
 document.body.setAttribute('onload', 'document.body.classList.add(`loaded`)');
 
-const topNav = document.getElementById('nav');
-console.log(topNav);
-if (document.querySelector('nav')) {
+let topNav = document.getElementById('nav');
+if (topNav) {
 
     // STYLISH: checks url and adds 'active' class to nav links that match
-    var navItems = Array.from(topNav.querySelectorAll('.nav-item'));
+    let navItems = Array.from(topNav.querySelectorAll('.nav-item'));
 
     function checkActiveLinks() {
         navItems.map(link => {
@@ -151,18 +137,18 @@ if (document.querySelector('nav')) {
 }
 
 // STYLISH: populates sub nav and indicates active page
-var pageArea = window.location.pathname.split('/').reverse()[2];
+const pageArea = window.location.pathname.split('/').reverse()[2];
 if (document.getElementById('sub-nav')) {
     populateSubNav(pageArea);
 }
 
 function populateSubNav(area) {
-    var subNav = document.getElementById('sub-nav');
+    let subNav = document.getElementById('sub-nav');
     fetch('/sitemap.json')
         .then(response => response.json())
         .then(siteMap => {
             siteMap[area].map(page => {
-                var subNavItem = document.createElement('a');
+                let subNavItem = document.createElement('a');
                 subNavItem.setAttribute('href', `/${area}/${page.replace(/ /g, '-')}`);
                 subNavItem.classList.add('sub-nav__item');
                 if (pageTitle.replace(/-/g, ' ') === page) {
@@ -181,9 +167,10 @@ function initScrollFX() {
     const upDownArrow = document.getElementById('up-down');
     const waveOverlays = document.querySelectorAll('.wave-overlay');
 
-    window.addEventListener('scroll', function () {
-        addIfScrolled(topNav, 'class', null, 'compact', 600);
-        addIfScrolled(upDownArrow, 'class', null, 'up', 600);
+    function runScrollFX() {
+        let y = window.scrollY;
+        addClassIfScrolled(y, topNav, 'compact', 600);
+        addClassIfScrolled(y, upDownArrow, 'up', 600);
 
         if (window.scrollY >= bodyHeight - footerHeight - window.innerHeight) {
             upDownArrow.classList.remove('up');
@@ -193,11 +180,18 @@ function initScrollFX() {
                 e.style.setProperty('--overlay-position', window.scrollY + 'px');
             })
         }
-    })
+    }
+
+    window.addEventListener('scroll', function () {
+        runScrollFX();
+    });
+    document.addEventListener('touchmove', function () {
+        runScrollFX();
+    });
 
     ScrollOut({
         once: true,
-        threshold: .05
+        threshold: .1
     })
 }
 
