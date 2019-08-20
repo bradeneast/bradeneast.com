@@ -2,7 +2,7 @@ const footer = document.createElement('footer');
 const path = window.location.pathname.replace(/\//g, '');
 const scripts = [{
     path: '/scripts/main.js',
-    defer: true
+    defer: false
 }, {
     path: '/scripts/insertnav.js',
     defer: false

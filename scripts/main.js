@@ -64,16 +64,6 @@ function removeElementsBySelector(selector) {
     }
 }
 
-// HELPERS: change element classes or ids if window is scrolled past a given threshold (in pixels)
-function addClassIfScrolled(positionY, element, className, threshold) {
-    if (positionY > threshold) {
-        element.classList.add(className);
-    }
-    if (positionY < threshold) {
-        element.classList.remove(className);
-    }
-}
-
 // HELPERS: gets image title from image url
 function getTitleFromSource(string) {
     return (decodeURIComponent(string).split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
@@ -160,6 +150,17 @@ function populateSubNav(area) {
         })
 }
 
+// HELPERS: change element classes if window is scrolled past a given threshold (in pixels)
+function addClassIfScrolled(element, className, threshold) {
+    let y = window.scrollY;
+    if (y > threshold) {
+        element.classList.add(className);
+    }
+    if (y < threshold) {
+        element.classList.remove(className);
+    }
+}
+
 // STYLISH: adds and removes scroll-dependent classes
 function initScrollFX() {
     const footerHeight = document.querySelector('footer').offsetHeight;
@@ -168,9 +169,8 @@ function initScrollFX() {
     const waveOverlays = document.querySelectorAll('.wave-overlay');
 
     function runScrollFX() {
-        let y = window.scrollY;
-        addClassIfScrolled(y, topNav, 'compact', 600);
-        addClassIfScrolled(y, upDownArrow, 'up', 600);
+        addClassIfScrolled(topNav, 'compact', 600);
+        addClassIfScrolled(upDownArrow, 'up', 600);
 
         if (window.scrollY >= bodyHeight - footerHeight - window.innerHeight) {
             upDownArrow.classList.remove('up');
@@ -185,7 +185,7 @@ function initScrollFX() {
     window.addEventListener('scroll', function () {
         runScrollFX();
     });
-    document.addEventListener('touchmove', function () {
+    window.addEventListener('touchmove', function () {
         runScrollFX();
     });
 
@@ -198,17 +198,6 @@ function initScrollFX() {
 setTimeout(() => {
     initScrollFX();
 }, 1000);
-
-// STYLISH: clears style, width, and height attributes from all img elements
-function clearImageFormatting() {
-    const images = document.querySelectorAll('img');
-    images.forEach(image => {
-        image.removeAttribute('style');
-        image.removeAttribute('width');
-        image.removeAttribute('height');
-        image.setAttribute('loading', 'lazy');
-    })
-}
 
 // ACCESSIBILITY: adds alt and lazy loading attributes to img elements
 document.querySelectorAll('img').forEach(e => {

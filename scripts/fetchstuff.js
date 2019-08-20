@@ -25,6 +25,16 @@ function checkIfCurrent(item) {
     }
 }
 
+// STYLISH: clears style, width, and height attributes from all passed img elements
+function clearImageFormatting(images) {
+    images.forEach(image => {
+        image.removeAttribute('style');
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        image.setAttribute('loading', 'lazy');
+    })
+}
+
 // INSERT CONTENT clones the passed template, calls the parseBlogContent() function, and then appends the new object as a child to the template wrapper
 function insertCurrentContent(wrapperID, templateID, promise, parseMethod) {
     const wrapper = document.getElementById(wrapperID);
@@ -45,7 +55,7 @@ function insertCurrentContent(wrapperID, templateID, promise, parseMethod) {
                     }
                 })
                 wrapper.appendChild(newObject);
-                clearImageFormatting();
+                clearImageFormatting(document.querySelectorAll('img'));
             }
         })
     })
@@ -55,20 +65,20 @@ function insertAllContent(wrapperID, templateID, promise, parseMethod) {
     const wrapper = document.getElementById(wrapperID);
     const template = document.getElementById(templateID);
     promise.then(data => {
-        data.map(item => {
-            if (!item.title || !checkIfCurrent(item)) {
-                let newObject = document.importNode(template.content, true);
-                Object.keys(item).map(key => {
-                    if (item[key]) {
-                        parseMethod(item[key], key, newObject);
-                    }
-                });
-                newObject.querySelector('div').id = encodeURI(item.title);
-                wrapper.appendChild(newObject);
-                clearImageFormatting();
-            }
+            data.map(item => {
+                if (!item.title || !checkIfCurrent(item)) {
+                    let newObject = document.importNode(template.content, true);
+                    Object.keys(item).map(key => {
+                        if (item[key]) {
+                            parseMethod(item[key], key, newObject);
+                        }
+                    });
+                    newObject.querySelector('div').id = encodeURI(item.title);
+                    wrapper.appendChild(newObject);
+                    clearImageFormatting(document.querySelectorAll('img'));
+                }
+            })
         })
-    })
         .then(function () {
             removeIfFound('.loading', wrapperID);
             removeIfFound('.error', wrapperID);
