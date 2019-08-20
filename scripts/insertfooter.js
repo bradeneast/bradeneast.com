@@ -1,15 +1,14 @@
 const footer = document.createElement('footer');
 const path = window.location.pathname.replace(/\//g, '');
 const scripts = [{
-    path: '/scripts/main.js',
-    defer: true
-}, {
-    path: '/scripts/insertnav.js',
-    defer: false
-}, {
-    path: 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js',
-    defer: false
-}];
+        path: '/scripts/main.js',
+        defer: true
+    },
+    {
+        path: 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js',
+        defer: false
+    }
+];
 
 scripts.map(script => {
     e = document.createElement('script');

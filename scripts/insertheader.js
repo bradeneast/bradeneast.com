@@ -1,6 +1,6 @@
 const url = 'https://bradeneast.com' + window.location.pathname;
 let pageTitle = url.split('/').reverse()[1].replace(/-/g, ' ').replace(/%20/g, ' ');
-const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/insertnav.js', '/scripts/main.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
+const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/main.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
 const polyFill = 'https://polyfill.io/v3/polyfill.min.js';
 
 insertPreloads(preloads);
