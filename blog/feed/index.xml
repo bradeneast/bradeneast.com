@@ -1,0 +1,50 @@
+
+    <rss>
+    <channel>
+    <title>Braden East's Blog</title>
+    <link>https://www.bradeneast.com/blog</link>
+    <description>This blog is for developers and designers ready to execute their ideas.</description>
+    <lastBuildDate>Wed, Aug 21 2019</lastBuildDate>
+
+            <item>
+                <title>Styling pseudo elements with vanilla javascript - the easy way</title>
+                <link>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</link>
+                <guid>0</guid>
+                <pubDate>Fri, Sep 20 2019</pubDate>
+            </item>
+    
+            <item>
+                <title>A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript</title>
+                <link>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</link>
+                <guid>1</guid>
+                <pubDate>Mon, Aug 19 2019</pubDate>
+            </item>
+    
+            <item>
+                <title>Converting JSON to HTML - Nested objects and URLs</title>
+                <link>https://bradeneast.com/blog/converting-json-to-html--nested-objects-and-urls</link>
+                <guid>2</guid>
+                <pubDate>Wed, Aug 07 2019</pubDate>
+            </item>
+    
+            <item>
+                <title>Append JSON values to matching HTML elements with Object.keys()</title>
+                <link>https://bradeneast.com/blog/append-json-values-to-matching-html-elements-with-object.keys</link>
+                <guid>3</guid>
+                <pubDate>Sun, Aug 04 2019</pubDate>
+            </item>
+    
+            <item>
+                <title>The Logo Manifesto</title>
+                <link>https://bradeneast.com/blog/the-logo-manifesto</link>
+                <guid>4</guid>
+                <pubDate>Mon, Jul 29 2019</pubDate>
+            </item>
+    
+            <item>
+                <title>Ditch the white board - A better tool for collaborating in a rebrand</title>
+                <link>https://bradeneast.com/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand</link>
+                <guid>5</guid>
+                <pubDate>Thu, Jul 25 2019</pubDate>
+            </item>
+    </channel></rss>

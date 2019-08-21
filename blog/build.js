@@ -13,12 +13,13 @@ const blogDir = './';
 const postDir = './_published/';
 const templateName = '_posttemplate.html';
 const postTemplate = blogDir + templateName;
+const feed = blogDir + 'feed';
 
 // DEPENDENCIES
 const commonmark = require('commonmark');
 const htmlparser = require('htmlparser2');
 const cheerio = require('cheerio');
-const Prism = require('prismjs');
+const prism = require('prismjs');
 
 // HELPERS
 // Sorts array of objects by the value of the property you pass
@@ -71,6 +72,19 @@ fs.readdirSync(blogDir).map(dir => {
     }
 })
 
+// Creates RSS feed location and starts RSS text string
+fs.mkdirSync(feed);
+fs.createFileSync(feed + '/index.xml');
+const today = new Date();
+let RSSFeed = `
+    <rss>
+    <channel>
+    <title>Braden East's Blog</title>
+    <link>https://www.bradeneast.com/blog</link>
+    <description>This blog is for developers and designers ready to execute their ideas.</description>
+    <lastBuildDate>${today.toDateString().slice(0, 3) + ',' + today.toDateString().slice(3)}</lastBuildDate>
+`;
+
 
 // CREATES JSON ARRAY OF BLOG POSTS WITH APPROPRIATE KEY/VALUE PAIRS
 let posts = [];
@@ -105,13 +119,13 @@ fs.readdirSync(postDir).map(post => {
     codeSnippets.each(function (i, e) {
         const snippetText = $(this).text();
         if (e.attribs.class == 'language-html') {
-            $(this).empty().append(Prism.highlight(snippetText, Prism.languages.markup));
+            $(this).empty().append(prism.highlight(snippetText, prism.languages.markup));
         }
         if (e.attribs.class == 'language-javascript') {
-            $(this).empty().append(Prism.highlight(snippetText, Prism.languages.javascript));
+            $(this).empty().append(prism.highlight(snippetText, prism.languages.javascript));
         }
         if (e.attribs.class == 'language-css') {
-            $(this).empty().append(Prism.highlight(snippetText, Prism.languages.css));
+            $(this).empty().append(prism.highlight(snippetText, prism.languages.css));
         }
     })
 
@@ -197,8 +211,20 @@ posts.map((post, index) => {
     // Writes the final markup to the post page
     fs.writeFileSync(postLocation, $.html());
     console.log('> post written to file ' + postLocation.replace('./', '/blog/'));
-})
 
+    // Adds post to RSS feed
+    let RSSDate = new Date(post.date);
+    RSSFeed += `
+            <item>
+                <title>${post.title}</title>
+                <link>https://bradeneast.com/blog/${post.link}</link>
+                <guid>${index}</guid>
+                <pubDate>${RSSDate.toDateString().slice(0, 3) + ',' + RSSDate.toDateString().slice(3)}</pubDate>
+            </item>
+    `;
+})
+RSSFeed += `</channel></rss>`;
+fs.writeFileSync(feed + '/index.xml', RSSFeed);
 
 // ADDS POSTS TO HOMEPAGE
 const blogFeedPages = ['../blog/index.html'];
