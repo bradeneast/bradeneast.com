@@ -1,3 +1,8 @@
+// HELPERS: returns the current active URL
+function getURL() {
+    return window.location.href;
+}
+
 const url = 'https://bradeneast.com' + window.location.pathname;
 let pageTitle = url.split('/').reverse()[1].replace(/-/g, ' ').replace(/%20/g, ' ');
 const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/main.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];

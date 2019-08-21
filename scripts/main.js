@@ -1,8 +1,3 @@
-// HELPERS: returns the current active URL
-function getURL() {
-    return window.location.href;
-}
-
 // HELPERS: removes an element if found
 function removeIfFound(elementQuery, parentQuery) {
     let p = document.getElementById(parentQuery);
