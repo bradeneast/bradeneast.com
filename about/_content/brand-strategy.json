@@ -1,6 +1,5 @@
 {
-    "intro": [
-        {
+    "intro": [{
             "headline": "the problem",
             "icon": "/images/svg/icons/mystery-customer.svg",
             "byline": "Companies are struggl&shy;ing to under&shy;stand their audi&shy;ences.",
@@ -13,12 +12,10 @@
             "body": "Here's how I've seen the best results: Working alongside my clients to craft a toolbox of straightforward, personalized strategies that are unique to their audience, their story, and their brand."
         }
     ],
-    "features": [
-        {
-            "headline": "sessions",
-            "byline": "Time-tested workshops at your own pace.",
-            "body": "<ul class='checklist'><li>Session 1 &ndash; Establish your attributes</li><li>Session 2 &ndash; Pick your platforms</li><li>Session 3 &ndash; Develop your messaging</li></ul>",
-            "image": "/images/about/sticky-notes.jpg"
-        }
-    ]
+    "features": [{
+        "headline": "Sessions we'll walk through together",
+        "byline": "Time-tested workshops at your own pace.",
+        "body": "<ul class='checklist'><li>Session 1 &ndash; Establish your attributes</li><li>Session 2 &ndash; Pick your platforms</li><li>Session 3 &ndash; Develop your messaging</li></ul>",
+        "image": "/images/about/sticky-notes.jpg"
+    }]
 }
