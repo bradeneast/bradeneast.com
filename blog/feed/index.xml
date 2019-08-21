@@ -11,6 +11,7 @@
                 <link>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</link>
                 <guid>0</guid>
                 <pubDate>Fri, Sep 20 2019</pubDate>
+                <description></description>
             </item>
     
             <item>
@@ -18,6 +19,7 @@
                 <link>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</link>
                 <guid>1</guid>
                 <pubDate>Mon, Aug 19 2019</pubDate>
+                <description></description>
             </item>
     
             <item>
@@ -25,6 +27,7 @@
                 <link>https://bradeneast.com/blog/converting-json-to-html--nested-objects-and-urls</link>
                 <guid>2</guid>
                 <pubDate>Wed, Aug 07 2019</pubDate>
+                <description></description>
             </item>
     
             <item>
@@ -32,6 +35,7 @@
                 <link>https://bradeneast.com/blog/append-json-values-to-matching-html-elements-with-object.keys</link>
                 <guid>3</guid>
                 <pubDate>Sun, Aug 04 2019</pubDate>
+                <description></description>
             </item>
     
             <item>
@@ -39,6 +43,7 @@
                 <link>https://bradeneast.com/blog/the-logo-manifesto</link>
                 <guid>4</guid>
                 <pubDate>Mon, Jul 29 2019</pubDate>
+                <description></description>
             </item>
     
             <item>
@@ -46,5 +51,6 @@
                 <link>https://bradeneast.com/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand</link>
                 <guid>5</guid>
                 <pubDate>Thu, Jul 25 2019</pubDate>
+                <description></description>
             </item>
     </channel></rss>

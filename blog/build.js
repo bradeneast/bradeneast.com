@@ -13,7 +13,6 @@ const blogDir = './';
 const postDir = './_published/';
 const templateName = '_posttemplate.html';
 const postTemplate = blogDir + templateName;
-const feed = blogDir + 'feed';
 
 // DEPENDENCIES
 const commonmark = require('commonmark');
@@ -73,6 +72,7 @@ fs.readdirSync(blogDir).map(dir => {
 })
 
 // Creates RSS feed location and starts RSS text string
+const feed = blogDir + 'feed';
 fs.mkdirSync(feed);
 fs.createFileSync(feed + '/index.xml');
 const today = new Date();
@@ -134,12 +134,18 @@ fs.readdirSync(postDir).map(post => {
 })
 
 
-// PUSHES ALL TAGS TO TAGS ARRAY AND GENERATES A POST LINK FROM POST TITLE
+// PUSHES ALL TAGS TO TAGS ARRAY
 posts.map(post => {
     post.tags.split(', ').map(tag => {
         tags.push(tag)
     });
+    // GENERATES A POST LINK FROM POST TITLE
     post.link = encodeURI(post.title).replace(/%20|#/g, '-').replace(/\(|\)/g, '').replace(/--/g, '-').toLowerCase();
+    // APPENDS CTA TO POST BODY
+    let title = post.link.replace(/--/g, ': ').replace(/-/g, '%20');
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+    const url = 'https://bradeneast.com/blog/' + post.link;
+    post.body += (`<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${title}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</p></span>`);
 })
 
 
@@ -180,13 +186,6 @@ posts.map((post, index) => {
         }
         if (value && e) {
             e.append(value);
-            if (key == 'body') {
-                let title = post.link.replace(/--/g, ': ').replace(/-/g, '%20');
-                title = title.charAt(0).toUpperCase() + title.slice(1);
-                const url = 'https://bradeneast.com/blog/' + post.link;
-                e.append(`<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${title}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</p></span>`);
-                console.log('cta appended to post body');
-            }
         }
     })
 
@@ -220,6 +219,7 @@ posts.map((post, index) => {
                 <link>https://bradeneast.com/blog/${post.link}</link>
                 <guid>${index}</guid>
                 <pubDate>${RSSDate.toDateString().slice(0, 3) + ',' + RSSDate.toDateString().slice(3)}</pubDate>
+                <description></description>
             </item>
     `;
 })
