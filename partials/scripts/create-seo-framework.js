@@ -1,7 +1,7 @@
 const siteTitle = document.querySelector('title').innerText;
 const url = window.location.href;
 const firstParagraph = document.querySelector('p');
-const socialImage = '/images/social.jpg';
+const socialImage = window.location.host + '/images/social.jpg';
 let description = '';
 if (firstParagraph) {
     description = firstParagraph.innerHTML.replace(/<[^>]*>|\s\s/g, '').replace(/\n+/g, '');
