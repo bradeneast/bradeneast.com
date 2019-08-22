@@ -1,5 +1,5 @@
 # Styling pseudo elements with vanilla javascript - the easy way
-## 2019/09/20
+## 2019/08/20
 ### html, css, javascript
 
 Let's say we want to have a wavy background overlay on a section with another background image already. We could use multiple, comma-separated backgrounds, but only if we want to accept the same sizing and position for each background.
