@@ -61,7 +61,7 @@ function addToPostFeed(post, wrapper, $) {
 
 
 // STUFF HAPPENS BELOW THIS LINE
-/////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // CLEARS POSTS FROM BLOG DIRECTORY
@@ -74,15 +74,15 @@ fs.readdirSync(blogDir).map(dir => {
 // Creates RSS feed location and starts RSS text string
 const feed = blogDir + 'feed';
 fs.mkdirSync(feed);
-fs.createFileSync(feed + '/index.xml');
+fs.createFileSync(feed + '/rss.xml');
 const today = new Date();
 let RSSFeed = `
-    <rss>
-    <channel>
+    <rss version="1.0" xmlns:atom="https://www.bradeneast.com/blog/feed/rss.xml">
+    <channel version="2.0">
     <title>Braden East's Blog</title>
     <link>https://www.bradeneast.com/blog</link>
     <description>This blog is for developers and designers ready to execute their ideas.</description>
-    <lastBuildDate>${today.toDateString().slice(0, 3) + ',' + today.toDateString().slice(3)}</lastBuildDate>
+    <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 `;
 
 
@@ -217,14 +217,14 @@ posts.map((post, index) => {
             <item>
                 <title>${post.title}</title>
                 <link>https://bradeneast.com/blog/${post.link}</link>
-                <guid>${index}</guid>
-                <pubDate>${RSSDate.toDateString().slice(0, 3) + ',' + RSSDate.toDateString().slice(3)}</pubDate>
+                <guid>https://bradeneast.com/blog/${post.link}</guid>
+                <pubDate>${RSSDate.toUTCString()}</pubDate>
                 <description></description>
             </item>
     `;
 })
-RSSFeed += `</channel></rss>`;
-fs.writeFileSync(feed + '/index.xml', RSSFeed);
+RSSFeed += `<atom:link href="https://bradeneast.com/blog/feed/rss.xml" rel="self" type="application/rss+xml" /></channel></rss>`;
+fs.writeFileSync(feed + '/rss.xml', RSSFeed);
 
 // ADDS POSTS TO HOMEPAGE
 const blogFeedPages = ['../blog/index.html'];
