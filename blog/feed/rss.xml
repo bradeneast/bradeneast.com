@@ -1,10 +1,12 @@
 
-    <rss version="1.0" xmlns:atom="https://www.bradeneast.com/blog/feed/rss.xml">
-    <channel version="2.0">
-    <title>Braden East's Blog</title>
+<?xml version="1.0" encoding="utf-8"?>
+    <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+    <title>Blog of Braden East</title>
     <link>https://www.bradeneast.com/blog</link>
     <description>This blog is for developers and designers ready to execute their ideas.</description>
-    <lastBuildDate>Thu, 22 Aug 2019 00:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 00:26:21 GMT</lastBuildDate>
+    <content:link href="http://purl.org/dc/elements/1.1/" rel="self" type="application/rss+xml" />
 
             <item>
                 <title>Styling pseudo elements with vanilla javascript - the easy way</title>
@@ -53,4 +55,4 @@
                 <pubDate>Thu, 25 Jul 2019 05:00:00 GMT</pubDate>
                 <description></description>
             </item>
-    <atom:link href="https://bradeneast.com/blog/feed/rss.xml" rel="self" type="application/rss+xml" /></channel></rss>
+    </channel></rss>
