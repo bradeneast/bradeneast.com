@@ -21,7 +21,9 @@ function insertPreloads(paths) {
         if (sourceType == 'js') {
             link.setAttribute('as', 'script')
         } else if (sourceType == 'css') {
-            link.setAttribute('as', 'style');
+            link.setAttribute('as', 'style')
+        } else if (path.substr(0, 4) == 'http') {
+            link.setAttribute('as', 'fetch')
         }
         document.head.appendChild(link);
     })

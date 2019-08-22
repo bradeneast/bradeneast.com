@@ -76,8 +76,7 @@ const feed = blogDir + 'feed';
 fs.mkdirSync(feed);
 fs.createFileSync(feed + '/rss.xml');
 const today = new Date();
-let RSSFeed = `
-<?xml version="1.0" encoding="utf-8"?>
+let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
     <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
     <title>Blog of Braden East</title>
@@ -225,7 +224,10 @@ posts.map((post, index) => {
             </item>
     `;
 })
-RSSFeed += `</channel></rss>`;
+RSSFeed += `
+</channel>
+</rss>
+`;
 fs.writeFileSync(feed + '/rss.xml', RSSFeed);
 
 // ADDS POSTS TO HOMEPAGE
