@@ -83,7 +83,7 @@ let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
     <link>https://www.bradeneast.com/blog</link>
     <description>This blog is for developers and designers ready to execute their ideas.</description>
     <lastBuildDate>${today.toUTCString()}</lastBuildDate>
-    <content:link href="http://purl.org/dc/elements/1.1/" rel="self" type="application/rss+xml" />
+    <dc:link href="http://purl.org/dc/elements/1.1/" rel="self" type="application/rss+xml" />
 `;
 
 
