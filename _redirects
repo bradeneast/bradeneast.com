@@ -3,5 +3,4 @@
 /identity-design    /about/identity-design          301
 /branding           /about/brand-strategy           301
 /brand-strategy     /about/brand-strategy           301
-/feed               /blog/feed/rss.xml              301
-/blog/feed          /blog/feed/rss.xml              301
+/feed               /blog/feed/                     301
