@@ -73,8 +73,7 @@ fs.readdirSync(blogDir).map(dir => {
 
 // Creates RSS feed location and starts RSS text string
 const feed = blogDir + 'feed';
-fs.mkdirSync(feed);
-fs.createFileSync(feed + '/index');
+fs.createFileSync(feed);
 const today = new Date();
 let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -228,7 +227,7 @@ RSSFeed += `
 </channel>
 </rss>
 `;
-fs.writeFileSync(feed + '/index', RSSFeed);
+fs.writeFileSync(feed, RSSFeed);
 
 // ADDS POSTS TO HOMEPAGE
 const blogFeedPages = ['../blog/index.html'];
