@@ -66,7 +66,7 @@ function insertMeta(url, pageTitle) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed/rss.xml" />
+        <link rel="alternate" type="application/atom+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed/rss.xml" />
         <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
         <link rel="stylesheet" type="text/css" href="/css/main.css" />
         <link rel="stylesheet" href="/css/prism.css">
