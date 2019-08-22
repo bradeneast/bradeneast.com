@@ -74,13 +74,9 @@ fs.readdirSync(blogDir).map(dir => {
 // Creates RSS feed location and starts RSS text string
 const feed = blogDir + 'feed';
 fs.mkdirSync(feed);
-fs.createFileSync(feed + '/index.html');
+fs.createFileSync(feed + '/index.xml');
 const today = new Date();
-let RSSFeed = `
-<html>
-<body>
-<pre>
-    <?xml version="1.0" encoding="utf-8"?>
+let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
     <title>Blog of Braden East</title>
@@ -231,11 +227,8 @@ posts.map((post, index) => {
 RSSFeed += `
 </channel>
 </rss>
-</pre>
-</body>
-</html>
 `;
-fs.writeFileSync(feed + '/index.html', RSSFeed);
+fs.writeFileSync(feed + '/index.xml', RSSFeed);
 
 // ADDS POSTS TO HOMEPAGE
 const blogFeedPages = ['../blog/index.html'];

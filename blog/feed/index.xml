@@ -1,14 +1,10 @@
-
-<html>
-<body>
-<pre>
-    <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
     <title>Blog of Braden East</title>
     <link>https://www.bradeneast.com/blog/feed/</link>
     <description>This blog is for developers and designers ready to execute their ideas.</description>
-    <lastBuildDate>Thu, 22 Aug 2019 15:22:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Aug 2019 15:30:18 GMT</lastBuildDate>
     <atom:link href="https://www.bradeneast.com/blog/feed/" rel="self" type="application/rss+xml" />
 
             <item>
@@ -61,6 +57,3 @@
     
 </channel>
 </rss>
-</pre>
-</body>
-</html>
