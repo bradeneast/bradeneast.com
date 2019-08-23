@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>This blog is for developers and designers ready to execute their ideas.</description>
-<lastBuildDate>Fri, 23 Aug 2019 13:18:51 GMT</lastBuildDate>
+<lastBuildDate>Fri, 23 Aug 2019 14:23:17 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 
 <item>
@@ -12,12 +12,10 @@
 <link>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</link>
 <guid>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</guid>
 <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
-
-<category>html</category>
-<category>css</category>
-<category>javascript</category>
+<category>html</category><category>css</category><category>javascript</category>
 <description>
-Let&#x2019;s say we want to have a wavy background overlay on a section with another background image already. We could use multiple, comma-separated backgrounds, but only if we want to accept the same sizing and position for each background.</description>
+Let&#x2019;s say we want to have a wavy background overlay on a section with another background image already. We could use multiple, comma-separated backgrounds, but only if we want to accept the same sizing and position for each background.</description>.
+<media: content url="https://www.bradeneast.com/images/blog/squidward-dance.gif" type="image/jpg">
 </item>
     
 <item>
@@ -25,11 +23,10 @@ Let&#x2019;s say we want to have a wavy background overlay on a section with ano
 <link>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</link>
 <guid>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</guid>
 <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
-
-<category>javascript</category>
-<category>html</category>
+<category>javascript</category><category>html</category>
 <description>
-I&#x2019;m a B-minus student when it comes to accessibility on web projects.</description>
+I&#x2019;m a B-minus student when it comes to accessibility on web projects.</description>.
+<media: content url="https://www.bradeneast.com/images/blog/over-and-over.gif" type="image/jpg">
 </item>
     
 <item>
@@ -37,11 +34,10 @@ I&#x2019;m a B-minus student when it comes to accessibility on web projects.</de
 <link>https://bradeneast.com/blog/converting-json-to-html--nested-objects-and-urls</link>
 <guid>https://bradeneast.com/blog/converting-json-to-html--nested-objects-and-urls</guid>
 <pubDate>Wed, 07 Aug 2019 05:00:00 GMT</pubDate>
-
-<category>javascript</category>
-<category>html</category>
+<category>javascript</category><category>html</category>
 <description>
-No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don&#x2019;t have to write (or rewrite).</description>
+No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don&#x2019;t have to write (or rewrite).</description>.
+<media: content url="https://www.bradeneast.com/images/blog/this-is-fine.gif" type="image/jpg">
 </item>
     
 <item>
@@ -49,11 +45,10 @@ No developer wants to debug code written for a single use case. Sometimes you ha
 <link>https://bradeneast.com/blog/append-json-values-to-matching-html-elements-with-object.keys</link>
 <guid>https://bradeneast.com/blog/append-json-values-to-matching-html-elements-with-object.keys</guid>
 <pubDate>Sun, 04 Aug 2019 05:00:00 GMT</pubDate>
-
-<category>javascript</category>
-<category>html</category>
+<category>javascript</category><category>html</category>
 <description>
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript <code>Object.keys()</code> method.</description>
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript <code>Object.keys()</code> method.</description>.
+
 </item>
     
 <item>
@@ -61,11 +56,10 @@ Ever needed a quick way to convert data from JSON to HTML, with as few lines of 
 <link>https://bradeneast.com/blog/the-logo-manifesto</link>
 <guid>https://bradeneast.com/blog/the-logo-manifesto</guid>
 <pubDate>Mon, 29 Jul 2019 05:00:00 GMT</pubDate>
-
-<category>design</category>
-<category>branding</category>
+<category>design</category><category>branding</category>
 <description>
-This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.</description>
+This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.</description>.
+
 </item>
     
 <item>
@@ -73,10 +67,9 @@ This manifesto is to get me into the headspace for designing innovative, fully r
 <link>https://bradeneast.com/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand</link>
 <guid>https://bradeneast.com/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand</guid>
 <pubDate>Thu, 25 Jul 2019 05:00:00 GMT</pubDate>
-
-<category>branding</category>
-<category>business</category>
+<category>branding</category><category>business</category>
 <description>
-Let&#x2019;s talk about how to get on the same page during the branding process. When we&#x2019;re personally invested in a project, as business owners and designers, we need a chance to look objectively at the challenges facing our brand.</description>
+Let&#x2019;s talk about how to get on the same page during the branding process. When we&#x2019;re personally invested in a project, as business owners and designers, we need a chance to look objectively at the challenges facing our brand.</description>.
+<media: content url="https://www.bradeneast.com/images/blog/taskade-1.png" type="image/jpg">
 </item>
     </channel></rss>
