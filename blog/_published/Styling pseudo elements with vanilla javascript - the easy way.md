@@ -2,9 +2,9 @@
 ## 2019/08/20
 ### html, css, javascript
 
-Let's say we want to have a wavy background overlay on a section with another background image already. We could use multiple, comma-separated backgrounds, but only if we want to accept the same sizing and position for each background.
+I'm discovering more uses every day for `::before` and `::after`, letting me write cleaner, dryer code.  The problem is, pseudo elements haven't been the easiest to manipulate with Javascript in the past! Let's look at a simple example of how we can animate and style pseudo elements with vanilla Javascript.
 
-Let's say we needed more flexibility than that, and we're also using it in a lot of places.  In this case, it makes sense to add our wavy background overlay with a `::before` or `::after` psuedo element.
+Let's say we want to animate a pseudo element as the user scrolls down our page.  Or, what if we are using pseudo elements for tooltips, shown on the `onclick` event. Take this wavy background element for example:
 
 ```css
 .wavy-background {
@@ -28,7 +28,7 @@ Let's say we needed more flexibility than that, and we're also using it in a lot
 }
 ```
 
-Everything is looking great, until we decide we want to animate the waves as the user scrolls.
+Everything is looking great, until we decide we want to animate the background as the user scrolls.
 
 ![squidward dancing gif](/images/blog/squidward-dance.gif)
 

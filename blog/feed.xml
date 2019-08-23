@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>This blog is for developers and designers ready to execute their ideas.</description>
-<lastBuildDate>Fri, 23 Aug 2019 14:44:17 GMT</lastBuildDate>
+<lastBuildDate>Fri, 23 Aug 2019 15:32:31 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -14,7 +14,7 @@
     <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
     <category>html</category><category>css</category><category>javascript</category>
     <description>
-Let&#x2019;s say we want to have a wavy background overlay on a section with another background image already. We could use multiple, comma-separated backgrounds, but only if we want to accept the same sizing and position for each background.</description>
+I&#x2019;m discovering more uses every day for ::before and ::after, letting me write cleaner, dryer code.  The problem is, pseudo elements haven&#x2019;t been the easiest to manipulate with Javascript in the past! Let&#x2019;s look at a simple example of how we can animate and style pseudo elements with vanilla Javascript.</description>
     <media:content url="https://www.bradeneast.com/images/blog/squidward-dance.gif" type="image/jpg" width="150" />
     </item>
     <item>
