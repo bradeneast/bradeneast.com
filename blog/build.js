@@ -230,7 +230,7 @@ posts.map((post, index) => {
     <guid>https://bradeneast.com/blog/${post.link}</guid>
     <pubDate>${RSSDate.toUTCString()}</pubDate>
     ${RSSCategories}
-    <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<p>|<\/p>/g, '')}</description>
+    <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<[^>]*>/g, '')}</description>
     ${RSSImage}
     </item>`;
 })

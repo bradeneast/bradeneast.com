@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>This blog is for developers and designers ready to execute their ideas.</description>
-<lastBuildDate>Fri, 23 Aug 2019 14:39:48 GMT</lastBuildDate>
+<lastBuildDate>Fri, 23 Aug 2019 14:40:52 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -44,7 +44,7 @@ No developer wants to debug code written for a single use case. Sometimes you ha
     <pubDate>Sun, 04 Aug 2019 05:00:00 GMT</pubDate>
     <category>javascript</category><category>html</category>
     <description>
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript <code>Object.keys()</code> method.</description>
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript Object.keys() method.</description>
     
     </item>
     <item>
