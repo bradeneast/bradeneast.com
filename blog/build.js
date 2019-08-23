@@ -219,7 +219,7 @@ posts.map((post, index) => {
     });
     let RSSImage = post.body.match(/src="(.*?[^"])(?=("|'))/i);
     if (!post.body.includes('src=')) { RSSImage = '' } else {
-        RSSImage = `<media: content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg">`
+        RSSImage = `<media:content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg">`
     }
     RSSFeed += `
 <item>
@@ -228,7 +228,7 @@ posts.map((post, index) => {
 <guid>https://bradeneast.com/blog/${post.link}</guid>
 <pubDate>${RSSDate.toUTCString()}</pubDate>
 ${RSSCategories}
-<description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<p>|<\/p>/g, '')}</description>.
+<description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<p>|<\/p>/g, '')}</description>
 ${RSSImage}
 </item>
     `;
