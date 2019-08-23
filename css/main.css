@@ -131,7 +131,7 @@ body {
   background-color: var(--CL-G1);
   border-radius: 0 0 5px 0;
   padding: var(--PAD-M);
-  padding-top: 30vh;
+  padding-top: 12vw;
 }
 
 .hero .hero-text > :last-child {
@@ -159,7 +159,7 @@ body {
   align-content: end;
   align-items: end;
   background: var(--CL-0);
-  padding-top: 30vh;
+  padding-top: 12vw;
 }
 
 .hero .hero-aside li {
@@ -190,7 +190,7 @@ body {
   --FS-XS: .7rem;
   --FS-S: 1rem;
   --FS-M: 1.4rem;
-  --FS-L: 4rem;
+  --FS-L: calc(3rem + 1vw);
 }
 
 body,

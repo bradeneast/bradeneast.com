@@ -166,15 +166,6 @@ document.querySelectorAll('img').forEach(e => {
     }
 })
 
-// ACCESSIBILITY: adds aria label to each heading element with text content
-const ariaElems = ['h1', 'h2', 'h3'];
-ariaElems.map(tag => {
-    document.querySelectorAll(tag).forEach(e => {
-        e.setAttribute('aria-label', e.textContent);
-        e.setAttribute('tabindex', 0);
-    })
-})
-
 // scroll effects
 const upDownArrow = document.getElementById('up-down');
 const waveOverlays = document.querySelectorAll('.wave-overlay');
