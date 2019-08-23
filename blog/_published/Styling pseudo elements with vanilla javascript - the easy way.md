@@ -2,7 +2,7 @@
 ## 2019/08/20
 ### html, css, javascript
 
-I'm a proponent of CSS over Javascript in all possible applications. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
+I'm a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
 
 ![squidward dancing gif](/images/blog/squidward-dance.gif)
 
