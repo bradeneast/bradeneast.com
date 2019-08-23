@@ -85,7 +85,6 @@ let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
 <description>This blog is for developers and designers ready to execute their ideas.</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${selfLink}" rel="self" type="application/rss+xml" />
-<media:link href="${selfLink}}" rel="self" type="application/rss+xml" />
 `;
 
 
@@ -224,7 +223,8 @@ posts.map((post, index) => {
     if (!post.body.includes('src=')) { RSSImage = '' } else {
         RSSImage = `<media:content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg">`
     }
-    RSSFeed += `<item>
+    RSSFeed += `
+    <item>
     <title>${post.title}</title>
     <link>https://bradeneast.com/blog/${post.link}</link>
     <guid>https://bradeneast.com/blog/${post.link}</guid>
