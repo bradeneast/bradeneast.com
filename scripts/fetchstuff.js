@@ -65,20 +65,20 @@ function insertAllContent(wrapperID, templateID, promise, parseMethod) {
     const wrapper = document.getElementById(wrapperID);
     const template = document.getElementById(templateID);
     promise.then(data => {
-            data.map(item => {
-                if (!item.title || !checkIfCurrent(item)) {
-                    let newObject = document.importNode(template.content, true);
-                    Object.keys(item).map(key => {
-                        if (item[key]) {
-                            parseMethod(item[key], key, newObject);
-                        }
-                    });
-                    newObject.querySelector('div').id = encodeURI(item.title);
-                    wrapper.appendChild(newObject);
-                    clearImageFormatting(document.querySelectorAll('img'));
-                }
-            })
+        data.map(item => {
+            if (!item.title || !checkIfCurrent(item)) {
+                let newObject = document.importNode(template.content, true);
+                Object.keys(item).map(key => {
+                    if (item[key]) {
+                        parseMethod(item[key], key, newObject);
+                    }
+                });
+                newObject.querySelector('div').id = encodeURI(item.title);
+                wrapper.appendChild(newObject);
+                clearImageFormatting(document.querySelectorAll('img'));
+            }
         })
+    })
         .then(function () {
             removeIfFound('.loading', wrapperID);
             removeIfFound('.error', wrapperID);
@@ -93,7 +93,7 @@ function parseBlogContent(content, contentName, container) {
     if (contentName == 'content') {
         let parser = new DOMParser();
         featuredImg = parser.parseFromString(content, 'text/html').querySelector('img');
-        featuredImg.setAttribute('alt', getTitleFromSource(featuredImg.getAttribute('src')));
+        featuredImg.setAttribute('alt', altFromSource(featuredImg.getAttribute('src')));
     }
     if (container.querySelector('[data-image]') && featuredImg) {
         container.querySelector('[data-image]').insertAdjacentElement('beforeend', featuredImg);

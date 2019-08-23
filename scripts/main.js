@@ -71,7 +71,7 @@ function removeElementsBySelector(selector) {
 }
 
 // HELPERS: gets image title from image url
-function getTitleFromSource(string) {
+function altFromSource(string) {
     return (decodeURIComponent(string).split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
 }
 
@@ -162,7 +162,7 @@ function populateSubNav(area) {
 document.querySelectorAll('img').forEach(e => {
     e.setAttribute('loading', 'lazy');
     if (!e.getAttribute('alt')) {
-        e.setAttribute('alt', getTitleFromSource(e.getAttribute('src')));
+        e.setAttribute('alt', altFromSource(e.getAttribute('src')));
     }
 })
 
@@ -175,7 +175,6 @@ ariaElems.map(tag => {
     })
 })
 
-
 // scroll effects
 let bodyHeight = document.body.offsetHeight;
 let footerHeight = document.querySelector('footer').offsetHeight;
@@ -185,8 +184,7 @@ const waveOverlays = document.querySelectorAll('.wave-overlay');
 window.addEventListener('scroll', function (e) {
     addClassIfScrolled(nav, 'compact', 600);
     addClassIfScrolled(upDownArrow, 'up', 600);
-
-    if (window.scrollY >= bodyHeight - footerHeight - window.innerHeight) {
+    if (window.scrollY >= (bodyHeight - footerHeight - window.innerHeight)) {
         upDownArrow.classList.remove('up');
     }
     if (waveOverlays) {
@@ -195,7 +193,6 @@ window.addEventListener('scroll', function (e) {
         })
     }
 });
-
 setTimeout(() => {
     ScrollOut({
         once: true,
