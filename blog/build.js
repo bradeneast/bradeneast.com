@@ -76,13 +76,13 @@ const feed = blogDir + 'feed.xml';
 fs.createFileSync(feed);
 const today = new Date();
 let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
-    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-    <title>Blog of Braden East</title>
-    <link>https://www.bradeneast.com/blog/feed.xml</link>
-    <description>This blog is for developers and designers ready to execute their ideas.</description>
-    <lastBuildDate>${today.toUTCString()}</lastBuildDate>
-    <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Blog of Braden East</title>
+<link>https://www.bradeneast.com/blog/feed.xml</link>
+<description>This blog is for developers and designers ready to execute their ideas.</description>
+<lastBuildDate>${today.toUTCString()}</lastBuildDate>
+<atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 `;
 
 
@@ -213,20 +213,22 @@ posts.map((post, index) => {
 
     // Adds post to RSS feed
     let RSSDate = new Date(post.date);
+    let RSSCategories = '';
+    post.tags.split(', ').map(tag => {
+        RSSCategories += `\n<category>${tag}</category>`
+    })
     RSSFeed += `
-            <item>
-                <title>${post.title}</title>
-                <link>https://bradeneast.com/blog/${post.link}</link>
-                <guid>https://bradeneast.com/blog/${post.link}</guid>
-                <pubDate>${RSSDate.toUTCString()}</pubDate>
-                <description></description>
-            </item>
+<item>
+<title>${post.title}</title>
+<link>https://bradeneast.com/blog/${post.link}</link>
+<guid>https://bradeneast.com/blog/${post.link}</guid>
+<pubDate>${RSSDate.toUTCString()}</pubDate>
+${RSSCategories}
+<description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<p>|<\/p>/g, '')}</description>
+</item>
     `;
 })
-RSSFeed += `
-</channel>
-</rss>
-`;
+RSSFeed += `</channel></rss>`;
 fs.writeFileSync(feed, RSSFeed);
 
 // ADDS POSTS TO HOMEPAGE
