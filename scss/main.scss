@@ -123,7 +123,7 @@ body {
     .hero-text {
         position: relative;
         display: flex;
-        align-content: center;
+        align-content: start;
         flex-flow: row wrap;
         flex-basis: 1fr;
         height: 100vh;
@@ -133,6 +133,7 @@ body {
         background-color: var(--CL-G1);
         border-radius: 0 0 5px 0;
         padding: var(--PAD-M);
+        padding-top: 30vh;
 
         >:last-child {
             margin-bottom: var(--PAD-L);
@@ -160,6 +161,7 @@ body {
         align-content: end;
         align-items: end;
         background: var(--CL-0);
+        padding-top: 30vh;
 
         li {
             position: relative;
@@ -175,7 +177,7 @@ body {
 
 // imports
 
-@import 'typography', 'nav', 'buttons', 'posts', 'grids', 'animations', 'object-oriented';
+@import 'typography', 'nav', 'buttons', 'posts', 'grids', 'animations', 'object-oriented', 'forms';
 
 footer {
     display: flex;

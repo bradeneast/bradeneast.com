@@ -176,15 +176,13 @@ ariaElems.map(tag => {
 })
 
 // scroll effects
-let bodyHeight = document.body.offsetHeight;
-let footerHeight = document.querySelector('footer').offsetHeight;
 const upDownArrow = document.getElementById('up-down');
 const waveOverlays = document.querySelectorAll('.wave-overlay');
 
 window.addEventListener('scroll', function (e) {
     addClassIfScrolled(nav, 'compact', 600);
     addClassIfScrolled(upDownArrow, 'up', 600);
-    if (window.scrollY >= (bodyHeight - footerHeight)) {
+    if (window.scrollY >= (document.body.offsetHeight - document.querySelector('footer').offsetHeight - window.innerHeight)) {
         upDownArrow.classList.remove('up');
     }
     if (waveOverlays) {

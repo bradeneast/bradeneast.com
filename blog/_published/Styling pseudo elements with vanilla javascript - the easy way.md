@@ -2,7 +2,11 @@
 ## 2019/08/20
 ### html, css, javascript
 
-I'm discovering more uses every day for `::before` and `::after`, letting me write cleaner, dryer code.  The problem is, pseudo elements haven't been the easiest to manipulate with Javascript in the past! Let's look at a simple example of how we can animate and style pseudo elements with vanilla Javascript.
+I'm a proponent of CSS over Javascript in all possible applications. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
+
+![squidward dancing gif](/images/blog/squidward-dance.gif)
+
+I'm discovering more uses every day for `::before` and `::after`, letting me write cleaner, dryer code.  The problem is, pseudo elements haven't been the easiest to manipulate with Javascript in the past! There are lots of really complex solutions out there, but let's look at a simple example of how we can animate and style pseudo elements with vanilla Javascript.
 
 Let's say we want to animate a pseudo element as the user scrolls down our page.  Or, what if we are using pseudo elements for tooltips, shown on the `onclick` event. Take this wavy background element for example:
 
@@ -29,8 +33,6 @@ Let's say we want to animate a pseudo element as the user scrolls down our page.
 ```
 
 Everything is looking great, until we decide we want to animate the background as the user scrolls.
-
-![squidward dancing gif](/images/blog/squidward-dance.gif)
 
 To do that, we have to introduce a little Javascript, which doesn't have a way to select pseudo elements. We could make it an ordinary element, but that would mean extra markup and more copying and pasting.
 

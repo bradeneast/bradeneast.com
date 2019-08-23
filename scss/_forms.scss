@@ -1,0 +1,64 @@
+form {
+    margin: var(--PAD-S) 0;
+
+    input:not([type=email]):not([type=text]),
+    input:not([type=email]):not([type=text])+label {
+        cursor: pointer;
+    }
+
+    * {
+        transition: var(--TR-S);
+    }
+}
+
+input[type=checkbox] {
+    display: inline-block;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: var(--CL-G3);
+    margin-right: .5em;
+}
+
+input[type=email] {
+    display: block;
+}
+
+input[type=text],
+input[type=email] {
+    font-size: var(--FS-S);
+    height: 3em;
+    padding: .5em;
+    color: var(--CL-A3) !important;
+    border: 2px solid var(--CL-A2);
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--CL-A2);
+    background-image: url(/images/svg/wave.svg);
+    background-size: 270%;
+    background-repeat: no-repeat;
+    background-position-y: -200%;
+    transition: var(--TR-M);
+
+    &:focus,
+    &:focus-within {
+        background-position-y: 100%;
+    }
+
+    &:placeholder-shown {
+        color: var(--CL-G3) !important;
+    }
+}
+
+.email-signup {
+    display: grid;
+    grid-template-columns: 1fr minmax(18rem, 100%);
+    grid-gap: 1em;
+
+    input[type=submit] {
+        order: -1;
+        height: 3em;
+        margin: 0;
+    }
+}
