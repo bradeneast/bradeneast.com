@@ -72,17 +72,20 @@ fs.readdirSync(blogDir).map(dir => {
 })
 
 // Creates RSS feed location and starts RSS text string
-const feed = blogDir + 'feed.xml';
+const feedName = 'feed.xml';
+const feed = blogDir + feedName;
+const selfLink = `https://www.bradeneast.com/blog/${feedName}`
 fs.createFileSync(feed);
 const today = new Date();
 let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
 <title>Blog of Braden East</title>
-<link>https://www.bradeneast.com/blog/feed.xml</link>
+<link>${selfLink}</link>
 <description>This blog is for developers and designers ready to execute their ideas.</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
-<atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+<atom:link href="${selfLink}" rel="self" type="application/rss+xml" />
+<media:link href="${selfLink}}" rel="self" type="application/rss+xml" />
 `;
 
 
@@ -211,7 +214,7 @@ posts.map((post, index) => {
     fs.writeFileSync(postLocation, $.html());
     console.log('> post written to file ' + postLocation.replace('./', '/blog/'));
 
-    // Adds post to RSS feed
+    // Adds post to RSS string
     let RSSDate = new Date(post.date);
     let RSSCategories = '';
     post.tags.split(', ').map(tag => {
@@ -221,18 +224,18 @@ posts.map((post, index) => {
     if (!post.body.includes('src=')) { RSSImage = '' } else {
         RSSImage = `<media:content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg">`
     }
-    RSSFeed += `
-<item>
-<title>${post.title}</title>
-<link>https://bradeneast.com/blog/${post.link}</link>
-<guid>https://bradeneast.com/blog/${post.link}</guid>
-<pubDate>${RSSDate.toUTCString()}</pubDate>
-${RSSCategories}
-<description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<p>|<\/p>/g, '')}</description>
-${RSSImage}
-</item>
-    `;
+    RSSFeed += `<item>
+    <title>${post.title}</title>
+    <link>https://bradeneast.com/blog/${post.link}</link>
+    <guid>https://bradeneast.com/blog/${post.link}</guid>
+    <pubDate>${RSSDate.toUTCString()}</pubDate>
+    ${RSSCategories}
+    <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<p>|<\/p>/g, '')}</description>
+    ${RSSImage}
+    </item>`;
 })
+
+// Writes RSS string of blog posts to feed.xml
 RSSFeed += `</channel></rss>`;
 fs.writeFileSync(feed, RSSFeed);
 
