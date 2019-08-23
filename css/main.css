@@ -1467,6 +1467,12 @@ input[type=email]:placeholder-shown {
   margin: 0;
 }
 
+@media screen and (max-width: 60em) {
+  .email-signup {
+    grid-template-columns: 1fr;
+  }
+}
+
 footer {
   display: flex;
   align-items: center;
