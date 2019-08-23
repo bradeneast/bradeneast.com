@@ -184,7 +184,7 @@ const waveOverlays = document.querySelectorAll('.wave-overlay');
 window.addEventListener('scroll', function (e) {
     addClassIfScrolled(nav, 'compact', 600);
     addClassIfScrolled(upDownArrow, 'up', 600);
-    if (window.scrollY >= (bodyHeight - footerHeight - window.innerHeight)) {
+    if (window.scrollY >= (bodyHeight - footerHeight)) {
         upDownArrow.classList.remove('up');
     }
     if (waveOverlays) {
