@@ -1469,7 +1469,11 @@ input[type=email]:placeholder-shown {
 
 @media screen and (max-width: 60em) {
   .email-signup {
-    grid-template-columns: 1fr;
+    display: block;
+    margin-top: 1em;
+  }
+  .email-signup input[type=submit] {
+    margin-top: 1em;
   }
 }
 

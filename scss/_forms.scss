@@ -65,6 +65,11 @@ input[type=email] {
 
 @media screen and (max-width: $mq) {
     .email-signup {
-        grid-template-columns: 1fr
+        display: block;
+        margin-top: 1em;
+
+        input[type=submit] {
+            margin-top: 1em;
+        }
     }
 }
