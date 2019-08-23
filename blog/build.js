@@ -221,7 +221,7 @@ posts.map((post, index) => {
     });
     let RSSImage = post.body.match(/src="(.*?[^"])(?=("|'))/i);
     if (!post.body.includes('src=')) { RSSImage = '' } else {
-        RSSImage = `<media:content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg" />`
+        RSSImage = `<media:content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg" width="150" />`
     }
     RSSFeed += `
     <item>
