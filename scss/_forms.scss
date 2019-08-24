@@ -1,5 +1,6 @@
 form {
     margin: var(--PAD-S) 0;
+    max-width: 36rem;
 
     input:not([type=email]):not([type=text]),
     input:not([type=email]):not([type=text])+label {
@@ -8,6 +9,18 @@ form {
 
     * {
         transition: var(--TR-S);
+    }
+}
+
+.rss-subscribe {
+    padding: var(--PAD-M);
+
+    form {
+        margin-left: auto;
+    }
+
+    h2 {
+        text-align: right;
     }
 }
 
@@ -33,7 +46,7 @@ input[type=email] {
     color: var(--CL-A3) !important;
     border: 2px solid var(--CL-A2);
     width: 100%;
-    max-width: 100%;
+    max-width: 40rem;
     background-color: var(--CL-A2);
     background-image: url(/images/svg/wave.svg);
     background-size: 270%;
@@ -53,7 +66,7 @@ input[type=email] {
 
 .email-signup {
     display: grid;
-    grid-template-columns: 1fr minmax(18rem, 100%);
+    grid-template-columns: 1fr minmax(18vw, 100%);
     grid-gap: 1em;
 
     input[type=submit] {
@@ -64,6 +77,23 @@ input[type=email] {
 }
 
 @media screen and (max-width: $mq) {
+    .rss-subscribe {
+        margin-bottom: calc(var(--PAD-L) * 3);
+
+        form {
+            margin: 0;
+        }
+
+        h2 {
+            text-align: inherit;
+        }
+    }
+
+    input[type=text],
+    input[type=email] {
+        background-size: 300%;
+    }
+
     .email-signup {
         display: block;
         margin-top: 1em;

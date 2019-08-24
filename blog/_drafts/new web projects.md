@@ -1,1 +1,0 @@
- - A single page app with routing done in vanilla JavaScript

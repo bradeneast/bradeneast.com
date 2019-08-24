@@ -153,8 +153,8 @@ body {
         padding: var(--PAD-M) var(--PAD-L);
         width: 100%;
         min-width: 20rem;
-        height: 100vh;
         min-height: 44rem;
+        height: 100vh;
         justify-self: flex-end;
         display: grid;
         grid-gap: var(--PAD-L);
@@ -165,7 +165,6 @@ body {
 
         li {
             position: relative;
-            margin-right: var(--PAD-M);
 
             .li__text {
                 z-index: 2;
