@@ -69,6 +69,12 @@ input[type=email] {
 }
 
 @media screen and (max-width: $mq) {
+
+    input[type=text],
+    input[type=email] {
+        width: 100%;
+    }
+
     .rss-subscribe {
         margin: 0;
         margin-bottom: calc(var(--PAD-L) * 3);
