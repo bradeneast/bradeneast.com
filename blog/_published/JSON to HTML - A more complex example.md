@@ -2,7 +2,7 @@
 ## 2019/08/07
 ### javascript, html
 
-No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don't have to write (or rewrite).
+No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can reuse is code you don't have to write (or rewrite).
 
 Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using `Object.keys()`. Let's expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because sometimes we have to get that one value nested inside 5 other objects.
 

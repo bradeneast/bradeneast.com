@@ -4,7 +4,7 @@
 
 Have you ever needed to pair the right visual with a message? It's the weekend, so I decided to build a companion to my first web app, the [Design Starter Toolkit](https://designstarterapp.netlify.com). I don't expect this second app to have quite as many moving parts, but I hope it can save time and headaches for my friends who write better with a visual aid.
 
-If you're anything like me, it's easier to write when you have a visual aide. From sales pages to social media posts, it's much easier to write compelling copy when I have a visual already in place. We want our visuals to harmonize with the text in a way that reinforces our message and doesn't hinder it.
+If you're anything like me, it's easier to write when you have a visual aid. From sales pages to social media posts, it's much easier to write compelling copy when I have a visual already in place. We want our visuals to harmonize with the text in a way that reinforces our message and doesn't hinder it.
 
 There are several free, high quality icon libraries out there, so we should have all the resources we need.
 

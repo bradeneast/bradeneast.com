@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for design-oriented devs.</description>
-<lastBuildDate>Sat, 24 Aug 2019 16:51:27 GMT</lastBuildDate>
+<lastBuildDate>Sat, 24 Aug 2019 19:52:30 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -34,7 +34,7 @@ I&#x2019;m a proponent of CSS over Javascript where at all possible. That said, 
     <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
     <category>javascript</category><category>html</category>
     <description>
-I&#x2019;m a B-minus student when it comes to accessibility on web projects.</description>
+I&#x2019;m a B-minus student when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m always adding aria-label and tabindex and role attributes an afterthought.</description>
     <media:content url="https://www.bradeneast.com/images/blog/over-and-over.gif" type="image/jpg" width="250" />
     </item>
     <item>
@@ -44,7 +44,7 @@ I&#x2019;m a B-minus student when it comes to accessibility on web projects.</de
     <pubDate>Wed, 07 Aug 2019 05:00:00 GMT</pubDate>
     <category>javascript</category><category>html</category>
     <description>
-No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can repurpose is code you don&#x2019;t have to write (or rewrite).</description>
+No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can reuse is code you don&#x2019;t have to write (or rewrite).</description>
     <media:content url="https://www.bradeneast.com/images/blog/this-is-fine.gif" type="image/jpg" width="250" />
     </item>
     <item>
@@ -66,14 +66,4 @@ Ever needed a quick way to convert data from JSON to HTML, with as few lines of 
     <description>
 This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.</description>
     
-    </item>
-    <item>
-    <title>Ditch the white board - A better tool for collaborating in a rebrand</title>
-    <link>https://bradeneast.com/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand</link>
-    <guid>https://bradeneast.com/blog/ditch-the-white-board--a-better-tool-for-collaborating-in-a-rebrand</guid>
-    <pubDate>Thu, 25 Jul 2019 05:00:00 GMT</pubDate>
-    <category>branding</category><category>business</category>
-    <description>
-Let&#x2019;s talk about how to get on the same page during the branding process. When we&#x2019;re personally invested in a project, as business owners and designers, we need a chance to look objectively at the challenges facing our brand.</description>
-    <media:content url="https://www.bradeneast.com/images/blog/taskade-1.png" type="image/jpg" width="250" />
     </item></channel></rss>
