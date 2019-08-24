@@ -161,7 +161,7 @@ body {
         align-content: end;
         align-items: end;
         background: var(--CL-0);
-        padding-top: 12vw;
+        padding-top: calc(3 * 9vw);
 
         li {
             position: relative;
@@ -306,6 +306,7 @@ footer {
             text-align: left !important;
             margin: 0;
             padding: var(--PAD-L);
+            padding-bottom: calc(var(--PAD-L) * 2);
             background-position: center;
             background-attachment: local;
             height: 85vh;

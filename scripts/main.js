@@ -170,7 +170,7 @@ document.querySelectorAll('img').forEach(e => {
 const upDownArrow = document.getElementById('up-down');
 const waveOverlays = document.querySelectorAll('.wave-overlay');
 
-window.addEventListener('scroll', function (e) {
+const scroll = () => {
     addClassIfScrolled(nav, 'compact', 600);
     addClassIfScrolled(upDownArrow, 'up', 600);
     if (window.scrollY >= (document.body.offsetHeight - document.querySelector('footer').offsetHeight - window.innerHeight)) {
@@ -181,7 +181,26 @@ window.addEventListener('scroll', function (e) {
             e.style.setProperty('--overlay-position', Math.round(window.scrollY) + 'px');
         })
     }
-});
+};
+let raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
+let lastScrollTop = window.scrollY;
+
+if (raf) {
+    loop();
+}
+
+function loop() {
+    let scrollTop = window.scrollY;
+    if (lastScrollTop === scrollTop) {
+        raf(loop);
+        return;
+    } else {
+        lastScrollTop = scrollTop;
+        scroll();
+        raf(loop);
+    }
+}
+
 setTimeout(() => {
     ScrollOut({
         once: true,

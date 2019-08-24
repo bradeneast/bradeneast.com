@@ -159,7 +159,7 @@ body {
   align-content: end;
   align-items: end;
   background: var(--CL-0);
-  padding-top: 12vw;
+  padding-top: calc(3 * 9vw);
 }
 
 .hero .hero-aside li {
@@ -185,7 +185,6 @@ body {
 
 :root {
   --FF-1: 'Metropolis', 'Helvetica', 'Arial', sans-serif;
-  --FF-2: 'Metropolis', 'Helvetica', 'Arial', sans-serif;
   --FS-XS: .7rem;
   --FS-S: 1rem;
   --FS-M: 1.4rem;
@@ -220,7 +219,7 @@ h4 {
 
 h1 {
   margin-top: .2em;
-  font-family: var(--FF-2);
+  font-family: var(--FF-1);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -.02em;
@@ -319,7 +318,7 @@ blockquote {
 strong,
 .strong {
   font-size: 1.05em;
-  font-family: var(--FF-2);
+  font-family: var(--FF-1);
   font-weight: 700;
 }
 
@@ -327,9 +326,6 @@ strong,
   h1 {
     font-size: 2.4rem;
     margin-bottom: .4em;
-  }
-  h1.center {
-    transform: translateX(10px);
   }
   h2 {
     line-height: 1.4;
@@ -411,7 +407,6 @@ nav .nav-items-container {
 nav .nav-item {
   position: relative;
   margin-left: 2rem;
-  font-family: var(--FF-2);
   text-transform: uppercase;
   font-weight: 700;
   font-size: .9rem;
@@ -884,7 +879,7 @@ input[type=submit]:focus {
 .post .body::first-letter {
   font-size: 135%;
   font-weight: 900;
-  font-family: var(--FF-2);
+  font-family: var(--FF-1);
   float: left;
   line-height: .6;
   color: var(--CL-0);
@@ -1399,60 +1394,31 @@ body.loaded .section {
   }
 }
 
-form {
-  margin: var(--PAD-S) 0;
-  max-width: 36rem;
-}
-
 form input:not([type=email]):not([type=text]),
 form input:not([type=email]):not([type=text]) + label {
   cursor: pointer;
 }
 
 form * {
-  transition: var(--TR-S);
-}
-
-.rss-subscribe {
-  padding: var(--PAD-M);
-}
-
-.rss-subscribe form {
-  margin-left: auto;
-}
-
-.rss-subscribe h2 {
   text-align: right;
-}
-
-input[type=checkbox] {
-  display: inline-block;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  background: var(--CL-G3);
-  margin-right: .5em;
-}
-
-input[type=email] {
-  display: block;
+  transition: var(--TR-S);
 }
 
 input[type=text],
 input[type=email] {
+  text-align: left;
+  width: 24rem;
   font-size: var(--FS-S);
   height: 3.2em;
   padding: .5em;
   color: var(--CL-A3) !important;
   border: 2px solid var(--CL-A2);
-  width: 100%;
-  max-width: 40rem;
   background-color: var(--CL-A2);
   background-image: url(/images/svg/wave.svg);
   background-size: 270%;
   background-repeat: no-repeat;
   background-position-y: -200%;
+  margin: 0 1em 1em 0;
   transition: var(--TR-M);
 }
 
@@ -1468,37 +1434,52 @@ input[type=email]:placeholder-shown {
 }
 
 .email-signup {
-  display: grid;
-  grid-template-columns: 1fr minmax(18vw, 100%);
-  grid-gap: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .email-signup input[type=submit] {
-  order: -1;
   height: 3.2em;
-  margin: 0;
+  margin: 0 1em 1em 0;
+}
+
+.rss-subscribe {
+  max-width: 50vw;
+  margin-left: auto;
+  padding: var(--PAD-M);
+}
+
+.rss-subscribe h2 {
+  text-align: right;
+}
+
+.rss-subscribe form {
+  margin-left: auto;
+}
+
+.rss-subscribe .email-signup {
+  justify-items: flex-end;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 60em) {
   .rss-subscribe {
-    margin-bottom: calc(var(--PAD-L) * 3);
-  }
-  .rss-subscribe form {
     margin: 0;
+    margin-bottom: calc(var(--PAD-L) * 3);
+    max-width: none;
   }
   .rss-subscribe h2 {
-    text-align: inherit;
+    text-align: left;
   }
-  input[type=text],
-  input[type=email] {
-    background-size: 300%;
+  .rss-subscribe input[type=submit] {
+    margin: 0;
   }
-  .email-signup {
-    display: block;
-    margin-top: 1em;
-  }
-  .email-signup input[type=submit] {
-    margin-top: 1em;
+  .rss-subscribe .email-signup,
+  .rss-subscribe .email-signup {
+    text-align: left;
+    justify-content: flex-start;
+    justify-items: flex-start;
   }
 }
 
@@ -1619,6 +1600,7 @@ footer .socials a:focus [data-icon] {
     text-align: left !important;
     margin: 0;
     padding: var(--PAD-L);
+    padding-bottom: calc(var(--PAD-L) * 2);
     background-position: center;
     background-attachment: local;
     height: 85vh;

@@ -1,6 +1,4 @@
 form {
-    margin: var(--PAD-S) 0;
-    max-width: 36rem;
 
     input:not([type=email]):not([type=text]),
     input:not([type=email]):not([type=text])+label {
@@ -8,50 +6,26 @@ form {
     }
 
     * {
+        text-align: right;
         transition: var(--TR-S);
     }
 }
 
-.rss-subscribe {
-    padding: var(--PAD-M);
-
-    form {
-        margin-left: auto;
-    }
-
-    h2 {
-        text-align: right;
-    }
-}
-
-input[type=checkbox] {
-    display: inline-block;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    background: var(--CL-G3);
-    margin-right: .5em;
-}
-
-input[type=email] {
-    display: block;
-}
-
 input[type=text],
 input[type=email] {
+    text-align: left;
+    width: 24rem;
     font-size: var(--FS-S);
     height: 3.2em;
     padding: .5em;
     color: var(--CL-A3) !important;
     border: 2px solid var(--CL-A2);
-    width: 100%;
-    max-width: 40rem;
     background-color: var(--CL-A2);
     background-image: url(/images/svg/wave.svg);
     background-size: 270%;
     background-repeat: no-repeat;
     background-position-y: -200%;
+    margin: 0 1em 1em 0;
     transition: var(--TR-M);
 
     &:focus,
@@ -65,41 +39,54 @@ input[type=email] {
 }
 
 .email-signup {
-    display: grid;
-    grid-template-columns: 1fr minmax(18vw, 100%);
-    grid-gap: 1em;
+    margin-top: 1em;
+    display: flex;
+    flex-flow: row wrap;
 
     input[type=submit] {
-        order: -1;
         height: 3.2em;
-        margin: 0;
+        margin: 0 1em 1em 0;
+    }
+}
+
+.rss-subscribe {
+    max-width: 50vw;
+    margin-left: auto;
+    padding: var(--PAD-M);
+
+    h2 {
+        text-align: right;
+    }
+
+    form {
+        margin-left: auto;
+    }
+
+    .email-signup {
+        justify-items: flex-end;
+        justify-content: flex-end;
     }
 }
 
 @media screen and (max-width: $mq) {
     .rss-subscribe {
+        margin: 0;
         margin-bottom: calc(var(--PAD-L) * 3);
+        max-width: none;
 
-        form {
+        h2 {
+            text-align: left;
+        }
+
+        input[type=submit] {
             margin: 0;
         }
 
-        h2 {
-            text-align: inherit;
-        }
-    }
-
-    input[type=text],
-    input[type=email] {
-        background-size: 300%;
-    }
-
-    .email-signup {
-        display: block;
-        margin-top: 1em;
-
-        input[type=submit] {
-            margin-top: 1em;
+        .email-signup,
+        .email-signup {
+            text-align: left;
+            justify-content: flex-start;
+            justify-items: flex-start;
         }
     }
 }
