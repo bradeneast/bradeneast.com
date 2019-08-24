@@ -1442,7 +1442,7 @@ input[type=email] {
 input[type=text],
 input[type=email] {
   font-size: var(--FS-S);
-  height: 3em;
+  height: 3.2em;
   padding: .5em;
   color: var(--CL-A3) !important;
   border: 2px solid var(--CL-A2);
@@ -1475,7 +1475,7 @@ input[type=email]:placeholder-shown {
 
 .email-signup input[type=submit] {
   order: -1;
-  height: 3em;
+  height: 3.2em;
   margin: 0;
 }
 
