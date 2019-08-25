@@ -2,7 +2,7 @@
 ## 2019/08/19
 ### javascript, html
 
-I'm a B-minus student when it comes to accessibility on web projects. No matter how hard I try, I'm always adding `aria-label` and `tabindex` and `role` attributes an afterthought.
+I'm sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I'm always adding `aria-label` and `tabindex` and `role` attributes an afterthought.
 
 The repetition is also frustrating. If you're anything like me, you enjoy writing code because it helps you avoid repeating the same tasks over and over.
 
