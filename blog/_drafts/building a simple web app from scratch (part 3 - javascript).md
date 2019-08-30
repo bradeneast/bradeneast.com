@@ -2,7 +2,9 @@
 ## 2019/08/20
 ### design, html, css, javascript
 
-Let's make this app really work!
+This is part three of me building a simple web app from scratch, to show that building cool tools on the web doesn't have to be hard or complex! You can read part two [here](/blog/building-a-simple-web-app-from-scratch-part-2--html-and-css).
+
+In this article, we'll write basic markup and CSS as handles for our Javascript to grab ahold of later. Let's make this app really work!
 
 The first problem we run into is that our icon library is 55,000 lines of JSON. That's way too much to loop through every time the user updates their copy. Leaving the data as-is would come at a massive cost to browser performance and user experience.
 
@@ -38,9 +40,3 @@ fetch(`/icons.json`)
         });
     })
 ```
-
-So, we created our array of search terms, and added two properties to each object.
-1. The term itself
-2. The index where that term was found in the big array.
-
-Now that we have an index associated with each search term, we can get the icon svg data directly with `bigAF[index].svg` later. Using `Array[index]` is much faster than looping over that same array.

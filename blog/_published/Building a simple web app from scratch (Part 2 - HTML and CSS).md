@@ -1,12 +1,14 @@
 # Building a simple web app from scratch (Part 2 - HTML and CSS)
-## 2019/08/18
+## 2019/08/30
 ### design, html, css
 
-If you're not a developer, this article might offer some insight into the development process and how to give your dev friends everything they need to execute your vision.
+This is part two of me building a simple web app from scratch, to show that building cool tools on the web doesn't have to be hard or complex! You can read part one [here](/blog/building-a-simple-web-app-from-scratch-part-1--wireframe-and-protoype).
+
+In this article, we'll write basic markup and CSS as handles for our Javascript to grab ahold of later. If you're not a developer, this might offer some insight into the development process and how to give your dev friends everything they need to execute your vision.
 
 ![coding](/images/blog/coding.gif)
 
-To start off, our HTML header is going to be pretty simple - we won't worry about the SEO stuff right now. Everything is in the root because this is a small project for fun - no judgment here.
+To start off, our HTML header is going to be pretty simple - we won't worry about the SEO stuff right now. I also don't want to over-complicate the code because this is a small project - 
 
 ```html
 <head>
@@ -26,11 +28,11 @@ We're using `preload` to make sure our CSS and Javascript files are ready as soo
 
 As a nice performance bonus: Preloading a file (usually) tells the browser to cache it for future requests.
 
-Next, we'll write the basic markup (inside our `<body>` tags of course).
+Next, we'll write the basic markup.
 
 ```html
 <main>
-    <section class="wrapper">
+    <section class="wrapper" id="wrapper>
         <div class="aside">
             <!-- UI settings and stuff -->
             <div class="button" role="button" aria-label="Update icon selection based on your copy" onclick="updateIcons()">
@@ -38,7 +40,7 @@ Next, we'll write the basic markup (inside our `<body>` tags of course).
             </div>
         </div>
 
-        <div class="layout">
+        <div class="layout" id="layout">
 
             <div class="icon-container">
                 <div class="switch-up" tabindex="0"></div>
@@ -53,9 +55,8 @@ Next, we'll write the basic markup (inside our `<body>` tags of course).
             </div>
 
             <div class="text-container">
-                <p class="text" contenteditable="true">
+                <p class="text" id="text" contenteditable="true">
                     <!-- users will type their copy here -->
-                    If you're like me, sometimes you need a visual aid to write persuasive copy.
                 </p>
             </div>
 
@@ -66,7 +67,9 @@ Next, we'll write the basic markup (inside our `<body>` tags of course).
 
 We're using `tabindex` to make our next and previous buttons accessible for keyboard users. When we add the slider functionality, we'll also write a functions called `goToNext()` and `goToPrevious()` for the `onkeypress` and `onclick` events.
 
-I won't bore you with all my personal preference CSS, but here are the classes we'll be using later with our Javascript.
+You might also have noticed that we're the same class and ID on several elements. Selecting by class is usually better in CSS for specificity reasons, while selecting by ID is faster in Javascript.
+
+I won't bore you with all my CSS explorations, but here are the classes will be important later in our Javascript.
 
 ```css
 .icon-container {
@@ -97,15 +100,11 @@ I won't bore you with all my personal preference CSS, but here are the classes w
     pointer-events: all;
 }
 ```
-A couple notes here:
-1. We'll use some Javascript to add the `active` class to the selected element. That will also come in handy when we need to share the composition with a permanent URL.
+1. We'll use some Javascript to add the `active` class to the selected icon, in which case we'll scale it up and transition the `opacity` from 0 to 1. That will also come in handy when we need to share the composition with a permanent URL. We've also added `pointer-events: none` so the hidden icons don't obscure other parts of the UI.
 
 2. The icons will be inside a `div` that we'll transform along the Y-axis as we flip through the icon selection.
 
 #### Wrapping up
+We covered using `preload` to give users a faster experience, selecting by class in CSS vs ID in Javascript, and using an `active` class to set styles on our selected icon.
 
-[Github repository here.](https://github.com/bradeneast/pairiconsapp)
-
-Have a suggestion to improve this project? Want me to go deeper next time?  Let me know!
-
-bradeneastdesign@gmail.com
+Next time, we'll write the simple Javascript that will make this little web app work like magic!
