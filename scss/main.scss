@@ -130,10 +130,18 @@ body {
         width: 100%;
         background-size: cover;
         background-position: center;
-        background-color: var(--CL-G1);
         border-radius: 0 0 5px 0;
         padding: var(--PAD-M);
         padding-top: 12vw;
+
+        h1 {
+            --extrude-color: var(--CL-A3);
+            text-shadow: 1px 1px var(--extrude-color),
+                2px 2px var(--extrude-color),
+                3px 3px var(--extrude-color),
+                4px 4px var(--extrude-color),
+                5px 5px var(--extrude-color);
+        }
 
         >:last-child {
             margin-bottom: var(--PAD-L);
@@ -145,6 +153,7 @@ body {
 
         .tagline {
             min-width: 15rem;
+            max-width: 30rem;
         }
     }
 

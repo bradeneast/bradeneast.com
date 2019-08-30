@@ -1,13 +1,13 @@
 const footer = document.createElement('footer');
 const path = window.location.pathname.replace(/\//g, '');
 const scripts = [{
-        path: '/scripts/main.js',
-        defer: true
-    },
-    {
-        path: 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js',
-        defer: false
-    }
+    path: '/scripts/main.js',
+    defer: true
+},
+{
+    path: 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js',
+    defer: false
+}
 ];
 
 scripts.map(script => {
@@ -29,7 +29,7 @@ footer.insertAdjacentHTML('afterbegin', `
 
     <div>
         <div class="body-image">
-            <img src="/images/me-cropped-square.jpg" alt="Braden East Headshot" />
+            <img src="/images/me-standing-up.jpg" alt="Braden East Headshot" />
         </div>
         <span class="socials">
             <a href="https://www.behance.net/bradeneastdesign" rel="noreferrer" aria-label="braden east on behance" target="_blank">
