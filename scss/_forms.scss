@@ -49,50 +49,10 @@ input[type=email] {
     }
 }
 
-.rss-subscribe {
-    max-width: 50vw;
-    margin-left: auto;
-    padding: var(--PAD-M);
-
-    h2 {
-        text-align: right;
-    }
-
-    form {
-        margin-left: auto;
-    }
-
-    .email-signup {
-        justify-items: flex-end;
-        justify-content: flex-end;
-    }
-}
-
 @media screen and (max-width: $mq) {
 
     input[type=text],
     input[type=email] {
         width: 100%;
-    }
-
-    .rss-subscribe {
-        margin: 0;
-        margin-bottom: calc(var(--PAD-L) * 3);
-        max-width: none;
-
-        h2 {
-            text-align: left;
-        }
-
-        input[type=submit] {
-            margin: 0;
-        }
-
-        .email-signup,
-        .email-signup {
-            text-align: left;
-            justify-content: flex-start;
-            justify-items: flex-start;
-        }
     }
 }

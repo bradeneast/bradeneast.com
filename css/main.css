@@ -1444,46 +1444,10 @@ input[type=email]:placeholder-shown {
   margin: 0 1em 1em 0;
 }
 
-.rss-subscribe {
-  max-width: 50vw;
-  margin-left: auto;
-  padding: var(--PAD-M);
-}
-
-.rss-subscribe h2 {
-  text-align: right;
-}
-
-.rss-subscribe form {
-  margin-left: auto;
-}
-
-.rss-subscribe .email-signup {
-  justify-items: flex-end;
-  justify-content: flex-end;
-}
-
 @media screen and (max-width: 60em) {
   input[type=text],
   input[type=email] {
     width: 100%;
-  }
-  .rss-subscribe {
-    margin: 0;
-    margin-bottom: calc(var(--PAD-L) * 3);
-    max-width: none;
-  }
-  .rss-subscribe h2 {
-    text-align: left;
-  }
-  .rss-subscribe input[type=submit] {
-    margin: 0;
-  }
-  .rss-subscribe .email-signup,
-  .rss-subscribe .email-signup {
-    text-align: left;
-    justify-content: flex-start;
-    justify-items: flex-start;
   }
 }
 
@@ -1607,7 +1571,7 @@ footer .socials a:focus [data-icon] {
     padding-bottom: calc(var(--PAD-L) * 2);
     background-position: center;
     background-attachment: local;
-    height: 85vh;
+    height: auto;
     align-items: flex-end;
     align-content: flex-end;
   }
