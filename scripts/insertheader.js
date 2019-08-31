@@ -37,7 +37,7 @@ function insertMeta(url, pageTitle) {
     } else {
         pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageTitle;
     }
-    const tagline = 'Helping focused businesses take control of their identity through branding and design.';
+    const tagline = 'Helping focused businesses take control of their identity through digital design.';
     const socialImage = 'https://bradeneast.com/images/me-looking-up.jpg';
 
     document.head.insertAdjacentHTML('beforeend', `
