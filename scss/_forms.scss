@@ -51,8 +51,13 @@ input[type=email] {
 
 @media screen and (max-width: $mq) {
 
+    .mc-field-group {
+        margin-right: 1em;
+    }
+
     input[type=text],
     input[type=email] {
+        background-size: 300%;
         width: 100%;
     }
 }

@@ -125,7 +125,6 @@ body {
         display: flex;
         align-content: start;
         flex-flow: row wrap;
-        flex-basis: 1fr;
         height: 100vh;
         width: 100%;
         background-size: cover;
@@ -322,8 +321,8 @@ footer {
             align-items: flex-end;
             align-content: flex-end;
 
-            .squiggle-block {
-                margin-top: 1rem;
+            .tagline {
+                max-width: 80%;
             }
 
             &::before,

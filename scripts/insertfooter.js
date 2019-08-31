@@ -1,7 +1,7 @@
 const footer = document.createElement('footer');
 const path = window.location.pathname.replace(/\//g, '');
 const scripts = [{
-    path: '/scripts/main.js',
+    path: '/scripts/main.min.js',
     defer: true
 },
 {

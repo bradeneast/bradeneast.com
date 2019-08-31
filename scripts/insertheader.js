@@ -3,15 +3,6 @@ function getURL() {
     return window.location.href;
 }
 
-const url = 'https://bradeneast.com' + window.location.pathname;
-let pageTitle = url.split('/').reverse()[1].replace(/-/g, ' ').replace(/%20/g, ' ');
-const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/main.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
-const polyFill = 'https://polyfill.io/v3/polyfill.min.js';
-
-insertPreloads(preloads);
-insertMeta(url, pageTitle);
-insertPolyfills(polyFill);
-
 function insertPreloads(paths) {
     paths.map(path => {
         let link = document.createElement('link');
@@ -68,7 +59,7 @@ function insertMeta(url, pageTitle) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed.xml" />
         <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main.min.css" />
         <link rel="stylesheet" href="/css/prism.css">
     `);
 }
@@ -79,3 +70,12 @@ function insertPolyfills(source) {
     polyFill.setAttribute('crossorigin', 'anonymous');
     document.head.appendChild(polyFill);
 }
+
+const url = 'https://bradeneast.com' + window.location.pathname;
+let pageTitle = url.split('/').reverse()[1].replace(/-/g, ' ').replace(/%20/g, ' ');
+const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/main.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
+const polyFill = 'https://polyfill.io/v3/polyfill.min.js';
+
+insertPreloads(preloads);
+insertMeta(url, pageTitle);
+insertPolyfills(polyFill);

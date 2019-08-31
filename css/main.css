@@ -123,7 +123,6 @@ body {
   display: flex;
   align-content: start;
   flex-flow: row wrap;
-  flex-basis: 1fr;
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -1450,8 +1449,12 @@ input[type=email]:placeholder-shown {
 }
 
 @media screen and (max-width: 60em) {
+  .mc-field-group {
+    margin-right: 1em;
+  }
   input[type=text],
   input[type=email] {
+    background-size: 300%;
     width: 100%;
   }
 }
@@ -1580,8 +1583,8 @@ footer .socials a:focus [data-icon] {
     align-items: flex-end;
     align-content: flex-end;
   }
-  .hero .hero-text .squiggle-block {
-    margin-top: 1rem;
+  .hero .hero-text .tagline {
+    max-width: 80%;
   }
   .hero .hero-text::before, .hero .hero-text::after {
     width: 100%;
