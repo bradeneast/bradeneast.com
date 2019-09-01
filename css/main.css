@@ -5,7 +5,7 @@
   --CL-SHADE-DARKER: rgba(0, 0, 0, 0.431);
   --CL-SHADE-DARKEST: rgba(0, 0, 0, 0.671);
   --CL-TINT: rgba(255, 255, 255, 0.5);
-  --CL-A1: #a4b0b8;
+  --CL-A1: #c7aea4;
   --CL-A2: #252d31;
   --CL-A3: #39434d;
   --CL-G1: #efefef;
@@ -123,8 +123,11 @@ body {
   display: flex;
   align-content: start;
   flex-flow: row wrap;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 120vh;
   width: 100%;
+  background-color: var(--CL-G1);
+  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
   border-radius: 0 0 5px 0;
@@ -530,14 +533,12 @@ nav.compact #hamburger {
   font-weight: 700;
   margin-right: var(--PAD-L);
   padding: 1.5rem 0 1rem 0;
-  opacity: .5;
 }
 
 .sub-nav__item.active {
   background-color: var(--CL-0);
   box-shadow: inset 0 5px 0 0 var(--CL-A1);
   color: var(--CL-A2);
-  opacity: 1;
 }
 
 .sub-nav__item.active:hover {
@@ -1114,26 +1115,6 @@ input[type=submit]:focus {
   }
 }
 
-body:not(.loaded) {
-  opacity: 0;
-  transition: var(--TR-S);
-}
-
-body:not(.loaded) .section {
-  opacity: 0;
-}
-
-body.loaded {
-  opacity: 1;
-  transition: var(--TR-S);
-}
-
-body.loaded .section {
-  opacity: 1;
-  transform: translate(0, 0);
-  transition: var(--TR-M);
-}
-
 [data-scroll=in] {
   opacity: 1;
   transform: translateY(0);
@@ -1163,7 +1144,7 @@ body.loaded .section {
   backface-visibility: hidden;
 }
 
-.loading {
+.loading.waiting {
   width: 5rem;
   height: 2rem;
   background-image: url(/images/svg/squiggle-pattern.svg);
@@ -1171,7 +1152,7 @@ body.loaded .section {
   animation: loading 7s linear forwards running;
 }
 
-.loading::after {
+.loading.waiting::after {
   position: absolute;
   display: block;
   width: 60vw;
@@ -1184,7 +1165,7 @@ body.loaded .section {
   color: var(--CL-G6);
 }
 
-.error {
+.loading.error {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1194,7 +1175,6 @@ body.loaded .section {
   font-weight: 700;
   color: var(--CL-G6);
   opacity: 0;
-  will-change: opacity;
   animation: fade-in .1s ease 7s forwards running;
 }
 

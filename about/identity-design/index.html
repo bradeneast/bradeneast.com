@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +17,7 @@
         <div class="sub-nav" id="sub-nav"></div>
     </section>
     <section id="intro">
-        <template id="intro-template">
+        <template>
             <div class="section align-items alternate-sides">
                 <span class="blow-up center" data-icon data-scroll></span>
                 <span class="center limited-width" data-scroll>
@@ -31,7 +30,7 @@
     </section>
 
     <section class="section grid fullwidth" style="--item-height: 32rem; --item-width: 20rem;" id="testimonials">
-        <template id="testimonials-template">
+        <template>
             <div class="testimonial pad">
                 <span class="module-text">
                     <h2 class="center" data-byline data-scroll></h2>
@@ -44,7 +43,7 @@
     </section>
 
     <section class="section" id="features">
-        <template id="features-template">
+        <template>
             <div class="section__body pad">
                 <h1 data-byline data-scroll></h1>
                 <h2 data-body data-scroll></h2>
@@ -54,12 +53,6 @@
     </section>
 
     <script type="text/javascript" src="/scripts/insertfooter.js"></script>
-    <script type="text/javascript" src="/scripts/fetchstuff.js"></script>
-    <script defer>
-        fetchAndInsert('../_content/identity-design.json', 'intro', 'intro', 'intro-template', parseLocalContent);
-        fetchAndInsert('../_content/identity-design.json', 'features', 'features', 'features-template', parseLocalContent);
-        fetchAndInsert('../_content/testimonials.json', null, 'testimonials', 'testimonials-template', parseLocalContent);
-    </script>
 </body>
 
 </html>

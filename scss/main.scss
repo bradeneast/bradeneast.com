@@ -5,7 +5,7 @@
     --CL-SHADE-DARKER: rgba(0, 0, 0, 0.431);
     --CL-SHADE-DARKEST: rgba(0, 0, 0, 0.671);
     --CL-TINT: rgba(255, 255, 255, 0.5);
-    --CL-A1: #a4b0b8;
+    --CL-A1: #c7aea4;
     --CL-A2: #252d31;
     --CL-A3: #39434d;
     --CL-G1: #efefef;
@@ -125,8 +125,11 @@ body {
         display: flex;
         align-content: start;
         flex-flow: row wrap;
-        height: 100vh;
+        min-height: 100vh;
+        max-height: 120vh;
         width: 100%;
+        background-color: var(--CL-G1);
+        background-blend-mode: multiply;
         background-size: cover;
         background-position: center;
         border-radius: 0 0 5px 0;

@@ -1,22 +1,22 @@
-body:not(.loaded) {
-    opacity: 0;
-    transition: var(--TR-S);
+// body:not(.loaded) {
+//     opacity: 0;
+//     transition: var(--TR-S);
 
-    .section {
-        opacity: 0;
-    }
-}
+//     .section {
+//         opacity: 0;
+//     }
+// }
 
-body.loaded {
-    opacity: 1;
-    transition: var(--TR-S);
+// body.loaded {
+//     opacity: 1;
+//     transition: var(--TR-S);
 
-    .section {
-        opacity: 1;
-        transform: translate(0, 0);
-        transition: var(--TR-M);
-    }
-}
+//     .section {
+//         opacity: 1;
+//         transform: translate(0, 0);
+//         transition: var(--TR-M);
+//     }
+// }
 
 [data-scroll=in] {
     opacity: 1;
@@ -48,38 +48,39 @@ body.loaded {
 }
 
 .loading {
-    width: 5rem;
-    height: 2rem;
-    background-image: url(/images/svg/squiggle-pattern.svg);
-    background-size: cover;
-    animation: loading 7s linear forwards running;
+    &.waiting {
+        width: 5rem;
+        height: 2rem;
+        background-image: url(/images/svg/squiggle-pattern.svg);
+        background-size: cover;
+        animation: loading 7s linear forwards running;
 
-    &::after {
-        position: absolute;
-        display: block;
-        width: 60vw;
-        bottom: -100%;
-        left: 50%;
-        transform: translateX(-50%);
-        content: 'stopping for coffee..';
-        font-weight: 700;
-        text-align: center;
-        color: var(--CL-G6);
+        &::after {
+            position: absolute;
+            display: block;
+            width: 60vw;
+            bottom: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            content: 'stopping for coffee..';
+            font-weight: 700;
+            text-align: center;
+            color: var(--CL-G6);
+        }
     }
-}
 
-.error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    height: 50vh;
-    z-index: 9;
-    font-weight: 700;
-    color: var(--CL-G6);
-    opacity: 0;
-    will-change: opacity;
-    animation: fade-in .1s ease 7s forwards running;
+    &.error {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        height: 50vh;
+        z-index: 9;
+        font-weight: 700;
+        color: var(--CL-G6);
+        opacity: 0;
+        animation: fade-in .1s ease 7s forwards running;
+    }
 }
 
 @keyframes fade-in {

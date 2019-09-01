@@ -42,10 +42,10 @@
             <span class="pad">
                 <h1>My Work</h1>
             </span>
-            <div class="grid pad" id="projects">
-                <div class="loading"></div>
-                <div class="error">Didn't load! No projects to show :(</div>
-                <template id="project-template">
+            <div class="grid pad" data-projects="feed">
+                <div class="loading waiting"></div>
+                <div class="loading error">Didn't load! No projects to show :(</div>
+                <template>
                     <div class="item">
                         <a href="#" data-scroll>
                             <div data-image></div>
@@ -61,17 +61,6 @@
     </main>
 
     <script type="text/javascript" src="/scripts/insertfooter.js"></script>
-    <script type="text/javascript" src="/scripts/fetchstuff.js"></script>
-
-    <script>
-        // Fetch options
-        let wrapperID = 'projects';
-        let templateID = 'project-template';
-        let dataSubset = 'items';
-        let parseMethod = parseBlogContent;
-
-        fetchAndInsert(`https://www.googleapis.com/blogger/v3/blogs/${portfolioID}/posts?key=${bloggerAPIKey}`, dataSubset, wrapperID, templateID, parseMethod);
-    </script>
 
 </body>
 
