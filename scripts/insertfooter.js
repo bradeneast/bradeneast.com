@@ -50,7 +50,7 @@ footer.insertAdjacentHTML('afterbegin', `
         <div class="footer-nav">
             <a href="/">home</a>
             <a href="/#work">work</a>
-            <a href="/about/me">about</a>
+            <a href="/about/#me">about</a>
             <a href="/blog">blog</a>
         </div>
 

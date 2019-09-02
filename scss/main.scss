@@ -61,6 +61,10 @@ html {
     }
 }
 
+.page:not(:target) {
+    display: none;
+}
+
 body {
     position: relative;
     display: grid;

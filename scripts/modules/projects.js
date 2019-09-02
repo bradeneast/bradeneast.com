@@ -1,5 +1,5 @@
 import { linkify, removeLoadingAnimations, clearImageFormatting, hideTargetedElement } from './helpers.js';
-import * as parseStuff from './parseStuff.js';
+import * as parseStuff from './parsestuff.js';
 import * as fetchStuff from './fetchstuff.js';
 
 export function getProjects() {
