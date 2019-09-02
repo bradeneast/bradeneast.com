@@ -1,5 +1,5 @@
 // IMPORTS
-import { capitalize, altFromSource, clearImageFormatting } from './modules/helpers.js';
+import { capitalize } from './modules/helpers.js';
 import { checkActiveLinks } from './modules/checkActiveLinks.js';
 import { insertNav } from './modules/insertNav.js';
 import { initScrollAnimations } from './modules/scrollAnimations.js';
