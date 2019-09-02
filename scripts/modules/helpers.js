@@ -15,11 +15,16 @@ export function altFromSource(element) {
 }
 
 // clear style, width, and height attributes from all passed img elements
-export function clearImageFormatting(image) {
-    image.removeAttribute('style');
-    image.removeAttribute('width');
-    image.removeAttribute('height');
-    image.setAttribute('loading', 'lazy');
+export function clearImageFormatting() {
+    document.querySelectorAll('img').forEach(image => {
+        image.removeAttribute('style');
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        image.removeAttribute('max-width');
+        image.removeAttribute('max-height');
+        image.setAttribute('loading', 'lazy');
+        !image.getAttribute('alt') ? image.setAttribute('alt', altFromSource(image)) : null;
+    })
 }
 
 export function linkify(string) {
@@ -34,4 +39,11 @@ export function removeLoadingAnimations({ from }) {
 
 export function removeEmpty(array) {
     return array.filter((e) => { return e != "" })
+}
+
+export function hideTargetedElement({ fromParent }) {
+    let target = window.location.hash.replace('#', '');
+    Array.from(fromParent.children).map(child => {
+        child.id == target ? child.classList.add('hidden') : child.classList.remove('hidden');
+    })
 }

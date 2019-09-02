@@ -1115,6 +1115,16 @@ input[type=submit]:focus {
   }
 }
 
+body:not(.loaded) {
+  opacity: 0;
+  transition: var(--TR-S);
+}
+
+body.loaded {
+  opacity: 1;
+  transition: var(--TR-S);
+}
+
 [data-scroll=in] {
   opacity: 1;
   transform: translateY(0);
@@ -1207,13 +1217,17 @@ input[type=submit]:focus {
   align-content: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .blow-up {
   min-height: 20rem;
   min-width: 20rem;
   z-index: 0;
 }
 
-.blow-up [data-icon] {
+.blow-up .icon {
   width: 200%;
   opacity: 0.1;
 }

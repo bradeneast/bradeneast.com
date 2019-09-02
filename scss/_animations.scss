@@ -1,22 +1,12 @@
-// body:not(.loaded) {
-//     opacity: 0;
-//     transition: var(--TR-S);
+body:not(.loaded) {
+    opacity: 0;
+    transition: var(--TR-S);
+}
 
-//     .section {
-//         opacity: 0;
-//     }
-// }
-
-// body.loaded {
-//     opacity: 1;
-//     transition: var(--TR-S);
-
-//     .section {
-//         opacity: 1;
-//         transform: translate(0, 0);
-//         transition: var(--TR-M);
-//     }
-// }
+body.loaded {
+    opacity: 1;
+    transition: var(--TR-S);
+}
 
 [data-scroll=in] {
     opacity: 1;

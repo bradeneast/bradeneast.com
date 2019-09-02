@@ -1,9 +1,9 @@
 // IMPORTS
-import { capitalize, altFromSource } from './modules/helpers.js';
+import { capitalize, altFromSource, clearImageFormatting } from './modules/helpers.js';
 import { checkActiveLinks } from './modules/checkActiveLinks.js';
 import { insertNav } from './modules/insertNav.js';
 import { initScrollAnimations } from './modules/scrollAnimations.js';
-import { getProjects, getLocalContent } from './modules/projects.js';
+import { getProjects } from './modules/projects.js';
 
 
 function init() {
@@ -32,20 +32,11 @@ function init() {
             })
     }
 
-    // ACCESSIBILITY: adds alt and lazy loading attributes to img elements
-    document.querySelectorAll('img').forEach(e => {
-        e.setAttribute('loading', 'lazy');
-        !e.getAttribute('alt') ? e.setAttribute('alt', altFromSource(e)) : null;
-    })
-
     // init scrolling animations
     initScrollAnimations();
 
     // fetch and insert design projects
     getProjects();
-
-    // get
-    getLocalContent();
 }
 
 init();
