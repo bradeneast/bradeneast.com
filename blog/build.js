@@ -82,7 +82,7 @@ let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
 <channel>
 <title>Blog of Braden East</title>
 <link>${selfLink}</link>
-<description>The blog for design-oriented devs.</description>
+<description>The blog for design-focused devs. Get regular tips to improve your UI and UX design skills.</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${selfLink}" rel="self" type="application/rss+xml" />
 `;

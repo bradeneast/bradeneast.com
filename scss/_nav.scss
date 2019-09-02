@@ -108,7 +108,6 @@ nav {
     top: -99vw;
     left: 99vw;
     width: 1px;
-    clip-path: polygon(0 0, 0 0, 0 0);
     opacity: .01;
 
     &:checked~nav.compact .nav-items-container,
@@ -176,7 +175,6 @@ nav {
 }
 
 .sub-nav {
-    position: relative;
     display: flex;
     z-index: 1;
     padding-left: var(--PAD-M);

@@ -44,31 +44,10 @@ $mq: 60em;
     text-align: left;
 }
 
-svg {
-    width: 100%;
-    height: 100%;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    max-width: 1080px;
-    overflow: hidden;
-}
-
-[data-icon] {
-    margin-right: var(--PAD-M);
-    width: 8rem;
-    will-change: transform;
-}
-
 // general layout stuff
 
 body,
 html {
-    opacity: 1;
     background-color: var(--CL-0);
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;

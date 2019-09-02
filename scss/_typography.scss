@@ -3,6 +3,7 @@
     src: url("/fonts/Metropolis-Regular.woff2") format("woff2"),
         url("/fonts/Metropolis-Regular.woff") format("woff");
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
     src: url("/fonts/Metropolis-SemiBold.woff2") format("woff2"),
         url("/fonts/Metropolis-SemiBold.woff") format("woff");
     font-weight: 700;
+    font-display: swap;
 }
 
 :root {

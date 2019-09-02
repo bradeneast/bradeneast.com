@@ -30,7 +30,7 @@ footer.insertAdjacentHTML('afterbegin', `
     </div>
 
     <div>
-        <div class="body-image">
+        <div style="max-width: 20rem;">
             <img src="/images/me-standing-up.jpg" alt="Braden East Headshot" />
         </div>
         <span class="socials">

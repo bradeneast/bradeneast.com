@@ -1,3 +1,23 @@
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    max-width: 1080px;
+    overflow: hidden;
+}
+
+[data-icon] {
+    margin-right: var(--PAD-M);
+    width: 8rem;
+    will-change: transform;
+}
+
 .center {
     margin: 0 auto;
     justify-self: center;
@@ -21,6 +41,7 @@
 
     .icon {
         width: 200%;
+        height: auto;
         opacity: 0.1;
     }
 }
@@ -44,30 +65,20 @@
     }
 }
 
-.body-image {
-    max-width: 20rem;
-}
-
 .move-left {
     transform: translateX(-50%);
 }
 
-.checklist li::before {
-    display: inline-block;
-    content: '\2714';
-    color: var(--CL-A3);
-    margin-right: .2em;
-    font-size: 1.2em;
-}
-
 .checklist li {
     color: var(--CL-G4);
-}
 
-.circle,
-.circle>* {
-    border-radius: 50%;
-    clip-path: circle();
+    &::before {
+        display: inline-block;
+        content: '\2714';
+        color: var(--CL-A3);
+        margin-right: .2em;
+        font-size: 1.2em;
+    }
 }
 
 .block {
@@ -137,10 +148,6 @@
 
 @media screen and (max-width: $mq) {
 
-    .squiggle-block {
-        width: 3rem;
-    }
-
     .limited-width {
         max-width: none;
     }
@@ -149,7 +156,7 @@
         min-width: 100%;
         min-height: 0;
 
-        [data-icon] {
+        .icon {
             width: 70%;
             max-width: 20rem;
             float: left;
@@ -164,11 +171,6 @@
         order: 1;
     }
 
-    .body-image {
-        order: -1;
-        max-width: 100%;
-    }
-
     .pad {
         padding: var(--PAD-L) 0;
     }
@@ -176,22 +178,5 @@
     .testimonial {
         margin: var(--PAD-L) var(--PAD-M);
         padding: var(--PAD-L) var(--PAD-M);
-    }
-
-    .focal {
-        --text-color: var(--CL-G7);
-        border-color: var(--CL-A3);
-
-        button,
-        input[type=submit] {
-            border-color: var(--border-color);
-            color: var(--text-color);
-
-            &:hover,
-            &:focus {
-                background-color: var(--CL-A1);
-                border-color: var(--CL-A1);
-            }
-        }
     }
 }

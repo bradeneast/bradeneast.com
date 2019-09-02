@@ -19,7 +19,7 @@
     <section id="intro">
         <div class="section align-items alternate-sides">
             <div class="blow-up center" data-scroll>
-                <img class="icon" src="/images/svg/icons/meh.svg" aria-label="an upside-down smiley winking face - sometimes we act a little crazy!">
+                <img class="icon" src="/images/svg/icons/meh.svg" alt="an upside-down smiley winking face - sometimes we act a little crazy!">
             </div>
             <div class="center limited-width" data-scroll>
                 <h2>the problem</h2>
@@ -28,11 +28,13 @@
             </div>
         </div>
         <div class="section align-items alternate-sides">
-            <div class="blow-up center" data-icon data-scroll><img src="/images/svg/icons/typography.svg" alt="a clean letterform"></div>
+            <div class="blow-up center" data-scroll>
+                <img class="icon" src="/images/svg/icons/typography.svg" alt="a clean letterform">
+            </div>
             <div class="center limited-width" data-scroll>
-                <h2 data-headline>the solution</h2>
-                <h1 data-byline>Speak with one voice.</h1>
-                <p class="limited-width" data-body>From logo to photo&shy;graphy, I offer clients a range of top-tier identity design options to improve brand recognition, raise percieved value, and drive sales.</p>
+                <h2>the solution</h2>
+                <h1>Speak with one voice.</h1>
+                <p class="limited-width">From logo to photo&shy;graphy, I offer clients a range of top-tier identity design options to improve brand recognition, raise percieved value, and drive sales.</p>
             </div>
         </div>
     </section>
@@ -41,23 +43,28 @@
         <template>
             <div class="testimonial pad">
                 <span class="module-text">
-                    <h2 class="center" data-byline data-scroll></h2>
+                    <h2 class="center" data-headline data-scroll></h2>
                     <p class="center" data-body data-scroll></p>
                     <p class="strong center" data-author data-scroll></p>
                 </span>
-                <div class="squiggle-block center" data-scroll></div>
             </div>
         </template>
     </section>
 
     <section class="section" id="features">
-        <template>
-            <div class="section__body pad">
-                <h1 data-byline data-scroll></h1>
-                <h2 data-body data-scroll></h2>
-            </div>
-            <div class="pad" data-image data-scroll></div>
-        </template>
+        <div class="section__body pad">
+            <h1 data-scroll>What you get when we work together</h1>
+            <h2 data-scroll>
+                <ul class='checklist'>
+                    <li>A comp&shy;re&shy;hensive brand style guide</li>
+                    <li>A logo mark in all the standard layouts</li>
+                    <li>A versatile identity system built on your logo and brand styles</li>
+                </ul>
+            </h2>
+        </div>
+        <div class="pad" data-scroll>
+            <img src="/images/about/allpost-styleguide.jpg" alt="a style guide for the AllPost brand identity">
+        </div>
     </section>
 
     <script type="text/javascript" src="/scripts/insertfooter.js"></script>
