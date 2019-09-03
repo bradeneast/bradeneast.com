@@ -215,11 +215,9 @@ posts.map((post, index) => {
     const root = 'https://bradeneast.com/blog/';
     const url = root + post.link;
     const pageName = post.title;
-
     let socialImage = `${root}/images/blog/laptop-book.jpg`;
     let firstImage = $('img');
-    firstImage ? socialImage = firstImage.attr('src') : null;
-
+    firstImage ? socialImage = root + firstImage.attr('src') : null;
     let pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageName;
     let SEOFramework = `
     <!-- Start SEO Framework -->
