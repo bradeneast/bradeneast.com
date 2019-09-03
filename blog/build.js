@@ -82,7 +82,7 @@ let RSSFeed = `<?xml version="1.0" encoding="utf-8"?>
 <channel>
 <title>Blog of Braden East</title>
 <link>${selfLink}</link>
-<description>The blog for design-focused devs. Get regular tips to improve your UI and UX design skills.</description>
+<description>The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${selfLink}" rel="self" type="application/rss+xml" />
 `;
@@ -220,7 +220,9 @@ posts.map((post, index) => {
         RSSCategories += `<category>${tag}</category>`
     });
     let RSSImage = post.body.match(/src="(.*?[^"])(?=("|'))/i);
-    if (!post.body.includes('src=')) { RSSImage = '' } else {
+    if (!post.body.includes('src=')) {
+        RSSImage = ''
+    } else {
         RSSImage = `<media:content url="https://www.bradeneast.com${RSSImage[1]}" type="image/jpg" width="250" />`
     }
     RSSFeed += `
