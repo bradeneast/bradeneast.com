@@ -37,17 +37,22 @@
 <li>Javascript <code>forEach</code> method</li>
 </ul>
 <h4>The Pure CSS Approach</h4>
-<pre><code class="language-css"><span class="token selector">.stagger-child-transitions&gt;*:nth-of-type(2)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .1s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;*:nth-of-type(3)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .2s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;*:nth-of-type(4)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .3s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;*:nth-of-type(5)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .4s <span class="token punctuation">}</span>
+<pre><code class="language-css"><span class="token selector">.stagger-child-transitions&gt;:nth-of-type(2)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .1s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions&gt;:nth-of-type(3)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .2s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions&gt;:nth-of-type(4)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .3s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions&gt;:nth-of-type(5)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .4s <span class="token punctuation">}</span>
 <span class="token comment">/* etc.... */</span>
 </code></pre>
 <p>If you&#x2019;ll always have less than a defined number of children, this approach is probably the most straightforward. Just put your <code>stagger-child-transitions</code> class on the parent element, and animate the child elements however you like!</p>
+<p>Another benefit to the pure CSS approach is that it&#x2019;s easy to override the transition delay if necessary. Type selectors like <code>:nth-of-type()</code> are low-specificity, which means those styles can be overriden with a class or ID at the same level:</p>
+<ul>
+<li>Using a class: <code>.stagger-child-transitions .child { transition-delay: 0s; }</code></li>
+<li>Or an ID: <code>#special { transition-delay: 0s; }</code></li>
+</ul>
 <h4>Using the SCSS <code>for</code> loop</h4>
 <p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier, but doesn&#x2019;t necessarily offer a better experience for our users.</p>
 <pre><code class="language-css"><span class="token atrule"><span class="token rule">@for</span> $i from 1 through 100</span> <span class="token punctuation">{</span>
-    <span class="token selector">.stagger-child-transitions&gt;*:nth-of-type(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token selector">.stagger-child-transitions&gt;:nth-of-type(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
         <span class="token property">transition-delay</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>$i * .1<span class="token punctuation">)</span>s<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>

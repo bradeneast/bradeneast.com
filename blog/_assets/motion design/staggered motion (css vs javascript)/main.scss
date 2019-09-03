@@ -28,11 +28,19 @@ body {
     width: 3rem;
     height: 3rem;
     opacity: 0;
-    transition: .5s ease;
+    transition: opacity .5s ease;
 }
 
 @for $i from 2 through 100 {
-    .stagger-child-transitions>*:nth-of-type(#{$i}) {
+    .stagger-child-transitions>:nth-of-type(#{$i}) {
         transition-delay: (($i - 1) * .1) + s;
     }
 }
+
+// .stagger-child-transitions .child {
+//     transition-delay: 0s;
+// }
+
+// #special {
+//     transition-delay: 0s;
+// }

@@ -29,14 +29,18 @@ Hopefully this illustrates why we'd want to use staggered motion in our designs,
 #### The Pure CSS Approach
 
 ```css
-.stagger-child-transitions>*:nth-of-type(2) { transition-delay: .1s }
-.stagger-child-transitions>*:nth-of-type(3) { transition-delay: .2s }
-.stagger-child-transitions>*:nth-of-type(4) { transition-delay: .3s }
-.stagger-child-transitions>*:nth-of-type(5) { transition-delay: .4s }
+.stagger-child-transitions>:nth-of-type(2) { transition-delay: .1s }
+.stagger-child-transitions>:nth-of-type(3) { transition-delay: .2s }
+.stagger-child-transitions>:nth-of-type(4) { transition-delay: .3s }
+.stagger-child-transitions>:nth-of-type(5) { transition-delay: .4s }
 /* etc.... */
 ```
 
 If you'll always have less than a defined number of children, this approach is probably the most straightforward. Just put your `stagger-child-transitions` class on the parent element, and animate the child elements however you like!
+
+Another benefit to the pure CSS approach is that it's easy to override the transition delay if necessary. Type selectors like `:nth-of-type()` are low-specificity, which means those styles can be overriden with a class or ID at the same level:
+- Using a class: `.stagger-child-transitions .child { transition-delay: 0s; }`
+- Or an ID: `#special { transition-delay: 0s; }`
 
 
 #### Using the SCSS `for` loop
@@ -44,7 +48,7 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 
 ```css
 @for $i from 1 through 100 {
-    .stagger-child-transitions>*:nth-of-type(#{$i}) {
+    .stagger-child-transitions>:nth-of-type(#{$i}) {
         transition-delay: ($i * .1)s;
     }
 }
