@@ -178,7 +178,6 @@ nav {
     display: flex;
     z-index: 1;
     padding-left: var(--PAD-M);
-    background-color: var(--CL-0);
 
     &__item {
         font-size: 1.4rem;
@@ -326,6 +325,7 @@ nav {
         margin-top: 30vh;
         flex-flow: column nowrap;
         padding: 0 0 var(--PAD-M) 0;
+        background-color: var(--CL-0);
 
         &__item {
             margin: var(--PAD-M) 0 0 0;
