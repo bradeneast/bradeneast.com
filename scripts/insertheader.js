@@ -29,8 +29,8 @@ function insertMeta(url, pageTitle) {
         pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageTitle;
     }
     const tagline = 'Helping focused businesses take control of their identity through digital design.';
-    let socialImage = '';
-    url.includes('blog') ? socialImage = 'https://bradeneast.com/images/blog/laptop-book.jpg' : socialImage = 'https://bradeneast.com/images/me-looking-up.jpg';
+    let socialImage = 'https://bradeneast.com/images/me-looking-up.jpg';
+    url.includes('blog') ? socialImage = 'https://bradeneast.com/images/blog/laptop-book.jpg' : null;
 
     document.head.insertAdjacentHTML('beforeend', `
 
