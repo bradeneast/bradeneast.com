@@ -216,8 +216,10 @@ posts.map((post, index) => {
     const url = root + '/blog/' + post.link;
     const pageName = post.title;
     let socialImage = `${root}/images/blog/laptop-book.jpg`;
-    let firstImage = $('img');
-    firstImage ? socialImage = root + firstImage.attr('src') : null;
+    let images = $('img');
+    if (images) {
+        String(images.first().attr('src')).split('.').pop() != 'svg' ? socialImage = root + images.first().attr('src') : null;
+    }
     let pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageName;
     let SEOFramework = `
     <!-- Start SEO Framework -->
