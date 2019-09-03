@@ -212,8 +212,8 @@ posts.map((post, index) => {
     // Adds open graph social sharing and seo tags
     const siteTitle = 'Blog of Braden East';
     let description = 'The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.';
-    const root = 'https://bradeneast.com/blog/';
-    const url = root + post.link;
+    const root = 'https://bradeneast.com/blog';
+    const url = root + '/' + post.link;
     const pageName = post.title;
     let socialImage = `${root}/images/blog/laptop-book.jpg`;
     let firstImage = $('img');
