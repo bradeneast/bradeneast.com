@@ -71,6 +71,8 @@ document.querySelectorAll('.stagger-child-transitions').forEach(element => {
 
 This solves our code bloating problem, and won't noticably affect the performance of our page (assuming we're already making the request for a script file). Just for grins, I used `console.time()` and `console.timeEnd()` to see how long this operation takes. For 100 elements, the time was consistently between 1 and 2 milliseconds. That's blazing fast, and probably quicker than loading the extra CSS.
 
+Unlike with CSS, adding inline styles with Javascript creates a specificity roadblock. Now, the only way we can change an element's transition delay is to write more Javascript. Another drawback to this approach is that DOM elements added after our page loads will not get those styles applied.
+
 Depending on your application, SCSS or Javascript might be better suited for staggering your UI animations. No matter what you choose, adding staggered motion and choreography will almost always make your application feel more friendly and interesting. :)
 
 If you want to read more about this, check out the [Material Design spec](https://material.io/design/motion/customization.html#sequencing) on animation customization.
