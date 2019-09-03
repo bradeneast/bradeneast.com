@@ -44,7 +44,7 @@ Another benefit to the pure CSS approach is that it's easy to override the trans
 
 
 #### Using the SCSS `for` loop
-The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier, but doesn't necessarily offer a better experience for our users.
+The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn't necessarily offer a better experience for our users.
 
 ```css
 @for $i from 1 through 100 {
@@ -54,7 +54,7 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 }
 ```
 
-That looks nice and clean!  The only drawback of this approach is that our CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn't much in literal file size (a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. If you're anything like me, those extra bytes will start to bug you.
+That looks nice and clean!  The only drawback of this approach is that our CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn't much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. If you're anything like me, those extra bytes will start to bug you.
 
 
 #### Using the Javascript `forEach()` method
@@ -71,7 +71,7 @@ document.querySelectorAll('.stagger-child-transitions').forEach(element => {
 
 This solves our code bloating problem, and won't noticably affect the performance of our page (assuming we're already making the request for a script file). Just for grins, I used `console.time()` and `console.timeEnd()` to see how long this operation takes. For 100 elements, the time was consistently between 1 and 2 milliseconds. That's blazing fast, and probably quicker than loading the extra CSS.
 
-Unlike with CSS, adding inline styles with Javascript creates a specificity roadblock. Now, the only way we can change an element's transition delay is to write more Javascript. Another drawback to this approach is that DOM elements added after our page loads will not get those styles applied.
+This is a more catch-all approach, but it does have its problems. Unlike with CSS, adding styles with Javascript maxes out our specificity headroom. Because the styles are applied inline, directly to the element, the only way we can change them is to write more Javascript. Another drawback to this approach is that DOM elements added after our page loads will not be affected until we call that function again.
 
 Depending on your application, SCSS or Javascript might be better suited for staggering your UI animations. No matter what you choose, adding staggered motion and choreography will almost always make your application feel more friendly and interesting. :)
 

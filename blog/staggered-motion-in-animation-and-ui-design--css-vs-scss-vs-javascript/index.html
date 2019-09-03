@@ -50,14 +50,14 @@
 <li>Or an ID: <code>#special { transition-delay: 0s; }</code></li>
 </ul>
 <h4>Using the SCSS <code>for</code> loop</h4>
-<p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier, but doesn&#x2019;t necessarily offer a better experience for our users.</p>
+<p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn&#x2019;t necessarily offer a better experience for our users.</p>
 <pre><code class="language-css"><span class="token atrule"><span class="token rule">@for</span> $i from 1 through 100</span> <span class="token punctuation">{</span>
     <span class="token selector">.stagger-child-transitions&gt;:nth-of-type(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
         <span class="token property">transition-delay</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>$i * .1<span class="token punctuation">)</span>s<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>That looks nice and clean!  The only drawback of this approach is that our CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn&#x2019;t much in literal file size (a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. If you&#x2019;re anything like me, those extra bytes will start to bug you.</p>
+<p>That looks nice and clean!  The only drawback of this approach is that our CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn&#x2019;t much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. If you&#x2019;re anything like me, those extra bytes will start to bug you.</p>
 <h4>Using the Javascript <code>forEach()</code> method</h4>
 <p>100 items was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.</p>
 <pre><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&apos;.stagger-child-transitions&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -67,7 +67,7 @@
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>This solves our code bloating problem, and won&#x2019;t noticably affect the performance of our page (assuming we&#x2019;re already making the request for a script file). Just for grins, I used <code>console.time()</code> and <code>console.timeEnd()</code> to see how long this operation takes. For 100 elements, the time was consistently between 1 and 2 milliseconds. That&#x2019;s blazing fast, and probably quicker than loading the extra CSS.</p>
-<p>Unlike with CSS, adding inline styles with Javascript creates a specificity roadblock. Now, the only way we can change an element&#x2019;s transition delay is to write more Javascript. Another drawback to this approach is that DOM elements added after our page loads will not get those styles applied.</p>
+<p>This is a more catch-all approach, but it does have its problems. Unlike with CSS, adding styles with Javascript maxes out our specificity headroom. Because the styles are applied inline, directly to the element, the only way we can change them is to write more Javascript. Another drawback to this approach is that DOM elements added after our page loads will not be affected until we call that function again.</p>
 <p>Depending on your application, SCSS or Javascript might be better suited for staggering your UI animations. No matter what you choose, adding staggered motion and choreography will almost always make your application feel more friendly and interesting. :)</p>
 <p>If you want to read more about this, check out the <a href="https://material.io/design/motion/customization.html#sequencing">Material Design spec</a> on animation customization.</p>
 <span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Staggered%20motion%20in%20animation%20and%20ui%20design: css%20vs%20scss%20vs%20javascript%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/staggered-motion-in-animation-and-ui-design--css-vs-scss-vs-javascript">share this article</a> with your followers. I appreciate it!</p></span></div>
