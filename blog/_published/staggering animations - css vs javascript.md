@@ -69,4 +69,4 @@ This solves our code bloating problem, and won't noticably affect the performanc
 
 Depending on your application, SCSS or Javascript might be better suited for staggering your UI animations. No matter what you choose, adding staggered motion and choreography will almost always make your application feel more friendly and interesting. :)
 
-If you want to read more about this, check out the [Material Design spec](https://material.io/design/motion/choreography.html) on animation choreography.
+If you want to read more about this, check out the [Material Design spec](https://material.io/design/motion/customization.html#sequencing) on animation customization.
