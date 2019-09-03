@@ -31,19 +31,29 @@ export function linkify(string) {
     return string.replace(/ /g, '-').replace(/'/g, '').toLowerCase();
 }
 
-export function removeLoadingAnimations({ from }) {
+export function removeLoadingAnimations({
+    from
+}) {
     from.querySelectorAll('.loading').forEach(loadingElem => {
         loadingElem.remove();
     })
 }
 
 export function removeEmpty(array) {
-    return array.filter((e) => { return e != "" })
+    return array.filter((e) => {
+        return e != ""
+    })
 }
 
-export function hideTargetedElement({ fromParent }) {
+export function hideTargetedElement({
+    fromParent
+}) {
     let target = window.location.hash.replace('#', '');
     Array.from(fromParent.children).map(child => {
         child.id == target ? child.classList.add('hidden') : child.classList.remove('hidden');
     })
+}
+
+export function getURL() {
+    return window.location.href;
 }

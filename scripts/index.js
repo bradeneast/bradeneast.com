@@ -3,6 +3,7 @@ import { checkActiveLinks } from './modules/checkactivelinks.js';
 import { insertNav } from './modules/insertnav.js';
 import { initScrollAnimations } from './modules/scrollanimations.js';
 import { getProjects } from './modules/projects.js';
+import { insertSEOFramework } from './modules/seo.js';
 
 
 function init() {
@@ -13,6 +14,7 @@ function init() {
     insertNav();
     checkActiveLinks();
     initScrollAnimations();
+    insertSEOFramework();
 
     // fetch and insert design projects
     getProjects();
