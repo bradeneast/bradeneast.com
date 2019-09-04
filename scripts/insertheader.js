@@ -4,81 +4,81 @@ function insertHeader() {
         const path = window.location.pathname;
         const url = root + path;
 
-        if (!path.includes('blog') || path.length < 12) {
-            // Standard meta values
-            let siteTitle = 'Braden East';
-            let description = 'Helping focused businesses take control of their identity through digital design.';
-            let pageName = path.split('/').reverse()[1].replace(/-+|%20+/g, ' ');
-            let socialImage = root + '/images/me-looking-up.jpg';
-            let pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageName;
+        // if (!path.includes('blog') || path.length < 12) {
+        // Standard meta values
+        let siteTitle = 'Braden East';
+        let description = 'Helping focused businesses take control of their identity through digital design.';
+        let pageName = path.split('/').reverse()[1].replace(/-+|%20+/g, ' ');
+        let socialImage = root + '/images/me-looking-up.jpg';
+        let pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageName;
 
-            // Conditional meta values
-            if (path.includes('blog')) {
-                siteTitle = 'Blog of Braden East';
-                description = 'The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.';
-                socialImage = root + '/images/blog/laptop-book.jpg';
-            } else if (pageName == ('' || null) || url.split('/').length <= 4) {
-                pageTitle = siteTitle + ' &nbsp;|&nbsp; Digital design solutions for focused brands';
-            }
-
-            const SEOTags = [,
-                {
-                    'property': 'og:site_name',
-                    'content': siteTitle
-                },
-                {
-                    'property': 'og:image',
-                    'content': socialImage
-                },
-                {
-                    'property': 'og:title',
-                    'content': pageTitle
-                },
-                {
-                    'property': 'og:description',
-                    'content': description
-                },
-                {
-                    'property': 'og:url',
-                    'content': url
-                },
-                {
-                    'property': 'og:locale',
-                    'content': 'en_US'
-                },
-                {
-                    'property': 'og:type',
-                    'content': 'website'
-                },
-                {
-                    'property': 'twitter:site',
-                    'content': '@bradenthehair'
-                },
-                {
-                    'property': 'twitter:title',
-                    'content': pageTitle
-                },
-                {
-                    'property': 'twitter:description',
-                    'content': description
-                },
-                {
-                    'property': 'twitter:image',
-                    'content': socialImage
-                },
-                {
-                    'property': 'twitter:card',
-                    'content': 'summary_large_image'
-                }]
-
-            SEOTags.map(tag => {
-                const elem = document.createElement('meta');
-                elem.setAttribute('property', tag.property);
-                elem.setAttribute('content', tag.content);
-                document.head.appendChild(elem);
-            })
+        // Conditional meta values
+        if (path.includes('blog')) {
+            siteTitle = 'Blog of Braden East';
+            description = 'The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.';
+            socialImage = root + '/images/blog/laptop-book.jpg';
+        } else if (pageName == ('' || null) || url.split('/').length <= 4) {
+            pageTitle = siteTitle + ' &nbsp;|&nbsp; Digital design solutions for focused brands';
         }
+
+        const SEOTags = [,
+            {
+                'property': 'og:site_name',
+                'content': siteTitle
+            },
+            {
+                'property': 'og:image',
+                'content': socialImage
+            },
+            {
+                'property': 'og:title',
+                'content': pageTitle
+            },
+            {
+                'property': 'og:description',
+                'content': description
+            },
+            {
+                'property': 'og:url',
+                'content': url
+            },
+            {
+                'property': 'og:locale',
+                'content': 'en_US'
+            },
+            {
+                'property': 'og:type',
+                'content': 'website'
+            },
+            {
+                'property': 'twitter:site',
+                'content': '@bradenthehair'
+            },
+            {
+                'property': 'twitter:title',
+                'content': pageTitle
+            },
+            {
+                'property': 'twitter:description',
+                'content': description
+            },
+            {
+                'property': 'twitter:image',
+                'content': socialImage
+            },
+            {
+                'property': 'twitter:card',
+                'content': 'summary_large_image'
+            }]
+
+        SEOTags.map(tag => {
+            const elem = document.createElement('meta');
+            elem.setAttribute('property', tag.property);
+            elem.setAttribute('content', tag.content);
+            document.head.appendChild(elem);
+        })
     }
+    // }
 
     function insertPreloads(paths) {
         paths.map(path => {
