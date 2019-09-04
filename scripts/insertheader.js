@@ -23,7 +23,7 @@ function insertHeader() {
             pageTitle = siteTitle + ' &nbsp;|&nbsp; Digital design solutions for focused brands';
         }
 
-        const SEOTags = [,
+        const SEOTags = [
             {
                 'property': 'og:site_name',
                 'content': siteTitle
@@ -83,13 +83,21 @@ function insertHeader() {
             elem.setAttribute('content', tag.content);
             document.head.appendChild(elem);
         })
+
         const titleElem = document.createElement('title');
         titleElem.innerHTML = pageTitle;
         document.head.appendChild(titleElem);
+
+        const canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        canonical.setAttribute('href', url);
+        document.head.appendChild(canonical);
     }
 
-    function insertPreloads(paths) {
-        paths.map(path => {
+    function insertPreloads() {
+        const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/index.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
+
+        preloads.map(path => {
             let link = document.createElement('link');
             link.setAttribute('rel', 'preload');
             link.setAttribute('href', path);
@@ -105,6 +113,20 @@ function insertHeader() {
         })
     }
 
+    function insertPolyfills() {
+        const polyFills = ['https://polyfill.io/v3/polyfill.min.js'];
+        polyFills.map(source => {
+            const polyFill = document.createElement('script');
+            polyFill.setAttribute('src', source);
+            polyFill.setAttribute('crossorigin', 'anonymous');
+            document.head.appendChild(polyFill);
+        })
+    }
+
+    insertSEOFramework();
+    insertPreloads();
+    insertPolyfills();
+
     document.head.insertAdjacentHTML('beforeend', `
     <style>body{opacity:0}</style>
     <meta charset="UTF-8">
@@ -114,18 +136,5 @@ function insertHeader() {
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" href="/css/prism.css">`);
-
-    function insertPolyfills(source) {
-        const polyFill = document.createElement('script');
-        polyFill.setAttribute('src', source);
-        polyFill.setAttribute('crossorigin', 'anonymous');
-        document.head.appendChild(polyFill);
-    }
-    const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/index.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
-    const polyFill = 'https://polyfill.io/v3/polyfill.min.js';
-
-    insertSEOFramework();
-    insertPreloads(preloads);
-    insertPolyfills(polyFill);
 }
 insertHeader();
