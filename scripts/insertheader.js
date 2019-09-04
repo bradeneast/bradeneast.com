@@ -1,23 +1,25 @@
 function insertHeader() {
     function insertSEOFramework() {
+        // Standard meta values
         const root = window.location.origin;
         const path = window.location.pathname;
         const url = root + path;
+        const blogTagline = 'The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.'
+        const mainTagline = 'Helping focused businesses take control of their identity through digital design.';
 
-        // if (!path.includes('blog') || path.length < 12) {
-        // Standard meta values
         let siteTitle = 'Braden East';
-        let description = 'Helping focused businesses take control of their identity through digital design.';
-        let pageName = path.split('/').reverse()[1].replace(/-+|%20+/g, ' ');
+        let description = mainTagline;
         let socialImage = root + '/images/me-looking-up.jpg';
-        let pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageName;
+
+        let pageName = path.split('/').reverse()[1].replace(/-+|%20+/g, ' ');
+        let pageTitle = siteTitle + ' &nbsp;|&nbsp; ' + pageName.charAt(0).toLocaleUpperCase() + pageName.slice(1);
 
         // Conditional meta values
         if (path.includes('blog')) {
             siteTitle = 'Blog of Braden East';
-            description = 'The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.';
+            description = blogTagline;
             socialImage = root + '/images/blog/laptop-book.jpg';
-        } else if (pageName == ('' || null) || url.split('/').length <= 4) {
+        } else if (url.split('/').length <= 4) {
             pageTitle = siteTitle + ' &nbsp;|&nbsp; Digital design solutions for focused brands';
         }
 
@@ -81,8 +83,10 @@ function insertHeader() {
             elem.setAttribute('content', tag.content);
             document.head.appendChild(elem);
         })
+        const titleElem = document.createElement('title');
+        titleElem.innerHTML = pageTitle;
+        document.head.appendChild(titleElem);
     }
-    // }
 
     function insertPreloads(paths) {
         paths.map(path => {
@@ -102,10 +106,10 @@ function insertHeader() {
     }
 
     document.head.insertAdjacentHTML('beforeend', `
+    <style>body{opacity:0}</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>body{opacity:0}</style>
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed.xml" />
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
