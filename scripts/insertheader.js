@@ -69,6 +69,10 @@ function insertHeader() {
             {
                 'property': 'twitter:card',
                 'content': 'summary_large_image'
+            },
+            {
+                'property': 'fb:app_id',
+                'content': '136269307054042'
             }]
 
         SEOTags.map(tag => {
