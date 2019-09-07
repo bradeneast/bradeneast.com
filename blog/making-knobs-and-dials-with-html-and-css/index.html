@@ -75,9 +75,9 @@
     <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-65deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>P.S. I rotated the range input to <code>-65deg</code> to acheive a more natural feeling when dragging to adjust the value. Adjust this angle to whatever feels right to you.</p>
+<p>P.S. I rotated the range input to <code>-65deg</code> to acheive a more natural feeling when dragging to adjust the value. Set this angle to whatever feels right to you.</p>
 <p>All we have left is to make our knob rotate as we drag up and down.</p>
-<p>In our Javascript file, we&#x2019;ll add an event listener for any input on the document. Once that happens, we can update the <code>knob-position</code> variable on the input&#x2019;s parent element using <code>element.style.setProperty()</code>.</p>
+<p>In our Javascript file, we&#x2019;ll add an event listener for any input on the document. Once that happens, we can update <code>knob-position</code> on the input&#x2019;s parent element using <code>element.style.setProperty()</code>.</p>
 <pre><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;input&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>parentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&apos;--knob-position&apos;</span><span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -88,8 +88,8 @@
     <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span> / 100<span class="token punctuation">)</span> * 300deg<span class="token punctuation">)</span> - 150deg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>In the next article, we&#x2019;ll look at adding a counter to display the numeric value of our knob using a CSS hack by <a href="https://twitter.com/cassiecodes">Cassie Evans</a>.</p>
-<p>Until then, here&#x2019;s the <a href="https://codepen.io/bradeneast/pen/VwZQmjG">demo on CodePen</a>.</p>
+<p>In the next article, we&#x2019;ll look at adding a counter to display the numeric value of our knob using a CSS variable hack by <a href="https://twitter.com/cassiecodes">Cassie Evans</a>.</p>
+<p>If you want to see it in action, check out the <a href="https://codepen.io/bradeneast/pen/VwZQmjG">demo on CodePen</a>.</p>
 <span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Making%20knobs%20and%20dials%20with%20html%20and%20css%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/making-knobs-and-dials-with-html-and-css">share this article</a> with your followers. I appreciate it!</p></span></div>
             </div>
         </div>

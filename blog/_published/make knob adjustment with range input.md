@@ -67,11 +67,11 @@ input[type=range] {
 }
 ```
 
-P.S. I rotated the range input to `-65deg` to acheive a more natural feeling when dragging to adjust the value. Adjust this angle to whatever feels right to you.
+P.S. I rotated the range input to `-65deg` to acheive a more natural feeling when dragging to adjust the value. Set this angle to whatever feels right to you.
 
 All we have left is to make our knob rotate as we drag up and down.
 
-In our Javascript file, we’ll add an event listener for any input on the document. Once that happens, we can update the `knob-position` variable on the input's parent element using `element.style.setProperty()`. 
+In our Javascript file, we’ll add an event listener for any input on the document. Once that happens, we can update `knob-position` on the input's parent element using `element.style.setProperty()`. 
 
 ```javascript
 document.addEventListener('input', function (e) {
@@ -89,6 +89,6 @@ To do that, we can do a little more math and adjust our CSS `calc()` expression.
 }
 ```
 
-In the next article, we'll look at adding a counter to display the numeric value of our knob using a CSS hack by [Cassie Evans](https://twitter.com/cassiecodes).
+In the next article, we'll look at adding a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
 
-Until then, here's the [demo on CodePen](https://codepen.io/bradeneast/pen/VwZQmjG).
+If you want to see it in action, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/VwZQmjG).
