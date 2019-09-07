@@ -33,15 +33,18 @@ We can also add a width of `100%` to make sure the slider will intercept a click
     height: var(--knob-size);
 }
 
-.knob {
+.knob, input[type=range] {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.knob {
     border-radius: 50%;
     background: dodgerblue;
-    transform: rotate(calc((var(--knob-position) / 100) * 360));
+    transform: rotate(calc((var(--knob-position) / 100) * 360deg));
 }
 
 .knob::after {
@@ -50,9 +53,8 @@ We can also add a width of `100%` to make sure the slider will intercept a click
     position: absolute;
     top: 10%;
     left: 50%;
-    width: 20%;
+    width: 10%;
     height: 20%;
-    border-radius: 50%;
     background: royalblue;
     transform: translateX(-50%);
 }
@@ -60,14 +62,8 @@ We can also add a width of `100%` to make sure the slider will intercept a click
 input[type=range] {
     appearance: none;
     -webkit-appearance: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
     opacity: 0;
-    width: var(--knob-size);
-    height: var(--knob-size);
-    transform: translate(-50%, -50%) rotate(-65deg);
+    transform: rotate(-65deg);
 }
 ```
 
