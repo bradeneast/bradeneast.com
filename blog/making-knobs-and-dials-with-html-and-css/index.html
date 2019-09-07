@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="/scripts/insertheader.js"></script>
+    <noscript>
+        <h1>I&apos;m a minimalist at heart, but I do have to run some lightweight Javascript to keep this website manageable! Please enable it for a better experience :)</h1>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/prism.css">
+    </noscript>
+</head>
+
+<body>
+
+    <section class="section post" style="padding-top: 30vh;">
+        <h1 class="title">Making knobs and dials with HTML and CSS</h1>
+        <div class="content">
+            <span class="meta">
+                <h4 class="date">2019/09/09</h4>
+                <h2 class="tags"><a href="/blog/tags/html">html</a>, <a href="/blog/tags/css">css</a>, <a href="/blog/tags/javascript">javascript</a>, <a href="/blog/tags/ui">ui</a></h2>
+            </span>
+            <div class="main">
+                <div class="body">
+<p>Fun fact of the day: Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the &#x2018;forbidden riff.&#x2019; Today, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</p>
+<p>When would we want to create a knob or dial adjustment?  Well, if you&#x2019;re a talented Christmas goat, you might want to develop a web app with some digital effects for your seasonal guitar solos.</p>
+<p><img src="/images/blog/goat-guitar.gif" alt="goat playing electric guitar"></p>
+<p>Most audio and electronic equipment relies heavily on knobs and dials. On the web however, it&#x2019;s pretty rare to see these kind of inputs, when sliders are quick and easy and work out of the box.</p>
+<p>Let&#x2019;s imagine we&#x2019;re coding an audio application that needs some knobs to simulate the analog experience. The most semantic way I&#x2019;ve found to accomplish this is to use the HTML <code>range</code> input and a little bit of CSS trickery.</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>adjustment<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>knob<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>knob_1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>The basic idea is to give the range slider an opacity of <code>0</code> and position it on top of an empty element. We&#x2019;ll apply a border radius of <code>50%</code> to make the knob round, then add a pseudo element on one side to show the current value of the knob.</p>
+<p>We can also add a width of <code>100%</code> to make sure the slider will intercept a click anywhere on the knob element.</p>
+<pre><code class="language-css"><span class="token selector">.adjustment</span> <span class="token punctuation">{</span>
+    <span class="token property">--knob-position</span><span class="token punctuation">:</span> 50<span class="token punctuation">;</span>
+    <span class="token property">--knob-size</span><span class="token punctuation">:</span> 4rem<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--knob-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--knob-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.knob</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> dodgerblue<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span> / 100<span class="token punctuation">)</span> * 360<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.knob::after</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> royalblue<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input[type=range]</span> <span class="token punctuation">{</span>
+    <span class="token property">appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--knob-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--knob-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-65deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>P.S. I rotated the range input to <code>-65deg</code> to acheive a more natural feeling when dragging to adjust the value. Adjust this angle to whatever feels right to you.</p>
+<p>All we have left is to make our knob rotate as we drag up and down.</p>
+<p>In our Javascript file, we&#x2019;ll add an event listener for any input on the document. Once that happens, we can update the <code>knob-position</code> variable on the input&#x2019;s parent element using <code>element.style.setProperty()</code>.</p>
+<pre><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;input&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>parentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&apos;--knob-position&apos;</span><span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>It works! The only thing left is to choose a stop and start position for the dial.</p>
+<p>To do that, we can do a little more math and adjust our CSS <code>calc()</code> expression. Now, it limits the rotation to 300 out of 360. Then, we add 180, minus half of the 60 degree difference (leaving 150) to center everything.</p>
+<pre><code class="language-css"><span class="token selector">.knob</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span> / 100<span class="token punctuation">)</span> * 300deg<span class="token punctuation">)</span> - 150deg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>In the next article, we&#x2019;ll look at adding a counter to display the numeric value of our knob using a CSS hack by <a href="https://twitter.com/cassiecodes">Cassie Evans</a>.</p>
+<p>Until then, here&#x2019;s the <a href="https://codepen.io/bradeneast/pen/VwZQmjG">demo on CodePen</a>.</p>
+<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Making%20knobs%20and%20dials%20with%20html%20and%20css%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/making-knobs-and-dials-with-html-and-css">share this article</a> with your followers. I appreciate it!</p></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section post-nav">
+        <a href id="previous-post" style="display: none">
+            <div class="link-title">
+                <div class="label">previous</div>
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="8,1 0,9 8,17">
+                </polyline></svg>
+            </div>
+        </a>
+        <a href="/blog/staggered-motion-in-animation-and-ui-design--css-vs-scss-vs-javascript" id="next-post">
+            <div class="link-title">
+                <div class="label">next</div>
+                <svg viewbox="0 0 9 18">
+                    <polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,1 9,9 1,17">
+                </polyline></svg>
+            Staggered motion in animation and UI design - css vs scss vs javascript</div>
+        </a>
+    </section>
+    <script type="text/javascript" src="/scripts/insertfooter.js"></script>
+
+</body>
+
+</html>
