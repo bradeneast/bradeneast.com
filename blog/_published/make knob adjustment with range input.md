@@ -1,4 +1,4 @@
-# Making knobs and dials with HTML and CSS
+# Making UI knobs and dials with HTML and CSS
 ## 2019/09/09
 ### html, css, javascript, ui
 
