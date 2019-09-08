@@ -324,10 +324,11 @@ nav {
         margin-top: 30vh;
         flex-flow: column nowrap;
         padding: 0 0 var(--PAD-M) 0;
+        background: var(--CL-0);
 
         &__item {
             margin: var(--PAD-M) 0 0 0;
-            background: var(--CL-0);
+            background: inherit;
             padding: 0 var(--PAD-M);
             color: var(--CL-1);
 
