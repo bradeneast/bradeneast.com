@@ -2,7 +2,7 @@ button,
 input[type=submit] {
     -webkit-appearance: none;
     background-image: none;
-    background-color: transparent;
+    background: transparent;
     color: var(--CL-G2);
     border: calc(var(--BDR) - 1px) solid var(--CL-G2);
     margin: .4rem 12px 12px 0;
@@ -17,7 +17,7 @@ input[type=submit] {
     &:focus {
         color: var(--CL-G5);
         border-color: var(--CL-G1);
-        background-color: var(--CL-G1);
+        background: var(--CL-G1);
     }
 }
 
@@ -26,7 +26,7 @@ input[type=submit] {
 
     .focal button,
     .focal input[type=submit] {
-        background-color: var(--CL-A3);
+        background: var(--CL-A3);
         color: var(--CL-A2);
     }
 }

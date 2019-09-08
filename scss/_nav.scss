@@ -81,7 +81,7 @@ nav {
     }
 
     &.compact {
-        background-color: transparent;
+        background: transparent;
 
         .nav-items-container {
             transform: translateX(100%);
@@ -252,7 +252,7 @@ nav {
     }
 
     nav.compact {
-        background-color: transparent;
+        background: transparent;
 
         .nav-items-container {
             transform: translateX(0);
@@ -280,7 +280,7 @@ nav {
 
     nav {
         padding: 14px var(--PAD-M) 9px var(--PAD-M);
-        background-color: var(--CL-0);
+        background: var(--CL-0);
 
         .logo {
             transform: translateX(-150%) scale(.6);
@@ -327,6 +327,7 @@ nav {
 
         &__item {
             margin: var(--PAD-M) 0 0 0;
+            background: var(--CL-0);
             padding: 0 var(--PAD-M);
             color: var(--CL-1);
 

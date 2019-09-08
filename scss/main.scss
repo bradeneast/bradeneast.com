@@ -48,16 +48,16 @@ $mq: 60em;
 
 body,
 html {
-    background-color: var(--CL-0);
+    background: var(--CL-0);
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
-        background-color: var(--CL-G1);
+        background: var(--CL-G1);
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: var(--CL-G3);
+        background: var(--CL-G3);
     }
 }
 
@@ -207,14 +207,14 @@ footer {
             font-weight: 700;
             color: var(--CL-G2);
             border: calc(var(--BDR) - 1px) solid var(--CL-G2);
-            background-color: transparent;
+            background: transparent;
             transition: var(--TR-M);
 
             &:hover,
             &:focus {
                 color: var(--CL-G5);
                 border-color: var(--CL-G1);
-                background-color: var(--CL-G1);
+                background: var(--CL-G1);
             }
         }
     }
