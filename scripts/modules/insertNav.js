@@ -5,7 +5,8 @@ export function insertNav() {
     }
     let nav = document.createElement('nav');
     let navToggle = '<input tabindex="-1" aria-label="toggle navigation" type="checkbox" id="nav-toggle" />';
-    let navItemsContainer = `<div class="nav-items-container">
+    let navItemsContainer = `
+    <div class="nav-items-container">
         <label tabindex="0" role="button" aria-label="toggle navigation menu" for="nav-toggle" id="hamburger" onkeypress="toggleNav()"></label>
         <a class="nav-item" href="/#work">Work</a>
         <a class="nav-item" href="/about/#me">About</a>
@@ -19,7 +20,7 @@ export function insertNav() {
             <path fill="currentColor" d="M167.62,63.88H.38V0H167.62Zm0,12.18H.38v63.88H167.62Zm0,76.06H.38V216H167.62Z"/>
         </svg>
     </a>`
-    let upDown = '<button id="up-down" tabindex="-1" aria-hidden="true" onclick="window.location.href = `#`;"><svg viewBox="0 0 18 9"><polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,8 9,0 17,8"></svg></button>';
+    let upDown = '<button id="up-down" tabindex="-1" aria-hidden="true" onclick="window.scrollTo(0, 0)"><svg viewBox="0 0 18 9"><polyline stroke="currentColor" stroke-width="1.7" fill="none" points="1,8 9,0 17,8"></svg></button>';
 
     nav.setAttribute('id', 'nav');
     nav.insertAdjacentHTML('beforeend', logo + navItemsContainer);
