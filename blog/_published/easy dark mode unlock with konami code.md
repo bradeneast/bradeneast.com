@@ -1,5 +1,5 @@
 # Easily add a 'dark mode' easter egg to any website or web app
-## 09/19/2019
+## 2019/19/09
 ### ui, css, javascript
 
 Fact of the day: James Bond is based on real WWII spy, Dusan Popov. Today, let's spice up our web project with a dark mode easter egg, unlocked with a secret code.

@@ -4,9 +4,19 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.</description>
-<lastBuildDate>Thu, 19 Sep 2019 03:07:30 GMT</lastBuildDate>
+<lastBuildDate>Thu, 19 Sep 2019 03:10:47 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+    <title>Easily add a ‘dark mode’ easter egg to any website or web app</title>
+    <link>https://bradeneast.com/blog/easily-add-a-%e2%80%98dark-mode%e2%80%99-easter-egg-to-any-website-or-web-app</link>
+    <guid>https://bradeneast.com/blog/easily-add-a-%e2%80%98dark-mode%e2%80%99-easter-egg-to-any-website-or-web-app</guid>
+    <pubDate>Invalid Date</pubDate>
+    <category>ui</category><category>css</category><category>javascript</category>
+    <description>
+Fact of the day: James Bond is based on real WWII spy, Dusan Popov. Today, let&#x2019;s spice up our web project with a dark mode easter egg, unlocked with a secret code.</description>
+    
+    </item>
     <item>
     <title>Making UI knobs and dials with HTML and CSS</title>
     <link>https://bradeneast.com/blog/making-ui-knobs-and-dials-with-html-and-css</link>
@@ -95,15 +105,5 @@ Ever needed a quick way to convert data from JSON to HTML, with as few lines of 
     <category>design</category><category>branding</category>
     <description>
 This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.</description>
-    
-    </item>
-    <item>
-    <title>Easily add a ‘dark mode’ easter egg to any website or web app</title>
-    <link>https://bradeneast.com/blog/easily-add-a-%e2%80%98dark-mode%e2%80%99-easter-egg-to-any-website-or-web-app</link>
-    <guid>https://bradeneast.com/blog/easily-add-a-%e2%80%98dark-mode%e2%80%99-easter-egg-to-any-website-or-web-app</guid>
-    <pubDate>Thu, 19 Sep 2019 05:00:00 GMT</pubDate>
-    <category>ui</category><category>css</category><category>javascript</category>
-    <description>
-Fact of the day: James Bond is based on real WWII spy, Dusan Popov. Today, let&#x2019;s spice up our web project with a dark mode easter egg, unlocked with a secret code.</description>
     
     </item></channel></rss>
