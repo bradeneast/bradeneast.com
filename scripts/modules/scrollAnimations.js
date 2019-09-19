@@ -19,9 +19,9 @@ export function initScrollAnimations() {
     }
 
     function scroll() {
-        const globalThreshold = 600;
-        addClassIfScrolled(nav, 'compact', globalThreshold);
-        addClassIfScrolled(upDownArrow, 'up', globalThreshold);
+        const threshold = 600;
+        addClassIfScrolled(nav, 'compact', threshold);
+        addClassIfScrolled(upDownArrow, 'up', threshold);
         waveOverlays ? waveOverlays.forEach(e => { e.style.setProperty('--overlay-position', Math.round(window.scrollY) + 'px') }) : null;
         if (window.scrollY >= (document.body.offsetHeight - document.querySelector('footer').offsetHeight - window.innerHeight)) {
             upDownArrow.classList.remove('up');

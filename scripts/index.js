@@ -3,6 +3,7 @@ import { checkActiveLinks } from './modules/checkactivelinks.js';
 import { insertNav } from './modules/insertnav.js';
 import { initScrollAnimations } from './modules/scrollanimations.js';
 import { getProjects } from './modules/projects.js';
+import * as darkMode from './modules/darkmode.js';
 
 
 function init() {
@@ -16,6 +17,7 @@ function init() {
 
     // fetch and insert design projects
     getProjects();
+    darkMode.init(darkMode.konami, darkMode.darkModeSuccess);
 }
 
 init();
