@@ -63,12 +63,12 @@ Instead, let's add a custom property (CSS variable) to the parent element, and l
 
     /* these properties added for smoother motion and better performance */
     backface-visibility: hidden;
-    will-change: background-position-x;
+    will-change: transform;
     transition: background-position-x .5s ease;
 }
 ```
 
-That's it for the CSS.  We specified that we only want our background to repeat horizontally, and then added `will-change` for a faster framerate as the layer moves.  We also split `background-position` into X and Y for readability.
+That's it for the CSS.  We specified that we only want our background to repeat horizontally, and also split `background-position` into X and Y for readability.
 
 For the Javascript, we'll just add a scroll event listener, and set the custom property on the parent element.
 

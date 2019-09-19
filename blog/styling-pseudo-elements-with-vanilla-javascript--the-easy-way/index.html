@@ -72,11 +72,11 @@
 
     <span class="token comment">/* these properties added for smoother motion and better performance */</span>
     <span class="token property">backface-visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-    <span class="token property">will-change</span><span class="token punctuation">:</span> background-position-x<span class="token punctuation">;</span>
+    <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">;</span>
     <span class="token property">transition</span><span class="token punctuation">:</span> background-position-x .5s ease<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>That&#x2019;s it for the CSS.  We specified that we only want our background to repeat horizontally, and then added <code>will-change</code> for a faster framerate as the layer moves.  We also split <code>background-position</code> into X and Y for readability.</p>
+<p>That&#x2019;s it for the CSS.  We specified that we only want our background to repeat horizontally, and also split <code>background-position</code> into X and Y for readability.</p>
 <p>For the Javascript, we&#x2019;ll just add a scroll event listener, and set the custom property on the parent element.</p>
 <pre><code class="language-javascript"><span class="token keyword">const</span> wavySections <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&apos;.wavy-background&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
