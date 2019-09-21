@@ -1,4 +1,5 @@
 form {
+    --field-height: 3.2em;
 
     input:not([type=email]):not([type=text]),
     input:not([type=email]):not([type=text])+label {
@@ -16,7 +17,7 @@ input[type=email] {
     text-align: left;
     width: 24rem;
     font-size: var(--FS-S);
-    height: 3.2em;
+    height: var(--field-height);
     padding: .5em;
     color: var(--CL-A3) !important;
     border: var(--BDR) solid var(--CL-A2);
@@ -37,6 +38,11 @@ input[type=email] {
     &:placeholder-shown {
         color: var(--CL-G3) !important;
     }
+}
+
+input[type=submit] {
+    margin-top: 0;
+    height: var(--field-height);
 }
 
 .email-signup {

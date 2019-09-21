@@ -1,8 +1,4 @@
-import { linkify, removeLoadingAnimations, clearImageFormatting, hideTargetedElement } from './helpers.js';
-import * as parseStuff from './parsestuff.js';
-import * as fetchStuff from './fetchstuff.js';
-
-export function getProjects() {
+function getProjects() {
     const portfolioID = '3486337941773520193';
     const projectWrappers = document.querySelectorAll('[data-projects]');
 
@@ -13,12 +9,12 @@ export function getProjects() {
             window.addEventListener('hashchange', () => {
                 window.location.hash != '' ? hideTargetedElement({ fromParent: wrapper }) : null;
             });
-            fetchStuff.fetchBloggerData({ blogID: portfolioID }).then(data => {
+            fetchBloggerData({ blogID: portfolioID }).then(data => {
                 data.items.map(item => {
                     let itemTitle = linkify(item.title.split(' | ').shift());
                     let projectTemplate = document.importNode(wrapper.querySelector('template'), true).content;
                     Object.keys(item).map(key => {
-                        parseStuff.parseBloggerJSON({ objectKey: key, objectValue: item[key], template: projectTemplate });
+                        parseBloggerJSON({ objectKey: key, objectValue: item[key], template: projectTemplate });
                     })
                     projectTemplate.firstElementChild.id = itemTitle;
                     wrapper.appendChild(projectTemplate);
@@ -30,13 +26,13 @@ export function getProjects() {
         }
 
         if (wrapperType == 'single') {
-            fetchStuff.fetchBloggerData({ blogID: portfolioID }).then(data => {
+            fetchBloggerData({ blogID: portfolioID }).then(data => {
                 let target = window.location.hash.replace('#', '');
                 data.items.map(item => {
                     let itemTitle = linkify(item.title.split(' | ').shift());
                     if (target == itemTitle) {
                         Object.keys(item).map(key => {
-                            parseStuff.parseBloggerJSON({ objectKey: key, objectValue: item[key], template: wrapper });
+                            parseBloggerJSON({ objectKey: key, objectValue: item[key], template: wrapper });
                         })
                     }
                 })
@@ -46,7 +42,7 @@ export function getProjects() {
                         let itemTitle = linkify(item.title.split(' | ').shift());
                         if (e.newURL.split('#').pop() == itemTitle) {
                             Object.keys(item).map(key => {
-                                parseStuff.parseBloggerJSON({ objectKey: key, objectValue: item[key], template: wrapper });
+                                parseBloggerJSON({ objectKey: key, objectValue: item[key], template: wrapper });
                             })
                         }
                     })

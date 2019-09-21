@@ -1,9 +1,5 @@
-import {
-    getURL
-} from './helpers.js';
-
 // checks url and adds 'active' class to nav links that match
-export function checkActiveLinks() {
+function checkActiveLinks() {
     const navItems = Array.from(document.querySelectorAll('.nav-item'));
     navItems.map(link => {
         let linkTitle = link.innerHTML.split('<svg')[0];

@@ -173,30 +173,26 @@ body {
 
 footer {
     display: flex;
-    align-items: center;
-    align-content: center;
     position: relative;
     align-self: end;
     text-align: right;
     padding: var(--PAD-L) var(--PAD-M) .5rem var(--PAD-M);
     color: var(--CL-G2);
 
-    & * {
+    * {
         color: inherit;
         text-align: inherit;
     }
 
     .cta {
-        max-width: 24em;
         justify-self: flex-start;
         text-align: left;
         margin-right: auto;
         margin-left: var(--PAD-M);
         color: var(--CL-G5);
 
-        div,
-        div h3 {
-            color: inherit;
+        p {
+            max-width: 24em;
         }
     }
 
@@ -304,7 +300,7 @@ footer {
         text-align: center;
 
         .cta {
-            margin: 0 0 var(--PAD-L) 0;
+            margin: 0 0 6em 0;
         }
     }
 }

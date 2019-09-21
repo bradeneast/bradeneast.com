@@ -1,4 +1,4 @@
-export function initScrollAnimations() {
+function initScrollAnimations() {
 
     // change element classes if window is scrolled past a given threshold (in pixels)
     function addClassIfScrolled(element, className, threshold) {

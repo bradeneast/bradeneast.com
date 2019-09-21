@@ -21,7 +21,6 @@ nav {
         height: var(--logo-height);
         margin-right: auto;
         margin-left: -5px;
-        transform: scale(.95);
         transition: var(--TR-S) .3s;
 
         svg {
@@ -40,14 +39,10 @@ nav {
             clip-path: ellipse(0% 0% at 100% 100%);
         }
 
-        &:hover,
-        &:focus {
-            transform: scale(1);
-
-            .logo-icon {
-                clip-path: ellipse(130% 130% at 50% 50%);
-                transition: var(--TR-L) .1s;
-            }
+        &:hover .logo-icon,
+        &:focus .logo-icon {
+            clip-path: ellipse(130% 130% at 50% 50%);
+            transition: var(--TR-L) .1s;
         }
     }
 
@@ -67,7 +62,7 @@ nav {
         font-weight: 700;
         font-size: .9rem;
         color: var(--CL-G2);
-        transition: opacity var(--TR-S) .3s, transform var(--TR-S), color var(--TR-M), margin var(--TR-S) .3s;
+        transition: var(--TR-S) .3s, transform var(--TR-S), color var(--TR-M);
 
         &:hover,
         &:focus,
@@ -86,9 +81,9 @@ nav {
         .nav-item {
             opacity: 0;
             margin-left: 0;
-            transform: scale(.6);
+            transform: scale(.5);
             cursor: default;
-            transition: opacity var(--TR-S) .3s, transform var(--TR-S) .3s, color var(--TR-S), margin var(--TR-S) .3s;
+            transition: var(--TR-S) .3s, color var(--TR-S);
         }
 
         #hamburger {
@@ -101,15 +96,12 @@ nav {
 
 #nav-toggle {
     position: fixed;
-    top: -99vw;
-    left: 99vw;
     width: 1px;
     opacity: .01;
 
     &:checked~nav.compact .nav-items-container,
     .nav-items-container:focus,
     nav:focus-within {
-
         transition-delay: 0s;
         transform: translateX(0);
 
@@ -193,10 +185,6 @@ nav {
         &.active {
             box-shadow: inset 0 var(--BDR) 0 0 var(--CL-A2);
             color: var(--CL-A2) !important;
-
-            &:hover {
-                color: var(--CL-1);
-            }
         }
 
         &:hover {
@@ -215,7 +203,7 @@ nav {
     right: var(--PAD-M);
     pointer-events: none;
 
-    svg polyline {
+    polyline {
         color: var(--CL-G2);
         transition: var(--TR-S);
         backface-visibility: hidden;
@@ -224,16 +212,14 @@ nav {
         opacity: 0;
     }
 
-    &.up {
+    &.up,
+    &.up polyline {
         cursor: pointer;
         pointer-events: all;
-    }
-
-    &.up svg polyline {
         opacity: 1;
     }
 
-    &:hover svg polyline {
+    &:hover polyline {
         color: var(--CL-G5);
     }
 }
@@ -251,31 +237,21 @@ nav {
 
 // MS Edge styles
 @supports (-ms-ime-align:auto) {
-    nav .logo .logo-icon {
-        display: none;
-    }
 
     nav.compact {
         background: transparent;
 
-        .nav-items-container {
-            transform: translateX(0);
-        }
-
+        .nav-items-container,
         .nav-item {
             opacity: 1;
-            margin-left: var(--PAD-S);
-            transform: scale(1);
-            cursor: pointer;
-            transition: all var(--TR-S);
-        }
-
-        #hamburger {
-            display: none;
+            transform: translateX(0) scale(1);
+            transition: var(--TR-S);
         }
     }
 
-    #up-down {
+    #up-down,
+    #hamburger,
+    nav .logo-icon {
         display: none;
     }
 }
@@ -286,13 +262,6 @@ nav {
         padding: 14px var(--PAD-M) 9px var(--PAD-M);
         background: var(--CL-0);
 
-        .logo {
-            transform: translateX(-150%) scale(.6);
-            margin-left: calc(var(--logo-width) * -2);
-            opacity: 0;
-            height: 2.4rem;
-        }
-
         &.compact {
             background: var(--CL-0);
 
@@ -302,6 +271,13 @@ nav {
                 margin-left: 0;
                 opacity: 1;
             }
+        }
+
+        .logo {
+            transform: translateX(-150%) scale(.6);
+            margin-left: calc(var(--logo-width) * -2);
+            opacity: 0;
+            height: 2.4rem;
         }
     }
 

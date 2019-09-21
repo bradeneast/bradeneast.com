@@ -1,7 +1,5 @@
-import { altFromSource, clearImageFormatting, linkify } from './helpers.js';
-
 // parses blogger json data
-export function parseBloggerJSON({ objectKey, objectValue, template }) {
+function parseBloggerJSON({ objectKey, objectValue, template }) {
     let e = template.querySelector(`[data-${objectKey}]`);
     let projectLink = template.querySelector('a');
     let parser = new DOMParser();

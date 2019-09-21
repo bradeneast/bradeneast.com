@@ -95,7 +95,7 @@ function insertHeader() {
     }
 
     function insertPreloads() {
-        const preloads = ['/css/main.css', '/css/prism.css', '/scripts/insertfooter.js', '/scripts/index.js', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
+        const preloads = ['/css/main.css', '/css/prism.css', 'https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js'];
 
         preloads.map(path => {
             let link = document.createElement('link');

@@ -1,5 +1,5 @@
 // capitalize first letter of a string
-export function capitalize(string) {
+function capitalize(string) {
     var words = string.split(' ');
     var newWords = [];
     words.map(word => {
@@ -9,13 +9,13 @@ export function capitalize(string) {
 }
 
 // get image title from image url
-export function altFromSource(element) {
+function altFromSource(element) {
     let src = element.getAttribute('src');
     return (decodeURIComponent(src).split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
 }
 
 // clear style, width, and height attributes from all passed img elements
-export function clearImageFormatting() {
+function clearImageFormatting() {
     document.querySelectorAll('img').forEach(image => {
         image.removeAttribute('style');
         image.removeAttribute('width');
@@ -27,11 +27,11 @@ export function clearImageFormatting() {
     })
 }
 
-export function linkify(string) {
+function linkify(string) {
     return string.replace(/ /g, '-').replace(/'/g, '').toLowerCase();
 }
 
-export function removeLoadingAnimations({
+function removeLoadingAnimations({
     from
 }) {
     from.querySelectorAll('.loading').forEach(loadingElem => {
@@ -39,13 +39,13 @@ export function removeLoadingAnimations({
     })
 }
 
-export function removeEmpty(array) {
+function removeEmpty(array) {
     return array.filter((e) => {
         return e != ""
     })
 }
 
-export function hideTargetedElement({
+function hideTargetedElement({
     fromParent
 }) {
     let target = window.location.hash.replace('#', '');
@@ -54,6 +54,6 @@ export function hideTargetedElement({
     })
 }
 
-export function getURL() {
+function getURL() {
     return window.location.href;
 }

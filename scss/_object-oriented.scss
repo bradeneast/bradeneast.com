@@ -101,27 +101,6 @@ img {
     order: -1;
 }
 
-.testimonial {
-    height: auto;
-    display: grid;
-    place-items: center;
-    place-content: center;
-    padding: var(--PAD-M);
-
-    .author {
-        margin-top: calc(var(--PAD-S) / 2);
-    }
-}
-
-.testimonial:nth-of-type(2) {
-    border: var(--BDR) solid var(--CL-G1);
-
-    .byline {
-        color: var(--CL-1);
-        margin-bottom: calc(var(--PAD-S) / 2);
-    }
-}
-
 .wave-overlay {
     --overlay-position: 50%;
 
@@ -173,10 +152,5 @@ img {
 
     .pad {
         padding: var(--PAD-L) 0;
-    }
-
-    .testimonial {
-        margin: var(--PAD-L) var(--PAD-M);
-        padding: var(--PAD-L) var(--PAD-M);
     }
 }

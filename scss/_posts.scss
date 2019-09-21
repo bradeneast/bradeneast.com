@@ -24,7 +24,6 @@
             .label {
                 text-align: inherit;
                 display: block;
-                font-size: 1em;
                 font-weight: 700;
                 color: var(--CL-G2);
             }
@@ -39,7 +38,7 @@
                 transform: translateX(calc(var(--PAD-M) * -1)) translateY(-50%) scale(.84);
                 transition: var(--TR-M);
 
-                & polyline {
+                polyline {
                     stroke: var(--CL-A1);
                 }
             }
@@ -48,14 +47,13 @@
         &:hover {
             color: var(--CL-A3);
 
-            .link-title,
-            .link-title svg {
+            .link-title {
                 color: var(--CL-A3);
-                opacity: 1;
                 transform: translateX(0) scale(1);
             }
 
             .link-title svg {
+                opacity: 1;
                 transform: translateX(0) translateY(-50%) scale(1);
             }
         }
@@ -90,8 +88,7 @@
 
     .meta {
         flex-shrink: 1;
-        min-width: 25vw;
-        max-width: 25vw;
+        width: 25vw;
         margin-right: calc(var(--PAD-L) + 5vw);
         margin-bottom: var(--PAD-M);
     }

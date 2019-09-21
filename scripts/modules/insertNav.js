@@ -1,4 +1,4 @@
-export function insertNav() {
+function insertNav() {
     function toggleNav() {
         const navToggle = document.getElementById('nav-toggle');
         navToggle.checked ? navToggle.checked = false : navToggle.checked = true;
