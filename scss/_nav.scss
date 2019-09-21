@@ -21,12 +21,18 @@ nav {
         height: var(--logo-height);
         margin-right: auto;
         margin-left: -5px;
+        transform: scale(.95);
         transition: var(--TR-S) .3s;
 
         svg {
             position: absolute;
             top: 0;
             left: 0;
+
+            * {
+                color: var(--CL-1);
+                transition: var(--TR-S);
+            }
         }
 
         .logo-icon {
@@ -34,23 +40,13 @@ nav {
             clip-path: ellipse(0% 0% at 100% 100%);
         }
 
-        .logo-squiggle path,
-        .logo-icon path {
-            transition: var(--TR-S);
-            color: var(--CL-A2);
-        }
-
         &:hover,
         &:focus {
+            transform: scale(1);
 
             .logo-icon {
                 clip-path: ellipse(130% 130% at 50% 50%);
                 transition: var(--TR-L) .1s;
-            }
-
-            .logo-squiggle path,
-            .logo-icon path {
-                fill: var(--CL-1);
             }
         }
     }
@@ -70,7 +66,7 @@ nav {
         text-transform: uppercase;
         font-weight: 700;
         font-size: .9rem;
-        color: var(--CL-A1);
+        color: var(--CL-G2);
         transition: opacity var(--TR-S) .3s, transform var(--TR-S), color var(--TR-M), margin var(--TR-S) .3s;
 
         &:hover,
@@ -159,10 +155,10 @@ nav {
         content: '';
         left: 0;
         width: 100%;
-        height: 3px;
+        height: 2px;
         transform: translateY(-50%);
         top: calc(50% - 7px);
-        background: var(--CL-A3);
+        background: var(--CL-G2);
         transition: var(--TR-S);
         backface-visibility: hidden;
         will-change: transform;
@@ -171,6 +167,13 @@ nav {
 
     &::after {
         top: calc(50% + 7px);
+    }
+
+    &:hover::after,
+    &:hover::before,
+    &:focus::after,
+    &:focus::before {
+        background: var(--CL-G4);
     }
 }
 
@@ -188,8 +191,8 @@ nav {
         padding: 1.5rem 0 1rem 0;
 
         &.active {
-            box-shadow: inset 0 5px 0 0 var(--CL-A1);
-            color: var(--CL-A2);
+            box-shadow: inset 0 var(--BDR) 0 0 var(--CL-A2);
+            color: var(--CL-A2) !important;
 
             &:hover {
                 color: var(--CL-1);
@@ -217,6 +220,7 @@ nav {
         transition: var(--TR-S);
         backface-visibility: hidden;
         transform-origin: center;
+        stroke-width: 1px;
         opacity: 0;
     }
 

@@ -5,9 +5,9 @@
     --CL-SHADE-DARKER: rgba(0, 0, 0, 0.431);
     --CL-SHADE-DARKEST: rgba(0, 0, 0, 0.671);
     --CL-TINT: rgba(255, 255, 255, 0.5);
-    --CL-A1: #c7aea4;
-    --CL-A2: #252d31;
-    --CL-A3: #39434d;
+    --CL-A1: #5ddabf;
+    --CL-A2: #26b8a0;
+    --CL-A3: #319b8d;
     --CL-G1: #efefef;
     --CL-G2: #b6b6b6;
     --CL-G3: #979797;
@@ -21,7 +21,7 @@
     --PAD-S: 2rem;
     --PAD-M: 3rem;
     --PAD-L: 5rem;
-    --BDR: 4px;
+    --BDR: 3px;
     --SHADOW: 2px 2px 3px -1px var(--CL-SHADE);
 }
 
@@ -187,35 +187,16 @@ footer {
     }
 
     .cta {
-        max-width: 36rem;
+        max-width: 24em;
         justify-self: flex-start;
         text-align: left;
         margin-right: auto;
         margin-left: var(--PAD-M);
-        color: var(--CL-A3);
+        color: var(--CL-G5);
 
         div,
         div h3 {
             color: inherit;
-        }
-
-        &__link {
-            display: inline-block;
-            margin: .4rem 12px 12px 0;
-            padding: 1rem 1.2rem;
-            font-size: var(--FS-M);
-            font-weight: 700;
-            color: var(--CL-G2);
-            border: calc(var(--BDR) - 1px) solid var(--CL-G2);
-            background: transparent;
-            transition: var(--TR-M);
-
-            &:hover,
-            &:focus {
-                color: var(--CL-G5);
-                border-color: var(--CL-G1);
-                background: var(--CL-G1);
-            }
         }
     }
 

@@ -19,7 +19,7 @@ Let's imagine we're coding an audio application that needs some knobs to simulat
 </div>
 ```
 
-The basic idea is to give the range slider an opacity of `0` and position it on top of an empty element. We’ll apply a border radius of `50%` to make the knob round, then add a pseudo element on one side to show the current value of the knob.
+The basic idea is to give the range slider an opacity of `0` and position it on top of an empty element. We’ll apply a border radius of `50%` to make the knob round, then add a pseudo element to show where the knob is set.
 
 We can also add a width of `100%` to make sure the slider will intercept a click anywhere on the knob element.
 
@@ -89,6 +89,30 @@ To do that, we can do a little more math and adjust our CSS `calc()` expression.
 }
 ```
 
-In the next article, we'll look at adding a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
+Next, let's add a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
 
-If you want to see it in action, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/VwZQmjG).
+```css
+.adjustment::after {
+    /* magical stuff */
+    counter-reset: knobPosition var(--knob-position);
+    content: counter(knobPosition);
+
+    /* positioning stuff */
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* font stuff */
+    font-family: monospace;
+    font-size: 1.7em;
+    color: white;
+}
+```
+
+That's it! If you want to see it in action, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/VwZQmjG).

@@ -1,12 +1,13 @@
 button,
-input[type=submit] {
+input[type=submit],
+.cta__link {
     -webkit-appearance: none;
-    background-image: none;
-    background: transparent;
-    color: var(--CL-G2);
-    border: calc(var(--BDR) - 1px) solid var(--CL-G2);
-    margin: .4rem 12px 12px 0;
-    padding: .8rem 1rem;
+    margin: .7em .7em .7em 0;
+    padding: 1em;
+    background: var(--CL-A2);
+    color: var(--CL-0);
+    border: none;
+    border-radius: var(--BDR);
     font-size: var(--FS-S);
     text-transform: uppercase;
     font-weight: 700;
@@ -15,18 +16,7 @@ input[type=submit] {
 
     &:hover,
     &:focus {
-        color: var(--CL-G5);
-        border-color: var(--CL-G1);
-        background: var(--CL-G1);
-    }
-}
-
-
-@media screen and (max-width: $mq) {
-
-    .focal button,
-    .focal input[type=submit] {
+        color: var(--CL-0);
         background: var(--CL-A3);
-        color: var(--CL-A2);
     }
 }

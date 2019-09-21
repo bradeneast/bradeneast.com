@@ -19,7 +19,8 @@ input[type=email] {
     height: 3.2em;
     padding: .5em;
     color: var(--CL-A3) !important;
-    border: 3px solid var(--CL-A2);
+    border: var(--BDR) solid var(--CL-A2);
+    border-radius: var(--BDR);
     background-color: transparent;
     background-image: url(/images/svg/wave.svg);
     background-size: 270%;
@@ -42,11 +43,6 @@ input[type=email] {
     margin-top: 1em;
     display: flex;
     flex-flow: row wrap;
-
-    input[type=submit] {
-        height: 3.2em;
-        margin: 0 1em 1em 0;
-    }
 }
 
 @media screen and (max-width: $mq) {
@@ -57,7 +53,7 @@ input[type=email] {
 
     input[type=text],
     input[type=email] {
-        background-size: 300%;
+        background-size: 330%;
         width: 100%;
     }
 }

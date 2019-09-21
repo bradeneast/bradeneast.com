@@ -1,9 +1,9 @@
 // IMPORTS
-import { checkActiveLinks } from './modules/checkactivelinks.js';
-import { insertNav } from './modules/insertnav.js';
-import { initScrollAnimations } from './modules/scrollanimations.js';
+import { checkActiveLinks } from './modules/checkActiveLinks.js';
+import { insertNav } from './modules/insertNav.js';
+import { initScrollAnimations } from './modules/scrollAnimations.js';
 import { getProjects } from './modules/projects.js';
-import * as darkMode from './modules/darkmode.js';
+import * as darkMode from './modules/darkMode.js';
 
 
 function init() {

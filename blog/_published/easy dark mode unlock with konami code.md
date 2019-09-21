@@ -1,4 +1,4 @@
-# Easily add a 'dark mode' easter egg to any website or web app
+# Easily add a dark mode easter egg to any website or web app
 ## 2019/19/09
 ### ui, css, javascript
 
@@ -12,15 +12,12 @@ Toggle a CSS class of 'dark-mode' on the `body` element when a series of `keydow
 <div id="darkModeDemo">
 <style>
     @keyframes fadeInOut {
-        0% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
+        0% { opacity: 0 }
+        10% { opacity: 0 }
+        40% { opacity: 1 }
+        60% { opacity: 1 }
+        90% { opacity: 0 }
+        100% { opacity: 0 }
     }
     #darkModeDemo {
         position: relative;
@@ -41,7 +38,7 @@ Toggle a CSS class of 'dark-mode' on the `body` element when a series of `keydow
     #light {
         background: #eee;
         color: black;
-        animation: fadeInOut 8s infinite reverse;
+        animation: fadeInOut 8s ease infinite reverse;
     }
 </style>
 <div class="darkModeDemo" id="dark">Dark Mode</div>

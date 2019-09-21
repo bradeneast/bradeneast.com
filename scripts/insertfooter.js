@@ -20,9 +20,8 @@ scripts.map(script => {
 })
 footer.insertAdjacentHTML('afterbegin', `
     <div class="cta" data-scroll>
-        <h3>
-            Let's work together! If you're interested in bringing me on your branding or design project, please reach out &ndash; I'd love to work with you.
-        </h3>
+        <h1>Let's work together!</h1>
+        <p>If you're interested in bringing me on your branding or design project, please reach out &ndash; I'd love to work with you.</p>
         <br />
         <a class="cta__link" href="mailto:bradeneastdesign@gmail.com">
             HIRE BRADEN

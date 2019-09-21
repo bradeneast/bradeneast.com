@@ -13,7 +13,7 @@
 <body>
 
     <section class="section post" style="padding-top: 30vh;">
-        <h1 class="title">Easily add a &#x2018;dark mode&#x2019; easter egg to any website or web app</h1>
+        <h1 class="title">Easily add a dark mode easter egg to any website or web app</h1>
         <div class="content">
             <span class="meta">
                 <h4 class="date">2019/19/09</h4>
@@ -28,15 +28,12 @@
 <div id="darkModeDemo">
 <style>
     @keyframes fadeInOut {
-        0% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
+        0% { opacity: 0 }
+        10% { opacity: 0 }
+        40% { opacity: 1 }
+        60% { opacity: 1 }
+        90% { opacity: 0 }
+        100% { opacity: 0 }
     }
     #darkModeDemo {
         position: relative;
@@ -57,7 +54,7 @@
     #light {
         background: #eee;
         color: black;
-        animation: fadeInOut 8s infinite reverse;
+        animation: fadeInOut 8s ease infinite reverse;
     }
 </style>
 <div class="darkModeDemo" id="dark">Dark Mode</div>
@@ -138,7 +135,7 @@ body.dm ol p</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>P.S. Thanks to <a href="https://gomakethings.com">Chris Ferdinandi</a> for the konami idea and concise key handler logic!</p>
-<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Easily%20add%20a%20%e2%80%98dark%20mode%e2%80%99%20easter%20egg%20to%20any%20website%20or%20web%20app%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/easily-add-a-%e2%80%98dark-mode%e2%80%99-easter-egg-to-any-website-or-web-app">share this article</a> with your followers. I appreciate it!</p></span></div>
+<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=Easily%20add%20a%20dark%20mode%20easter%20egg%20to%20any%20website%20or%20web%20app%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/easily-add-a-dark-mode-easter-egg-to-any-website-or-web-app">share this article</a> with your followers. I appreciate it!</p></span></div>
             </div>
         </div>
     </section>
