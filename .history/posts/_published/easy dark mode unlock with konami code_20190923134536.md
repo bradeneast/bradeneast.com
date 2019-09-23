@@ -1,5 +1,5 @@
 # Easily add a 'smart' dark mode to any website or web app
-## 2019/09/23
+## 2019/09/19
 ### ui, css, javascript
 
 Today, let's spice up our web project with a dark mode easter egg, unlocked with a secret code.

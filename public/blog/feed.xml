@@ -4,13 +4,13 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.</description>
-<lastBuildDate>Mon, 23 Sep 2019 18:42:14 GMT</lastBuildDate>
+<lastBuildDate>Mon, 23 Sep 2019 18:45:48 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
-        <title>Easily add a dark mode easter egg to any website or web app</title>
-        <link>https://bradeneast.com/blog/easily-add-a-dark-mode-easter-egg-to-any-website-or-web-app</link>
-        <guid>https://bradeneast.com/blog/easily-add-a-dark-mode-easter-egg-to-any-website-or-web-app</guid>
-        <pubDate>Thu, 19 Sep 2019 05:00:00 GMT</pubDate>
+        <title>Easily add a ‘smart’ dark mode to any website or web app</title>
+        <link>https://bradeneast.com/blog/easily-add-a-%e2%80%98smart%e2%80%99-dark-mode-to-any-website-or-web-app</link>
+        <guid>https://bradeneast.com/blog/easily-add-a-%e2%80%98smart%e2%80%99-dark-mode-to-any-website-or-web-app</guid>
+        <pubDate>Mon, 23 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>ui</category><category>css</category><category>javascript</category>
         <description>
 Today, let&#x2019;s spice up our web project with a dark mode easter egg, unlocked with a secret code.</description>
