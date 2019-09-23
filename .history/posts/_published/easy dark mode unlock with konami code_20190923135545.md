@@ -101,4 +101,4 @@ function initDarkMode(code, successMessage) {
 
 P.S. Thanks to [Chris Ferdinandi](https://gomakethings.com) for the konami idea and concise key handler logic!
 
-P.P.S. DEFINITELY DON'T TRY THIS CODE ON MY WEBSITE, LIKE REALLY, DON'T TRY IT NO MATTER HOW MUCH YOU WANT TO.
+P.P.S. DEFINITELY DON'T TRY THIS CODE ON MY WEBSITE, LIKE REALLY DON'T DO IT.
