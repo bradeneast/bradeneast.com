@@ -1,0 +1,52 @@
+<!--
+    title: Home,
+    description: Digital design solutions for focused brands,
+    image: /_images/me-looking-up.jpg
+-->
+<main>
+    <section class="hero section fullwidth">
+        <div class="hero-text wave-overlay" style="background-image: url(/_images/me-looking-up.jpg)">
+            <div class="pad">
+                <h1>I'm Braden.</h1>
+                <h2 class="tagline">I help focused businesses take control of their identity through digital design.</h2>
+            </div>
+        </div>
+
+        <ul class="hero-aside" id="services">
+            <li class="align-items align-content" data-scroll>
+                <div class="li__text">
+                    <h3>Considering a new look?</h3>
+                    <p>For the last 3 years, I've been designing versatile visuals and sturdy brand guidelines for new businesses and those who choose to rebrand.</p>
+                    <button aria-label="Learn more about my identity design services" onclick="window.location.href = '/about/#identity-design';">Learn More</button>
+                </div>
+            </li>
+            <li class="align-items align-content" data-scroll>
+                <div class="li__text">
+                    <h3>Need an action plan?</h3>
+                    <p>I also help businesses take methodical steps to discover their brand's personality and leverage it toward company goals.</p>
+                    <button aria-label="Learn more about my brand strategy services" onclick="window.location.href = '/about/#brand-strategy';">Learn More</button>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="section" id="work">
+        <span class="pad">
+            <h1>My Work</h1>
+        </span>
+        <div class="grid pad" data-projects="feed">
+            <div class="loading waiting"></div>
+            <div class="loading error">Didn't load! No projects to show :(</div>
+            <template>
+                <div class="item">
+                    <a href="#" data-scroll>
+                        <div data-image></div>
+                        <div data-meta>
+                            <h2 class="center" data-title></h2>
+                            <p class="center" data-labels></p>
+                        </div>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </section>
+</main>

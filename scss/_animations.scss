@@ -41,7 +41,7 @@ body.loaded {
     &.waiting {
         width: 5rem;
         height: 2rem;
-        background-image: url(/images/svg/squiggle-pattern.svg);
+        background-image: url(/_images/svg/squiggle-pattern.svg);
         background-size: cover;
         animation: loading 7s linear forwards running;
 

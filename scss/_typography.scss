@@ -1,15 +1,15 @@
 @font-face {
     font-family: "Metropolis";
-    src: url("/fonts/Metropolis-Regular.woff2") format("woff2"),
-        url("/fonts/Metropolis-Regular.woff") format("woff");
+    src: url("/_fonts/Metropolis-Regular.woff2") format("woff2"),
+        url("/_fonts/Metropolis-Regular.woff") format("woff");
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Metropolis";
-    src: url("/fonts/Metropolis-SemiBold.woff2") format("woff2"),
-        url("/fonts/Metropolis-SemiBold.woff") format("woff");
+    src: url("/_fonts/Metropolis-SemiBold.woff2") format("woff2"),
+        url("/_fonts/Metropolis-SemiBold.woff") format("woff");
     font-weight: 700;
     font-display: swap;
 }

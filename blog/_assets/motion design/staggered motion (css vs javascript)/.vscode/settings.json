@@ -1,8 +1,0 @@
-{
-    "liveServer.settings.port": 5501,
-    "liveSassCompile.settings.formats": [{
-        "format": "compressed",
-        "extensionName": ".css",
-        "savePath": null
-    }]
-}

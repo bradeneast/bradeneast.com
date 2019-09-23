@@ -1,9 +1,8 @@
 {
+    "liveServer.settings.root": "/public",
     "liveSassCompile.settings.formats": [{
         "format": "compressed",
         "extensionName": ".css",
-        "savePath": "/css"
-    }],
-    "liveServer.settings.port": 5501,
-    "minify.minifyExistingOnSave": true
+        "savePath": "/public/_css"
+    }]
 }

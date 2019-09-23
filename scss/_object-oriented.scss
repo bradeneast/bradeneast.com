@@ -107,7 +107,7 @@ img {
     &::after {
         display: block;
         content: '';
-        background: url(/images/svg/wave.svg);
+        background: url(/_images/svg/wave.svg);
         background-position-y: bottom;
         background-position-x: var(--overlay-position);
         background-size: contain;
