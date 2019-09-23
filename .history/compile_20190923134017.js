@@ -195,7 +195,7 @@ function createNewPostsFromTemplate() {
         const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
         $('body').prepend(htmlParser.parseDOM(fs.readFileSync(postTemplate)));
-        appendMetaTags(`<!--title: ${post.title}, description: The blog for design-oriented devs,-->`, $);
+        appendMetaTags(`<!--title: ${post.title}, description: The blog for design-oriented devs., image: /_images/blog/laptop-book.jpg-->`, $);
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
         Object.keys(post).map(key => {
