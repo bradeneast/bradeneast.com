@@ -175,12 +175,13 @@ function readyPostData() {
         thisPost.date = $('h2').contents().text();
         thisPost.tags = $('h3').contents().text();
         thisPost.tags.split(', ').map(tag => tags.push(tag));
-        thisPost.link = encodeURI(thisPost.title.replace(/[`'"\/\)\(_:]/g, '')).replace(/(([%]..+?)+)|-+/g, '-').toLowerCase();
-        thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
+        thisPost.link = encodeURI(thisPost.title.replace(/\(|\)|'|:|"/g, '')).replace(/%20|#/g, '-').toLowerCase();
+        thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/gs, '');
 
         // Append CTA to post body
+        const encodedTitle = thisPost.link.replace(/--/g, ': ').replace(/-/g, '%20');
         const url = 'https://bradeneast.com/blog/' + thisPost.link;
-        thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</p></span>`;
+        thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${encodedTitle}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</p></span>`;
 
         posts.push(thisPost);
     })

@@ -175,8 +175,8 @@ function readyPostData() {
         thisPost.date = $('h2').contents().text();
         thisPost.tags = $('h3').contents().text();
         thisPost.tags.split(', ').map(tag => tags.push(tag));
-        thisPost.link = encodeURI(thisPost.title.replace(/[`'"\/\)\(_:]/g, '')).replace(/(([%]..+?)+)|-+/g, '-').toLowerCase();
-        thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
+        thisPost.link = encodeURI(thisPost.title).toLowerCase();
+        thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/gs, '');
 
         // Append CTA to post body
         const url = 'https://bradeneast.com/blog/' + thisPost.link;

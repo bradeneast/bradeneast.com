@@ -4,12 +4,12 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.</description>
-<lastBuildDate>Mon, 23 Sep 2019 18:56:04 GMT</lastBuildDate>
+<lastBuildDate>Mon, 23 Sep 2019 19:26:06 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
         <title>Easily add a ‘smart’ dark mode to any website or web app</title>
-        <link>https://bradeneast.com/blog/easily-add-a-%e2%80%98smart%e2%80%99-dark-mode-to-any-website-or-web-app</link>
-        <guid>https://bradeneast.com/blog/easily-add-a-%e2%80%98smart%e2%80%99-dark-mode-to-any-website-or-web-app</guid>
+        <link>https://bradeneast.com/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app</link>
+        <guid>https://bradeneast.com/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app</guid>
         <pubDate>Mon, 23 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>ui</category><category>css</category><category>javascript</category>
         <description>
@@ -26,8 +26,8 @@ Fun fact of the day: Stairway to Heaven (composed by Jimmy Page and performed by
         </item>
         <item>
         <title>Staggered motion in animation and UI design - css vs scss vs javascript</title>
-        <link>https://bradeneast.com/blog/staggered-motion-in-animation-and-ui-design--css-vs-scss-vs-javascript</link>
-        <guid>https://bradeneast.com/blog/staggered-motion-in-animation-and-ui-design--css-vs-scss-vs-javascript</guid>
+        <link>https://bradeneast.com/blog/staggered-motion-in-animation-and-ui-design---css-vs-scss-vs-javascript</link>
+        <guid>https://bradeneast.com/blog/staggered-motion-in-animation-and-ui-design---css-vs-scss-vs-javascript</guid>
         <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>ui</category><category>design</category><category>css</category><category>javascript</category>
         <description>
@@ -35,8 +35,8 @@ Fun fact of the day: your odds of winning an Academy Award are about 10 times be
         </item>
         <item>
         <title>Building a simple web app from scratch (Part 2 - HTML and CSS)</title>
-        <link>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-2--html-and-css</link>
-        <guid>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-2--html-and-css</guid>
+        <link>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-2---html-and-css</link>
+        <guid>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-2---html-and-css</guid>
         <pubDate>Fri, 30 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>design</category><category>html</category><category>css</category>
         <description>
@@ -44,8 +44,8 @@ This is part two of me building a simple web app from scratch, to show that buil
         </item>
         <item>
         <title>Building a simple web app from scratch (part 1 - Wireframe and Protoype)</title>
-        <link>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-1--wireframe-and-protoype</link>
-        <guid>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-1--wireframe-and-protoype</guid>
+        <link>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-1---wireframe-and-protoype</link>
+        <guid>https://bradeneast.com/blog/building-a-simple-web-app-from-scratch-part-1---wireframe-and-protoype</guid>
         <pubDate>Sat, 24 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>design</category>
         <description>
@@ -53,8 +53,8 @@ Have you ever needed to pair the right visual with a message? It&#x2019;s the we
         </item>
         <item>
         <title>Styling pseudo elements with vanilla javascript - the easy way</title>
-        <link>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</link>
-        <guid>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</guid>
+        <link>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript---the-easy-way</link>
+        <guid>https://bradeneast.com/blog/styling-pseudo-elements-with-vanilla-javascript---the-easy-way</guid>
         <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>html</category><category>css</category><category>javascript</category>
         <description>
@@ -62,8 +62,8 @@ I&#x2019;m a proponent of CSS over Javascript where at all possible. That said, 
         </item>
         <item>
         <title>A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript</title>
-        <link>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</link>
-        <guid>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</guid>
+        <link>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility---get-alt-attributes-from-image-src-with-vanilla-javascript</link>
+        <guid>https://bradeneast.com/blog/a-quick-way-to-improve-seo-and-accessibility---get-alt-attributes-from-image-src-with-vanilla-javascript</guid>
         <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
@@ -71,8 +71,8 @@ I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No mat
         </item>
         <item>
         <title>Converting JSON to HTML - Nested objects and URLs</title>
-        <link>https://bradeneast.com/blog/converting-json-to-html--nested-objects-and-urls</link>
-        <guid>https://bradeneast.com/blog/converting-json-to-html--nested-objects-and-urls</guid>
+        <link>https://bradeneast.com/blog/converting-json-to-html---nested-objects-and-urls</link>
+        <guid>https://bradeneast.com/blog/converting-json-to-html---nested-objects-and-urls</guid>
         <pubDate>Wed, 07 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
