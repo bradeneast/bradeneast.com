@@ -18,8 +18,8 @@
         height: 100%;
         overflow: hidden;
         border-radius: var(--BDR);
-        border: var(--BDR) solid transparent;
         transition: var(--TR-L);
+        box-shadow: var(--SHADOW);
 
         [data-image],
         [data-image] img {
@@ -56,7 +56,7 @@
             transform: translateY(var(--translate));
             transition-delay: .3s;
             max-width: 30rem;
-            color: var(--CL-A3);
+            color: var(--CL-G5);
         }
 
         [data-labels] {
@@ -67,7 +67,6 @@
         &:hover,
         &:focus,
         &:focus-within {
-            border-color: var(--CL-A2);
 
             img {
                 transform: scale(.97);

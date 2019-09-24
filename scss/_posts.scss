@@ -98,11 +98,12 @@
     }
 
     &.partial {
-        margin-left: calc(var(--PAD-M) * -1);
-        margin-right: calc(var(--PAD-M) * -1);
-        margin-bottom: var(--PAD-S);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: var(--PAD-L);
         transition: var(--TR-S);
         padding: 0 var(--PAD-M);
+        max-width: 54vmax;
 
         &:hover,
         &:focus-within {
@@ -265,8 +266,8 @@
         &.partial,
         &.partial:hover,
         &.partial:focus {
-            margin: 0 0 var(--PAD-L) 0;
-            padding: 0;
+            margin: var(--PAD-L) 0;
+            padding: var(--PAD-L) 0;
             box-shadow: none;
         }
 

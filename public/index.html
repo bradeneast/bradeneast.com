@@ -43,41 +43,27 @@
 <meta property="og:title" content="Home">
 <meta name="description" content="Digital design solutions for focused brands">
 <meta property="og:description" content="Digital design solutions for focused brands">
-<meta property="og:image" content="https://bradeneast.com/_images/me-looking-up.jpg
+<meta property="og:image" content="https://bradeneast.com/_images/close-up-3x2.jpg
 "></head>
 
 <body onload="document.body.classList.add(`loaded`)">
 <main>
-    <section class="hero section fullwidth">
-        <div class="hero-text wave-overlay" style="background-image: url(/_images/me-looking-up.jpg)">
-            <div class="pad">
-                <h1>I&apos;m Braden.</h1>
-                <h2 class="tagline">I help focused businesses take control of their identity through digital design.</h2>
-            </div>
+    <section class="hero section fullwidth" style="background-image: url(/_images/close-up-3x2.jpg)">
+        <div class="hero-text wave-overlay">
+            <h1>I&apos;m Braden.</h1>
+            <h2 class="tagline">I help focused businesses take control of their identity through digital design.</h2>
         </div>
 
-        <ul class="hero-aside" id="services">
-            <li class="align-items align-content" data-scroll>
-                <div class="li__text">
-                    <h3>Considering a new look?</h3>
-                    <p>For the last 3 years, I&apos;ve been designing versatile visuals and sturdy brand guidelines for new businesses and those who choose to rebrand.</p>
-                    <button aria-label="Learn more about my identity design services" onclick="window.location.href = &apos;/about/#identity-design&apos;;">Learn More</button>
-                </div>
-            </li>
-            <li class="align-items align-content" data-scroll>
-                <div class="li__text">
-                    <h3>Need an action plan?</h3>
-                    <p>I also help businesses take methodical steps to discover their brand&apos;s personality and leverage it toward company goals.</p>
-                    <button aria-label="Learn more about my brand strategy services" onclick="window.location.href = &apos;/about/#brand-strategy&apos;;">Learn More</button>
-                </div>
-            </li>
-        </ul>
+        <div class="hero-aside" id="services">
+            <div class="li__text" data-scroll>
+                <h3>Considering a new look?</h3>
+                <p>For the last 3 years, I&apos;ve been helping businesses take methodical steps to discover their brand&apos;s personality and leverage it toward company goals.</p>
+                <button aria-label="Learn more about my identity design services" onclick="window.location.href = `/about/#identity-design`;">Learn More</button>
+            </div>
+        </div>
     </section>
     <section class="section" id="work">
-        <span class="pad">
-            <h1>My Work</h1>
-        </span>
-        <div class="grid pad" data-projects="feed">
+        <div class="grid" data-projects="feed">
             <div class="loading waiting"></div>
             <div class="loading error">Didn&apos;t load! No projects to show :(</div>
             <template>
@@ -111,10 +97,7 @@
         </a>
     </div>
 
-    <div>
-        <div style="max-width: 20rem;">
-            <img src="/_images/me-headshot.jpg" alt="Braden East Headshot">
-        </div>
+    <div class="nav-wrapper">
         <span class="socials">
             <a href="https://www.behance.net/bradeneastdesign" rel="noreferrer" aria-label="braden east on behance" target="_blank">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512">

@@ -42,13 +42,15 @@
 </head>
 
 <body onload="document.body.classList.add(`loaded`)"><main>
-    <section class="hero section fullwidth">
-        <div class="hero-text wave-overlay" style="background: var(--CL-A1);">
+    <section class="hero section fullwidth" style="background: var(--CL-A1); min-height: 50vh">
+        <div class="hero-text wave-overlay">
             <div class="pad">
                 <h1 class="tagName" data-scroll>branding</h1>
                 <h2 class="tagline" data-scroll>Enjoy a curated collection of posts I&apos;ve written on this subject.</h2>
             </div>
         </div>
+    </section>
+    <section class="section">
         <ul class="hero-aside" style="height: auto;" id="blogFeed">
             <template class="template">
                 <li class="post partial align-items align-content">
@@ -94,10 +96,7 @@
         </a>
     </div>
 
-    <div>
-        <div style="max-width: 20rem;">
-            <img src="/_images/me-headshot.jpg" alt="Braden East Headshot">
-        </div>
+    <div class="nav-wrapper">
         <span class="socials">
             <a href="https://www.behance.net/bradeneastdesign" rel="noreferrer" aria-label="braden east on behance" target="_blank">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512">

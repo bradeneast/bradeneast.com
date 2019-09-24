@@ -1,7 +1,7 @@
 // parses blogger json data
 function parseBloggerJSON({ objectKey, objectValue, template }) {
     let e = template.querySelector(`[data-${objectKey}]`);
-    let projectLink = template.querySelector('a');
+    let projectLinks = template.querySelectorAll('a');
     let parser = new DOMParser();
     let imageContainer = template.querySelector('[data-image]');
 
@@ -16,14 +16,11 @@ function parseBloggerJSON({ objectKey, objectValue, template }) {
     }
 
     if (e) {
-        if (Array.isArray(objectValue)) {
-            e.innerHTML = objectValue.join(', ');
-        } else if (objectValue && e) {
-            e.innerHTML = objectValue;
-        }
-        if (objectKey == 'title' && projectLink) {
-            projectLink.setAttribute('href', `/work/#${linkify(objectValue.split(' | ').shift())}`);
-            projectLink.setAttribute('aria-label', objectValue.replace(/&shy;/g, ''));
+        Array.isArray(objectValue) ? e.innerHTML = objectValue.join(', ') : e.innerHTML = objectValue;
+
+        if (objectKey == 'title' && projectLinks) {
+            projectLinks.forEach(link => link.setAttribute('href', `/work/#${linkify(objectValue.split(' | ').shift())}`));
+            projectLinks.forEach(link => link.setAttribute('aria-label', objectValue.replace(/&shy;/g, '')));
         }
     }
 }

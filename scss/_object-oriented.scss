@@ -117,7 +117,7 @@ img {
         bottom: -10px;
         left: 0;
         width: 100%;
-        z-index: 0;
+        z-index: -1;
         transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
         will-change: background-position-x;

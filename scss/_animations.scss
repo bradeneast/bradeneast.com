@@ -17,14 +17,14 @@ body.loaded {
 [data-scroll-dir-y="-1"] [data-scroll=out] {
     --visible-y: 10vh;
     opacity: 0;
-    transform: translateY(-3rem);
+    transform: translateY(-1rem);
     transition: var(--TR-L);
 }
 
 [data-scroll-dir-y="1"] [data-scroll=out] {
     --visible-y: -10vh;
     opacity: 0;
-    transform: translateY(3rem);
+    transform: translateY(1rem);
     transition: var(--TR-L);
 }
 
