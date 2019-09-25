@@ -5,13 +5,11 @@
     <noscript>
         It's not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
         <link rel="stylesheet" href="/_css/main.css" type="text/css">
-        <link rel="stylesheet" href="/_css/prism.css" type="text/css">
     </noscript>
 
     <!--Preloads-->
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
-    <link rel="preload" href="/_css/prism.css" as="style">
     <link rel="preload" href="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js" as="script">
     <style>
         body {
@@ -35,7 +33,6 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed.xml">
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
-    <link rel="stylesheet" href="/_css/prism.css" type="text/css">
 
     <!--Scripts-->
     <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
@@ -44,7 +41,8 @@
 <meta name="description" content="The blog for design-oriented devs">
 <meta property="og:description" content="The blog for design-oriented devs"></head>
 
-<body onload="document.body.classList.add(`loaded`)"><section class="section post" style="padding-top: 30vh;">
+<body onload="document.body.classList.add(`loaded`)"><link rel="preload" href="/_css/prism.css" as="style">
+<section class="section post" style="padding-top: 30vh;">
     <h1 class="title">Easily add a &#x2018;smart&#x2019; dark mode to any website or web app</h1>
     <div class="content">
         <span class="meta">
@@ -56,11 +54,9 @@
 <p>Today, let&#x2019;s spice up our web project with a dark mode easter egg, unlocked with a secret code.</p>
 <h4>Fact of the day</h4>
 <p>James Bond is based on real WWII spy, Dusan Popov.</p>
-<h4>tl;dr</h4>
-<p>Toggle a CSS class on the <code>body</code> element that inverts your color palette!</p>
-<p><img src="/_images/blog/thats-dark.gif" alt="That&#x2019;s Dark! A gif."></p>
 <h4>Code</h4>
-<p>To set up this feature in our project, we&#x2019;ll need a few lines of CSS that will change the background of our site and apply an <code>invert()</code> filter to everything.</p>
+<p>To set up this feature in our project, we&#x2019;ll need a few lines of CSS that will change the background of our site and apply an <code>invert()</code> filter to everything when a dark-mode class is toggled on the <code>body</code> element.</p>
+<p><img src="/_images/blog/thats-dark.gif" alt="That&#x2019;s Dark! A gif."></p>
 <pre><code class="language-css"><span class="token selector">body.dark-mode</span> <span class="token punctuation">{</span>
     <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -132,9 +128,8 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p><a href="https://codepen.io/bradeneast/pen/vYBrvbK">Here&#x2019;s the demo on CodePen.</a></p>
-<p>P.S. Thanks to <a href="https://gomakethings.com">Chris Ferdinandi</a> for the konami idea and concise key handler logic!</p>
-<p>P.P.S. DEFINITELY DON&#x2019;T TRY THIS CODE ON MY WEBSITE, LIKE REALLY, DON&#x2019;T TRY IT NO MATTER HOW MUCH YOU WANT TO.</p>
+<p>Thanks to <a href="https://gomakethings.com">Chris Ferdinandi</a> for the concise key handler logic!</p>
+<p>P.S. <button onclick="toggleDarkMode()">Don&#x2019;t CLick Me</button></p>
 <span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=easily-add-a-smart-dark-mode-to-any-website-or-web-app%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app">share this article</a> with your followers. I appreciate it!</p></span></div>
         </div>
     </div>
@@ -158,6 +153,7 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
         Making UI knobs and dials with HTML and CSS</div>
     </a>
 </section>
+<link rel="stylesheet" href="/_css/prism.css" type="text/css">
 
     <!--CONTENT WILL GO HERE-->
 

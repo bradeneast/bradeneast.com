@@ -5,13 +5,11 @@
     <noscript>
         It's not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
         <link rel="stylesheet" href="/_css/main.css" type="text/css">
-        <link rel="stylesheet" href="/_css/prism.css" type="text/css">
     </noscript>
 
     <!--Preloads-->
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
-    <link rel="preload" href="/_css/prism.css" as="style">
     <link rel="preload" href="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js" as="script">
     <style>
         body {
@@ -35,7 +33,6 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed.xml">
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
-    <link rel="stylesheet" href="/_css/prism.css" type="text/css">
 
     <!--Scripts-->
     <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
@@ -44,7 +41,8 @@
 <meta name="description" content="The blog for design-oriented devs">
 <meta property="og:description" content="The blog for design-oriented devs"></head>
 
-<body onload="document.body.classList.add(`loaded`)"><section class="section post" style="padding-top: 30vh;">
+<body onload="document.body.classList.add(`loaded`)"><link rel="preload" href="/_css/prism.css" as="style">
+<section class="section post" style="padding-top: 30vh;">
     <h1 class="title">Staggered motion in animation and UI design - css vs scss vs javascript</h1>
     <div class="content">
         <span class="meta">
@@ -125,6 +123,7 @@
         Building a simple web app from scratch (Part 2 - HTML and CSS)</div>
     </a>
 </section>
+<link rel="stylesheet" href="/_css/prism.css" type="text/css">
 
     <!--CONTENT WILL GO HERE-->
 

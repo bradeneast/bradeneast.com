@@ -1,8 +1,11 @@
 {
     "liveServer.settings.root": "/public",
-    "liveSassCompile.settings.formats": [{
-        "format": "compressed",
-        "extensionName": ".css",
-        "savePath": "/public/_css"
-    }]
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".css",
+            "savePath": "/public/_css"
+        }
+    ],
+    "scssFormatter.tabWidth": 4
 }
