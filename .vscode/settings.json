@@ -11,7 +11,7 @@
     "emeraldwalk.runonsave": {
         "commands": [
             {
-                "match": "\\.html$",
+                "match": "\\.html$|\\.md$",
                 "cmd": "node compile"
             }
         ]

@@ -106,3 +106,5 @@ I won't bore you with all my CSS explorations, but here are the classes will be 
 
 #### Wrapping up
 We covered using `preload` to give users a faster experience, selecting by class in CSS vs ID in Javascript, and using an `active` class to set styles on our selected icon.
+
+Next time, we'll write the simple Javascript that will make this little web app work like magic!
