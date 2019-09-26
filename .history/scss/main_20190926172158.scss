@@ -245,17 +245,12 @@ footer {
         min-height: 50vh;
         background-size: contain;
 
-        &.tags .hero-text {
-            margin: 0;
-        }
-
         .hero-text {
             margin: 50vw 0 var(--PAD-L) 0;
         }
 
         .hero-aside {
             height: auto;
-            padding: 0;
         }
     }
 
