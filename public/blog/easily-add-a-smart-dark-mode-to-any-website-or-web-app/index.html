@@ -26,16 +26,13 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bradeneast.com">
-    <meta property="og:image" content="https://www.bradeneast.com/_images/me-looking-up.jpg">
+    <meta property="og:image" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
 
     <!--Links-->
     <link rel="canonical" href="https://www.bradeneast.com">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed.xml">
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
-
-    <!--Scripts-->
-    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
 
 <meta property="og:title" content="Easily add a &#x2018;smart&#x2019; dark mode to any website or web app">
 <meta name="description" content="The blog for design-oriented devs">
@@ -95,40 +92,27 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
     <span class="token property">filter</span><span class="token punctuation">:</span> none
 <span class="token punctuation">}</span>
 </code></pre>
-<h4>Bonus</h4>
-<p>To inject the CSS as a string, we can bundle up a JS snippet that enables dark mode on any website or web app. Plus, we can use a custom activation code by passing in our own array of keys to be pressed.</p>
-<pre><code class="language-javascript"><span class="token keyword">const</span> konami <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;ArrowUp&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowUp&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowDown&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowDown&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowLeft&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowRight&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowLeft&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ArrowRight&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> darkModeSuccess <span class="token operator">=</span> <span class="token string">&apos;Dark Mode unlocked. Repeat code to turn off.&apos;</span><span class="token punctuation">;</span>
-<span class="token function">initDarkMode</span><span class="token punctuation">(</span>konami<span class="token punctuation">,</span> darkModeSuccess<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4>Javascript</h4>
+<p>To make this work, we need two functions - one that checks if dark mode is enabled on page load, and another that toggles dark mode when an event happens. We can use <code>JSON.parse()</code> to ensure that the darkModeOn value gets returned as the boolean <code>true</code>, not the string &#x201C;true&#x201D; when we get it from local storage.</p>
+<pre><code class="language-javascript"><span class="token function">checkDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">function</span> <span class="token function">initDarkMode</span><span class="token punctuation">(</span><span class="token parameter">code<span class="token punctuation">,</span> successMessage</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> darkModeStyles <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;style&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    darkModeStyles<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">&apos;body.dark-mode{background:currentColor}body.dark-mode h1,body.dark-mode h2,body.dark-mode h3,body.dark-mode h4,body.dark-mode h5,body.dark-mode p,body.dark-mode ul,body.dark-mode ol,body.dark-mode p img,body.dark-mode ul img,body.dark-mode ol img{filter:invert(1)}body.dark-mode ul h1,body.dark-mode ul h2,body.dark-mode ul h3,body.dark-mode ul h4,body.dark-mode ul h5,body.dark-mode ul p,body.dark-mode ol h1,body.dark-mode ol h2,body.dark-mode ol h3,body.dark-mode ol h4,body.dark-mode ol h5,body.dark-mode ol p{filter:none}&apos;</span><span class="token punctuation">;</span>
-    document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>darkModeStyles<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">let</span> current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">checkDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> darkModeOn <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">&apos;darkModeOn&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>darkModeOn<span class="token punctuation">)</span> <span class="token punctuation">{</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>darkModeOn<span class="token punctuation">)</span> <span class="token punctuation">{</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">toggleDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;keydown&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>code<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> e<span class="token punctuation">.</span>key <span class="token operator">!==</span> code<span class="token punctuation">[</span>current<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-        current<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>code<span class="token punctuation">.</span>length <span class="token operator">===</span> current<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>darkModeOn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                darkModeOn <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                darkModeOn <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                window<span class="token punctuation">.</span><span class="token function">alert</span><span class="token punctuation">(</span>successMessage<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">&apos;darkModeOn&apos;</span><span class="token punctuation">,</span> darkModeOn<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// If dark mode is on, turn off, otherwise, turn on</span>
+    darkModeOn <span class="token operator">?</span> darkModeOn <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token punctuation">:</span> darkModeOn <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Store dark mode state in local storage</span>
+    localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">&apos;darkModeOn&apos;</span><span class="token punctuation">,</span> darkModeOn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Toggle dark mode class on the body</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Thanks to <a href="https://gomakethings.com">Chris Ferdinandi</a> for the concise key handler logic!</p>
 <p>P.S. <button onclick="toggleDarkMode()">Don&#x2019;t CLick Me</button></p>
 <span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=easily-add-a-smart-dark-mode-to-any-website-or-web-app%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app">share this article</a> with your followers. I appreciate it!</p></span></div>
         </div>
@@ -156,6 +140,7 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
 <link rel="stylesheet" href="/_css/prism.css" type="text/css">
 
     <!--CONTENT WILL GO HERE-->
+    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js" type="text/javascript"></script>
     <script src="/_scripts/modules.min.js" type="text/javascript"></script>
 </body>

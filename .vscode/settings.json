@@ -1,19 +1,15 @@
 {
     "liveServer.settings.root": "/public",
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "compressed",
-            "extensionName": ".css",
-            "savePath": "/public/_css"
-        }
-    ],
+    "liveSassCompile.settings.formats": [{
+        "format": "compressed",
+        "extensionName": ".css",
+        "savePath": "/public/_css"
+    }],
     "scssFormatter.tabWidth": 4,
     "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "\\.html$|\\.md$",
-                "cmd": "node compile"
-            }
-        ]
+        "commands": [{
+            "match": "\\.html$|\\.md$",
+            "cmd": "node compile"
+        }]
     }
 }
