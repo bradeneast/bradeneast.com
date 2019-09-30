@@ -19,7 +19,7 @@
             font-size: var(--FS-M);
             transform: translateX(-1rem);
             margin-left: 1rem;
-            transition: var(--TR-M) 0.1s;
+            transition: var(--TR-M) .1s;
 
             .label {
                 text-align: inherit;
@@ -35,7 +35,7 @@
                 top: 50%;
                 left: -2.8rem;
                 opacity: 0;
-                transform: translateX(calc(var(--PAD-M) * -1)) translateY(-50%) scale(0.84);
+                transform: translateX(calc(var(--PAD-M) * -1)) translateY(-50%) scale(.84);
                 transition: var(--TR-M);
 
                 polyline {
@@ -72,7 +72,7 @@
             svg {
                 left: auto;
                 right: -2.8rem;
-                transform: translateX(var(--PAD-M)) translateY(-50%) scale(0.84);
+                transform: translateX(var(--PAD-M)) translateY(-50%) scale(.84);
             }
         }
     }
@@ -94,7 +94,7 @@
     }
 
     .tags {
-        margin: 0.5rem 0;
+        margin: .5rem 0;
     }
 
     &.partial {
@@ -128,13 +128,13 @@
         }
 
         .tags {
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 .5rem 0;
         }
 
         .link,
         .link .title {
             color: var(--CL-G7);
-            transition: 0.1s ease;
+            transition: .1s ease;
 
             &:hover,
             &:focus,
@@ -157,10 +157,10 @@
             font-weight: 900;
             font-family: var(--FF-1);
             float: left;
-            line-height: 0.6;
+            line-height: .6;
             color: var(--CL-0);
-            padding: 0.7em 0.65em 0.65em 0.7em;
-            margin: 0.18em 0.3em 0.1em 0;
+            padding: .7em .65em .65em .7em;
+            margin: .18em .3em .1em 0;
             background: var(--CL-A2);
             clip-path: url(/_images/svg/wavy-mask.svg);
         }
@@ -186,7 +186,7 @@
 
         br {
             display: block;
-            content: "";
+            content: '';
             height: 1em;
         }
 
@@ -259,7 +259,7 @@
 
         code[class*="language-"],
         pre[class*="language-"] {
-            font-size: 0.8em;
+            font-size: .8em;
             word-break: break-all;
         }
 
@@ -273,7 +273,6 @@
 
         .meta {
             max-width: 100%;
-            width: 100%;
         }
     }
 }
