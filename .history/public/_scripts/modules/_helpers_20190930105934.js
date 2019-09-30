@@ -31,18 +31,24 @@ function linkify(string) {
 function removeLoadingAnimations({
     from
 }) {
-    from.querySelectorAll('.loading').forEach(loadingElem => loadingElem.remove());
+    from.querySelectorAll('.loading').forEach(loadingElem => {
+        loadingElem.remove();
+    })
 }
 
 function removeEmpty(array) {
-    return array.filter(e => e != "");
+    return array.filter((e) => {
+        return e != ""
+    })
 }
 
 function hideTargetedElement({
     fromParent
 }) {
     let target = window.location.hash.replace('#', '');
-    [...fromParent.children].map(child => child.id == target ? child.classList.add('hidden') : child.classList.remove('hidden'));
+    Array.from(fromParent.children).map(child => {
+        child.id == target ? child.classList.add('hidden') : child.classList.remove('hidden');
+    })
 }
 
 function getURL() {

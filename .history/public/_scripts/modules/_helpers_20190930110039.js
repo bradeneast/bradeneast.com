@@ -15,6 +15,7 @@ function altFromSource(element) {
 }
 
 // clear style, width, and height attributes from all passed img elements
+
 function clearImageFormatting() {
 const removeAttributes = 'style, width, height, max-width, max-height'.split(', ');
     document.querySelectorAll('img').forEach(image => {
@@ -31,7 +32,9 @@ function linkify(string) {
 function removeLoadingAnimations({
     from
 }) {
-    from.querySelectorAll('.loading').forEach(loadingElem => loadingElem.remove());
+    from.querySelectorAll('.loading').forEach(loadingElem => {
+        loadingElem.remove();
+    })
 }
 
 function removeEmpty(array) {
@@ -42,7 +45,9 @@ function hideTargetedElement({
     fromParent
 }) {
     let target = window.location.hash.replace('#', '');
-    [...fromParent.children].map(child => child.id == target ? child.classList.add('hidden') : child.classList.remove('hidden'));
+    Array.from(fromParent.children).map(child => {
+        child.id == target ? child.classList.add('hidden') : child.classList.remove('hidden');
+    })
 }
 
 function getURL() {
