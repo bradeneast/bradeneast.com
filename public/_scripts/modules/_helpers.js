@@ -25,7 +25,7 @@ const removeAttributes = 'style, width, height, max-width, max-height'.split(', 
 }
 
 function linkify(string) {
-    return string.replace(/ /g, '-').replace(/'/g, '').toLowerCase();
+    return string.replace(/ /g, '-').replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 }
 
 function removeLoadingAnimations({

@@ -14,92 +14,92 @@ nav {
     padding: 15px var(--PAD-M);
     color: var(--CL-G4);
     transition: var(--TR-M);
+}
 
-    .logo {
-        position: relative;
-        width: var(--logo-width);
-        height: var(--logo-height);
-        margin-right: auto;
-        margin-left: -5px;
-        transition: var(--TR-S) .3s;
+.logo {
+    position: relative;
+    width: var(--logo-width);
+    height: var(--logo-height);
+    margin-right: auto;
+    margin-left: -5px;
+    transition: var(--TR-S) 0.3s;
 
-        svg {
-            position: absolute;
-            top: 0;
-            left: 0;
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
 
-            * {
-                color: var(--CL-1);
-                transition: var(--TR-S);
-            }
-        }
-
-        .logo-icon {
-            transition: var(--TR-L);
-            clip-path: ellipse(0% 0% at 100% 100%);
-        }
-
-        &:hover .logo-icon,
-        &:focus .logo-icon {
-            clip-path: ellipse(130% 130% at 50% 50%);
-            transition: var(--TR-L) .1s;
+        * {
+            color: var(--CL-1);
+            transition: var(--TR-S);
         }
     }
 
+    .logo-icon {
+        transition: var(--TR-L);
+        clip-path: ellipse(0% 0% at 100% 100%);
+    }
+
+    &:hover .logo-icon,
+    &:focus .logo-icon {
+        clip-path: ellipse(130% 130% at 50% 50%);
+        transition: var(--TR-L) 0.1s;
+    }
+}
+
+.nav-items-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-items: flex-end;
+    justify-content: flex-end;
+    transition: var(--TR-S) 0.3s;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--CL-G2);
+    transition: var(--TR-S) 0.3s, transform var(--TR-S), color var(--TR-M);
+
+    &:hover,
+    &:focus,
+    &.active {
+        color: var(--CL-A3);
+    }
+}
+
+nav.compact {
+    background: transparent;
+
     .nav-items-container {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-items: flex-end;
-        justify-content: flex-end;
-        transition: var(--TR-S) .3s;
+        transform: translateX(100%);
     }
 
     .nav-item {
-        position: relative;
-        margin-left: 2rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: .9rem;
-        color: var(--CL-G2);
-        transition: var(--TR-S) .3s, transform var(--TR-S), color var(--TR-M);
-
-        &:hover,
-        &:focus,
-        &.active {
-            color: var(--CL-A3);
-        }
+        opacity: 0;
+        margin-left: 0;
+        transform: scale(0.5);
+        cursor: default;
+        transition: var(--TR-S) 0.3s, color var(--TR-S);
     }
 
-    &.compact {
-        background: transparent;
-
-        .nav-items-container {
-            transform: translateX(100%);
-        }
-
-        .nav-item {
-            opacity: 0;
-            margin-left: 0;
-            transform: scale(.5);
-            cursor: default;
-            transition: var(--TR-S) .3s, color var(--TR-S);
-        }
-
-        #hamburger {
-            transition-delay: 0s;
-            opacity: 1;
-            transform: translateX(-100%);
-        }
+    #hamburger {
+        transition-delay: 0s;
+        opacity: 1;
+        transform: translateX(-100%);
     }
 }
 
 #nav-toggle {
     position: fixed;
     width: 1px;
-    opacity: .01;
+    opacity: 0.01;
 
-    &:checked~nav.compact .nav-items-container,
+    &:checked ~ nav.compact .nav-items-container,
     .nav-items-container:focus,
     nav:focus-within {
         transition-delay: 0s;
@@ -114,19 +114,19 @@ nav {
         }
     }
 
-    &:checked~nav.compact #hamburger {
+    &:checked ~ nav.compact #hamburger {
         transform: translateX(50%);
 
         &::before,
         &::after {
             top: 50%;
             background: var(--CL-A3);
-            transition-delay: .3s;
+            transition-delay: 0.3s;
             transform: rotate(73deg);
         }
     }
 
-    &:checked~nav.compact {
+    &:checked ~ nav.compact {
         background: var(--CL-0);
     }
 }
@@ -138,13 +138,13 @@ nav {
     height: 2rem;
     cursor: pointer;
     opacity: 0;
-    transition: var(--TR-S) .3s;
+    transition: var(--TR-S) 0.3s;
 
     &::before,
     &::after {
         position: absolute;
         display: block;
-        content: '';
+        content: "";
         left: 0;
         width: 100%;
         height: 2px;
@@ -166,30 +166,6 @@ nav {
     &:focus::after,
     &:focus::before {
         background: var(--CL-G4);
-    }
-}
-
-.sub-nav {
-    display: flex;
-    z-index: 1;
-    padding-left: var(--PAD-M);
-
-    &__item {
-        font-size: 1.4rem;
-        color: var(--CL-A2);
-        line-height: 1;
-        font-weight: 700;
-        margin-right: var(--PAD-L);
-        padding: 1.5rem 0 1rem 0;
-
-        &.active {
-            box-shadow: inset 0 var(--BDR) 0 0 var(--CL-A2);
-            color: var(--CL-A2) !important;
-        }
-
-        &:hover {
-            opacity: 1;
-        }
     }
 }
 
@@ -227,7 +203,7 @@ nav {
 .footer-nav {
     display: block;
     margin: 0;
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
 
     a {
         margin: 0 0 0 1rem;
@@ -236,8 +212,7 @@ nav {
 }
 
 // MS Edge styles
-@supports (-ms-ime-align:auto) {
-
+@supports (-ms-ime-align: auto) {
     nav.compact {
         background: transparent;
 
@@ -257,27 +232,26 @@ nav {
 }
 
 @media screen and (max-width: $mq) {
-
     nav {
         padding: 14px var(--PAD-M) 9px var(--PAD-M);
         background: var(--CL-0);
+    }
 
-        &.compact {
-            background: var(--CL-0);
+    .logo {
+        transform: translateX(-150%) scale(0.6);
+        margin-left: calc(var(--logo-width) * -2);
+        opacity: 0;
+        height: 2.4rem;
+    }
 
-            .logo {
-                width: var(--logo-width);
-                transform: translateX(-6px);
-                margin-left: 0;
-                opacity: 1;
-            }
-        }
+    nav.compact {
+        background: var(--CL-0);
 
         .logo {
-            transform: translateX(-150%) scale(.6);
-            margin-left: calc(var(--logo-width) * -2);
-            opacity: 0;
-            height: 2.4rem;
+            width: var(--logo-width);
+            transform: translateX(-6px);
+            margin-left: 0;
+            opacity: 1;
         }
     }
 
@@ -290,7 +264,7 @@ nav {
     }
 
     .logo {
-        transform: translateX(-150%) scale(.6);
+        transform: translateX(-150%) scale(0.6);
         margin-left: calc(var(--logo-width) * -2);
         opacity: 0;
         transition-delay: 0s;
@@ -300,28 +274,8 @@ nav {
         }
     }
 
-    .sub-nav {
-        margin-top: 30vh;
-        flex-flow: column nowrap;
-        padding: 0 0 var(--PAD-M) 0;
-        background: var(--CL-0);
-
-        &__item {
-            margin: var(--PAD-M) 0 0 0;
-            background: inherit;
-            padding: 0 var(--PAD-M);
-            color: var(--CL-1);
-
-            &.active {
-                box-shadow: inset 0 1px 0 0 var(--CL-0),
-                    inset 0 -1px 0 0 var(--CL-0),
-                    inset 4px 0 0 0 var(--CL-A3);
-            }
-        }
-    }
-
-    #nav-toggle:checked~nav.compact .logo {
-        transform: translateX(-150%) scale(.5);
+    #nav-toggle:checked ~ nav.compact .logo {
+        transform: translateX(-150%) scale(0.5);
         opacity: 0;
         transition-delay: 0s;
     }
@@ -334,7 +288,7 @@ nav {
         margin: 0 auto;
 
         a {
-            margin: 0 .5rem;
+            margin: 0 0.5rem;
         }
     }
 }

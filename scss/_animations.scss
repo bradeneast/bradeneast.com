@@ -8,26 +8,6 @@ body.loaded {
     transition: var(--TR-S);
 }
 
-[data-scroll=in] {
-    opacity: 1;
-    transform: translateY(0);
-    transition: var(--TR-L);
-}
-
-[data-scroll-dir-y="-1"] [data-scroll=out] {
-    --visible-y: 10vh;
-    opacity: 0;
-    transform: translateY(-1rem);
-    transition: var(--TR-L);
-}
-
-[data-scroll-dir-y="1"] [data-scroll=out] {
-    --visible-y: -10vh;
-    opacity: 0;
-    transform: translateY(1rem);
-    transition: var(--TR-L);
-}
-
 .loading,
 .error {
     position: absolute;
@@ -52,7 +32,7 @@ body.loaded {
             bottom: -100%;
             left: 50%;
             transform: translateX(-50%);
-            content: 'stopping for coffee..';
+            content: "stopping for coffee..";
             font-weight: 700;
             text-align: center;
             color: var(--CL-G6);
@@ -69,7 +49,7 @@ body.loaded {
         font-weight: 700;
         color: var(--CL-G6);
         opacity: 0;
-        animation: fade-in .1s ease 7s forwards running;
+        animation: fade-in 0.1s ease 7s forwards running;
     }
 }
 

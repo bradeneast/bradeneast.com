@@ -12,29 +12,26 @@
     <div class="loading waiting"></div>
     <div class="loading error">Didn't load! No projects to show :(</div>
     <div class="post center">
-        <h1 class="title" data-title></h1>
-        <div class="content">
+        <h1 class="title"></h1>
+        <div class="main">
             <span class="meta">
-                <h2 class="tags" data-labels></h2>
+                <h2 class="labels"></h2>
             </span>
-            <p class="body" data-content></p>
+            <p class="content body"></p>
         </div>
     </div>
 </section>
 <section class="section" id="more">
-    <span class="center pad">
-        <h1 class="center">More Projects</h1>
-    </span>
     <div class="grid pad" id="more-projects" data-projects="feed">
         <div class="loading waiting"></div>
         <div class="loading error">Didn't load! No projects to show :(</div>
         <template id="project-template">
             <div class="item">
-                <a href="#" data-scroll>
-                    <div data-image></div>
-                    <div data-meta>
-                        <h2 class="center" data-title></h2>
-                        <p class="center" data-labels></p>
+                <a href="#">
+                    <div class="image"></div>
+                    <div class="meta">
+                        <p class="title center"></p>
+                        <p class="labels center"></p>
                     </div>
                 </a>
             </div>

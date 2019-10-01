@@ -10,7 +10,6 @@
     
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
-    <link rel="preload" href="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js" as="script">
     <style>
         body {
             opacity: 0
@@ -42,16 +41,10 @@
 
 <body onload="document.body.classList.add(`loaded`)">
 <main>
-    <section class="hero section fullwidth" style="background-image: url(/_images/close-up-3x2.jpg)">
+    <section class="section fullwidth" style="background-image: url(/_images/close-up-3x2.jpg)">
         <div class="hero-text wave-overlay">
             <h1>I&apos;m Braden.</h1>
-            <h2 class="tagline">I help focused businesses take control of their identity through digital design.</h2>
-        </div>
-
-        <div class="hero-aside">
-            <h3>Considering a new look?</h3>
-            <p>For the last 3 years, I&apos;ve been helping businesses take methodical steps to discover their brand&apos;s personality and leverage it toward company goals.</p>
-            <button aria-label="Learn more about my identity design services" onclick="window.location.href = `/about/#identity-design`;">Learn More</button>
+            <h2>I help focused businesses take control of their identity through digital design.</h2>
         </div>
     </section>
     <section class="section" id="work">
@@ -60,11 +53,11 @@
             <div class="loading error">Didn&apos;t load! No projects to show :(</div>
             <template>
                 <div class="item">
-                    <a href="#" data-scroll>
-                        <div data-image></div>
-                        <div data-meta>
-                            <h2 class="center" data-title></h2>
-                            <p class="center" data-labels></p>
+                    <a href="#">
+                        <div class="image"></div>
+                        <div class="meta">
+                            <p class="title center"></p>
+                            <p class="labels center"></p>
                         </div>
                     </a>
                 </div>
@@ -74,13 +67,12 @@
 </main>
 
     
-    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/scroll-out@2.2.7/dist/scroll-out.min.js" type="text/javascript"></script>
     <script src="/_scripts/modules.min.js" type="text/javascript"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
 </body>
 
 <footer>
-    <div class="cta" data-scroll>
+    <div class="cta">
         <h1>Let&apos;s work together!</h1>
         <p>If you&apos;re interested in bringing me on your branding or design project, please reach out - I&apos;d love to work with you.</p>
         <br>

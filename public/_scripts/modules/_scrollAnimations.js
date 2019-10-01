@@ -33,11 +33,4 @@ function initScrollAnimations() {
     let raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
     let lastScrollTop = window.scrollY;
     raf ? loop() : null;
-
-    setTimeout(() => {
-        ScrollOut({
-            once: true,
-            threshold: .1
-        })
-    }, 1000);
 }
