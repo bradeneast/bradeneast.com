@@ -8,10 +8,10 @@
         scroll-behavior: initial !important
     }
 </style>
-<section class="section" style="padding-top: 30vh;" id="work" data-projects="single">
+<section class="section" id="work" data-projects="single">
     <div class="loading waiting"></div>
     <div class="loading error">Didn't load! No projects to show :(</div>
-    <div class="post center">
+    <div class="post">
         <h1 class="title"></h1>
         <div class="main">
             <span class="meta">
@@ -22,16 +22,16 @@
     </div>
 </section>
 <section class="section" id="more">
-    <div class="grid pad" id="more-projects" data-projects="feed">
+    <div id="more-projects" data-projects="feed">
         <div class="loading waiting"></div>
         <div class="loading error">Didn't load! No projects to show :(</div>
         <template id="project-template">
-            <div class="item">
+            <div>
                 <a href="#">
                     <div class="image"></div>
                     <div class="meta">
-                        <p class="title center"></p>
-                        <p class="labels center"></p>
+                        <p class="title"></p>
+                        <p class="labels"></p>
                     </div>
                 </a>
             </div>

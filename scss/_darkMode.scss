@@ -34,9 +34,4 @@ body.dm {
     .wave-overlay::after {
         background-image: url(/_images/svg/wave-dark.svg);
     }
-
-    .hero-text,
-    .hero-aside {
-        background: var(--CL-1);
-    }
 }

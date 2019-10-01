@@ -99,7 +99,7 @@
 }
 
 .post.partial {
-    margin-left: auto;
+    margin-left: calc(var(--PAD-M) * -1);
     margin-right: auto;
     margin-bottom: var(--PAD-L);
     transition: var(--TR-S);

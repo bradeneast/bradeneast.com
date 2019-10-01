@@ -84,8 +84,8 @@ function publishPagesFrom(directory) {
                 const template = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate)));
                 const content = htmlParser.parseDOM(fs.readFileSync(location), { decodeEntities: true });
 
-                // Prepend main content to body element
-                template('body').prepend(content);
+                // Prepend main content to main element
+                template('#main').append(content);
 
                 // Append meta tags to head element
                 if (content[0]) { appendMetaTags(content[0].data, template) }
