@@ -2,39 +2,19 @@
     title: Work,
     description: Discover my thinking behind beautiful design solutions.,
 -->
-<style>
-    html,
-    body {
-        scroll-behavior: initial !important
-    }
-</style>
-<section class="section" id="work" data-projects="single">
-    <div class="loading waiting"></div>
-    <div class="loading error">Didn't load! No projects to show :(</div>
-    <div class="post">
-        <h1 class="title"></h1>
-        <div class="main">
-            <span class="meta">
-                <h2 class="labels"></h2>
-            </span>
-            <p class="content body"></p>
-        </div>
-    </div>
-</section>
-<section class="section" id="more">
-    <div id="more-projects" data-projects="feed">
-        <div class="loading waiting"></div>
-        <div class="loading error">Didn't load! No projects to show :(</div>
-        <template id="project-template">
-            <div>
-                <a href="#">
-                    <div class="image"></div>
-                    <div class="meta">
-                        <p class="title"></p>
-                        <p class="labels"></p>
-                    </div>
-                </a>
-            </div>
+<section>
+    <ul id="postFeed">
+        <template>
+            <li class="post partial">
+                <div>
+                    <a class="link" href="#">
+                        <h3 class="title"></h3>
+                    </a>
+                    <h4 class="tags"></h4>
+                    <div class="body"></div>
+                    <a class="link read-more">Read More</a>
+                </div>
+            </li>
         </template>
-    </div>
+    </ul>
 </section>

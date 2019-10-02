@@ -1,6 +1,7 @@
 checkActiveLinks();
 checkDarkMode(konami);
 initScrollAnimations();
-
-// fetch and insert design projects
-getProjects();
+Array.from(document.getElementsByTagName('img')).map(img => {
+    clearImageFormatting(img);
+    altFromSource(img);
+})

@@ -3,7 +3,7 @@ nav {
     --logo-width: 2.5rem;
     overflow-x: hidden;
     position: fixed;
-    z-index: 99;
+    z-index: 9;
     width: 100%;
     top: 0;
     left: 0;
@@ -59,16 +59,18 @@ nav {
 .nav-item {
     position: relative;
     margin-left: 2rem;
+    padding: 0.1em 0;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9rem;
-    color: var(--CL-G2);
-    transition: var(--TR-S) 0.3s, transform var(--TR-S), color var(--TR-M);
+    color: var(--CL-G2) !important;
+    transition: var(--TR-S) 0.3s, transform var(--TR-S), box-shadow var(--TR-S), color var(--TR-M);
 
     &:hover,
     &:focus,
     &.active {
-        color: var(--CL-A3);
+        box-shadow: inset 0 calc(var(--BDR) * -1) 0 0 var(--CL-A1);
+        color: var(--CL-A1) !important;
     }
 }
 
@@ -91,43 +93,6 @@ nav.compact {
         transition-delay: 0s;
         opacity: 1;
         transform: translateX(-100%);
-    }
-}
-
-#nav-toggle {
-    position: fixed;
-    width: 1px;
-    opacity: 0.01;
-
-    &:checked ~ nav.compact .nav-items-container,
-    .nav-items-container:focus,
-    nav:focus-within {
-        transition-delay: 0s;
-        transform: translateX(0);
-
-        .nav-item {
-            opacity: 1;
-            margin-left: 2rem;
-            transform: scale(1);
-            cursor: pointer;
-            transition: all var(--TR-S) 0s;
-        }
-    }
-
-    &:checked ~ nav.compact #hamburger {
-        transform: translateX(50%);
-
-        &::before,
-        &::after {
-            top: 50%;
-            background: var(--CL-A3);
-            transition-delay: 0.3s;
-            transform: rotate(73deg);
-        }
-    }
-
-    &:checked ~ nav.compact {
-        background: var(--CL-0);
     }
 }
 
@@ -169,15 +134,52 @@ nav.compact {
     }
 }
 
+#nav-toggle {
+    position: fixed;
+    width: 1px;
+    opacity: 0.01;
+
+    &:checked ~ nav.compact .nav-items-container,
+    .nav-items-container:focus,
+    nav:focus-within {
+        transition-delay: 0s;
+        transform: translateX(0);
+
+        .nav-item {
+            opacity: 1;
+            margin-left: 2rem;
+            transform: scale(1);
+            cursor: pointer;
+            transition: all var(--TR-S) 0s;
+        }
+    }
+
+    &:checked ~ nav.compact #hamburger {
+        transform: translateX(50%);
+
+        &::before,
+        &::after {
+            top: 50%;
+            background: var(--CL-A1);
+            transition-delay: 0.3s;
+            transform: rotate(73deg);
+        }
+    }
+
+    &:checked ~ nav.compact {
+        background: var(--CL-0);
+    }
+}
+
 #up-down {
     all: unset;
     position: fixed;
-    z-index: 9;
     width: 2.1rem;
     height: 2.1rem;
     bottom: var(--PAD-S);
     right: var(--PAD-M);
     pointer-events: none;
+    transition: var(--TR-S);
 
     polyline {
         color: var(--CL-G2);

@@ -2,8 +2,6 @@
     --CL-1: #0a0a0a;
     --CL-0: #ffffff;
     --CL-SHADE: rgba(0, 0, 0, 0.239);
-    --CL-SHADE-DARKER: rgba(0, 0, 0, 0.431);
-    --CL-SHADE-DARKEST: rgba(0, 0, 0, 0.671);
     --CL-TINT: rgba(255, 255, 255, 0.5);
     --CL-A1: #32b8f6;
     --CL-A2: #009ee7;
@@ -23,6 +21,7 @@
     --PAD-L: 5rem;
     --BDR: 3px;
     --SHADOW: 2rem 2rem 3rem -1rem var(--CL-SHADE);
+    --p-width: 48rem;
 }
 
 // SCSS variables
@@ -64,8 +63,13 @@ html {
 @import "darkMode", "buttons", "animations", "forms", "nav", "posts", "typography", "functional";
 
 body {
-    padding: var(--PAD-M);
-    padding-bottom: 0;
+    padding-top: var(--PAD-L);
+    overflow-x: hidden;
+}
+
+section,
+footer {
+    padding: 0 var(--PAD-M);
 }
 
 section {
@@ -77,29 +81,23 @@ section {
     }
 }
 
-[data-projects="feed"] {
-    .item {
-        position: relative;
-    }
-    .meta {
-        position: absolute;
-    }
-}
-
 footer {
     display: flex;
     align-content: flex-end;
     align-items: flex-end;
+    flex-flow: row wrap;
 }
 
 .cta {
     min-height: 30vh;
+    max-width: var(--p-width);
 }
 
 .footer-nav {
-    margin-left: auto;
     max-width: 36rem;
+    margin-left: auto;
     text-align: right;
+    color: var(--CL-G3);
 }
 
 .socials {
@@ -117,5 +115,13 @@ footer {
         &:hover {
             color: var(--CL-G5);
         }
+    }
+}
+
+@media screen and (max-width: $mq) {
+    :root {
+        --PAD-S: 1rem;
+        --PAD-M: 1.5rem;
+        --PAD-L: 2rem;
     }
 }

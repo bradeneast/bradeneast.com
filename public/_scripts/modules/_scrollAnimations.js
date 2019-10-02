@@ -1,30 +1,49 @@
 function initScrollAnimations() {
 
-    // change element classes if window is scrolled past a given threshold (in pixels)
+    const upDownArrow = document.getElementById('up-down');
+    const nav = document.getElementById('nav');
+    const bodyHeight = document.body.getBoundingClientRect().height;
+    const footerHeight = document.querySelector('footer').getBoundingClientRect().height;
+    console.log(bodyHeight, footerHeight);
+    let lastScrollTop = window.scrollY;
+
     function addClassIfScrolled({ element, className, threshold }) {
         let y = Math.round(window.scrollY);
         y > threshold ? element.classList.add(className) : element.classList.remove(className);
     }
 
+    function scroll() {
+
+        addClassIfScrolled({
+            element: nav,
+            className: 'compact',
+            threshold: 600
+        });
+
+        addClassIfScrolled({
+            element: upDownArrow,
+            className: 'up',
+            threshold: 600
+        });
+
+        addClassIfScrolled({
+            element: upDownArrow,
+            className: 'invisible',
+            threshold: bodyHeight - footerHeight - window.innerHeight
+        });
+    }
+
     function loop() {
         let scrollTop = window.scrollY;
         if (lastScrollTop === scrollTop) {
-            raf(loop);
+            requestAnimationFrame(loop);
             return
         } else {
             lastScrollTop = scrollTop;
             scroll();
-            raf(loop);
+            requestAnimationFrame(loop);
         }
     }
 
-    function scroll() {
-        addClassIfScrolled({ element: nav, className: 'compact', threshold: 600 });
-        addClassIfScrolled({ element: upDownArrow, className: 'up', threshold: 600 });
-    }
-
-    const upDownArrow = document.getElementById('up-down');
-    let raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
-    let lastScrollTop = window.scrollY;
-    raf ? loop() : null;
+    requestAnimationFrame ? loop() : null;
 }

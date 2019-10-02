@@ -1,7 +1,6 @@
 svg {
     width: 100%;
     height: 100%;
-    max-width: 1080px;
 }
 
 img {
@@ -23,6 +22,12 @@ img {
     padding-left: var(--PAD-M);
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32vmax, 1fr));
+    grid-gap: var(--PAD-M);
+}
+
 .flex {
     display: flex;
 }
@@ -30,4 +35,8 @@ img {
 .alignV {
     align-content: center;
     align-items: center;
+}
+
+.invisible {
+    opacity: 0 !important;
 }

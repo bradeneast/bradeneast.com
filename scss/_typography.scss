@@ -45,6 +45,7 @@ h3,
 h4 {
     font-family: var(--FF-1);
     font-weight: 700;
+    max-width: var(--p-width);
 }
 
 h1 {
@@ -107,6 +108,7 @@ p {
     letter-spacing: 0;
     line-height: 1.6;
     color: var(--CL-G5);
+    max-width: var(--p-width);
 
     br {
         display: block;
