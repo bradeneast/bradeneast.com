@@ -13,7 +13,8 @@
 
 #previous-post,
 #next-post {
-    width: 50%;
+    min-width: 50%;
+    max-width: 100%;
     min-height: 12rem;
     display: flex;
     align-items: center;
@@ -68,7 +69,6 @@
 
 #next-post {
     justify-content: flex-end;
-    margin-left: auto;
 
     .link-title {
         text-align: right;

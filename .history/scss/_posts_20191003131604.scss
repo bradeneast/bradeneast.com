@@ -68,7 +68,6 @@
 
 #next-post {
     justify-content: flex-end;
-    margin-left: auto;
 
     .link-title {
         text-align: right;
@@ -204,8 +203,7 @@
     }
 
     p,
-    ul,
-    img {
+    ul {
         margin: var(--PAD-S) 0;
     }
 
@@ -217,6 +215,10 @@
     img {
         object-fit: contain;
         height: auto;
+    }
+
+    div.separator {
+        margin: var(--PAD-L) 0;
     }
 
     .post-cta {
