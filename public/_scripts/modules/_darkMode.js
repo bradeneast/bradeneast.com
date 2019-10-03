@@ -3,7 +3,6 @@ const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'Ar
 function toggleDarkMode() {
     JSON.parse(localStorage.getItem('darkModeOn')) ? localStorage.setItem('darkModeOn', false) : localStorage.setItem('darkModeOn', true);
     document.body.classList.toggle('dm');
-    console.log('logged')
 }
 
 function checkDarkMode(code) {

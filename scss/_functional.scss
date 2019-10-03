@@ -24,7 +24,7 @@ img {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(32vmax, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(44vmax, 1fr));
     grid-gap: var(--PAD-M);
 }
 

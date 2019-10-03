@@ -11,8 +11,9 @@
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
     <style>
-        body {
-            opacity: 0
+        section {
+            opacity: 0;
+            transform: translateY(1rem);
         }
     </style>
 
@@ -34,13 +35,11 @@
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 </head>
 
-<body onload="document.body.classList.add(`loaded`)"><section>
+<body onload="document.body.classList.add(`loaded`)"><section class="grid">
     <div>
         <h1 class="tagName">ui</h1>
-        <h2 class="tagline">Enjoy a curated collection of posts I&apos;ve written on this subject.</h2>
+        <h2 class="tagline">Enjoy curated content from this tag.</h2>
     </div>
-</section>
-<section>
     <ul id="postFeed">
         <template class="template">
             <li class="post partial">
@@ -155,8 +154,8 @@
             </span>
             <div class="footer-nav__items">
                 <a href="/">home</a>
-                <a href="/#work">work</a>
-                <a href="/about/#me">about</a>
+                <a href="/work">work</a>
+                <a href="/about">about</a>
                 <a href="/blog">blog</a>
             </div>
 

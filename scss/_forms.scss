@@ -1,8 +1,8 @@
 form {
     --field-height: 3.2em;
 
-    input:not([type=email]):not([type=text]),
-    input:not([type=email]):not([type=text])+label {
+    input:not([type="email"]):not([type="text"]),
+    input:not([type="email"]):not([type="text"]) + label {
         cursor: pointer;
     }
 
@@ -12,15 +12,15 @@ form {
     }
 }
 
-input[type=text],
-input[type=email] {
+input[type="text"],
+input[type="email"] {
     text-align: left;
     width: 24rem;
     font-size: var(--FS-S);
     height: var(--field-height);
-    padding: .5em;
+    padding: 0.5em;
     color: var(--CL-A3) !important;
-    border: var(--BDR) solid var(--CL-A2);
+    border: var(--BDR) solid var(--CL-G3);
     border-radius: var(--BDR);
     background-color: transparent;
     background-image: url(/_images/svg/wave.svg);
@@ -32,6 +32,8 @@ input[type=email] {
 
     &:focus,
     &:focus-within {
+        border-color: var(--CL-A2);
+        box-shadow: inset var(--SH-S);
         background-position-y: 100%;
     }
 
@@ -40,7 +42,7 @@ input[type=email] {
     }
 }
 
-input[type=submit] {
+input[type="submit"] {
     margin-top: 0;
     height: var(--field-height);
 }
@@ -52,13 +54,12 @@ input[type=submit] {
 }
 
 @media screen and (max-width: $mq) {
-
     .mc-field-group {
         margin-right: 1em;
     }
 
-    input[type=text],
-    input[type=email] {
+    input[type="text"],
+    input[type="email"] {
         background-size: 330%;
         width: 100%;
     }

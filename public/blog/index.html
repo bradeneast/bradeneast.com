@@ -8,8 +8,9 @@
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
     <style>
-        body {
-            opacity: 0
+        section {
+            opacity: 0;
+            transform: translateY(1rem);
         }
     </style>
     <meta charset="UTF-8">
@@ -50,7 +51,7 @@
         </div>
     </nav>
     <div id="main">
-<section>
+<section class="grid">
     <div>
         <h1>The blog for design-oriented devs.</h1>
         <h2 class="tagline">Get regular tips to improve your UI and UX design skills.</h2>
@@ -70,8 +71,6 @@
             </form>
         </div>
     </div>
-</section>
-<section>
     <ul id="postFeed">
         <template>
             <li class="post partial">
@@ -214,8 +213,8 @@
             </span>
             <div class="footer-nav__items">
                 <a href="/">home</a>
-                <a href="/#work">work</a>
-                <a href="/about/#me">about</a>
+                <a href="/work">work</a>
+                <a href="/about">about</a>
                 <a href="/blog">blog</a>
             </div>
             &#xA9; 2019 Braden East

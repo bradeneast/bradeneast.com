@@ -11,8 +11,9 @@
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
     <style>
-        body {
-            opacity: 0
+        section {
+            opacity: 0;
+            transform: translateY(1rem);
         }
     </style>
 
@@ -34,13 +35,11 @@
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 </head>
 
-<body onload="document.body.classList.add(`loaded`)"><section>
+<body onload="document.body.classList.add(`loaded`)"><section class="grid">
     <div>
         <h1 class="tagName">identity design</h1>
-        <h2 class="tagline">Enjoy a curated collection of posts I&apos;ve written on this subject.</h2>
+        <h2 class="tagline">Enjoy curated content from this tag.</h2>
     </div>
-</section>
-<section>
     <ul id="postFeed">
         <template class="template">
             <li class="post partial">
@@ -62,8 +61,20 @@
                     </a>
                     <h4 class="tags">identity design</h4>
                     <div class="body">
-<p>Here&#x2019;s the body of this post yo.</p></div>
+<p>Jude&#x2019;s Health &amp; Java House is a coffee shop and natural health store in Bartlesville, Oklahoma. The goal was to solidify the connections Jude&#x2019;s was already making with Bartlesville locals and expand that same familiarity into surrounding areas.</p></div>
                     <a class="link read-more" href="/work/judes">Read More</a>
+                </div>
+            </li>
+        
+            <li class="post partial">
+                <div>
+                    <a class="link" href="/work/360-farms">
+                        <h3 class="title">360 Farms</h3>
+                    </a>
+                    <h4 class="tags">brand strategy, identity design</h4>
+                    <div class="body">
+<p>360 Farms is the only business that makes start-to-finish elderberry products for people seeking value and quality. The goal was to reinforce their brand with those wanting improved health and well-being in an era of McDonald&#x2019;s and WalMart.</p></div>
+                    <a class="link read-more" href="/work/360-farms">Read More</a>
                 </div>
             </li>
         </ul>
@@ -131,8 +142,8 @@
             </span>
             <div class="footer-nav__items">
                 <a href="/">home</a>
-                <a href="/#work">work</a>
-                <a href="/about/#me">about</a>
+                <a href="/work">work</a>
+                <a href="/about">about</a>
                 <a href="/blog">blog</a>
             </div>
 

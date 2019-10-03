@@ -8,8 +8,9 @@
     <link rel="preload" href="/_scripts/modules.min.js" as="script">
     <link rel="preload" href="/_css/main.css" as="style">
     <style>
-        body {
-            opacity: 0
+        section {
+            opacity: 0;
+            transform: translateY(1rem);
         }
     </style>
     <meta charset="UTF-8">
@@ -50,28 +51,42 @@
     </nav>
     <div id="main">
 <section>
-    <ul id="postFeed">
+    <ul class="work" id="postFeed">
         <template>
             <li class="post partial">
-                <div>
+                <img class="image">
+                <div class="meta">
                     <a class="link" href="#">
                         <h3 class="title"></h3>
                     </a>
                     <h4 class="tags"></h4>
                     <div class="body"></div>
-                    <a class="link read-more">Read More</a>
+                    <a class="link read-more">View Project</a>
                 </div>
             </li>
         </template>
             <li class="post partial">
-                <div>
+                <img class="image" src="/_images/work/judes/judes-logo-stacked.jpg">
+                <div class="meta">
                     <a class="link" href="/work/judes">
                         <h3 class="title">Jude&#x2019;s</h3>
                     </a>
                     <h4 class="tags">identity design</h4>
                     <div class="body">
-<p>Here&#x2019;s the body of this post yo.</p></div>
-                    <a class="link read-more" href="/work/judes">Read More</a>
+<p>Jude&#x2019;s Health &amp; Java House is a coffee shop and natural health store in Bartlesville, Oklahoma. The goal was to solidify the connections Jude&#x2019;s was already making with Bartlesville locals and expand that same familiarity into surrounding areas.</p></div>
+                    <a class="link read-more" href="/work/judes">View Project</a>
+                </div>
+            </li>
+            <li class="post partial">
+                <img class="image" src="/_images/work/360/360-inline.jpg">
+                <div class="meta">
+                    <a class="link" href="/work/360-farms">
+                        <h3 class="title">360 Farms</h3>
+                    </a>
+                    <h4 class="tags">brand strategy, identity design</h4>
+                    <div class="body">
+<p>360 Farms is the only business that makes start-to-finish elderberry products for people seeking value and quality. The goal was to reinforce their brand with those wanting improved health and well-being in an era of McDonald&#x2019;s and WalMart.</p></div>
+                    <a class="link read-more" href="/work/360-farms">View Project</a>
                 </div>
             </li>
         </ul>
@@ -115,8 +130,8 @@
             </span>
             <div class="footer-nav__items">
                 <a href="/">home</a>
-                <a href="/#work">work</a>
-                <a href="/about/#me">about</a>
+                <a href="/work">work</a>
+                <a href="/about">about</a>
                 <a href="/blog">blog</a>
             </div>
             &#xA9; 2019 Braden East

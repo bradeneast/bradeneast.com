@@ -10,7 +10,7 @@ const prism = require('prismjs');
 
 
 // GLOBAL VARIABLES
-const ignoreBeginsWith = '_';
+const ignoreChar = '_';
 const public = './public/';
 const blog = public + 'blog/';
 const work = public + 'work/';
@@ -60,7 +60,7 @@ function dynamicSort(property) {
 }
 
 fs.cleandirSync = function (directory) {
-    fs.readdirSync(directory).map(file => file.charAt(0) != ignoreBeginsWith ? fs.removeSync(directory + file) : null);
+    fs.readdirSync(directory).map(file => file.charAt(0) != ignoreChar ? fs.removeSync(directory + file) : null);
 }
 
 function appendMetaTags(metaData, selector) {
@@ -83,7 +83,7 @@ function publishPagesFrom(directory) {
 
     fs.readdirSync(directory, { encoding: 'utf8' }).map(child => {
 
-        if (child.charAt(0) != ignoreBeginsWith) {
+        if (child.charAt(0) != ignoreChar) {
 
             if (!fs.lstatSync(directory + child).isDirectory()) {
 
@@ -148,9 +148,15 @@ function addPostToFeed(post, wrapper, $) {
         key = key.toLowerCase();
         Array.isArray(v) ? v = v.join(', ') : null;
         if (e) {
-            if (key == 'body') { e.append(v.substr(0, v.indexOf('</p>') + 4)) }
-            else if (key == 'link') { e.attr('href', v) }
-            else { e.append(v) }
+            if (key == 'body') {
+                e.append(v.substr(0, v.indexOf('</p>') + 4))
+            } else if (key == 'link') {
+                e.attr('href', v)
+            } else if (key == 'image') {
+                e.attr('src', v)
+            } else {
+                e.append(v)
+            }
         }
     })
     wrapper.append(newPost);
@@ -163,6 +169,7 @@ function readyPostData(post, parentDirectory) {
         tags: [],
         body: '',
         link: '',
+        image: ''
     }
     if (post) {
         const reader = new commonmark.Parser({ smart: true });
@@ -182,6 +189,7 @@ function readyPostData(post, parentDirectory) {
         thisPost.title = $('h1').contents().text();
         thisPost.date = $('h2').contents().text();
         thisPost.tags = $('h3').contents().text();
+        thisPost.image = $('img').attr('src');
         thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
 
         if (parentDirectory == blogPostSrc) {
@@ -218,11 +226,21 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
             if (key == 'tags') {
                 const tags = [];
-                value.split(', ').map(tag => tags.push(`<a href="/${destinationDirectory.replace(public, '')}tags/${encodeURI(tag).replace(/%20+/g, '-')}">${tag}</a>`));
+                value.split(', ').map(tag => {
+                    tags.push(`
+                        <a href="/${destinationDirectory.replace(public, '')}tags/${encodeURI(tag).replace(/%20+/g, '-')}">
+                            ${tag}
+                        </a>
+                    `)
+                })
                 value = tags.join(', ');
             }
 
-            value && e ? e.append(value) : null;
+            if (key == 'image') {
+                e.attr('src', value);
+            } else if (value && e) {
+                e.append(value)
+            }
         })
 
         // Add next and previous links
@@ -233,12 +251,12 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         if (prevPost) {
             prevElem.find('.link-title').append(prevPost.title);
-            prevElem.attr('href', `/${destinationDirectory}/${prevPost.link}`);
+            prevElem.attr('href', `${prevPost.link}`);
         } else { prevElem.attr('style', 'display: none') }
 
         if (nextPost) {
             nextElem.find('.link-title').append(nextPost.title);
-            nextElem.attr('href', `/${destinationDirectory}/${nextPost.link}`);
+            nextElem.attr('href', `${nextPost.link}`);
         } else { nextElem.attr('style', 'display: none') }
 
         addPostToRSS(post);
@@ -276,7 +294,7 @@ function buildTagDirectories(tags, destinationDirectory) {
 }
 
 // Clear old pages
-fs.cleandirSync(public, ignoreBeginsWith);
+fs.cleandirSync(public, ignoreChar);
 
 // Publish pages
 publishPagesFrom(pagesFolder);

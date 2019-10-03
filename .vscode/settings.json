@@ -1,4 +1,12 @@
 {
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.html$|\\.md$",
+                "cmd": "node compile"
+            }
+        ]
+    },
     "liveServer.settings.root": "/public",
     "liveServer.settings.wait": 600,
     "liveSassCompile.settings.formats": [
@@ -52,12 +60,4 @@
         }
     },
     "scssFormatter.tabWidth": 4,
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "\\.html$|\\.md$",
-                "cmd": "node compile"
-            }
-        ]
-    }
 }
