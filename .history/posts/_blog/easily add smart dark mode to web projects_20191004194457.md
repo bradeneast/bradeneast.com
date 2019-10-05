@@ -10,7 +10,7 @@ James Bond is based on real WWII spy, Dusan Popov.
 #### Code
 To set up this feature in our project, we'll need a few lines of CSS that will change the background of our site and apply an `invert()` filter to everything when a dark-mode class is toggled on the `body` element.
 
-![A starry night sky - when the world is in dark mode](/_images/blog/starry-sky.jpg)
+![That's Dark! A gif.](/_images/blog/thats-dark.gif)
 
 ```css
 body.dark-mode {

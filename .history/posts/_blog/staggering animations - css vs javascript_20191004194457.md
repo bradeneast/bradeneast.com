@@ -4,9 +4,11 @@
 
 Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don't give up on that film project! Today, let's talk about integrating motion into our websites and user interfaces.
 
-![people in motion on a sidewalk](/_images/blog/people-in-motion.jpg)
+It's pretty obious that movement happening in perfect sync seems unnatural to us. Here's a great example of digitally trying to simulate natural movement.
 
-It's pretty obious that movement happening in perfect sync seems unnatural to us. Unless you're going for the 1970's kung fu movie vibe, you probably want to stagger and tweak your animations.
+![painful visual effects](/_images/blog/painful-vfx.gif)
+
+Unless you're going for the 1970's kung fu movie vibe, you probably want to keep reading.
 
 Our brains like smooth, sequential motion that overlaps, speeds up, and slows down according to the laws of physics.  That kind of motion is consistent with our experience and feels familiar.
 

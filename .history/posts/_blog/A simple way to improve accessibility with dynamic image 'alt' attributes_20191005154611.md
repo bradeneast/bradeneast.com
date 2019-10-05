@@ -1,14 +1,14 @@
-# Improve image SEO and accessibility - get alt from src with vanilla javascript
+# A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript
 ## 2019/08/19
 ### javascript, html
 
-I'm sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I'm usually adding `aria-label` and `tabindex` and `role` attributes later than I'd like.
+I'm sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I'm always adding `aria-label` and `tabindex` and `role` attributes an afterthought.
 
 The repetition is also frustrating. If you're anything like me, you enjoy writing code because it helps you avoid repeating the same tasks over and over.
 
 ![polaroid photos - the original accessible image](/_images/blog/polaroids.jpg)
 
-That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alt is so important](https://moz.com/learn/seo/alt-text), I realized I had yet another detail to manage for better SEO and accessibility on my web projects.
+That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alt is so important](https://moz.com/learn/seo/alt-text), I was annoyed at yet another detail to manage for better SEO and accessibility.
 
 Today, let's look at how to solve that problem by adding accessible `alt` attribute values to our `img` elements with vanilla javascript.
 

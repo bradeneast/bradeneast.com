@@ -4,7 +4,7 @@
 
 I'm a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
 
-![a wave in the ocean](/_images/blog/wave.jpg)
+![squidward dancing gif](/_images/blog/squidward-dance.gif)
 
 I'm discovering more uses every day for `::before` and `::after`, letting me write cleaner, dryer code.  The problem is, pseudo elements haven't been the easiest to manipulate with Javascript in the past! There are lots of really complex solutions out there, but let's look at a simple example of how we can animate and style pseudo elements with vanilla Javascript.
 

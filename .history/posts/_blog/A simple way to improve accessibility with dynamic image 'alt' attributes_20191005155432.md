@@ -8,7 +8,7 @@ The repetition is also frustrating. If you're anything like me, you enjoy writin
 
 ![polaroid photos - the original accessible image](/_images/blog/polaroids.jpg)
 
-That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alt is so important](https://moz.com/learn/seo/alt-text), I realized I had yet another detail to manage for better SEO and accessibility on my web projects.
+That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alt is so important](https://moz.com/learn/seo/alt-text), I was annoyed at yet another detail to manage for better SEO and accessibility.
 
 Today, let's look at how to solve that problem by adding accessible `alt` attribute values to our `img` elements with vanilla javascript.
 

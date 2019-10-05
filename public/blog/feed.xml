@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.</description>
-<lastBuildDate>Sat, 05 Oct 2019 20:36:19 GMT</lastBuildDate>
+<lastBuildDate>Sat, 05 Oct 2019 20:55:06 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
         <title>Easily add a ‘smart’ dark mode to any website or web app</title>
@@ -43,13 +43,13 @@ Fun fact of the day: your odds of winning an Academy Award are about 10 times be
 I&#x2019;m a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
         </item>
         <item>
-        <title>A quick way to improve SEO and accessibility - get alt attributes from image src with vanilla javascript</title>
-        <link>https://bradeneast.com/blog//blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</link>
-        <guid>https://bradeneast.com/blog//blog/a-quick-way-to-improve-seo-and-accessibility--get-alt-attributes-from-image-src-with-vanilla-javascript</guid>
+        <title>Improve image SEO and accessibility - get alt from src with vanilla javascript</title>
+        <link>https://bradeneast.com/blog//blog/improve-image-seo-and-accessibility--get-alt-from-src-with-vanilla-javascript</link>
+        <guid>https://bradeneast.com/blog//blog/improve-image-seo-and-accessibility--get-alt-from-src-with-vanilla-javascript</guid>
         <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
-I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m always adding aria-label and tabindex and role attributes an afterthought.</description>
+I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m usually adding aria-label and tabindex and role attributes later than I&#x2019;d like.</description>
         </item>
         <item>
         <title>Converting JSON to HTML - Nested objects and URLs</title>
