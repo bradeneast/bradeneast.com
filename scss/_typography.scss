@@ -1,7 +1,6 @@
 @font-face {
     font-family: "Metropolis";
-    src: url("/_fonts/Metropolis-Regular.woff2") format("woff2"),
-        url("/_fonts/Metropolis-Regular.woff") format("woff");
+    src: url("/_fonts/Metropolis-Regular.woff2") format("woff2"), url("/_fonts/Metropolis-Regular.woff") format("woff");
     font-weight: 400;
     font-display: swap;
 }
@@ -15,8 +14,8 @@
 }
 
 :root {
-    --FF-1: 'Metropolis', 'Helvetica', 'Arial', sans-serif;
-    --FS-XS: .7rem;
+    --FF-1: "Metropolis", "Helvetica", "Arial", sans-serif;
+    --FS-XS: 0.7rem;
     --FS-S: 1rem;
     --FS-M: 1.4rem;
     --FS-L: calc(2rem + 2vw);
@@ -37,8 +36,8 @@ h2,
 h3,
 h4,
 p {
-    transform: translateX(-.1em);
-    margin-bottom: .2em;
+    transform: translateX(-0.1em);
+    margin-bottom: 0.2em;
 }
 
 h2,
@@ -46,14 +45,15 @@ h3,
 h4 {
     font-family: var(--FF-1);
     font-weight: 700;
+    max-width: var(--p-width);
 }
 
 h1 {
-    margin-top: .2em;
+    margin-top: 0.2em;
     font-family: var(--FF-1);
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     font-size: var(--FS-L);
     color: var(--CL-1);
     width: 100%;
@@ -70,7 +70,7 @@ h3 {
     color: var(--CL-1);
     font-family: var(--FF-1);
     font-weight: 700;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
     font-size: 1.4rem;
     line-height: 1.5;
 }
@@ -108,10 +108,11 @@ p {
     letter-spacing: 0;
     line-height: 1.6;
     color: var(--CL-G5);
+    max-width: var(--p-width);
 
     br {
         display: block;
-        content: '';
+        content: "";
         height: var(--PAD-S);
     }
 
@@ -120,14 +121,14 @@ p {
         text-decoration: underline;
     }
 
-    &+ul,
-    &+ol {
+    & + ul,
+    & + ol {
         margin: var(--PAD-S) 0;
         margin-left: var(--PAD-S);
         color: var(--CL-G5);
 
         li {
-            margin: .5em 0;
+            margin: 0.5em 0;
             list-style-type: disc;
             color: inherit;
 
@@ -142,7 +143,7 @@ p {
 blockquote {
     margin: var(--PAD-M) 0;
     padding-left: var(--PAD-S);
-    box-shadow: inset 5px 0 0 0 var(--CL-A3);
+    box-shadow: inset var(--BDR) 0 0 0 var(--CL-A3);
     font-style: italic;
 }
 
@@ -154,10 +155,9 @@ strong,
 }
 
 @media screen and (max-width: $mq) {
-
     h1 {
         font-size: 2.4rem;
-        margin-bottom: .4em;
+        margin-bottom: 0.4em;
     }
 
     h2 {

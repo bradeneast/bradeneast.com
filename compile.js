@@ -10,13 +10,15 @@ const prism = require('prismjs');
 
 
 // GLOBAL VARIABLES
-const ignoreBeginsWith = '_';
+const ignoreChar = '_';
 const public = './public/';
 const blog = public + 'blog/';
+const work = public + 'work/';
 const pageTemplate = './_template.html';
 const pagesFolder = './pages/';
 const postsFolder = './posts/';
-const publishedPosts = postsFolder + '_published/';
+const blogPostSrc = postsFolder + '_blog/';
+const workPostSrc = postsFolder + '_work/';
 const postTemplate = postsFolder + '_template.html';
 const acceptableMetaProperties = ['title', 'description', 'image'];
 const RSSFeed = 'feed.xml';
@@ -30,13 +32,19 @@ let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <description>The blog for design-oriented devs. Get regular tips to improve your UI and UX design skills.</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${RSSLink}" rel="self" type="application/rss+xml" />`;
-let posts = [];
-let tags = [];
+let blogPosts = [];
+let blogTags = [];
+let workPosts = [];
+let workTags = [];
 
 
 // GLOBAL FUNCTIONS
 function getMetaProperty(metaData, property) {
     return metaData.split(property + ':').pop().split(',')[0].replace(' ', '');
+}
+
+function linkify(string) {
+    return encodeURI(string.replace(/[^A-Za-z0-9 ]/g, '').toLowerCase()).replace(/%20/g, '-');
 }
 
 function dynamicSort(property) {
@@ -52,7 +60,7 @@ function dynamicSort(property) {
 }
 
 fs.cleandirSync = function (directory) {
-    fs.readdirSync(directory).map(file => file.charAt(0) != ignoreBeginsWith ? fs.removeSync(directory + file) : null);
+    fs.readdirSync(directory).map(file => file.charAt(0) != ignoreChar ? fs.removeSync(directory + file) : null);
 }
 
 function appendMetaTags(metaData, selector) {
@@ -75,7 +83,7 @@ function publishPagesFrom(directory) {
 
     fs.readdirSync(directory, { encoding: 'utf8' }).map(child => {
 
-        if (child.charAt(0) != ignoreBeginsWith) {
+        if (child.charAt(0) != ignoreChar) {
 
             if (!fs.lstatSync(directory + child).isDirectory()) {
 
@@ -84,8 +92,8 @@ function publishPagesFrom(directory) {
                 const template = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate)));
                 const content = htmlParser.parseDOM(fs.readFileSync(location), { decodeEntities: true });
 
-                // Prepend main content to body element
-                template('body').prepend(content);
+                // Prepend main content to main element
+                template('#main').append(content);
 
                 // Append meta tags to head element
                 if (content[0]) { appendMetaTags(content[0].data, template) }
@@ -121,10 +129,10 @@ function addPostToRSS(post) {
         </item>`;
 }
 
-function createPostFeed(page, category) {
+function createPostFeed(posts, page, category) {
     const dom = htmlParser.parseDOM(fs.readFileSync(page), { decodeEntities: true });
     const $ = cheerio.load(dom);
-    const wrapper = $('#blogFeed');
+    const wrapper = $('#postFeed');
 
     wrapper.children().not('template').remove();
     posts.map(post => { !category || post.tags.join().includes(category) ? addPostToFeed(post, wrapper, $) : null });
@@ -140,26 +148,33 @@ function addPostToFeed(post, wrapper, $) {
         key = key.toLowerCase();
         Array.isArray(v) ? v = v.join(', ') : null;
         if (e) {
-            if (key == 'body') { e.append(v.substr(0, v.indexOf('</p>') + 4)) }
-            else if (key == 'link') { e.attr('href', '/blog/' + v) }
-            else { e.append(v) }
+            if (key == 'body') {
+                e.append(v.substr(0, v.indexOf('</p>') + 4))
+            } else if (key == 'link') {
+                e.attr('href', v)
+            } else if (key == 'image') {
+                e.attr('src', v)
+            } else {
+                e.append(v)
+            }
         }
     })
     wrapper.append(newPost);
 }
 
-function readyPostData() {
-    fs.readdirSync(publishedPosts).map(post => {
-        let thisPost = {
-            title: '',
-            date: '',
-            tags: [],
-            body: '',
-            link: '',
-        }
+function readyPostData(post, parentDirectory) {
+    let thisPost = {
+        title: '',
+        date: '',
+        tags: [],
+        body: '',
+        link: '',
+        image: ''
+    }
+    if (post) {
         const reader = new commonmark.Parser({ smart: true });
         const writer = new commonmark.HtmlRenderer({ softbreak: '<br />' });
-        const parsed = reader.parse(fs.readFileSync(publishedPosts + post, 'utf8'));
+        const parsed = reader.parse(fs.readFileSync(parentDirectory + post, 'utf8'));
         const dom = htmlParser.parseDOM(writer.render(parsed), { decodeEntities: true });
         const $ = cheerio.load(dom);
 
@@ -174,28 +189,35 @@ function readyPostData() {
         thisPost.title = $('h1').contents().text();
         thisPost.date = $('h2').contents().text();
         thisPost.tags = $('h3').contents().text();
-        thisPost.tags.split(', ').map(tag => tags.push(tag));
-        thisPost.link = encodeURI(thisPost.title.replace(/[`'"\/\)\(_:]/g, '')).replace(/(([%]..+?)+)|-+/g, '-').toLowerCase();
+        thisPost.image = $('img').attr('src');
         thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
 
-        // Append CTA to post body
-        const url = 'https://bradeneast.com/blog/' + thisPost.link;
-        thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link}%20by%20@bradenthehair%20-%20&url=${url}">share this article</a> with your followers. I appreciate it!</p></span>`;
+        if (parentDirectory == blogPostSrc) {
+            thisPost.link = '/blog/' + linkify(thisPost.title);
+            thisPost.tags.split(', ').map(tag => blogTags.push(tag));
+            blogPosts.push(thisPost);
 
-        posts.push(thisPost);
-    })
+            // Append CTA to post body
+            thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link}%20by%20@bradenthehair%20-%20&url=https://bradeneast.com/blog/${thisPost.link}">share this article</a> with your followers. I appreciate it!</p></span>`;
+        }
+        if (parentDirectory == workPostSrc) {
+            thisPost.link = '/work/' + linkify(thisPost.title);
+            thisPost.tags.split(', ').map(tag => workTags.push(tag));
+            workPosts.push(thisPost);
+        }
+    }
 }
 
 
-function createNewPostsFromTemplate() {
+function createNewPostsFromTemplate(posts, destinationDirectory) {
 
     posts.map((post, index) => {
 
-        const postLocation = blog + post.link + '/index.html';
+        const postLocation = public + post.link + '/index.html';
         const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
-        $('body').prepend(htmlParser.parseDOM(fs.readFileSync(postTemplate)));
-        appendMetaTags(`<!--title: ${post.title}, description: The blog for design-oriented devs,-->`, $);
+        $('#main').prepend(htmlParser.parseDOM(fs.readFileSync(postTemplate)));
+        appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, $);
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
         Object.keys(post).map(key => {
@@ -204,11 +226,21 @@ function createNewPostsFromTemplate() {
 
             if (key == 'tags') {
                 const tags = [];
-                value.split(', ').map(tag => tags.push(`<a href="/blog/tags/${encodeURI(tag).replace(/%20+/g, '-')}">${tag}</a>`));
+                value.split(', ').map(tag => {
+                    tags.push(`
+                        <a href="/${destinationDirectory.replace(public, '')}tags/${encodeURI(tag).replace(/%20+/g, '-')}">
+                            ${tag}
+                        </a>
+                    `)
+                })
                 value = tags.join(', ');
             }
 
-            value && e ? e.append(value) : null;
+            if (key == 'image') {
+                e.attr('src', value);
+            } else if (value && e) {
+                e.append(value)
+            }
         })
 
         // Add next and previous links
@@ -219,12 +251,12 @@ function createNewPostsFromTemplate() {
 
         if (prevPost) {
             prevElem.find('.link-title').append(prevPost.title);
-            prevElem.attr('href', `/blog/${prevPost.link}`);
+            prevElem.attr('href', `${prevPost.link}`);
         } else { prevElem.attr('style', 'display: none') }
 
         if (nextPost) {
             nextElem.find('.link-title').append(nextPost.title);
-            nextElem.attr('href', `/blog/${nextPost.link}`);
+            nextElem.attr('href', `${nextPost.link}`);
         } else { nextElem.attr('style', 'display: none') }
 
         addPostToRSS(post);
@@ -233,13 +265,13 @@ function createNewPostsFromTemplate() {
     })
 }
 
-function buildTagDirectories() {
-    fs.mkdirSync(`${public}blog/tags`);
+function buildTagDirectories(tags, destinationDirectory) {
+    fs.mkdirSync(`${destinationDirectory}tags`);
 
     [...new Set(tags)].map(tag => {
 
         const tagName = encodeURI(tag).replace(/\%20+/g, '-');
-        const destination = `${public}blog/tags/${tagName}/index.html`;
+        const destination = `${destinationDirectory}tags/${tagName}/index.html`;
 
         fs.mkdirSync(destination.split('/index.html').shift());
         fs.copyFileSync(pageTemplate, destination);
@@ -248,7 +280,13 @@ function buildTagDirectories() {
 
         $('body').prepend(htmlParser.parseDOM(fs.readFileSync(`${postsFolder}_tags.html`), { decodeEntities: true }));
         $('.tagName').each(function (i, e) { $(this).append(tag) });
-        posts.map(post => post.tags.includes(tag) ? addPostToFeed(post, $('#blogFeed'), $) : null);
+
+        if (destinationDirectory == blog) {
+            blogPosts.map(post => post.tags.includes(tag) ? addPostToFeed(post, $('#postFeed'), $) : null);
+        }
+        if (destinationDirectory == work) {
+            workPosts.map(post => post.tags.includes(tag) ? addPostToFeed(post, $('#postFeed'), $) : null);
+        }
 
         fs.writeFileSync(destination, $.html());
         console.log(`tag directory created for ${tag}`);
@@ -256,7 +294,7 @@ function buildTagDirectories() {
 }
 
 // Clear old pages
-fs.cleandirSync(public, ignoreBeginsWith);
+fs.cleandirSync(public, ignoreChar);
 
 // Publish pages
 publishPagesFrom(pagesFolder);
@@ -267,17 +305,22 @@ fs.cleandirSync(postsFolder);
 // Create RSS feed
 fs.createFileSync(blog + RSSFeed);
 
-// Sort and publish posts
-readyPostData();
-posts.sort(dynamicSort('date')).reverse();
-createNewPostsFromTemplate();
+// Sort and publish blog posts
+fs.readdirSync(blogPostSrc).map(post => readyPostData(post, blogPostSrc));
+blogPosts.sort(dynamicSort('date')).reverse();
+createNewPostsFromTemplate(blogPosts, blog);
+createPostFeed(blogPosts, `${public}blog/index.html`);
+buildTagDirectories(blogTags, blog);
 
 // Complete RSS feed
 fs.writeFileSync(blog + RSSFeed, `${RSSFeedContent}</channel></rss>`);
-createPostFeed(`${public}blog/index.html`);
 
-// Create directory page for each post tag
-buildTagDirectories();
+// Sort and publish work posts
+fs.readdirSync(workPostSrc).map(post => readyPostData(post, workPostSrc));
+workPosts.sort(dynamicSort('date')).reverse();
+createNewPostsFromTemplate(workPosts, work);
+createPostFeed(workPosts, `${public}work/index.html`);
+buildTagDirectories(workTags, work);
 
 
 console.timeEnd('\n>> SITE COMPILED IN');
