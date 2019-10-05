@@ -1,7 +1,7 @@
 // capitalize first letter of a string
 function capitalize(string) {
-    var words = string.split(' ');
-    var newWords = [];
+    let words = string.split(' ');
+    let newWords = [];
     words.map(word => {
         newWords.push(word.charAt(0).toUpperCase() + word.slice(1));
     })

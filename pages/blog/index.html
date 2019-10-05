@@ -3,10 +3,15 @@
     description: The blog for design-oriented devs,
     image: /_images/laptop-book.jpg,
 -->
-<section class="grid">
+<section>
     <div>
-        <h1>The blog for design-oriented devs.</h1>
-        <h2 class="tagline">Get regular tips to improve your UI and UX design skills.</h2>
+        <h1>
+            Welcome to the blog for design-oriented devs.
+        </h1>
+        <p>
+            Get regular tips to improve your UI and UX design skills.
+        </p>
+
         <div id="mc_embed_signup">
             <form action="https://gmail.us3.list-manage.com/subscribe/post?u=1c103417f1b53af926251412e&amp;id=501e8bc2f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div class="email-signup" id="mc_embed_signup_scroll">
@@ -23,17 +28,21 @@
             </form>
         </div>
     </div>
-    <ul id="postFeed">
+</section>
+<section>
+    <ul class="gallery" id="postFeed" data-stagger>
         <template>
-            <li class="post partial">
-                <div>
-                    <a class="link" href="#">
-                        <h3 class="title"></h3>
-                    </a>
-                    <h4 class="tags"></h4>
-                    <div class="body"></div>
-                    <a class="link read-more">Read More</a>
-                </div>
+            <li class="item">
+                <a href="" class="link">
+                    <div class="bg">
+                        <img class="image" />
+                    </div>
+
+                    <div class="content">
+                        <p class="title"></p>
+                        <p class="tags"></p>
+                    </div>
+                </a>
             </li>
         </template>
     </ul>

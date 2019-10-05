@@ -198,7 +198,7 @@ function readyPostData(post, parentDirectory) {
             blogPosts.push(thisPost);
 
             // Append CTA to post body
-            thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link}%20by%20@bradenthehair%20-%20&url=https://bradeneast.com/blog/${thisPost.link}">share this article</a> with your followers. I appreciate it!</p></span>`;
+            thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/\/blog\/|-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=https://bradeneast.com/blog/${thisPost.link}">share this article</a> with your followers. I appreciate it!</p></span>`;
         }
         if (parentDirectory == workPostSrc) {
             thisPost.link = '/work/' + linkify(thisPost.title);
@@ -216,7 +216,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
         const postLocation = public + post.link + '/index.html';
         const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
-        $('#main').prepend(htmlParser.parseDOM(fs.readFileSync(postTemplate)));
+        $('#main').append(htmlParser.parseDOM(fs.readFileSync(postTemplate)));
         appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, $);
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
@@ -245,9 +245,9 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         // Add next and previous links
         const prevPost = posts[index - 1];
-        const prevElem = $('#previous-post');
+        const prevElem = $('.previous');
         const nextPost = posts[index + 1];
-        const nextElem = $('#next-post');
+        const nextElem = $('.next');
 
         if (prevPost) {
             prevElem.find('.link-title').append(prevPost.title);
@@ -278,7 +278,7 @@ function buildTagDirectories(tags, destinationDirectory) {
 
         const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
-        $('body').prepend(htmlParser.parseDOM(fs.readFileSync(`${postsFolder}_tags.html`), { decodeEntities: true }));
+        $('#main').prepend(htmlParser.parseDOM(fs.readFileSync(`${postsFolder}_tags.html`), { decodeEntities: true }));
         $('.tagName').each(function (i, e) { $(this).append(tag) });
 
         if (destinationDirectory == blog) {
