@@ -25,23 +25,20 @@
 
     .link-title {
         font-weight: 700;
-        opacity: 0.63;
+        opacity: .63;
         transition: var(--TR-S);
     }
 }
 
-.body {
+.body,
+.body img,
+.body pre {
     max-width: 100%;
     margin: var(--PAD-M) 0;
+}
 
-    img {
-        margin: var(--PAD-S) 0;
-    }
-
-    p,
-    pre {
-        margin: var(--PAD-M) 0;
-    }
+.body p {
+    margin: var(--PAD-S) 0;
 }
 
 .meta {
@@ -49,5 +46,5 @@
 }
 
 .tags {
-    opacity: 0.63;
+    opacity: .63;
 }

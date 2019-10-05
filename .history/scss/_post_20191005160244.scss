@@ -34,13 +34,14 @@
     max-width: 100%;
     margin: var(--PAD-M) 0;
 
-    img {
-        margin: var(--PAD-S) 0;
+    img,
+    pre {
+        max-width: 100%;
+        margin-bottom: var(--PAD-M);
     }
 
-    p,
-    pre {
-        margin: var(--PAD-M) 0;
+    p {
+        margin: var(--PAD-S) 0;
     }
 }
 
