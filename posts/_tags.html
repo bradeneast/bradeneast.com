@@ -1,19 +1,22 @@
-<section class="grid">
-    <div>
-        <h1 class="tagName"></h1>
-        <h2 class="tagline">Enjoy curated content from this tag.</h2>
-    </div>
-    <ul id="postFeed">
-        <template class="template">
-            <li class="post partial">
-                <div>
-                    <a class="link">
-                        <h3 class="title"></h3>
-                    </a>
-                    <h4 class="tags"></h4>
-                    <div class="body"></div>
-                    <a class="link read-more">Read More</a>
-                </div>
+<section>
+    <h1 class="tagName"></h1>
+    <p>Enjoy curated content from this tag.</p>
+</section>
+
+<section>
+    <ul class="gallery" id="postFeed" data-stagger>
+        <template>
+            <li class="item">
+                <a class="link">
+                    <div class="bg">
+                        <img class="image" />
+                    </div>
+
+                    <div class="content">
+                        <p class="title"></p>
+                        <p class="tags"></p>
+                    </div>
+                </a>
             </li>
         </template>
     </ul>

@@ -18,6 +18,9 @@ pre[class*="language-"] {
     -ms-hyphens: none;
     hyphens: none;
 
+    span {
+        font-family: inherit;
+    }
 }
 
 code:not([class*="language-"]) {

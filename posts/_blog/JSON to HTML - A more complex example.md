@@ -21,7 +21,7 @@ You might as well burn everything to the ground and start over.  Fortunately, th
         "subtitle": "The Phantom Menace",
         "meta": {
             "link": "https://www.imdb.com/title/tt0120915/",
-            "thumbnail": "https://m.media-amazon.com/_images/M/MV5BMTM1NTQzNDU3OV5BMl5BanBnXkFtZTcwODcyMzA4NA@@._V1_SY1000_CR0,0,1513,1000_AL_.jpg",
+            "thumbnail": "/episode-1-thumbnail.jpg",
             "tags": [
                 "tatooine",
                 "podracing",

@@ -1,5 +1,5 @@
 body.dm {
-    background: currentColor;
+    background: #060606;
 
     h1,
     h2,
@@ -20,6 +20,7 @@ body.dm {
     ul,
     ol,
     span {
+
         h1,
         h2,
         h3,
@@ -29,9 +30,5 @@ body.dm {
         span {
             filter: none;
         }
-    }
-
-    .wave-overlay::after {
-        background-image: url(/_images/svg/wave-dark.svg);
     }
 }
