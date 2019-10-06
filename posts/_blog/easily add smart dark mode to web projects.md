@@ -2,15 +2,14 @@
 ## 2019/09/23
 ### ui, css, javascript
 
-Today, let's spice up our web project with a dark mode easter egg, unlocked with a secret code.
+Today, let's spice up our web project with a dark mode easter egg. To set up this feature in our project, we'll need a few lines of CSS that will change the colors and background colors of elements on our site.
 
 #### Fact of the day
 James Bond is based on real WWII spy, Dusan Popov.
 
-#### Code
-To set up this feature in our project, we'll need a few lines of CSS that will change the background of our site and apply an `invert()` filter to everything when a dark-mode class is toggled on the `body` element.
-
 ![A starry night sky - when the world is in dark mode](/_images/blog/starry-sky.jpg)
+
+The most obvious way is to apply a CSS `invert()` filter to everything under dark mode conditions.  In this case, we're toggling a class of 'dark-mode' on the `body` element.
 
 ```css
 body.dark-mode {
@@ -79,4 +78,4 @@ function toggleDarkMode() {
 }
 ```
 
-P.S. <button onclick="toggleDarkMode()">Don't CLick Me</button>
+P.S. <button aria-label="toggle dark mode on this site" onclick="toggleDarkMode()">Don't CLick Me</button>

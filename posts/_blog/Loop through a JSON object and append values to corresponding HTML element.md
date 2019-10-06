@@ -26,7 +26,7 @@ Let's start with some barebones HTML to reference in the javascript.
 
 Next, you'll need some data to work with. The goal is for it to end up wrapped cozily inside the proper tags in our HTML.
 
-I'm an advocate of JSON format for anyone doing their own content management, but any format that's easily converted to JSON will work. Because it's based on Javascript, there are plenty of native methods that work on JSON data out of the box. We'll make use of those in the example.
+Because JSON is based on Javascript (Javascript Object Notation), there are plenty of Javascript-native methods that will work out of the box. We'll use those in the example.
 
 ```javascript
 
