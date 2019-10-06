@@ -30,7 +30,13 @@ p {
     }
 }
 
+pre,
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
 pre {
     border: var(--BDR) solid var(--CL-2);
+    border-radius: var(--RADIUS);
     padding: var(--PAD-M);
 }

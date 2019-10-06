@@ -198,7 +198,7 @@ function readyPostData(post, parentDirectory) {
             blogPosts.push(thisPost);
 
             // Append CTA to post body
-            thisPost.body += `<span class="post-cta"><p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/\/blog\/|-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=https://bradeneast.com/blog/${thisPost.link}">share this article</a> with your followers. I appreciate it!</p></span>`;
+            thisPost.body += `<p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/\/blog\/|-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=https://bradeneast.com/blog/${thisPost.link}">share this article</a> with your followers. I appreciate it!</p>`;
         }
         if (parentDirectory == workPostSrc) {
             thisPost.link = '/work/' + linkify(thisPost.title);
