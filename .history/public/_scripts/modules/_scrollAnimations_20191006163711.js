@@ -1,7 +1,9 @@
 function animateOnScroll(element) {
 
     const scrollAttr = 'data-scroll';
-    const options = {};
+    const options = {
+        threshold: .9
+    };
     const observer = new IntersectionObserver(entries => {
 
         entries.map(entry => entry.target.setAttribute(scrollAttr, entry.isIntersecting))

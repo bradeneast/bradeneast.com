@@ -4,6 +4,7 @@ const navEndMobile = navEndDesktop.cloneNode(true);
 const newSection = document.createElement('section');
 const allImages = document.querySelectorAll('img');
 const staggerItems = document.querySelectorAll('[data-stagger]');
+const scrollItems = document.querySelectorAll('[data-scroll]');
 
 newSection.appendChild(navEndMobile);
 main.insertAdjacentElement('afterend', newSection);
@@ -25,6 +26,8 @@ staggerItems.forEach(elem => {
     })
 
 })
+
+scrollItems.forEach(elem => animateOnScroll(elem))
 
 checkDarkMode(konami);
 
