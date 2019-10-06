@@ -1,0 +1,41 @@
+nav {
+    display: grid;
+    border-right: var(--BDR) solid var(--CL-2);
+    padding-right: var(--PAD-M);
+
+    a {
+        padding-left: 1em;
+    }
+}
+
+.active {
+    box-shadow: inset var(--BDR) 0 0 0 var(--CL-1);
+    font-weight: 700;
+}
+
+.nav-end {
+    align-self: end;
+}
+
+.cta button {
+    margin-top: var(--PAD-M);
+}
+
+.back-to-top {
+    margin-top: var(--PAD-L);
+    line-height: 1;
+    color: var(--CL-3);
+
+    button {
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        border: none;
+
+        &:hover,
+        &:focus {
+            filter: none;
+            color: var(--CL-4);
+        }
+    }
+}
