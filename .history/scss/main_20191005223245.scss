@@ -141,7 +141,7 @@ footer {
 
 @media screen and (max-width: 50em) {
     :root {
-        font-size: 16px;
+        font-size: 15px;
         --PAD-S: 1em;
         --PAD-M: 1.5em;
         --PAD-L: 2em;
@@ -150,7 +150,7 @@ footer {
 
     body {
         grid-template-columns: 1fr;
-        line-height: 1.5;
+        line-height: 1.4;
     }
 
     #main {
@@ -182,13 +182,13 @@ footer {
     .gallery {
         font-size: 1rem;
         grid-template-columns: 1fr;
-        grid-auto-rows: 18em;
+        grid-auto-rows: 12em;
         grid-gap: 3em;
     }
 
     .item .bg::after,
     .item .content {
-        font-size: 1em;
+        font-size: .85em;
         opacity: 1;
     }
 

@@ -141,7 +141,7 @@ footer {
 
 @media screen and (max-width: 50em) {
     :root {
-        font-size: 16px;
+        font-size: 15px;
         --PAD-S: 1em;
         --PAD-M: 1.5em;
         --PAD-L: 2em;
@@ -150,7 +150,7 @@ footer {
 
     body {
         grid-template-columns: 1fr;
-        line-height: 1.5;
+        line-height: 1.4;
     }
 
     #main {
