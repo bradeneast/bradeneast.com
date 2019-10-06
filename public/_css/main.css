@@ -65,7 +65,7 @@ body {
   color: var(--CL-4);
   line-height: 1.8;
   display: grid;
-  grid-template-columns: 18vmax 1fr;
+  grid-template-columns: calc(10vmax + 10rem) 1fr;
   grid-gap: var(--PAD-M);
   padding: 20vh var(--PAD-M) var(--PAD-S) var(--PAD-M);
 }
@@ -82,7 +82,7 @@ html {
 }
 
 #main {
-  max-width: 1080px;
+  max-width: 44em;
   min-height: 100vh;
   padding-left: var(--PAD-M);
 }
@@ -114,6 +114,7 @@ footer {
   align-content: flex-end;
   width: 100%;
   min-height: 20vh;
+  color: var(--CL-3);
   line-height: 1;
 }
 
@@ -459,7 +460,7 @@ body.dm span span {
   filter: none;
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 1080px) {
   :root {
     font-size: 16px;
     --PAD-S: 1em;
@@ -470,11 +471,10 @@ body.dm span span {
   }
   body {
     grid-template-columns: 1fr;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   #main {
     padding: 0;
-    max-width: 100%;
   }
   nav {
     border: none;

@@ -115,4 +115,4 @@ Next, let's add a counter to display the numeric value of our knob using a CSS v
 }
 ```
 
-That's it! If you want to see it in action, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/qBWxKro).
+That's it! If you want to see it in action, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/VwZQmjG).

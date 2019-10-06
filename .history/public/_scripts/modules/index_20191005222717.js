@@ -6,7 +6,7 @@ const allImages = document.querySelectorAll('img');
 const staggerItems = document.querySelectorAll('[data-stagger]');
 
 newSection.appendChild(navEndMobile);
-main.insertAdjacentElement('afterend', newSection);
+main.appendChild(newSection);
 
 allImages.forEach(img => {
 

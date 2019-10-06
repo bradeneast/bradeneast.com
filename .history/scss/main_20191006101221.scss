@@ -83,7 +83,7 @@ html {
 }
 
 #main {
-    max-width: 44em;
+    max-width: 40em;
     min-height: 100vh;
     padding-left: var(--PAD-M);
 }
@@ -115,7 +115,6 @@ footer {
     align-content: flex-end;
     width: 100%;
     min-height: 20vh;
-    color: var(--CL-3);
     line-height: 1;
 
     .socials {
@@ -153,11 +152,12 @@ footer {
 
     body {
         grid-template-columns: 1fr;
-        line-height: 1.6;
+        line-height: 1.5;
     }
 
     #main {
         padding: 0;
+        max-width: 100%;
     }
 
     nav {
