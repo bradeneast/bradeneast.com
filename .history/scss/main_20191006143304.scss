@@ -146,7 +146,7 @@ footer {
         font-size: 16px;
         --PAD-S: 1em;
         --PAD-M: 1.5em;
-        --PAD-L: 2.4em;
+        --PAD-L: 2em;
         --BDR: 4px;
         --SHADE-L: rgba(0, 0, 0, 0.6);
     }
@@ -175,12 +175,13 @@ footer {
         display: block;
     }
 
+    .cta,
     .post-nav {
         margin-top: 6em;
     }
 
     .cta {
-        margin: var(--PAD-L) 0;
+        margin-bottom: var(--PAD-L);
 
         .button-container {
             margin-top: var(--PAD-M);

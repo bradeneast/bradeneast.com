@@ -4,7 +4,7 @@
 
 Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I'm wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript `Object.keys()` method.
 
-![multicolored keys](/_images/blog/rubiks-cube.jpg)
+![multicolored keys](/_images/blog/keys.jpg)
 
 In a nutshell, we want to look for class names on DOM elements that match keys in a given JSON object.  Then, we want to get the value for that key and stick it into the matching element.  We also want it to be dynamic and customizable, so we can use it on multiple kinds of objects and elements.
 

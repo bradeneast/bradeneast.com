@@ -465,7 +465,7 @@ body.dm span span {
     font-size: 16px;
     --PAD-S: 1em;
     --PAD-M: 1.5em;
-    --PAD-L: 2em;
+    --PAD-L: 2.4em;
     --BDR: 4px;
     --SHADE-L: rgba(0, 0, 0, 0.6);
   }
@@ -488,8 +488,11 @@ body.dm span span {
   section > .nav-end {
     display: block;
   }
+  .post-nav {
+    margin-top: 6em;
+  }
   .cta {
-    margin: 12em 0;
+    margin: var(--PAD-L) 0;
   }
   .cta .button-container {
     margin-top: var(--PAD-M);
@@ -516,6 +519,6 @@ body.dm span span {
   }
   footer {
     grid-column-end: span 1;
-    min-height: 2em;
+    min-height: 1.5em;
   }
 }
