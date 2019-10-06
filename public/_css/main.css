@@ -431,6 +431,8 @@ body.dm span span {
   nav {
     border: none;
     margin-bottom: var(--PAD-L);
+    font-size: 1.4em;
+    line-height: 2;
   }
   nav .nav-end {
     display: none;

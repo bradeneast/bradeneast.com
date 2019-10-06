@@ -163,7 +163,10 @@ footer {
         border: none;
         margin-bottom: var(--PAD-L);
         font-size: 1.4em;
-        line-height: 2;
+
+        a {
+            margin-bottom: 2em;
+        }
 
         .nav-end {
             display: none;
