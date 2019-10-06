@@ -1,5 +1,5 @@
 code[class*="language-"],
-pre {
+pre[class*="language-"] {
     color: #3d6270;
     background: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -7,7 +7,7 @@ pre {
     text-align: left;
     white-space: pre-wrap;
     word-spacing: normal;
-    word-break: break-all;
+    word-break: normal;
     word-wrap: break-word;
     line-height: 1.5;
     -moz-tab-size: 4;

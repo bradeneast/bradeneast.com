@@ -10,7 +10,6 @@ button {
     background: none;
     margin: .5em 0;
     line-height: 1;
-    transition: var(--TR-S);
 }
 
 input[type=submit],
@@ -20,6 +19,7 @@ button {
     border-color: var(--CL-1);
     text-transform: lowercase;
     font-weight: 700;
+    transition: var(--TR-S);
 
     &:hover,
     &:focus {

@@ -1,14 +1,13 @@
 @font-face {
     font-family: Metropolis;
-    src: url("/_fonts/metropolis-regular.woff2") format("woff2"), url("/_fonts/metropolis-regular.woff") format("woff");
+    src: url('/_fonts/metropolis-regular.woff2') format("woff2"), url('/_fonts/metropolis-regular.woff') format("woff");
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url("/_fonts/metropolis-semibold.woff2") format("woff2"),
-        url("/_fonts/metropolis-semibold.woff") format("woff");
+    src: url('/_fonts/metropolis-semibold.woff2') format("woff2"), url('/_fonts/metropolis-semibold.woff') format("woff");
     font-weight: 700;
     font-display: swap;
 }
@@ -24,12 +23,12 @@
     --PAD-S: 1em;
     --PAD-M: 3em;
     --PAD-L: 5em;
-    --TR-S: 0.2s cubic-bezier(0.2, 0, 0.4, 1);
-    --TR-M: 0.4s cubic-bezier(0.2, 0, 0.4, 1.3);
-    --SHADOW: 1em 1em 2em -0.5em var(--SHADE-S);
+    --TR-S: .2s cubic-bezier(.2, 0, .4, 1);
+    --TR-M: .4s cubic-bezier(.2, 0, .4, 1.3);
+    --SHADOW: 1em 1em 2em -.5em var(--SHADE-S);
     --BDR: 2px;
     --RADIUS: 5px;
-    --FL-DARKEN: brightness(0.8) contrast(1.2);
+    --FL-DARKEN: brightness(.8) contrast(1.2);
 }
 
 *,
@@ -39,7 +38,7 @@
     padding: 0;
     color: inherit;
     font-size: inherit;
-    font-family: "Metropolis", "Arial", sans-serif;
+    font-family: 'Metropolis', 'Arial', sans-serif;
     list-style-type: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -84,7 +83,6 @@ html {
 
 #main {
     max-width: 1080px;
-    min-height: 100vh;
     padding-left: var(--PAD-M);
 }
 
@@ -93,10 +91,6 @@ section {
 
     &:last-of-type {
         margin-bottom: 0;
-    }
-
-    &>.nav-end {
-        display: none;
     }
 }
 
@@ -114,7 +108,6 @@ footer {
     align-content: flex-end;
     width: 100%;
     min-height: 10em;
-    line-height: 1;
 }
 
 .socials {
@@ -124,10 +117,10 @@ footer {
     text-align: right;
 
     a {
-        margin-left: 0.5em;
+        margin-left: .5em;
         width: 1.5em;
         height: 1.5em;
-        opacity: 0.63;
+        opacity: .63;
         transition: var(--TR-S);
 
         &:hover,
@@ -137,62 +130,4 @@ footer {
     }
 }
 
-@import "nav", "gallery", "typography", "post", "form", "darkMode";
-
-@media screen and (max-width: 50em) {
-    :root {
-        font-size: 15px;
-        --PAD-S: 1em;
-        --PAD-M: 1.5em;
-        --PAD-L: 2em;
-    }
-
-    body {
-        grid-template-columns: 1fr;
-        line-height: 1.4;
-    }
-
-    #main {
-        padding: 0;
-        max-width: 100%;
-    }
-
-    nav {
-        border: none;
-        margin-bottom: var(--PAD-L);
-
-        .nav-end {
-            display: none;
-        }
-    }
-
-    section>.nav-end {
-        display: block;
-    }
-
-    .cta {
-        margin: 12em 0;
-    }
-
-    .back-to-top {
-        text-align: right;
-    }
-
-    .gallery {
-        font-size: 1rem;
-        grid-template-columns: 1fr;
-        grid-auto-rows: 12em;
-        grid-gap: 3em;
-    }
-
-    .item .bg::after,
-    .item .content {
-        font-size: .85em;
-        opacity: 1;
-    }
-
-    footer {
-        grid-column-end: span 1;
-        min-height: 2em;
-    }
-}
+@import 'nav', 'gallery', 'typography', 'post', 'form', 'darkMode';
