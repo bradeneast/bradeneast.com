@@ -8,7 +8,7 @@
     "liveServer.settings.root": "/public",
     "liveServer.settings.wait": 600,
     "liveSassCompile.settings.formats": [{
-        "format": "compact",
+        "format": "expanded",
         "extensionName": ".css",
         "savePath": "/public/_css"
     }],

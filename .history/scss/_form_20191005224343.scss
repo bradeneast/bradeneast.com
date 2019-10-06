@@ -1,0 +1,28 @@
+input[type=text],
+input[type=email],
+input[type=submit],
+.button,
+button {
+    padding: .7em .8em;
+    border-radius: var(--RADIUS);
+    border: var(--BDR) solid var(--CL-2);
+    box-shadow: none;
+    background: none;
+    margin: .5em 0;
+    line-height: 1;
+    transition: var(--TR-S);
+}
+
+input[type=submit],
+.button,
+button {
+    cursor: pointer;
+    border-color: var(--CL-1);
+    text-transform: lowercase;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+        filter: var(--FL-DARKEN);
+    }
+}
