@@ -559,13 +559,12 @@ body.dm span span {
     will-change: transform;
     transition: var(--TR-M);
   }
-  [data-scroll=up],
-  [data-scroll=down] {
+  [data-scroll=true] {
     opacity: 1;
     transform: scale(1);
   }
-  [data-scroll=none] {
-    opacity: 0;
-    transform: scale(0.9);
+  [data-scroll=false] {
+    opacity: 0.63;
+    transform: scale(0.92);
   }
 }

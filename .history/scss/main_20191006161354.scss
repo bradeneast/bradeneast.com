@@ -177,13 +177,14 @@ footer {
         transition: var(--TR-M);
     }
 
-    [data-scroll=true] {
+    [data-scroll=up],
+    [data-scroll=down] {
         opacity: 1;
         transform: scale(1);
     }
 
-    [data-scroll=false] {
-        opacity: 0.63;
-        transform: scale(.92);
+    [data-scroll=none] {
+        opacity: 0;
+        transform: scale(.9);
     }
 }
