@@ -113,7 +113,7 @@ footer {
     align-items: flex-end;
     align-content: flex-end;
     width: 100%;
-    min-height: 20vh;
+    min-height: 10em;
     line-height: 1;
 }
 
@@ -186,14 +186,10 @@ footer {
         grid-gap: 3em;
     }
 
-    .item .bg::after {
-        opacity: 1;
-        background: linear-gradient(transparent, var(--SHADE-L));
-    }
-
+    .item .bg::after,
     .item .content {
-        opacity: 1;
         font-size: 1em;
+        opacity: 1;
     }
 
     footer {
