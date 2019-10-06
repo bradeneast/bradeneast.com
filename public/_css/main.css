@@ -25,7 +25,7 @@
   --PAD-L: 5em;
   --TR-S: 0.2s cubic-bezier(0.2, 0, 0.4, 1);
   --TR-M: 0.4s cubic-bezier(0.2, 0, 0.4, 1.3);
-  --SHADOW: 1em 1em 2em -0.5em var(--SHADE-S);
+  --SHADOW: 1em 1em 2em 0 var(--SHADE-S);
   --BDR: 2px;
   --RADIUS: 5px;
   --FL-DARKEN: brightness(0.8) contrast(1.2);
@@ -65,7 +65,7 @@ body {
   color: var(--CL-4);
   line-height: 1.8;
   display: grid;
-  grid-template-columns: 18rem 1fr;
+  grid-template-columns: 18vmax 1fr;
   grid-gap: var(--PAD-M);
   padding: 20vh var(--PAD-M) var(--PAD-S) var(--PAD-M);
 }
@@ -117,14 +117,14 @@ footer {
   line-height: 1;
 }
 
-.socials {
+footer .socials {
   display: flex;
   margin-left: auto;
   justify-self: end;
   text-align: right;
 }
 
-.socials a {
+footer .socials a {
   margin-left: 0.5em;
   width: 1.5em;
   height: 1.5em;
@@ -132,7 +132,7 @@ footer {
   transition: var(--TR-S);
 }
 
-.socials a:hover, .socials a:focus {
+footer .socials a:hover, footer .socials a:focus {
   opacity: 1;
 }
 
@@ -161,14 +161,11 @@ nav a {
   color: var(--CL-3);
 }
 
-.back-to-top button {
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-  border: none;
+.back-to-top [role=button] {
+  transition: var(--TR-S);
 }
 
-.back-to-top button:hover, .back-to-top button:focus {
+.back-to-top [role=button]:hover, .back-to-top [role=button]:focus {
   filter: none;
   color: var(--CL-4);
 }
@@ -188,9 +185,10 @@ nav a {
 .item {
   position: relative;
   overflow: hidden;
+  border: var(--BDR) solid transparent;
   border-radius: var(--RADIUS);
   transform: translateY(0.2em) scale(0.9);
-  transition: 1s ease-in-out;
+  transition: var(--TR-M);
 }
 
 .item .bg {
@@ -213,7 +211,7 @@ nav a {
   height: 100%;
   background: var(--SHADE-L);
   opacity: 0;
-  transition: 1s ease;
+  transition: var(--TR-M);
 }
 
 .item .content {
@@ -229,6 +227,11 @@ nav a {
   transition: 0.8s ease;
 }
 
+.item:hover,
+.item a:focus {
+  border-color: var(--CL-1);
+}
+
 .item:hover .bg::after,
 .item:hover .content,
 .item a:focus .bg::after,
@@ -240,6 +243,7 @@ h1 {
   font-size: 2em;
   line-height: 1.2;
   margin-bottom: .2em;
+  letter-spacing: -.04em;
 }
 
 p {
@@ -336,36 +340,79 @@ pre {
   opacity: 0.63;
 }
 
-input[type=text],
-input[type=email],
-input[type=submit],
+input[type="text"],
+input[type="email"],
 .button,
 button {
-  padding: .7em .8em;
+  padding: 0.7em 0.8em;
   border-radius: var(--RADIUS);
-  border: var(--BDR) solid var(--CL-2);
+  border: var(--BDR) solid var(--CL-1);
   box-shadow: none;
   background: none;
-  margin: .5em 0;
+  margin: 0.5em 0;
   line-height: 1;
   transition: var(--TR-S);
 }
 
-input[type=submit],
-.button,
-button {
-  cursor: pointer;
-  border-color: var(--CL-1);
-  text-transform: lowercase;
+input[type=submit] {
+  background: none;
+  border: none;
+  box-shadow: none;
   font-weight: 700;
 }
 
-input[type=submit]:hover, input[type=submit]:focus,
-.button:hover,
-.button:focus,
+input[type="text"]:placeholder-shown,
+input[type="email"]:placeholder-shown {
+  border-color: var(--CL-2);
+}
+
+.button,
+button {
+  display: inline-block;
+  position: relative;
+  text-transform: lowercase;
+  color: white;
+  font-weight: 700;
+  overflow: hidden;
+  border-color: var(--CL-1);
+  background: var(--CL-1);
+}
+
+.button::after,
+button::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 9em;
+  height: 9em;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0);
+  background: white;
+  pointer-events: none;
+  transition: var(--TR-M);
+}
+
+.button:hover, .button:focus,
 button:hover,
 button:focus {
-  filter: var(--FL-DARKEN);
+  color: white;
+}
+
+.button:hover::after, .button:focus::after,
+button:hover::after,
+button:focus::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+button,
+.button,
+[role="button"],
+input[type=submit] {
+  cursor: pointer;
 }
 
 body.dm {
@@ -418,6 +465,7 @@ body.dm span span {
     --PAD-S: 1em;
     --PAD-M: 1.5em;
     --PAD-L: 2em;
+    --BDR: 4px;
     --SHADE-L: rgba(0, 0, 0, 0.6);
   }
   body {
@@ -452,8 +500,11 @@ body.dm span span {
   .gallery {
     font-size: 1rem;
     grid-template-columns: 1fr;
-    grid-auto-rows: 18em;
+    grid-auto-rows: 21em;
     grid-gap: 3em;
+  }
+  .item {
+    box-shadow: var(--SHADOW);
   }
   .item .bg::after {
     opacity: 1;

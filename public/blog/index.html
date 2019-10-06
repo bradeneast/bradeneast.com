@@ -42,9 +42,9 @@
                 </div>
             </div>
             <div class="back-to-top">
-                <button onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+                <div role="button" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
                     back to top
-                </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -68,7 +68,9 @@
                         <div class="response" id="mce-success-response" style="display:none"></div>
                     </div>
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1c103417f1b53af926251412e_501e8bc2f2" tabindex="-1" value></div>
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    <div class="button">
+                        <input type="submit" value="subscribe" name="subscribe" id="mc-embedded-subscribe">
+                    </div>
                 </div>
             </form>
         </div>

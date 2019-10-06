@@ -22,11 +22,8 @@ nav {
     line-height: 1;
     color: var(--CL-3);
 
-    button {
-        font-weight: 400;
-        padding: 0;
-        margin: 0;
-        border: none;
+    [role=button] {
+        transition: var(--TR-S);
 
         &:hover,
         &:focus {

@@ -1,28 +1,70 @@
-input[type=text],
-input[type=email],
-input[type=submit],
+input[type="text"],
+input[type="email"],
 .button,
 button {
-    padding: .7em .8em;
+    padding: 0.7em 0.8em;
     border-radius: var(--RADIUS);
-    border: var(--BDR) solid var(--CL-2);
+    border: var(--BDR) solid var(--CL-1);
     box-shadow: none;
     background: none;
-    margin: .5em 0;
+    margin: 0.5em 0;
     line-height: 1;
     transition: var(--TR-S);
 }
 
-input[type=submit],
+input[type=submit] {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: 700;
+}
+
+input[type="text"]:placeholder-shown,
+input[type="email"]:placeholder-shown {
+    border-color: var(--CL-2);
+}
+
 .button,
 button {
-    cursor: pointer;
-    border-color: var(--CL-1);
+    display: inline-block;
+    position: relative;
     text-transform: lowercase;
+    color: white;
     font-weight: 700;
+    overflow: hidden;
+    border-color: var(--CL-1);
+    background: var(--CL-1);
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        width: 9em;
+        height: 9em;
+        border-radius: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%) scale(0);
+        background: white;
+        pointer-events: none;
+        transition: var(--TR-M);
+    }
 
     &:hover,
     &:focus {
-        filter: var(--FL-DARKEN);
+        color: white;
+
+        &::after {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1);
+        }
     }
+}
+
+button,
+.button,
+[role="button"],
+input[type=submit] {
+    cursor: pointer;
 }

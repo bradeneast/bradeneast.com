@@ -41,9 +41,9 @@
                 </div>
             </div>
             <div class="back-to-top">
-                <button onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+                <div role="button" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
                     back to top
-                </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -53,47 +53,23 @@
         <template>
             <li class="item">
                 <a href class="link">
-                    <div class="bg">
-                        <img class="image">
-                    </div>
-                    <div class="content">
-                        <p class="title"></p>
-                        <p class="tags"></p>
-                    </div>
+                    <img class="image">
                 </a>
             </li>
         </template>
             <li class="item">
                 <a href="/work/judes" class="link">
-                    <div class="bg">
-                        <img class="image" src="/_images/work/judes/judes-logo-stacked.jpg">
-                    </div>
-                    <div class="content">
-                        <p class="title">Jude&#x2019;s</p>
-                        <p class="tags">identity design</p>
-                    </div>
+                    <img class="image" src="/_images/work/judes/judes-logo-stacked.jpg">
                 </a>
             </li>
             <li class="item">
                 <a href="/work/360-farms" class="link">
-                    <div class="bg">
-                        <img class="image" src="/_images/work/360/360-inline.jpg">
-                    </div>
-                    <div class="content">
-                        <p class="title">360 Farms</p>
-                        <p class="tags">brand strategy, identity design</p>
-                    </div>
+                    <img class="image" src="/_images/work/360/360-inline.jpg">
                 </a>
             </li>
             <li class="item">
                 <a href="/work/fish-snax" class="link">
-                    <div class="bg">
-                        <img class="image" src="/_images/work/fish/fish-stacked.jpg">
-                    </div>
-                    <div class="content">
-                        <p class="title">Fish Snax</p>
-                        <p class="tags">identity design</p>
-                    </div>
+                    <img class="image" src="/_images/work/fish/fish-stacked.jpg">
                 </a>
             </li>
         </ul>

@@ -13,9 +13,10 @@
 .item {
     position: relative;
     overflow: hidden;
+    border: var(--BDR) solid transparent;
     border-radius: var(--RADIUS);
     transform: translateY(.2em) scale(0.9);
-    transition: 1s ease-in-out;
+    transition: var(--TR-M);
 
     .bg {
         position: absolute;
@@ -36,7 +37,7 @@
             height: 100%;
             background: var(--SHADE-L);
             opacity: 0;
-            transition: 1s ease;
+            transition: var(--TR-M);
         }
     }
 
@@ -55,6 +56,7 @@
 
     &:hover,
     a:focus {
+        border-color: var(--CL-1);
 
         .bg::after,
         .content {
