@@ -64,27 +64,3 @@
         }
     }
 }
-
-
-@media screen and (max-width: $mq) {
-    .gallery {
-        font-size: 1rem;
-        grid-template-columns: 1fr;
-        grid-auto-rows: 21em;
-        grid-gap: var(--PAD-XL);
-    }
-
-    .item {
-        box-shadow: var(--SHADOW);
-
-        .bg::after {
-            opacity: 1;
-            background: linear-gradient(transparent, var(--SHADE-L));
-        }
-
-        .content {
-            opacity: 1;
-            font-size: 1em;
-        }
-    }
-}

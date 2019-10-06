@@ -87,4 +87,15 @@
             font-size: 1em;
         }
     }
+
+    [data-scroll=1],
+    [data-scroll=-1] {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    [data-scroll=0] {
+        opacity: 0;
+        transform: scale(.9);
+    }
 }

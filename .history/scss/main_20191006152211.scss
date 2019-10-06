@@ -13,8 +13,6 @@
     font-display: swap;
 }
 
-$mq: 1080px;
-
 :root {
     font-size: 20px;
     --CL-1: slateblue;
@@ -146,7 +144,7 @@ footer {
 
 @import "nav", "gallery", "typography", "post", "form", "darkMode";
 
-@media screen and (max-width: $mq) {
+@media screen and (max-width: 1080px) {
     :root {
         font-size: 16px;
         --PAD-S: .8em;
@@ -166,24 +164,80 @@ footer {
         padding: 0;
     }
 
+    nav {
+        border: none;
+        margin-bottom: var(--PAD-L);
+        font-size: 1.4em;
+        line-height: 2;
+
+        .nav-end {
+            display: none;
+        }
+    }
+
+    section>.nav-end {
+        display: block;
+        padding-top: 6em;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: var(--PAD-XL);
+            left: 0;
+            width: 100%;
+            height: var(--BDR);
+            background: var(--CL-2);
+        }
+    }
+
+    .post-nav {
+        flex-flow: row wrap;
+        margin-top: 6em;
+
+        .next,
+        .previous {
+            width: 100%;
+        }
+
+        .next {
+            order: -1;
+            padding-bottom: var(--PAD-XL);
+        }
+    }
+
+    .cta {
+        margin: var(--PAD-L) 0;
+    }
+
+    .back-to-top {
+        text-align: right;
+    }
+
+    .gallery {
+        font-size: 1rem;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 21em;
+        grid-gap: var(--PAD-XL);
+    }
+
+    .item {
+        box-shadow: var(--SHADOW);
+
+        .bg::after {
+            opacity: 1;
+            background: linear-gradient(transparent, var(--SHADE-L));
+        }
+
+        .content {
+            opacity: 1;
+            font-size: 1em;
+        }
+    }
+
     footer {
         max-width: 44em;
         grid-column-end: span 1;
         min-height: var(--PAD-M);
-    }
-
-    [data-scroll] {
-        transition: var(--TR-M);
-    }
-
-    [data-scroll=up],
-    [data-scroll=down] {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    [data-scroll=none] {
-        opacity: 0;
-        transform: scale(.8);
     }
 }

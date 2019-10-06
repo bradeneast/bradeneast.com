@@ -176,14 +176,14 @@ footer {
         transition: var(--TR-M);
     }
 
-    [data-scroll=up],
-    [data-scroll=down] {
+    [data-scroll="1"],
+    [data-scroll="-1"] {
         opacity: 1;
         transform: scale(1);
     }
 
-    [data-scroll=none] {
+    [data-scroll="0"] {
         opacity: 0;
-        transform: scale(.8);
+        transform: scale(.9);
     }
 }

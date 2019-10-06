@@ -29,6 +29,7 @@ staggerItems.forEach(elem => {
 
 scrollItems.forEach(elem => animateOnScroll(elem))
 
+
 checkDarkMode(konami);
 
 checkActiveLinks();

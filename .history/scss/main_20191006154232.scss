@@ -171,19 +171,4 @@ footer {
         grid-column-end: span 1;
         min-height: var(--PAD-M);
     }
-
-    [data-scroll] {
-        transition: var(--TR-M);
-    }
-
-    [data-scroll=up],
-    [data-scroll=down] {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    [data-scroll=none] {
-        opacity: 0;
-        transform: scale(.8);
-    }
 }
