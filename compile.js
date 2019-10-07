@@ -279,6 +279,7 @@ function buildTagDirectories(tags, destinationDirectory) {
         const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
         $('#main').prepend(htmlParser.parseDOM(fs.readFileSync(`${postsFolder}_tags.html`), { decodeEntities: true }));
+        appendMetaTags(`<!--title: ${tag}, description: Enjoy curated content from my blog,-->`, $);
         $('.tagName').each(function (i, e) { $(this).append(tag) });
 
         if (destinationDirectory == blog) {

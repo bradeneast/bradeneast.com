@@ -15,10 +15,10 @@ allImages.forEach(img => {
 
 })
 
-staggerItems.forEach(elem => {
+staggerItems.forEach(item => {
 
     Stagger({
-        parent: elem,
+        parent: item,
         intensity: .3,
         direction: 'from',
         origin: 'top'
@@ -26,8 +26,8 @@ staggerItems.forEach(elem => {
 
 })
 
-checkDarkMode(konami);
+checkDarkMode();
 
 checkActiveLinks();
 
-console.log('Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun!');
+console.log('Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun!\n- Braden');

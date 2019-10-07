@@ -1,8 +1,8 @@
 h1 {
     font-size: 2em;
     line-height: 1.2;
-    margin-bottom: .2em;
-    letter-spacing: -.04em;
+    margin-bottom: 0.2em;
+    letter-spacing: -0.04em;
 }
 
 h3 {
@@ -12,6 +12,10 @@ h3 {
 
 p {
     margin-bottom: var(--PAD-S);
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 
     a {
         text-decoration: underline;
@@ -25,8 +29,8 @@ p {
         }
     }
 
-    &~ul,
-    &~ol {
+    & ~ ul,
+    & ~ ol {
         margin: var(--PAD-S) 0;
         padding-left: 1em;
 
@@ -39,7 +43,7 @@ p {
 
 pre,
 code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
 }
 
 pre {

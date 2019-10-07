@@ -19,11 +19,11 @@ nav {
 }
 
 .back-to-top {
-    margin-top: var(--PAD-L);
+    margin-top: var(--PAD-S);
     line-height: 1;
     color: var(--CL-3);
 
-    [role=button] {
+    [role="button"] {
         transition: var(--TR-S);
 
         &:hover,
@@ -34,9 +34,11 @@ nav {
     }
 }
 
+.cta {
+    margin-bottom: var(--PAD-L);
+}
 
 @media screen and (max-width: $mq) {
-
     nav {
         border: none;
         margin-bottom: var(--PAD-L);
@@ -48,12 +50,12 @@ nav {
         }
     }
 
-    section>.nav-end {
+    section > .nav-end {
         display: block;
         padding-top: 6em;
 
         &::before {
-            content: '';
+            content: "";
             display: block;
             position: absolute;
             top: var(--PAD-XL);

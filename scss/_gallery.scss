@@ -14,8 +14,8 @@
     position: relative;
     overflow: hidden;
     border: var(--BDR) solid transparent;
-    border-radius: var(--RADIUS);
-    transform: translateY(.2em) scale(0.9);
+    border-radius: calc(var(--BDR) + var(--RADIUS));
+    transform: translateY(0.2em) scale(0.9);
     transition: var(--TR-M);
 
     .bg {
@@ -35,7 +35,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: var(--RADIUS);
             background: var(--SHADE-L);
             opacity: 0;
             transition: var(--TR-M);
@@ -48,7 +47,9 @@
         flex-flow: column nowrap;
         height: 100%;
         justify-content: flex-end;
-        font-size: .5em;
+        font-size: 0.5em;
+        border-radius: calc(var(--BDR) + var(--RADIUS));
+        border: var(--BDR) solid transparent;
         line-height: 1.4;
         padding: 1em;
         opacity: 0;
@@ -64,8 +65,11 @@
             opacity: 1;
         }
     }
-}
 
+    a:focus .content {
+        border: var(--BDR) solid var(--CL-1);
+    }
+}
 
 @media screen and (max-width: $mq) {
     .gallery {
@@ -73,19 +77,6 @@
         grid-template-columns: 1fr;
         grid-auto-rows: 21em;
         grid-gap: var(--PAD-XL);
-
-        [data-scroll]::after {
-            transition: .4s ease;
-            transform-origin: top;
-        }
-
-        [data-scroll=false]::after {
-            transform: scale(3);
-        }
-
-        [data-scroll=true]::after {
-            transform: scale(1);
-        }
     }
 
     .item {

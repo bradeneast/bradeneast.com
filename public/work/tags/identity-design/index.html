@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Braden East | identity design</title>
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
@@ -27,7 +27,10 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="/blog/feed.xml">
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
-</head>
+
+<meta property="og:title" content="identity design">
+<meta name="description" content="Enjoy curated content from my blog">
+<meta property="og:description" content="Enjoy curated content from my blog"></head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
@@ -52,8 +55,10 @@
                 </div>
             </div>
 
+            <button class="toggle" id="darkModeToggle" aria-label="toggle dark mode" onclick="toggleDarkMode()"></button>
+
             <div class="back-to-top">
-                <div role="button" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+                <div role="button" tabindex="0" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
                     back to top
                 </div>
             </div>

@@ -17,11 +17,12 @@ $mq: 1080px;
 
 :root {
     font-size: 20px;
-    --CL-1: slateblue;
+    --CL-1: rgb(236, 74, 53);
     --CL-2: lightgrey;
     --CL-3: slategrey;
     --CL-4: #32353a;
     --SHADE-S: rgba(0, 0, 0, 0.2);
+    --SHADE-M: rgba(0, 0, 0, 0.4);
     --SHADE-L: rgba(0, 0, 0, 0.8);
     --PAD-S: 1em;
     --PAD-M: 3em;
@@ -51,19 +52,6 @@ $mq: 1080px;
     outline-color: var(--CL-1);
 }
 
-@keyframes load {
-    to {
-        opacity: 1;
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-}
-
-[data-stagger]>* {
-    will-change: transform;
-    opacity: 0;
-    transform: translateY(1em);
-}
-
 body {
     color: var(--CL-4);
     line-height: 1.8;
@@ -71,10 +59,6 @@ body {
     grid-template-columns: calc(10vmax + 10rem) 1fr;
     grid-gap: var(--PAD-M);
     padding: 20vh var(--PAD-M) var(--PAD-S) var(--PAD-M);
-
-    &.loaded [data-stagger]>* {
-        animation: load var(--TR-M) forwards running;
-    }
 }
 
 body,
@@ -96,7 +80,7 @@ section {
         margin-bottom: 0;
     }
 
-    &>.nav-end {
+    & > .nav-end {
         display: none;
     }
 }
@@ -144,12 +128,12 @@ footer {
     }
 }
 
-@import "nav", "gallery", "typography", "post", "form", "darkMode";
+@import "animations", "forms", "buttons", "nav", "gallery", "typography", "post", "darkMode";
 
 @media screen and (max-width: $mq) {
     :root {
         font-size: 16px;
-        --PAD-S: .8em;
+        --PAD-S: 0.8em;
         --PAD-M: 1.5em;
         --PAD-L: 2.4em;
         --PAD-XL: 3.6em;
