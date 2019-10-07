@@ -73,19 +73,6 @@
         grid-template-columns: 1fr;
         grid-auto-rows: 21em;
         grid-gap: var(--PAD-XL);
-
-        [data-scroll]::after {
-            transition: .4s ease;
-            transform-origin: top;
-        }
-
-        [data-scroll=false]::after {
-            transform: scale(3);
-        }
-
-        [data-scroll=true]::after {
-            transform: scale(1);
-        }
     }
 
     .item {

@@ -176,4 +176,13 @@ footer {
         grid-column-end: span 1;
         min-height: var(--PAD-M);
     }
+
+    [data-scroll] {
+        transition: var(--TR-M);
+        opacity: 1;
+    }
+
+    [data-scroll=false] {
+        opacity: 0;
+    }
 }

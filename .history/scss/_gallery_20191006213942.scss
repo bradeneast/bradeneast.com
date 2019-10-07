@@ -75,7 +75,7 @@
         grid-gap: var(--PAD-XL);
 
         [data-scroll]::after {
-            transition: .4s ease;
+            transition: 1s ease;
             transform-origin: top;
         }
 

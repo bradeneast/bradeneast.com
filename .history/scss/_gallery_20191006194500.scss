@@ -75,16 +75,12 @@
         grid-gap: var(--PAD-XL);
 
         [data-scroll]::after {
-            transition: .4s ease;
-            transform-origin: top;
+            transition: var(--TR-M);
+            opacity: 1;
         }
 
         [data-scroll=false]::after {
-            transform: scale(3);
-        }
-
-        [data-scroll=true]::after {
-            transform: scale(1);
+            opacity: 0;
         }
     }
 
