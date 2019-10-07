@@ -9,6 +9,6 @@ function toggleDarkMode() {
 
 function checkDarkMode() {
 
-    JSON.parse(localStorage.getItem('darkModeOn')) ? document.body.classList.add('dm'): null;
+    JSON.parse(localStorage.getItem('darkModeOn')) ? document.body.classList.toggle('dm'): null
 
 }
