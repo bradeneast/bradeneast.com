@@ -15,8 +15,8 @@ function clearImageFormatting() {
     document.querySelectorAll('img').forEach(image => {
 
         removeAttributes.map(attr => image.removeAttribute(attr));
-        !image.getAttribute('alt') ? image.setAttribute('alt', altFromSource(image)) : null;
         image.setAttribute('loading', 'lazy');
+        !image.getAttribute('alt') ? image.setAttribute('alt', altFromSource(image)) : null;
 
     })
 

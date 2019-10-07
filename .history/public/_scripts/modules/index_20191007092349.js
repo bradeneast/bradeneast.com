@@ -30,6 +30,4 @@ checkDarkMode();
 
 checkActiveLinks();
 
-startTouchListeners();
-
 console.log('Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun!\n- Braden');
