@@ -19,7 +19,7 @@ $mq: 1080px;
     font-size: 20px;
     --CL-1: rgb(236, 74, 53);
     --CL-2: lightgrey;
-    --CL-3: #555;
+    --CL-3: slategrey;
     --CL-4: #32353a;
     --SHADE-S: rgba(0, 0, 0, 0.2);
     --SHADE-M: rgba(0, 0, 0, 0.4);
@@ -148,6 +148,13 @@ footer {
 
     #main {
         padding: 0;
+    }
+
+    html.dm {
+        .post-nav .next,
+        .post-nav .previous {
+            color: white;
+        }
     }
 
     .post-nav .next,

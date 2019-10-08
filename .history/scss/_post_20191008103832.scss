@@ -49,11 +49,15 @@
 }
 
 .tags {
-    opacity: 0.63;
+    color: var(--CL-2);
 
-    a:hover,
-    a:focus {
-        color: black;
+    a {
+        color: var(--CL-3);
+        opacity: 0.63;
+    }
+
+    a:hover {
         transition: var(--TR-S);
+        filter: var(--FL-DARKEN);
     }
 }

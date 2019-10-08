@@ -30,6 +30,10 @@
     }
 }
 
+.tags a:hover {
+    opacity: 1;
+}
+
 .body {
     max-width: 100%;
     margin: var(--PAD-M) 0;
@@ -50,10 +54,4 @@
 
 .tags {
     opacity: 0.63;
-
-    a:hover,
-    a:focus {
-        color: black;
-        transition: var(--TR-S);
-    }
 }

@@ -227,9 +227,9 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
             if (key == 'tags') {
                 const tags = [];
                 value.split(', ').map(tag => {
-                    tags.push(`<a href="/${destinationDirectory.replace(public, '')}tags/${encodeURI(tag).replace(/%20+/g, '-')}">${tag}</a>`)
+                    tags.push(`<a href="/${destinationDirectory.replace(public, '')}tags/${encodeURI(tag).replace(/%20+/g, '-')}">${tag}, </a>`)
                 })
-                value = tags.join(', ');
+                value = tags.join('');
             }
 
             if (key == 'image') {

@@ -32,10 +32,10 @@ html.dm {
     }
 }
 
-html.dm .post-nav {
-    color: white;
-
-    * {
+html.dm {
+    .post-nav .next,
+    .post-nav .previous {
+        color: white;
         font-weight: 400;
     }
 }

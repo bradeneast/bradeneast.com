@@ -51,9 +51,7 @@
 .tags {
     opacity: 0.63;
 
-    a:hover,
-    a:focus {
+    a:hover {
         color: black;
-        transition: var(--TR-S);
     }
 }
