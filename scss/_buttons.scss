@@ -83,7 +83,7 @@ input[type="submit"] {
     }
 }
 
-body.dm .toggle {
+html.dm .toggle {
     color: var(--CL-1);
 
     &::after {

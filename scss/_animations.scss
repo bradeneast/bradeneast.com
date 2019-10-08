@@ -15,14 +15,14 @@ body.loaded [data-stagger] > * {
     transform: translateY(1em);
 }
 
-[data-scroll] {
-    transition: var(--TR-M);
-}
+// [data-scroll] {
+//     transition: var(--TR-M);
+// }
 
-[data-scroll="false"] {
-    transform: scale(0.9);
-}
+// [data-scroll="false"] {
+//     transform: scale(0.9);
+// }
 
-[data-scroll="true"] {
-    transform: scale(1);
-}
+// [data-scroll="true"] {
+//     transform: scale(1);
+// }

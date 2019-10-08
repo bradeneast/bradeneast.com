@@ -10,12 +10,10 @@ h3 {
     padding-top: var(--PAD-S);
 }
 
-p {
+p,
+p ~ ul,
+p ~ ol {
     margin-bottom: var(--PAD-S);
-
-    &:last-of-type {
-        margin-bottom: 0;
-    }
 
     a {
         text-decoration: underline;
@@ -28,17 +26,21 @@ p {
             filter: var(--FL-DARKEN);
         }
     }
+}
 
-    & ~ ul,
-    & ~ ol {
-        margin: var(--PAD-S) 0;
-        padding-left: 1em;
+p ~ ul,
+p ~ ol {
+    margin: var(--PAD-S) 0;
+    padding-left: 1em;
 
-        li {
-            list-style-type: disc;
-            list-style-position: outside;
-        }
+    li {
+        list-style-type: disc;
+        list-style-position: outside;
     }
+}
+
+p:last-of-type {
+    margin-bottom: 0;
 }
 
 pre,

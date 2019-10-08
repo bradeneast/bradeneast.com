@@ -26,6 +26,11 @@
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
+    <!--Scripts-->
+    <script>
+        JSON.parse(localStorage.getItem('darkModeOn')) ? document.documentElement.classList.add('dm') : null;
+    </script>
+
 <meta property="og:title" content="design">
 <meta name="description" content="Enjoy curated content from my blog">
 <meta property="og:description" content="Enjoy curated content from my blog"></head>
@@ -143,8 +148,8 @@
             </a>
         </div>
     </footer>
-    <script src="/_scripts/modules.min.js" type="text/javascript"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
+    <script defer src="/_scripts/modules.min.js" type="text/javascript"></script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+checkActiveLinks();
+
+startTouchListeners();
+
 const main = document.getElementById('main');
 const navEndDesktop = document.querySelector('.nav-end');
 const navEndMobile = navEndDesktop.cloneNode(true);
@@ -7,13 +11,6 @@ const staggerItems = document.querySelectorAll('[data-stagger]');
 
 newSection.appendChild(navEndMobile);
 main.insertAdjacentElement('afterend', newSection);
-
-allImages.forEach(img => {
-
-    clearImageFormatting(img);
-    altFromSource(img);
-
-})
 
 staggerItems.forEach(item => {
 
@@ -26,10 +23,11 @@ staggerItems.forEach(item => {
 
 })
 
-checkDarkMode();
+allImages.forEach(img => {
 
-checkActiveLinks();
+    clearImageFormatting(img);
+    altFromSource(img);
 
-startTouchListeners();
+})
 
 console.log('Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun!\n- Braden');

@@ -26,6 +26,11 @@
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
+    <!--Scripts-->
+    <script>
+        JSON.parse(localStorage.getItem('darkModeOn')) ? document.documentElement.classList.add('dm') : null;
+    </script>
+
 <meta property="og:title" content="Easily add a &#x2018;smart&#x2019; dark mode to any website or web app">
 <meta name="description" content="
 &lt;p&gt;Today">
@@ -203,8 +208,8 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
             </a>
         </div>
     </footer>
-    <script src="/_scripts/modules.min.js" type="text/javascript"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
+    <script defer src="/_scripts/modules.min.js" type="text/javascript"></script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

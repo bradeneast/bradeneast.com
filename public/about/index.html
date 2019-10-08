@@ -26,6 +26,11 @@
     <link rel="shortcut icon" href="/_images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
+    
+    <script>
+        JSON.parse(localStorage.getItem('darkModeOn')) ? document.documentElement.classList.add('dm') : null;
+    </script>
+
 <meta property="og:title" content="About">
 <meta name="description" content="I&apos;m an award-winning visual designer with a passion for solving hard problems.">
 <meta property="og:description" content="I&apos;m an award-winning visual designer with a passion for solving hard problems.">
@@ -84,8 +89,8 @@
     </p>
 
     <ul>
-        <li>Here&apos;s a <a href="https://pairiconsapp.netlify.com/">fun web app I built</a> for people who write better with a visual aid.</li>
-        <li><a href="https://designstarterapp.netlify.com/">This</a> is a design starter that uses API&apos;s from Google, Unsplash, and the open-source community to save designers time on their projects!</li>
+        <li>Here&apos;s a <a href="https://pairiconsapp.netlify.com/">fun web app</a> I built for people who write better with a visual aid.</li>
+        <li>This is a <a href="https://designstarterapp.netlify.com/">design starter toolkit</a> that uses API&apos;s from Google, Unsplash, and the open-source community to save designers time on their projects!</li>
         <li><a href="/blog">My blog</a> helps design-oriented devs create amazing user experiences.</li>
     </ul>
 
@@ -126,8 +131,8 @@
             </a>
         </div>
     </footer>
-    <script src="/_scripts/modules.min.js" type="text/javascript"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
+    <script defer src="/_scripts/modules.min.js" type="text/javascript"></script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
