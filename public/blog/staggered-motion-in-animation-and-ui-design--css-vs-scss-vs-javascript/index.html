@@ -85,12 +85,66 @@
         <div class="main">
             <div class="body">
 <p>Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don&#x2019;t give up on that film project! Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</p>
-<p><img src="/_images/blog/people-in-motion.jpg" alt="people in motion on a sidewalk"></p>
+<p><img src="/_images/blog/people-in-motion.webp" alt="people in motion on a sidewalk"></p>
 <p>It&#x2019;s pretty obious that movement happening in perfect sync seems unnatural to us. Unless you&#x2019;re going for the 1970&#x2019;s kung fu movie vibe, you probably want to stagger and tweak your animations.</p>
 <p>Our brains like smooth, sequential motion that overlaps, speeds up, and slows down according to the laws of physics.  That kind of motion is consistent with our experience and feels familiar.</p>
 <p>In animation and motion design, a quick way to acheive this effect is through <em>staggered</em> or overlapping movement.</p>
-<p>Here&#x2019;s an example:</p>
-<p><img src="/_images/blog/staggered-motion-vs-simultaneous-motion.gif" alt="circles moving upwards in perfect sync, then downwards with different start times and speeds"></p>
+<style>
+
+@keyframes move {
+    0% {
+        transform: translate(0);
+    }
+    50% {
+        transform: translateX(10em);
+        --delay: 0s;
+    }
+}
+
+.example-wrapper {
+    font-size: 1rem;
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin-bottom: var(--PAD-M);
+}
+
+.example-wrapper .example-circle {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: var(--CL-1);
+    animation: move 4s ease-in-out alternate infinite running;
+    animation-delay: var(--delay);
+}
+
+.staggered>:nth-child(4),
+.staggered>:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.staggered>:nth-child(5),
+.staggered>:nth-child(1) {
+    animation-delay: .4s;
+}
+
+</style>
+<h4>Simultaneous</h4>
+<div class="example-wrapper">
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+</div>
+<h4>Staggered</h4>
+<div class="example-wrapper staggered">
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+</div>
 <p>Despite being almost in sync, the slight variation between each element makes their movement much more interesting and appealing.</p>
 <p>Hopefully this illustrates why we&#x2019;d want to use staggered motion in our designs, but what&#x2019;s the best way to do that? There are a few options at our disposal, so we&#x2019;ll look at the pros and cons of each.</p>
 <ul>
@@ -99,14 +153,14 @@
 <li>Javascript <code>forEach</code> method</li>
 </ul>
 <h4>The Pure CSS Approach</h4>
-<pre><code class="language-css"><span class="token selector">.stagger-child-transitions&gt;:nth-of-type(2)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .1s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;:nth-of-type(3)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .2s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;:nth-of-type(4)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .3s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;:nth-of-type(5)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .4s <span class="token punctuation">}</span>
+<pre><code class="language-css"><span class="token selector">.stagger-child-transitions&gt;:nth-child(2)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .1s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions&gt;:nth-child(3)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .2s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions&gt;:nth-child(4)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .3s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions&gt;:nth-child(5)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .4s <span class="token punctuation">}</span>
 <span class="token comment">/* etc.... */</span>
 </code></pre>
-<p>If you&#x2019;ll always have less than a defined number of children, this approach is probably the most straightforward. Just put your <code>stagger-child-transitions</code> class on the parent element, and animate the child elements however you like!</p>
-<p>Another benefit to the pure CSS approach is that it&#x2019;s easy to override the transition delay if necessary. Type selectors like <code>:nth-of-type()</code> are low-specificity, which means those styles can be overriden with a class or ID at the same level:</p>
+<p>If you&#x2019;ll always have a managable number of children, this approach is probably the most straightforward. Just put your <code>stagger-child-transitions</code> class on the parent element, and animate the child elements however you like!</p>
+<p>Another benefit to the pure CSS approach is that it&#x2019;s easy to override the transition delay if necessary. Type selectors like <code>:nth-child()</code> are low-specificity, which means those styles can be overriden with a class or ID at the same level:</p>
 <ul>
 <li>Using a class: <code>.stagger-child-transitions .child { transition-delay: 0s; }</code></li>
 <li>Or an ID: <code>#special { transition-delay: 0s; }</code></li>
@@ -114,7 +168,7 @@
 <h4>Using the SCSS <code>for</code> loop</h4>
 <p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn&#x2019;t affect the experience of the user, for better or worse.</p>
 <pre><code class="language-css"><span class="token atrule"><span class="token rule">@for</span> $i from 1 through 100</span> <span class="token punctuation">{</span>
-    <span class="token selector">.stagger-child-transitions&gt;:nth-of-type(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token selector">.stagger-child-transitions&gt;:nth-child(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
         <span class="token property">transition-delay</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>$i * .1<span class="token punctuation">)</span>s<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>

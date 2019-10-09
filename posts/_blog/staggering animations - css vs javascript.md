@@ -4,7 +4,7 @@
 
 Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don't give up on that film project! Today, let's talk about integrating motion into our websites and user interfaces.
 
-![people in motion on a sidewalk](/_images/blog/people-in-motion.jpg)
+![people in motion on a sidewalk](/_images/blog/people-in-motion.webp)
 
 It's pretty obious that movement happening in perfect sync seems unnatural to us. Unless you're going for the 1970's kung fu movie vibe, you probably want to stagger and tweak your animations.
 
@@ -12,9 +12,66 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
 
 In animation and motion design, a quick way to acheive this effect is through *staggered* or overlapping movement.
 
-Here's an example:
+<style>
 
-![circles moving upwards in perfect sync, then downwards with different start times and speeds](/_images/blog/staggered-motion-vs-simultaneous-motion.gif)
+@keyframes move {
+    0% {
+        transform: translate(0);
+    }
+    50% {
+        transform: translateX(10em);
+        --delay: 0s;
+    }
+}
+
+.example-wrapper {
+    font-size: 1rem;
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin-bottom: var(--PAD-M);
+}
+
+.example-wrapper .example-circle {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: var(--CL-1);
+    animation: move 4s ease-in-out alternate infinite running;
+    animation-delay: var(--delay);
+}
+
+.staggered>:nth-child(4),
+.staggered>:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.staggered>:nth-child(5),
+.staggered>:nth-child(1) {
+    animation-delay: .4s;
+}
+
+</style>
+
+#### Simultaneous
+
+<div class="example-wrapper">
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+</div>
+
+#### Staggered
+
+<div class="example-wrapper staggered">
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+    <div class="example-circle"></div>
+</div>
 
 Despite being almost in sync, the slight variation between each element makes their movement much more interesting and appealing.
 
@@ -27,16 +84,16 @@ Hopefully this illustrates why we'd want to use staggered motion in our designs,
 #### The Pure CSS Approach
 
 ```css
-.stagger-child-transitions>:nth-of-type(2) { transition-delay: .1s }
-.stagger-child-transitions>:nth-of-type(3) { transition-delay: .2s }
-.stagger-child-transitions>:nth-of-type(4) { transition-delay: .3s }
-.stagger-child-transitions>:nth-of-type(5) { transition-delay: .4s }
+.stagger-child-transitions>:nth-child(2) { transition-delay: .1s }
+.stagger-child-transitions>:nth-child(3) { transition-delay: .2s }
+.stagger-child-transitions>:nth-child(4) { transition-delay: .3s }
+.stagger-child-transitions>:nth-child(5) { transition-delay: .4s }
 /* etc.... */
 ```
 
-If you'll always have less than a defined number of children, this approach is probably the most straightforward. Just put your `stagger-child-transitions` class on the parent element, and animate the child elements however you like!
+If you'll always have a managable number of children, this approach is probably the most straightforward. Just put your `stagger-child-transitions` class on the parent element, and animate the child elements however you like!
 
-Another benefit to the pure CSS approach is that it's easy to override the transition delay if necessary. Type selectors like `:nth-of-type()` are low-specificity, which means those styles can be overriden with a class or ID at the same level:
+Another benefit to the pure CSS approach is that it's easy to override the transition delay if necessary. Type selectors like `:nth-child()` are low-specificity, which means those styles can be overriden with a class or ID at the same level:
 - Using a class: `.stagger-child-transitions .child { transition-delay: 0s; }`
 - Or an ID: `#special { transition-delay: 0s; }`
 
@@ -46,7 +103,7 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 
 ```css
 @for $i from 1 through 100 {
-    .stagger-child-transitions>:nth-of-type(#{$i}) {
+    .stagger-child-transitions>:nth-child(#{$i}) {
         transition-delay: ($i * .1)s;
     }
 }

@@ -4,7 +4,7 @@
 
 This manifesto is to get me into the headspace for designing innovative, fully realized logo marks.
 
-![the wet hood of a Volkswagen vehicle, complete with the Volkswagen logo](/_images/blog/vw-hood.jpg)
+![the wet hood of a Volkswagen vehicle, complete with the Volkswagen logo](/_images/blog/vw-hood.webp)
 
  - The job of a logo is to identify, not explain.
  - A logo doesn’t have to have a wordmark.

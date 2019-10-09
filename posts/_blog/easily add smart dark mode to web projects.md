@@ -7,7 +7,7 @@ Today, let's spice up our web project with a dark mode easter egg. To set up thi
 #### Fact of the day
 James Bond is based on real WWII spy, Dusan Popov.
 
-![A starry night sky - when the world is in dark mode](/_images/blog/starry-sky.jpg)
+![A starry night sky - when the world is in dark mode](/_images/blog/starry-sky.webp)
 
 The most obvious way is to apply a CSS `invert()` filter to everything under dark mode conditions.  In this case, we're toggling a class of 'dark-mode' on the `body` element.
 
