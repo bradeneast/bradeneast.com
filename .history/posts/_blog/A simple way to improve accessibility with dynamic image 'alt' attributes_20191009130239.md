@@ -6,7 +6,7 @@ I'm sometimes lazy when it comes to accessibility on web projects. No matter how
 
 The repetition is also frustrating. If you're anything like me, you enjoy writing code because it helps you avoid repeating the same tasks over and over.
 
-![polaroid photos - the original accessible image](/_images/blog/polaroids.jpg)
+![polaroid photos - the original accessible image](/_images/blog/polaroids.webp)
 
 That said, some things are just too important to skip, namely image `alt` attributes. When I discovered [why alt is so important](https://moz.com/learn/seo/alt-text), I realized I had yet another detail to manage for better SEO and accessibility on my web projects.
 

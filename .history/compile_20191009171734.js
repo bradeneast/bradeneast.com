@@ -193,12 +193,10 @@ function readyPostData(post, parentDirectory) {
         $('img').each(function (i, e) {
             const img = $(this);
             const source = e.attribs.src;
-            const webpSource = e.attribs.src.replace(/\.jpg|\.png/, '.webp');
             const picture = '<picture></picture>';
             img.wrap(picture);
+            img.parent().prepend(`<source srcset="${source.replace('.jpg', '.webp')}" type="image/webp">`);
             img.parent().prepend(`<source srcset="${source}" type="image/jpeg">`);
-            img.parent().prepend(`<source srcset="${webpSource}" type="image/webp">`);
-            img.attr('src', webpSource);
         })
 
         thisPost.title = $('h1').contents().text();

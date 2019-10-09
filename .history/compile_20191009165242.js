@@ -182,23 +182,10 @@ function readyPostData(post, parentDirectory) {
 
         // Highlight code snippets with PrismJS
         $('code').each(function (i, e) {
-            const code = $(this);
-            const snippet = code.text();
-            e.attribs.class == 'language-html' ? code.empty().append(prism.highlight(snippet, prism.languages.markup)) : null;
-            e.attribs.class == 'language-javascript' ? code.empty().append(prism.highlight(snippet, prism.languages.javascript)) : null;
-            e.attribs.class == 'language-css' ? code.empty().append(prism.highlight(snippet, prism.languages.css)) : null;
-        })
-
-        // Wrap images in picture element for webp fallback
-        $('img').each(function (i, e) {
-            const img = $(this);
-            const source = e.attribs.src;
-            const webpSource = e.attribs.src.replace(/\.jpg|\.png/, '.webp');
-            const picture = '<picture></picture>';
-            img.wrap(picture);
-            img.parent().prepend(`<source srcset="${source}" type="image/jpeg">`);
-            img.parent().prepend(`<source srcset="${webpSource}" type="image/webp">`);
-            img.attr('src', webpSource);
+            const snippet = $(this).text();
+            e.attribs.class == 'language-html' ? $(this).empty().append(prism.highlight(snippet, prism.languages.markup)) : null;
+            e.attribs.class == 'language-javascript' ? $(this).empty().append(prism.highlight(snippet, prism.languages.javascript)) : null;
+            e.attribs.class == 'language-css' ? $(this).empty().append(prism.highlight(snippet, prism.languages.css)) : null;
         })
 
         thisPost.title = $('h1').contents().text();
