@@ -10,6 +10,8 @@
     "commonmark": "^0.29.0",
     "fs-extra": "^8.1.0",
     "htmlparser2": "^4.0.0",
+    "imagemin": "^7.0.0",
+    "imagemin-webp": "^5.1.0",
     "prismjs": "^1.17.1"
   }
 }
