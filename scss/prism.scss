@@ -2,7 +2,7 @@ code[class*="language-"],
 pre {
     color: #3d6270;
     background: none;
-    font-size: .9em;
+    font-size: 0.9em;
     text-align: left;
     white-space: pre-wrap;
     word-spacing: normal;
@@ -31,24 +31,23 @@ code:not([class*="language-"]) {
 /* Code blocks */
 pre[class*="language-"] {
     padding: 1em;
-    margin: .5em 0;
+    margin: 0.5em 0;
     overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
+:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
     background: #2d2d2d;
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
+:not(pre) > code[class*="language-"] {
+    padding: 0.1em;
+    border-radius: 0.3em;
     white-space: normal;
 }
 
 .token {
-
     &.comment,
     &.block-comment,
     &.prolog,
@@ -82,7 +81,7 @@ pre[class*="language-"] {
     &.class-name,
     &.constant,
     &.symbol {
-        color: #e4ae3b;
+        color: #ce3022;
     }
 
     &.selector,

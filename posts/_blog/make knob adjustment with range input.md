@@ -67,29 +67,122 @@ input[type=range] {
 }
 ```
 
-P.S. I rotated the range input to `-65deg` to acheive a more natural feeling when dragging to adjust the value. Set this angle to whatever feels right to you.
+Then we get something that looks like this:
 
-All we have left is to make our knob rotate as we drag up and down.
+<style>
 
-In our Javascript file, we’ll add an event listener for any input on the document. Once that happens, we can update `knob-position` on the input's parent element using `element.style.setProperty()`. 
+.adjustment {
+    --knob-position: 50;
+    --knob-size: 4rem;
+    position: relative;
+    text-align: center;
+    width: var(--knob-size);
+    height: var(--knob-size);
+}
+
+.adjustment#example3::after {
+    counter-reset: knobPosition var(--knob-position);
+    content: counter(knobPosition);
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 1em;
+    color: white;
+}
+
+.adjustment#example3 .knob {
+    transform: rotate(calc(((var(--knob-position) / 100) * 300deg) - 150deg));
+}
+
+.adjustment .knob,
+.adjustment input[type=range] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.knob {
+    border-radius: 50%;
+    background: var(--CL-1);
+    transform: rotate(calc((var(--knob-position) / 100) * 360deg));
+}
+
+.knob::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 10%;
+    height: 20%;
+    background: var(--CL-2);
+    transform: translateX(-50%);
+}
+
+input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    opacity: 0;
+    transform: rotate(-65deg);
+}
+</style>
+
+<div class="adjustment" id="example1">
+    <div class="knob"></div>
+    <input type="range" class="dormant">
+</div>
+
+Now, let's make our knob rotate as we drag up and down.
+
+In our Javascript, we’ll add an event listener to the document. If an input event happens on the knob, we can update `knob-position` on the parent element using `element.style.setProperty()`. 
 
 ```javascript
 document.addEventListener('input', function (e) {
     e.target.parentElement.style.setProperty('--knob-position', Math.round(e.target.value));
-}
+})
 ```
 
-It works! The only thing left is to choose a stop and start position for the dial.
+<script>
+document.addEventListener('input', function (e) {
+    if (e.target.getAttribute('class').includes('active')) {
+        e.target.parentElement.style.setProperty('--knob-position', Math.round(e.target.value));
+    }
+})
+</script>
+
+<div class="adjustment" id="example2">
+    <div class="knob"></div>
+    <input type="range" class="active">
+</div>
+
+#### Drag Me
+
+It works! The only thing left is to choose a stop and start position for the dial so it works like we would expect from the real thing.
 
 To do that, we can do a little more math and adjust our CSS `calc()` expression. Now, it limits the rotation to 300 out of 360. Then, we add 180, minus half of the 60 degree difference (leaving 150) to center everything.
+
+Let's also rotate the range input to `-65deg` for a more natural click and drag behavior.
 
 ```css
 .knob {
     transform: rotate(calc(((var(--knob-position) / 100) * 300deg) - 150deg));
 }
+
+input[type=range] {
+    transform: rotate(-65deg);
+    }
 ```
 
-Next, let's add a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
+Lastly, we'll add a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
 
 ```css
 .adjustment::after {
@@ -115,4 +208,9 @@ Next, let's add a counter to display the numeric value of our knob using a CSS v
 }
 ```
 
-That's it! If you want to see it in action, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/qBWxKro).
+<div class="adjustment" id="example3">
+    <div class="knob"></div>
+    <input type="range" class="active">
+</div>
+
+That's it! If you want to tinker with this idea some more, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/qBWxKro).
