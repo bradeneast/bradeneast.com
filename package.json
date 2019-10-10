@@ -1,7 +1,7 @@
 {
-  "name": "ritz",
+  "name": "bradeneast.com",
   "version": "1.0.0",
-  "description": "a simple static site generator built in node.js",
+  "description": "a simple website",
   "main": "compile.js",
   "author": "Braden East",
   "license": "ISC",
@@ -10,8 +10,6 @@
     "commonmark": "^0.29.0",
     "fs-extra": "^8.1.0",
     "htmlparser2": "^4.0.0",
-    "imagemin": "^7.0.0",
-    "imagemin-webp": "^5.1.0",
     "prismjs": "^1.17.1"
   }
 }
