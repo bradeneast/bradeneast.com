@@ -22,18 +22,12 @@ const workPostSrc = postsFolder + '_work/';
 const postTemplate = postsFolder + '_template.html';
 const acceptableMetaProperties = ['title', 'description', 'image'];
 
-let blogPosts = [];
-let blogTags = [];
-let workPosts = [];
-let workTags = [];
-
 const blogAudience = 'dev-signers';
 const blogHeadline = `Welcome to the blog for ${blogAudience}.`;
-const blogTagline = 'Get regular tips to improve your confidence designing for the web.';
-
-const today = new Date();
+const blogTagline = 'Get regular tips to improve your UI and UX design skills.';
 const RSSFeed = 'feed.xml';
 const RSSLink = `https://www.bradeneast.com/blog/${RSSFeed}`;
+const today = new Date();
 let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
@@ -42,6 +36,11 @@ let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <description>The blog for ${blogAudience}. ${blogTagline}</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${RSSLink}" rel="self" type="application/rss+xml" />`;
+
+let blogPosts = [];
+let blogTags = [];
+let workPosts = [];
+let workTags = [];
 
 
 // GLOBAL FUNCTIONS
@@ -100,21 +99,21 @@ function publishPagesFrom(directory) {
 
                 if (directory.includes('blog')) {
 
-                    // Update blog headline and tagline
-                    const $ = cheerio.load(content);
-                    const h = $('#blog-headline');
-                    const t = $('#blog-tagline');
+// Update blog headline and tagline
+    const $ = cheerio.load(content);
+    const h = $('#blog-headline');
+    const t = $('#blog-tagline');
 
-                    h.empty().text(blogHeadline);
-                    t.empty().text(blogTagline);
+    h.empty().text(blogHeadline);
+    t.empty().text(blogTagline);
 
-                    // Prepend main content to main element
-                    template('#main').append($.html());
+                // Prepend main content to main element
+                template('#main').append($.html());
 
                 } else {
 
-                    // Prepend main content to main element
-                    template('#main').append(content);
+                // Prepend main content to main element
+                template('#main').append(content);
 
                 }
 

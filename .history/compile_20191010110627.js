@@ -22,18 +22,12 @@ const workPostSrc = postsFolder + '_work/';
 const postTemplate = postsFolder + '_template.html';
 const acceptableMetaProperties = ['title', 'description', 'image'];
 
-let blogPosts = [];
-let blogTags = [];
-let workPosts = [];
-let workTags = [];
-
 const blogAudience = 'dev-signers';
 const blogHeadline = `Welcome to the blog for ${blogAudience}.`;
-const blogTagline = 'Get regular tips to improve your confidence designing for the web.';
-
-const today = new Date();
+const blogTagline = 'Get regular tips to improve your UI and UX design skills.';
 const RSSFeed = 'feed.xml';
 const RSSLink = `https://www.bradeneast.com/blog/${RSSFeed}`;
+const today = new Date();
 let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
@@ -42,6 +36,11 @@ let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <description>The blog for ${blogAudience}. ${blogTagline}</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${RSSLink}" rel="self" type="application/rss+xml" />`;
+
+let blogPosts = [];
+let blogTags = [];
+let workPosts = [];
+let workTags = [];
 
 
 // GLOBAL FUNCTIONS
@@ -98,25 +97,10 @@ function publishPagesFrom(directory) {
                 const template = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate)));
                 const content = htmlParser.parseDOM(fs.readFileSync(location), { decodeEntities: true });
 
-                if (directory.includes('blog')) {
+                directory.includes('blog') ? console.log(directory) : null;
 
-                    // Update blog headline and tagline
-                    const $ = cheerio.load(content);
-                    const h = $('#blog-headline');
-                    const t = $('#blog-tagline');
-
-                    h.empty().text(blogHeadline);
-                    t.empty().text(blogTagline);
-
-                    // Prepend main content to main element
-                    template('#main').append($.html());
-
-                } else {
-
-                    // Prepend main content to main element
-                    template('#main').append(content);
-
-                }
+                // Prepend main content to main element
+                template('#main').append(content);
 
                 // Append meta tags to head element
                 if (content[0]) { appendMetaTags(content[0].data, template) }
@@ -342,6 +326,20 @@ function buildTagDirectories(tags, destinationDirectory) {
     })
 }
 
+function updateBlogWelcome() {
+
+    const location = blog + 'index.html';
+    const html = htmlParser.parseDOM(fs.readFileSync(location), { decodeEntities: true });
+    const $ = cheerio.load(html);
+    const h = $('#blog-headline');
+    const t = $('#blog-tagline');
+
+    h.empty().text(blogHeadline);
+    t.empty().text(blogTagline);
+
+    fs.writeFileSync(location, $.html());
+}
+
 // Clear old pages
 fs.cleandirSync(public, ignoreChar);
 
@@ -370,6 +368,9 @@ workPosts.sort(dynamicSort('date')).reverse();
 createNewPostsFromTemplate(workPosts, work);
 createPostFeed(workPosts, `${work}index.html`);
 buildTagDirectories(workTags, work);
+
+// Update blog headline and tagline
+updateBlogWelcome();
 
 
 console.timeEnd('\n>> SITE COMPILED IN');

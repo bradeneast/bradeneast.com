@@ -22,18 +22,12 @@ const workPostSrc = postsFolder + '_work/';
 const postTemplate = postsFolder + '_template.html';
 const acceptableMetaProperties = ['title', 'description', 'image'];
 
-let blogPosts = [];
-let blogTags = [];
-let workPosts = [];
-let workTags = [];
-
 const blogAudience = 'dev-signers';
 const blogHeadline = `Welcome to the blog for ${blogAudience}.`;
 const blogTagline = 'Get regular tips to improve your confidence designing for the web.';
-
-const today = new Date();
 const RSSFeed = 'feed.xml';
 const RSSLink = `https://www.bradeneast.com/blog/${RSSFeed}`;
+const today = new Date();
 let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
@@ -42,6 +36,11 @@ let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <description>The blog for ${blogAudience}. ${blogTagline}</description>
 <lastBuildDate>${today.toUTCString()}</lastBuildDate>
 <atom:link href="${RSSLink}" rel="self" type="application/rss+xml" />`;
+
+let blogPosts = [];
+let blogTags = [];
+let workPosts = [];
+let workTags = [];
 
 
 // GLOBAL FUNCTIONS
