@@ -88,7 +88,7 @@
 <p>Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using <code>Object.keys()</code>. Let&#x2019;s expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because sometimes we have to get that one value nested inside 5 other objects.</p>
 <p>If you feel a bit lost, take a glance at the <a href="/blog/append-json-values-to-matching-html-elements-with-object.keys">simpler approach</a> and then come back and join me.</p>
 <p>Let&#x2019;s make the safe assumption that an API isn&#x2019;t give us a responses in the exact format we&#x2019;d like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Or, what if the API changes their response structure?</p>
-<p><picture><source srcset="/_images/blog/star-wars.webp" type="image/webp"><source srcset="/_images/blog/star-wars.webp" type="image/jpeg"><img src="/_images/blog/star-wars.webp" alt="A star wars stormtrooper lost in the desert"></picture></p>
+<p><picture><source srcset="/_images/blog/star-wars.webp" type="image/webp"><source srcset="/_images/blog/star-wars.jpg" type="image/jpeg"><img src="/_images/blog/star-wars.webp" alt="A star wars stormtrooper lost in the desert"></picture></p>
 <p>You might as well burn everything to the ground and start over.  Fortunately, there&#x2019;s a way to loop through multiple layers of JSON without too much excess javascript. Take this example:</p>
 <pre><code class="language-javascript"><span class="token comment">// Array of movies</span>
 <span class="token punctuation">[</span><span class="token punctuation">{</span>

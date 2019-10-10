@@ -190,7 +190,7 @@ function readyPostData(post, parentDirectory) {
         // Wrap images in picture element for webp fallback
         $('img').each(function (i, e) {
             const img = $(this);
-            const source = e.attribs.src.replace('.webp', '.jpg');
+            const source = e.attribs.src;
             const webpSource = e.attribs.src.replace(/\.jpg|\.png/, '.webp');
             const picture = '<picture></picture>';
             img.wrap(picture);
