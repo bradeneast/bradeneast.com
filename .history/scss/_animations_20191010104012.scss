@@ -12,13 +12,16 @@ body.loaded [data-stagger] .load {
 [data-stagger] {
     .load {
         will-change: transform;
+    }
+
+    section {
         opacity: 0;
         transform: translateY(1em);
+    }
 
-        &.item {
-            opacity: 0;
-            transform: scale(0.8);
-        }
+    &.item {
+        opacity: 0;
+        transform: scale(0.8);
     }
 }
 

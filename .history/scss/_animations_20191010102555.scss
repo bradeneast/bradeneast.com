@@ -5,21 +5,14 @@
     }
 }
 
-body.loaded [data-stagger] .load {
+body.loaded [data-stagger] > * {
     animation: load var(--TR-M) forwards running;
 }
 
-[data-stagger] {
-    .load {
-        will-change: transform;
-        opacity: 0;
-        transform: translateY(1em);
-
-        &.item {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-    }
+[data-stagger] > * {
+    will-change: transform;
+    opacity: 0;
+    transform: translateY(1em);
 }
 
 // [data-scroll] {
