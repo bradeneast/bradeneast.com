@@ -23,10 +23,6 @@ body.loaded [data-stagger] .load {
 }
 
 @media screen and (max-width: $mq) {
-    body.loaded [data-stagger] section {
-        animation: load var(--TR-M) forwards running;
-    }
-
     [data-stagger] section {
         will-change: transform;
         opacity: 0;

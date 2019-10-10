@@ -22,18 +22,6 @@ body.loaded [data-stagger] .load {
     }
 }
 
-@media screen and (max-width: $mq) {
-    body.loaded [data-stagger] section {
-        animation: load var(--TR-M) forwards running;
-    }
-
-    [data-stagger] section {
-        will-change: transform;
-        opacity: 0;
-        transform: translateY(1em);
-    }
-}
-
 // [data-scroll] {
 //     transition: var(--TR-M);
 // }
