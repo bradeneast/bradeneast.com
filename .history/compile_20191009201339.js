@@ -7,6 +7,8 @@ const htmlParser = require('htmlParser2');
 const cheerio = require('cheerio');
 const commonmark = require('commonmark');
 const prism = require('prismjs');
+const imageMin = require('imagemin');
+const webp = require('imagemin-webp');
 
 
 // GLOBAL VARIABLES

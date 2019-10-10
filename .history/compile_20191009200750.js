@@ -7,6 +7,8 @@ const htmlParser = require('htmlParser2');
 const cheerio = require('cheerio');
 const commonmark = require('commonmark');
 const prism = require('prismjs');
+const imageMin = require('imagemin');
+const webp = require('imagemin-webp');
 
 
 // GLOBAL VARIABLES
@@ -202,7 +204,7 @@ function readyPostData(post, parentDirectory) {
         thisPost.title = $('h1').contents().text();
         thisPost.date = $('h2').contents().text();
         thisPost.tags = $('h3').contents().text();
-        thisPost.image = $('img').attr('src').replace('.webp', '.jpg');
+        thisPost.image = $('source').attr('srcset');
         thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
 
         if (parentDirectory == blogPostSrc) {

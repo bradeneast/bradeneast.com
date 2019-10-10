@@ -7,11 +7,15 @@ const htmlParser = require('htmlParser2');
 const cheerio = require('cheerio');
 const commonmark = require('commonmark');
 const prism = require('prismjs');
+const imagemin = require('imagemin');
+const imageminWebp = require('imagemin-webp');
 
 
 // GLOBAL VARIABLES
 const ignoreChar = '_';
 const public = './public/';
+const images = public + '_images/';
+const imageDestination = images + 'webpTest';
 const blog = public + 'blog/';
 const work = public + 'work/';
 const pageTemplate = './_template.html';
@@ -302,6 +306,18 @@ function buildTagDirectories(tags, destinationDirectory) {
         console.log(`tag directory created for ${tag}`);
     })
 }
+
+
+// Convert images to webp
+(async () => {
+    await imagemin([images + '*.{jpg,png}'], imageDestination, {
+        use: [
+            imageminWebp({ quality: 75 })
+        ]
+    });
+
+    console.log('Images optimized');
+})();
 
 // Clear old pages
 fs.cleandirSync(public, ignoreChar);
