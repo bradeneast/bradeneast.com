@@ -10,7 +10,7 @@ If you feel a bit lost, take a glance at the [simpler approach](/blog/append-jso
 
 Let's make the safe assumption that an API isn't give us a responses in the exact format we'd like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Or, what if the API changes their response structure?
 
-![A star wars stormtrooper lost in the desert](/_images/blog/star-wars.jpg)
+![A star wars stormtrooper lost in the desert](/_images/blog/star-wars.webp)
 
 You might as well burn everything to the ground and start over.  Fortunately, there's a way to loop through multiple layers of JSON without too much excess javascript. Take this example:
 

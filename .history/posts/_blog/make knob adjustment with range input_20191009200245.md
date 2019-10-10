@@ -6,7 +6,7 @@ Fun fact of the day: Stairway to Heaven (composed by Jimmy Page and performed by
 
 When would we want to create a knob or dial adjustment?  Well, if you’re a talented Christmas goat, you might want to develop a web app with some digital effects for your seasonal guitar solos.
 
-![a sound board at a live concert](/_images/blog/sound-board.jpg)
+![a sound board at a live concert](/_images/blog/sound-board.webp)
 
 Most audio and electronic equipment relies heavily on knobs and dials. On the web however, it’s pretty rare to see these kind of inputs, when sliders are quick and easy and work out of the box.
 

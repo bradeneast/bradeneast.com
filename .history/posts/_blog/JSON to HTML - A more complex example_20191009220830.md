@@ -53,7 +53,7 @@ if (typeof object[key] == 'string' && element) {
     if (object[key].substring(0, 4) == 'http' || key == 'link') {
 
         // check if url is an image with .match() and some basic regex
-        if (object[key].match(/\.*(jpg|png|svg|gif|webp)/g) == null) {
+        if (object[key].match(/\.*(jpg|png|svg|gif|jpg)/g) == null) {
             element.setAttribute('href', object[key]);
         } else {
             element.setAttribute('style', `background-image: url(${object[key]});`);
@@ -109,7 +109,7 @@ function loopThroughKeys(object, container) {
     let element = container.querySelector(`.${key}`);
     if (typeof object[key] == "string" && element) {
       if (object[key].substring(0, 4) == "http" || key == "link") {
-        if (object[key].match(/\.*(jpg|png|svg|gif|webp)/g) == null) {
+        if (object[key].match(/\.*(jpg|png|svg|gif|jpg)/g) == null) {
           element.setAttribute("href", object[key]);
         } else {
           element.setAttribute("style", `background-image: url(${object[key]});`);

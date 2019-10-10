@@ -4,7 +4,7 @@
 
 Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don't give up on that film project! Today, let's talk about integrating motion into our websites and user interfaces.
 
-![people in motion on a sidewalk](/_images/blog/people-in-motion.jpg)
+![people in motion on a sidewalk](/_images/blog/people-in-motion.webp)
 
 It's pretty obious that movement happening in perfect sync seems unnatural to us. Unless you're going for the 1970's kung fu movie vibe, you probably want to stagger and tweak your animations.
 
