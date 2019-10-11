@@ -13,6 +13,7 @@
     "prismjs": "^1.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4"
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3"
   }
 }
