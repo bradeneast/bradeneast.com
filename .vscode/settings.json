@@ -1,21 +1,24 @@
 {
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
+    "saveAndRun": {
+        "commands": [{
                 "match": "\\.html$|\\.md$",
-                "cmd": "node compile"
+                "cmd": "node compile",
+                "silent": true
+            },
+            {
+                "match": "scripts\\\\modules\\\\.*",
+                "cmd": "tsc",
+                "silent": true
             }
         ]
     },
     "liveServer.settings.root": "/public",
     "liveServer.settings.wait": 600,
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "compressed",
-            "extensionName": ".css",
-            "savePath": "/public/_css"
-        }
-    ],
+    "liveSassCompile.settings.formats": [{
+        "format": "compressed",
+        "extensionName": ".css",
+        "savePath": "/public/_css"
+    }],
     "liveSassCompile.settings.generateMap": true,
     "minify.js": {
         "mangle": true,

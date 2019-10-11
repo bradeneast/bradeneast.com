@@ -18,7 +18,7 @@ staggerItems.forEach(item => {
         parent: item,
         intensity: .3,
         direction: 'from',
-        origin: 'top'
+        origin: 'top',
     })
 
 })

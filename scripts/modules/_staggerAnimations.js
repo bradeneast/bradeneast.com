@@ -13,7 +13,7 @@ function Stagger(params) {
     }
 
     let parent = params.parent;
-    let children = [];
+    let distances = [];
     let intensity = params.intensity * .5;
     let origin;
     let X;
@@ -35,17 +35,20 @@ function Stagger(params) {
 
 
     // Get each child's distance from point of origin
-    Array.from(params.parent.children).map(child => {
+    Array.from(params.parent.children).map(c => {
 
-        if (child.tagName.toLowerCase() !== 'template') {
+        const childElement = c;
+        let distance;
 
-            child.r = child.getBoundingClientRect();
+        if (childElement.tagName.toLowerCase() !== 'template') {
+
+            let r = childElement.getBoundingClientRect();
 
             // Get child position on X and Y axis
             let childX;
             let childY;
-            !origin[1].includes('center') ? childX = child.r[origin[1]] : childX = child.r.right - (child.r.width / 2);
-            !origin[0].includes('center') ? childY = child.r[origin[0]] : childY = child.r.bottom - (child.r.height / 2);
+            !origin[1].includes('center') ? childX = r[origin[1]] : childX = r.right - (r.width / 2);
+            !origin[0].includes('center') ? childY = r[origin[0]] : childY = r.bottom - (r.height / 2);
 
             // Get child distance from origin on each axis 
             let distanceX;
@@ -53,15 +56,15 @@ function Stagger(params) {
             childY < Y ? distanceY = Y - childY : distanceY = childY - Y;
             childX < X ? distanceX = X - childX : distanceX = childX - X;
 
-            child.distance = Math.round(distanceX + distanceY);
-            children.push(child);
+            distance = Math.round(distanceX + distanceY);
+            distances.push(distance);
         }
     });
 
     // Sort children by distance away from the point of origin
-    children.sort(dynamicSort('distance'));
-    params.direction == 'to' ? children.reverse() : null;
+    distances.sort();
+    params.direction == 'to' ? distances.reverse() : null;
 
     // Apply relative animation delay to each child
-    children.map((child, index) => child.style.animationDelay = index * intensity + 's')
+    distances.map((d, index) => params.parent.children[index].style.animationDelay = index * intensity + 's')
 }

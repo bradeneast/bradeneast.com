@@ -3,10 +3,12 @@ function checkActiveLinks() {
 
     document.querySelectorAll('.nav-item').forEach(link => {
 
-        let linkTitle = link.innerText.toLowerCase();
+        let linkTitle = link.textContent;
         let url = window.location.href.toLowerCase();
 
-        url.includes(linkTitle) ? link.classList.add('active') : link.classList.remove('active');
+        if (linkTitle) {
+            url.includes(linkTitle.toLowerCase()) ? link.classList.add('active') : link.classList.remove('active');
+        }
 
     })
 

@@ -2,8 +2,17 @@
 function altFromSource(element) {
 
     let src = element.getAttribute('src');
+    let alt;
 
-    return (decodeURIComponent(src).split('/').pop()).split('.').shift().replace(/-|\+/g, ' ');
+    if (typeof src === 'string') {
+
+        let srcName = decodeURIComponent(src).split('/').pop();
+
+        srcName ? alt = srcName.split('.').shift().replace(/-|\+/g, ' ') : null;
+
+    }
+
+    return alt;
 
 }
 
