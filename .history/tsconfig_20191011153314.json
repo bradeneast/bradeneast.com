@@ -9,7 +9,6 @@
     "preserveConstEnums": false,
     "outFile": "./public/_scripts/main.js",
     "sourceMap": false,
-    "downlevelIteration": true,
     "esModuleInterop": true
   },
   "files": [
