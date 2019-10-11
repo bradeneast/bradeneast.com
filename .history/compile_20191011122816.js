@@ -7,6 +7,7 @@ const htmlParser = require('htmlParser2');
 const cheerio = require('cheerio');
 const commonmark = require('commonmark');
 const prism = require('prismjs');
+const babel = require('@babel/core');
 
 
 // GLOBAL VARIABLES
@@ -370,6 +371,10 @@ workPosts.sort(dynamicSort('date')).reverse();
 createNewPostsFromTemplate(workPosts, work);
 createPostFeed(workPosts, `${work}index.html`);
 buildTagDirectories(workTags, work);
+
+
+// Compile js with babel
+// console.log(babel.transformFileSync(public + '_scripts/modules.min.js', {}).code)
 
 
 console.timeEnd('\n>> SITE COMPILED IN');

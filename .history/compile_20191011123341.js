@@ -7,6 +7,7 @@ const htmlParser = require('htmlParser2');
 const cheerio = require('cheerio');
 const commonmark = require('commonmark');
 const prism = require('prismjs');
+const babel = require('@babel/core');
 
 
 // GLOBAL VARIABLES

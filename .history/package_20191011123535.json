@@ -5,8 +5,7 @@
   "main": "compile.js",
   "author": "Braden East",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "commonmark": "^0.29.0",
     "fs-extra": "^8.1.0",

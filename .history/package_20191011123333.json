@@ -5,12 +5,15 @@
   "main": "compile.js",
   "author": "Braden East",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "commonmark": "^0.29.0",
     "fs-extra": "^8.1.0",
     "htmlparser2": "^4.0.0",
     "prismjs": "^1.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3"
   }
 }
