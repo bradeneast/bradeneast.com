@@ -3,7 +3,6 @@
     align-items: flex-end;
     align-content: flex-end;
     margin-top: var(--PAD-L);
-    transform: translateY(.4em);
 
     .previous {
         margin-right: auto;
@@ -27,7 +26,7 @@
     .link-title {
         font-weight: 700;
         opacity: 0.63;
-        margin-top: .2em;
+        transform: translateY(.2em);
         transition: var(--TR-S);
     }
 }
