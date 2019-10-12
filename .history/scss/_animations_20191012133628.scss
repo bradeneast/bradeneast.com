@@ -28,10 +28,9 @@ body.loaded [data-load] {
     transform: scaleX(0);
 }
 
-@supports (clip-path: polygon(0 0, 0 0, 0 100%, 0 100%)) {
+@supports (clip-path: polygon()) {
 
     [data-load="clip"] {
-        transform-origin: auto;
         transform: none;
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }

@@ -24,25 +24,7 @@ body.loaded [data-load] {
 }
 
 [data-load="clip"] {
-    transform-origin: left;
-    transform: scaleX(0);
-}
-
-@supports (clip-path: polygon(0 0, 0 0, 0 100%, 0 100%)) {
-
-    [data-load="clip"] {
-        transform-origin: auto;
-        transform: none;
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
-
-}
-
-@media screen and (max-width: $mq) {
-
-    [data-load] {
-        transform: translateY(1em);
-    }
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
 // [data-scroll] {

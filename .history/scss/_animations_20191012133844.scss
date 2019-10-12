@@ -31,7 +31,6 @@ body.loaded [data-load] {
 @supports (clip-path: polygon(0 0, 0 0, 0 100%, 0 100%)) {
 
     [data-load="clip"] {
-        transform-origin: auto;
         transform: none;
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
