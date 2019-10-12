@@ -27,18 +27,6 @@ body.loaded [data-load] {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
-@media screen and (max-width: $mq) {
-    [data-stagger] section {
-        will-change: transform;
-        opacity: 0;
-        transform: translateY(1em);
-    }
-
-    body.loaded [data-stagger] section {
-        animation: load var(--TR-M) forwards running;
-    }
-}
-
 // [data-scroll] {
 //     transition: var(--TR-M);
 // }

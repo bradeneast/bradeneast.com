@@ -27,8 +27,6 @@ function Stagger(params) {
 
     })
 
-    console.log(originX, originY);
-
 
     // Get each child's distance from point of origin
     children.map(child => {

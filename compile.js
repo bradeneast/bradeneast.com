@@ -29,7 +29,7 @@ let workTags = [];
 
 const blogAudience = 'dev-signers';
 const blogHeadline = `Welcome to the blog for ${blogAudience}.`;
-const blogTagline = 'Gain confidence designing stellar user experiences.';
+const blogTagline = 'Gain confidence designing and coding stellar user experiences.';
 
 const today = new Date();
 const RSSFeed = 'feed.xml';
