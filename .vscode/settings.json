@@ -19,7 +19,7 @@
         "extensionName": ".css",
         "savePath": "/public/_css"
     }],
-    "liveSassCompile.settings.generateMap": true,
+    "liveSassCompile.settings.generateMap": false,
     "minify.js": {
         "mangle": true,
         "compress": {

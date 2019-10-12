@@ -1,17 +1,5 @@
 function Stagger(params) {
 
-    function dynamicSort(property) {
-        var sortOrder = 1;
-        if (property[0] === "-") {
-            sortOrder = -1;
-            property = property.substr(1);
-        }
-        return function (a, b) {
-            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-            return result * sortOrder;
-        }
-    }
-
     let parent = params.parent;
     let distances = [];
     let intensity = params.intensity * .5;
@@ -35,14 +23,13 @@ function Stagger(params) {
 
 
     // Get each child's distance from point of origin
-    Array.from(params.parent.children).map(c => {
+    Array.from(params.parent.children).map(child => {
 
-        const childElement = c;
         let distance;
 
-        if (childElement.tagName.toLowerCase() !== 'template') {
+        if (child.tagName.toLowerCase() !== 'template') {
 
-            let r = childElement.getBoundingClientRect();
+            let r = child.getBoundingClientRect();
 
             // Get child position on X and Y axis
             let childX;

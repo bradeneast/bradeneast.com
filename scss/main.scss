@@ -67,6 +67,7 @@ html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: subpixel-antialiased;
+    transition: var(--TR-S);
 }
 
 #main {
