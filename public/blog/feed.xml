@@ -3,8 +3,8 @@
 <channel>
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
-<description>The blog for dev-signers. Get regular tips to improve your confidence designing for the web.</description>
-<lastBuildDate>Sat, 12 Oct 2019 14:19:43 GMT</lastBuildDate>
+<description>The blog for dev-signers. Gain confidence designing stellar user experiences.</description>
+<lastBuildDate>Sat, 12 Oct 2019 16:42:08 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
         <title>Easily add a ‘smart’ dark mode to any website or web app</title>
@@ -16,45 +16,45 @@
 Today, let&#x2019;s spice up our web project with a dark mode easter egg. To set up this feature in our project, we&#x2019;ll need a few lines of CSS that will change the colors and background colors of elements on our site.</description>
         </item>
         <item>
-        <title>Making UI knobs and dials with HTML and CSS</title>
-        <link>https://bradeneast.com/blog//blog/making-ui-knobs-and-dials-with-html-and-css</link>
-        <guid>https://bradeneast.com/blog//blog/making-ui-knobs-and-dials-with-html-and-css</guid>
+        <title>Make knobs and dials with HTML and CSS</title>
+        <link>https://bradeneast.com/blog//blog/make-knobs-and-dials-with-html-and-css</link>
+        <guid>https://bradeneast.com/blog//blog/make-knobs-and-dials-with-html-and-css</guid>
         <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>html</category><category>css</category><category>javascript</category><category>ui</category>
         <description>
 Fun fact of the day: Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the &#x2018;forbidden riff.&#x2019; Today, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
         </item>
         <item>
-        <title>Staggered motion in animation and UI design - css vs scss vs javascript</title>
-        <link>https://bradeneast.com/blog//blog/staggered-motion-in-animation-and-ui-design--css-vs-scss-vs-javascript</link>
-        <guid>https://bradeneast.com/blog//blog/staggered-motion-in-animation-and-ui-design--css-vs-scss-vs-javascript</guid>
+        <title>Staggered animations: css vs scss vs javascript</title>
+        <link>https://bradeneast.com/blog//blog/staggered-animations-css-vs-scss-vs-javascript</link>
+        <guid>https://bradeneast.com/blog//blog/staggered-animations-css-vs-scss-vs-javascript</guid>
         <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>ui</category><category>design</category><category>css</category><category>javascript</category>
         <description>
 Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don&#x2019;t give up on that film project! Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
         </item>
         <item>
-        <title>Styling pseudo elements with vanilla javascript - the easy way</title>
-        <link>https://bradeneast.com/blog//blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</link>
-        <guid>https://bradeneast.com/blog//blog/styling-pseudo-elements-with-vanilla-javascript--the-easy-way</guid>
+        <title>Style pseudo elements with javascript</title>
+        <link>https://bradeneast.com/blog//blog/style-pseudo-elements-with-javascript</link>
+        <guid>https://bradeneast.com/blog//blog/style-pseudo-elements-with-javascript</guid>
         <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>html</category><category>css</category><category>javascript</category>
         <description>
 I&#x2019;m a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
         </item>
         <item>
-        <title>Improve image SEO and accessibility - get alt from src with vanilla javascript</title>
-        <link>https://bradeneast.com/blog//blog/improve-image-seo-and-accessibility--get-alt-from-src-with-vanilla-javascript</link>
-        <guid>https://bradeneast.com/blog//blog/improve-image-seo-and-accessibility--get-alt-from-src-with-vanilla-javascript</guid>
+        <title>Get img alt attribute automatically from src with javascript</title>
+        <link>https://bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src-with-javascript</link>
+        <guid>https://bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src-with-javascript</guid>
         <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
 I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m usually adding aria-label and tabindex and role attributes later than I&#x2019;d like.</description>
         </item>
         <item>
-        <title>Converting JSON to HTML - Nested objects and URLs</title>
-        <link>https://bradeneast.com/blog//blog/converting-json-to-html--nested-objects-and-urls</link>
-        <guid>https://bradeneast.com/blog//blog/converting-json-to-html--nested-objects-and-urls</guid>
+        <title>Convert JSON to HTML - Nested objects and URLs</title>
+        <link>https://bradeneast.com/blog//blog/convert-json-to-html--nested-objects-and-urls</link>
+        <guid>https://bradeneast.com/blog//blog/convert-json-to-html--nested-objects-and-urls</guid>
         <pubDate>Wed, 07 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
