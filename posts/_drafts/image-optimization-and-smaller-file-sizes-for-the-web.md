@@ -13,7 +13,9 @@ I go back and forth between 8-bit PNG and JPG with medium compression.
 
 3. WebP ()
 
+
 #### The Bad
+
 1. GIF (Graphics Interchange Format)
 
 #### At time of writing...

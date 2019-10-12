@@ -124,9 +124,9 @@ document.querySelectorAll('.stagger-child-transitions').forEach(element => {
 })
 ```
 
-This solves our code bloating problem, and won't noticably affect the performance of our page (assuming we're already making the request for a script file). Just for grins, I used `console.time()` and `console.timeEnd()` to see how long this operation takes. For 100 elements, the time was consistently between 1 and 2 milliseconds. That's blazing fast, and quicker than loading the extra CSS.
+This solves our code bloating problem, and won't noticably affect the performance of our page.  The main advantage to using Javascript is that it's not limited to a finite number of elements, and it allows us to do more complex things, [like this](https://codepen.io/bradeneast/pen/PooozNJ).
 
-This is definitely the most dynamic approach, but it does have its problems. Unlike CSS, adding styles with Javascript immediately maxes out our specificity 'headroom'. Because the styles are applied directly to the element, the only way we can change them is to write more Javascript. Another drawback to this approach is that elements added to the DOM after our page loads will not be affected. We have to call the function again to catch those.
+However, adding styles with Javascript does have drawbacks. Unlike CSS, adding styles with Javascript immediately maxes out our specificity 'headroom'. Because the styles are applied directly to the element, the only way we can change them is to write more Javascript. Another drawback to this approach is that elements added to the DOM after our script runs will not be affected. We have to call the function again to catch those.
 
 Depending on your application, SCSS or Javascript might be better suited for staggering your UI animations. No matter what you choose, adding staggered motion and choreography will almost always make your application feel more friendly and interesting. :)
 
