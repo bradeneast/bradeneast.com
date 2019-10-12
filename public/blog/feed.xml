@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing stellar user experiences.</description>
-<lastBuildDate>Sat, 12 Oct 2019 16:51:49 GMT</lastBuildDate>
+<lastBuildDate>Sat, 12 Oct 2019 16:53:06 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
         <title>Easily add a ‘smart’ dark mode to any website or web app</title>
@@ -43,9 +43,9 @@ Fun fact of the day: your odds of winning an Academy Award are about 10 times be
 I&#x2019;m a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
         </item>
         <item>
-        <title>Get img alt attribute automatically from src with javascript</title>
-        <link>https://bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src-with-javascript</link>
-        <guid>https://bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src-with-javascript</guid>
+        <title>Get img alt attribute automatically from src</title>
+        <link>https://bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src</link>
+        <guid>https://bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src</guid>
         <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>

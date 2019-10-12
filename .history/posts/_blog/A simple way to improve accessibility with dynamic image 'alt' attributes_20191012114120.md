@@ -1,4 +1,4 @@
-# Get img alt attribute automatically from src
+# Get img alt attribute automatically from src with javascript
 ## 2019/08/19
 ### javascript, html
 
