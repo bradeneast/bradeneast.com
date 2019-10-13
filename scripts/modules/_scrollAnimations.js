@@ -1,22 +1,14 @@
-// const scrollItems = document.querySelectorAll('[data-scroll]');
+function animateOnScroll(element, threshold) {
 
-// function animateOnScroll(element) {
+    const scrollAttr = 'data-scroll';
+    const options = {
+        threshold: threshold
+    };
+    const observer = new IntersectionObserver(entries => {
 
-//     const scrollAttr = 'data-scroll';
-//     const options = {
-//         threshold: .4
-//     };
-//     const observer = new IntersectionObserver(entries => {
+        entries.map(entry => entry.target.setAttribute(scrollAttr, entry.isIntersecting))
 
-//         entries.map(entry => entry.target.setAttribute(scrollAttr, entry.isIntersecting))
+    }, options);
 
-//     }, options);
-
-//     observer.observe(element);
-// }
-
-// scrollItems.forEach(elem => {
-
-//     animateOnScroll(elem)
-
-// })
+    observer.observe(element);
+}

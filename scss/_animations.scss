@@ -27,21 +27,23 @@ body.loaded [data-load] {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
-@media screen and (max-width: $mq) {
+[data-scroll] {
+    will-change: transform;
+    transition: var(--TR-M);
+}
 
+p [data-scroll="true"] {
+    transform: scale(1);
+    opacity: 1;
+}
+
+p [data-scroll="false"] {
+    transform: scale(.94);
+    opacity: .9;
+}
+
+@media screen and (max-width: $mq) {
     [data-load] {
         transform: translateY(1em);
     }
 }
-
-// [data-scroll] {
-//     transition: var(--TR-M);
-// }
-
-// [data-scroll="false"] {
-//     transform: scale(0.9);
-// }
-
-// [data-scroll="true"] {
-//     transform: scale(1);
-// }
