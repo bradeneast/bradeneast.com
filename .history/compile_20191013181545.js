@@ -28,11 +28,6 @@ class HTMLFile {
 
 
 // GLOBAL VARIABLES
-const consoleBlue = '\x1b[34m%s\x1b[0m';
-const consolePurple = '\x1b[35m%s\x1b[0m';
-const consoleGreen = '\x1b[32m%s\x1b[0m';
-const consoleCyan = '\x1b[36m%s\x1b[0m';
-
 const ignoreChar = '_';
 const public = './public/';
 const blog = public + 'blog/';
@@ -143,7 +138,7 @@ function publishPagesFrom(directory) {
                 // Write to destination file and remove comments
                 fs.createFileSync(destination);
                 fs.writeFileSync(destination, templateFile.$.html().replace(/(<!--)[\s\S]*?(-->)/g, ''));
-                console.log(consolePurple, `PAGE written to ${destination}`);
+                console.log('%c page written to ' + destination, 'color: lightblue');
 
             } else {
 
@@ -323,7 +318,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         addPostToRSS(post);
         fs.writeFileSync(postLocation, pageTemplateFile.$.html());
-        console.log(consoleBlue, `POST written to ${postLocation}`);
+        console.log('post written to ' + postLocation, 'color: slateblue');
     })
 }
 
@@ -360,7 +355,7 @@ function buildTagDirectories(tags, destinationDirectory) {
         }
 
         fs.writeFileSync(destination, pageTemplateFile.$.html());
-        console.log(consoleGreen, `TAG created for ${tag}`);
+        console.log(`tag directory created for ${tag}`);
     })
 }
 

@@ -360,7 +360,7 @@ function buildTagDirectories(tags, destinationDirectory) {
         }
 
         fs.writeFileSync(destination, pageTemplateFile.$.html());
-        console.log(consoleGreen, `TAG created for ${tag}`);
+        console.log(consoleGreen, `TAG directory created for ${tag}`);
     })
 }
 

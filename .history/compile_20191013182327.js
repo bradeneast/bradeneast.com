@@ -143,7 +143,7 @@ function publishPagesFrom(directory) {
                 // Write to destination file and remove comments
                 fs.createFileSync(destination);
                 fs.writeFileSync(destination, templateFile.$.html().replace(/(<!--)[\s\S]*?(-->)/g, ''));
-                console.log(consolePurple, `PAGE written to ${destination}`);
+                console.log(consolePurple, `page written to ${destination}`);
 
             } else {
 
@@ -323,7 +323,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         addPostToRSS(post);
         fs.writeFileSync(postLocation, pageTemplateFile.$.html());
-        console.log(consoleBlue, `POST written to ${postLocation}`);
+        console.log(consoleBlue`post written to ${postLocation}`);
     })
 }
 
@@ -360,7 +360,7 @@ function buildTagDirectories(tags, destinationDirectory) {
         }
 
         fs.writeFileSync(destination, pageTemplateFile.$.html());
-        console.log(consoleGreen, `TAG created for ${tag}`);
+        console.log(consoleGreen, `tag directory created for ${tag}`);
     })
 }
 
