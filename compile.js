@@ -9,6 +9,24 @@ const commonmark = require('commonmark');
 const prism = require('prismjs');
 
 
+// CLASSES
+class HTMLFile {
+    constructor(path) {
+        this.path = path
+    }
+
+    parse(decodeEntities) {
+        this.html = htmlParser.parseDOM(fs.readFileSync(this.path), { decodeEntities: decodeEntities })
+        return this
+    }
+
+    loadDOM() {
+        this.$ = cheerio.load(this.html)
+        return this
+    }
+}
+
+
 // GLOBAL VARIABLES
 const ignoreChar = '_';
 const public = './public/';
@@ -69,22 +87,6 @@ fs.cleandirSync = function (directory) {
     fs.readdirSync(directory).map(file => file.charAt(0) != ignoreChar ? fs.removeSync(directory + file) : null);
 }
 
-class HTMLFile {
-    constructor(path) {
-        this.path = path
-    }
-
-    parse(decodeEntities) {
-        this.html = htmlParser.parseDOM(fs.readFileSync(this.path), { decodeEntities: decodeEntities })
-        return this
-    }
-
-    loadDOM() {
-        this.$ = cheerio.load(this.html)
-        return this
-    }
-}
-
 function appendMetaTags(metaData, selector) {
 
     acceptableMetaProperties.map(prop => {
@@ -117,18 +119,15 @@ function publishPagesFrom(directory) {
                 if (directory.includes('blog')) {
 
                     // Update blog headline and tagline
-                    const headline = currentFile.$('#blog-headline');
-                    const tagline = currentFile.$('#blog-tagline');
-
-                    headline.empty().text(blogHeadline);
-                    tagline.empty().text(blogTagline);
+                    currentFile.$('#blog-headline').empty().text(blogHeadline);
+                    currentFile.$('#blog-tagline').empty().text(blogTagline);
 
                     // Prepend main content to main element
                     templateFile.$('#main').append(currentFile.$.html());
 
                 } else {
 
-                    // Prepend main content to main element
+                    // Prepend main content to main element as is
                     templateFile.$('#main').append(currentFile.html);
 
                 }
@@ -143,7 +142,7 @@ function publishPagesFrom(directory) {
 
             } else {
 
-                // Create parallel directory in public folder
+                // Create parallel directory in public folder and recurse
                 fs.mkdirSync(directory.replace('pages', 'public') + child);
                 publishPagesFrom(directory + child + '/');
             }
@@ -152,6 +151,7 @@ function publishPagesFrom(directory) {
 }
 
 function addPostToRSS(post) {
+
     let date = new Date(post.date);
     let categories;
 
@@ -171,13 +171,10 @@ function createPostFeed(posts, page, category) {
 
     const currentFile = new HTMLFile(page).parse(true).loadDOM();
     const wrapper = currentFile.$('#postFeed');
-
     wrapper.children().not('template').remove();
 
     posts.map(post => {
-
         if (!category || post.tags.join().includes(category)) addPostToFeed(post, wrapper, currentFile.$)
-
     });
 
     const formattedOutput = String(currentFile.$.html()).replace(/\n\s*\n/g, '\n')
@@ -346,11 +343,15 @@ function buildTagDirectories(tags, destinationDirectory) {
         pageTemplateFile.$('.tagName').append(tag);
 
         if (destinationDirectory == blog) {
-            blogPosts.map(post => post.tags.includes(tag) ? addPostToFeed(post, pageTemplateFile.$('#postFeed'), pageTemplateFile.$) : null);
+            blogPosts.map(post => {
+                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$('#postFeed'), pageTemplateFile.$)
+            })
         }
 
         if (destinationDirectory == work) {
-            workPosts.map(post => post.tags.includes(tag) ? addPostToFeed(post, pageTemplateFile.$('#postFeed'), pageTemplateFile.$) : null);
+            workPosts.map(post => {
+                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$('#postFeed'), pageTemplateFile.$)
+            })
         }
 
         fs.writeFileSync(destination, pageTemplateFile.$.html());
