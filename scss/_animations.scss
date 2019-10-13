@@ -27,23 +27,18 @@ body.loaded [data-load] {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
-[data-scroll] {
-    will-change: transform;
-    transition: var(--TR-M);
-}
-
-p [data-scroll="true"] {
-    transform: scale(1);
-    opacity: 1;
-}
-
-p [data-scroll="false"] {
-    transform: scale(.94);
-    opacity: .9;
-}
-
 @media screen and (max-width: $mq) {
+
     [data-load] {
         transform: translateY(1em);
+    }
+
+    [data-scroll] {
+        will-change: transform;
+        transform: scale(.95);
+    }
+
+    p [data-scroll="true"] {
+        animation: load var(--TR-M) forwards running;
     }
 }

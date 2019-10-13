@@ -274,7 +274,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
         const postTemplateFile = new HTMLFile(postTemplate).parse(true).loadDOM();
 
         pageTemplateFile.$('#main').append(postTemplateFile.html);
-        appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, pageTemplateFile.$);
+        appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, $);
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
         Object.keys(post).map(key => {

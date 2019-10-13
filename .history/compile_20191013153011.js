@@ -272,9 +272,10 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
         const postLocation = public + post.link + '/index.html';
         const pageTemplateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
         const postTemplateFile = new HTMLFile(postTemplate).parse(true).loadDOM();
+        const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
         pageTemplateFile.$('#main').append(postTemplateFile.html);
-        appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, pageTemplateFile.$);
+        appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, $);
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
         Object.keys(post).map(key => {
