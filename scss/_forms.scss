@@ -15,6 +15,10 @@ input[type="email"] {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     margin-right: 1em;
+
+    &:placeholder-shown {
+        border-color: var(--CL-2);
+    }
 }
 
 .button.submit-wrapper {
@@ -31,7 +35,14 @@ input[type="submit"] {
     }
 }
 
-input[type="text"]:placeholder-shown,
-input[type="email"]:placeholder-shown {
-    border-color: var(--CL-2);
+.email-signup {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@media screen and (max-width: $mq) {
+    .email-signup {
+        margin-top: var(--PAD-S);
+        display: block;
+    }
 }
