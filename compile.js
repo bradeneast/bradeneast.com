@@ -31,7 +31,6 @@ class HTMLFile {
 const consoleBlue = '\x1b[34m%s\x1b[0m';
 const consolePurple = '\x1b[35m%s\x1b[0m';
 const consoleGreen = '\x1b[32m%s\x1b[0m';
-const consoleCyan = '\x1b[36m%s\x1b[0m';
 
 const ignoreChar = '_';
 const public = './public/';
@@ -276,7 +275,13 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
         const postTemplateFile = new HTMLFile(postTemplate).parse(true).loadDOM();
 
         pageTemplateFile.$('#main').append(postTemplateFile.html);
-        appendMetaTags(`<!--title: ${post.title}, description: ${post.body.substr(0, 50)},-->`, pageTemplateFile.$);
+
+        appendMetaTags(`
+        <!--title: ${post.title},
+        description: ${post.body.substr(0, 50)},
+        image: https://www.bradeneast.com${post.image}-->`,
+        pageTemplateFile.$);
+
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
         Object.keys(post).map(key => {

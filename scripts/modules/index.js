@@ -5,7 +5,7 @@ const consoleInfoStyles = `
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 500;
-`
+`;
 
 // Insert copy of boiler plate that shows after main content on mobile instead of before
 function copyBoilerPlateForMobile() {
