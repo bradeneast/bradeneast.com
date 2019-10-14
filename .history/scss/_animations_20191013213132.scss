@@ -36,7 +36,6 @@ body.loaded [data-load] {
     p [data-scroll] {
         will-change: transform;
         transform: scale(.95);
-        opacity: .84;
     }
 
     p [data-scroll="true"] {
