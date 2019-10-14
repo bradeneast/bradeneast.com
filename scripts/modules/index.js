@@ -40,8 +40,10 @@ allImages.map(img => {
 
     clearImageFormatting(img);
     altFromSource(img);
-    animateOnScroll(img, .2);
+    animateOnScroll(img, {
+        threshold: .2
+    });
 
 })
 
-console.info('%c ⓘ Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun! \n - Braden', consoleInfoStyles);
+console.info('%c ⓘ Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun! \n - Braden ', consoleInfoStyles);

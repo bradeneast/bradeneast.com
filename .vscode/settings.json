@@ -1,24 +1,27 @@
 {
     "saveAndRun": {
-        "commands": [{
+        "commands": [
+            {
                 "match": "\\.html$|\\.md$",
                 "cmd": "node compile",
                 "silent": true
             },
-            {
-                "match": "scripts\\\\modules\\\\.*",
-                "cmd": "tsc",
-                "silent": true
-            }
+            // {
+            //     "match": "scripts\\\\modules\\\\.*",
+            //     "cmd": "tsc",
+            //     "silent": true
+            // }
         ]
     },
     "liveServer.settings.root": "/public",
     "liveServer.settings.wait": 600,
-    "liveSassCompile.settings.formats": [{
-        "format": "compressed",
-        "extensionName": ".css",
-        "savePath": "/public/_css"
-    }],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".css",
+            "savePath": "/public/_css"
+        }
+    ],
     "liveSassCompile.settings.generateMap": false,
     "minify.js": {
         "mangle": true,

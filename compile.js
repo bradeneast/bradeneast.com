@@ -67,13 +67,20 @@ let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 
 
 // GLOBAL FUNCTIONS
-function getMetaProperty(metaData, property) {
-    return metaData.split(property + ':').pop().split(',')[0].replace(' ', '');
+function trimWhiteSpace(string) {
+
+    const condensed = string.replace(/\n+/gm, '\n').replace(/\s+/gm, ' ');
+
+    if (condensed.charAt(0) == ' ' || condensed.charAt(0) == '\n') {
+        return condensed.substring(1)
+    } else return condensed
 }
+
 
 function linkify(string) {
     return encodeURI(string.replace(/[^A-Za-z0-9 ]/g, '').toLowerCase()).replace(/%20/g, '-');
 }
+
 
 function dynamicSort(property) {
     var sortOrder = 1;
@@ -87,9 +94,20 @@ function dynamicSort(property) {
     }
 }
 
+
 fs.cleandirSync = function (directory) {
     fs.readdirSync(directory).map(file => file.charAt(0) != ignoreChar ? fs.removeSync(directory + file) : null);
 }
+
+
+function getMetaProperty(metaData, property) {
+
+    const split = metaData.split(`${property}:`);
+    const metaContent = String(split[1]).substring(0, String(split[1]).indexOf(','));
+
+    return trimWhiteSpace(metaContent.replace(/<[^>]*>/g, ''));
+}
+
 
 function appendMetaTags(metaData, selector) {
 
@@ -97,15 +115,18 @@ function appendMetaTags(metaData, selector) {
 
         prop = prop.toLowerCase();
 
-        if (metaData.includes(prop + ':')) {
+        if (metaData.includes(`${prop}:`)) {
 
-            const content = getMetaProperty(metaData, prop).replace('/_images/', 'https://bradeneast.com/_images/');
-            prop == 'title' ? selector(prop).text('Braden East | ' + content) : null;
-            prop == 'description' ? selector('head').append(`\n<meta name="description" content="${content}">`) : null;
-            selector('head').append(`\n<meta property="og:${prop}" content="${content}">`);
+            const content = getMetaProperty(metaData, prop).replace('/_images/', 'https://www.bradeneast.com/_images/');
+
+            if (prop == 'title') selector(prop).text(`Braden East | ${content}`);
+            if (prop == 'description') selector('head').append(`\n<meta name="${prop}" content="${content}">`);
+
+            selector('head').prepend(`\n<meta property="og:${prop}" content="${content}">`);
         }
     })
 }
+
 
 function publishPagesFrom(directory) {
 
@@ -154,6 +175,7 @@ function publishPagesFrom(directory) {
     })
 }
 
+
 function addPostToRSS(post) {
 
     let date = new Date(post.date);
@@ -163,13 +185,14 @@ function addPostToRSS(post) {
     RSSFeedContent += `
         <item>
         <title>${post.title}</title>
-        <link>https://bradeneast.com/blog/${post.link}</link>
-        <guid>https://bradeneast.com/blog/${post.link}</guid>
+        <link>https://www.bradeneast.com/blog/${post.link}</link>
+        <guid>https://www.bradeneast.com/blog/${post.link}</guid>
         <pubDate>${date.toUTCString()}</pubDate>
         ${categories}
         <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<[^>]*>/g, '')}</description>
         </item>`;
 }
+
 
 function createPostFeed(posts, page, category) {
 
@@ -184,6 +207,7 @@ function createPostFeed(posts, page, category) {
     const formattedOutput = String(currentFile.$.html()).replace(/\n\s*\n/g, '\n')
     fs.writeFileSync(page, formattedOutput);
 }
+
 
 function addPostToFeed(post, wrapper, $) {
     const newPost = $('template').contents().clone();
@@ -207,6 +231,7 @@ function addPostToFeed(post, wrapper, $) {
     })
     wrapper.append(newPost);
 }
+
 
 function readyPostData(post, parentDirectory) {
 
@@ -278,9 +303,9 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         appendMetaTags(`
         <!--title: ${post.title},
-        description: ${post.body.substr(0, 50)},
-        image: https://www.bradeneast.com${post.image}-->`,
-        pageTemplateFile.$);
+        description: The blog for ${blogAudience} - ${blogTagline},
+        image: ${post.image},-->`,
+            pageTemplateFile.$);
 
         fs.mkdirSync(postLocation.replace('/index.html', ''));
 
@@ -332,6 +357,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
     })
 }
 
+
 function buildTagDirectories(tags, destinationDirectory) {
 
     fs.mkdirSync(`${destinationDirectory}tags`);
@@ -368,6 +394,7 @@ function buildTagDirectories(tags, destinationDirectory) {
         console.log(consoleGreen, `TAG created for ${tag}`);
     })
 }
+
 
 // Clear old pages
 fs.cleandirSync(public, ignoreChar);

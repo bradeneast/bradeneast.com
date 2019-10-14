@@ -1,14 +1,19 @@
-function animateOnScroll(element, threshold) {
+function animateOnScroll(element, {
+    threshold: threshold,
+    rootMargin: rootMargin,
+    root: root
+}) {
 
     const scrollAttr = 'data-scroll';
-    const options = {
-        threshold: threshold
-    };
     const observer = new IntersectionObserver(entries => {
 
         entries.map(entry => entry.target.setAttribute(scrollAttr, entry.isIntersecting))
 
-    }, options);
+    }, {
+        threshold: threshold,
+        rootMargin: rootMargin,
+        root: root,
+    });
 
     observer.observe(element);
 }
