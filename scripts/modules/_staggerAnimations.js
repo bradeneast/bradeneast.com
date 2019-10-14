@@ -1,4 +1,4 @@
-function Stagger(params) {
+function staggerAnimations(params) {
 
     let parent = params.parent;
     let pr = parent.getBoundingClientRect();

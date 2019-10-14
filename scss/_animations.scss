@@ -27,16 +27,20 @@ body.loaded [data-load] {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
-@media screen and (max-width: $mq) {
+// .item[data-scroll="true"] .bg::after,
+// .item[data-scroll="true"] .content {
+//     opacity: 1;
+// }
 
+@media screen and (max-width: $mq) {
     [data-load] {
         transform: translateY(1em);
     }
 
     p [data-scroll] {
         will-change: transform;
-        transform: scale(.95);
-        opacity: .84;
+        transform: scale(0.95);
+        opacity: 0.84;
     }
 
     p [data-scroll="true"] {

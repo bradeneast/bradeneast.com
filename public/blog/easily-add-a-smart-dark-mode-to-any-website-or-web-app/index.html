@@ -3,7 +3,7 @@
 
 <head>
 <meta property="og:image" content="https://www.bradeneast.com/_images/blog/starry-sky.jpg">
-<meta property="og:description" content="The blog for dev-signers - Gain confidence designing and coding stellar user experiences.">
+<meta property="og:description" content="The blog for dev-signers - Gain confidence designing and coding stellar interfaces.">
 <meta property="og:title" content="Easily add a &#x2018;smart&#x2019; dark mode to any website or web app">
     <noscript>
         It's not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
@@ -11,6 +11,12 @@
 
     <!--Preloads-->
     <link rel="preload" href="/_css/main.css" as="style">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous">
 
     <!--Meta-->
     <meta charset="UTF-8">
@@ -36,7 +42,7 @@
     <script defer src="/_scripts/main.js" type="text/javascript"></script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
 
-<meta name="description" content="The blog for dev-signers - Gain confidence designing and coding stellar user experiences."></head>
+<meta name="description" content="The blog for dev-signers - Gain confidence designing and coding stellar interfaces."></head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
@@ -130,11 +136,11 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
 </code></pre>
 <h4>Javascript</h4>
 <p>To make this work, we need two functions - one that checks if dark mode is enabled on page load, and another that toggles dark mode when an event happens. We can use <code>JSON.parse()</code> to ensure that the darkModeOn value gets returned as the boolean <code>true</code>, not the string &#x201C;true&#x201D; when we get it from local storage.</p>
-<pre><code class="language-javascript"><span class="token function">checkDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">checkDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-<span class="token keyword">function</span> <span class="token function">checkDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> darkModeOn <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">&apos;darkModeOn&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>darkModeOn<span class="token punctuation">)</span> <span class="token punctuation">{</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>darkModeOn<span class="token punctuation">)</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token punctuation">}</span>
 
 <span class="token keyword">function</span> <span class="token function">toggleDarkMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -142,17 +148,53 @@ body.dark-mode ol p</span> <span class="token punctuation">{</span>
     <span class="token comment">// If dark mode is on, turn off, otherwise, turn on</span>
     darkModeOn <span class="token operator">?</span> darkModeOn <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token punctuation">:</span> darkModeOn <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
-    <span class="token comment">// Store dark mode state in local storage</span>
+    <span class="token comment">// Store setting in local storage</span>
     localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">&apos;darkModeOn&apos;</span><span class="token punctuation">,</span> darkModeOn<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// Toggle dark mode class on the body</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">&apos;dark-mode&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token punctuation">}</span>
 </code></pre>
-<p>P.S. Don&#x2019;t click the toggle at the bottom of this page! ;)</p>
 <p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=%20easily%20add%20a%20smart%20dark%20mode%20to%20any%20website%20or%20web%20app%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog//blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app">share this article</a> with your followers. I appreciate it!</p></div>
         </div>
     </div>
+
+    <div data-load="move">
+        <p>
+            <em>Want to dive deeper? Join the community of dev-signers on my email list.</em>
+        </p>
+        <component data-name="email-signup"><div id="mc_embed_signup">
+
+    <form action="https://gmail.us3.list-manage.com/subscribe/post?u=1c103417f1b53af926251412e&amp;id=501e8bc2f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+        <div class="email-signup" id="mc_embed_signup_scroll" style="display: flex; align-items: center;">
+
+            <div class="mc-field-group" data-load="move" style="animation-delay: .05s">
+                <input type="email" value placeholder="your email address..." name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_1c103417f1b53af926251412e_501e8bc2f2" tabindex="-1" value>
+            </div>
+
+            <div class="button submit-wrapper" data-load="move" style="animation-delay: .1s">
+                <input type="submit" value="subscribe" name="subscribe" id="mc-embedded-subscribe">
+                <div class="button-animation"></div>
+            </div>
+
+        </div>
+
+    </form>
+
+</div></component>
+    </div>
+
 </section>
 
 <section data-load="move">

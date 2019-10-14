@@ -58,11 +58,11 @@ body.dark-mode ol p {
 To make this work, we need two functions - one that checks if dark mode is enabled on page load, and another that toggles dark mode when an event happens. We can use `JSON.parse()` to ensure that the darkModeOn value gets returned as the boolean `true`, not the string "true" when we get it from local storage.
 
 ```javascript
-checkDarkMode();
-
 function checkDarkMode() {
+
     let darkModeOn = JSON.parse(localStorage.getItem('darkModeOn')) || false;
-    if (darkModeOn) { document.body.classList.add('dark-mode') }
+    if (darkModeOn) document.body.classList.add('dark-mode');
+
 }
 
 function toggleDarkMode() {
@@ -70,12 +70,11 @@ function toggleDarkMode() {
     // If dark mode is on, turn off, otherwise, turn on
     darkModeOn ? darkModeOn = false : darkModeOn = true;
 
-    // Store dark mode state in local storage
+    // Store setting in local storage
     localStorage.setItem('darkModeOn', darkModeOn);
 
     // Toggle dark mode class on the body
     document.body.classList.toggle('dark-mode');
+
 }
 ```
-
-P.S. Don't click the toggle at the bottom of this page! ;)

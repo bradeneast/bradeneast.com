@@ -7,8 +7,14 @@ input[type="submit"] {
     box-shadow: none;
     background: none;
     margin: 0.5em 0;
-    line-height: 1;
     transition: var(--TR-S);
+}
+
+input[type="text"],
+input[type="email"] {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    margin-right: 1em;
 }
 
 .button.submit-wrapper {

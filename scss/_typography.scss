@@ -1,3 +1,30 @@
+@font-face {
+    font-family: Metropolis;
+    src: local("Metropolis"), url("/_fonts/metropolis-regular.woff2") format("woff2"),
+        url("/_fonts/metropolis-regular.woff") format("woff");
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
+@font-face {
+    font-family: Metropolis;
+    src: local("Metropolis"), url("/_fonts/metropolis-semibold.woff2") format("woff2"),
+        url("/_fonts/metropolis-semibold.woff") format("woff");
+    font-weight: 700;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
+@font-face {
+    font-family: Metropolis;
+    src: local("Metropolis"), url("/_fonts/metropolis-regular-italic.woff2") format("woff2"),
+        url("/_fonts/metropolis-regular-italic.woff") format("woff");
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
 h1 {
     font-size: 2em;
     line-height: 1.2;
@@ -54,6 +81,11 @@ pre {
     border: var(--BDR) solid var(--CL-2);
     border-radius: var(--RADIUS);
     padding: var(--PAD-M);
+}
+
+blockquote {
+    padding-left: 2em;
+    border-left: var(--BDR) solid var(--CL-1);
 }
 
 ::selection {

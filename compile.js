@@ -24,6 +24,21 @@ class HTMLFile {
         this.$ = cheerio.load(this.html)
         return this
     }
+
+    populateComponents() {
+
+        const select = this.$;
+
+        select('component').each(function (i, e) {
+            const component = select(this);
+            const componentName = component.attr('data-name');
+            const componentHTML = new HTMLFile(`${staticComponents + componentName}.html`).parse(true);
+
+            component.append(componentHTML.html);
+        })
+
+        return this
+    }
 }
 
 
@@ -42,6 +57,7 @@ const postsFolder = './posts/';
 const blogPostSrc = postsFolder + '_blog/';
 const workPostSrc = postsFolder + '_work/';
 const postTemplate = postsFolder + '_template.html';
+const staticComponents = './static_components/';
 const acceptableMetaProperties = ['title', 'description', 'image'];
 
 let blogPosts = [];
@@ -51,7 +67,7 @@ let workTags = [];
 
 const blogAudience = 'dev-signers';
 const blogHeadline = `Welcome to the blog for ${blogAudience}.`;
-const blogTagline = 'Gain confidence designing and coding stellar user experiences.';
+const blogTagline = 'Gain confidence designing and coding stellar interfaces.';
 
 const today = new Date();
 const RSSFeed = 'feed.xml';
@@ -139,7 +155,7 @@ function publishPagesFrom(directory) {
                 const location = directory + child;
                 const destination = directory.replace('pages', 'public') + child;
                 const templateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
-                const currentFile = new HTMLFile(location).parse(true).loadDOM();
+                const currentFile = new HTMLFile(location).parse(true).loadDOM().populateComponents();
 
                 if (directory.includes('blog')) {
 
@@ -297,7 +313,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         const postLocation = public + post.link + '/index.html';
         const pageTemplateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
-        const postTemplateFile = new HTMLFile(postTemplate).parse(true).loadDOM();
+        const postTemplateFile = new HTMLFile(postTemplate).parse(true).loadDOM().populateComponents();
 
         pageTemplateFile.$('#main').append(postTemplateFile.html);
 

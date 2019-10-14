@@ -12,7 +12,7 @@
     "downlevelIteration": true,
     "esModuleInterop": false,
     "incremental": true,
-    "watch": true
+    "watch": false
   },
   "files": [
     "./scripts/modules.min.js"

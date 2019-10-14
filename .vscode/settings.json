@@ -6,11 +6,11 @@
                 "cmd": "node compile",
                 "silent": true
             },
-            // {
-            //     "match": "scripts\\\\modules\\\\.*",
-            //     "cmd": "tsc",
-            //     "silent": true
-            // }
+            {
+                "match": "scripts\\\\modules\\\\.*",
+                "cmd": "tsc",
+                "silent": true
+            }
         ]
     },
     "liveServer.settings.root": "/public",

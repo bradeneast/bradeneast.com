@@ -25,15 +25,22 @@ copyBoilerPlateForMobile();
 
 startTouchListeners();
 
-staggerItems.forEach(item => {
+// document.querySelectorAll('[data-scroll]').forEach(item => {
 
-    Stagger({
-        parent: item,
-        intensity: .3,
-        direction: 'from',
-        origin: 'top left',
+//     staggerAnimations({
+//         parent: item,
+//         intensity: .3,
+//         direction: 'from',
+//         origin: 'top left',
+//     })
+
+// })
+
+scrollItems.forEach(item => {
+
+    animateOnScroll(item, {
+        threshold: .7
     })
-
 })
 
 allImages.map(img => {
