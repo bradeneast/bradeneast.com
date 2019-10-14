@@ -67,30 +67,54 @@
     </div>
 </section>
 <section data-load="move">
-    <ul class="gallery" id="postFeed" data-stagger="children">
-        <template>
-            <li class="item" data-load="scale">
-                <a href class="link">
+    <component data-name="post-feed"><ul class="gallery" id="postFeed" data-stagger="children">
+    <template>
+        <li class="item" data-load="scale" data-scroll>
+            <a href class="link">
+                <div class="bg">
                     <img class="image">
-                </a>
-            </li>
-        </template>
-            <li class="item" data-load="scale">
-                <a href="/work/judes" class="link">
+                </div>
+                <div class="content">
+                    <p class="title"></p>
+                    <p class="tags"></p>
+                </div>
+            </a>
+        </li>
+    </template>
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/work/judes" class="link">
+                <div class="bg">
                     <img class="image" src="/_images/work/judes/judes-stacked.svg">
-                </a>
-            </li>
-            <li class="item" data-load="scale">
-                <a href="/work/360-farms" class="link">
+                </div>
+                <div class="content">
+                    <p class="title">Jude&#x2019;s</p>
+                    <p class="tags">identity design</p>
+                </div>
+            </a>
+        </li>
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/work/360-farms" class="link">
+                <div class="bg">
                     <img class="image" src="/_images/work/360/360-inline.svg">
-                </a>
-            </li>
-            <li class="item" data-load="scale">
-                <a href="/work/fish-snax" class="link">
+                </div>
+                <div class="content">
+                    <p class="title">360 Farms</p>
+                    <p class="tags">brand strategy, identity design</p>
+                </div>
+            </a>
+        </li>
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/work/fish-snax" class="link">
+                <div class="bg">
                     <img class="image" src="/_images/work/fish/fish-stacked.svg">
-                </a>
-            </li>
-        </ul>
+                </div>
+                <div class="content">
+                    <p class="title">Fish Snax</p>
+                    <p class="tags">identity design</p>
+                </div>
+            </a>
+        </li>
+    </ul></component>
 </section></div>
     <footer>
         &#xA9; 2019 Braden East

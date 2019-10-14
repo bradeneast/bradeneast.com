@@ -26,14 +26,12 @@ class HTMLFile {
     }
 
     populateComponents() {
-
         const select = this.$;
 
         select('component').each(function (i, e) {
             const component = select(this);
             const componentName = component.attr('data-name');
             const componentHTML = new HTMLFile(`${staticComponents + componentName}.html`).parse(true);
-
             component.append(componentHTML.html);
         })
 
@@ -157,21 +155,8 @@ function publishPagesFrom(directory) {
                 const templateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
                 const currentFile = new HTMLFile(location).parse(true).loadDOM().populateComponents();
 
-                if (directory.includes('blog')) {
-
-                    // Update blog headline and tagline
-                    currentFile.$('#blog-headline').empty().text(blogHeadline);
-                    currentFile.$('#blog-tagline').empty().text(blogTagline);
-
-                    // Prepend main content to main element
-                    templateFile.$('#main').append(currentFile.$.html());
-
-                } else {
-
-                    // Prepend main content to main element as is
-                    templateFile.$('#main').append(currentFile.html);
-
-                }
+                // Prepend main content to main element
+                templateFile.$('#main').append(currentFile.html);
 
                 // Append meta tags to head element
                 if (currentFile.html[0]) { appendMetaTags(currentFile.html[0].data, templateFile.$) }
@@ -387,7 +372,7 @@ function buildTagDirectories(tags, destinationDirectory) {
         fs.copyFileSync(pageTemplate, destination);
 
         const pageTemplateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
-        const tagTemplateFile = new HTMLFile(`${postsFolder}_tags.html`).parse(true);
+        const tagTemplateFile = new HTMLFile(`${postsFolder}_tags.html`).parse(true).loadDOM().populateComponents();
         const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
         pageTemplateFile.$('#main').prepend(tagTemplateFile.html);

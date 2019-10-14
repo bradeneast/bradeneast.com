@@ -1,6 +1,5 @@
 const main = document.getElementById('main');
 const allImages = Array.from(document.getElementsByTagName('img'));
-const staggerItems = document.querySelectorAll('[data-stagger]');
 const consoleInfoStyles = `
     font-family: sans-serif;
     font-size: 14px;
@@ -25,23 +24,23 @@ copyBoilerPlateForMobile();
 
 startTouchListeners();
 
+document.querySelectorAll('[data-stagger]').forEach(item => {
+
+    staggerAnimations({
+        parent: item,
+        intensity: .3,
+        direction: 'from',
+        origin: 'top left',
+    })
+
+})
+
 // document.querySelectorAll('[data-scroll]').forEach(item => {
 
-//     staggerAnimations({
-//         parent: item,
-//         intensity: .3,
-//         direction: 'from',
-//         origin: 'top left',
+//     animateOnScroll(item, {
+//         threshold: .7
 //     })
-
 // })
-
-scrollItems.forEach(item => {
-
-    animateOnScroll(item, {
-        threshold: .7
-    })
-})
 
 allImages.map(img => {
 

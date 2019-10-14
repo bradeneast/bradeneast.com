@@ -83,61 +83,61 @@
 </section>
 
 <section data-load="move">
-    <ul class="gallery" id="postFeed" data-stagger="children">
-        <template>
-            <li class="item" data-load="scale">
-                <a class="link">
-                    <div class="bg">
-                        <img class="image">
-                    </div>
+    <component data-name="post-feed"><ul class="gallery" id="postFeed" data-stagger="children">
+    <template>
+        <li class="item" data-load="scale" data-scroll>
+            <a href class="link">
+                <div class="bg">
+                    <img class="image">
+                </div>
 
-                    <div class="content">
-                        <p class="title"></p>
-                        <p class="tags"></p>
-                    </div>
-                </a>
-            </li>
-        </template>
+                <div class="content">
+                    <p class="title"></p>
+                    <p class="tags"></p>
+                </div>
+            </a>
+        </li>
+    </template>
+
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/work/judes" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/work/judes/judes-stacked.svg">
+                </div>
+
+                <div class="content">
+                    <p class="title">Jude&#x2019;s</p>
+                    <p class="tags">identity design</p>
+                </div>
+            </a>
+        </li>
     
-            <li class="item" data-load="scale">
-                <a class="link" href="/work/judes">
-                    <div class="bg">
-                        <img class="image" src="/_images/work/judes/judes-stacked.svg">
-                    </div>
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/work/360-farms" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/work/360/360-inline.svg">
+                </div>
 
-                    <div class="content">
-                        <p class="title">Jude&#x2019;s</p>
-                        <p class="tags">identity design</p>
-                    </div>
-                </a>
-            </li>
-        
-            <li class="item" data-load="scale">
-                <a class="link" href="/work/360-farms">
-                    <div class="bg">
-                        <img class="image" src="/_images/work/360/360-inline.svg">
-                    </div>
+                <div class="content">
+                    <p class="title">360 Farms</p>
+                    <p class="tags">brand strategy, identity design</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/work/fish-snax" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/work/fish/fish-stacked.svg">
+                </div>
 
-                    <div class="content">
-                        <p class="title">360 Farms</p>
-                        <p class="tags">brand strategy, identity design</p>
-                    </div>
-                </a>
-            </li>
-        
-            <li class="item" data-load="scale">
-                <a class="link" href="/work/fish-snax">
-                    <div class="bg">
-                        <img class="image" src="/_images/work/fish/fish-stacked.svg">
-                    </div>
-
-                    <div class="content">
-                        <p class="title">Fish Snax</p>
-                        <p class="tags">identity design</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
+                <div class="content">
+                    <p class="title">Fish Snax</p>
+                    <p class="tags">identity design</p>
+                </div>
+            </a>
+        </li>
+    </ul></component>
 </section>
         <!--CONTENT WILL GO HERE-->
     </div>

@@ -83,35 +83,35 @@
 </section>
 
 <section data-load="move">
-    <ul class="gallery" id="postFeed" data-stagger="children">
-        <template>
-            <li class="item" data-load="scale">
-                <a class="link">
-                    <div class="bg">
-                        <img class="image">
-                    </div>
+    <component data-name="post-feed"><ul class="gallery" id="postFeed" data-stagger="children">
+    <template>
+        <li class="item" data-load="scale" data-scroll>
+            <a href class="link">
+                <div class="bg">
+                    <img class="image">
+                </div>
 
-                    <div class="content">
-                        <p class="title"></p>
-                        <p class="tags"></p>
-                    </div>
-                </a>
-            </li>
-        </template>
-    
-            <li class="item" data-load="scale">
-                <a class="link" href="/blog/the-logo-manifesto">
-                    <div class="bg">
-                        <img class="image" src="/_images/blog/vw-hood.jpg">
-                    </div>
+                <div class="content">
+                    <p class="title"></p>
+                    <p class="tags"></p>
+                </div>
+            </a>
+        </li>
+    </template>
 
-                    <div class="content">
-                        <p class="title">The Logo Manifesto</p>
-                        <p class="tags">design, branding</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/the-logo-manifesto" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/vw-hood.jpg">
+                </div>
+
+                <div class="content">
+                    <p class="title">The Logo Manifesto</p>
+                    <p class="tags">design, branding</p>
+                </div>
+            </a>
+        </li>
+    </ul></component>
 </section>
         <!--CONTENT WILL GO HERE-->
     </div>

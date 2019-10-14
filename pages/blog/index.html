@@ -4,27 +4,16 @@
 -->
 <section>
     <div>
-        <h1 id="blog-headline" data-load="clip"></h1>
-        <p id="blog-tagline" data-load="move"></p>
+        <h1 data-load="clip">
+            Welcome to the blog for <component data-name="blog-audience"></component>.
+        </h1>
+        <p data-load="move">
+            <component data-name="blog-tagline"></component>
+        </p>
         <component data-name="email-signup"></component>
     </div>
 </section>
 
 <section data-load="move">
-    <ul class="gallery" id="postFeed" data-stagger="children">
-        <template>
-            <li class="item" data-load="scale" data-scroll>
-                <a href="" class="link">
-                    <div class="bg">
-                        <img class="image" />
-                    </div>
-
-                    <div class="content">
-                        <p class="title"></p>
-                        <p class="tags"></p>
-                    </div>
-                </a>
-            </li>
-        </template>
-    </ul>
+    <component data-name="post-feed"></component>
 </section>
