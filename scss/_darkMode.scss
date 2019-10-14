@@ -32,10 +32,14 @@ html.dm {
     }
 }
 
-html.dm .post-nav {
-    color: white;
+html.dm {
+    .item .bg::after,
+    .item .content {
+        filter: invert(1);
+    }
 
-    * {
+    .post-nav {
         font-weight: 400;
+        color: white;
     }
 }

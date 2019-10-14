@@ -56,6 +56,7 @@ const blogPostSrc = postsFolder + '_blog/';
 const workPostSrc = postsFolder + '_work/';
 const postTemplate = postsFolder + '_template.html';
 const staticComponents = './static_components/';
+const feedAttribute = 'data-feed';
 const acceptableMetaProperties = ['title', 'description', 'image'];
 
 let blogPosts = [];
@@ -198,7 +199,7 @@ function addPostToRSS(post) {
 function createPostFeed(posts, page, category) {
 
     const currentFile = new HTMLFile(page).parse(true).loadDOM();
-    const wrapper = currentFile.$('#postFeed');
+    const wrapper = currentFile.$(`[${feedAttribute}]`);
     wrapper.children().not('template').remove();
 
     posts.map(post => {
@@ -381,13 +382,13 @@ function buildTagDirectories(tags, destinationDirectory) {
 
         if (destinationDirectory == blog) {
             blogPosts.map(post => {
-                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$('#postFeed'), pageTemplateFile.$)
+                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$(`[${feedAttribute}]`), pageTemplateFile.$)
             })
         }
 
         if (destinationDirectory == work) {
             workPosts.map(post => {
-                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$('#postFeed'), pageTemplateFile.$)
+                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$(`[${feedAttribute}]`), pageTemplateFile.$)
             })
         }
 
