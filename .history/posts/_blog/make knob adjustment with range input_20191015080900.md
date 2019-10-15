@@ -1,10 +1,12 @@
 # Make knobs and dials with HTML and CSS
 ## 2019/09/09
-### html, css, ui
+### html, css, javascript, ui
 
 In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.
 
 > Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the 'forbidden riff.'
+
+When would we want to create a knob or dial adjustment?  Well, if you’re a talented Christmas goat, you might want to develop a web app with some digital effects for your seasonal guitar solos.
 
 ![a sound board at a live concert](/_images/blog/sound-board.jpg)
 
@@ -168,7 +170,7 @@ document.addEventListener('input', function (e) {
 
 It works! The only thing left is to choose a stop and start position for the dial so it works like we would expect from the real thing.
 
-To do that, we can do a little more math and adjust our CSS `calc()` expression. Now, it limits the rotation to 300 degrees out of 360. Then, we add half of that 300 degrees (150) to center everything.
+To do that, we can do a little more math and adjust our CSS `calc()` expression. Now, it limits the rotation to 300 out of 360. Then, we add 180, minus half of the 60 degree difference (leaving 150) to center everything.
 
 Let's also rotate the range input to `-65deg` for a more natural click and drag behavior.
 
