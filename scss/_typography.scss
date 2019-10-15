@@ -37,13 +37,19 @@ h3 {
     padding-top: var(--PAD-S);
 }
 
-p~h4 {
+h2,
+h3,
+h4 {
+    line-height: 1.4;
+}
+
+p ~ h4 {
     margin-top: var(--PAD-L);
 }
 
 p,
-p~ul,
-p~ol {
+p ~ ul,
+p ~ ol {
     position: relative;
     margin-bottom: var(--PAD-S);
 
@@ -61,8 +67,8 @@ p~ol {
     }
 }
 
-p~ul,
-p~ol {
+p ~ ul,
+p ~ ol {
     margin: var(--PAD-S) 0;
     padding-left: 1em;
 

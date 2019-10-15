@@ -197,14 +197,23 @@ function addPostToRSS(post) {
 }
 
 
-function createPostFeed(posts, page, category) {
+function createPostFeed({
+    posts: posts,
+    page: page,
+    category: category,
+    count: count
+    }) {
 
     const currentFile = new HTMLFile(page).parse(true).loadDOM();
     const wrapper = currentFile.$(`[${feedAttribute}]`);
     wrapper.children().not('template').remove();
 
-    posts.map(post => {
-        if (!category || post.tags.join().includes(category)) addPostToFeed(post, wrapper, currentFile.$)
+    posts.map((post, index) => {
+
+        if (!category || post.tags.join().includes(category)) {
+
+            if (!count || index < count) addPostToFeed(post, wrapper, currentFile.$);
+        }
     });
 
     const formattedOutput = String(currentFile.$.html()).replace(/\n\s*\n/g, '\n')
@@ -416,7 +425,10 @@ fs.createFileSync(blog + RSSFeed);
 fs.readdirSync(blogPostSrc).map(post => readyPostData(post, blogPostSrc));
 blogPosts.sort(dynamicSort('date')).reverse();
 createNewPostsFromTemplate(blogPosts, blog);
-createPostFeed(blogPosts, `${blog}index.html`);
+createPostFeed({
+    posts: blogPosts,
+    page: `${blog}index.html`,
+});
 buildTagDirectories(blogTags, blog);
 
 // Complete RSS feed
@@ -426,8 +438,18 @@ fs.writeFileSync(blog + RSSFeed, `${RSSFeedContent}</channel></rss>`);
 fs.readdirSync(workPostSrc).map(post => readyPostData(post, workPostSrc));
 workPosts.sort(dynamicSort('date')).reverse();
 createNewPostsFromTemplate(workPosts, work);
-createPostFeed(workPosts, `${work}index.html`);
+createPostFeed({
+    posts: workPosts,
+    page: `${work}index.html`,
+});
 buildTagDirectories(workTags, work);
+
+// Add feeds to homepage
+createPostFeed({
+    posts: blogPosts,
+    page: `${public}index.html`,
+    count: 4
+    });
 
 
 console.timeEnd('\n>> SITE COMPILED IN');
