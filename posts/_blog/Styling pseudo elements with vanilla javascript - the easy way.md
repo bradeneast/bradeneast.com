@@ -2,7 +2,7 @@
 ## 2019/08/20
 ### html, css, javascript
 
-I'm a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
+I'm a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
 
 ![a wave in the ocean](/_images/blog/wave.jpg)
 

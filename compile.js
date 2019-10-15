@@ -47,6 +47,7 @@ const consoleGreen = '\x1b[32m%s\x1b[0m';
 
 const ignoreChar = '_';
 const public = './public/';
+const root = 'https://www.bradeneast.com';
 const blog = public + 'blog/';
 const work = public + 'work/';
 const pageTemplate = './_template.html';
@@ -70,7 +71,7 @@ const blogTagline = 'Gain confidence designing and coding stellar interfaces.';
 
 const today = new Date();
 const RSSFeed = 'feed.xml';
-const RSSLink = `https://www.bradeneast.com/blog/${RSSFeed}`;
+const RSSLink = `${root}/blog/${RSSFeed}`;
 let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
@@ -132,7 +133,7 @@ function appendMetaTags(metaData, selector) {
 
         if (metaData.includes(`${prop}:`)) {
 
-            const content = getMetaProperty(metaData, prop).replace('/_images/', 'https://www.bradeneast.com/_images/');
+            const content = getMetaProperty(metaData, prop).replace('/_images/', `${root}/_images/`);
 
             if (prop == 'title') selector(prop).text(`Braden East | ${content}`);
             if (prop == 'description') selector('head').append(`\n<meta name="${prop}" content="${content}">`);
@@ -187,8 +188,8 @@ function addPostToRSS(post) {
     RSSFeedContent += `
         <item>
         <title>${post.title}</title>
-        <link>https://www.bradeneast.com/blog/${post.link}</link>
-        <guid>https://www.bradeneast.com/blog/${post.link}</guid>
+        <link>${root + post.link}</link>
+        <guid>${root + post.link}</guid>
         <pubDate>${date.toUTCString()}</pubDate>
         ${categories}
         <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<[^>]*>/g, '')}</description>
@@ -273,6 +274,7 @@ function readyPostData(post, parentDirectory) {
 
         if (parentDirectory == blogPostSrc) {
 
+            // post.link is relative - add root if needed
             thisPost.link = '/blog/' + linkify(thisPost.title);
             thisPost.tags.split(', ').map(tag => blogTags.push(tag));
             blogPosts.push(thisPost);

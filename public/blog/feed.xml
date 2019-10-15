@@ -4,12 +4,12 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Tue, 15 Oct 2019 00:39:40 GMT</lastBuildDate>
+<lastBuildDate>Tue, 15 Oct 2019 01:00:02 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
         <title>Easily add a ‘smart’ dark mode to any website or web app</title>
-        <link>https://www.bradeneast.com/blog//blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app</link>
-        <guid>https://www.bradeneast.com/blog//blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app</guid>
+        <link>https://www.bradeneast.com/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app</link>
+        <guid>https://www.bradeneast.com/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app</guid>
         <pubDate>Mon, 23 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>ui</category><category>css</category><category>javascript</category>
         <description>
@@ -17,35 +17,35 @@ Today, let&#x2019;s spice up our web project with a dark mode easter egg. To set
         </item>
         <item>
         <title>Make knobs and dials with HTML and CSS</title>
-        <link>https://www.bradeneast.com/blog//blog/make-knobs-and-dials-with-html-and-css</link>
-        <guid>https://www.bradeneast.com/blog//blog/make-knobs-and-dials-with-html-and-css</guid>
+        <link>https://www.bradeneast.com/blog/make-knobs-and-dials-with-html-and-css</link>
+        <guid>https://www.bradeneast.com/blog/make-knobs-and-dials-with-html-and-css</guid>
         <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>html</category><category>css</category><category>javascript</category><category>ui</category>
         <description>
-Fun fact of the day: Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the &#x2018;forbidden riff.&#x2019; Today, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
+In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
         </item>
         <item>
         <title>Staggered animations: css vs scss vs javascript</title>
-        <link>https://www.bradeneast.com/blog//blog/staggered-animations-css-vs-scss-vs-javascript</link>
-        <guid>https://www.bradeneast.com/blog//blog/staggered-animations-css-vs-scss-vs-javascript</guid>
+        <link>https://www.bradeneast.com/blog/staggered-animations-css-vs-scss-vs-javascript</link>
+        <guid>https://www.bradeneast.com/blog/staggered-animations-css-vs-scss-vs-javascript</guid>
         <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
         undefined<category>ui</category><category>design</category><category>css</category><category>javascript</category>
         <description>
-Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don&#x2019;t give up on that film project! Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
+Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
         </item>
         <item>
         <title>Style pseudo elements with javascript</title>
-        <link>https://www.bradeneast.com/blog//blog/style-pseudo-elements-with-javascript</link>
-        <guid>https://www.bradeneast.com/blog//blog/style-pseudo-elements-with-javascript</guid>
+        <link>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</link>
+        <guid>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</guid>
         <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>html</category><category>css</category><category>javascript</category>
         <description>
-I&#x2019;m a proponent of CSS over Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
+I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
         </item>
         <item>
         <title>Get img alt attribute automatically from src</title>
-        <link>https://www.bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src</link>
-        <guid>https://www.bradeneast.com/blog//blog/get-img-alt-attribute-automatically-from-src</guid>
+        <link>https://www.bradeneast.com/blog/get-img-alt-attribute-automatically-from-src</link>
+        <guid>https://www.bradeneast.com/blog/get-img-alt-attribute-automatically-from-src</guid>
         <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
@@ -53,8 +53,8 @@ I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No mat
         </item>
         <item>
         <title>Convert JSON to HTML - Nested objects and URLs</title>
-        <link>https://www.bradeneast.com/blog//blog/convert-json-to-html--nested-objects-and-urls</link>
-        <guid>https://www.bradeneast.com/blog//blog/convert-json-to-html--nested-objects-and-urls</guid>
+        <link>https://www.bradeneast.com/blog/convert-json-to-html--nested-objects-and-urls</link>
+        <guid>https://www.bradeneast.com/blog/convert-json-to-html--nested-objects-and-urls</guid>
         <pubDate>Wed, 07 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
@@ -62,8 +62,8 @@ No developer wants to debug code written for a single use case. Sometimes you ha
         </item>
         <item>
         <title>Append JSON values to matching HTML elements with Object.keys()</title>
-        <link>https://www.bradeneast.com/blog//blog/append-json-values-to-matching-html-elements-with-objectkeys</link>
-        <guid>https://www.bradeneast.com/blog//blog/append-json-values-to-matching-html-elements-with-objectkeys</guid>
+        <link>https://www.bradeneast.com/blog/append-json-values-to-matching-html-elements-with-objectkeys</link>
+        <guid>https://www.bradeneast.com/blog/append-json-values-to-matching-html-elements-with-objectkeys</guid>
         <pubDate>Sun, 04 Aug 2019 05:00:00 GMT</pubDate>
         undefined<category>javascript</category><category>html</category>
         <description>
@@ -71,8 +71,8 @@ Ever needed a quick way to convert data from JSON to HTML, with as few lines of 
         </item>
         <item>
         <title>The Logo Manifesto</title>
-        <link>https://www.bradeneast.com/blog//blog/the-logo-manifesto</link>
-        <guid>https://www.bradeneast.com/blog//blog/the-logo-manifesto</guid>
+        <link>https://www.bradeneast.com/blog/the-logo-manifesto</link>
+        <guid>https://www.bradeneast.com/blog/the-logo-manifesto</guid>
         <pubDate>Mon, 29 Jul 2019 05:00:00 GMT</pubDate>
         undefined<category>design</category><category>branding</category>
         <description>

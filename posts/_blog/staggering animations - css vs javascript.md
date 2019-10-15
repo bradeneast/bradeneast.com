@@ -2,15 +2,15 @@
 ## 2019/09/03
 ### ui, design, css, javascript
 
-Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don't give up on that film project! Today, let's talk about integrating motion into our websites and user interfaces.
+Today, let's talk about integrating motion into our websites and user interfaces.
+
+> Your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.
 
 ![people in motion on a sidewalk](/_images/blog/people-in-motion.jpg)
 
-It's pretty obious that movement happening in perfect sync seems unnatural to us. Unless you're going for the 1970's kung fu movie vibe, you probably want to stagger and tweak your animations.
+It's pretty obious that movement happening in perfect sync seems unnatural to us. Unless you're going for the 1970's kung fu movie vibe, you probably want to stagger and tweak your animations to act like they're bound by the laws of physics.
 
-Our brains like smooth, sequential motion that overlaps, speeds up, and slows down according to the laws of physics.  That kind of motion is consistent with our experience and feels familiar.
-
-In animation and motion design, a quick way to acheive this effect is through *staggered* or overlapping movement.
+Our brains like smooth, sequential motion that overlaps, speeds up, and slows down in a way that feels familiar to the real world. In animation and motion design, a quick way to acheive this effect is through *staggered* or overlapping movement.
 
 <style>
 
@@ -73,16 +73,14 @@ In animation and motion design, a quick way to acheive this effect is through *s
     <div class="example-circle"></div>
 </div>
 
-Despite being almost in sync, the slight variation between each element makes their movement much more interesting and appealing.
+Despite being almost in sync, the slight variation between each element in the second example makes their movement much more interesting and appealing.
 
-Hopefully this illustrates why we'd want to use staggered motion in our designs, but what's the best way to do that? There are a few options at our disposal, so we'll look at the pros and cons of each.
-
+Hopefully this illustrates why we'd want to use staggered motion in our designs, but what's the best way to code it? There are a few options at our disposal, so we'll look at the pros and cons of each.
 - Pure CSS
 - SCSS `for` loop
 - Javascript `forEach` method
 
 #### The Pure CSS Approach
-
 ```css
 .stagger-child-transitions>:nth-child(2) { transition-delay: .1s }
 .stagger-child-transitions>:nth-child(3) { transition-delay: .2s }
@@ -109,7 +107,7 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 }
 ```
 
-That looks nice and clean!  The only drawback of this approach is that our CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn't much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. CSS isn't render-blocking like Javascript, but it does have to parsed and applied by the browser. If you're anything like me, those extra bytes will start to bug you.
+That looks nice and clean!  The only drawback of this approach is that our compiled CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn't much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. CSS isn't render-blocking like Javascript, but still has to be parsed and rendered by the browser. If you're anything like me, those extra bytes will start to bug you.
 
 
 #### Using the Javascript `forEach()` method

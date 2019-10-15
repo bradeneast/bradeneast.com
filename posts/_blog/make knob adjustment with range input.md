@@ -2,7 +2,9 @@
 ## 2019/09/09
 ### html, css, javascript, ui
 
-Fun fact of the day: Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the 'forbidden riff.' Today, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.
+In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.
+
+> Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the 'forbidden riff.'
 
 When would we want to create a knob or dial adjustment?  Well, if you’re a talented Christmas goat, you might want to develop a web app with some digital effects for your seasonal guitar solos.
 

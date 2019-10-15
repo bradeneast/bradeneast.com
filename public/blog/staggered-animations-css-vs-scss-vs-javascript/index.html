@@ -92,11 +92,13 @@
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
-<p>Fun fact of the day: your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.  Don&#x2019;t give up on that film project! Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</p>
+<p>Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</p>
+<blockquote>
+<p>Your odds of winning an Academy Award are about 10 times better than your odds of experiencing an earthquake.</p>
+</blockquote>
 <p><img src="/_images/blog/people-in-motion.jpg" alt="people in motion on a sidewalk"></p>
-<p>It&#x2019;s pretty obious that movement happening in perfect sync seems unnatural to us. Unless you&#x2019;re going for the 1970&#x2019;s kung fu movie vibe, you probably want to stagger and tweak your animations.</p>
-<p>Our brains like smooth, sequential motion that overlaps, speeds up, and slows down according to the laws of physics.  That kind of motion is consistent with our experience and feels familiar.</p>
-<p>In animation and motion design, a quick way to acheive this effect is through <em>staggered</em> or overlapping movement.</p>
+<p>It&#x2019;s pretty obious that movement happening in perfect sync seems unnatural to us. Unless you&#x2019;re going for the 1970&#x2019;s kung fu movie vibe, you probably want to stagger and tweak your animations to act like they&#x2019;re bound by the laws of physics.</p>
+<p>Our brains like smooth, sequential motion that overlaps, speeds up, and slows down in a way that feels familiar to the real world. In animation and motion design, a quick way to acheive this effect is through <em>staggered</em> or overlapping movement.</p>
 <style>
 
 @keyframes move {
@@ -153,8 +155,8 @@
     <div class="example-circle"></div>
     <div class="example-circle"></div>
 </div>
-<p>Despite being almost in sync, the slight variation between each element makes their movement much more interesting and appealing.</p>
-<p>Hopefully this illustrates why we&#x2019;d want to use staggered motion in our designs, but what&#x2019;s the best way to do that? There are a few options at our disposal, so we&#x2019;ll look at the pros and cons of each.</p>
+<p>Despite being almost in sync, the slight variation between each element in the second example makes their movement much more interesting and appealing.</p>
+<p>Hopefully this illustrates why we&#x2019;d want to use staggered motion in our designs, but what&#x2019;s the best way to code it? There are a few options at our disposal, so we&#x2019;ll look at the pros and cons of each.</p>
 <ul>
 <li>Pure CSS</li>
 <li>SCSS <code>for</code> loop</li>
@@ -181,7 +183,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>That looks nice and clean!  The only drawback of this approach is that our CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn&#x2019;t much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. CSS isn&#x2019;t render-blocking like Javascript, but it does have to parsed and applied by the browser. If you&#x2019;re anything like me, those extra bytes will start to bug you.</p>
+<p>That looks nice and clean!  The only drawback of this approach is that our compiled CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn&#x2019;t much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. CSS isn&#x2019;t render-blocking like Javascript, but still has to be parsed and rendered by the browser. If you&#x2019;re anything like me, those extra bytes will start to bug you.</p>
 <h4>Using the Javascript <code>forEach()</code> method</h4>
 <p>100 items was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.</p>
 <pre><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&apos;.stagger-child-transitions&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>

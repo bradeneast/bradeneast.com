@@ -4,8 +4,7 @@
 
 Today, let's spice up our web project with a dark mode easter egg. To set up this feature in our project, we'll need a few lines of CSS that will change the colors and background colors of elements on our site.
 
-#### Fact of the day
-James Bond is based on real WWII spy, Dusan Popov.
+> James Bond is based on real WWII spy, Dusan Popov.
 
 ![A starry night sky - when the world is in dark mode](/_images/blog/starry-sky.jpg)
 
