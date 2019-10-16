@@ -30,15 +30,24 @@ html.dm {
             filter: none;
         }
     }
-}
 
-html.dm {
+    img {
+        opacity: 0.9;
+    }
+
     .item .bg::after,
     .item .content,
     .attention,
     .attention em,
-    .email-signup {
+    .attention .email-signup {
         filter: invert(1);
+    }
+
+    .item:hover,
+    .item a:focus,
+    nav,
+    pre {
+        border-color: var(--CL-4);
     }
 
     .post-nav .link-title,

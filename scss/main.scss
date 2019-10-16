@@ -3,7 +3,7 @@ $mq: 1080px;
 :root {
     font-size: 20px;
     --CL-1: rgb(236, 74, 53);
-    --CL-2: lightgrey;
+    --CL-2: #dfdfdf;
     --CL-3: #555;
     --CL-4: #32353a;
     --SHADE-S: rgba(0, 0, 0, 0.2);
@@ -93,7 +93,7 @@ section {
     border-radius: var(--RADIUS);
 
     * {
-        --CL-2: white;
+        --CL-2: var(--CL-3);
     }
 }
 

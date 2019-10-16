@@ -3,7 +3,7 @@
 
 <head>
 <meta property="og:description" content="Enjoy curated content from my blog">
-<meta property="og:title" content="design">
+<meta property="og:title" content="javascript">
     <noscript>
         It's not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
     </noscript>
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
-    <title>Braden East | design</title>
+    <title>Braden East | javascript</title>
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
@@ -39,10 +39,9 @@
     <script>
 
         var preferredScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var locallySetScheme = JSON.parse(localStorage.getItem('darkModeOn'));
-        var initialSchemeIsDark = locallySetScheme || preferredScheme;
-
-        initialSchemeIsDark ? document.documentElement.classList.add('dm') : null;
+        if (preferredScheme) localStorage.setItem('darkModeOn', true);
+        var colorSchemeIsDark = JSON.parse(localStorage.getItem('darkModeOn'));
+        colorSchemeIsDark ? document.documentElement.classList.add('dm') : null;
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
@@ -86,12 +85,12 @@
 
 
     <div id="main" data-stagger><section>
-    <h1 class="tagName" data-load="clip">design</h1>
+    <h1 class="tagName" data-load="clip">javascript</h1>
     <p data-load="clip">Enjoy curated content from this tag.</p>
 </section>
 
 <section data-load="move">
-    <component data-name="post-feed" data-count="999" data-feed="design"><ul class="gallery" data-stagger="children">
+    <component data-name="post-feed" data-count="999" data-feed="javascript"><ul class="gallery" data-stagger="children">
     <template>
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
@@ -107,6 +106,18 @@
     </template>
 
         <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/starry-sky.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Easily add a &#x2018;smart&#x2019; dark mode to any website or web app</p>
+                    <p class="tags">ui, css, javascript</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
             <a href="/blog/staggered-animations-css-vs-scss-vs-javascript" class="link">
                 <div class="bg">
                     <img class="image" src="/_images/blog/people-in-motion.jpg">
@@ -114,6 +125,54 @@
                 <div class="content">
                     <p class="title">Staggered animations: css vs scss vs javascript</p>
                     <p class="tags">ui, design, css, javascript</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/style-pseudo-elements-with-javascript" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/wave.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Style pseudo elements with javascript</p>
+                    <p class="tags">html, css, javascript</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/get-img-alt-attribute-automatically-from-src" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/polaroids.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Get img alt attribute automatically from src</p>
+                    <p class="tags">javascript, html</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/convert-json-to-html--nested-objects-and-urls" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/star-wars.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Convert JSON to HTML - Nested objects and URLs</p>
+                    <p class="tags">javascript, html</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/append-json-values-to-matching-html-elements-with-objectkeys" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/rubiks-cube.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Append JSON values to matching HTML elements with Object.keys()</p>
+                    <p class="tags">javascript, html</p>
                 </div>
             </a>
         </li>

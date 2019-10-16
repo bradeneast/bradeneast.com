@@ -1,6 +1,6 @@
 code[class*="language-"],
 pre {
-    color: #3d6270;
+    color: #4a6568;
     background: none;
     font-size: 0.9em;
     text-align: left;
@@ -35,54 +35,54 @@ pre[class*="language-"] {
     overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
+:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: #2d2d2d;
+    background: #3d3d3d;
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
+:not(pre) > code[class*="language-"] {
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
 }
 
 .token {
-
     &.comment,
     &.block-comment,
     &.prolog,
     &.doctype,
     &.cdata {
-        color: #aaa;
+        color: #afafaf;
     }
 
     &.punctuation {
-        color: #777;
+        color: #8f8f8f;
     }
 
     &.tag,
     &.attr-name,
     &.namespace,
     &.deleted {
-        color: #3574b3;
+        color: #e49f32;
     }
 
     &.function-name {
-        color: #6196cc;
+        color: #863acc;
     }
 
     &.boolean,
     &.number,
     &.function {
-        color: #e77736;
+        color: #1f7af1;
+        opacity: 1;
     }
 
     &.property,
     &.class-name,
     &.constant,
     &.symbol {
-        color: #0f72e4;
+        color: #10c756;
     }
 
     &.selector,
@@ -90,7 +90,7 @@ pre[class*="language-"] {
     &.atrule,
     &.keyword,
     &.builtin {
-        color: #b872b9;
+        color: #e49f32;
     }
 
     &.string,
@@ -98,13 +98,13 @@ pre[class*="language-"] {
     &.attr-value,
     &.regex,
     &.variable {
-        color: #499566;
+        color: #d12e2e;
     }
 
     &.operator,
     &.entity,
     &.url {
-        color: #3e9b99;
+        color: #07a7cf;
     }
 
     &.important,

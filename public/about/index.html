@@ -40,10 +40,9 @@
     <script>
 
         var preferredScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var locallySetScheme = JSON.parse(localStorage.getItem('darkModeOn'));
-        var initialSchemeIsDark = locallySetScheme || preferredScheme;
-
-        initialSchemeIsDark ? document.documentElement.classList.add('dm') : null;
+        if (preferredScheme) localStorage.setItem('darkModeOn', true);
+        var colorSchemeIsDark = JSON.parse(localStorage.getItem('darkModeOn'));
+        colorSchemeIsDark ? document.documentElement.classList.add('dm') : null;
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>

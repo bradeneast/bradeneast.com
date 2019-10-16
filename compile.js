@@ -338,7 +338,7 @@ function createNewPostsFromTemplate(posts) {
                 const tags = [];
                 value.split(', ').map(tag => {
                     const encodedTag = encodeURI(tag).replace(/%20+/g, '-');
-                    tags.push(`<a href="/tags/${encodedTag}">${tag}</a>`);
+                    tags.push(`<a href="/${blog}tags/${encodedTag}">${tag}</a>`);
                 })
                 value = tags.join(', ');
             }
@@ -380,12 +380,12 @@ function createNewPostsFromTemplate(posts) {
 
 function buildTagDirectories(tags) {
 
-    fs.mkdirSync(`${public}tags`);
+    fs.mkdirSync(`${public + blog}tags`);
 
     [...new Set(tags)].map(tag => {
 
         const tagName = encodeURI(tag).replace(/\%20+/g, '-');
-        const destination = `${public}tags/${tagName}/index.html`;
+        const destination = `${public + blog}tags/${tagName}/index.html`;
 
         fs.mkdirSync(destination.split('/index.html').shift());
         fs.copyFileSync(pageTemplate, destination);
