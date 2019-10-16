@@ -4,17 +4,8 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Wed, 16 Oct 2019 18:47:04 GMT</lastBuildDate>
+<lastBuildDate>Wed, 16 Oct 2019 19:55:12 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-    <title>Easily add a ‘smart’ dark mode to any website or web app</title>
-    <link>https://www.bradeneast.com/easily-add-a-smart-dark-mode-to-any-website-or-web-app</link>
-    <guid>https://www.bradeneast.com/easily-add-a-smart-dark-mode-to-any-website-or-web-app</guid>
-    <pubDate>Mon, 23 Sep 2019 05:00:00 GMT</pubDate>
-    <category>ui</category><category>css</category><category>javascript</category>
-    <description>
-Today, let&#x2019;s spice up our web project with a dark mode easter egg. To set up this feature in our project, we&#x2019;ll need a few lines of CSS that will change the colors and background colors of elements on our site.</description>
-    </item>
     <item>
     <title>Make knobs and dials with HTML and CSS</title>
     <link>https://www.bradeneast.com/make-knobs-and-dials-with-html-and-css</link>
