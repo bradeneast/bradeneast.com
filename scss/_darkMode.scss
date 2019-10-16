@@ -3,6 +3,7 @@ html {
 }
 
 html.dm {
+    --CL-4: #1d1d1d;
     background: #060606;
 
     h1,
@@ -17,7 +18,14 @@ html.dm {
     p img,
     ul img,
     ol img,
-    span img {
+    span img,
+    p a,
+    p ~ ul a,
+    p ~ ol a,
+    .item .bg::after,
+    .item .content,
+    nav .nav-item {
+        text-decoration-color: var(--CL-4);
         filter: invert(1);
     }
 
@@ -39,14 +47,6 @@ html.dm {
         opacity: 0.9;
     }
 
-    .item .bg::after,
-    .item .content,
-    .attention,
-    .attention em,
-    .attention .email-signup {
-        filter: invert(1);
-    }
-
     .item:hover,
     .item a:focus,
     nav,
@@ -54,10 +54,20 @@ html.dm {
         border-color: var(--CL-4);
     }
 
+    section > .nav-end::before,
+    .attention {
+        background: var(--CL-4);
+    }
+
+    nav .nav-item,
     .post-nav .link-title,
     input[type="text"],
     input[type="email"] {
         font-weight: 400;
         color: white;
+    }
+
+    nav .nav-item:not(.active) {
+        color: var(--CL-3);
     }
 }

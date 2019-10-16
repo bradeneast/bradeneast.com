@@ -60,3 +60,10 @@
         transition: var(--TR-S);
     }
 }
+
+@media screen and (max-width: $mq) {
+    .post-nav .next,
+    .post-nav .previous {
+        width: 100%;
+    }
+}
