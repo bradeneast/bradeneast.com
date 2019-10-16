@@ -38,8 +38,6 @@ $mq: 1080px;
     outline-color: var(--CL-1);
 }
 
-@import "typography";
-
 body {
     color: var(--CL-4);
     line-height: 1.8;
@@ -129,6 +127,8 @@ footer {
     }
 }
 
+@import "animations", "forms", "buttons", "nav", "gallery", "typography", "post", "darkMode";
+
 @media screen and (max-width: $mq) {
     :root {
         font-size: 16px;
@@ -163,5 +163,3 @@ footer {
         min-height: var(--PAD-M);
     }
 }
-
-@import "animations", "forms", "buttons", "nav", "gallery", "post", "darkMode";

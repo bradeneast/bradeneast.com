@@ -3,7 +3,7 @@
     align-items: flex-end;
     align-content: flex-end;
     margin-top: var(--PAD-L);
-    transform: translateY(0.4em);
+    transform: translateY(.4em);
 
     .previous {
         margin-right: auto;
@@ -27,14 +27,13 @@
     .link-title {
         font-weight: 700;
         opacity: 0.63;
-        margin-top: 0.2em;
+        margin-top: .2em;
         transition: var(--TR-S);
     }
 }
 
 .body {
     max-width: 100%;
-    font-size: 1rem;
     margin: var(--PAD-M) 0;
 
     img {
