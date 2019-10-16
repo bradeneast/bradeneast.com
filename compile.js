@@ -9,6 +9,43 @@ const commonmark = require('commonmark');
 const prism = require('prismjs');
 
 
+// GLOBAL VARIABLES
+const consoleBlue = '\x1b[34m%s\x1b[0m';
+const consolePurple = '\x1b[35m%s\x1b[0m';
+const consoleGreen = '\x1b[32m%s\x1b[0m';
+
+const ignoreChar = '_';
+const public = './public/';
+const blog = 'blog/';
+const root = 'https://www.bradeneast.com/';
+const pageTemplate = './_template.html';
+const pagesFolder = './pages/';
+const postsFolder = './posts/';
+const postSrc = postsFolder + '_published/';
+const postTemplate = postsFolder + '_template.html';
+const staticComponents = './components/';
+const feedAttribute = 'data-feed';
+const acceptableMetaProperties = ['title', 'description', 'image'];
+
+let posts = [];
+let tags = [];
+
+const blogAudience = 'dev-signers';
+const blogTagline = 'Gain confidence designing and coding stellar interfaces.';
+
+const today = new Date();
+const RSSFeed = `${public + blog}feed.xml`;
+const RSSLink = root + blog + RSSFeed;
+let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<title>Blog of Braden East</title>
+<link>${RSSLink}</link>
+<description>The blog for ${blogAudience}. ${blogTagline}</description>
+<lastBuildDate>${today.toUTCString()}</lastBuildDate>
+<atom:link href="${RSSLink}" rel="self" type="application/rss+xml" />`;
+
+
 // CLASSES
 class HTMLFile {
     constructor(path) {
@@ -26,13 +63,32 @@ class HTMLFile {
     }
 
     populateComponents() {
+
         const select = this.$;
 
         select('component').each(function (i, e) {
             const component = select(this);
             const componentName = component.attr('data-name');
-            const componentHTML = new HTMLFile(`${staticComponents + componentName}.html`).parse(true);
+            const componentHTML = new HTMLFile(`${staticComponents + componentName}.html`).parse(true).loadDOM();
             component.append(componentHTML.html);
+        })
+
+        return this
+    }
+
+    populateFeeds() {
+
+        const select = this.$;
+        const feeds = select(`[${feedAttribute}]`);
+
+        feeds.each(function (i, e) {
+            const feed = select(this);
+            const wrapper = feed.children().first();
+
+            populateFeed(posts, wrapper, {
+                category: feed.attr(feedAttribute),
+                count: feed.attr('data-count')
+            });
         })
 
         return this
@@ -40,49 +96,8 @@ class HTMLFile {
 }
 
 
-// GLOBAL VARIABLES
-const consoleBlue = '\x1b[34m%s\x1b[0m';
-const consolePurple = '\x1b[35m%s\x1b[0m';
-const consoleGreen = '\x1b[32m%s\x1b[0m';
-
-const ignoreChar = '_';
-const public = './public/';
-const root = 'https://www.bradeneast.com';
-const blog = public + 'blog/';
-const work = public + 'work/';
-const pageTemplate = './_template.html';
-const pagesFolder = './pages/';
-const postsFolder = './posts/';
-const blogPostSrc = postsFolder + '_blog/';
-const workPostSrc = postsFolder + '_work/';
-const postTemplate = postsFolder + '_template.html';
-const staticComponents = './static_components/';
-const feedAttribute = 'data-feed';
-const acceptableMetaProperties = ['title', 'description', 'image'];
-
-let blogPosts = [];
-let blogTags = [];
-let workPosts = [];
-let workTags = [];
-
-const blogAudience = 'dev-signers';
-const blogHeadline = `Welcome to the blog for ${blogAudience}.`;
-const blogTagline = 'Gain confidence designing and coding stellar interfaces.';
-
-const today = new Date();
-const RSSFeed = 'feed.xml';
-const RSSLink = `${root}/blog/${RSSFeed}`;
-let RSSFeedContent = `<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
-<channel>
-<title>Blog of Braden East</title>
-<link>${RSSLink}</link>
-<description>The blog for ${blogAudience}. ${blogTagline}</description>
-<lastBuildDate>${today.toUTCString()}</lastBuildDate>
-<atom:link href="${RSSLink}" rel="self" type="application/rss+xml" />`;
-
-
 // GLOBAL FUNCTIONS
+
 function trimWhiteSpace(string) {
 
     const condensed = string.replace(/\n+/gm, '\n').replace(/\s+/gm, ' ');
@@ -99,13 +114,13 @@ function linkify(string) {
 
 
 function dynamicSort(property) {
-    var sortOrder = 1;
+    let sortOrder = 1;
     if (property[0] === "-") {
         sortOrder = -1;
         property = property.substr(1);
     }
     return function (a, b) {
-        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
         return result * sortOrder;
     }
 }
@@ -129,11 +144,9 @@ function appendMetaTags(metaData, selector) {
 
     acceptableMetaProperties.map(prop => {
 
-        prop = prop.toLowerCase();
-
         if (metaData.includes(`${prop}:`)) {
 
-            const content = getMetaProperty(metaData, prop).replace('/_images/', `${root}/_images/`);
+            const content = getMetaProperty(metaData, prop).replace('/_images/', `${root}_images/`);
 
             if (prop == 'title') selector(prop).text(`Braden East | ${content}`);
             if (prop == 'description') selector('head').append(`\n<meta name="${prop}" content="${content}">`);
@@ -157,11 +170,12 @@ function publishPagesFrom(directory) {
                 const templateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
                 const currentFile = new HTMLFile(location).parse(true).loadDOM().populateComponents();
 
+                // Append meta tags to head element
+                if (currentFile.html[0].data) appendMetaTags(currentFile.html[0].data, templateFile.$)
+
                 // Prepend main content to main element
                 templateFile.$('#main').append(currentFile.html);
-
-                // Append meta tags to head element
-                if (currentFile.html[0]) { appendMetaTags(currentFile.html[0].data, templateFile.$) }
+                templateFile.populateFeeds();
 
                 // Write to destination file and remove comments
                 fs.createFileSync(destination);
@@ -182,76 +196,72 @@ function publishPagesFrom(directory) {
 function addPostToRSS(post) {
 
     let date = new Date(post.date);
-    let categories;
+    let categories = '';
 
     post.tags.split(', ').map(tag => categories += `<category>${tag}</category>`);
     RSSFeedContent += `
-        <item>
-        <title>${post.title}</title>
-        <link>${root + post.link}</link>
-        <guid>${root + post.link}</guid>
-        <pubDate>${date.toUTCString()}</pubDate>
-        ${categories}
-        <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<[^>]*>/g, '')}</description>
-        </item>`;
+    <item>
+    <title>${post.title}</title>
+    <link>${root + post.link}</link>
+    <guid>${root + post.link}</guid>
+    <pubDate>${date.toUTCString()}</pubDate>
+    ${categories}
+    <description>${post.body.substr(0, post.body.indexOf('</p>') + 4).replace(/<[^>]*>/g, '')}</description>
+    </item>`;
 }
 
 
-function createPostFeed({
-    posts: posts,
-    page: page,
+function populateFeed(posts, wrapper, {
     category: category,
     count: count
-    }) {
-
-    const currentFile = new HTMLFile(page).parse(true).loadDOM();
-    const wrapper = currentFile.$(`[${feedAttribute}]`);
-    wrapper.children().not('template').remove();
+}) {
 
     posts.map((post, index) => {
 
-        if (!category || post.tags.join().includes(category)) {
+        if (!category) {
 
-            if (!count || index < count) addPostToFeed(post, wrapper, currentFile.$);
+            if (!count || index < count) addPostToFeed(post, wrapper);
+
+        } else if (post.tags.toLowerCase().includes(category)) {
+
+            if (!count || index < count) addPostToFeed(post, wrapper);
+
         }
     });
-
-    const formattedOutput = String(currentFile.$.html()).replace(/\n\s*\n/g, '\n')
-    fs.writeFileSync(page, formattedOutput);
 }
 
 
-function addPostToFeed(post, wrapper, $) {
-    const newPost = $('template').contents().clone();
+function addPostToFeed(post, wrapper) {
+
+    const newPost = wrapper.find('template').contents().clone();
 
     Object.keys(post).map(key => {
         let e = newPost.find(`.${key}`);
         let v = post[key];
+
         key = key.toLowerCase();
-        Array.isArray(v) ? v = v.join(', ') : null;
+
+        if (Array.isArray(v)) v = v.join(', ');
+
         if (e) {
-            if (key == 'body') {
-                e.append(v.substr(0, v.indexOf('</p>') + 4))
-            } else if (key == 'link') {
-                e.attr('href', v)
-            } else if (key == 'image') {
-                e.attr('src', v)
-            } else {
-                e.append(v)
-            }
+            if (key == 'link') e.attr('href', `/${blog + v}`);
+            if (key == 'image') e.attr('src', v);
+            if (key !== 'link' && key !== 'image') e.append(v)
         }
     })
+
     wrapper.append(newPost);
 }
 
 
-function readyPostData(post, parentDirectory) {
+function readyPostData(post) {
 
     let thisPost = {
         title: '',
         date: '',
         tags: [],
         body: '',
+        excerpt: '',
         link: '',
         image: ''
     }
@@ -260,7 +270,7 @@ function readyPostData(post, parentDirectory) {
 
         const reader = new commonmark.Parser({ smart: true });
         const writer = new commonmark.HtmlRenderer({ softbreak: '<br />' });
-        const parsed = reader.parse(fs.readFileSync(parentDirectory + post, 'utf8'));
+        const parsed = reader.parse(fs.readFileSync(postSrc + post, 'utf8'));
         const $ = cheerio.load(htmlParser.parseDOM(writer.render(parsed), { decodeEntities: true }));
 
         // Highlight code snippets with PrismJS
@@ -269,10 +279,17 @@ function readyPostData(post, parentDirectory) {
             const code = $(this);
             const snippet = code.text();
 
-            e.attribs.class == 'language-html' ? code.empty().append(prism.highlight(snippet, prism.languages.markup)) : null;
-            e.attribs.class == 'language-javascript' ? code.empty().append(prism.highlight(snippet, prism.languages.javascript)) : null;
-            e.attribs.class == 'language-css' ? code.empty().append(prism.highlight(snippet, prism.languages.css)) : null;
+            if (String(e.attribs.class).includes('language-html')) {
+                code.empty().append(prism.highlight(snippet, prism.languages.markup));
+            }
 
+            if (String(e.attribs.class).includes('language-javascript')) {
+                code.empty().append(prism.highlight(snippet, prism.languages.javascript));
+            }
+
+            if (String(e.attribs.class).includes('language-css')) {
+                code.empty().append(prism.highlight(snippet, prism.languages.css));
+            }
         })
 
         thisPost.title = $('h1').contents().text();
@@ -280,35 +297,26 @@ function readyPostData(post, parentDirectory) {
         thisPost.tags = $('h3').contents().text();
         thisPost.image = $('img').attr('src');
         thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
+        thisPost.excerpt = thisPost.body.substr(0, thisPost.body.indexOf('</p>') + 4);
 
-        if (parentDirectory == blogPostSrc) {
 
-            // post.link is relative - add root if needed
-            thisPost.link = '/blog/' + linkify(thisPost.title);
-            thisPost.tags.split(', ').map(tag => blogTags.push(tag));
-            blogPosts.push(thisPost);
+        // post link is absolute
+        thisPost.link = linkify(thisPost.title);
+        thisPost.tags.split(', ').map(tag => tags.push(tag));
 
-            // Append CTA to post body
-            thisPost.body += `<p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/\/blog\/|-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=https://bradeneast.com/blog/${thisPost.link}">share this article</a> with your followers. I appreciate it!</p>`;
+        // Append CTA to post body
+        thisPost.body += `<p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${root + thisPost.link}">share this article</a> with your followers. I appreciate it!</p>`;
 
-        }
-
-        if (parentDirectory == workPostSrc) {
-
-            thisPost.link = '/work/' + linkify(thisPost.title);
-            thisPost.tags.split(', ').map(tag => workTags.push(tag));
-            workPosts.push(thisPost);
-
-        }
+        posts.push(thisPost);
     }
 }
 
 
-function createNewPostsFromTemplate(posts, destinationDirectory) {
+function createNewPostsFromTemplate(posts) {
 
     posts.map((post, index) => {
 
-        const postLocation = public + post.link + '/index.html';
+        const postLocation = public + blog + post.link + '/index.html';
         const pageTemplateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
         const postTemplateFile = new HTMLFile(postTemplate).parse(true).loadDOM().populateComponents();
 
@@ -316,7 +324,6 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
 
         appendMetaTags(`
         <!--title: ${post.title},
-        description: The blog for ${blogAudience} - ${blogTagline},
         image: ${post.image},-->`,
             pageTemplateFile.$);
 
@@ -331,8 +338,7 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
                 const tags = [];
                 value.split(', ').map(tag => {
                     const encodedTag = encodeURI(tag).replace(/%20+/g, '-');
-                    const destination = destinationDirectory.replace(public, '');
-                    tags.push(`<a href="/${destination}tags/${encodedTag}">${tag}</a>`);
+                    tags.push(`<a href="/tags/${encodedTag}">${tag}</a>`);
                 })
                 value = tags.join(', ');
             }
@@ -353,55 +359,46 @@ function createNewPostsFromTemplate(posts, destinationDirectory) {
         if (prevPost) {
 
             prevElem.find('.link-title').append(prevPost.title);
-            prevElem.attr('href', `${prevPost.link}`);
+            prevElem.attr('href', `/${blog + prevPost.link}`);
 
         } else { prevElem.attr('style', 'display: none') }
 
         if (nextPost) {
 
             nextElem.find('.link-title').append(nextPost.title);
-            nextElem.attr('href', `${nextPost.link}`);
+            nextElem.attr('href', `/${blog + nextPost.link}`);
 
         } else { nextElem.attr('style', 'display: none') }
 
         addPostToRSS(post);
         fs.writeFileSync(postLocation, pageTemplateFile.$.html());
+
         console.log(consoleBlue, `POST written to ${postLocation}`);
     })
 }
 
 
-function buildTagDirectories(tags, destinationDirectory) {
+function buildTagDirectories(tags) {
 
-    fs.mkdirSync(`${destinationDirectory}tags`);
+    fs.mkdirSync(`${public}tags`);
 
     [...new Set(tags)].map(tag => {
 
         const tagName = encodeURI(tag).replace(/\%20+/g, '-');
-        const destination = `${destinationDirectory}tags/${tagName}/index.html`;
+        const destination = `${public}tags/${tagName}/index.html`;
 
         fs.mkdirSync(destination.split('/index.html').shift());
         fs.copyFileSync(pageTemplate, destination);
 
         const pageTemplateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
         const tagTemplateFile = new HTMLFile(`${postsFolder}_tags.html`).parse(true).loadDOM().populateComponents();
-        const $ = cheerio.load(htmlParser.parseDOM(fs.readFileSync(pageTemplate), { decodeEntities: true }));
 
         pageTemplateFile.$('#main').prepend(tagTemplateFile.html);
         appendMetaTags(`<!--title: ${tag}, description: Enjoy curated content from my blog,-->`, pageTemplateFile.$);
         pageTemplateFile.$('.tagName').append(tag);
 
-        if (destinationDirectory == blog) {
-            blogPosts.map(post => {
-                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$(`[${feedAttribute}]`), pageTemplateFile.$)
-            })
-        }
-
-        if (destinationDirectory == work) {
-            workPosts.map(post => {
-                if (post.tags.includes(tag)) addPostToFeed(post, pageTemplateFile.$(`[${feedAttribute}]`), pageTemplateFile.$)
-            })
-        }
+        pageTemplateFile.$(`[${feedAttribute}]`).attr(feedAttribute, tag);
+        pageTemplateFile.populateFeeds();
 
         fs.writeFileSync(destination, pageTemplateFile.$.html());
         console.log(consoleGreen, `TAG created for ${tag}`);
@@ -412,44 +409,20 @@ function buildTagDirectories(tags, destinationDirectory) {
 // Clear old pages
 fs.cleandirSync(public, ignoreChar);
 
+// Compile and sort posts
+fs.readdirSync(postSrc).map(post => readyPostData(post));
+posts.sort(dynamicSort('date')).reverse();
+
 // Publish pages
 publishPagesFrom(pagesFolder);
 
-// Clear old posts
-fs.cleandirSync(postsFolder);
+// Publish posts
+createNewPostsFromTemplate(posts);
+buildTagDirectories(tags);
 
 // Create RSS feed
-fs.createFileSync(blog + RSSFeed);
-
-// Sort and publish blog posts
-fs.readdirSync(blogPostSrc).map(post => readyPostData(post, blogPostSrc));
-blogPosts.sort(dynamicSort('date')).reverse();
-createNewPostsFromTemplate(blogPosts, blog);
-createPostFeed({
-    posts: blogPosts,
-    page: `${blog}index.html`,
-});
-buildTagDirectories(blogTags, blog);
-
-// Complete RSS feed
-fs.writeFileSync(blog + RSSFeed, `${RSSFeedContent}</channel></rss>`);
-
-// Sort and publish work posts
-fs.readdirSync(workPostSrc).map(post => readyPostData(post, workPostSrc));
-workPosts.sort(dynamicSort('date')).reverse();
-createNewPostsFromTemplate(workPosts, work);
-createPostFeed({
-    posts: workPosts,
-    page: `${work}index.html`,
-});
-buildTagDirectories(workTags, work);
-
-// Add feeds to homepage
-createPostFeed({
-    posts: blogPosts,
-    page: `${public}index.html`,
-    count: 4
-    });
+fs.createFileSync(RSSFeed);
+fs.writeFileSync(RSSFeed, RSSFeedContent + '</channel></rss>');
 
 
 console.timeEnd('\n>> SITE COMPILED IN');

@@ -2,7 +2,7 @@
 
 ## 2019/01/12
 
-### identity design
+### identity design, work
 
 Fish Snax was founded in 1997 as a local bar in Hemp, New Jersey. Being from the Atlantic coast, they want fish to be enjoyed properly, and they wanted graphic branding that would highlight their service of authentic, ever-fresher seafood.
 

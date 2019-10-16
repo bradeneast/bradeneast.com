@@ -87,6 +87,16 @@ section {
     max-width: 44em;
 }
 
+.attention {
+    background: var(--CL-2);
+    padding: var(--PAD-M);
+    border-radius: var(--RADIUS);
+
+    * {
+        --CL-2: white;
+    }
+}
+
 footer {
     grid-column-end: span 2;
     display: flex;

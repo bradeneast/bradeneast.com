@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<meta property="og:description" content="The blog for design-oriented devs">
+<meta property="og:title" content="Blog">
     <noscript>
         It's not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
     </noscript>
+
+    
     <link rel="preload" href="/_css/main.css" as="style">
     <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff" type="font/woff2" crossorigin="anonymous">
@@ -11,51 +16,71 @@
     <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous">
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Braden East | Blog</title>
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bradeneast.com">
     <meta property="og:image" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
+
+    
     <link rel="canonical" href="https://www.bradeneast.com">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="https://www.bradeneast.com/blog/feed.xml">
     <link rel="shortcut icon" href="/_images/favicon-red.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
+
+    
     <script>
         JSON.parse(localStorage.getItem('darkModeOn')) ? document.documentElement.classList.add('dm') : null;
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
     <script defer src="/_scripts/main.js" type="text/javascript"></script>
-</head>
+
+<meta name="description" content="The blog for design-oriented devs"></head>
+
 <body onload="document.body.classList.add(`loaded`)">
+
     <nav>
+
         <ul>
-            <li><a class="nav-item" href="/work">work</a></li>
+            
             <li><a class="nav-item" href="/about">about</a></li>
             <li><a class="nav-item" href="/blog">blog</a></li>
         </ul>
+
         <div class="nav-end">
             <div class="cta">
                 <h3>Let&apos;s work together!</h3>
+
                 <p>If you&apos;re working on a creative project, please reach out. I&apos;d love to collaborate and contribute.</p>
+
                 <div class="button-container">
                     <a class="button" href="mailto:bradeneastdesign@gmail.com">
                         say hi
                     </a>
                 </div>
             </div>
+
             <button class="toggle" id="darkModeToggle" aria-label="toggle dark mode" onclick="toggleDarkMode()"></button>
+
             <div class="back-to-top">
                 <div role="button" tabindex="0" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
                     back to top
                 </div>
             </div>
         </div>
+
     </nav>
+
+
     <div id="main" data-stagger>
+        
+    
 <section>
     <div>
         <h1 data-load="clip">
@@ -65,29 +90,39 @@
             <component data-name="blog-tagline">Gain confidence designing and coding stellar interfaces.</component>
         </p>
         <component data-name="email-signup"><div id="mc_embed_signup">
+
     <form action="https://gmail.us3.list-manage.com/subscribe/post?u=1c103417f1b53af926251412e&amp;id=501e8bc2f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
         <div class="email-signup" id="mc_embed_signup_scroll">
+
             <div class="mc-field-group" data-load="move" style="animation-delay: .05s">
                 <input type="email" value placeholder="your email address..." name="EMAIL" class="required email" id="mce-EMAIL">
             </div>
+
             <div id="mce-responses" class="clear">
                 <div class="response" id="mce-error-response" style="display:none"></div>
                 <div class="response" id="mce-success-response" style="display:none"></div>
             </div>
+
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
                 <input type="text" name="b_1c103417f1b53af926251412e_501e8bc2f2" tabindex="-1" value>
             </div>
+
             <div class="button submit-wrapper" data-load="move" style="animation-delay: .1s">
                 <input type="submit" value="subscribe" name="subscribe" id="mc-embedded-subscribe">
                 <div class="button-animation"></div>
             </div>
+
         </div>
+
     </form>
+
 </div></component>
     </div>
 </section>
+
 <section data-load="move">
-    <component data-name="post-feed"><ul class="gallery" data-feed="posts" data-stagger="children">
+    <component data-name="post-feed" data-count="999" data-feed><ul class="gallery" data-stagger="children">
     <template>
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
@@ -101,6 +136,7 @@
             </a>
         </li>
     </template>
+
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/easily-add-a-smart-dark-mode-to-any-website-or-web-app" class="link">
                 <div class="bg">
@@ -112,6 +148,7 @@
                 </div>
             </a>
         </li>
+    
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/make-knobs-and-dials-with-html-and-css" class="link">
                 <div class="bg">
@@ -123,6 +160,7 @@
                 </div>
             </a>
         </li>
+    
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/staggered-animations-css-vs-scss-vs-javascript" class="link">
                 <div class="bg">
@@ -134,6 +172,7 @@
                 </div>
             </a>
         </li>
+    
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/style-pseudo-elements-with-javascript" class="link">
                 <div class="bg">
@@ -145,6 +184,7 @@
                 </div>
             </a>
         </li>
+    
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/get-img-alt-attribute-automatically-from-src" class="link">
                 <div class="bg">
@@ -156,6 +196,7 @@
                 </div>
             </a>
         </li>
+    
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/convert-json-to-html--nested-objects-and-urls" class="link">
                 <div class="bg">
@@ -167,6 +208,7 @@
                 </div>
             </a>
         </li>
+    
         <li class="item" data-load="scale" data-scroll>
             <a href="/blog/append-json-values-to-matching-html-elements-with-objectkeys" class="link">
                 <div class="bg">
@@ -178,21 +220,14 @@
                 </div>
             </a>
         </li>
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/the-logo-manifesto" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/vw-hood.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">The Logo Manifesto</p>
-                    <p class="tags">design, branding</p>
-                </div>
-            </a>
-        </li>
     </ul></component>
 </section></div>
+
+
     <footer>
+
         &#xA9; 2019 Braden East
+
         <div class="socials">
             <a href="https://codepen.io/bradeneast" rel="noreferrer" aria-label="braden east on codepen" target="_blank">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
@@ -217,4 +252,5 @@
         </div>
     </footer>
 </body>
+
 </html>

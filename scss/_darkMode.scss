@@ -34,11 +34,16 @@ html.dm {
 
 html.dm {
     .item .bg::after,
-    .item .content {
+    .item .content,
+    .attention,
+    .attention em,
+    .email-signup {
         filter: invert(1);
     }
 
-    .post-nav {
+    .post-nav .link-title,
+    input[type="text"],
+    input[type="email"] {
         font-weight: 400;
         color: white;
     }

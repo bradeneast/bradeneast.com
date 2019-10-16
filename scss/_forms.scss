@@ -15,9 +15,12 @@ input[type="email"] {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     margin-right: 1em;
+    min-width: 15em;
+    border-color: var(--CL-2);
 
-    &:placeholder-shown {
-        border-color: var(--CL-2);
+    &:focus {
+        outline: none;
+        border-color: var(--CL-1);
     }
 }
 

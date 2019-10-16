@@ -3,7 +3,6 @@
 
 <head>
 <meta property="og:image" content="https://www.bradeneast.com/_images/blog/people-in-motion.jpg">
-<meta property="og:description" content="The blog for dev-signers - Gain confidence designing and coding stellar interfaces.">
 <meta property="og:title" content="Staggered animations: css vs scss vs javascript">
     <noscript>
         It's not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
@@ -41,15 +40,14 @@
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
     <script defer src="/_scripts/main.js" type="text/javascript"></script>
-
-<meta name="description" content="The blog for dev-signers - Gain confidence designing and coding stellar interfaces."></head>
+</head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
     <nav>
 
         <ul>
-            <li><a class="nav-item" href="/work">work</a></li>
+            <!-- <li><a class="nav-item" href="/work">work</a></li> -->
             <li><a class="nav-item" href="/about">about</a></li>
             <li><a class="nav-item" href="/blog">blog</a></li>
         </ul>
@@ -88,7 +86,7 @@
     <div class="content">
         <div class="meta">
             <h4 class="date" data-load="clip" style="animation-delay: .05s;">2019/09/03</h4>
-            <h2 class="tags" data-load="clip" style="animation-delay: .1s;"><a href="/blog/tags/ui">ui</a>, <a href="/blog/tags/design">design</a>, <a href="/blog/tags/css">css</a>, <a href="/blog/tags/javascript">javascript</a></h2>
+            <h2 class="tags" data-load="clip" style="animation-delay: .1s;"><a href="/tags/ui">ui</a>, <a href="/tags/design">design</a>, <a href="/tags/css">css</a>, <a href="/tags/javascript">javascript</a></h2>
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
@@ -196,11 +194,11 @@
 <p>However, adding styles with Javascript does have drawbacks. Unlike CSS, adding styles with Javascript immediately maxes out our specificity &#x2018;headroom&#x2019;. Because the styles are applied directly to the element, the only way we can change them is to write more Javascript. Another drawback to this approach is that elements added to the DOM after our script runs will not be affected. We have to call the function again to catch those.</p>
 <p>Depending on your application, SCSS or Javascript might be better suited for staggering your UI animations. No matter what you choose, adding staggered motion and choreography will almost always make your application feel more friendly and interesting. :)</p>
 <p>If you want to read more about this, check out the <a href="https://material.io/design/motion/customization.html#sequencing">Material Design spec</a> on animation customization.</p>
-<p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=%20staggered%20animations%20css%20vs%20scss%20vs%20javascript%20by%20@bradenthehair%20-%20&amp;url=https://bradeneast.com/blog//blog/staggered-animations-css-vs-scss-vs-javascript">share this article</a> with your followers. I appreciate it!</p></div>
+<p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=staggered%20animations%20css%20vs%20scss%20vs%20javascript%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/staggered-animations-css-vs-scss-vs-javascript">share this article</a> with your followers. I appreciate it!</p></div>
         </div>
     </div>
 
-    <div data-load="move">
+    <div class="attention" data-load="move">
         <p>
             <em>Want to dive deeper where design and code meet? Join the community of dev-signers on my email list.</em>
         </p>
