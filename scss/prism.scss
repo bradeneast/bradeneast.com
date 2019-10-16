@@ -23,7 +23,8 @@ pre {
 }
 
 code:not([class*="language-"]) {
-    background: #eee;
+    background: rgba(128, 128, 128, 0.15);
+    font-size: 0.95em;
     padding: 2px 5px;
     border-radius: 3px;
 }
