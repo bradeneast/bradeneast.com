@@ -21,6 +21,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="supported-color-schemes" content="light dark">
     <title>Braden East | 404 Page Not Found</title>
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
@@ -36,7 +37,13 @@
 
     
     <script>
-        JSON.parse(localStorage.getItem('darkModeOn')) ? document.documentElement.classList.add('dm') : null;
+
+        var preferredScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var locallySetScheme = JSON.parse(localStorage.getItem('darkModeOn'));
+        var initialSchemeIsDark = locallySetScheme || preferredScheme;
+
+        initialSchemeIsDark ? document.documentElement.classList.add('dm') : null;
+
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
     <script defer src="/_scripts/main.js" type="text/javascript"></script>

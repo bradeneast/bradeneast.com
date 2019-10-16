@@ -1,0 +1,50 @@
+html.dm {
+    background: #060606;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    ul,
+    ol,
+    span,
+    p img,
+    ul img,
+    ol img,
+    span img {
+        filter: invert(1);
+    }
+
+    ul,
+    ol,
+    span {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p,
+        span {
+            filter: none;
+        }
+    }
+}
+
+html.dm {
+    .item .bg::after,
+    .item .content,
+    .attention,
+    .attention em,
+    .email-signup {
+        filter: invert(1);
+    }
+
+    .post-nav .link-title,
+    input[type="text"],
+    input[type="email"] {
+        font-weight: 400;
+        color: white;
+    }
+}
