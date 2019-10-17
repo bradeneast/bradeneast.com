@@ -351,9 +351,9 @@ function createNewPostsFromTemplate(posts) {
         })
 
         // Add next and previous links
-        const prevPost = posts[index + 1];
+        const prevPost = posts[index - 1];
         const prevElem = pageTemplateFile.$('.previous');
-        const nextPost = posts[index - 1];
+        const nextPost = posts[index + 1];
         const nextElem = pageTemplateFile.$('.next');
 
         if (prevPost) {
