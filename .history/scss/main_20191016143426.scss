@@ -44,7 +44,6 @@ body {
     color: var(--CL-4);
     line-height: 1.8;
     display: grid;
-    font-weight: 400;
     grid-template-columns: calc(10vmax + 10rem) 1fr;
     grid-gap: var(--PAD-M);
     padding: 20vh var(--PAD-M) var(--PAD-S) var(--PAD-M);
