@@ -6,6 +6,8 @@ No developer wants to debug code written for a single use case. Sometimes you ha
 
 Recently, I posted about how to easily get values from a JSON object and place them dynamically in your HTML using `Object.keys()`. Let's expand my first approach to handle more complex JSON, inclduing URLS and nested objects, because sometimes we have to get that one value nested inside 5 other objects.
 
+If you feel a bit lost, take a glance at the [simpler approach](/blog/append-json-values-to-matching-html-elements-with-object.keys) and then come back and join me.
+
 Let's make the safe assumption that an API isn't give us a responses in the exact format we'd like. What if we want to populate an HTML template with data that contains urls, arrays, and nested objects?  Or, what if the API changes their response structure?
 
 ![A star wars stormtrooper lost in the desert](/_images/blog/star-wars.jpg)
