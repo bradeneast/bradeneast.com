@@ -67,9 +67,7 @@ p {
         }
     }
 
-    a,
-    &~ul a,
-    &~ol a {
+    a {
         text-decoration: underline;
         text-decoration-color: var(--CL-2);
         color: var(--CL-1);

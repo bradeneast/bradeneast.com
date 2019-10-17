@@ -43,33 +43,17 @@ h4 {
     line-height: 1.4;
 }
 
-p {
-    font-size: 1rem;
+p ~ h4 {
+    margin-top: var(--PAD-L);
+}
+
+p,
+p ~ ul,
+p ~ ol {
     position: relative;
     margin-bottom: var(--PAD-S);
 
-    &:last-of-type {
-        margin-bottom: 0;
-    }
-
-    &~h4 {
-        margin-top: var(--PAD-L);
-    }
-
-    &~ul,
-    &~ol {
-        margin: var(--PAD-S) 0;
-        padding-left: 1em;
-
-        li {
-            list-style-type: disc;
-            list-style-position: outside;
-        }
-    }
-
-    a,
-    &~ul a,
-    &~ol a {
+    a {
         text-decoration: underline;
         text-decoration-color: var(--CL-2);
         color: var(--CL-1);
@@ -81,6 +65,21 @@ p {
             filter: var(--FL-DARKEN);
         }
     }
+}
+
+p ~ ul,
+p ~ ol {
+    margin: var(--PAD-S) 0;
+    padding-left: 1em;
+
+    li {
+        list-style-type: disc;
+        list-style-position: outside;
+    }
+}
+
+p:last-of-type {
+    margin-bottom: 0;
 }
 
 pre,

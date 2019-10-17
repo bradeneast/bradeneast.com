@@ -44,7 +44,6 @@ h4 {
 }
 
 p {
-    font-size: 1rem;
     position: relative;
     margin-bottom: var(--PAD-S);
 
@@ -67,9 +66,7 @@ p {
         }
     }
 
-    a,
-    &~ul a,
-    &~ol a {
+    a {
         text-decoration: underline;
         text-decoration-color: var(--CL-2);
         color: var(--CL-1);
