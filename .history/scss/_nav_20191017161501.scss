@@ -48,10 +48,6 @@ nav {
         .nav-end {
             display: none;
         }
-
-        .cta {
-            margin: var(--PAD-L) 0;
-        }
     }
 
     section > .nav-end {
@@ -83,6 +79,10 @@ nav {
             order: -1;
             padding-bottom: var(--PAD-XL);
         }
+    }
+
+    .cta {
+        margin: var(--PAD-L) 0;
     }
 
     .back-to-top {
