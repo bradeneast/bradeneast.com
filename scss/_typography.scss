@@ -1,5 +1,14 @@
 @font-face {
     font-family: Metropolis;
+    src: local("Metropolis"), url("/_fonts/metropolis-light.woff2") format("woff2"),
+        url("/_fonts/metropolis-light.woff") format("woff");
+    font-weight: 300;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
+@font-face {
+    font-family: Metropolis;
     src: local("Metropolis"), url("/_fonts/metropolis-regular.woff2") format("woff2"),
         url("/_fonts/metropolis-regular.woff") format("woff");
     font-weight: 400;
@@ -52,12 +61,12 @@ p {
         margin-bottom: 0;
     }
 
-    &~h4 {
+    & ~ h4 {
         margin-top: var(--PAD-L);
     }
 
-    &~ul,
-    &~ol {
+    & ~ ul,
+    & ~ ol {
         margin: var(--PAD-S) 0;
         padding-left: 1em;
 
@@ -68,8 +77,8 @@ p {
     }
 
     a,
-    &~ul a,
-    &~ol a {
+    & ~ ul a,
+    & ~ ol a {
         text-decoration: underline;
         text-decoration-color: var(--CL-2);
         color: var(--CL-1);

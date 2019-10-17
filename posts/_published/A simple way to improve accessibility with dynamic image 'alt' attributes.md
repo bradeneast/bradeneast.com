@@ -32,28 +32,29 @@ Check out the example HTML below.
 </div>
 ```
 
-We have a delicious-looking gallery of asian-american food here. You probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that cdn's can read, but we can't.
+We have a delicious-looking gallery of asian-american food here. You (and people with screen readers) probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that servers can read, but we can't.
 
 We want to isolate just the image titles. To help us do that, we'll use some fun native javascript methods that honestly sound like dance moves: `split()`, `shift()`, and `pop()`.
 
-First, let's grab the `img` elements with a `querySelectorAll()`.
+First, let's grab the `img` elements with `document.getElementsByTagName()`.
 
 ```javascript
-const images = document.querySelectorAll('img');
+const images = Array.from(document.getElementsByTagName('img'));
 
-images.forEach(image => {
+images.map(image => {
     // do stuff
 })
 ```
 
-Since `querySelectorAll()` returns a node list and not an array, we should use `forEach()` to loop over it.
-
 Next, let's make sure the image doesn't already have an `alt` value already set.
 
 ```javascript
-images.forEach(image => {
+images.map(image => {
+
     if (!image.getAttribute('alt')) {
+
         // do stuff
+
     }
 })
 ```
@@ -61,30 +62,25 @@ images.forEach(image => {
 After that, we can get the `src` value, and convert URL-formatted characters with `decodeURIComponent()`. This will replace an encoded character like `%20` with a standard space.
 
 ```javascript
-images.forEach(image => {
-    if (!image.getAttribute('alt')) {
-        const imageSource = decodeURIComponent(image.getAttribute('src'));
-    }
-})
+const imageSource = decodeURIComponent(image.getAttribute('src'));
 ```
 
-From here, we can isolate the title by splitting the URL into chunks between forward slashes and returning the last one of those chunks.
+From here, we can isolate the title by splitting the URL into chunks between forward slashes with `Array.split()` and returning the last one of those chunks with `Array.pop()`.
 
 ```javascript
-images.forEach(image => {
-    if (!image.getAttribute('alt')) {
-        const imageSource = decodeURIComponent(image.getAttribute('src'));
-        const imageName = imageSource.split('/').pop();
-    }
-})
+const imageSource = decodeURIComponent(image.getAttribute('src'));
+const imageName = imageSource.split('/').pop(); // 'my-beautiful-image.jpg?format=small'
 ```
 
-Finally, we'll remove the file extension (.jpg, .png, etc.) and everything after it. Then we'll just replace dashes with spaces, and we're done!
+We'll use `Array.split()` again to separate the file name from the file extension and return the former with `Array.shift()`. Finally, we can replace dashes with spaces, and we're done!
 
 ```javascript
-const images = document.querySelectorAll('img');
+const imageTitle = imageName.split('.').shift().replace(/-/g, ' '); // 'my beautiful image'
+```
 
-images.forEach(image => {
+```javascript
+images.map(image => {
+
     // will ignore images with alt already set
     if (!image.getAttribute('alt')) {
 
@@ -93,20 +89,29 @@ images.forEach(image => {
         const imageTitle = imageName.split('.').shift().replace(/-/g, ' '); // 'my beautiful image'
 
         image.setAttribute('alt', imageTitle);
+
     }
 })
 ```
 
-I hope this little snippet of vanilla javascript takes a little bit of the headache out of improving SEO and accessibility on your web projects.
+I hope this little bit of vanilla Javascript takes the headache out of `img` `alt` attributes and helps you improve SEO and accessibility on your web projects.
 
 As always, you can check out the [demo on CodePen](https://codepen.io/bradeneast/pen/ZEzpLNg), or copy the condensed version without comments below:
 
 ```javascript
-document.querySelectorAll('img').forEach(e => {
-    if (!e.getAttribute('alt')) {
-        const source = decodeURIComponent(e.getAttribute('src'));
-        const title = (source.split('/').pop()).split('.').shift().replace(/-/g, ' ');
-        e.setAttribute('alt', title);
-    }
-})
+function getDynamicAlts(arrayOfImages) {
+
+    arrayOfImages.map(image => {
+
+        if (!image.getAttribute('alt')) {
+
+            const source = decodeURIComponent(image.getAttribute('src'));
+            const name = source.split('/').pop();
+            const title = name.split('.').shift().replace(/-/g, ' ');
+
+            image.setAttribute('alt', title);
+
+        }
+    })
+}
 ```

@@ -305,7 +305,7 @@ function readyPostData(post) {
         thisPost.tags.split(', ').map(tag => tags.push(tag));
 
         // Append CTA to post body
-        thisPost.body += `<p>Thanks for reading! If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${root + thisPost.link}">share this article</a> with your followers. I appreciate it!</p>`;
+        thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${root + thisPost.link}">share this article</a> with your followers.</p>`;
 
         posts.push(thisPost);
     }
