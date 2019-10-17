@@ -6,6 +6,7 @@ $mq: 1080px;
     --CL-2: #dfdfdf;
     --CL-3: #555;
     --CL-4: #32353a;
+    --CL-WHITE: white;
     --SHADE-S: rgba(0, 0, 0, 0.2);
     --SHADE-M: rgba(0, 0, 0, 0.4);
     --SHADE-L: rgba(0, 0, 0, 0.8);
@@ -17,6 +18,7 @@ $mq: 1080px;
     --SHADOW: 1em 1em 2em 0 var(--SHADE-S);
     --BDR: 2px;
     --RADIUS: 5px;
+    --SHADOW: 20px 20px 30px 0 rgba(0, 0, 0, 0.2);
     --FL-DARKEN: brightness(0.8) contrast(1.2);
 }
 
@@ -91,12 +93,14 @@ section {
 }
 
 .attention {
-    background: var(--CL-2);
-    padding: var(--PAD-M);
+    background-color: var(--CL-2);
+    background-blend-mode: lighten;
     border-radius: var(--RADIUS);
+    padding: var(--PAD-M);
 
-    * {
-        --CL-2: var(--CL-3);
+    input[type="email"],
+    input[type="text"] {
+        border-color: var(--CL-3);
     }
 }
 

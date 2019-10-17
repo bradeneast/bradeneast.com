@@ -6,6 +6,10 @@ nav {
     a {
         padding-left: 1em;
     }
+
+    .cta {
+        margin-bottom: var(--PAD-L);
+    }
 }
 
 .active {
@@ -32,10 +36,6 @@ nav {
             color: var(--CL-4);
         }
     }
-}
-
-.cta {
-    margin-bottom: var(--PAD-L);
 }
 
 @media screen and (max-width: $mq) {
