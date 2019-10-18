@@ -72,7 +72,7 @@ section {
         margin-bottom: 0;
     }
 
-    & > .nav-end {
+    &>.nav-end {
         display: none;
     }
 }
@@ -102,6 +102,16 @@ section {
     input[type="text"] {
         border-color: var(--CL-3);
     }
+}
+
+.noscript-message {
+    width: 100%;
+    grid-column: 1 / -1;
+    color: var(--CL-WHITE);
+    background: var(--CL-1);
+    padding: var(--PAD-S);
+    border-radius: var(--RADIUS);
+    opacity: .63;
 }
 
 footer {
