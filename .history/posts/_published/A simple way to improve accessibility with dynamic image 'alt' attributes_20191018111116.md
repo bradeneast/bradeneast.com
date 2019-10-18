@@ -1,6 +1,6 @@
 # Get img alt attribute automatically from src
 ## 2019/08/19
-### javascript, html, accessibility
+### javascript, html
 
 I'm sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I'm usually adding `aria-label` and `tabindex` and `role` attributes later than I'd like.
 
