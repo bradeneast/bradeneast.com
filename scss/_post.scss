@@ -1,7 +1,5 @@
 .post-nav {
     display: flex;
-    align-items: flex-end;
-    align-content: flex-end;
     margin-top: var(--PAD-L);
     transform: translateY(0.4em);
 
@@ -59,8 +57,14 @@
 }
 
 @media screen and (max-width: $mq) {
-    .post-nav .next,
-    .post-nav .previous {
-        width: 100%;
+    .post-nav {
+        .next,
+        .previous {
+            width: 100%;
+        }
+
+        .label {
+            font-weight: 700;
+        }
     }
 }
