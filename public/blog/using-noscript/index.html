@@ -131,11 +131,11 @@
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
-<p><code>&lt;noscript&gt;</code> is really useful when we need to provide alternative/additional styles and content under circumstances where Javascript isn&#x2019;t available.</p>
+<p><code>&lt;noscript&gt;</code> is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn&#x2019;t available.</p>
 <blockquote>
 <p>The fastest marathon in the world was run by Eliud Kipchoge (<a href="https://www.youtube.com/watch?v=A73HQwEct-o">watch here</a>)</p>
 </blockquote>
-<p>The first thing we should keep in mind is that <code>&lt;noscript&gt;</code> is only applicable when Javascript is blocked in the <em>browser&#x2019;s</em> settings.  Firewalls and ad blockers will not trigger <code>&lt;noscript&gt;</code> content to be rendered on the page.</p>
+<p>The first thing we should keep in mind is that <code>&lt;noscript&gt;</code> is only applicable when Javascript is blocked in the <em>browser&#x2019;s</em> settings. This is what I&#x2019;m referring to as a &#x2018;noscript situation&#x2019; in this article.  Firewalls and ad blockers will not trigger <code>&lt;noscript&gt;</code> content to be rendered on the page.</p>
 <p><img src="/_images/blog/no.jpg" alt="no"></p>
 <h4>What happens in a noscript situation?</h4>
 <p>If a browser&#x2019;s settings block Javascript, content will be unwrapped from the <code>&lt;noscript&gt;</code> tags in its original location (with some exceptions, which we&#x2019;ll get to in quirks).</p>
@@ -144,20 +144,26 @@
     Please enable Javascript for a better experience!
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>It seems like most people who have disabled Javascript in the first place probably don&#x2019;t pay attention to these messages, but I guess it&#x2019;s probably better than letting the user experience bugs and missing content with no context or explanation.</p>
+<p>It seems like most people who have disabled Javascript in the first place probably don&#x2019;t pay attention to these messages, but I guess it&#x2019;s better than letting the user experience bugs and missing content with no context or explanation.</p>
 <p>There are also cases where we might want to show large amounts of alternate content under noscript circumstances. If your instinct is to cringe at the thought of dozens of <code>&lt;noscript&gt;</code> tags all over your markup in the almighty name of accessibility, you&#x2019;re not alone. Thankfully, there are much easier ways to hedge against these situations.</p>
-<h4>1. Replace your alternate content with dynamic content</h4>
+<h4>1. Replace alternate content with dynamic content</h4>
 <p>This is probably the most catch-all, straightforward solution. In this case, we can avoid using <code>&lt;noscript&gt;</code> altogether. Another nice feature of this approach is that it supports situations where Javascript is blocked by a firewall or ad blocker.</p>
-<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>placeholder<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>placeholder-image.jpg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>noscript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    The tax on your coffee is more than the cost of the coffee beans.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.placeholder&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>src <span class="token operator">=</span> fetchedImageOrSomething<span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.noscript&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> fetchedContentOrSomething<span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>As you can see, if the script runs, the placeholder gets changed to whatever image we&#x2019;ve fetched with our script. Otherwise, it&#x2019;s shown to the user as-is.</p>
+<p>As you can see, if the script runs, the placeholder gets changed to whatever image we&#x2019;ve fetched with our script. Otherwise, the image continues to be displayed as-is.</p>
 <p>The only consequence of this approach? Our alternate content will probably flash before the dynamic content is loaded. If we want alternative to ONLY EVER be shown in noscript circumstances, we need option #2.</p>
-<h4>2. Add a class of &#x201C;noscript&#x201D; to alternate content</h4>
-<p>With a class to target, we can initially hide alternative content with the &#x201C;noscript&#x201D; class via CSS. Then we&#x2019;re free to override those styles with something higher specificity later.</p>
+<h4>2. Show alternate content with CSS</h4>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>noscript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    The tax on your coffee is more than the cost of the coffee beans.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>With a class to target, we can initially hide alternate content with the &#x201C;noscript&#x201D; class via CSS. Then we&#x2019;re free to override those styles with something higher-specificity in a noscript situation.</p>
 <pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
         <span class="token selector">body .noscript</span> <span class="token punctuation">{</span>
@@ -166,7 +172,7 @@
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>In the example above, a noscript situation will cause a <code>&lt;style&gt;</code> element to be added to the document, where we declare styles (e.g. <code>display: block</code>, <code>opacity: 1</code>, etc.) that show our alternate content. In a future article, we&#x2019;ll look at the quirks of <code>&lt;noscript&gt;</code>, and how to use it even more effectively.</p>
+<p>In the example above, a noscript situation will cause a <code>&lt;style&gt;</code> element to be added to the document, where we declare simething like <code>display: block</code>, <code>opacity: 1</code>, etc. that shows our alternate content. In a future article, we&#x2019;ll look at the quirks of <code>&lt;noscript&gt;</code>, and how to use it even more effectively.</p>
 <p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=using%20noscript%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/using-noscript">share this article</a> with your followers.</p></div>
         </div>
     </div>
