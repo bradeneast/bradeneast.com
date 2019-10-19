@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-<meta property="og:description" content="Enjoy curated content from my blog">
-<meta property="og:title" content="javascript">
+<meta property="og:image" content="https://www.bradeneast.com/_images/blog/no.jpg">
+<meta property="og:title" content="Using &#x27E8;noscript&#x27E9;">
 
     <!--Meta-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
-    <title>Braden East | javascript</title>
+    <title>Braden East | Using &#x27E8;noscript&#x27E9;</title>
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
@@ -58,8 +58,7 @@
     <link rel="shortcut icon" href="/_images/favicon-red.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
-
-<meta name="description" content="Enjoy curated content from my blog"></head>
+</head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
@@ -119,102 +118,119 @@
     </nav>
 
 
-    <div id="main" data-stagger><section>
-    <h1 class="tagName" data-load="clip">javascript</h1>
-    <p data-load="clip">Enjoy curated content from this tag.</p>
+    <div id="main" data-stagger>
+        <!--CONTENT WILL GO HERE-->
+    <link rel="preload" href="/_css/prism.css" as="style">
+
+<section class="post">
+    <h1 class="title" data-load="clip">Using &#x27E8;noscript&#x27E9;</h1>
+    <div class="content">
+        <div class="meta">
+            <h4 class="date" data-load="clip" style="animation-delay: .05s;">2019/10/18</h4>
+            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"><a href="/blog/tags/javascript">javascript</a>, <a href="/blog/tags/html">html</a>, <a href="/blog/tags/accessibility">accessibility</a></h4>
+        </div>
+        <div class="main" data-load="move" style="animation-delay: .2s;">
+            <div class="body">
+<p><code>&lt;noscript&gt;</code> is really useful when we need to provide alternative/additional styles and content under circumstances where Javascript isn&#x2019;t available.</p>
+<blockquote>
+<p>The fastest marathon in the world was run by Eliud Kipchoge (<a href="https://www.youtube.com/watch?v=A73HQwEct-o">watch here</a>)</p>
+</blockquote>
+<p>The first thing we should keep in mind is that <code>&lt;noscript&gt;</code> is only applicable when Javascript is blocked in the <em>browser&#x2019;s</em> settings.  Firewalls and ad blockers will not trigger <code>&lt;noscript&gt;</code> content to be rendered on the page.</p>
+<p><img src="/_images/blog/no.jpg" alt="no"></p>
+<h4>What happens in a noscript situation?</h4>
+<p>If a browser&#x2019;s settings block Javascript, content will be unwrapped from the <code>&lt;noscript&gt;</code> tags in its original location (with some exceptions, which we&#x2019;ll get to in quirks).</p>
+<p>The most common use for <code>&lt;noscript&gt;</code> is to suggest that the user turn on Javascript.</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">&gt;</span></span>
+    Please enable Javascript for a better experience!
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>It seems like most people who have disabled Javascript in the first place probably don&#x2019;t pay attention to these messages, but I guess it&#x2019;s probably better than letting the user experience bugs and missing content with no context or explanation.</p>
+<p>There are also cases where we might want to show large amounts of alternate content under noscript circumstances. If your instinct is to cringe at the thought of dozens of <code>&lt;noscript&gt;</code> tags all over your markup in the almighty name of accessibility, you&#x2019;re not alone. Thankfully, there are much easier ways to hedge against these situations.</p>
+<h4>1. Replace your alternate content with dynamic content</h4>
+<p>This is probably the most catch-all, straightforward solution. In this case, we can avoid using <code>&lt;noscript&gt;</code> altogether. Another nice feature of this approach is that it supports situations where Javascript is blocked by a firewall or ad blocker.</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>placeholder<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>placeholder-image.jpg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.placeholder&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>src <span class="token operator">=</span> fetchedImageOrSomething<span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>As you can see, if the script runs, the placeholder gets changed to whatever image we&#x2019;ve fetched with our script. Otherwise, it&#x2019;s shown to the user as-is.</p>
+<p>The only consequence of this approach? Our alternate content will probably flash before the dynamic content is loaded. If we want alternative to ONLY EVER be shown in noscript circumstances, we need option #2.</p>
+<h4>2. Add a class of &#x201C;noscript&#x201D; to alternate content</h4>
+<p>With a class to target, we can initially hide alternative content with the &#x201C;noscript&#x201D; class via CSS. Then we&#x2019;re free to override those styles with something higher specificity later.</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">body .noscript</span> <span class="token punctuation">{</span>
+            <span class="token comment">/* styles to show alternate content */</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>In the example above, a noscript situation will cause a <code>&lt;style&gt;</code> element to be added to the document, where we declare styles (e.g. <code>display: block</code>, <code>opacity: 1</code>, etc.) that show our alternate content. In a future article, we&#x2019;ll look at the quirks of <code>&lt;noscript&gt;</code>, and how to use it even more effectively.</p>
+<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=using%20noscript%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/using-noscript">share this article</a> with your followers.</p></div>
+        </div>
+    </div>
+
+    <div class="attention" data-load="move">
+        <component data-name="cta"><div class="cta">
+    <div>
+        <h2>
+            Want to dive deeper where design and code meet?
+        </h2>
+        <p>
+            <em>Join the community of dev-signers on my email list.</em>
+        </p>
+    </div>
+
+    <div id="mc_embed_signup">
+
+        <form action="https://gmail.us3.list-manage.com/subscribe/post?u=1c103417f1b53af926251412e&amp;id=501e8bc2f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+            <div class="email-signup" id="mc_embed_signup_scroll">
+
+                <div class="mc-field-group" data-load="move" style="animation-delay: .05s">
+                    <input type="email" value placeholder="your email address..." name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_1c103417f1b53af926251412e_501e8bc2f2" tabindex="-1" value>
+                </div>
+
+                <div class="button submit-wrapper" data-load="move" style="animation-delay: .1s">
+                    <input type="submit" value="subscribe" name="subscribe" id="mc-embedded-subscribe">
+                    <div class="button-animation"></div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div></component>
+    </div>
+
 </section>
 
 <section data-load="move">
-    <component data-name="post-feed" data-count="999" data-feed="javascript"><ul class="gallery" data-stagger="children">
-    <template>
-        <li class="item" data-load="scale" data-scroll>
-            <a href class="link">
-                <div class="bg">
-                    <img class="image">
-                </div>
-                <div class="content">
-                    <p class="title"></p>
-                    <p class="tags"></p>
-                </div>
-            </a>
-        </li>
-    </template>
-
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/using-noscript" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/no.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Using &#x27E8;noscript&#x27E9;</p>
-                    <p class="tags">javascript, html, accessibility</p>
-                </div>
-            </a>
-        </li>
-    
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/staggered-animations-css-vs-scss-vs-javascript" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/people-in-motion.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Staggered animations: css vs scss vs javascript</p>
-                    <p class="tags">ui, design, css, javascript</p>
-                </div>
-            </a>
-        </li>
-    
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/style-pseudo-elements-with-javascript" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/wave.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Style pseudo elements with javascript</p>
-                    <p class="tags">html, css, javascript</p>
-                </div>
-            </a>
-        </li>
-    
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/get-img-alt-attribute-automatically-from-src" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/polaroids.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Get img alt attribute automatically from src</p>
-                    <p class="tags">javascript, html, accessibility</p>
-                </div>
-            </a>
-        </li>
-    
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/convert-json-to-html--nested-objects-and-urls" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/star-wars.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Convert JSON to HTML - Nested objects and URLs</p>
-                    <p class="tags">javascript, html</p>
-                </div>
-            </a>
-        </li>
-    
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/append-json-values-to-matching-html-elements-with-objectkeys" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/rubiks-cube.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Append JSON values to matching HTML elements with Object.keys()</p>
-                    <p class="tags">javascript, html</p>
-                </div>
-            </a>
-        </li>
-    </ul></component>
-</section>
-        <!--CONTENT WILL GO HERE-->
+    <div class="post-nav">
+        <a href="/blog/make-knobs-and-dials-with-html-and-css" class="previous">
+            <div class="label">previous</div>
+            <div class="link-title">Make knobs and dials with HTML and CSS</div>
+        </a>
+        <a href="#" class="next" style="display: none">
+            <div class="label">next</div>
+            <div class="link-title"></div>
+        </a>
     </div>
+</section>
+
+<link rel="stylesheet" href="/_css/prism.css" type="text/css"></div>
 
 
     <footer>
