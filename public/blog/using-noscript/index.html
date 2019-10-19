@@ -160,7 +160,7 @@
 <p>In this case, we avoid using <code>&lt;noscript&gt;</code> altogether. Another feature of this approach is that it supports situations where Javascript is blocked by a firewall or ad blocker.</p>
 <p>The only consequence? Our alternate content will probably flash while the rest of the page is being loaded. If we want alternate content to ONLY EVER be shown in noscript circumstances, we need another option.</p>
 <h4>2. Show alternate content with CSS</h4>
-<pre><code class="language-css">    <span class="token selector">body .noscript</span> <span class="token punctuation">{</span>
+<pre><code class="language-css">    <span class="token selector">.noscript</span> <span class="token punctuation">{</span>
         <span class="token comment">/* styles to hide alternate content */</span>
     <span class="token punctuation">}</span>
 </code></pre>
