@@ -1,4 +1,4 @@
-# Staggered animations: css vs scss vs javascript
+# Staggered animations
 ## 2019/09/03
 ### ui, design, css, javascript
 

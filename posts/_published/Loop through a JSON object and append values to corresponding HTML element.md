@@ -1,10 +1,10 @@
-# Append JSON values to matching HTML elements with Object.keys()
+# Object.keys()
 ## 2019/08/04
 ### javascript, html
 
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I'm wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript `Object.keys()` method.
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I'm wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, `Object.keys()`.
 
-![multicolored keys](/_images/blog/rubiks-cube.jpg)
+![a rubiks cube being solved](/_images/blog/rubiks-cube.jpg)
 
 In a nutshell, we want to look for class names on DOM elements that match keys in a given JSON object.  Then, we want to get the value for that key and stick it into the matching element.  We also want it to be dynamic and customizable, so we can use it on multiple kinds of objects and elements.
 
@@ -24,7 +24,7 @@ Let's start with some barebones HTML to reference in the javascript.
 
 ```
 
-Next, you'll need some data to work with. The goal is for it to end up wrapped cozily inside the proper tags in our HTML.
+Next, we'll need some data to work with. The goal is for it to end up wrapped inside the proper tags in our HTML.
 
 Because JSON is based on Javascript (Javascript Object Notation), there are plenty of Javascript-native methods that will work out of the box. We'll use those in the example.
 
@@ -62,12 +62,11 @@ blogPosts.forEach(post => {
     Object.keys(post).forEach(key => {
 
         // looks for elements with a class name matching the key
-        const correspondingElement = postFragment.querySelector(`.${key}`);
+        const correspondingElements = postFragment.querySelectorAll(`.${key}`);
 
-        // if a corresponding element is found
-        if (correspondingElement) {
-            correspondingElement.insertAdjacentHTML('beforeend', post[key]);
-        }
+        // if corresponding elements are found
+        correspondingElements.forEach(e => e.innerHTML = post[key]);
+
     });
 
     // sticks our modified version of the template back in the DOM, at the end of our wrapper
@@ -80,25 +79,31 @@ There is so much you can do with the `Object.keys()` method. It's what makes thi
 
 Try it out [on CodePen](https://codepen.io/bradeneast/pen/YmEBGY) and let me know what you use the `Object.keys()` method for, or if there's a better way to accomplish the same thing.
 
-Just need the JS snippet? Here it is without all the comments:
+Just need the Javascript?  Here's a couple functions that will do what we laid out above.
 
 ```javascript
+// loops over an array of JSON objects and appends a new copy of 
+function jsonToHTML(JSONArray, parentElement) {
 
-const postWrapper = document.getElementById('postWrapper');
-const template = postWrapper.querySelector('template');
+    JSONArray.forEach(item => {
 
-blogPosts.forEach(post => {
-    let postFragment = document.importNode(template.content, true);
+        const template = parentElement.querySelector('template');
+        const populatedFragment = populateTemplateWithJson(item, template);
 
-    Object.keys(post).forEach(key => {
-        const correspondingElement = postFragment.querySelector(`.${key}`);
+        parentElement.append(populatedFragment);
+    })
+}
 
-        if (correspondingElement) {
-            correspondingElement.insertAdjacentHTML('beforeend', post[key]);
-        }
-    });
+// Takes an HTML Template element and returns a document fragment populated with the object's content
+function populateTemplateWithJson(JSONObject, template) {
 
-    postWrapper.appendChild(postFragment);
-})
+    const frag = document.importNode(template.content, true);
 
+    Object.keys(JSONObject).forEach(key => {
+        const matchingElems = frag.querySelectorAll(`.${key}`);
+        matchingElems.forEach(elem => elem.innerHTML = JSONObject[key]);
+    })
+
+    return frag;
+}
 ```

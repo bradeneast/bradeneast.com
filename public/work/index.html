@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-<meta property="og:description" content="Discover the thinking behind beautiful design solutions.">
-<meta property="og:title" content="Work">
 
     
     <meta charset="UTF-8">
@@ -11,11 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
     <title>Braden East | Work</title>
+	<meta property="og:description" content="Discover the thinking behind beautiful design solutions.">
+	<meta property="og:title" content="Work">
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bradeneast.com">
-    <meta property="og:image" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
+    <meta property="og:image" id="ogimage" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
 
     
     <link rel="preload" href="/_css/main.css" as="style">
@@ -59,7 +59,7 @@
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
 
-<meta name="description" content="Discover the thinking behind beautiful design solutions."></head>
+	<meta name="description" content="Discover the thinking behind beautiful design solutions."></head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
@@ -134,7 +134,7 @@
 </section>
 
 <section data-load="move">
-    <component data-name="post-feed" data-count="999" data-feed="work"><ul class="gallery" data-stagger="children">
+    <custom-component data-name="post-feed" data-count="999" data-feed="work"><ul class="gallery" data-stagger="children">
     <template>
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
@@ -148,7 +148,7 @@
             </a>
         </li>
     </template>
-</ul></component>
+</ul></custom-component>
 </section></div>
 
 

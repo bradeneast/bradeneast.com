@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-<meta property="og:image" content="https://www.bradeneast.com/_images/blog/rubiks-cube.jpg">
-<meta property="og:title" content="Append JSON values to matching HTML elements with Object.keys()">
 
     <!--Meta-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
-    <title>Braden East | Append JSON values to matching HTML elements with Object.keys()</title>
+    <title>Braden East | Object.keys()</title>
+	<meta property="og:image" content="https://www.bradeneast.com/_images/blog/rubiks-cube.jpg">
+	<meta property="og:title" content="Object.keys()">
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bradeneast.com">
-    <meta property="og:image" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
+    
 
     <!--Preloads-->
     <link rel="preload" href="/_css/main.css" as="style">
@@ -123,7 +123,7 @@
     <link rel="preload" href="/_css/prism.css" as="style">
 
 <section class="post">
-    <h1 class="title" data-load="clip">Append JSON values to matching HTML elements with Object.keys()</h1>
+    <h1 class="title" data-load="clip">Object.keys()</h1>
     <div class="content">
         <div class="meta">
             <h4 class="date" data-load="clip" style="animation-delay: .05s;">2019/08/04</h4>
@@ -131,8 +131,8 @@
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
-<p>Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript <code>Object.keys()</code> method.</p>
-<p><img src="/_images/blog/rubiks-cube.jpg" alt="multicolored keys"></p>
+<p>Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, <code>Object.keys()</code>.</p>
+<p><img src="/_images/blog/rubiks-cube.jpg" alt="a rubiks cube being solved"></p>
 <p>In a nutshell, we want to look for class names on DOM elements that match keys in a given JSON object.  Then, we want to get the value for that key and stick it into the matching element.  We also want it to be dynamic and customizable, so we can use it on multiple kinds of objects and elements.</p>
 <p>Let&#x2019;s start with some barebones HTML to reference in the javascript.</p>
 <pre><code class="language-html">
@@ -147,7 +147,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
 
 </code></pre>
-<p>Next, you&#x2019;ll need some data to work with. The goal is for it to end up wrapped cozily inside the proper tags in our HTML.</p>
+<p>Next, we&#x2019;ll need some data to work with. The goal is for it to end up wrapped inside the proper tags in our HTML.</p>
 <p>Because JSON is based on Javascript (Javascript Object Notation), there are plenty of Javascript-native methods that will work out of the box. We&#x2019;ll use those in the example.</p>
 <pre><code class="language-javascript">
 <span class="token keyword">const</span> blogPosts <span class="token operator">=</span> <span class="token punctuation">[</span>
@@ -178,12 +178,11 @@ blogPosts<span class="token punctuation">.</span><span class="token function">fo
     Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
         <span class="token comment">// looks for elements with a class name matching the key</span>
-        <span class="token keyword">const</span> correspondingElement <span class="token operator">=</span> postFragment<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> correspondingElements <span class="token operator">=</span> postFragment<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment">// if a corresponding element is found</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>correspondingElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            correspondingElement<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&apos;beforeend&apos;</span><span class="token punctuation">,</span> post<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+        <span class="token comment">// if corresponding elements are found</span>
+        correspondingElements<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> e<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> post<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// sticks our modified version of the template back in the DOM, at the end of our wrapper</span>
@@ -193,32 +192,38 @@ blogPosts<span class="token punctuation">.</span><span class="token function">fo
 </code></pre>
 <p>There is so much you can do with the <code>Object.keys()</code> method. It&#x2019;s what makes this approach flexible and dynamic, because you only have to pay attention to naming in your original HTML template.</p>
 <p>Try it out <a href="https://codepen.io/bradeneast/pen/YmEBGY">on CodePen</a> and let me know what you use the <code>Object.keys()</code> method for, or if there&#x2019;s a better way to accomplish the same thing.</p>
-<p>Just need the JS snippet? Here it is without all the comments:</p>
-<pre><code class="language-javascript">
-<span class="token keyword">const</span> postWrapper <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;postWrapper&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> template <span class="token operator">=</span> postWrapper<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;template&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>Just need the Javascript?  Here&#x2019;s a couple functions that will do what we laid out above.</p>
+<pre><code class="language-javascript"><span class="token comment">// loops over an array of JSON objects and appends a new copy of </span>
+<span class="token keyword">function</span> <span class="token function">jsonToHTML</span><span class="token punctuation">(</span><span class="token parameter">JSONArray<span class="token punctuation">,</span> parentElement</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-blogPosts<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">post</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> postFragment <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">importNode</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    JSONArray<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
-    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">const</span> correspondingElement <span class="token operator">=</span> postFragment<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> template <span class="token operator">=</span> parentElement<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;template&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> populatedFragment <span class="token operator">=</span> <span class="token function">populateTemplateWithJson</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> template<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>correspondingElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            correspondingElement<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">&apos;beforeend&apos;</span><span class="token punctuation">,</span> post<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        parentElement<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>populatedFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-    postWrapper<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>postFragment<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// Takes an HTML Template element and returns a document fragment populated with the object&apos;s content</span>
+<span class="token keyword">function</span> <span class="token function">populateTemplateWithJson</span><span class="token punctuation">(</span><span class="token parameter">JSONObject<span class="token punctuation">,</span> template</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
+    <span class="token keyword">const</span> frag <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">importNode</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>JSONObject<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> matchingElems <span class="token operator">=</span> frag<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        matchingElems<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> elem<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> JSONObject<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> frag<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=append%20json%20values%20to%20matching%20html%20elements%20with%20objectkeys%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/append-json-values-to-matching-html-elements-with-objectkeys">share this article</a> with your followers.</p></div>
+<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=objectkeys%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/objectkeys">share this article</a> with your followers.</p></div>
         </div>
     </div>
 
     <div class="attention" data-load="move">
-        <component data-name="cta"><div class="cta">
+        <custom-component data-name="cta"><div class="cta">
     <div>
         <h2>
             Want to dive deeper where design and code meet?
@@ -258,7 +263,7 @@ blogPosts<span class="token punctuation">.</span><span class="token function">fo
 
     </div>
 
-</div></component>
+</div></custom-component>
     </div>
 
 </section>
@@ -269,9 +274,9 @@ blogPosts<span class="token punctuation">.</span><span class="token function">fo
             <div class="label">previous</div>
             <div class="link-title"></div>
         </a>
-        <a href="/blog/convert-json-to-html--nested-objects-and-urls" class="next">
+        <a href="/blog/get-img-alt-attribute-automatically-from-src" class="next">
             <div class="label">next</div>
-            <div class="link-title">Convert JSON to HTML - Nested objects and URLs</div>
+            <div class="link-title">Get img alt attribute automatically from src</div>
         </a>
     </div>
 </section>

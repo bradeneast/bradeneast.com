@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-<meta property="og:description" content="Enjoy curated content from my blog">
-<meta property="og:title" content="html">
 
     <!--Meta-->
     <meta charset="UTF-8">
@@ -11,11 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
     <title>Braden East | html</title>
+	<meta property="og:description" content="Enjoy curated content from my blog">
+	<meta property="og:title" content="html">
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bradeneast.com">
-    <meta property="og:image" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
+    <meta property="og:image" id="ogimage" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
 
     <!--Preloads-->
     <link rel="preload" href="/_css/main.css" as="style">
@@ -59,7 +59,7 @@
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
 
-<meta name="description" content="Enjoy curated content from my blog"></head>
+	<meta name="description" content="Enjoy curated content from my blog"></head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
@@ -125,7 +125,7 @@
 </section>
 
 <section data-load="move">
-    <component data-name="post-feed" data-count="999" data-feed="html"><ul class="gallery" data-stagger="children">
+    <custom-component data-name="post-feed" data-count="999" data-feed="html"><ul class="gallery" data-stagger="children">
     <template>
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
@@ -153,12 +153,12 @@
         </li>
     
         <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/make-knobs-and-dials-with-html-and-css" class="link">
+            <a href="/blog/knobs-and-dials-on-the-web" class="link">
                 <div class="bg">
                     <img class="image" src="/_images/blog/sound-board.jpg">
                 </div>
                 <div class="content">
-                    <p class="title">Make knobs and dials with HTML and CSS</p>
+                    <p class="title">Knobs and dials on the web</p>
                     <p class="tags">html, css, ui</p>
                 </div>
             </a>
@@ -189,29 +189,17 @@
         </li>
     
         <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/convert-json-to-html--nested-objects-and-urls" class="link">
-                <div class="bg">
-                    <img class="image" src="/_images/blog/star-wars.jpg">
-                </div>
-                <div class="content">
-                    <p class="title">Convert JSON to HTML - Nested objects and URLs</p>
-                    <p class="tags">javascript, html</p>
-                </div>
-            </a>
-        </li>
-    
-        <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/append-json-values-to-matching-html-elements-with-objectkeys" class="link">
+            <a href="/blog/objectkeys" class="link">
                 <div class="bg">
                     <img class="image" src="/_images/blog/rubiks-cube.jpg">
                 </div>
                 <div class="content">
-                    <p class="title">Append JSON values to matching HTML elements with Object.keys()</p>
+                    <p class="title">Object.keys()</p>
                     <p class="tags">javascript, html</p>
                 </div>
             </a>
         </li>
-    </ul></component>
+    </ul></custom-component>
 </section>
         <!--CONTENT WILL GO HERE-->
     </div>

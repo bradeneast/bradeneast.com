@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Sat, 19 Oct 2019 12:20:42 GMT</lastBuildDate>
+<lastBuildDate>Mon, 21 Oct 2019 01:32:12 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>Using ⟨noscript⟩</title>
@@ -16,18 +16,18 @@
 &lt;noscript&gt; is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn&#x2019;t available.</description>
     </item>
     <item>
-    <title>Make knobs and dials with HTML and CSS</title>
-    <link>https://www.bradeneast.com/make-knobs-and-dials-with-html-and-css</link>
-    <guid>https://www.bradeneast.com/make-knobs-and-dials-with-html-and-css</guid>
+    <title>Knobs and dials on the web</title>
+    <link>https://www.bradeneast.com/knobs-and-dials-on-the-web</link>
+    <guid>https://www.bradeneast.com/knobs-and-dials-on-the-web</guid>
     <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
     <category>html</category><category>css</category><category>ui</category>
     <description>
 In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
     </item>
     <item>
-    <title>Staggered animations: css vs scss vs javascript</title>
-    <link>https://www.bradeneast.com/staggered-animations-css-vs-scss-vs-javascript</link>
-    <guid>https://www.bradeneast.com/staggered-animations-css-vs-scss-vs-javascript</guid>
+    <title>Staggered animations</title>
+    <link>https://www.bradeneast.com/staggered-animations</link>
+    <guid>https://www.bradeneast.com/staggered-animations</guid>
     <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
     <category>ui</category><category>design</category><category>css</category><category>javascript</category>
     <description>
@@ -52,20 +52,11 @@ I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all p
 I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m usually adding aria-label and tabindex and role attributes later than I&#x2019;d like.</description>
     </item>
     <item>
-    <title>Convert JSON to HTML - Nested objects and URLs</title>
-    <link>https://www.bradeneast.com/convert-json-to-html--nested-objects-and-urls</link>
-    <guid>https://www.bradeneast.com/convert-json-to-html--nested-objects-and-urls</guid>
-    <pubDate>Wed, 07 Aug 2019 05:00:00 GMT</pubDate>
-    <category>javascript</category><category>html</category>
-    <description>
-No developer wants to debug code written for a single use case. Sometimes you have to bite the bullet and write an ultra-specific function, but the goal is to be kind to your future developer self.  Code you can reuse is code you don&#x2019;t have to write (or rewrite).</description>
-    </item>
-    <item>
-    <title>Append JSON values to matching HTML elements with Object.keys()</title>
-    <link>https://www.bradeneast.com/append-json-values-to-matching-html-elements-with-objectkeys</link>
-    <guid>https://www.bradeneast.com/append-json-values-to-matching-html-elements-with-objectkeys</guid>
+    <title>Object.keys()</title>
+    <link>https://www.bradeneast.com/objectkeys</link>
+    <guid>https://www.bradeneast.com/objectkeys</guid>
     <pubDate>Sun, 04 Aug 2019 05:00:00 GMT</pubDate>
     <category>javascript</category><category>html</category>
     <description>
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the javascript Object.keys() method.</description>
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
     </item></channel></rss>

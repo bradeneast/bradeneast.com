@@ -1,4 +1,4 @@
-# Make knobs and dials with HTML and CSS
+# Knobs and dials on the web
 ## 2019/09/09
 ### html, css, ui
 

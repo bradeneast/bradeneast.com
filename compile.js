@@ -53,12 +53,12 @@ class HTMLFile {
     }
 
     parse(decodeEntities) {
-        this.html = htmlParser.parseDOM(fs.readFileSync(this.path), { decodeEntities: decodeEntities })
+        this.html = htmlParser.parseDOM(fs.readFileSync(this.path), { decodeEntities: decodeEntities });
         return this
     }
 
     loadDOM() {
-        this.$ = cheerio.load(this.html)
+        this.$ = cheerio.load(this.html);
         return this
     }
 
@@ -66,7 +66,7 @@ class HTMLFile {
 
         const select = this.$;
 
-        select('component').each(function (i, e) {
+        select('custom-component').each(function (i, e) {
             const component = select(this);
             const componentName = component.attr('data-name');
             const componentHTML = new HTMLFile(`${staticComponents + componentName}.html`).parse(true).loadDOM();
@@ -149,9 +149,10 @@ function appendMetaTags(metaData, selector) {
             const content = getMetaProperty(metaData, prop).replace('/_images/', `${root}_images/`);
 
             if (prop == 'title') selector(prop).text(`Braden East | ${content}`);
-            if (prop == 'description') selector('head').append(`\n<meta name="${prop}" content="${content}">`);
+            if (prop == 'description') selector('head').append(`\n&#9;<meta name="${prop}" content="${content}">`);
 
-            selector('head').prepend(`\n<meta property="og:${prop}" content="${content}">`);
+            selector(`#og${prop}`).remove();
+            selector('title').after(`\n\t<meta property="og:${prop}" content="${content}">`);
         }
     })
 }
@@ -305,7 +306,7 @@ function readyPostData(post) {
         thisPost.tags.split(', ').map(tag => tags.push(tag));
 
         // Append CTA to post body
-        thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${root + thisPost.link}">share this article</a> with your followers.</p>`;
+        thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${root}blog/${thisPost.link}">share this article</a> with your followers.</p>`;
 
         posts.push(thisPost);
     }
