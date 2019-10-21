@@ -1,10 +1,23 @@
 function toggleDarkMode() {
 
     const setting = localStorage.getItem('darkModeOn');
+    const favicon = document.getElementById('favicon');
     let darkModeOn;
 
-    setting ? darkModeOn = JSON.parse(setting) : null;
+    if (setting) darkModeOn = JSON.parse(setting);
 
-    darkModeOn ? localStorage.setItem('darkModeOn', 'false') : localStorage.setItem('darkModeOn', 'true');
+    if (darkModeOn) {
+
+        darkModeOn = false;
+        favicon.setAttribute('href', favicon.href.replace('dark', 'light'));
+
+    } else {
+
+        darkModeOn = true;
+        favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
+
+    }
+
+    localStorage.setItem('darkModeOn', darkModeOn);
     document.documentElement.classList.toggle('dm');
 }
