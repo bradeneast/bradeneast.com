@@ -81,9 +81,14 @@ input[type="submit"] {
         opacity: 1;
         transform: translateX(10%);
     }
+
+    svg {
+        width: 37%;
+        opacity: .24;
+    }
 }
 
-html.dm .toggle {
+html.dm #darkModeToggle {
     color: var(--CL-1);
 
     &::after {
