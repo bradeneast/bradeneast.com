@@ -25,7 +25,7 @@ const postSrc = postsFolder + '_published/';
 const postTemplate = postsFolder + '_template.html';
 const staticComponents = './components/';
 const feedAttribute = 'data-feed';
-const acceptableMetaProperties = ['title', 'description', 'image'];
+const acceptableMetaProperties = ['title', 'description', 'image', 'url'];
 
 let posts = [];
 let tags = [];
@@ -140,7 +140,7 @@ function getMetaProperty(metaData, property) {
 }
 
 
-function appendMetaTags(metaData, selector) {
+function addMetaTags(metaData, selector) {
 
     acceptableMetaProperties.map(prop => {
 
@@ -172,7 +172,8 @@ function publishPagesFrom(directory) {
                 const currentFile = new HTMLFile(location).parse(true).loadDOM().populateComponents();
 
                 // Append meta tags to head element
-                if (currentFile.html[0].data) appendMetaTags(currentFile.html[0].data, templateFile.$)
+                if (currentFile.html[0].data) addMetaTags(currentFile.html[0].data, templateFile.$);
+                templateFile.$('#ogurl').attr('content', root + directory.replace('./pages/', ''));
 
                 // Prepend main content to main element
                 templateFile.$('#main').append(currentFile.html);
@@ -323,9 +324,10 @@ function createNewPostsFromTemplate(posts) {
 
         pageTemplateFile.$('#main').append(postTemplateFile.html);
 
-        appendMetaTags(`
+        addMetaTags(`
         <!--title: ${post.title},
-        image: ${post.image},-->`,
+        image: ${post.image},
+        url: ${root}blog/${post.link}, -->`,
             pageTemplateFile.$);
 
         fs.mkdirSync(postLocation.replace('/index.html', ''));
@@ -387,15 +389,16 @@ function buildTagDirectories(tags) {
 
         const tagName = encodeURI(tag).replace(/\%20+/g, '-');
         const destination = `${public + blog}tags/${tagName}/index.html`;
+        const destinationDir = destination.split('/index.html').shift();
 
-        fs.mkdirSync(destination.split('/index.html').shift());
+        fs.mkdirSync(destinationDir);
         fs.copyFileSync(pageTemplate, destination);
 
         const pageTemplateFile = new HTMLFile(pageTemplate).parse(true).loadDOM();
         const tagTemplateFile = new HTMLFile(`${postsFolder}_tags.html`).parse(true).loadDOM().populateComponents();
 
         pageTemplateFile.$('#main').prepend(tagTemplateFile.html);
-        appendMetaTags(`<!--title: ${tag}, description: Enjoy curated content from my blog,-->`, pageTemplateFile.$);
+        addMetaTags(`<!--title: ${tag}, description: Enjoy curated content from my blog, url: ${root}blog/tags/${tag}, -->`, pageTemplateFile.$);
         pageTemplateFile.$('.tagName').append(tag);
 
         pageTemplateFile.$(`[${feedAttribute}]`).attr(feedAttribute, tag);
