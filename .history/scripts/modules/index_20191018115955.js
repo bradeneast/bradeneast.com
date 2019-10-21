@@ -35,10 +35,20 @@ document.querySelectorAll('[data-stagger]').forEach(item => {
 
 })
 
+// document.querySelectorAll('[data-scroll]').forEach(item => {
+
+//     animateOnScroll(item, {
+//         threshold: .7
+//     })
+// })
+
 allImages.map(img => {
 
     clearImageFormatting(img);
     altFromSource(img);
+    animateOnScroll(img, {
+        threshold: .2
+    });
 
 })
 
