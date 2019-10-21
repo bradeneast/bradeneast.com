@@ -34,15 +34,8 @@
         function checkDarkMode_Initial() {
 
             var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
-            var preferredScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var colorSchemeIsDark = false;
 
             if (darkModeSetLocally) document.documentElement.classList.add('dm');
-
-            if (darkModeSetLocally == null && preferredScheme) {
-                document.documentElement.classList.add('dm');
-                localStorage.setItem('darkModeOn', true);
-            }
 
         }
 
