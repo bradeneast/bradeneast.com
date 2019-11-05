@@ -61,12 +61,12 @@ p {
         margin-bottom: 0;
     }
 
-    &~h4 {
+    & ~ h4 {
         margin-top: var(--PAD-L);
     }
 
-    &~ul,
-    &~ol {
+    & ~ ul,
+    & ~ ol {
         margin: var(--PAD-S) 0;
         padding-left: 1em;
 
@@ -77,8 +77,8 @@ p {
     }
 
     a,
-    &~ul a,
-    &~ol a {
+    & ~ ul a,
+    & ~ ol a {
         text-decoration: underline;
         text-decoration-color: var(--CL-2);
         color: var(--CL-1);
@@ -90,17 +90,6 @@ p {
             filter: var(--FL-DARKEN);
         }
     }
-}
-
-pre,
-code {
-    font-family: monospace !important;
-}
-
-pre {
-    border: var(--BDR) solid var(--CL-2);
-    border-radius: var(--RADIUS);
-    padding: var(--PAD-M);
 }
 
 blockquote {

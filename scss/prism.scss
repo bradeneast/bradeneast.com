@@ -2,6 +2,7 @@ code[class*="language-"],
 pre {
     color: #4a6568;
     background: none;
+    font-family: monospace !important;
     font-size: 0.9em;
     text-align: left;
     white-space: pre-wrap;
@@ -43,10 +44,37 @@ code:not([class*="language-"]) {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
-    padding: 1em;
-    margin: 0.5em 0;
-    overflow: auto;
+
+pre {
+    position: relative;
+    padding: var(--PAD-M);
+    border: var(--BDR) solid var(--CL-2);
+    border-radius: var(--RADIUS);
+
+    &[class*="language-"] {
+        padding: 1em;
+        margin: 0.5em 0;
+        overflow: auto;
+    }
+
+    &[class*="contains-"]::before {
+        content: "html";
+        display: block;
+        position: absolute;
+        top: var(--PAD-S);
+        right: var(--PAD-S);
+        font-size: 0.8em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &.contains-javascript::before {
+        content: "javascript";
+    }
+
+    &.contains-css::before {
+        content: "css";
+    }
 }
 
 :not(pre) > code[class*="language-"],

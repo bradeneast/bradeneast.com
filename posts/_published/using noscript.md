@@ -31,12 +31,12 @@ There are also cases where we might want to show large amounts of alternate cont
 #### 1. Replace alternate content with dynamic content
 
 ```html
-<div class="noscript">
+<div class="noscript" id="fact-of-the-day">
     The tax on coffee is more than the cost of the coffee beans.
 </div>
 
 <script>
-    document.querySelector('.noscript').innerHTML = fetchedContentOrSomething;
+    document.getElementById('fact-of-the-day').innerHTML = fetchedContentOrSomething;
 </script>
 ```
 
@@ -44,7 +44,7 @@ This is probably the most catch-all, straightforward solution. It's easy to impl
 
 As you can see, if the script runs, the placeholder gets changed to whatever message we've fetched or generated with our script.
 
-In this case, we avoid using `<noscript>` altogether. Another feature of this approach is that it supports situations where Javascript is blocked by a firewall or ad blocker.
+In this case, we avoid using `<noscript>` altogether. Another feature of this approach is that it works just as well if Javascript is blocked by a firewall or ad blocker.
 
 The only consequence? Our alternate content will probably flash while the rest of the page is being loaded. If we want alternate content to ONLY EVER be shown in noscript circumstances, we need another option.
 

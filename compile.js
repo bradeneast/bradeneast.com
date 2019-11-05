@@ -283,14 +283,17 @@ function readyPostData(post) {
 
             if (String(e.attribs.class).includes('language-html')) {
                 code.empty().append(prism.highlight(snippet, prism.languages.markup));
+                code.parent().addClass('contains-html');
             }
 
             if (String(e.attribs.class).includes('language-javascript')) {
                 code.empty().append(prism.highlight(snippet, prism.languages.javascript));
+                code.parent().addClass('contains-javascript');
             }
 
             if (String(e.attribs.class).includes('language-css')) {
                 code.empty().append(prism.highlight(snippet, prism.languages.css));
+                code.parent().addClass('contains-css');
             }
         })
 
