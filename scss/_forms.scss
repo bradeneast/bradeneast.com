@@ -16,17 +16,18 @@ input[type="email"] {
     padding-bottom: 0.8em;
     margin-right: 1em;
     min-width: 15em;
-    color: var(--CL-4);
+    color: var(--CL-BLACK);
     font-weight: 700;
     border-color: var(--CL-2);
 
-    &:focus {
+    &:focus,
+    &:not(:placeholder-shown) {
         outline: none;
         border-color: var(--CL-1);
     }
 
     &:placeholder-shown::-webkit-input-placeholder {
-        opacity: .63;
+        opacity: 0.63;
     }
 }
 
@@ -38,7 +39,7 @@ input[type="submit"] {
     margin: 0;
     font-weight: 700;
 
-    &:focus~.button-animation {
+    &:focus ~ .button-animation {
         --scale: 1;
         opacity: 0.2;
     }

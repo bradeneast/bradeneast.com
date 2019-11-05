@@ -13,7 +13,7 @@ The first thing we should keep in mind is that `<noscript>` is only applicable w
 
 #### What happens in a noscript situation?
 
-If a browser's settings block Javascript, content will be unwrapped from the `<noscript>` tags in its original location (with some exceptions, which we’ll get to in quirks).
+If a browser's settings block Javascript, content will be unwrapped from the `<noscript>` tags in its original location (with some exceptions, which is the topic for another article).
 
 The most common use for `<noscript>` is to suggest that the user turn on Javascript.
 
@@ -25,7 +25,7 @@ The most common use for `<noscript>` is to suggest that the user turn on Javascr
 
 It seems like most people who have disabled Javascript in the first place probably don't pay attention to these messages, but I guess it's better than letting the user experience bugs and missing content with no context or explanation.
 
-There are also cases where we might want to show large amounts of alternate content under noscript circumstances. If your instinct is to cringe at the thought of dozens of `<noscript>` tags all over your markup in the almighty name of accessibility, you're not alone. Thankfully, there are much easier ways to hedge against these situations.
+There are also cases where we might want to show large amounts of alternate content under noscript circumstances. If you cringe at the thought of dozens of `<noscript>` tags all over your markup in the almighty name of accessibility, you're not alone. Thankfully, there are much easier ways to hedge against noscript situations.
 
 
 #### 1. Replace alternate content with dynamic content
