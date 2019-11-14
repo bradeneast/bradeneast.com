@@ -39,6 +39,7 @@ nav {
 
 @media screen and (max-width: $mq) {
     nav {
+        border: none;
         margin-bottom: var(--PAD-L);
         font-size: 1.4em;
         line-height: 2;
