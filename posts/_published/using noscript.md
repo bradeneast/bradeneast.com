@@ -52,9 +52,9 @@ The only consequence? Our alternate content will probably flash while the rest o
 #### 2. Show alternate content with CSS
 
 ```css
-    .noscript {
-        /* styles to hide alternate content */
-    }
+.noscript {
+    /* styles to hide alternate content */
+}
 ```
 
 ```html
