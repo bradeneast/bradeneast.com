@@ -75,7 +75,6 @@ input[type="submit"] {
         background: currentColor;
         border-radius: 50%;
         box-shadow: 0.1em 0 0.2em -0.1em var(--SHADE-M);
-        transition: var(--TR-M);
     }
 
     &:hover::after,

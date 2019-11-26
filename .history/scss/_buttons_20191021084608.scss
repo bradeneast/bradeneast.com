@@ -30,7 +30,7 @@ button {
         transform: translate(-50%, -50%) scale(var(--scale));
         background: var(--CL-WHITE);
         pointer-events: none;
-        transition: var(--TR-M), transform 0s;
+        transition: var(--TR-M);
     }
 }
 
@@ -44,7 +44,6 @@ input[type="submit"] {
     &:focus::after {
         --scale: 1;
         opacity: 0;
-        transition: var(--TR-M);
     }
 
     &:focus::after {
@@ -75,7 +74,6 @@ input[type="submit"] {
         background: currentColor;
         border-radius: 50%;
         box-shadow: 0.1em 0 0.2em -0.1em var(--SHADE-M);
-        transition: var(--TR-M);
     }
 
     &:hover::after,
@@ -86,7 +84,7 @@ input[type="submit"] {
 
     svg {
         width: 37%;
-        opacity: 0.24;
+        opacity: .24;
     }
 }
 
