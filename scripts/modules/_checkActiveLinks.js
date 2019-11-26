@@ -6,9 +6,7 @@ function checkActiveLinks() {
         let linkTitle = link.textContent;
         let url = window.location.href.toLowerCase();
 
-        if (linkTitle) {
-            url.includes(linkTitle.toLowerCase()) ? link.classList.add('active') : link.classList.remove('active');
-        }
+        if (linkTitle) toggleClass(link, 'active', url.includes(linkTitle.toLowerCase()));
 
     })
 

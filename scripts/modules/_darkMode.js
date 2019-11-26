@@ -19,5 +19,5 @@ function toggleDarkMode() {
     }
 
     localStorage.setItem('darkModeOn', darkModeOn);
-    document.documentElement.classList.toggle('dm');
+    toggleClass(document.documentElement, 'dm');
 }

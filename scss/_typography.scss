@@ -78,7 +78,8 @@ p {
 
     a,
     & ~ ul a,
-    & ~ ol a {
+    & ~ ol a,
+    & ~ blockquote a {
         text-decoration: underline;
         text-decoration-color: var(--CL-2);
         color: var(--CL-1);
