@@ -30,9 +30,24 @@
     }
 }
 
-.body {
+.post .body {
     max-width: 100%;
     margin: var(--PAD-M) 0;
+
+    h4 {
+        font-size: 1.4em;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-right: 0.5em;
+            background-image: url("/_images/favicon-light.png");
+            background-size: contain;
+            background-position: center;
+        }
+    }
 
     img {
         margin: var(--PAD-S) 0;

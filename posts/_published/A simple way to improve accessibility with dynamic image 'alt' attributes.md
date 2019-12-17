@@ -95,23 +95,3 @@ images.map(image => {
 ```
 
 I hope this little bit of vanilla Javascript takes the headache out of `img` `alt` attributes and helps you improve SEO and accessibility on your web projects.
-
-As always, you can check out the [demo on CodePen](https://codepen.io/bradeneast/pen/ZEzpLNg), or copy the condensed version without comments below:
-
-```javascript
-function getDynamicAlts(arrayOfImages) {
-
-    arrayOfImages.map(image => {
-
-        if (!image.getAttribute('alt')) {
-
-            const source = decodeURIComponent(image.getAttribute('src'));
-            const name = source.split('/').pop();
-            const title = name.split('.').shift().replace(/-/g, ' ');
-
-            image.setAttribute('alt', title);
-
-        }
-    })
-}
-```

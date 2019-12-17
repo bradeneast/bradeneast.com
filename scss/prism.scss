@@ -2,9 +2,9 @@ code[class*="language-"],
 pre {
     color: #4a6568;
     background: none;
-    font-family: monospace !important;
     font-size: 0.9em;
     text-align: left;
+    font-family: monospace !important;
     white-space: pre-wrap;
     word-spacing: normal;
     word-break: break-all;
@@ -25,6 +25,7 @@ pre {
 
 code:not([class*="language-"]) {
     position: relative;
+    font-family: monospace !important;
     font-size: 0.95em;
     padding: 2px 5px;
     cursor: text;
@@ -106,7 +107,7 @@ pre[class*="language-"] {
     &.attr-name,
     &.namespace,
     &.deleted {
-        color: #e49f32;
+        color: #d38935;
     }
 
     &.function-name {

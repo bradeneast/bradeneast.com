@@ -282,7 +282,7 @@ document.addEventListener('input', function (e) {
     <div class="knob"></div>
     <input type="range" class="active">
 </div>
-<h4>Drag Me</h4>
+<p><strong>Drag Me</strong></p>
 <p>It works! The only thing left is to choose a stop and start position for the dial so it works like we would expect from the real thing.</p>
 <p>To do that, we can do a little more math and adjust our CSS <code>calc()</code> expression. Now, it limits the rotation to 300 degrees out of 360. Then, we add half of that 300 degrees (150) to center everything.</p>
 <p>Let&#x2019;s also rotate the range input to <code>-65deg</code> for a more natural click and drag behavior.</p>
@@ -295,33 +295,10 @@ document.addEventListener('input', function (e) {
     <span class="token punctuation">}</span>
 </code></pre>
 <p>Lastly, we&#x2019;ll add a counter to display the numeric value of our knob using a CSS variable hack by <a href="https://twitter.com/cassiecodes">Cassie Evans</a>.</p>
-<pre class="contains-css"><code class="language-css"><span class="token selector">.adjustment::after</span> <span class="token punctuation">{</span>
-    <span class="token comment">/* magical stuff */</span>
-    <span class="token property">counter-reset</span><span class="token punctuation">:</span> knobPosition <span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>knobPosition<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">/* positioning stuff */</span>
-    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-    <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-
-    <span class="token comment">/* font stuff */</span>
-    <span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">;</span>
-    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.7em<span class="token punctuation">;</span>
-    <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<div class="adjustment" id="example3">
-    <div class="knob"></div>
-    <input type="range" class="active">
-</div>
-<p>That&#x2019;s it! If you want to tinker with this idea some more, check out the <a href="https://codepen.io/bradeneast/pen/qBWxKro">demo on CodePen</a>.</p>
+<iframe height="720" style="width: 100%;" scrolling="no" title="Pure CSS Knob/Dial" src="https://codepen.io/bradeneast/embed/qBWxKro?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/bradeneast/pen/qBWxKro">Pure CSS Knob/Dial</a> by Braden
+  (<a href="https://codepen.io/bradeneast">@bradeneast</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 <p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=knobs%20and%20dials%20on%20the%20web%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/knobs-and-dials-on-the-web">share this article</a> with your followers.</p></div>
         </div>
     </div>

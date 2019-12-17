@@ -185,7 +185,7 @@
 }
 
 </style>
-<h4>Simultaneous</h4>
+<p><strong>Simultaneous</strong></p>
 <div class="example-wrapper">
     <div class="example-circle"></div>
     <div class="example-circle"></div>
@@ -193,7 +193,7 @@
     <div class="example-circle"></div>
     <div class="example-circle"></div>
 </div>
-<h4>Staggered</h4>
+<p><strong>Staggered</strong></p>
 <div class="example-wrapper staggered">
     <div class="example-circle"></div>
     <div class="example-circle"></div>
@@ -209,10 +209,10 @@
 <li>Javascript <code>forEach</code> method</li>
 </ul>
 <h4>The Pure CSS Approach</h4>
-<pre class="contains-css"><code class="language-css"><span class="token selector">.stagger-child-transitions&gt;:nth-child(2)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .1s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;:nth-child(3)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .2s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;:nth-child(4)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .3s <span class="token punctuation">}</span>
-<span class="token selector">.stagger-child-transitions&gt;:nth-child(5)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .4s <span class="token punctuation">}</span>
+<pre class="contains-css"><code class="language-css"><span class="token selector">.stagger-child-transitions &gt; :nth-child(2)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .1s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions &gt; :nth-child(3)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .2s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions &gt; :nth-child(4)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .3s <span class="token punctuation">}</span>
+<span class="token selector">.stagger-child-transitions &gt; :nth-child(5)</span> <span class="token punctuation">{</span> <span class="token property">transition-delay</span><span class="token punctuation">:</span> .4s <span class="token punctuation">}</span>
 <span class="token comment">/* etc.... */</span>
 </code></pre>
 <p>If you&#x2019;ll always have a managable number of children, this approach is probably the most straightforward. Just put your <code>stagger-child-transitions</code> class on the parent element, and animate the child elements however you like!</p>
@@ -224,17 +224,22 @@
 <h4>Using the SCSS <code>for</code> loop</h4>
 <p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn&#x2019;t affect the experience of the user, for better or worse.</p>
 <pre class="contains-css"><code class="language-css"><span class="token atrule"><span class="token rule">@for</span> $i from 1 through 100</span> <span class="token punctuation">{</span>
-    <span class="token selector">.stagger-child-transitions&gt;:nth-child(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token selector">.stagger-child-transitions &gt; :nth-child(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
         <span class="token property">transition-delay</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>$i * .1<span class="token punctuation">)</span>s<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>That looks nice and clean!  The only drawback of this approach is that our compiled CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn&#x2019;t much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. CSS isn&#x2019;t render-blocking like Javascript, but still has to be parsed and rendered by the browser. If you&#x2019;re anything like me, those extra bytes will start to bug you.</p>
+<p>That looks nice and clean!  The only drawback of this approach (and pure CSS) is that our stylesheet will start to bloat from extra rules (~1kb per 10 additional children). CSS isn&#x2019;t render-blocking like Javascript, but still has to be downloaded, parsed, and applied by the browser. If you&#x2019;re working with small numbers of children, this approach is probably your best bet.</p>
 <h4>Using the Javascript <code>forEach()</code> method</h4>
-<p>100 items was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.</p>
-<pre class="contains-javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&apos;.stagger-child-transitions&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">child<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<p>100 items in the last example was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.</p>
+<pre class="contains-javascript"><code class="language-javascript"><span class="token keyword">const</span> targets <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&apos;.stagger-child-transitions&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+targets<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+    element<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">child<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
         child<span class="token punctuation">.</span>style<span class="token punctuation">.</span>transitionDelay <span class="token operator">=</span> <span class="token punctuation">(</span>index <span class="token operator">*</span> <span class="token number">.1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;s&apos;</span><span class="token punctuation">;</span>
+
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>

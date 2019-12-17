@@ -5,7 +5,7 @@ button {
     box-shadow: none;
     line-height: 1;
     text-transform: lowercase;
-    color: var(--CL-WHITE);
+    color: white;
     font-weight: 700;
     padding: 0.7em 0.8em;
     margin: 0.5em 0;
@@ -28,7 +28,7 @@ button {
         border-radius: 50%;
         z-index: 0;
         transform: translate(-50%, -50%) scale(var(--scale));
-        background: var(--CL-WHITE);
+        background: white;
         pointer-events: none;
         transition: var(--TR-M), transform 0s;
     }

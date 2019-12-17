@@ -127,7 +127,9 @@ function dynamicSort(property) {
 
 
 fs.cleandirSync = function (directory) {
-    fs.readdirSync(directory).map(file => file.charAt(0) != ignoreChar ? fs.removeSync(directory + file) : null);
+    fs.readdirSync(directory).map(file => {
+        if (file.charAt(0) != ignoreChar) fs.removeSync(directory + file);
+    })
 }
 
 
@@ -179,9 +181,9 @@ function publishPagesFrom(directory) {
                 templateFile.$('#main').append(currentFile.html);
                 templateFile.populateFeeds();
 
-                // Write to destination file and remove comments
+                // Write to destination file
                 fs.createFileSync(destination);
-                fs.writeFileSync(destination, templateFile.$.html().replace(/(<!--)[\s\S]*?(-->)/g, ''));
+                fs.writeFileSync(destination, templateFile.$.html());
                 console.log(consolePurple, `PAGE written to ${destination}`);
 
             } else {

@@ -4,8 +4,17 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Mon, 18 Nov 2019 20:03:54 GMT</lastBuildDate>
+<lastBuildDate>Tue, 17 Dec 2019 21:43:24 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Populating HTML Templates with JSON using Object.keys()</title>
+    <link>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</link>
+    <guid>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</guid>
+    <pubDate>Tue, 17 Dec 2019 06:00:00 GMT</pubDate>
+    <category>javascript</category><category>html</category>
+    <description>
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
+    </item>
     <item>
     <title>Using ⟨noscript⟩</title>
     <link>https://www.bradeneast.com/using-noscript</link>
@@ -50,13 +59,4 @@ I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all p
     <category>javascript</category><category>html</category><category>accessibility</category>
     <description>
 I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m usually adding aria-label and tabindex and role attributes later than I&#x2019;d like.</description>
-    </item>
-    <item>
-    <title>Object.keys()</title>
-    <link>https://www.bradeneast.com/objectkeys</link>
-    <guid>https://www.bradeneast.com/objectkeys</guid>
-    <pubDate>Sun, 04 Aug 2019 05:00:00 GMT</pubDate>
-    <category>javascript</category><category>html</category>
-    <description>
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
     </item></channel></rss>

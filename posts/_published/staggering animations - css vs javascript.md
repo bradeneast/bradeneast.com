@@ -53,7 +53,7 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
 
 </style>
 
-#### Simultaneous
+**Simultaneous**
 
 <div class="example-wrapper">
     <div class="example-circle"></div>
@@ -63,7 +63,7 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
     <div class="example-circle"></div>
 </div>
 
-#### Staggered
+**Staggered**
 
 <div class="example-wrapper staggered">
     <div class="example-circle"></div>
@@ -82,10 +82,10 @@ Hopefully this illustrates why we'd want to use staggered motion in our designs,
 
 #### The Pure CSS Approach
 ```css
-.stagger-child-transitions>:nth-child(2) { transition-delay: .1s }
-.stagger-child-transitions>:nth-child(3) { transition-delay: .2s }
-.stagger-child-transitions>:nth-child(4) { transition-delay: .3s }
-.stagger-child-transitions>:nth-child(5) { transition-delay: .4s }
+.stagger-child-transitions > :nth-child(2) { transition-delay: .1s }
+.stagger-child-transitions > :nth-child(3) { transition-delay: .2s }
+.stagger-child-transitions > :nth-child(4) { transition-delay: .3s }
+.stagger-child-transitions > :nth-child(5) { transition-delay: .4s }
 /* etc.... */
 ```
 
@@ -101,23 +101,28 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 
 ```css
 @for $i from 1 through 100 {
-    .stagger-child-transitions>:nth-child(#{$i}) {
+    .stagger-child-transitions > :nth-child(#{$i}) {
         transition-delay: ($i * .1)s;
     }
 }
 ```
 
-That looks nice and clean!  The only drawback of this approach is that our compiled CSS will start to bloat from the 100 extra lines with 100 extra rules (~10kb). 10kb isn't much in literal file size (considering a jpg can be easily 300kb+), but it does weigh in at around 15-20% of a standard CSS file. CSS isn't render-blocking like Javascript, but still has to be parsed and rendered by the browser. If you're anything like me, those extra bytes will start to bug you.
+That looks nice and clean!  The only drawback of this approach (and pure CSS) is that our stylesheet will start to bloat from extra rules (~1kb per 10 additional children). CSS isn't render-blocking like Javascript, but still has to be downloaded, parsed, and applied by the browser. If you're working with small numbers of children, this approach is probably your best bet.
 
 
 #### Using the Javascript `forEach()` method
 
-100 items was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.
+100 items in the last example was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.
 
 ```javascript
-document.querySelectorAll('.stagger-child-transitions').forEach(element => {
-    Array.from(element.children).map((child, index) => {
+const targets = document.querySelectorAll('.stagger-child-transitions');
+
+targets.forEach(element => {
+
+    element.children.forEach((child, index) => {
+
         child.style.transitionDelay = (index * .1) + 's';
+
     })
 })
 ```

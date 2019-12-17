@@ -164,7 +164,7 @@ document.addEventListener('input', function (e) {
     <input type="range" class="active">
 </div>
 
-#### Drag Me
+**Drag Me**
 
 It works! The only thing left is to choose a stop and start position for the dial so it works like we would expect from the real thing.
 
@@ -184,33 +184,7 @@ input[type=range] {
 
 Lastly, we'll add a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
 
-```css
-.adjustment::after {
-    /* magical stuff */
-    counter-reset: knobPosition var(--knob-position);
-    content: counter(knobPosition);
-
-    /* positioning stuff */
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* font stuff */
-    font-family: monospace;
-    font-size: 1.7em;
-    color: white;
-}
-```
-
-<div class="adjustment" id="example3">
-    <div class="knob"></div>
-    <input type="range" class="active">
-</div>
-
-That's it! If you want to tinker with this idea some more, check out the [demo on CodePen](https://codepen.io/bradeneast/pen/qBWxKro).
+<iframe height="720" style="width: 100%;" scrolling="no" title="Pure CSS Knob/Dial" src="https://codepen.io/bradeneast/embed/qBWxKro?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/bradeneast/pen/qBWxKro'>Pure CSS Knob/Dial</a> by Braden
+  (<a href='https://codepen.io/bradeneast'>@bradeneast</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>

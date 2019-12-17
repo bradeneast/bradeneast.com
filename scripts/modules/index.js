@@ -28,9 +28,9 @@ document.querySelectorAll('[data-stagger]').forEach(item => {
 
     staggerAnimations({
         parent: item,
-        intensity: .3,
+        intensity: .2,
         direction: 'from',
-        origin: 'top left',
+        origin: 'top',
     })
 
 })

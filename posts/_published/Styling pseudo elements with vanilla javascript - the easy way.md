@@ -83,5 +83,3 @@ window.addEventListener('scroll', () => {
 ```
 
 And that's how I style pseudo elements vanilla Javascript! Keep in mind that this method is best for progressive enhancements because it requires [CSS variable support](https://caniuse.com/#feat=css-variables).
-
-Here's the [demo on CodePen](https://codepen.io/bradeneast/pen/rNBWNBK).

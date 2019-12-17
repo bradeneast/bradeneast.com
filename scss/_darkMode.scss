@@ -8,11 +8,17 @@ html.dm {
     --CL-3: #495055;
     --CL-3: #6d7b86;
     --CL-BLACK: white;
-    background: #060606;
+    --CL-WHITE: #060606;
+    background: var(--CL-WHITE);
 
     body {
         font-weight: 300;
+        letter-spacing: 0.1px;
         color: #c0c0c0;
+    }
+
+    .post .body h4::before {
+        background-image: url("/_images/favicon-dark.png");
     }
 
     img {

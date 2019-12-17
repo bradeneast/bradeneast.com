@@ -3,22 +3,19 @@
 
 <head>
 
-    
+    <!--Meta-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
-    <title>Braden East | Home</title>
-	<meta property="og:image" content>
-	<meta property="og:description" content="I help &apos;dev-signers&apos; grow their creative potential.">
-	<meta property="og:title" content="Home">
+    <title></title>
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" id="ogurl" content="https://www.bradeneast.com/">
-    
+    <meta property="og:image" id="ogimage" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
 
-    
+    <!--Preloads-->
     <link rel="preload" href="/_css/main.css" as="style">
     <link rel="preload" as="font" href="/_fonts/metropolis-light.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-light.woff" type="font/woff2" crossorigin="anonymous">
@@ -29,13 +26,13 @@
     <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous">
 
-    
+    <!--Links-->
     <link rel="canonical" href="https://www.bradeneast.com">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="https://www.bradeneast.com/blog/feed.xml">
     <link id="favicon" rel="shortcut icon" href="/_images/favicon-light.png" type="image/png">
     <link rel="stylesheet" href="/_css/main.css" type="text/css">
 
-    
+    <!--Scripts-->
     <script>
 
         function checkDarkMode_Initial() {
@@ -58,8 +55,7 @@
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
     <script defer src="/_scripts/main.js" type="text/javascript"></script>
 
-
-	<meta name="description" content="I help &apos;dev-signers&apos; grow their creative potential."></head>
+</head>
 
 <body onload="document.body.classList.add(`loaded`)">
 
@@ -89,7 +85,7 @@
     <nav>
 
         <ul>
-            
+            <!-- <li><a class="nav-item" href="/work">work</a></li> -->
             <li><a class="nav-item" href="/about">about</a></li>
             <li><a class="nav-item" href="/blog">blog</a></li>
         </ul>
@@ -127,10 +123,8 @@
 
 
     <div id="main" data-stagger>
-        
-    
-<h1>I help dev-signers expand their creative potential.</h1>
-<custom-component data-name="post-feed" data-count="4" data-feed="blog"><ul class="gallery" data-stagger="children">
+        <!--CONTENT WILL GO HERE-->
+    <custom-component data-name="post-feed" data-count="999" data-feed><ul class="gallery" data-stagger="children">
     <template>
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
@@ -144,7 +138,79 @@
             </a>
         </li>
     </template>
-</ul></custom-component></div>
+
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/populating-html-templates-with-json-using-objectkeys" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/rubiks-cube.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Populating HTML Templates with JSON using Object.keys()</p>
+                    <p class="tags">javascript, html</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/using-noscript" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/no.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Using &#x27E8;noscript&#x27E9;</p>
+                    <p class="tags">javascript, html, accessibility</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/knobs-and-dials-on-the-web" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/sound-board.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Knobs and dials on the web</p>
+                    <p class="tags">html, css, ui</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/staggered-animations" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/people-in-motion.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Staggered animations</p>
+                    <p class="tags">ui, design, css, javascript</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/style-pseudo-elements-with-javascript" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/wave.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Style pseudo elements with javascript</p>
+                    <p class="tags">html, css, javascript</p>
+                </div>
+            </a>
+        </li>
+    
+        <li class="item" data-load="scale" data-scroll>
+            <a href="/blog/get-img-alt-attribute-automatically-from-src" class="link">
+                <div class="bg">
+                    <img class="image" src="/_images/blog/polaroids.jpg">
+                </div>
+                <div class="content">
+                    <p class="title">Get img alt attribute automatically from src</p>
+                    <p class="tags">javascript, html, accessibility</p>
+                </div>
+            </a>
+        </li>
+    </ul></custom-component></div>
 
 
     <footer>

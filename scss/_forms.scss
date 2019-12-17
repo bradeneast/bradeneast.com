@@ -24,6 +24,7 @@ input[type="email"] {
     &:not(:placeholder-shown) {
         outline: none;
         border-color: var(--CL-1);
+        background: var(--CL-WHITE);
     }
 
     &:placeholder-shown::-webkit-input-placeholder {
