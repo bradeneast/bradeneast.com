@@ -74,10 +74,8 @@ blogPosts.forEach(post => {
 })
 ```
 
-<iframe loading="lazy" height="720" style="width: 100%;" scrolling="no" title="Populating HTML Template with JSON" src="https://codepen.io/bradeneast/embed/GRgNqPJ?height=720&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bradeneast/pen/GRgNqPJ'>Populating HTML Template with JSON</a> by Braden
-  (<a href='https://codepen.io/bradeneast'>@bradeneast</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+<p class="codepen" data-height="720" data-theme-id="dark" data-default-tab="result" data-user="bradeneast" data-slug-hash="GRgNqPJ"></p>
+
 
 #### Making it more robust
 
@@ -155,7 +153,4 @@ blogPosts.forEach(post => {
 
 You might notice we're also checking for a `firstElementChild` on our general elements.  This is to handle cases where an `anchor` element is wrapped inside another element (like our `h2` in this example).  A more thorough check is probably warranted depending on your use of this method.
 
-<iframe loading="lazy" height="720" style="width: 100%;" scrolling="no" title="Populating HTML Template with JSON" src="https://codepen.io/bradeneast/embed/KKwNYWQ?height=720&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bradeneast/pen/KKwNYWQ'>Populating HTML Template with JSON</a> by Braden
-  (<a href='https://codepen.io/bradeneast'>@bradeneast</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+<p class="codepen" data-height="720" data-theme-id="dark" data-default-tab="result" data-user="bradeneast" data-slug-hash="KKwNYWQ" data-pen-title="Populating HTML Template with JSON"></p>
