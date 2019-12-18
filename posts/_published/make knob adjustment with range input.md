@@ -184,7 +184,7 @@ input[type=range] {
 
 Lastly, we'll add a counter to display the numeric value of our knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes).
 
-<iframe height="720" style="width: 100%;" scrolling="no" title="Pure CSS Knob/Dial" src="https://codepen.io/bradeneast/embed/qBWxKro?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe loading="lazy" height="720" style="width: 100%;" scrolling="no" title="Pure CSS Knob/Dial" src="https://codepen.io/bradeneast/embed/qBWxKro?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/bradeneast/pen/qBWxKro'>Pure CSS Knob/Dial</a> by Braden
   (<a href='https://codepen.io/bradeneast'>@bradeneast</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>

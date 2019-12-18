@@ -3,7 +3,7 @@
         "commands": [
             {
                 "match": "\\.html$|\\.md$",
-                "cmd": "node compile",
+                "cmd": "node ./node_compile/_index.js",
                 "silent": true
             }
         ]

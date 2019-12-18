@@ -4,59 +4,53 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Tue, 17 Dec 2019 21:43:24 GMT</lastBuildDate>
-<atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-    <title>Populating HTML Templates with JSON using Object.keys()</title>
-    <link>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</link>
-    <guid>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</guid>
-    <pubDate>Tue, 17 Dec 2019 06:00:00 GMT</pubDate>
-    <category>javascript</category><category>html</category>
-    <description>
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
-    </item>
-    <item>
-    <title>Using ⟨noscript⟩</title>
-    <link>https://www.bradeneast.com/using-noscript</link>
-    <guid>https://www.bradeneast.com/using-noscript</guid>
-    <pubDate>Fri, 18 Oct 2019 05:00:00 GMT</pubDate>
-    <category>javascript</category><category>html</category><category>accessibility</category>
-    <description>
-&lt;noscript&gt; is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn&#x2019;t available.</description>
-    </item>
-    <item>
-    <title>Knobs and dials on the web</title>
-    <link>https://www.bradeneast.com/knobs-and-dials-on-the-web</link>
-    <guid>https://www.bradeneast.com/knobs-and-dials-on-the-web</guid>
-    <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
-    <category>html</category><category>css</category><category>ui</category>
-    <description>
-In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
-    </item>
-    <item>
-    <title>Staggered animations</title>
-    <link>https://www.bradeneast.com/staggered-animations</link>
-    <guid>https://www.bradeneast.com/staggered-animations</guid>
-    <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
-    <category>ui</category><category>design</category><category>css</category><category>javascript</category>
-    <description>
-Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
-    </item>
-    <item>
-    <title>Style pseudo elements with javascript</title>
-    <link>https://www.bradeneast.com/style-pseudo-elements-with-javascript</link>
-    <guid>https://www.bradeneast.com/style-pseudo-elements-with-javascript</guid>
-    <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
-    <category>html</category><category>css</category><category>javascript</category>
-    <description>
-I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
-    </item>
-    <item>
-    <title>Get img alt attribute automatically from src</title>
-    <link>https://www.bradeneast.com/get-img-alt-attribute-automatically-from-src</link>
-    <guid>https://www.bradeneast.com/get-img-alt-attribute-automatically-from-src</guid>
-    <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
-    <category>javascript</category><category>html</category><category>accessibility</category>
-    <description>
+<lastBuildDate>Wed, 18 Dec 2019 20:36:36 GMT</lastBuildDate>
+<atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Get img alt attribute automatically from src</title>
+        <link>https://www.bradeneast.com/get-img-alt-attribute-automatically-from-src</link>
+        <guid>https://www.bradeneast.com/get-img-alt-attribute-automatically-from-src</guid>
+        <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
+        <category>javascript</category><category>html</category><category>accessibility</category>
+        <description>
 I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m usually adding aria-label and tabindex and role attributes later than I&#x2019;d like.</description>
-    </item></channel></rss>
+        </item><item>
+        <title>Knobs and dials on the web</title>
+        <link>https://www.bradeneast.com/knobs-and-dials-on-the-web</link>
+        <guid>https://www.bradeneast.com/knobs-and-dials-on-the-web</guid>
+        <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
+        <category>html</category><category>css</category><category>ui</category>
+        <description>
+In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
+        </item><item>
+        <title>Populating HTML Templates with JSON using Object.keys()</title>
+        <link>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</link>
+        <guid>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</guid>
+        <pubDate>Tue, 17 Dec 2019 06:00:00 GMT</pubDate>
+        <category>javascript</category><category>html</category>
+        <description>
+Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
+        </item><item>
+        <title>Staggered animations</title>
+        <link>https://www.bradeneast.com/staggered-animations</link>
+        <guid>https://www.bradeneast.com/staggered-animations</guid>
+        <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
+        <category>ui</category><category>design</category><category>css</category><category>javascript</category>
+        <description>
+Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
+        </item><item>
+        <title>Style pseudo elements with javascript</title>
+        <link>https://www.bradeneast.com/style-pseudo-elements-with-javascript</link>
+        <guid>https://www.bradeneast.com/style-pseudo-elements-with-javascript</guid>
+        <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
+        <category>html</category><category>css</category><category>javascript</category>
+        <description>
+I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
+        </item><item>
+        <title>Using ⟨noscript⟩</title>
+        <link>https://www.bradeneast.com/using-noscript</link>
+        <guid>https://www.bradeneast.com/using-noscript</guid>
+        <pubDate>Fri, 18 Oct 2019 05:00:00 GMT</pubDate>
+        <category>javascript</category><category>html</category><category>accessibility</category>
+        <description>
+&lt;noscript&gt; is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn&#x2019;t available.</description>
+        </item></channel></rss>
