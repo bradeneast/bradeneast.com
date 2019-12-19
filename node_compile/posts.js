@@ -49,8 +49,7 @@ function objectify(postFilePath) {
         pen.after(
             `<span><a href="https://codepen.io/bradeneast/pen/${pen.attr('data-slug-hash')}">See this pen</a> by <a href="https://codepen.io/${pen.attr('data-user')}">@${pen.attr('data-user')}</a> on CodePen.</span>
             <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>`
-        )
-
+        );
 
     })
 

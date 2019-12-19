@@ -4,7 +4,7 @@
             {
                 "match": "\\.html$|\\.md$",
                 "cmd": "node ./node_compile/_index.js",
-                "silent": false
+                "silent": true
             }
         ]
     },
