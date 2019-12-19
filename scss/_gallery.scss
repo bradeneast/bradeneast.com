@@ -14,7 +14,6 @@
     position: relative;
     overflow: hidden;
     border: var(--BDR) solid transparent;
-    border-radius: calc(var(--BDR) + var(--RADIUS));
     transform: translateY(0.2em) scale(0.9);
     transition: var(--TR-M);
 
@@ -27,6 +26,11 @@
         z-index: -1;
         transition: var(--TR-L);
 
+        img {
+            will-change: transform;
+            transition: var(--TR-S);
+        }
+
         &::after {
             content: "";
             display: block;
@@ -35,11 +39,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            filter: grayscale(1) brightness(0);
-            background: linear-gradient(to top right, var(--CL-1), transparent);
-            background-size: 800%;
-            background-position: top right;
-            transition: var(--TR-L);
+            background-color: var(--CL-1);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            transform-origin: bottom;
+            transition: var(--TR-L), clip-path var(--TR-M);
         }
     }
 
@@ -65,21 +68,24 @@
         opacity: 0.63;
     }
 
-    &:hover .bg::after,
-    &:focus-within .bg::after {
-        background-position: bottom left;
-        filter: none;
-    }
-
+    &:hover,
     &:focus-within {
-        border-color: var(--CL-1);
+        .bg img {
+            transform: translateY(-8%);
+            transition: var(--TR-M) 0.1s;
+        }
+
+        .bg::after {
+            transform: scaleY(0.7);
+            clip-path: polygon(0 37%, 100% 63%, 100% 100%, 0 100%);
+        }
     }
 }
 
 @media screen and (max-width: $mq) {
     .gallery {
         font-size: 1rem;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
         grid-auto-rows: 21em;
         grid-gap: var(--PAD-XL);
     }
@@ -88,8 +94,8 @@
         box-shadow: var(--SHADOW);
 
         .bg::after {
-            opacity: 1;
-            background: linear-gradient(transparent, var(--SHADE-L));
+            transform: scaleY(0.7);
+            clip-path: polygon(0 37%, 100% 63%, 100% 100%, 0 100%);
         }
 
         .content {
