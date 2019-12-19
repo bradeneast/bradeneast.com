@@ -65,7 +65,11 @@
         opacity: 0.63;
     }
 
-    &:hover,
+    &:hover .bg::after {
+        background-position: bottom left;
+        filter: none;
+    }
+
     &:focus-within {
         border-color: var(--CL-1);
 
