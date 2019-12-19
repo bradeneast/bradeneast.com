@@ -1,6 +1,6 @@
 # Populating HTML Templates with JSON using Object.keys()
 ## 2019/12/17
-### javascript, html
+### javascript, html, blog
 
 Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I'm wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, `Object.keys()`.
 

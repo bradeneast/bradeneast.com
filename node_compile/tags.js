@@ -30,7 +30,7 @@ function buildDirectories(tags, posts) {
         );
         pageTemp.$('.tagName').append(tag);
 
-        pageTemp.$(`[${site.feedAttribute}]`).attr(site.feedAttribute, tag);
+        pageTemp.$(`[data-name=post-feed]`).attr('data-category', tag);
         pageTemp.populateFeeds(posts);
 
         fs.writeFileSync(destination, pageTemp.$.html());

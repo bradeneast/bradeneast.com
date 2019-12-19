@@ -1,6 +1,6 @@
 # Using &lang;noscript&rang;
 ## 2019/10/18
-### javascript, html, accessibility
+### javascript, html, accessibility, blog
 
 `<noscript>` is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn't available.
 

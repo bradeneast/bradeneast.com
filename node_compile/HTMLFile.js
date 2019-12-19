@@ -35,14 +35,14 @@ class HTMLFile {
     populateFeeds(posts) {
 
         const select = this.$;
-        const feeds = select(`[${site.feedAttribute}]`);
+        const feeds = select(`[data-name=post-feed]`);
 
         feeds.each(function (i, e) {
             const feed = select(this);
             const wrapper = feed.children().first();
 
             populateFeed(posts, wrapper, {
-                category: feed.attr(site.feedAttribute),
+                category: feed.attr('data-category'),
                 count: feed.attr('data-count')
             });
         })
@@ -78,11 +78,9 @@ function addPostToFeed(post, wrapper) {
 
         key = key.toLowerCase();
 
-        if (Array.isArray(v)) v = v.join(', ');
-
         if (e) {
-            if (key == 'link') e.attr('href', `/${site.blog + v}`);
-            if (key == 'image') e.attr('src', v);
+            if (key === 'link') e.attr('href', `/${site.blog + v}`);
+            if (key === 'image') e.attr('src', v);
             if (key !== 'link' && key !== 'image') e.append(v);
         }
     })

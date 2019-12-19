@@ -102,9 +102,14 @@ function newFromTemplate(posts) {
 
                     let theseTags = value.split(', ');
                     value = '';
+
                     theseTags.map(tag => {
-                        value += `<a href="/${site.blog}tags/${helpers.linkify(tag)}">${tag}</a>, `
-                    });
+                        value += (
+                            `<a 
+                            class="tag" 
+                            href="/${site.blog}tags/${helpers.linkify(tag)}">${tag}</a>`
+                        );
+                    })
                 }
 
                 key == 'image' ? e.attr('src', value) : e.append(value);

@@ -67,9 +67,14 @@
     color: var(--CL-3);
 }
 
-.tags {
-    a:hover,
-    a:focus {
+.tag {
+
+    &:not(:last-of-type)::after {
+        content: ', ';
+    }
+
+    &:hover,
+    &:focus {
         color: var(--CL-4);
         transition: var(--TR-S);
     }

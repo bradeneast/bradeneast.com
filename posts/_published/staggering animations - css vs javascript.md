@@ -1,6 +1,6 @@
 # Staggered animations
 ## 2019/09/03
-### ui, design, css, javascript
+### ui, design, css, javascript, blog
 
 Today, let's talk about integrating motion into our websites and user interfaces.
 

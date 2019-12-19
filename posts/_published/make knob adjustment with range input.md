@@ -1,6 +1,6 @@
 # Knobs and dials on the web
 ## 2019/09/09
-### html, css, ui
+### html, css, ui, blog
 
 In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.
 

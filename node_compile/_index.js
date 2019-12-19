@@ -15,8 +15,8 @@ const tags = require('./tags');
 // GLOBAL VARIABLES
 
 let rssXML = rss.head;
-let postData = [];
-let tagData = [];
+let blogPosts = [];
+let blogTags = [];
 
 
 // Clear old pages
@@ -25,28 +25,28 @@ fs.readdirSync(site.public).map(file => {
 })
 
 
-// Compile and sort posts
+// Compile and sort blog posts
 const postFilePaths = fs.readdirSync(site.postSrc);
 
-postFilePaths.map(path => postData.push(posts.objectify(path)));
+postFilePaths.map(path => blogPosts.push(posts.objectify(path)));
 
-postData.map(item => {
+blogPosts.map(item => {
 
-    item.tags.split(', ').map(tag => tagData.push(tag));
+    item.tags.split(', ').map(tag => blogTags.push(tag));
     rssXML += rss.ify(item);
 
 });
 
-postData.sort(helpers.dynamicSort('date')).reverse();
+blogPosts.sort(helpers.dynamicSort('date')).reverse();
 
 
 // Publish pages
-pages.publish(postData, site.pagesFolder);
+pages.publish(blogPosts, site.pagesFolder);
 
 
 // Publish posts
-posts.newFromTemplate(postData);
-tags.buildDirectories(tagData, postData);
+posts.newFromTemplate(blogPosts);
+tags.buildDirectories(blogTags, blogPosts);
 
 
 // Create RSS feed

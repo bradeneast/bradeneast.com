@@ -1,6 +1,6 @@
 # Style pseudo elements with javascript
 ## 2019/08/20
-### html, css, javascript
+### html, css, javascript, blog
 
 I'm a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
 
@@ -82,4 +82,4 @@ window.addEventListener('scroll', () => {
 })
 ```
 
-And that's how I style pseudo elements vanilla Javascript! Keep in mind that this method is best for progressive enhancements because it requires [CSS variable support](https://caniuse.com/#feat=css-variables).
+And that's how I style pseudo elements vanilla Javascript! Keep in mind that this method should be limited to progressive enhancements because it requires [CSS variable support](https://caniuse.com/#feat=css-variables).

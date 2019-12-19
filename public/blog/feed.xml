@@ -4,13 +4,37 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Thu, 19 Dec 2019 03:22:36 GMT</lastBuildDate>
+<lastBuildDate>Thu, 19 Dec 2019 04:22:07 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
+        <title>360 Farms</title>
+        <link>https://www.bradeneast.com/360-farms</link>
+        <guid>https://www.bradeneast.com/360-farms</guid>
+        <pubDate>Wed, 20 Mar 2019 05:00:00 GMT</pubDate>
+        <category>brand strategy</category><category>identity design</category><category>work</category>
+        <description>
+360 Farms is the only business that makes start-to-finish elderberry products for people seeking value and quality. The goal was to reinforce their brand with those wanting improved health and well-being in an era of McDonald&#x2019;s and WalMart.</description>
+        </item><item>
+        <title>Fish Snax</title>
+        <link>https://www.bradeneast.com/fish-snax</link>
+        <guid>https://www.bradeneast.com/fish-snax</guid>
+        <pubDate>Sat, 12 Jan 2019 06:00:00 GMT</pubDate>
+        <category>identity design</category><category>work</category>
+        <description>
+Fish Snax was founded in 1997 as a local bar in Hemp, New Jersey. Being from the Atlantic coast, they want fish to be enjoyed properly, and they wanted graphic branding that would highlight their service of authentic, ever-fresher seafood.</description>
+        </item><item>
+        <title>Jude’s</title>
+        <link>https://www.bradeneast.com/judes</link>
+        <guid>https://www.bradeneast.com/judes</guid>
+        <pubDate>Fri, 03 May 2019 05:00:00 GMT</pubDate>
+        <category>identity design</category><category>work</category>
+        <description>
+Jude&#x2019;s Health &amp; Java House is a coffee shop and natural health store in Bartlesville, Oklahoma. The goal was to solidify the connections Jude&#x2019;s was already making with Bartlesville locals and expand that same familiarity into surrounding areas.</description>
+        </item><item>
         <title>Get img alt attribute automatically from src</title>
         <link>https://www.bradeneast.com/get-img-alt-attribute-automatically-from-src</link>
         <guid>https://www.bradeneast.com/get-img-alt-attribute-automatically-from-src</guid>
         <pubDate>Mon, 19 Aug 2019 05:00:00 GMT</pubDate>
-        <category>javascript</category><category>html</category><category>accessibility</category>
+        <category>javascript</category><category>html</category><category>accessibility</category><category>blog</category>
         <description>
 I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#x2019;m usually adding aria-label and tabindex and role attributes later than I&#x2019;d like.</description>
         </item><item>
@@ -18,7 +42,7 @@ I&#x2019;m sometimes lazy when it comes to accessibility on web projects. No mat
         <link>https://www.bradeneast.com/knobs-and-dials-on-the-web</link>
         <guid>https://www.bradeneast.com/knobs-and-dials-on-the-web</guid>
         <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
-        <category>html</category><category>css</category><category>ui</category>
+        <category>html</category><category>css</category><category>ui</category><category>blog</category>
         <description>
 In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
         </item><item>
@@ -26,7 +50,7 @@ In this article, we&#x2019;ll look at how to make a rotating knob input with HTM
         <link>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</link>
         <guid>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</guid>
         <pubDate>Tue, 17 Dec 2019 06:00:00 GMT</pubDate>
-        <category>javascript</category><category>html</category>
+        <category>javascript</category><category>html</category><category>blog</category>
         <description>
 Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
         </item><item>
@@ -34,7 +58,7 @@ Ever needed a quick way to convert data from JSON to HTML, with as few lines of 
         <link>https://www.bradeneast.com/staggered-animations</link>
         <guid>https://www.bradeneast.com/staggered-animations</guid>
         <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
-        <category>ui</category><category>design</category><category>css</category><category>javascript</category>
+        <category>ui</category><category>design</category><category>css</category><category>javascript</category><category>blog</category>
         <description>
 Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
         </item><item>
@@ -42,7 +66,7 @@ Today, let&#x2019;s talk about integrating motion into our websites and user int
         <link>https://www.bradeneast.com/style-pseudo-elements-with-javascript</link>
         <guid>https://www.bradeneast.com/style-pseudo-elements-with-javascript</guid>
         <pubDate>Tue, 20 Aug 2019 05:00:00 GMT</pubDate>
-        <category>html</category><category>css</category><category>javascript</category>
+        <category>html</category><category>css</category><category>javascript</category><category>blog</category>
         <description>
 I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#x2019;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
         </item><item>
@@ -50,7 +74,7 @@ I&#x2019;m a proponent of styles in CSS over styles in Javascript where at all p
         <link>https://www.bradeneast.com/using-noscript</link>
         <guid>https://www.bradeneast.com/using-noscript</guid>
         <pubDate>Fri, 18 Oct 2019 05:00:00 GMT</pubDate>
-        <category>javascript</category><category>html</category><category>accessibility</category>
+        <category>javascript</category><category>html</category><category>accessibility</category><category>blog</category>
         <description>
 &lt;noscript&gt; is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn&#x2019;t available.</description>
         </item></channel></rss>
