@@ -1,6 +1,5 @@
 const main = document.getElementById('main');
 const allImages = Array.from(document.getElementsByTagName('img'));
-const consoleInfoStyles = `color: #0ca`;
 
 // Insert copy of boiler plate that shows after main content on mobile instead of before
 function copyBoilerPlateForMobile() {
@@ -37,5 +36,3 @@ allImages.map(img => {
     altFromSource(img);
 
 })
-
-console.info('%c ⓘ Here to hack? My website is hosted with Netlify, deployed with GitHub, and compiled with NodeJS. Have fun! \n - Braden ', consoleInfoStyles);
