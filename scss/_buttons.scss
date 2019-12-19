@@ -86,13 +86,11 @@ input[type="submit"] {
 
     svg {
         width: 37%;
-        opacity: 0.24;
+        opacity: 0.28;
     }
 }
 
 html.dm #darkModeToggle {
-    color: var(--CL-1);
-
     &::after {
         transform: translateX(100%);
     }

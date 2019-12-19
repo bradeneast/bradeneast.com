@@ -1,5 +1,5 @@
 html {
-    background: white;
+    background: var(--CL-WHITE);
 }
 
 html.dm {
@@ -9,7 +9,6 @@ html.dm {
     --CL-3: #6d7b86;
     --CL-BLACK: white;
     --CL-WHITE: #060606;
-    background: var(--CL-WHITE);
 
     body {
         font-weight: 300;

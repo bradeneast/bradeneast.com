@@ -2,7 +2,7 @@
     font-size: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-    grid-auto-rows: 8em;
+    grid-auto-rows: 12em;
     grid-gap: var(--PAD-S);
 
     p {
@@ -65,18 +65,14 @@
         opacity: 0.63;
     }
 
-    &:hover .bg::after {
+    &:hover .bg::after,
+    &:focus-within .bg::after {
         background-position: bottom left;
         filter: none;
     }
 
     &:focus-within {
         border-color: var(--CL-1);
-
-        .bg::after {
-            background-position: bottom left;
-            filter: none;
-        }
     }
 }
 

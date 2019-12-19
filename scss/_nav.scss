@@ -4,16 +4,16 @@ nav {
 
     a {
         padding-left: 1em;
+
+        &.active {
+            box-shadow: inset var(--BDR) 0 0 0 var(--CL-1);
+            font-weight: 700;
+        }
     }
 
     .cta {
         margin-bottom: var(--PAD-L);
     }
-}
-
-.active {
-    box-shadow: inset var(--BDR) 0 0 0 var(--CL-1);
-    font-weight: 700;
 }
 
 .nav-end {
