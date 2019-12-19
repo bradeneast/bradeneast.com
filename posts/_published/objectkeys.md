@@ -74,7 +74,7 @@ blogPosts.forEach(post => {
 })
 ```
 
-<p class="codepen" data-height="720" data-theme-id="dark" data-default-tab="result" data-user="bradeneast" data-slug-hash="GRgNqPJ"></p>
+<p class="codepen" data-height="720" data-default-tab="html,result" data-user="bradeneast" data-slug-hash="GRgNqPJ"></p>
 
 
 #### Making it more robust
@@ -153,4 +153,4 @@ blogPosts.forEach(post => {
 
 You might notice we're also checking for a `firstElementChild` on our general elements.  This is to handle cases where an `anchor` element is wrapped inside another element (like our `h2` in this example).  A more thorough check is probably warranted depending on your use of this method.
 
-<p class="codepen" data-height="720" data-theme-id="dark" data-default-tab="result" data-user="bradeneast" data-slug-hash="KKwNYWQ" data-pen-title="Populating HTML Template with JSON"></p>
+<p class="codepen" data-height="720" data-default-tab="html,result" data-user="bradeneast" data-slug-hash="KKwNYWQ"></p>

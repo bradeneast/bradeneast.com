@@ -38,6 +38,22 @@ function objectify(postFilePath) {
         })
     })
 
+    // Populate CodePens
+    $('.codepen').each(function(i,e) {
+
+        const pen = $(this);
+
+        $('#codepen-embed-script').remove();
+
+        pen.attr('data-theme-id', site.codepenTheme);
+        pen.after(
+            `<span><a href="https://codepen.io/bradeneast/pen/${pen.attr('data-slug-hash')}">See this pen</a> by <a href="https://codepen.io/${pen.attr('data-user')}">@${pen.attr('data-user')}</a> on CodePen.</span>
+            <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>`
+        )
+
+
+    })
+
     thisPost.title = $('h1').contents().text();
     thisPost.date = $('h2').contents().text();
     thisPost.tags = $('h3').contents().text();
