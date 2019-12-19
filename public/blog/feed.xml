@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Thu, 19 Dec 2019 15:36:52 GMT</lastBuildDate>
+<lastBuildDate>Thu, 19 Dec 2019 23:44:23 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
         <title>Populating HTML Templates with JSON using Object.keys()</title>
         <link>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</link>
