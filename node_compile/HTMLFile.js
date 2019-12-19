@@ -32,19 +32,23 @@ class HTMLFile {
         return this
     }
 
-    populateFeeds(posts) {
+    populateFeeds(allPosts) {
 
         const select = this.$;
         const feeds = select(`[data-name=post-feed]`);
 
         feeds.each(function (i, e) {
+
             const feed = select(this);
             const wrapper = feed.children().first();
+            const feedCategory = feed.attr('data-category');
+            const feedCount = feed.attr('data-count');
+            const posts = allPosts[feedCategory] || allPosts;
 
             populateFeed(posts, wrapper, {
-                category: feed.attr('data-category'),
-                count: feed.attr('data-count')
-            });
+                category: feedCategory,
+                count: feedCount,
+            })
         })
 
         return this

@@ -9,6 +9,7 @@ const site = {
     pageTemp: './_template.html',
     pagesFolder: './pages/',
 
+    postAreas: ['blog', 'work'],
     postsFolder: './posts/',
     postSrc: './posts/_published/',
     postTemp: './posts/_template.html',

@@ -13,7 +13,7 @@ const log = require('./log');
 function objectify(postFilePath) {
 
     let thisPost = {}
-    let languages = ['html', 'css', 'javascript']
+    let codeLanguages = ['html', 'css', 'javascript']
 
     const reader = new commonmark.Parser({ smart: true });
     const writer = new commonmark.HtmlRenderer({ softbreak: '<br />' });
@@ -26,7 +26,7 @@ function objectify(postFilePath) {
         const code = $(this);
         const snippet = code.text();
 
-        languages.map(language => {
+        codeLanguages.map(language => {
 
             let prismLang = language === 'html' ? 'markup' : language;
 
@@ -39,7 +39,7 @@ function objectify(postFilePath) {
     })
 
     // Populate CodePens
-    $('.codepen').each(function(i,e) {
+    $('.codepen').each(function (i, e) {
 
         const pen = $(this);
 
@@ -60,12 +60,19 @@ function objectify(postFilePath) {
     thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
     thisPost.excerpt = thisPost.body.substr(0, thisPost.body.indexOf('</p>') + 4);
 
+    // Determine which area post belongs in from post tags
+    let regex = new RegExp(String(site.postAreas).replace(/[, ]/g, '|'), 'gi');
+    thisPost.area = thisPost.tags.match(regex)[0];
 
     // post link is absolute
     thisPost.link = helpers.linkify(thisPost.title);
 
-    // Append CTA to post body
-    thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${site.root}${site.blog}${thisPost.link}">share this article</a> with your followers.</p>`;
+    // Append Twitter share CTA to post body
+    if (thisPost.area == 'blog') {
+
+        thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${site.root}${site.blog}${thisPost.link}">share this post</a> with your followers.</p>`;
+
+    }
 
     return thisPost;
 }
@@ -107,7 +114,7 @@ function newFromTemplate(posts) {
                         value += (
                             `<a 
                             class="tag" 
-                            href="/${site.blog}tags/${helpers.linkify(tag)}">${tag}</a>`
+                            href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`
                         );
                     })
                 }

@@ -15,8 +15,12 @@ const tags = require('./tags');
 // GLOBAL VARIABLES
 
 let rssXML = rss.head;
-let blogPosts = [];
-let blogTags = [];
+let allPosts = {
+    [site.postAreas[0]]: [],
+    [site.postAreas[1]]: [],
+};
+// let allPosts = [];
+let allTags = [];
 
 
 // Clear old pages
@@ -28,25 +32,38 @@ fs.readdirSync(site.public).map(file => {
 // Compile and sort blog posts
 const postFilePaths = fs.readdirSync(site.postSrc);
 
-postFilePaths.map(path => blogPosts.push(posts.objectify(path)));
+postFilePaths.map(path => {
 
-blogPosts.map(item => {
+    const postData = posts.objectify(path);
+    allPosts[postData.area].push(postData);
 
-    item.tags.split(', ').map(tag => blogTags.push(tag));
-    rssXML += rss.ify(item);
+})
 
-});
+site.postAreas.map(area => {
 
-blogPosts.sort(helpers.dynamicSort('date')).reverse();
+    // Sort posts by date
+    allPosts[area].sort(helpers.dynamicSort('date')).reverse();
 
+    allPosts[area].map(item => {
+
+        item.tags.split(', ').map(tag => allTags.push(tag));
+        if (area == 'blog') rssXML += rss.ify(item);
+
+    })
+
+})
 
 // Publish pages
-pages.publish(blogPosts, site.pagesFolder);
+pages.publish(allPosts, site.pagesFolder);
 
+site.postAreas.map(area => {
 
-// Publish posts
-posts.newFromTemplate(blogPosts);
-tags.buildDirectories(blogTags, blogPosts);
+    // Publish posts
+    posts.newFromTemplate(allPosts[area]);
+    tags.buildDirectories(allTags, allPosts[area]);
+
+})
+
 
 
 // Create RSS feed

@@ -6,12 +6,14 @@ const log = require('./log');
 
 function buildDirectories(tags, posts) {
 
-    fs.mkdirSync(`${site.public + site.blog}tags`);
+    const postArea = [posts[0].area];
+
+    fs.mkdirSync(`${site.public}/${postArea}/tags`);
 
     [...new Set(tags)].map(tag => {
 
         const tagName = encodeURI(tag).replace(/\%20+/g, '-');
-        const destination = `${site.public + site.blog}tags/${tagName}/index.html`;
+        const destination = `${site.public}/${postArea}/tags/${tagName}/index.html`;
         const destinationDir = destination.split('/index.html').shift();
 
         fs.mkdirSync(destinationDir);

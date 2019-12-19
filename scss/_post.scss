@@ -58,25 +58,24 @@
         margin: var(--PAD-M) 0;
     }
 
-    .codepen {
-        height: 720px;
+    .cp_embed_wrapper {
+        margin-bottom: var(--PAD-S);
     }
 }
 
 .meta {
     color: var(--CL-3);
-}
 
-.tag {
+    .tag {
+        &:not(:last-of-type)::after {
+            content: ", ";
+        }
 
-    &:not(:last-of-type)::after {
-        content: ', ';
-    }
-
-    &:hover,
-    &:focus {
-        color: var(--CL-4);
-        transition: var(--TR-S);
+        &:hover,
+        &:focus {
+            color: var(--CL-4);
+            transition: var(--TR-S);
+        }
     }
 }
 
