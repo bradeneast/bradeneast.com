@@ -22,7 +22,7 @@ class HTMLFile {
 
         const select = this.$;
 
-        select('custom-component').each(function (i, e) {
+        select('component').each(function (i, e) {
             const component = select(this);
             const componentName = component.attr('data-name');
             const componentHTML = new HTMLFile(`${site.staticComponents + componentName}.html`).parse(true).loadDOM();
