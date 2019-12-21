@@ -28,6 +28,8 @@ Next, we'll need some data to work with. The goal is for it to end up wrapped in
 
 Because JSON is based on Javascript (Javascript Object Notation), there are plenty of Javascript-native methods that will work out of the box. We'll use those in the example.
 
+#### Level 1
+
 ```javascript
 const blogPosts = [
     {
@@ -48,9 +50,7 @@ const blogPosts = [
 ];
 ```
 
-Here's where the magic happens.
-
-In short, we're making a deep copy of the HTML template, looping over each key/value pair in the post, and wrapping the value inside its corresponding element.  We do this for each post, and viola!
+We'll make a deep copy of the HTML template, looping over each key/value pair in the post, and wrapping the value inside its corresponding element.  We do this for each post, and viola!
 
 ```javascript
 const main = document.querySelector('main');
@@ -74,10 +74,10 @@ blogPosts.forEach(post => {
 })
 ```
 
-<p class="codepen" data-height="720" data-default-tab="html,result" data-user="bradeneast" data-slug-hash="GRgNqPJ"></p>
+<p class="codepen" data-slug-hash="GRgNqPJ"></p>
 
 
-#### Making it more robust
+#### Level 2
 
 "Wait!" you might say.  "This only works for text!"  What if I have links and images that also need to be dynamic?
 
@@ -153,4 +153,103 @@ blogPosts.forEach(post => {
 
 You might notice we're also checking for a `firstElementChild` on our general elements.  This is to handle cases where an `anchor` element is wrapped inside another element (like our `h2` in this example).  A more thorough check is probably warranted depending on your use of this method.
 
-<p class="codepen" data-height="720" data-default-tab="html,result" data-user="bradeneast" data-slug-hash="KKwNYWQ"></p>
+<p class="codepen" data-slug-hash="KKwNYWQ"></p>
+
+
+#### Level 3
+
+```javascript
+const blogPosts = [
+	{
+		title: "Who needs buttons?",
+		meta: {
+			date: "Sat, 04 Apr 2021 12:00:00 GMT",
+			tags: ["ui", "design", "semantics"],
+			link: "/blog/who-needs-buttons"
+		},
+		image: "https://picsum.photos/id/119/600/400",
+		content: {
+			excerpt:
+				"..."
+		}
+	},
+	{
+		title: "Making the Chili's website responsive for mobile",
+		meta: {
+			date: "Wed, 19 Dec 2020 18:00:00 GMT",
+			tags: ["css", "responsive design", "ux"],
+			link: "/blog/making-the-Chili's-website-responsive-for-mobile"
+		},
+		image: "https://picsum.photos/id/157/600/400",
+		content: {
+			excerpt:
+				"..."
+		}
+	},
+	{
+		title: "Inverted reverse hex multi-grid masonry flex layout",
+		meta: {
+			date: "Mon, 04 Feb 2019 03:00:00 GMT",
+			tags: ["ridiculous", "stahp pls", "what happened"],
+			link: "inverted-reverse-hex-multi-grid-masonry-flex-layout"
+		},
+		image: "https://picsum.photos/id/1048/600/400",
+		content: {
+			excerpt:
+				"..."
+		}
+	}
+];
+```
+
+Let's break this down by what we need.
+
+- We need a way to loop down through nested objects and arrays
+- We need a way to check if a string value is a date
+- We need a way to convert the UTC date into a `Date` object we can manipulate
+
+First, let's abstract our process into a function we can call for each layer of JSON objects.
+
+```javascript
+const main = document.querySelector("main");
+const postTemplate = main.querySelector("template");
+
+function populateTemplate(data, fragment) {
+
+	Object.keys(data).forEach(key => {
+
+		let value = data[key];
+
+		if (Array.isArray(value)) value = value.join(", ");
+		
+		if (typeof value == "object") populateTemplate(value, fragment);
+		
+		if (typeof value == "string") // Populate stuff
+	})
+}
+```
+
+If the value is an object, the function recurses and loops of the next set of key/value pairs.  We're also turning arrays into comma-separated strings for simplicity.
+
+Next, let's write a helper function to check if our string is a date or not.
+
+```javascript
+const isDate = (string) => String(new Date(string)) !== "Invalid Date";
+```
+
+Anything passed into the Javascript `Date()` constructor will return either a `Date` object or "Invalid Date", which we can use to return a boolean.  With ES6 implicit returns, this whole function fits onto one line! :)
+
+Finally, we'll call the function for each of the posts and let it do its thing!
+
+```javascript
+blogPosts.forEach(post => {
+
+    const fragment = document.importNode(postTemplate.content, true);
+    
+	populateTemplate(post, fragment);
+    main.appendChild(fragment);
+    
+})
+```
+
+<p class="codepen" data-slug-hash="eYmvzVB"></p>

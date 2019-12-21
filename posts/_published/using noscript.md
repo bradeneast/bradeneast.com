@@ -75,4 +75,12 @@ With a class to target, we can initially hide noscript content via CSS. Then we'
 </noscript>
 ```
 
-In the example above, a noscript situation will cause that `<style>` element to be unwrapped and applied to the document, where we declare something like `display: block` or `opacity: 1` that shows our alternate content. In a future article, we'll look at the quirks and surprising behavior of `<noscript>`.
+In the example above, a noscript situation will cause that `<style>` element to be unwrapped and applied to the document, where we declare something like `display: block` or `opacity: 1` that shows our alternate content.
+
+#### Quirks
+
+Let's look at the quirks and surprising behavior of `<noscript>`.
+
+1. [It seems as though](https://ohgm.co.uk/breaking-head-quietly/) different browsers treat `<noscript>` in the `<head>` differently. In Chrome, `<noscript>` content in the `<head>` element will end up right after the opening `<body>` tag. it’s best to place your `<noscript>` content in the `<body>` from the start. This also gives you more control over exactly where that content ends up.
+
+2. `<noscript>` elements are block-level, so [they can’t be used inline](https://htmlparser.info/parser/#noscript). If it’s really necessary, you could put a display of flex on the parent.
