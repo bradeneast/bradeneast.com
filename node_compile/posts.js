@@ -3,6 +3,7 @@ const htmlParser = require('htmlParser2');
 const cheerio = require('cheerio');
 const commonmark = require('commonmark');
 const prism = require('prismjs');
+
 const site = require('./site');
 const helpers = require('./helpers');
 const HTMLFile = require('./HTMLFile');
@@ -45,9 +46,15 @@ function objectify(postFilePath) {
 
         $('#codepen-embed-script').remove();
 
-        pen.attr('data-theme-id', site.codepenTheme);
+        Object.keys(site.codepen).map(key => {
+            let value = `data-${key.replace(/_/g, '-')}`;
+            if (!pen.attr(value)) pen.attr(value, site.codepen[key]);
+        })
+        
         pen.after(
-            `<span><a href="https://codepen.io/bradeneast/pen/${pen.attr('data-slug-hash')}">See this pen</a> by <a href="https://codepen.io/${pen.attr('data-user')}">@${pen.attr('data-user')}</a> on CodePen.</span>
+            `<span>
+                <a href="https://codepen.io/${pen.attr('data-user')}/pen/${pen.attr('data-slug-hash')}">See this pen</a> by <a href="https://codepen.io/${pen.attr('data-user')}">@${pen.attr('data-user')}</a> on CodePen.
+            </span>
             <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>`
         )
     })
@@ -79,7 +86,6 @@ function objectify(postFilePath) {
         thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${site.root}${site.blog}${thisPost.link}">share this post</a> with your followers.</p>`;
 
     }
-
     return thisPost;
 }
 
@@ -88,7 +94,7 @@ function newFromTemplate(posts) {
 
     posts.map((post, index) => {
 
-        const postLocation = site.public + site.blog + post.link + '/index.html';
+        const postLocation = `${site.public}/${post.area}/${post.link}/index.html`;
         const pageTemp = new HTMLFile(site.pageTemp).parse(true).loadDOM();
         const postTemp = new HTMLFile(site.postTemp).parse(true).loadDOM().populateComponents();
 
@@ -98,7 +104,7 @@ function newFromTemplate(posts) {
             `<!--
             title: "${post.title}",
             image: "${post.image}",
-            url: "${site.root}${site.blog}${post.link}",
+            url: "${site.root}/${post.area}/${post.link}",
             -->`,
             pageTemp.$);
 
@@ -139,7 +145,7 @@ function newFromTemplate(posts) {
             if (toPost) {
 
                 toElem.find('.link-title').append(toPost.title);
-                toElem.attr('href', `/${site.blog + toPost.link}`);
+                toElem.attr('href', `/${toPost.area}/${toPost.link}`);
 
             } else toElem.attr('style', 'display:none');
 

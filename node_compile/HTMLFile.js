@@ -83,7 +83,7 @@ function addPostToFeed(post, wrapper) {
         key = key.toLowerCase();
 
         if (e) {
-            if (key === 'link') e.attr('href', `/${site.blog + v}`);
+            if (key === 'link') e.attr('href', `/${post.area}/${v}`);
             if (key === 'image') e.attr('src', v);
             if (key !== 'link' && key !== 'image') e.append(v);
         }
