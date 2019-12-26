@@ -1,3 +1,20 @@
+a, button, input, select, textarea, label, summary {
+    touch-action: manipulation;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+
+    &-thumb {
+        background: var(--CL-2);
+        border-radius: 0.3rem;
+
+        &:hover {
+            background: var(--CL-1);
+        }
+    }
+}
+
 .button,
 button {
     display: inline-block;

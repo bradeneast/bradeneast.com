@@ -41,19 +41,6 @@ $mq: 1080px;
     outline-color: var(--CL-1);
 }
 
-::-webkit-scrollbar {
-    background: transparent;
-
-    &-thumb {
-        background: var(--CL-2);
-        border-radius: 0.3rem;
-
-        &:hover {
-            background: var(--CL-1);
-        }
-    }
-}
-
 body {
     color: var(--CL-4);
     line-height: 1.8;
