@@ -234,10 +234,10 @@ If the value is an object, the function recurses and loops of the next set of ke
 Next, let's write a helper function to check if our string is a date or not.
 
 ```javascript
-const isDate = (string) => String(new Date(string)) !== "Invalid Date";
+function isDate(string) { return String(new Date(string)) !== "Invalid Date" }
 ```
 
-Anything passed into the Javascript `Date()` constructor will return either a `Date` object or "Invalid Date", which we can use to return a boolean.  With ES6 implicit returns, this whole function fits onto one line! :)
+Anything passed into the Javascript `Date()` constructor will return either a `Date` object or "Invalid Date", which we can use to return a boolean.
 
 Finally, we'll call the function for each of the posts and let it do its thing!
 
@@ -253,3 +253,7 @@ blogPosts.forEach(post => {
 ```
 
 <p class="codepen" data-slug-hash="eYmvzVB"></p>
+
+
+#### Level 4
+

@@ -65,10 +65,11 @@ html {
     padding-left: var(--PAD-M);
 }
 
-section {
+section,
+article {
     margin-bottom: var(--PAD-M);
 
-    &:last-of-type {
+    &:last-child {
         margin-bottom: 0;
     }
 
@@ -78,6 +79,8 @@ section {
 }
 
 section p,
+article p,
+article blockquote,
 section blockquote,
 .attention {
     max-width: 44em;

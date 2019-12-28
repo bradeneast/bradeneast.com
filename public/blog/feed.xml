@@ -4,16 +4,8 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Thu, 26 Dec 2019 00:26:07 GMT</lastBuildDate>
+<lastBuildDate>Sat, 28 Dec 2019 03:36:18 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Populating HTML Templates with JSON using Object.keys()</title>
-        <link>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</link>
-        <guid>https://www.bradeneast.com/populating-html-templates-with-json-using-objectkeys</guid>
-        <pubDate>Tue, 17 Dec 2019 06:00:00 GMT</pubDate>
-        <category>javascript</category><category>html</category><category>blog</category>
-        <description>
-Ever needed a quick way to convert data from JSON to HTML, with as few lines of code as possible? I find myself need a way to do this all the time, whether I&#x2019;m wanting to display fetched API data, a list of posts, or something else.  Since the most common API response format is JSON data, I often unpack them using the Javascript object method, Object.keys().</description>
-        </item><item>
         <title>Using ⟨noscript⟩</title>
         <link>https://www.bradeneast.com/using-noscript</link>
         <guid>https://www.bradeneast.com/using-noscript</guid>
