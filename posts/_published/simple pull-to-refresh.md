@@ -58,24 +58,43 @@ The loader animation should be hidden by default, so we'll give it a `height` of
 }
 ```
 
-To detect when the content is "pulled" downward, we need to use a `scroll` event listener on the list. This function shows the loader for 2 seconds if the content is scrolled to less than `3px` from the top. Let's also wrap it in `requestAnimationFrame()` for better performance.
+To detect when the content is "pulled" downward, we need to use a `scroll` event listener on the list. This function shows the loader for 2 seconds if the content is scrolled to less than 1px from the top. Let's also wrap it in `requestAnimationFrame()` for better performance.
 
 ```javascript
 const scrollingList = document.querySelector('.scrollingList');
 const loader = document.querySelector('.loader');
 
 scrollingList.addEventListener('scroll', () => {
-
-    requestAnimationFrame(() => {
-
-        if (!scrollingList.scrollTop < 3) return;
-        loader.classList.add('loading');
-        setTimeout(() => loader.classList.remove('loading'), 2000);
-
-    })
+	requestAnimationFrame(() => {
+		
+		if (scrollingList.scrollTop > 1) return;
+		loader.classList.add('loading');
+		setTimeout(() => loader.classList.remove('loading'), 2000);
+		
+	})
 })
 ```
 
-That's all the Javascript we need! It's up to you what styles, animations, and other garnish you want to add. This approach is designed to be extremely minimal and lightweight, so it doesn't have quite the responsive feeling of a native app. Customization is up to you!
+That's all the Javascript we need! A few lines of CSS will add a scroll-snap to the first item of the list, keeping the scroll position from ever staying at 0. This will make sure there is always room to scroll up and trigger the refresh loading animation.
+
+```css
+.scrollingList {
+	--flow-space: 2em;
+	display: grid;
+	grid-gap: var(--flow-space);
+	padding: var(--flow-space);
+	max-height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y proximity;
+	scroll-padding: var(--flow-space);
+}
+
+li:first-of-type {
+	margin-top: var(--flow-space);
+	scroll-snap-align: start;
+}
+```
 
 <p class="codepen" data-slug-hash="ExaLLNL"></p>
+
+It's up to you what styles, animations, and other garnish you want to add. I hope you can use this minimal and lightweight approach in your projects.
