@@ -66,6 +66,11 @@ function objectify(postFilePath) {
         parent.remove();
     })
 
+    $('a').each(function (i, e) {
+        const a = $(this);
+        if (a.attr('href').includes('://')) a.attr('target', '_blank');
+    })
+
     thisPost.title = $('h1').contents().text();
     thisPost.date = $('h2').contents().text();
     thisPost.tags = $('h3').contents().text();
