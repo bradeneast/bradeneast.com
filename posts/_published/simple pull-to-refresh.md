@@ -95,6 +95,6 @@ li:first-of-type {
 }
 ```
 
-<p class="codepen" data-slug-hash="ExaLLNL"></p>
+<p class="codepen" data-slug-hash="bGNMyJx"></p>
 
 It's up to you what styles, animations, and other garnish you want to add. I hope you can use this minimal and lightweight approach in your projects.
