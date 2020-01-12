@@ -4,15 +4,22 @@
 
 Whether you like it or not, pull-to-refresh is here to stay, and it's something that designers and developers need to have in their reportoire.  While [Swift has a native API](https://stackoverflow.com/questions/24475792/how-to-use-pull-to-refresh-in-swift) for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.
 
-![A fancy pull-to-refresh UI animation](https://miro.medium.com/max/2100/1*pZ8ddY3rFUoVBuTWAhRPTg.gif)
+> The first White House website was set up during the presidential term of Bill Clinton.
 
 The reality is that most pull-to-refresh concepts are overdone and over-engineered for such a discreet part of the user interaction. Many have written to a great extent on accessibility and performance, so I'll let you decide if this lightweight approach meets your own standards.
 
 Even the OG's of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.
-
-<div style="display: flex; height: 200px">
-	<img src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
-	<img src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
+<style>
+.example {
+	object-position: top;
+	height: 300px;
+	max-width: 450px;
+}
+</style>
+<div style="display: grid">
+	<img style="height: 0;" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction" />
+	<img class="example" src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
+	<img class="example" src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
 </div>
 
 Let's put together a basic list of items that we can pull downward to update with fresh content.
@@ -51,7 +58,7 @@ The loader animation should be hidden by default, so we'll give it a `height` of
 }
 ```
 
-To detect when the content is "pulled" downward, we need to use a `scroll` event listener on the list. This function shows the loader for 2 seconds if the content is scrolled to less than `1`. Let's also wrap it in `requestAnimationFrame()` for better performance.
+To detect when the content is "pulled" downward, we need to use a `scroll` event listener on the list. This function shows the loader for 2 seconds if the content is scrolled to less than `3px` from the top. Let's also wrap it in `requestAnimationFrame()` for better performance.
 
 ```javascript
 const scrollingList = document.querySelector('.scrollingList');
@@ -61,7 +68,7 @@ scrollingList.addEventListener('scroll', () => {
 
     requestAnimationFrame(() => {
 
-        if (!scrollingList.scrollTop < 1) return;
+        if (!scrollingList.scrollTop < 3) return;
         loader.classList.add('loading');
         setTimeout(() => loader.classList.remove('loading'), 2000);
 
