@@ -1,0 +1,74 @@
+# The simplest pull-to-refresh
+## 2020/11/1
+### blog, design, ui, css
+
+Whether you like it or not, pull-to-refresh is here to stay, and it's something that designers and developers need to have in their reportoire.  While [Swift has a native API](https://stackoverflow.com/questions/24475792/how-to-use-pull-to-refresh-in-swift) for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.
+
+![A fancy pull-to-refresh UI animation](https://miro.medium.com/max/2100/1*pZ8ddY3rFUoVBuTWAhRPTg.gif)
+
+The reality is that most pull-to-refresh concepts are overdone and over-engineered for such a discreet part of the user interaction. Many have written to a great extent on accessibility and performance, so I'll let you decide if this lightweight approach meets your own standards.
+
+Even the OG's of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.
+
+<div style="display: flex; height: 200px">
+	<img src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
+	<img src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
+</div>
+
+Let's put together a basic list of items that we can pull downward to update with fresh content.
+
+```html
+<div class="loader">
+	<div class="loader--inner"></div>
+</div>
+
+<ul class="scrollingList">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+```
+
+The loader animation should be hidden by default, so we'll give it a `height` of `0`. When the `loading` class is added, we'll animate to a different height value, which will push the rest of our content down.
+
+```css
+.loader {
+	display: grid;
+	place-items: center;
+	height: 0;
+	overflow: hidden;
+	background: #3366ff;
+	box-shadow: inset 0 -1em 1em -1em rgba(0,0,0,0.2);
+	will-change: transform;
+	transition: .3s ease;
+}
+
+.loader.loading {
+	height: 4em;
+}
+```
+
+To detect when the content is "pulled" downward, we need to use a `scroll` event listener on the list. This function shows the loader for 2 seconds if the content is scrolled to less than `1`. Let's also wrap it in `requestAnimationFrame()` for better performance.
+
+```javascript
+const scrollingList = document.querySelector('.scrollingList');
+const loader = document.querySelector('.loader');
+
+scrollingList.addEventListener('scroll', () => {
+
+    requestAnimationFrame(() => {
+
+        if (!scrollingList.scrollTop < 1) return;
+        loader.classList.add('loading');
+        setTimeout(() => loader.classList.remove('loading'), 2000);
+
+    })
+})
+```
+
+That's all the Javascript we need! It's up to you what styles, animations, and other garnish you want to add. This approach is designed to be extremely minimal and lightweight, so it doesn't have quite the responsive feeling of a native app. Customization is up to you!
+
+<p class="codepen" data-slug-hash="ExaLLNL"></p>

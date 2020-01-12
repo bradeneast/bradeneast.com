@@ -2,7 +2,7 @@
   "name": "bradeneast.com",
   "version": "1.0.0",
   "description": "a simple website",
-  "main": "compile.js",
+  "main": "./node_compile/_index.js",
   "author": "Braden East",
   "license": "ISC",
   "dependencies": {},

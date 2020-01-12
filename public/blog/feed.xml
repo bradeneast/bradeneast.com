@@ -4,8 +4,16 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Sat, 28 Dec 2019 03:36:18 GMT</lastBuildDate>
+<lastBuildDate>Sun, 12 Jan 2020 00:05:56 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
+        <title>The simplest pull-to-refresh</title>
+        <link>https://www.bradeneast.com/the-simplest-pulltorefresh</link>
+        <guid>https://www.bradeneast.com/the-simplest-pulltorefresh</guid>
+        <pubDate>Sun, 01 Nov 2020 05:00:00 GMT</pubDate>
+        <category>blog</category><category>design</category><category>ui</category><category>css</category>
+        <description>
+Whether you like it or not, pull-to-refresh is here to stay, and it&#x2019;s something that designers and developers need to have in their reportoire.  While Swift has a native API for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.</description>
+        </item><item>
         <title>Using ⟨noscript⟩</title>
         <link>https://www.bradeneast.com/using-noscript</link>
         <guid>https://www.bradeneast.com/using-noscript</guid>

@@ -15,7 +15,7 @@ function altFromSource(element) {
 // clear style, width, and height attributes from all passed img elements
 function clearImageFormatting() {
 
-    const removeAttributes = 'style, width, height, max-width, max-height'.split(', ');
+    const removeAttributes = 'width, height, max-width, max-height'.split(', ');
 
     document.querySelectorAll('img').forEach(image => {
 

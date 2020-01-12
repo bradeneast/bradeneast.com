@@ -50,7 +50,7 @@ function objectify(postFilePath) {
             let value = `data-${key.replace(/_/g, '-')}`;
             if (!pen.attr(value)) pen.attr(value, site.codepen[key]);
         })
-        
+
         pen.after(
             `<span>
                 <a href="https://codepen.io/${pen.attr('data-user')}/pen/${pen.attr('data-slug-hash')}">See this pen</a> by <a href="https://codepen.io/${pen.attr('data-user')}">@${pen.attr('data-user')}</a> on CodePen.
@@ -59,7 +59,7 @@ function objectify(postFilePath) {
         )
     })
 
-    $('img').each(function(i, e) {
+    $('img').each(function (i, e) {
         const img = $(this);
         const parent = img.closest('p');
         parent.after(img);
@@ -115,25 +115,19 @@ function newFromTemplate(posts) {
             let e = pageTemp.$(`.${key}`);
             let value = post[key];
 
-            if (value && e) {
+            if (!value || !e) return;
 
-                if (key == 'tags') {
+            if (key == 'tags') {
 
-                    let theseTags = value.split(', ');
-                    value = '';
+                let theseTags = value.split(', ');
+                value = '';
 
-                    theseTags.map(tag => {
-                        value += (
-                            `<a 
-                            class="tag" 
-                            href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`
-                        );
-                    })
-                }
-
-                key == 'image' ? e.attr('src', value) : e.append(value);
-
+                theseTags.map(tag => {
+                    value += `<a class="tag" href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`;
+                })
             }
+
+            key == 'image' ? e.attr('src', value) : e.append(value);
         })
 
         // Add next and previous links
