@@ -1,6 +1,7 @@
 # Staggered animations
 ## 2019/09/03
 ### ui, design, css, javascript, blog
+<img class="hide" src="/_images/blog/staggered.gif" aria-hidden="true">
 
 Today, let's talk about integrating motion into our websites and user interfaces.
 

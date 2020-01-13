@@ -131,11 +131,12 @@
     <h1 class="title" data-load="clip">The simplest pull-to-refresh</h1>
     <div class="content">
         <div class="meta">
-            <h4 class="date" data-load="clip" style="animation-delay: .05s;">2020/11/1</h4>
+            <h4 class="date" data-load="clip" style="animation-delay: .05s;">2020/01/11</h4>
             <h4 class="tags" data-load="clip" style="animation-delay: .1s;"><a class="tag" href="/blog/tags/blog">blog</a><a class="tag" href="/blog/tags/design">design</a><a class="tag" href="/blog/tags/ui">ui</a><a class="tag" href="/blog/tags/css">css</a></h4>
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
+<img class="hide" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction">
 <p>Whether you like it or not, pull-to-refresh is here to stay, and it&#x2019;s something that designers and developers need to have in their reportoire.  While <a href="https://stackoverflow.com/questions/24475792/how-to-use-pull-to-refresh-in-swift" target="_blank">Swift has a native API</a> for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.</p>
 <blockquote>
 <p>The first White House website was set up during the presidential term of Bill Clinton.</p>
@@ -143,7 +144,6 @@
 <p>The reality is that most pull-to-refresh concepts are overdone and over-engineered for such a discreet part of the user interaction. Many have written to a great extent on accessibility and performance, so I&#x2019;ll let you decide if this lightweight approach meets your own standards.</p>
 <p>Even the OG&#x2019;s of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.</p>
 <div style="height: 20rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-gap: 2rem; margin-bottom: 2rem;">
-	<img class="hide" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction">
 	<img src="/_images/blog/twitter-ptr.gif" alt="twitter&apos;s pull-to-refresh interaction">
 	<img src="/_images/blog/instagram-ptr.gif" alt="instagram&apos;s pull-to-refresh interaction">
 </div>
@@ -193,10 +193,9 @@ scrollingList<span class="token punctuation">.</span><span class="token function
 </code></pre>
 <p>That&#x2019;s all the Javascript we need! You&#x2019;ll notice we also used <code>scrollTo</code>, keeping the scroll position from ever staying at 0. This will make sure there is always room to scroll up and trigger the refresh.</p>
 <p>Here&#x2019;s the demo:</p>
-<p class="codepen" data-slug-hash="bGNMyJx" data-theme-id="dark" data-height="540" data-user="bradeneast" data-default-tab="result"></p><span>
+<p class="codepen" data-slug-hash="bGNMyJx" data-theme-id="dark" data-height="540" data-user="bradeneast" data-default-tab="result"></p><script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script><span>
                 <a href="https://codepen.io/bradeneast/pen/bGNMyJx" target="_blank">See this pen</a> by <a href="https://codepen.io/bradeneast" target="_blank">@bradeneast</a> on CodePen.
             </span>
-            <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>
 <p>It&#x2019;s up to you what styles, animations, and other garnish you want to add. For easy integration with an existing project, you probably want to abstract the whole function and assign variables to the threshold and class name. I hope you can use this minimal and lightweight approach in your projects!</p>
 <p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=the%20simplest%20pulltorefresh%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/the-simplest-pulltorefresh">share this post</a> with your followers.</p></div>
         </div>

@@ -4,14 +4,15 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Mon, 13 Jan 2020 17:05:58 GMT</lastBuildDate>
+<lastBuildDate>Mon, 13 Jan 2020 20:22:38 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
         <title>The simplest pull-to-refresh</title>
         <link>https://www.bradeneast.com/the-simplest-pulltorefresh</link>
         <guid>https://www.bradeneast.com/the-simplest-pulltorefresh</guid>
-        <pubDate>Sun, 01 Nov 2020 05:00:00 GMT</pubDate>
+        <pubDate>Sat, 11 Jan 2020 06:00:00 GMT</pubDate>
         <category>blog</category><category>design</category><category>ui</category><category>css</category>
         <description>
+
 Whether you like it or not, pull-to-refresh is here to stay, and it&#x2019;s something that designers and developers need to have in their reportoire.  While Swift has a native API for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.</description>
         </item><item>
         <title>Using ⟨noscript⟩</title>
@@ -28,6 +29,7 @@ Whether you like it or not, pull-to-refresh is here to stay, and it&#x2019;s som
         <pubDate>Mon, 09 Sep 2019 05:00:00 GMT</pubDate>
         <category>html</category><category>css</category><category>ui</category><category>blog</category>
         <description>
+
 In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
         </item><item>
         <title>Staggered animations</title>
@@ -36,6 +38,7 @@ In this article, we&#x2019;ll look at how to make a rotating knob input with HTM
         <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
         <category>ui</category><category>design</category><category>css</category><category>javascript</category><category>blog</category>
         <description>
+
 Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
         </item><item>
         <title>Style pseudo elements with javascript</title>

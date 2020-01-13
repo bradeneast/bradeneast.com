@@ -97,8 +97,9 @@ svg {
 }
 
 .hide {
-    position: absolute;
-    opacity: 0.001;
+    position: absolute !important;
+    opacity: 0.001 !important;
+    pointer-events: none !important;
 }
 
 .attention {

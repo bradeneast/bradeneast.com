@@ -44,21 +44,37 @@ function objectify(postFilePath) {
 
         const pen = $(this);
 
-        $('#codepen-embed-script').remove();
-
         Object.keys(site.codepen).map(key => {
+
+            // Format key as a data- attribute
             let value = `data-${key.replace(/_/g, '-')}`;
+
+            // Won't touch attribute values already set inline
             if (!pen.attr(value)) pen.attr(value, site.codepen[key]);
         })
 
+        const penLink = `https://codepen.io/${pen.attr('data-user')}/pen/${pen.attr('data-slug-hash')}`;
+        const userLink = `https://codepen.io/${pen.attr('data-user')}`;
+
         pen.after(
             `<span>
-                <a href="https://codepen.io/${pen.attr('data-user')}/pen/${pen.attr('data-slug-hash')}">See this pen</a> by <a href="https://codepen.io/${pen.attr('data-user')}">@${pen.attr('data-user')}</a> on CodePen.
-            </span>
-            <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>`
-        )
+                <a href="${penLink}">See this pen</a> by <a href="${userLink}">@${pen.attr('data-user')}</a> on CodePen.
+            </span>`
+        );
+
+        // Only one embed script is needed per page, regardless of how many pens are present
+        $('#codepen-embed-script').remove();
+        pen.after(
+            `<script 
+            async 
+            src="https://static.codepen.io/assets/embed/ei.js" 
+            id="codepen-embed-script" 
+            type="text/javascript"
+            ></script>`
+        );
     })
 
+    // Unwrap images from p tags
     $('img').each(function (i, e) {
         const img = $(this);
         const parent = img.closest('p');
@@ -66,6 +82,7 @@ function objectify(postFilePath) {
         parent.remove();
     })
 
+    // Set external urls to open in new tab
     $('a').each(function (i, e) {
         const a = $(this);
         if (a.attr('href').includes('://')) a.attr('target', '_blank');

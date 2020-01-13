@@ -1,6 +1,7 @@
 # The simplest pull-to-refresh
-## 2020/11/1
+## 2020/01/11
 ### blog, design, ui, css
+<img class="hide" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction" />
 
 Whether you like it or not, pull-to-refresh is here to stay, and it's something that designers and developers need to have in their reportoire.  While [Swift has a native API](https://stackoverflow.com/questions/24475792/how-to-use-pull-to-refresh-in-swift) for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.
 
@@ -11,7 +12,6 @@ The reality is that most pull-to-refresh concepts are overdone and over-engineer
 Even the OG's of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.
 
 <div style="height: 20rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-gap: 2rem; margin-bottom: 2rem;">
-	<img class="hide" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction" />
 	<img src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
 	<img src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
 </div>
