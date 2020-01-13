@@ -15,7 +15,7 @@ function altFromSource(element) {
 // clear style, width, and height attributes from all passed img elements
 function clearImageFormatting() {
 
-    const removeAttributes = 'width, height, max-width, max-height'.split(', ');
+    const removeAttributes = 'style, width, height, max-width, max-height'.split(', ');
 
     document.querySelectorAll('img').forEach(image => {
 
@@ -49,14 +49,8 @@ function dynamicSort(property) {
 // toggles a class on a given element
 function toggleClass(element, className, condition) {
 
-    if (condition === undefined) {
+    if (condition === undefined) element.classList.toggle(className);
+    else element.classList.toggle(className, condition);
 
-        element.classList.toggle(className);
-
-    } else {
-
-        element.classList.toggle(className, condition);
-
-    }
-
+    return element;
 }

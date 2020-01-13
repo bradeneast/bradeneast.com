@@ -96,6 +96,11 @@ svg {
     transition: var(--TR-S);
 }
 
+.hide {
+    position: absolute;
+    opacity: 0.001;
+}
+
 .attention {
     background-color: var(--CL-2);
     background-blend-mode: lighten;
