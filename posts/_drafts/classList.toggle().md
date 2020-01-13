@@ -4,16 +4,8 @@
 
 ```javascript
 function toggleClass(element, className, condition) {
-
-    if (condition === undefined) {
-
-        element.classList.toggle(className);
-
-    } else {
-
-        element.classList.toggle(className, condition);
-
-    }
-
+    if (condition == undefined) element.classList.toggle(className);
+    else element.classList.toggle(className, condition);
+    return element;
 }
 ```
