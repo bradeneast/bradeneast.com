@@ -17,8 +17,6 @@ checkActiveLinks();
 
 copyBoilerPlateForMobile();
 
-startTouchListeners();
-
 document.querySelectorAll('[data-stagger]').forEach(item => {
 
     staggerAnimations({
