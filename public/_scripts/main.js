@@ -1,5 +1,5 @@
 function checkActiveLinks() { document.querySelectorAll('.nav-item').forEach(function (t) { var e = t.textContent, n = window.location.href.toLowerCase(); e && toggleClass(t, 'active', n.includes(e.toLowerCase())); }); }
-function toggleDarkMode() { var t = localStorage.getItem('darkModeOn'), e = document.getElementById('favicon'); var n; t && (n = JSON.parse(t)), n ? (n = !1, e.setAttribute('href', e.href.replace('dark', 'light'))) : (n = !0, e.setAttribute('href', e.href.replace('light', 'dark'))), localStorage.setItem('darkModeOn', n), toggleClass(document.documentElement, 'dm'); }
+function toggleDarkMode() { var t = localStorage.getItem('darkModeOn'), e = document.getElementById('favicon'); var n; t && (n = JSON.parse(t)), n && (n = !1, e.setAttribute('href', e.href.replace('dark', 'light'))), n || (n = !0, e.setAttribute('href', e.href.replace('light', 'dark'))), localStorage.setItem('darkModeOn', n), toggleClass(document.documentElement, 'dm'); }
 function altFromSource(t) { var e = t.getAttribute('src'); if (e) {
     var t_1 = decodeURIComponent(e).split('/').pop();
     return t_1 ? t_1.split('.').shift().replace(/-|\+/g, ' ') : null;

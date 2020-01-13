@@ -15,7 +15,9 @@ function copyBoilerPlateForMobile() {
 
 checkActiveLinks();
 
+
 copyBoilerPlateForMobile();
+
 
 document.querySelectorAll('[data-stagger]').forEach(item => {
 
