@@ -142,17 +142,10 @@
 </blockquote>
 <p>The reality is that most pull-to-refresh concepts are overdone and over-engineered for such a discreet part of the user interaction. Many have written to a great extent on accessibility and performance, so I&#x2019;ll let you decide if this lightweight approach meets your own standards.</p>
 <p>Even the OG&#x2019;s of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.</p>
-<style>
-.example {
-	object-position: top;
-	height: 300px;
-	max-width: 450px;
-}
-</style>
-<div style="display: grid">
-	<img style="height: 0;" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction">
-	<img class="example" src="/_images/blog/twitter-ptr.gif" alt="twitter&apos;s pull-to-refresh interaction">
-	<img class="example" src="/_images/blog/instagram-ptr.gif" alt="instagram&apos;s pull-to-refresh interaction">
+<div style="height: 20rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-gap: 2rem; margin-bottom: 2rem;">
+	<img class="hide" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction">
+	<img src="/_images/blog/twitter-ptr.gif" alt="twitter&apos;s pull-to-refresh interaction">
+	<img src="/_images/blog/instagram-ptr.gif" alt="instagram&apos;s pull-to-refresh interaction">
 </div>
 <p>Let&#x2019;s put together a basic list of items that we can pull downward to update with fresh content.</p>
 <pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>loader<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -170,12 +163,8 @@
 </code></pre>
 <p>The loader animation should be hidden by default, so we&#x2019;ll give it a <code>height</code> of <code>0</code>. When the <code>loading</code> class is added, we&#x2019;ll animate to a different height value, which will push the rest of our content down.</p>
 <pre class="contains-css"><code class="language-css"><span class="token selector">.loader</span> <span class="token punctuation">{</span>
-	<span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
-	<span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
 	<span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 	<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-	<span class="token property">background</span><span class="token punctuation">:</span> #3366ff<span class="token punctuation">;</span>
-	<span class="token property">box-shadow</span><span class="token punctuation">:</span> inset 0 -1em 1em -1em <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">;</span>
 	<span class="token property">transition</span><span class="token punctuation">:</span> .3s ease<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>

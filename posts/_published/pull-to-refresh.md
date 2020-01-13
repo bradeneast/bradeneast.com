@@ -9,17 +9,11 @@ Whether you like it or not, pull-to-refresh is here to stay, and it's something 
 The reality is that most pull-to-refresh concepts are overdone and over-engineered for such a discreet part of the user interaction. Many have written to a great extent on accessibility and performance, so I'll let you decide if this lightweight approach meets your own standards.
 
 Even the OG's of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.
-<style>
-.example {
-	object-position: top;
-	height: 300px;
-	max-width: 450px;
-}
-</style>
-<div style="display: grid">
-	<img style="height: 0;" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction" />
-	<img class="example" src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
-	<img class="example" src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
+
+<div style="height: 20rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-gap: 2rem; margin-bottom: 2rem;">
+	<img class="hide" src="/_images/blog/my-ptr.gif" alt="my simple pull-to-refresh interaction" />
+	<img src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
+	<img src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
 </div>
 
 Let's put together a basic list of items that we can pull downward to update with fresh content.
@@ -43,12 +37,8 @@ The loader animation should be hidden by default, so we'll give it a `height` of
 
 ```css
 .loader {
-	display: grid;
-	place-items: center;
 	height: 0;
 	overflow: hidden;
-	background: #3366ff;
-	box-shadow: inset 0 -1em 1em -1em rgba(0,0,0,0.2);
 	will-change: transform;
 	transition: .3s ease;
 }
