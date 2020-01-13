@@ -181,7 +181,7 @@
 <span class="token punctuation">}</span>
 
 <span class="token selector">.loader.loading</span> <span class="token punctuation">{</span>
-	<span class="token property">height</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 6em<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>To detect when the content is &#x201C;pulled&#x201D; downward, we need to use a <code>scroll</code> event listener on the list. This function shows the loader for 2 seconds if the content is scrolled to less than 1px from the top. Let&#x2019;s also wrap it in <code>requestAnimationFrame()</code> for better performance.</p>
@@ -193,33 +193,22 @@ scrollingList<span class="token punctuation">.</span><span class="token function
 		
 		<span class="token keyword">if</span> <span class="token punctuation">(</span>scrollingList<span class="token punctuation">.</span>scrollTop <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
 		loader<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&apos;loading&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> loader<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">&apos;loading&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>			
+			loader<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">&apos;loading&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			scrollingList<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 		
 	<span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p>That&#x2019;s all the Javascript we need! A few lines of CSS will add a scroll-snap to the first item of the list, keeping the scroll position from ever staying at 0. This will make sure there is always room to scroll up and trigger the refresh loading animation.</p>
-<pre class="contains-css"><code class="language-css"><span class="token selector">.scrollingList</span> <span class="token punctuation">{</span>
-	<span class="token property">--flow-space</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
-	<span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
-	<span class="token property">grid-gap</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--flow-space<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--flow-space<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token property">max-height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
-	<span class="token property">overflow-y</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
-	<span class="token property">scroll-snap-type</span><span class="token punctuation">:</span> y proximity<span class="token punctuation">;</span>
-	<span class="token property">scroll-padding</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--flow-space<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token selector">li:first-of-type</span> <span class="token punctuation">{</span>
-	<span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--flow-space<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<p>That&#x2019;s all the Javascript we need! You&#x2019;ll notice we also used <code>scrollTo</code>, keeping the scroll position from ever staying at 0. This will make sure there is always room to scroll up and trigger the refresh.</p>
+<p>Here&#x2019;s the demo:</p>
 <p class="codepen" data-slug-hash="bGNMyJx" data-theme-id="dark" data-height="540" data-user="bradeneast" data-default-tab="result"></p><span>
                 <a href="https://codepen.io/bradeneast/pen/bGNMyJx" target="_blank">See this pen</a> by <a href="https://codepen.io/bradeneast" target="_blank">@bradeneast</a> on CodePen.
             </span>
             <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>
-<p>It&#x2019;s up to you what styles, animations, and other garnish you want to add. I hope you can use this minimal and lightweight approach in your projects.</p>
+<p>It&#x2019;s up to you what styles, animations, and other garnish you want to add. For easy integration with an existing project, you probably want to abstract the whole function and assign variables to the threshold and class name. I hope you can use this minimal and lightweight approach in your projects!</p>
 <p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=the%20simplest%20pulltorefresh%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/the-simplest-pulltorefresh">share this post</a> with your followers.</p></div>
         </div>
     </div>

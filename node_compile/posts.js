@@ -117,10 +117,10 @@ function newFromTemplate(posts) {
 
         Object.keys(post).map(key => {
 
-            let e = pageTemp.$(`.${key}`);
+            let element = pageTemp.$(`.${key}`);
             let value = post[key];
 
-            if (!value || !e) return;
+            if (!value || !element) return;
 
             if (key == 'tags') {
 
@@ -132,7 +132,7 @@ function newFromTemplate(posts) {
                 })
             }
 
-            key == 'image' ? e.attr('src', value) : e.append(value);
+            key == 'image' ? element.attr('src', value) : element.append(value);
         })
 
         // Add next and previous links

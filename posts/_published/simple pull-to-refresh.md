@@ -54,7 +54,7 @@ The loader animation should be hidden by default, so we'll give it a `height` of
 }
 
 .loader.loading {
-	height: 4em;
+	height: 6em;
 }
 ```
 
@@ -69,32 +69,20 @@ scrollingList.addEventListener('scroll', () => {
 		
 		if (scrollingList.scrollTop > 1) return;
 		loader.classList.add('loading');
-		setTimeout(() => loader.classList.remove('loading'), 2000);
+		
+		setTimeout(() => {			
+			loader.classList.remove('loading');
+			scrollingList.scrollTo(0, 2);
+		}, 2000);
 		
 	})
 })
 ```
 
-That's all the Javascript we need! A few lines of CSS will add a scroll-snap to the first item of the list, keeping the scroll position from ever staying at 0. This will make sure there is always room to scroll up and trigger the refresh loading animation.
+That's all the Javascript we need! You'll notice we also used `scrollTo`, keeping the scroll position from ever staying at 0. This will make sure there is always room to scroll up and trigger the refresh.
 
-```css
-.scrollingList {
-	--flow-space: 2em;
-	display: grid;
-	grid-gap: var(--flow-space);
-	padding: var(--flow-space);
-	max-height: 100vh;
-	overflow-y: scroll;
-	scroll-snap-type: y proximity;
-	scroll-padding: var(--flow-space);
-}
-
-li:first-of-type {
-	margin-top: var(--flow-space);
-	scroll-snap-align: start;
-}
-```
+Here's the demo:
 
 <p class="codepen" data-slug-hash="bGNMyJx"></p>
 
-It's up to you what styles, animations, and other garnish you want to add. I hope you can use this minimal and lightweight approach in your projects.
+It's up to you what styles, animations, and other garnish you want to add. For easy integration with an existing project, you probably want to abstract the whole function and assign variables to the threshold and class name. I hope you can use this minimal and lightweight approach in your projects!
