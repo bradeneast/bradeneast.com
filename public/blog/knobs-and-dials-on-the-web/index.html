@@ -138,165 +138,87 @@
             <div class="body">
 <p>In this article, we&#x2019;ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</p>
 <blockquote>
-<p>Stairway to Heaven (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the &#x2018;forbidden riff.&#x2019;</p>
+<p><em>Stairway to Heaven</em> (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the &#x2018;forbidden riff.&#x2019;</p>
 </blockquote>
 <img src="/_images/blog/sound-board.jpg" alt="a sound board at a live concert">
 <p>Most audio and electronic equipment relies heavily on knobs and dials. On the web however, it&#x2019;s pretty rare to see these kind of inputs, when sliders are quick and easy and work out of the box.</p>
 <p>Let&#x2019;s imagine we&#x2019;re coding an audio application that needs some knobs to simulate the analog experience. The most semantic way I&#x2019;ve found to accomplish this is to use the HTML <code>range</code> input and a little bit of CSS trickery.</p>
 <pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>adjustment<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>knob<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>knob_1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>The basic idea is to give the range slider an opacity of <code>0</code> and position it on top of an empty element. We&#x2019;ll apply a border radius of <code>50%</code> to make the knob round, then add a pseudo element to show where the knob is set.</p>
-<p>We can also add a width of <code>100%</code> to make sure the slider will intercept a click anywhere on the knob element.</p>
-<pre class="contains-css"><code class="language-css"><span class="token selector">.adjustment</span> <span class="token punctuation">{</span>
-    <span class="token property">--knob-position</span><span class="token punctuation">:</span> 50<span class="token punctuation">;</span>
-    <span class="token property">--knob-size</span><span class="token punctuation">:</span> 4rem<span class="token punctuation">;</span>
-    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
-    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--knob-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--knob-size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token selector">.knob, input[type=range]</span> <span class="token punctuation">{</span>
+<p>The basic idea is to give the <code>range</code> input an opacity of 0 and position it on top of an empty element. We can also add a width and height of 100% to make sure the input will intercept a click anywhere on the element.</p>
+<pre class="contains-css"><code class="language-css"><span class="token selector">input[type=&quot;range&quot;]</span> <span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
     <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
     <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
     <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
     <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now, let&#x2019;s make our knob rotate as we drag up and down.</p>
+<pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>adjustment<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span> <span class="token attr-name">oninput</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>this.parentElement.style.setProperty(&apos;--knob-position&apos;, this.value)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>knob<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Using the <code>range</code> input this way works as expected for desktop devices. However, touch devices (especially iOS) don&#x2019;t play well with range inputs. To support these users, we&#x2019;ll add a <code>touchstart</code> and <code>touchmove</code> event listeners to the knob. This way, we can update our custom <code>--knob-position</code> property on the parent element using <code>setProperty()</code>. I&#x2019;m also throttling the <code>touchmove</code> event with <code>requestAnimationFrame</code> for better performance.</p>
+<pre class="contains-javascript"><code class="language-javascript"><span class="token keyword">const</span> knob <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.adjustment&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> touch <span class="token operator">=</span> <span class="token punctuation">{</span>
+  start<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  current<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  diff<span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+
+knob<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;touchstart&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  touch<span class="token punctuation">.</span>start <span class="token operator">=</span> e<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>screenY<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+knob<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;touchmove&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    touch<span class="token punctuation">.</span>current <span class="token operator">=</span> e<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>screenY<span class="token punctuation">;</span>
+    touch<span class="token punctuation">.</span>diff <span class="token operator">=</span> <span class="token punctuation">(</span>touch<span class="token punctuation">.</span>current <span class="token operator">-</span> touch<span class="token punctuation">.</span>start<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    knob<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&apos;--knob-position&apos;</span><span class="token punctuation">,</span> <span class="token function">limit</span><span class="token punctuation">(</span>touch<span class="token punctuation">.</span>diff<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">limit</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> min<span class="token punctuation">)</span> <span class="token keyword">return</span> min<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&gt;</span> max<span class="token punctuation">)</span> <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The only thing left is to set up the CSS that will rotate the knob accordingly.  First, we should divide the knob value by 100, since the HTML <code>range</code> input defaults to <code>min=&quot;0&quot;</code> and <code>max=&quot;100&quot;</code>. Next, let&#x2019;s set a range of motion for the knob so works like we would expect from the real thing. To do that, we can do a little more <code>calc()</code> math that limits the rotation to a specified range.</p>
+<pre class="contains-css"><code class="language-css"><span class="token selector">.adjustment</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* set a default position for the knob */</span>
+    <span class="token property">--knob-position</span><span class="token punctuation">:</span> 100<span class="token punctuation">;</span>
+
+    <span class="token comment">/* set a range for the knob to turn within */</span>
+    <span class="token property">--knob-range</span><span class="token punctuation">:</span> 280deg<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token selector">.knob</span> <span class="token punctuation">{</span>
-    <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
-    <span class="token property">background</span><span class="token punctuation">:</span> dodgerblue<span class="token punctuation">;</span>
-    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span> / 100<span class="token punctuation">)</span> * 360deg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    <span class="token comment">/* multiply the knob position by the range */</span>
+    <span class="token property">--knob-rotation</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span> / 100 * <span class="token function">var</span><span class="token punctuation">(</span>--knob-range<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token selector">.knob::after</span> <span class="token punctuation">{</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-    <span class="token property">top</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
-    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span>
-    <span class="token property">background</span><span class="token punctuation">:</span> royalblue<span class="token punctuation">;</span>
-    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/* divide the knob range by 2 to center the range of motion */</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-rotation<span class="token punctuation">)</span> - <span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-range<span class="token punctuation">)</span> / 2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-
-<span class="token selector">input[type=range]</span> <span class="token punctuation">{</span>
-    <span class="token property">appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-    <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+</code></pre>
+<p>Finally, let&#x2019;s angle the range input up and to the right to for a more natural click and drag behavior.</p>
+<pre class="contains-css"><code class="language-css"><span class="token selector">input[type=&quot;range&quot;]</span> <span class="token punctuation">{</span>
     <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-65deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Then we get something that looks like this:</p>
-<style>
-
-.adjustment {
-    --knob-position: 50;
-    --knob-size: 4rem;
-    position: relative;
-    text-align: center;
-    width: var(--knob-size);
-    height: var(--knob-size);
-}
-
-.adjustment#example3::after {
-    counter-reset: knobPosition var(--knob-position);
-    content: counter(knobPosition);
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: monospace;
-    font-size: 1em;
-    color: white;
-}
-
-.adjustment#example3 .knob {
-    transform: rotate(calc(((var(--knob-position) / 100) * 300deg) - 150deg));
-}
-
-.adjustment .knob,
-.adjustment input[type=range] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.knob {
-    border-radius: 50%;
-    background: var(--CL-1);
-    transform: rotate(calc((var(--knob-position) / 100) * 360deg));
-}
-
-.knob::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    width: 10%;
-    height: 20%;
-    background: var(--CL-2);
-    transform: translateX(-50%);
-}
-
-input[type=range] {
-    appearance: none;
-    -webkit-appearance: none;
-    opacity: 0;
-    transform: rotate(-65deg);
-}
-</style>
-<div class="adjustment" id="example1">
-    <div class="knob"></div>
-    <input type="range" class="dormant">
-</div>
-<p>Now, let&#x2019;s make our knob rotate as we drag up and down.</p>
-<p>In our Javascript, we&#x2019;ll add an event listener to the document. If an input event happens on the knob, we can update <code>knob-position</code> on the parent element using <code>element.style.setProperty()</code>.</p>
-<pre class="contains-javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;input&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>parentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&apos;--knob-position&apos;</span><span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<script>
-document.addEventListener('input', function (e) {
-    if (e.target.getAttribute('class').includes('active')) {
-        e.target.parentElement.style.setProperty('--knob-position', Math.round(e.target.value));
-    }
-})
-</script>
-<div class="adjustment" id="example2">
-    <div class="knob"></div>
-    <input type="range" class="active">
-</div>
-<p><strong>Drag Me</strong></p>
-<p>It works! The only thing left is to choose a stop and start position for the dial so it works like we would expect from the real thing.</p>
-<p>To do that, we can do a little more math and adjust our CSS <code>calc()</code> expression. Now, it limits the rotation to 300 degrees out of 360. Then, we add half of that 300 degrees (150) to center everything.</p>
-<p>Let&#x2019;s also rotate the range input to <code>-65deg</code> for a more natural click and drag behavior.</p>
-<pre class="contains-css"><code class="language-css"><span class="token selector">.knob</span> <span class="token punctuation">{</span>
-    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-position<span class="token punctuation">)</span> / 100<span class="token punctuation">)</span> * 300deg<span class="token punctuation">)</span> - 150deg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token selector">input[type=range]</span> <span class="token punctuation">{</span>
-    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-65deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<p>Lastly, we&#x2019;ll add a counter to display the numeric value of our knob using a CSS variable hack by <a href="https://twitter.com/cassiecodes" target="_blank">Cassie Evans</a>.</p>
-<iframe loading="lazy" height="720" style="width: 100%;" scrolling="no" title="Pure CSS Knob/Dial" src="https://codepen.io/bradeneast/embed/qBWxKro?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/bradeneast/pen/qBWxKro" target="_blank">Pure CSS Knob/Dial</a> by Braden
-  (<a href="https://codepen.io/bradeneast" target="_blank">@bradeneast</a>) on <a href="https://codepen.io" target="_blank">CodePen</a>.
-</iframe>
+<p>If you&#x2019;re feeling especially adventurous, you can add a counter to display the numeric value of the knob using a CSS variable hack by <a href="https://twitter.com/cassiecodes" target="_blank">Cassie Evans</a>. Here&#x2019;s the demo where I&#x2019;ve pieced it all together.</p>
+<p class="codepen" data-slug-hash="qBWxKro" data-theme-id="dark" data-height="540" data-user="bradeneast" data-default-tab="result"></p><span>
+                <a href="https://codepen.io/bradeneast/pen/qBWxKro" target="_blank">See this pen</a> by <a href="https://codepen.io/bradeneast" target="_blank">@bradeneast</a> on CodePen.
+            </span>
+            <script async src="https://static.codepen.io/assets/embed/ei.js" id="codepen-embed-script" type="text/javascript"></script>
 <p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=knobs%20and%20dials%20on%20the%20web%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/knobs-and-dials-on-the-web">share this post</a> with your followers.</p></div>
         </div>
     </div>
