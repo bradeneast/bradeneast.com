@@ -1,22 +1,20 @@
-const main = document.getElementById('main');
-const allImages = Array.from(document.getElementsByTagName('img'));
+// Check for active navigation link
+document.querySelectorAll('.nav-item').forEach(link => {
+
+    const linkTitle = link.textContent;
+    const url = window.location.href.toLowerCase();
+    if (linkTitle) toggleClass(link, 'active', url.includes(linkTitle.toLowerCase()));
+
+})
 
 // Insert copy of boiler plate that shows after main content on mobile instead of before
-function copyBoilerPlateForMobile() {
+const main = document.getElementById('main');
+const boilerPlateDesktop = document.querySelector('.nav-end');
+const boilerPlateMobile = boilerPlateDesktop.cloneNode(true);
+const boilerPlateCopy = document.createElement('section');
 
-    const boilerPlateDesktop = document.querySelector('.nav-end');
-    const boilerPlateMobile = boilerPlateDesktop.cloneNode(true);
-    const newSection = document.createElement('section');
-
-    newSection.appendChild(boilerPlateMobile);
-    main.insertAdjacentElement('afterend', newSection);
-
-}
-
-checkActiveLinks();
-
-
-copyBoilerPlateForMobile();
+boilerPlateCopy.appendChild(boilerPlateMobile);
+main.insertAdjacentElement('afterend', boilerPlateCopy);
 
 
 document.querySelectorAll('[data-stagger]').forEach(item => {
@@ -30,11 +28,14 @@ document.querySelectorAll('[data-stagger]').forEach(item => {
 
 })
 
-allImages.map(img => {
-
+document.querySelectorAll('img').forEach(img => {
     clearImageFormatting(img);
     altFromSource(img);
-
 })
 
+// Populate codepens with fallback content in case of error
 document.querySelectorAll('.codepen').forEach(pen => populateCodepen(pen));
+
+document.querySelectorAll('a').forEach(a => {
+    if (a.getAttribute('href').includes('://')) a.setAttribute('target', '_blank');
+});
