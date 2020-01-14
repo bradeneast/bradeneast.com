@@ -52,6 +52,17 @@ h4 {
     line-height: 1.4;
 }
 
+section,
+article {
+    p,
+    ol,
+    ul,
+    blockquote,
+    .attention {
+        max-width: 44em;
+    }
+}
+
 p {
     font-size: 1rem;
     position: relative;

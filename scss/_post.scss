@@ -63,9 +63,8 @@
         margin-bottom: 0;
 
         &::after {
-            content: "Whoops! This pen is unavailable.";
+            content: "\1F62C Yikes... this pen isn't available.";
             display: block;
-            font-style: italic;
             text-align: center;
             padding: 2em;
             border: 2px solid currentColor;
