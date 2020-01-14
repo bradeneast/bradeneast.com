@@ -60,6 +60,5 @@
             "preamble": null,
             "quote_style": "single"
         }
-    },
-    "scssFormatter.tabWidth": 4,
+    }
 }
