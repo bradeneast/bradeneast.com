@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>Braden East | Embed CodePens faster and more accessibly</title>
+	<meta property="og:url" content="https://www.bradeneast.com//blog/embed-codepens-faster-and-more-accessibly">
+	<meta property="og:image" content="https://www.bradeneast.com/_images/blog/companion-cube-3d.gif">
+	<meta property="og:title" content="Embed CodePens faster and more accessibly">
+    <meta property="og:site_name" content="Braden East">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    
+    
+
+    <!--Preloads-->
+    <link rel="preload" href="/_css/main.css" as="style">
+    <link rel="preload" as="font" href="/_fonts/metropolis-light.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-light.woff" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous">
+
+    <!--Links-->
+    <link rel="canonical" href="https://www.bradeneast.com">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="https://www.bradeneast.com/blog/feed.xml">
+    <link id="favicon" rel="shortcut icon" href="/_images/favicon-light.png" type="image/png">
+    <link rel="stylesheet" href="/_css/main.css" type="text/css">
+
+    <!--Scripts-->
+    <script>
+
+        function checkDarkMode_Initial() {
+
+            var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
+            var favicon = document.getElementById('favicon');
+
+            if (darkModeSetLocally) {
+
+                document.documentElement.classList.add('dm');
+                favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
+
+            }
+        }
+
+        checkDarkMode_Initial();
+
+    </script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script defer src="/_scripts/main.js" type="text/javascript"></script>
+
+</head>
+
+<body class="loaded" onload="document.body.classList.add(`loaded`)">
+
+    <noscript>
+
+        <style>
+            body [data-load] {
+                animation: load var(--TR-M) forwards running !important;
+            }
+
+            .back-to-top,
+            #darkModeToggle {
+                display: none !important;
+            }
+
+            nav .cta {
+                margin-bottom: 0 !important;
+            }
+        </style>
+
+        <div class="noscript-message">
+            * It&apos;s not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
+        </div>
+
+    </noscript>
+
+    <nav>
+
+        <ul>
+            <li><a class="nav-item" href="/work">work</a></li>
+            <li><a class="nav-item" href="/about">about</a></li>
+            <li><a class="nav-item" href="/blog">blog</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <div class="cta">
+                <h3>Let&apos;s work together!</h3>
+
+                <p>If you&apos;re working on a creative project, please reach out. I&apos;d love to collaborate and contribute.</p>
+
+                <div class="button-container">
+                    <a class="button" href="mailto:bradeneastdesign@gmail.com">say hi</a>
+                </div>
+            </div>
+
+            <button class="toggle" id="darkModeToggle" aria-label="toggle dark mode" onclick="toggleDarkMode()">
+                <svg viewbox="0 0 72 72" id="night">
+                    <path d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z"/>
+                </svg>
+                <svg viewbox="0 0 72 72" id="day">
+                    <path d="M61.9,37.61A25.9,25.9,0,1,1,36,11.71,25.9,25.9,0,0,1,61.9,37.61ZM36,1.61a3.58,3.58,0,1,0,3.58,3.57A3.58,3.58,0,0,0,36,1.61ZM7.85,15.16a3.58,3.58,0,1,0,5-.57A3.59,3.59,0,0,0,7.85,15.16ZM.9,45.62a3.58,3.58,0,1,0,2.69-4.29A3.59,3.59,0,0,0,.9,45.62ZM20.38,70a3.58,3.58,0,1,0-1.67-4.78A3.58,3.58,0,0,0,20.38,70Zm31.24,0a3.58,3.58,0,1,0-4.78-1.67A3.58,3.58,0,0,0,51.62,70ZM71.1,45.62a3.58,3.58,0,1,0-4.29,2.69A3.58,3.58,0,0,0,71.1,45.62ZM64.15,15.16a3.58,3.58,0,1,0-.57,5A3.59,3.59,0,0,0,64.15,15.16Z"/>
+                </svg>
+            </button>
+
+            <div class="back-to-top">
+                <div role="button" tabindex="0" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+                    back to top
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div id="main" data-stagger>
+        <!--CONTENT WILL GO HERE-->
+    <link rel="preload" href="/_css/prism.css" as="style">
+<link rel="preload" href="https://static.codepen.io/assets/embed/ei.js" as="script">
+
+
+<article class="post">
+
+    <h1 class="title" data-load="clip">Embed CodePens faster and more accessibly</h1>
+    <div class="content">
+        <div class="meta">
+            <h4 class="date" data-load="clip" style="animation-delay: .05s;">2020/01/13</h4>
+            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"><a class="tag" href="/blog/tags/blog">blog</a><a class="tag" href="/blog/tags/html">html</a><a class="tag" href="/blog/tags/codepen">codepen</a><a class="tag" href="/blog/tags/performance">performance</a><a class="tag" href="/blog/tags/accessibility">accessibility</a></h4>
+        </div>
+        <div class="main" data-load="move" style="animation-delay: .2s;">
+            <div class="body">
+<img class="hide" src="/_images/blog/companion-cube-3d.gif" aria-hidden="true">
+<p>Since starting to write for my blog, I embed a <a href="https://codepen.io/" target="_blank">CodePen</a> at the end of most of my posts, as a sort of &#x201C;proof-of-concept&#x201D;. The problem is, CodePen embeds are not as friendly and easy to use as most other CodePen features.</p>
+<blockquote>
+<p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop" target="_blank">Narbacular Drop</a></em> was released in 2005. After the game&#x2019;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)" target="_blank">Portal</a></em>.</p>
+</blockquote>
+<p class="codepen" data-default-tab="css,result" data-slug-hash="povpQdr">
+</p><p>In fact, CodePen embeds feel clunky to use and messy to customize. Here&#x2019;s the copy-and-paste embed code they provide by default.</p>
+<pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>codepen<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>265<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-default-tab</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>result<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-user</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bradeneast<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-slug-hash</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>povpQdr<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span> 265px<span class="token punctuation">;</span> <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span> <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token property">border</span><span class="token punctuation">:</span> 2px solid<span class="token punctuation">;</span> <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0<span class="token punctuation">;</span> <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-pen-title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Pure CSS 3D Portal Companion Cube<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>
+    See the Pen <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://codepen.io/bradeneast/pen/povpQdr<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Pure CSS 3D Portal Companion Cube<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> by Braden (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://codepen.io/bradeneast<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>@bradeneast<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>) on <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://codepen.io<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>CodePen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://static.codepen.io/assets/embed/ei.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>We get <code>data</code> attributes all over the place, a myriad of inline styles, and some other unnecessary code (we&#x2019;ll get to that). CodePen offers an <code>iframe</code> option, which is slightly cleaner, but gives us even less control over when and how the pen loads.</p>
+<p>This causes a few problems for bloggers/developers wanting to keep their websites clean and performant:</p>
+<ol>
+<li>Standardizing pen styles is difficult because the everthing is set inline (you&#x2019;ll have to use <code>!important</code> to override anything).</li>
+<li>Customizing the attribution text requires manual edits and manual updates of each copied embed code.</li>
+<li>Only one embed script is necessary to load multiple pens. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.</li>
+</ol>
+<h4>Guessing the reasons</h4>
+<p>If you&#x2019;re anything like me, you&#x2019;re asking the question, &#x201C;Why do CodePen embeds include all that extra code?&#x201D;</p>
+<p>In their <a href="https://codepen.io/embeds" target="_blank">explainer</a> and <a href="https://blog.codepen.io/documentation/features/embedded-pens/" target="_blank">documentation</a>, CodePen doesn&#x2019;t offer an obvious reason for the extra markup. That said, these embeds gracefully fall back to a contentful bordered box if the pen is unable to load (see below), which is an important consideration to make for users with spotty connections.</p>
+<p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
+  <span>
+    See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr" target="_blank">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast" target="_blank">@bradeneast</a>) on <a href="https://codepen.io" target="_blank">CodePen</a>.
+  </span>
+</p>
+<p>This is a nice feature, but <a href="https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/" target="_blank">some have pointed out</a> that CodePen embeds still leave some to be desired when it comes to accessibility. Additionally, we can improve our own experience significantly without compromising that of our readers. Let&#x2019;s look at how.</p>
+<h4>My solution</h4>
+<p>Believe it or not, the only absolutely necessary part of a CodePen embed is the <code>data-slug-hash</code> attribute, so you can technically whittle the whole thing down to one line of HTML.</p>
+<pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>codepen<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-slug-hash</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>povpQdr<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>You can get away with this if you include the <a href="https://static.codepen.io/assets/embed/ei.js" target="_blank">CodePen embed script</a> (~5kb) on every page (this is what I do because I&#x2019;m lazy).</p>
+<p>Even though it&#x2019;s beautifully simple, we get nothing at all when a connection is unavailable or CodePen is <em>gasp</em> DOWN. To rememdy that, let&#x2019;s run a small bit of our own Javascript that will add a fallback.</p>
+<pre class="contains-javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;.codepen&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">pen</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	
+	<span class="token keyword">const</span> codePen <span class="token operator">=</span> <span class="token string">&quot;https://codepen.io/&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> hash <span class="token operator">=</span> pen<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;data-slug-hash&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> user <span class="token operator">=</span> pen<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;data-user&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> fallback <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;p&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>hash<span class="token punctuation">)</span> fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">View &lt;a href=&quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>codePen<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">pen/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>hash<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot;&gt;this pen&lt;/a&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>hash <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">)</span> fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> by &lt;a href=&quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>codePen <span class="token operator">+</span> user<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot;&gt;@</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/a&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+	fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> hash <span class="token operator">||</span> user <span class="token operator">?</span> fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">&quot; on CodePen.&quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;This pen is unavailable.&quot;</span><span class="token punctuation">;</span>
+	pen<span class="token punctuation">.</span><span class="token function">insertAdjacentElement</span><span class="token punctuation">(</span><span class="token string">&quot;afterend&quot;</span><span class="token punctuation">,</span> fallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Now users will see a link to the pen regardless of its status. If the pen does load, users will see an additional invitation to view it on CodePen. If something goes wrong, our fallback text indicates what was supposed to happen.</p>
+<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=embed%20codepens%20faster%20and%20more%20accessibly%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/embed-codepens-faster-and-more-accessibly">share this post</a> with your followers.</p></div>
+        </div>
+    </div>
+
+    
+
+    <section data-load="move">
+        <div class="post-nav">
+            <a href="/blog/the-simplest-pulltorefresh" class="previous">
+                <div class="label">previous</div>
+                <div class="link-title">The simplest pull-to-refresh</div>
+            </a>
+            <a href="#" class="next" style="display:none">
+                <div class="label">next</div>
+                <div class="link-title"></div>
+            </a>
+        </div>
+    </section>
+
+</article>
+
+<link rel="stylesheet" href="/_css/prism.css" type="text/css">
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+
+
+    <footer>
+
+        &#xA9; 2019 Braden East
+
+        <div class="socials">
+            <a href="https://codepen.io/bradeneast" rel="noreferrer" aria-label="braden east on codepen" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" viewbox="0 0 512 512">
+                    <path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/bradeneastdesign" rel="noreferrer" aria-label="braden east on instagram" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" viewbox="0 0 448 512">
+                    <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/bradeneast" rel="noreferrer" aria-label="braden east on github" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-icon="github-square" class="svg-inline--fa fa-github-square fa-w-14" role="img" viewbox="0 0 448 512">
+                    <path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/>
+                </svg>
+            </a>
+            <a href="https://www.twitter.com/bradenthehair/" rel="noreferrer" aria-label="braden east on twitter" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-icon="twitter" role="img" viewbox="0 0 448 512">
+                    <path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
