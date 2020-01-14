@@ -17,6 +17,7 @@ const site = {
 
     audience: 'dev-signers',
     tagline: 'Gain confidence designing and coding stellar interfaces.',
+    codePenTheme: 'dark'
 }
 
 module.exports = site;

@@ -47,6 +47,10 @@ function objectify(postFilePath) {
         parent.remove();
     })
 
+    $('.codepen').each(function (i, e) {
+        $(this).attr('data-theme-id', site.codePenTheme);
+    })
+
     thisPost.title = $('h1').contents().text();
     thisPost.date = $('h2').contents().text();
     thisPost.tags = $('h3').contents().text();
