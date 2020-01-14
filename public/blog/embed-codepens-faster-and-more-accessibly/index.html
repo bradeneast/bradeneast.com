@@ -139,9 +139,9 @@
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
 <img class="hide" src="/_images/blog/companion-cube-3d.gif" aria-hidden="true">
-<p>Since starting to write for my blog, I embed a <a href="https://codepen.io/" target="_blank">CodePen</a> at the end of most of my posts, as a sort of &#x201C;proof-of-concept&#x201D;. The problem is, CodePen embeds are not as friendly and easy to use as most other CodePen features.</p>
+<p>Since starting to write for my blog, I embed a <a href="https://codepen.io/">CodePen</a> at the end of most of my posts, as a sort of &#x201C;proof-of-concept&#x201D;. The problem is, CodePen embeds are not as friendly and easy to use as most other CodePen features.</p>
 <blockquote>
-<p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop" target="_blank">Narbacular Drop</a></em> was released in 2005. After the game&#x2019;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)" target="_blank">Portal</a></em>.</p>
+<p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop">Narbacular Drop</a></em> was released in 2005. After the game&#x2019;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal</a></em>.</p>
 </blockquote>
 <p class="codepen" data-default-tab="css,result" data-slug-hash="povpQdr">
 </p><p>In fact, CodePen embeds feel clunky to use and messy to customize. Here&#x2019;s the copy-and-paste embed code they provide by default.</p>
@@ -161,19 +161,19 @@
 </ol>
 <h4>Guessing the reasons</h4>
 <p>If you&#x2019;re anything like me, you&#x2019;re asking the question, &#x201C;Why do CodePen embeds include all that extra code?&#x201D;</p>
-<p>In their <a href="https://codepen.io/embeds" target="_blank">explainer</a> and <a href="https://blog.codepen.io/documentation/features/embedded-pens/" target="_blank">documentation</a>, CodePen doesn&#x2019;t offer an obvious reason for the extra markup. That said, these embeds gracefully fall back to a contentful bordered box if the pen is unable to load (see below), which is an important consideration to make for users with spotty connections.</p>
+<p>In their <a href="https://codepen.io/embeds">explainer</a> and <a href="https://blog.codepen.io/documentation/features/embedded-pens/">documentation</a>, CodePen doesn&#x2019;t explicitly discuss their embed design, but It&#x2019;s pretty obvious that most of their decisions were for accessibility reasons. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).</p>
 <p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
   <span>
-    See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr" target="_blank">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast" target="_blank">@bradeneast</a>) on <a href="https://codepen.io" target="_blank">CodePen</a>.
+    See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>) on <a href="https://codepen.io">CodePen</a>.
   </span>
 </p>
-<p>This is a nice feature, but <a href="https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/" target="_blank">some have pointed out</a> that CodePen embeds still leave some to be desired when it comes to accessibility. Additionally, we can improve our own experience significantly without compromising that of our readers. Let&#x2019;s look at how.</p>
+<p>That&#x2019;s a nice feature, but <a href="https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/">some have pointed out</a> that CodePen embeds still have room to grow when it comes to accessibility. The topic of this post is to see how we can improve our own experience significantly without compromising that of our readers.</p>
 <h4>My solution</h4>
 <p>Believe it or not, the only absolutely necessary part of a CodePen embed is the <code>data-slug-hash</code> attribute, so you can technically whittle the whole thing down to one line of HTML.</p>
 <pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>codepen<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-slug-hash</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>povpQdr<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<p>You can get away with this if you include the <a href="https://static.codepen.io/assets/embed/ei.js" target="_blank">CodePen embed script</a> (~5kb) on every page (this is what I do because I&#x2019;m lazy).</p>
-<p>Even though it&#x2019;s beautifully simple, we get nothing at all when a connection is unavailable or CodePen is <em>gasp</em> DOWN. To rememdy that, let&#x2019;s run a small bit of our own Javascript that will add a fallback.</p>
+<p>You can get away with this if you include the <a href="https://static.codepen.io/assets/embed/ei.js">CodePen embed script</a> (~5kb) on every page (this is what I do because I&#x2019;m lazy).</p>
+<p>Even though it&#x2019;s beautifully simple, we get nothing at all when a connection is unavailable or CodePen is <em>gasp</em> DOWN. To rememdy that, let&#x2019;s use a small bit Javascript that will add a fallback for us dynamically.</p>
 <pre class="contains-javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;.codepen&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">pen</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 	
 	<span class="token keyword">const</span> codePen <span class="token operator">=</span> <span class="token string">&quot;https://codepen.io/&quot;</span><span class="token punctuation">;</span>
@@ -189,7 +189,15 @@
 	
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p>Now users will see a link to the pen regardless of its status. If the pen does load, users will see an additional invitation to view it on CodePen. If something goes wrong, our fallback text indicates what was supposed to happen.</p>
+<p>Now users see a link to the pen regardless of its status. If something goes wrong, our fallback text indicates what was supposed to happen. To really put a bow on this solution, we can even target the fallback text for styling with the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator">adjacent sibling selector</a>.</p>
+<pre class="contains-css"><code class="language-css"><span class="token selector">.codepen + p</span> <span class="token punctuation">{</span>
+	<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+	<span class="token property">border</span><span class="token punctuation">:</span> 2px solid currentColor<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This works because the CodePen embed script replaces our original element, removing the <code>codepen</code> class. If the script doesn&#x2019;t load, the <code>p</code> element with a class of <code>codepen</code> stays and is targetable.</p>
+<p>Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!</p>
 <p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=embed%20codepens%20faster%20and%20more%20accessibly%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/embed-codepens-faster-and-more-accessibly">share this post</a> with your followers.</p></div>
         </div>
     </div>
