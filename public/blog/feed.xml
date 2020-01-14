@@ -1,11 +1,13 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
 <title>Blog of Braden East</title>
-<link>https://www.bradeneast.com/blog/./public/blog/feed.xml</link>
+<link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Tue, 14 Jan 2020 22:14:37 GMT</lastBuildDate>
-<atom:link href="https://www.bradeneast.com/blog/./public/blog/feed.xml" rel="self" type="application/rss+xml" /><item>
+<lastBuildDate>Tue, 14 Jan 2020 22:25:37 GMT</lastBuildDate>
+<atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+<item>
         <title>Embed CodePens with one line of code - faster and more accessibly</title>
         <link>https://www.bradeneast.com/embed-codepens-with-one-line-of-code--faster-and-more-accessibly</link>
         <guid>https://www.bradeneast.com/embed-codepens-with-one-line-of-code--faster-and-more-accessibly</guid>
