@@ -117,14 +117,18 @@ svg {
     }
 }
 
-.noscript-message {
-    width: 100%;
-    grid-column: 1 / -1;
-    color: var(--CL-WHITE);
-    background: var(--CL-1);
-    padding: var(--PAD-S);
-    border-radius: var(--RADIUS);
-    opacity: 0.63;
+noscript {
+    position: absolute;
+    top: var(--PAD-M);
+    left: var(--PAD-M);
+
+    .noscript-message {
+        display: inline-block;
+        color: var(--CL-WHITE);
+        background: var(--CL-1);
+        border-radius: var(--RADIUS);
+        padding: 0.5em 0.8em;
+    }
 }
 
 footer {
