@@ -53,13 +53,21 @@
         margin: var(--PAD-S) 0;
     }
 
-    p,
-    pre {
+    pre,
+    p {
         margin: var(--PAD-M) 0;
     }
 
     .cp_embed_wrapper {
         margin-bottom: var(--PAD-S);
+
+        .cp_embed_iframe {
+            min-height: 540px;
+        }
+
+        & + p {
+            margin-top: 0;
+        }
     }
 }
 
@@ -71,9 +79,8 @@
             content: ", ";
         }
 
-        &:hover,
-        &:focus {
-            color: var(--CL-4);
+        &:hover {
+            color: var(--CL-1);
             transition: var(--TR-S);
         }
     }

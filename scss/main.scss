@@ -34,11 +34,14 @@ $mq: 1080px;
     list-style-type: none;
     text-decoration: none;
     box-sizing: border-box;
+    outline-offset: 2px;
+    outline: 2px solid transparent;
     animation-delay: inherit;
 }
 
 *:focus {
-    outline-color: var(--CL-1);
+    color: var(--CL-BLACK);
+    outline-color: currentColor;
 }
 
 body {
