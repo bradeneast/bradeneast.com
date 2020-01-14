@@ -3,13 +3,13 @@
 ### blog, html, performance, accessibility
 <img class="hide" src="/_images/blog/companion-cube-3d.gif" aria-hidden="true">
 
-Since starting to write for my blog, I embed a [CodePen](https://codepen.io/) at the end of most of my posts, as a sort of "proof-of-concept". The problem is, CodePen embeds are not as friendly and easy to use as most other CodePen features.
+When I write for this blog, I usually embed a [CodePen](https://codepen.io/) at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.
 
 > The puzzle video game *[Narbacular Drop](https://en.wikipedia.org/wiki/Narbacular_Drop)* was released in 2005. After the game's release, Valve hired several *Narbacular Drop* developers to help create *[Portal](https://en.wikipedia.org/wiki/Portal_(video_game))*.
 
-<p class="codepen" data-default-tab="css,result" data-slug-hash="povpQdr">
+<p class="codepen" data-slug-hash="povpQdr">
 
-My biggest disappointment is that CodePen embeds feel clunky to use and messy to customize. Here's the copy-and-paste code they provide by default.
+My biggest complaint is that CodePen embeds feel clunky to use and messy to customize. Here's the copy-and-paste code they provide by default.
 
 ```html
 <p class="codepen" data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
@@ -28,9 +28,9 @@ This causes a few problems for bloggers/developers wanting to keep their website
 3. Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.
 
 #### Guessing the reasons
-If you're anything like me, you're wondering why CodePen embeds include all that extra code.
+If you're anything like me, you're probably wondering why CodePen chose to include all that extra code.
 
-In their [explainer](https://codepen.io/embeds) and [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), CodePen doesn't explicitly discuss the embed code, but It's pretty obvious that most of their decisions were for accessibility reasons. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
+This decision isn't explicitly discussed in their [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), but It's pretty obvious that most of their reasons were for accessibility. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
 
 <p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
   <span>
@@ -38,18 +38,16 @@ In their [explainer](https://codepen.io/embeds) and [documentation](https://blog
   </span>
 </p>
 
-That's a nice feature, but [some have pointed out](https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/) that CodePen embeds still have room to grow when it comes to accessibility. The topic of this post is to see how we can improve our own experience significantly without compromising that of our readers.
+That's a nice feature, but [some have pointed out](https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/) that CodePen embeds still have room to grow when it comes to accessibility. This post focuses on how we can improve our own experience significantly without compromising that of our readers.
 
 #### My solution
-Believe it or not, the only absolutely necessary part of a CodePen embed is the `data-slug-hash` attribute, so you can technically whittle the whole thing down to one line of HTML.
+Believe it or not, the only absolutely necessary part of a CodePen embed is the `data-slug-hash` attribute, so we can technically whittle the whole thing down to one line of HTML.
 
 ```html
 <p class="codepen" data-slug-hash="povpQdr"></p>
 ```
 
-You can get away with this if you include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page (this is what I do because I'm lazy).
-
-Even though it's beautifully simple, we get nothing at all when a connection is unavailable or CodePen is *gasp* DOWN. To rememdy that, let's use a small bit Javascript that will add a fallback for us dynamically.
+We can get away with this if we include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is ***gasp*** DOWN. To rememdy that, let's use a small bit Javascript that will add a fallback for us dynamically.
 
 ```javascript
 document.querySelectorAll(".codepen").forEach(pen => {
@@ -69,7 +67,7 @@ document.querySelectorAll(".codepen").forEach(pen => {
 })
 ```
 
-Now users see a link to the pen regardless of its status. If something goes wrong, our fallback text indicates what was supposed to happen. To really put a bow on this solution, we can add a placeholder to the `.codepen` element for [noscript situations](/blog/using-noscript).
+Now we can see a link to the pen regardless of its status. If something goes wrong, our fallback text will indicate what was supposed to happen. To really put a bow on this solution, we can even add a placeholder to the `.codepen` element for [noscript situations](/blog/using-noscript).
 
 ```css
 .codepen::after {
@@ -81,5 +79,7 @@ Now users see a link to the pen regardless of its status. If something goes wron
 	border: 2px solid currentColor;
 }
 ```
+
+This works because the CodePen embed script replaces the original `.codepen` element with an `iframe`. If all scripts are blocked, the element remains and shows our message.
 
 Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!
