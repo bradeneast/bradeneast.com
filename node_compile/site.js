@@ -17,12 +17,6 @@ const site = {
 
     audience: 'dev-signers',
     tagline: 'Gain confidence designing and coding stellar interfaces.',
-    codepen: {
-        theme_id: 'dark',
-        height: '540',
-        user: 'bradeneast',
-        default_tab: 'result'
-    }
 }
 
 module.exports = site;

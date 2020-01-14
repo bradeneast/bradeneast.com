@@ -36,3 +36,5 @@ allImages.map(img => {
     altFromSource(img);
 
 })
+
+document.querySelectorAll('.codepen').forEach(pen => populateCodepen(pen));

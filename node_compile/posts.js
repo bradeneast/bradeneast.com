@@ -39,41 +39,6 @@ function objectify(postFilePath) {
         })
     })
 
-    // Populate CodePens
-    $('.codepen').each(function (i, e) {
-
-        const pen = $(this);
-
-        Object.keys(site.codepen).map(key => {
-
-            // Format key as a data- attribute
-            let value = `data-${key.replace(/_/g, '-')}`;
-
-            // Won't touch attribute values already set inline
-            if (!pen.attr(value)) pen.attr(value, site.codepen[key]);
-        })
-
-        const penLink = `https://codepen.io/${pen.attr('data-user')}/pen/${pen.attr('data-slug-hash')}`;
-        const userLink = `https://codepen.io/${pen.attr('data-user')}`;
-
-        pen.after(
-            `<span>
-                <a href="${penLink}">See this pen</a> by <a href="${userLink}">@${pen.attr('data-user')}</a> on CodePen.
-            </span>`
-        );
-
-        // Only one embed script is needed per page, regardless of how many pens are present
-        $('#codepen-embed-script').remove();
-        pen.after(
-            `<script 
-            async 
-            src="https://static.codepen.io/assets/embed/ei.js" 
-            id="codepen-embed-script" 
-            type="text/javascript"
-            ></script>`
-        );
-    })
-
     // Unwrap images from p tags
     $('img').each(function (i, e) {
         const img = $(this);
