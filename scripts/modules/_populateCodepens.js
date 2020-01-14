@@ -8,6 +8,7 @@ function populateCodepen(element) {
     if (hash) fallback.innerHTML += `View <a href="${codePen}pen/${hash}">this pen</a>`;
     if (hash && user) fallback.innerHTML += ` by <a href="${codePen + user}">@${user}</a>`;
 
+    fallback.classList.add('codepen-fallback');
     fallback.innerHTML = hash || user ? fallback.innerHTML + " on CodePen." : "This pen is unavailable.";
     element.insertAdjacentElement("afterend", fallback);
 

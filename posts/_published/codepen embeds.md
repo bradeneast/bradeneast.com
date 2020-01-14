@@ -9,7 +9,7 @@ Since starting to write for my blog, I embed a [CodePen](https://codepen.io/) at
 
 <p class="codepen" data-default-tab="css,result" data-slug-hash="povpQdr">
 
-In fact, CodePen embeds feel clunky to use and messy to customize. Here's the copy-and-paste embed code they provide by default.
+My biggest disappointment is that CodePen embeds feel clunky to use and messy to customize. Here's the copy-and-paste code they provide by default.
 
 ```html
 <p class="codepen" data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
@@ -20,17 +20,17 @@ In fact, CodePen embeds feel clunky to use and messy to customize. Here's the co
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 ```
 
-We get `data` attributes all over the place, a myriad of inline styles, and some other unnecessary code (we'll get to that). CodePen offers an `iframe` option, which is slightly cleaner, but gives us even less control over when and how the pen loads.
+We get `data` attributes all over the place, a myriad of inline styles, and more that's just plain unnecessary (we'll get to that). CodePen offers an `iframe` option, which is slightly cleaner, but gives us even less control over when and how the pen loads.
 
 This causes a few problems for bloggers/developers wanting to keep their websites clean and performant: 
-1. Standardizing pen styles is difficult because the everthing is set inline (you'll have to use `!important` to override anything).
+1. Standardizing pen styles is difficult because the everthing is set inline (you'll have to use `!important` to override).
 2. Customizing the attribution text requires manual edits and manual updates of each copied embed code.
-3. Only one embed script is necessary to load multiple pens. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.
+3. Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.
 
 #### Guessing the reasons
-If you're anything like me, you're asking the question, "Why do CodePen embeds include all that extra code?"
+If you're anything like me, you're wondering why CodePen embeds include all that extra code.
 
-In their [explainer](https://codepen.io/embeds) and [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), CodePen doesn't explicitly discuss their embed design, but It's pretty obvious that most of their decisions were for accessibility reasons. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
+In their [explainer](https://codepen.io/embeds) and [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), CodePen doesn't explicitly discuss the embed code, but It's pretty obvious that most of their decisions were for accessibility reasons. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
 
 <p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
   <span>
@@ -62,22 +62,24 @@ document.querySelectorAll(".codepen").forEach(pen => {
 	if (hash) fallback.innerHTML += `View <a href="${codePen}pen/${hash}">this pen</a>`;
 	if (hash && user) fallback.innerHTML += ` by <a href="${codePen + user}">@${user}</a>`;
 
+	fallback.classList.add('codepen-fallback');
 	fallback.innerHTML = hash || user ? fallback.innerHTML + " on CodePen." : "This pen is unavailable.";
 	pen.insertAdjacentElement("afterend", fallback);
 	
 })
 ```
 
-Now users see a link to the pen regardless of its status. If something goes wrong, our fallback text indicates what was supposed to happen. To really put a bow on this solution, we can even target the fallback text for styling with the CSS [adjacent sibling selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator).
+Now users see a link to the pen regardless of its status. If something goes wrong, our fallback text indicates what was supposed to happen. To really put a bow on this solution, we can add a placeholder to the `.codepen` element for [noscript situations](/blog/using-noscript).
 
 ```css
-.codepen + p {
+.codepen::after {
+	content: "Whoops! This pen is unavailable.";
+	display: block;
+	font-style: italic;
 	text-align: center;
 	padding: 2em;
 	border: 2px solid currentColor;
 }
 ```
-
-This works because the CodePen embed script replaces our original element, removing the `codepen` class. If the script doesn't load, the `p` element with a class of `codepen` stays and is targetable.
 
 Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!
