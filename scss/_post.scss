@@ -58,16 +58,22 @@
         margin: var(--PAD-M) 0;
     }
 
+    .codepen + p {
+        text-align: center;
+        padding: 2em;
+        border: 2px solid currentColor;
+    }
+
     .cp_embed_wrapper {
         margin-bottom: var(--PAD-S);
-
-        .cp_embed_iframe {
-            min-height: 540px;
-        }
 
         & + p {
             margin-top: 0;
         }
+    }
+
+    .cp_embed_iframe {
+        min-height: 540px;
     }
 }
 
