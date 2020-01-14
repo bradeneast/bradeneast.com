@@ -30,7 +30,7 @@ This causes a few problems for bloggers/developers wanting to keep their website
 #### Guessing the reasons
 If you're anything like me, you're asking the question, "Why do CodePen embeds include all that extra code?"
 
-In their [explainer](https://codepen.io/embeds) and [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), CodePen doesn't offer an obvious reason for the extra markup. That said, these embeds gracefully fall back to a contentful bordered box if the pen is unable to load (see below), which is an important consideration to make for users with spotty connections.
+In their [explainer](https://codepen.io/embeds) and [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), CodePen doesn't explicitly discuss their embed design, but It's pretty obvious that most of their decisions were for accessibility reasons. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
 
 <p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
   <span>
@@ -38,7 +38,7 @@ In their [explainer](https://codepen.io/embeds) and [documentation](https://blog
   </span>
 </p>
 
-This is a nice feature, but [some have pointed out](https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/) that CodePen embeds still leave some to be desired when it comes to accessibility. Additionally, we can improve our own experience significantly without compromising that of our readers. Let's look at how.
+That's a nice feature, but [some have pointed out](https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/) that CodePen embeds still have room to grow when it comes to accessibility. The topic of this post is to see how we can improve our own experience significantly without compromising that of our readers.
 
 #### My solution
 Believe it or not, the only absolutely necessary part of a CodePen embed is the `data-slug-hash` attribute, so you can technically whittle the whole thing down to one line of HTML.
@@ -49,7 +49,7 @@ Believe it or not, the only absolutely necessary part of a CodePen embed is the 
 
 You can get away with this if you include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page (this is what I do because I'm lazy).
 
-Even though it's beautifully simple, we get nothing at all when a connection is unavailable or CodePen is *gasp* DOWN. To rememdy that, let's run a small bit of our own Javascript that will add a fallback.
+Even though it's beautifully simple, we get nothing at all when a connection is unavailable or CodePen is *gasp* DOWN. To rememdy that, let's use a small bit Javascript that will add a fallback for us dynamically.
 
 ```javascript
 document.querySelectorAll(".codepen").forEach(pen => {
@@ -68,4 +68,16 @@ document.querySelectorAll(".codepen").forEach(pen => {
 })
 ```
 
-Now users will see a link to the pen regardless of its status. If the pen does load, users will see an additional invitation to view it on CodePen. If something goes wrong, our fallback text indicates what was supposed to happen.
+Now users see a link to the pen regardless of its status. If something goes wrong, our fallback text indicates what was supposed to happen. To really put a bow on this solution, we can even target the fallback text for styling with the CSS [adjacent sibling selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator).
+
+```css
+.codepen + p {
+	text-align: center;
+	padding: 2em;
+	border: 2px solid currentColor;
+}
+```
+
+This works because the CodePen embed script replaces our original element, removing the `codepen` class. If the script doesn't load, the `p` element with a class of `codepen` stays and is targetable.
+
+Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!
