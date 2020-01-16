@@ -83,9 +83,20 @@ function addPostToFeed(post, wrapper) {
         key = key.toLowerCase();
 
         if (!e) return;
+
         if (key === 'link') e.attr('href', `/${post.area}/${v}`);
-        if (key === 'image') e.attr('src', v);
-        if (key !== 'link' && key !== 'image') e.append(v);
+
+        if (key === 'media') {
+
+            let mediaTypeCheck = new RegExp('mp4|webm|ogg');
+            let isVideo = String(v).match(mediaTypeCheck);
+            let elem = isVideo ? `<video autoplay loop><source src="${v}"></video>` : `<img src="${v}" />`;
+
+            e.after(elem);
+            e.remove();
+        }
+
+        if (key !== 'link' && key !== 'media') e.append(v);
     })
 
     wrapper.append(newPost);

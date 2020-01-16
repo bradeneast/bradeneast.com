@@ -38,20 +38,16 @@
     <!--Scripts-->
     <script>
 
-        function checkDarkMode_Initial() {
+        var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn')) || false;
 
-            var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
+        if (darkModeSetLocally) {
+
+            document.documentElement.classList.add('dm');
+
             var favicon = document.getElementById('favicon');
+            favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
 
-            if (darkModeSetLocally) {
-
-                document.documentElement.classList.add('dm');
-                favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
-
-            }
         }
-
-        checkDarkMode_Initial();
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
@@ -137,7 +133,7 @@
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
                 <div class="bg">
-                    <img class="image">
+                    <div class="media"></div>
                 </div>
                 <div class="content">
                     <p class="title"></p>
@@ -148,9 +144,9 @@
     </template>
 
         <li class="item" data-load="scale" data-scroll>
-            <a href="/blog/embed-codepens-with-one-line-of-code--faster-and-more-accessibly" class="link">
+            <a href="/blog/embed-codepens-with-one-line-of-code---faster-and-more-accessibly" class="link">
                 <div class="bg">
-                    <img class="image" src="/_images/blog/companion-cube-3d.gif">
+                    <video autoplay loop><source src="/_images/blog/companion-cube-3d.mp4"></video>
                 </div>
                 <div class="content">
                     <p class="title">Embed CodePens with one line of code - faster and more accessibly</p>

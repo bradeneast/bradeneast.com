@@ -13,7 +13,7 @@ const log = require('./log');
 
 function objectify(postFilePath) {
 
-    let thisPost = {}
+    const thisPost = {}
     let codeLanguages = ['html', 'css', 'javascript']
 
     const reader = new commonmark.Parser({ smart: true });
@@ -54,16 +54,14 @@ function objectify(postFilePath) {
     thisPost.title = $('h1').contents().text();
     thisPost.date = $('h2').contents().text();
     thisPost.tags = $('h3').contents().text();
-    thisPost.image = $('img').attr('src');
+    thisPost.media = $('#featured-image').attr('src') || $('source').attr('src') || $('img').attr('src');
     thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
     thisPost.excerpt = thisPost.body.substr(0, thisPost.body.indexOf('</p>') + 4);
+    thisPost.link = helpers.linkify(thisPost.title);
 
     // Determine which area post belongs in from post tags
     let regex = new RegExp(String(site.postAreas).replace(/[, ]/g, '|'), 'gi');
     thisPost.area = thisPost.tags.match(regex)[0];
-
-    // post link is absolute
-    thisPost.link = helpers.linkify(thisPost.title);
 
     // Append Twitter share CTA to post body
     if (thisPost.area == 'blog') {
@@ -88,7 +86,7 @@ function newFromTemplate(posts) {
         meta.addTags(
             `<!--
             title: "${post.title}",
-            image: "${post.image}",
+            image: "${post.media}",
             url: "${site.root}/${post.area}/${post.link}",
             -->`,
             pageTemp.$);
@@ -111,8 +109,8 @@ function newFromTemplate(posts) {
                     value += `<a class="tag" href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`;
                 })
             }
-
-            key == 'image' ? element.attr('src', value) : element.append(value);
+            else if (key == 'media') element.attr('src', value);
+            else element.append(value);
         })
 
         // Add next and previous links

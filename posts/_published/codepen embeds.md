@@ -1,7 +1,9 @@
 # Embed CodePens with one line of code - faster and more accessibly
 ## 2020/01/13
 ### blog, html, performance, accessibility
-<img class="hide" src="/_images/blog/companion-cube-3d.gif" aria-hidden="true">
+<video class="hide" aria-hidden="true">
+	<source src="/_images/blog/companion-cube-3d.mp4">
+</video>
 
 When I write for this blog, I usually embed a [CodePen](https://codepen.io/) at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.
 

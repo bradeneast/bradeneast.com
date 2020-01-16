@@ -38,20 +38,16 @@
     <!--Scripts-->
     <script>
 
-        function checkDarkMode_Initial() {
+        var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn')) || false;
 
-            var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
+        if (darkModeSetLocally) {
+
+            document.documentElement.classList.add('dm');
+
             var favicon = document.getElementById('favicon');
+            favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
 
-            if (darkModeSetLocally) {
-
-                document.documentElement.classList.add('dm');
-                favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
-
-            }
         }
-
-        checkDarkMode_Initial();
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
@@ -138,7 +134,7 @@
     <div class="content">
         <div class="meta">
             <h4 class="date" data-load="clip" style="animation-delay: .05s;">2019/10/18</h4>
-            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"><a class="tag" href="/blog/tags/javascript">javascript</a><a class="tag" href="/blog/tags/html">html</a><a class="tag" href="/blog/tags/accessibility">accessibility</a><a class="tag" href="/blog/tags/blog">blog</a></h4>
+            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"></h4>
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
@@ -211,7 +207,7 @@
                 <div class="label">previous</div>
                 <div class="link-title">Knobs and dials on the web</div>
             </a>
-            <a href="/blog/the-simplest-pulltorefresh" class="next">
+            <a href="/blog/the-simplest-pull-to-refresh" class="next">
                 <div class="label">next</div>
                 <div class="link-title">The simplest pull-to-refresh</div>
             </a>

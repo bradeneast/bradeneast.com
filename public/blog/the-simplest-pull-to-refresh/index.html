@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
     <title>Braden East | The simplest pull-to-refresh</title>
-	<meta property="og:url" content="https://www.bradeneast.com//blog/the-simplest-pulltorefresh">
+	<meta property="og:url" content="https://www.bradeneast.com//blog/the-simplest-pull-to-refresh">
 	<meta property="og:image" content="https://www.bradeneast.com/_images/blog/my-ptr.gif">
 	<meta property="og:title" content="The simplest pull-to-refresh">
     <meta property="og:site_name" content="Braden East">
@@ -38,20 +38,16 @@
     <!--Scripts-->
     <script>
 
-        function checkDarkMode_Initial() {
+        var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn')) || false;
 
-            var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
+        if (darkModeSetLocally) {
+
+            document.documentElement.classList.add('dm');
+
             var favicon = document.getElementById('favicon');
+            favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
 
-            if (darkModeSetLocally) {
-
-                document.documentElement.classList.add('dm');
-                favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
-
-            }
         }
-
-        checkDarkMode_Initial();
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
@@ -138,7 +134,7 @@
     <div class="content">
         <div class="meta">
             <h4 class="date" data-load="clip" style="animation-delay: .05s;">2020/01/11</h4>
-            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"><a class="tag" href="/blog/tags/blog">blog</a><a class="tag" href="/blog/tags/design">design</a><a class="tag" href="/blog/tags/ui">ui</a><a class="tag" href="/blog/tags/css">css</a></h4>
+            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"></h4>
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
@@ -201,7 +197,7 @@ scrollingList<span class="token punctuation">.</span><span class="token function
 <p>Here&#x2019;s the demo:</p>
 <p class="codepen" data-slug-hash="bGNMyJx" data-theme-id="dark"></p>
 <p>It&#x2019;s up to you what styles, animations, and other garnish you want to add. For easy integration with an existing project, you probably want to abstract the whole function and assign variables to the threshold and class name. I hope you can use this minimal and lightweight approach in your projects!</p>
-<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=the%20simplest%20pulltorefresh%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/the-simplest-pulltorefresh">share this post</a> with your followers.</p></div>
+<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=the%20simplest%20pull%20to%20refresh%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/the-simplest-pull-to-refresh">share this post</a> with your followers.</p></div>
         </div>
     </div>
 
@@ -213,7 +209,7 @@ scrollingList<span class="token punctuation">.</span><span class="token function
                 <div class="label">previous</div>
                 <div class="link-title">Using &#x27E8;noscript&#x27E9;</div>
             </a>
-            <a href="/blog/embed-codepens-with-one-line-of-code--faster-and-more-accessibly" class="next">
+            <a href="/blog/embed-codepens-with-one-line-of-code---faster-and-more-accessibly" class="next">
                 <div class="label">next</div>
                 <div class="link-title">Embed CodePens with one line of code - faster and more accessibly</div>
             </a>

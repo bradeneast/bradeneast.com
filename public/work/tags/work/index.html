@@ -38,20 +38,16 @@
     <!--Scripts-->
     <script>
 
-        function checkDarkMode_Initial() {
+        var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn')) || false;
 
-            var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
+        if (darkModeSetLocally) {
+
+            document.documentElement.classList.add('dm');
+
             var favicon = document.getElementById('favicon');
+            favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
 
-            if (darkModeSetLocally) {
-
-                document.documentElement.classList.add('dm');
-                favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
-
-            }
         }
-
-        checkDarkMode_Initial();
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
@@ -137,7 +133,7 @@
         <li class="item" data-load="scale" data-scroll>
             <a href class="link">
                 <div class="bg">
-                    <img class="image">
+                    <div class="media"></div>
                 </div>
                 <div class="content">
                     <p class="title"></p>
@@ -150,7 +146,7 @@
         <li class="item" data-load="scale" data-scroll>
             <a href="/work/judes" class="link">
                 <div class="bg">
-                    <img class="image" src="/_images/work/judes/judes-hoodie.jpg">
+                    <img src="/_images/work/judes/judes-hoodie.jpg">
                 </div>
                 <div class="content">
                     <p class="title">Jude&#x2019;s</p>
@@ -162,7 +158,7 @@
         <li class="item" data-load="scale" data-scroll>
             <a href="/work/360-farms" class="link">
                 <div class="bg">
-                    <img class="image" src="/_images/work/360/360-office.jpg">
+                    <img src="/_images/work/360/360-office.jpg">
                 </div>
                 <div class="content">
                     <p class="title">360 Farms</p>
@@ -174,7 +170,7 @@
         <li class="item" data-load="scale" data-scroll>
             <a href="/work/fish-snax" class="link">
                 <div class="bg">
-                    <img class="image" src="/_images/work/fish/fish-coaster.jpg">
+                    <img src="/_images/work/fish/fish-coaster.jpg">
                 </div>
                 <div class="content">
                     <p class="title">Fish Snax</p>

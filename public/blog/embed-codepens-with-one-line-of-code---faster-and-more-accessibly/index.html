@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="supported-color-schemes" content="light dark">
     <title>Braden East | Embed CodePens with one line of code - faster and more accessibly</title>
-	<meta property="og:url" content="https://www.bradeneast.com//blog/embed-codepens-with-one-line-of-code--faster-and-more-accessibly">
-	<meta property="og:image" content="https://www.bradeneast.com/_images/blog/companion-cube-3d.gif">
+	<meta property="og:url" content="https://www.bradeneast.com//blog/embed-codepens-with-one-line-of-code---faster-and-more-accessibly">
+	<meta property="og:image" content="https://www.bradeneast.com/_images/blog/companion-cube-3d.mp4">
 	<meta property="og:title" content="Embed CodePens with one line of code - faster and more accessibly">
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
@@ -38,20 +38,16 @@
     <!--Scripts-->
     <script>
 
-        function checkDarkMode_Initial() {
+        var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn')) || false;
 
-            var darkModeSetLocally = JSON.parse(localStorage.getItem('darkModeOn'));
+        if (darkModeSetLocally) {
+
+            document.documentElement.classList.add('dm');
+
             var favicon = document.getElementById('favicon');
+            favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
 
-            if (darkModeSetLocally) {
-
-                document.documentElement.classList.add('dm');
-                favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
-
-            }
         }
-
-        checkDarkMode_Initial();
 
     </script>
     <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
@@ -138,11 +134,13 @@
     <div class="content">
         <div class="meta">
             <h4 class="date" data-load="clip" style="animation-delay: .05s;">2020/01/13</h4>
-            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"><a class="tag" href="/blog/tags/blog">blog</a><a class="tag" href="/blog/tags/html">html</a><a class="tag" href="/blog/tags/performance">performance</a><a class="tag" href="/blog/tags/accessibility">accessibility</a></h4>
+            <h4 class="tags" data-load="clip" style="animation-delay: .1s;"></h4>
         </div>
         <div class="main" data-load="move" style="animation-delay: .2s;">
             <div class="body">
-<img class="hide" src="/_images/blog/companion-cube-3d.gif" aria-hidden="true">
+<video class="hide" aria-hidden="true">
+	<source src="/_images/blog/companion-cube-3d.mp4">
+</video>
 <p>When I write for this blog, I usually embed a <a href="https://codepen.io/">CodePen</a> at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.</p>
 <blockquote>
 <p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop">Narbacular Drop</a></em> was released in 2005. After the game&#x2019;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal</a></em>.</p>
@@ -205,7 +203,7 @@
 </code></pre>
 <p>This works because the CodePen embed script replaces the original <code>.codepen</code> element with an <code>iframe</code>. If all scripts are blocked, the element remains and shows our message.</p>
 <p>Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!</p>
-<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=embed%20codepens%20with%20one%20line%20of%20code%20%20faster%20and%20more%20accessibly%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-code--faster-and-more-accessibly">share this post</a> with your followers.</p></div>
+<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=embed%20codepens%20with%20one%20line%20of%20code%20%20%20faster%20and%20more%20accessibly%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-code---faster-and-more-accessibly">share this post</a> with your followers.</p></div>
         </div>
     </div>
 
@@ -213,7 +211,7 @@
 
     <section data-load="move">
         <div class="post-nav">
-            <a href="/blog/the-simplest-pulltorefresh" class="previous">
+            <a href="/blog/the-simplest-pull-to-refresh" class="previous">
                 <div class="label">previous</div>
                 <div class="link-title">The simplest pull-to-refresh</div>
             </a>
