@@ -58,6 +58,13 @@
         margin: var(--PAD-M) 0;
     }
 
+    .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .codepen {
         width: 100%;
         margin-bottom: 0;
@@ -87,15 +94,9 @@
 .meta {
     color: var(--CL-3);
 
-    .tag {
-        &:not(:last-of-type)::after {
-            content: ", ";
-        }
-
-        &:hover {
-            color: var(--CL-1);
-            transition: var(--TR-S);
-        }
+    .tag:hover {
+        color: var(--CL-1);
+        transition: var(--TR-S);
     }
 }
 

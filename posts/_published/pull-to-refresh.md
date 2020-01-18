@@ -11,9 +11,9 @@ The reality is that most pull-to-refresh concepts are overdone and over-engineer
 
 Even the OG's of this interaction, Twitter and Instagram, have extremely simple pull-to-refresh interfaces.
 
-<div style="min-height: 20rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-gap: 2rem; margin-bottom: 2rem;">
-	<img src="/_images/blog/twitter-ptr.gif" alt="twitter's pull-to-refresh interaction" />
-	<img src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
+<div class="two-column" style="min-height: 20rem;">
+	<video autoplay src="/_images/blog/twitter-ptr.mp4" aria-label="twitter's pull-to-refresh interaction"></video>
+	<video autoplay src="/_images/blog/instagram-ptr.mp4" aria-label="instagram's pull-to-refresh interaction"></video>
 </div>
 
 Let's put together a reduced example app that we could pull downward to update with fresh content.
