@@ -33,6 +33,12 @@ document.querySelectorAll('img').forEach(img => {
     altFromSource(img);
 })
 
+document.querySelectorAll('[autoplay]').forEach(video => {
+    video.setAttribute('loop', true);
+    video.setAttribute('muted', true);
+    video.setAttribute('playsinline', true);
+})
+
 // Populate codepens with fallback content in case of error
 document.querySelectorAll('.codepen').forEach(pen => populateCodepen(pen));
 
