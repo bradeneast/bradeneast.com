@@ -1,7 +1,7 @@
 # Knobs and dials on the web
 ## 2019/09/09
 ### html, css, ui, blog
-<img class="hide" src="/_images/blog/knob.gif" aria-hidden="true">
+<video id="featured-media" src="/_images/blog/knob.mp4"></video>
 
 In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.
 

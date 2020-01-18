@@ -54,14 +54,14 @@ function objectify(postFilePath) {
     thisPost.title = $('h1').contents().text();
     thisPost.date = $('h2').contents().text();
     thisPost.tags = $('h3').contents().text();
-    thisPost.media = $('#featured-image').attr('src') || $('source').attr('src') || $('img').attr('src');
     thisPost.body = String($.html()).replace(/<h1>.*?<\/h3>/igs, '');
     thisPost.excerpt = thisPost.body.substr(0, thisPost.body.indexOf('</p>') + 4);
     thisPost.link = helpers.linkify(thisPost.title);
+    thisPost.media = $('#featured-media').attr('src') || $('video').attr('src') || $('source').attr('src') || $('img').attr('src');
 
     // Determine which area post belongs in from post tags
     let regex = new RegExp(String(site.postAreas).replace(/[, ]/g, '|'), 'gi');
-    thisPost.area = thisPost.tags.match(regex)[0];
+    thisPost.area = thisPost.tags.match(regex)[0].toLowerCase();
 
     // Append Twitter share CTA to post body
     if (thisPost.area == 'blog') {
@@ -97,6 +97,7 @@ function newFromTemplate(posts) {
 
             let element = pageTemp.$(`.${key}`);
             let value = post[key];
+            key = key.toLowerCase();
 
             if (!value || !element) return;
 
@@ -109,27 +110,27 @@ function newFromTemplate(posts) {
                     value += `<a class="tag" href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`;
                 })
             }
-            else if (key == 'media') element.attr('src', value);
+            if (key == 'media') element.attr('src', value);
             else element.append(value);
         })
 
         // Add next and previous links
-        new Array(0, 1).forEach(next => {
+        new Array(0, 1).forEach(nextPost => {
 
-            const toPost = next ? posts[index + 1] : posts[index - 1];
-            const toElem = next ? pageTemp.$('.previous') : pageTemp.$('.next');
+            const toPost = nextPost ? posts[index + 1] : posts[index - 1];
+            const toElem = nextPost ? pageTemp.$('.previous') : pageTemp.$('.next');
 
             if (toPost) {
 
                 toElem.find('.link-title').append(toPost.title);
                 toElem.attr('href', `/${toPost.area}/${toPost.link}`);
+                pageTemp.$('head').append(`<link rel="prefetch" href="${site.root + post.area}/${toPost.link}" />`)
 
-            } else toElem.attr('style', 'display:none');
+            } else toElem.css('display', 'none');
 
         })
 
         fs.writeFileSync(postLocation, pageTemp.$.html());
-
         log.blue(`POST written to ${postLocation}`);
     })
 }

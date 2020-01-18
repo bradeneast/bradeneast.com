@@ -81,6 +81,10 @@
             clip-path: polygon(0 37%, 100% 63%, 100% 100%, 0 100%);
         }
     }
+
+    &:focus-within {
+        border: calc(var(--BDR) * 2) solid currentColor;
+    }
 }
 
 @media screen and (max-width: $mq) {

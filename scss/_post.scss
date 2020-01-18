@@ -99,6 +99,10 @@
     }
 }
 
+#featured-media {
+    display: none;
+}
+
 @media screen and (max-width: $mq) {
     .post-nav {
         .next,

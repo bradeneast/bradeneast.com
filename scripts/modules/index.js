@@ -3,7 +3,7 @@ document.querySelectorAll('.nav-item').forEach(link => {
 
     const linkTitle = link.textContent;
     const url = window.location.href.toLowerCase();
-    if (linkTitle) toggleClass(link, 'active', url.includes(linkTitle.toLowerCase()));
+    if (linkTitle) link.classList.toggle('active', url.includes(linkTitle.toLowerCase()));
 
 })
 

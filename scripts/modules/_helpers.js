@@ -2,13 +2,10 @@
 function altFromSource(element) {
 
     let src = element.getAttribute('src');
+    if (!src) return undefined;
 
-    if (src) {
-
-        let srcName = decodeURIComponent(src).split('/').pop();
-        return srcName ? srcName.split('.').shift().replace(/-|\+/g, ' ') : null;
-
-    }
+    let srcName = decodeURIComponent(src).split('/').pop();
+    return srcName ? srcName.split('.').shift().replace(/-|\+/g, ' ') : null;
 }
 
 
@@ -20,7 +17,7 @@ function clearImageFormatting() {
     document.querySelectorAll('img').forEach(image => {
 
         removeAttributes.map(attr => image.removeAttribute(attr));
-        !image.getAttribute('alt') ? image.setAttribute('alt', altFromSource(image)) : null;
+        if (!image.getAttribute('alt')) image.setAttribute('alt', altFromSource(image));
         image.setAttribute('loading', 'lazy');
 
     })
@@ -43,14 +40,4 @@ function dynamicSort(property) {
         return result * sortOrder;
     }
 
-}
-
-
-// toggles a class on a given element
-function toggleClass(element, className, condition) {
-
-    if (condition === undefined) element.classList.toggle(className);
-    else element.classList.toggle(className, condition);
-
-    return element;
 }

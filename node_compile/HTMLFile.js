@@ -90,13 +90,13 @@ function addPostToFeed(post, wrapper) {
 
             let mediaTypeCheck = new RegExp('mp4|webm|ogg');
             let isVideo = String(v).match(mediaTypeCheck);
-            let elem = isVideo ? `<video autoplay loop><source src="${v}"></video>` : `<img src="${v}" />`;
+            let elem = isVideo ? `<video autoplay playsinline muted loop src="${v}"></video>` : `<img src="${v}" />`;
 
             e.after(elem);
             e.remove();
         }
 
-        if (key !== 'link' && key !== 'media') e.append(v);
+        if (key != 'link' && key != 'media') e.append(v);
     })
 
     wrapper.append(newPost);
