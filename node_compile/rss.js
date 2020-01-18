@@ -4,14 +4,14 @@ let feed = `${site.public + site.blog}feed.xml`;
 let link = site.root + site.blog + 'feed.xml';
 let head =
     `<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
-<channel>
-<title>Blog of ${site.name}</title>
-<link>${link}</link>
-<description>The blog for ${site.audience}. ${site.tagline}</description>
-<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-<atom:link href="${link}" rel="self" type="application/rss+xml" />
-`;
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+    <title>Blog of ${site.name}</title>
+    <link>${link}</link>
+    <description>The blog for ${site.audience}. ${site.tagline}</description>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${link}" rel="self" type="application/rss+xml" />
+    `;
 
 
 function ify(post) {

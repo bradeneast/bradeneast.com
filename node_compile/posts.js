@@ -104,11 +104,9 @@ function newFromTemplate(posts) {
             if (key == 'tags') {
 
                 let theseTags = value.split(', ');
-                value = '';
-
-                theseTags.map(tag => {
-                    value += `<a class="tag" href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`;
-                })
+                value = theseTags.map(tag => `
+                    <a class="tag" href="/${post.area}/tags/${helpers.linkify(tag)}">${tag}</a>`
+                ).join(', ');
             }
             if (key == 'media') element.attr('src', value);
             else element.append(value);
