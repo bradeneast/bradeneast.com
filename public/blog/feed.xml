@@ -4,7 +4,7 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Sat, 18 Jan 2020 03:28:27 GMT</lastBuildDate>
+<lastBuildDate>Sat, 18 Jan 2020 03:36:58 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 <item>
         <title>Embed CodePens with one line of code - faster and more accessibly</title>
@@ -45,8 +45,7 @@
         <pubDate>Tue, 03 Sep 2019 05:00:00 GMT</pubDate>
         <category>ui</category><category>design</category><category>css</category><category>javascript</category><category>blog</category>
         <description>
-
-Today, let&#x2019;s talk about integrating motion into our websites and user interfaces.</description>
+</description>
         </item><item>
         <title>Style pseudo elements with javascript</title>
         <link>https://www.bradeneast.com/style-pseudo-elements-with-javascript</link>

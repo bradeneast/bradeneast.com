@@ -16,7 +16,7 @@ Even the OG's of this interaction, Twitter and Instagram, have extremely simple 
 	<img src="/_images/blog/instagram-ptr.gif" alt="instagram's pull-to-refresh interaction" />
 </div>
 
-Let's put together a basic list of items that we can pull downward to update with fresh content.
+Let's put together a reduced example app that we could pull downward to update with fresh content.
 
 ```html
 <div class="loader">
