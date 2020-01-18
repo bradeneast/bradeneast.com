@@ -4,17 +4,9 @@
 <title>Blog of Braden East</title>
 <link>https://www.bradeneast.com/blog/feed.xml</link>
 <description>The blog for dev-signers. Gain confidence designing and coding stellar interfaces.</description>
-<lastBuildDate>Sat, 18 Jan 2020 03:21:12 GMT</lastBuildDate>
+<lastBuildDate>Sat, 18 Jan 2020 03:28:27 GMT</lastBuildDate>
 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 <item>
-        <title>The simplest drag-to-reorder</title>
-        <link>https://www.bradeneast.com/the-simplest-dragtoreorder</link>
-        <guid>https://www.bradeneast.com/the-simplest-dragtoreorder</guid>
-        <pubDate>Fri, 17 Jan 2020 06:00:00 GMT</pubDate>
-        <category>blog</category><category>ui</category><category>css</category><category>javascript</category>
-        <description>
-</description>
-        </item><item>
         <title>Embed CodePens with one line of code - faster and more accessibly</title>
         <link>https://www.bradeneast.com/embed-codepens-with-one-line-of-code-faster-and-more-accessibly</link>
         <guid>https://www.bradeneast.com/embed-codepens-with-one-line-of-code-faster-and-more-accessibly</guid>
