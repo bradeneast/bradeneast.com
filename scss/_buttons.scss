@@ -1,4 +1,10 @@
-a, button, input, select, textarea, label, summary {
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
     touch-action: manipulation;
 }
 
@@ -103,17 +109,6 @@ input[type="submit"] {
 
     svg {
         width: 37%;
-        opacity: 0.28;
-    }
-}
-
-html.dm #darkModeToggle {
-    &::after {
-        transform: translateX(100%);
-    }
-
-    &:hover::after,
-    &:focus::after {
-        transform: translateX(90%);
+        color: var(--CL-1);
     }
 }

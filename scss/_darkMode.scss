@@ -29,4 +29,15 @@ html.dm {
     input[type="email"] {
         font-weight: 400;
     }
+
+    #darkModeToggle {
+        &::after {
+            transform: translateX(100%);
+        }
+
+        &:hover::after,
+        &:focus::after {
+            transform: translateX(90%);
+        }
+    }
 }
