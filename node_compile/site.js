@@ -17,6 +17,13 @@ const site = {
 
     audience: 'dev-signers',
     tagline: 'Gain confidence designing and coding stellar interfaces.',
+
+    socials: {
+        codepen: 'bradeneast',
+        twitter: 'bradenthehair',
+        instagram: 'bradeneastdesign',
+        github: 'bradeneast'
+    },
     codePenTheme: 'dark'
 }
 

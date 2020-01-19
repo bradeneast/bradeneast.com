@@ -134,7 +134,7 @@
 <section data-load="move">
     <component data-name="post-feed" data-count="999" data-feed data-category="css"><ul class="gallery" data-stagger="children">
     <template>
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href class="link">
                 <div class="bg">
                     <div class="media"></div>
@@ -147,10 +147,10 @@
         </li>
     </template>
 
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/the-simplest-pulltorefresh" class="link">
                 <div class="bg">
-                    <video autoplay src="/_images/blog/my-ptr.mp4"></video>
+                    <video src="/_images/blog/my-ptr.mp4"></video>
                 </div>
                 <div class="content">
                     <p class="title">The simplest pull-to-refresh</p>
@@ -159,10 +159,10 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/knobs-and-dials-on-the-web" class="link">
                 <div class="bg">
-                    <video autoplay src="/_images/blog/knob.mp4"></video>
+                    <video src="/_images/blog/knob.mp4"></video>
                 </div>
                 <div class="content">
                     <p class="title">Knobs and dials on the web</p>
@@ -171,10 +171,10 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/staggered-animations" class="link">
                 <div class="bg">
-                    <video autoplay src="/_images/blog/staggered.mp4"></video>
+                    <video src="/_images/blog/staggered.mp4"></video>
                 </div>
                 <div class="content">
                     <p class="title">Staggered animations</p>
@@ -183,7 +183,7 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/style-pseudo-elements-with-javascript" class="link">
                 <div class="bg">
                     <img src="/_images/blog/wave.jpg">

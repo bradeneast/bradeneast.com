@@ -134,7 +134,7 @@
 <section data-load="move">
     <component data-name="post-feed" data-count="999" data-feed data-category="html"><ul class="gallery" data-stagger="children">
     <template>
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href class="link">
                 <div class="bg">
                     <div class="media"></div>
@@ -147,10 +147,10 @@
         </li>
     </template>
 
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/embed-codepens-with-one-line-of-code-faster-and-more-accessibly" class="link">
                 <div class="bg">
-                    <video autoplay src="/_images/blog/companion-cube-3d.mp4"></video>
+                    <video src="/_images/blog/companion-cube-3d.mp4"></video>
                 </div>
                 <div class="content">
                     <p class="title">Embed CodePens with one line of code - faster and more accessibly</p>
@@ -159,7 +159,7 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/using-noscript" class="link">
                 <div class="bg">
                     <img src="/_images/blog/no.jpg">
@@ -171,10 +171,10 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/knobs-and-dials-on-the-web" class="link">
                 <div class="bg">
-                    <video autoplay src="/_images/blog/knob.mp4"></video>
+                    <video src="/_images/blog/knob.mp4"></video>
                 </div>
                 <div class="content">
                     <p class="title">Knobs and dials on the web</p>
@@ -183,7 +183,7 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/style-pseudo-elements-with-javascript" class="link">
                 <div class="bg">
                     <img src="/_images/blog/wave.jpg">
@@ -195,7 +195,7 @@
             </a>
         </li>
     
-        <li class="item" data-load="scale" data-scroll>
+        <li class="item" data-load="scale" onmouseover="playChildMedia(this)" onmouseout="pauseChildMedia(this)" data-scroll>
             <a href="/blog/get-img-alt-attribute-automatically-from-src" class="link">
                 <div class="bg">
                     <img src="/_images/blog/polaroids.jpg">

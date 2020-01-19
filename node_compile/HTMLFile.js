@@ -77,26 +77,26 @@ function addPostToFeed(post, wrapper) {
     const newPost = wrapper.find('template').contents().clone();
 
     Object.keys(post).map(key => {
-        let e = newPost.find(`.${key}`);
-        let v = post[key];
+        let element = newPost.find(`.${key}`);
+        let value = post[key];
 
         key = key.toLowerCase();
 
-        if (!e) return;
+        if (!element) return;
 
-        if (key === 'link') e.attr('href', `/${post.area}/${v}`);
+        if (key === 'link') element.attr('href', `/${post.area}/${value}`);
 
         if (key === 'media') {
 
             let mediaTypeCheck = new RegExp('mp4|webm|ogg');
-            let isVideo = String(v).match(mediaTypeCheck);
-            let elem = isVideo ? `<video autoplay src="${v}"></video>` : `<img src="${v}" />`;
+            let isVideo = String(value).match(mediaTypeCheck);
+            let media = isVideo ? `<video src="${value}"></video>` : `<img src="${value}" />`;
 
-            e.after(elem);
-            e.remove();
+            element.after(media);
+            element.remove();
         }
 
-        if (key != 'link' && key != 'media') e.append(v);
+        if (key != 'link' && key != 'media') element.append(value);
     })
 
     wrapper.append(newPost);

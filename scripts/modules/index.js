@@ -28,20 +28,4 @@ document.querySelectorAll('[data-stagger]').forEach(item => {
 
 })
 
-document.querySelectorAll('img').forEach(img => {
-    clearImageFormatting(img);
-    altFromSource(img);
-})
-
-document.querySelectorAll('[autoplay]').forEach(video => {
-    video.setAttribute('loop', true);
-    video.setAttribute('muted', true);
-    video.setAttribute('playsinline', true);
-})
-
-// Populate codepens with fallback content in case of error
-document.querySelectorAll('.codepen').forEach(pen => populateCodepen(pen));
-
-document.querySelectorAll('a').forEach(a => {
-    if (a.getAttribute('href').includes('://')) a.setAttribute('target', '_blank');
-});
+formatMedia();

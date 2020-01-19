@@ -66,7 +66,7 @@ function objectify(postFilePath) {
     // Append Twitter share CTA to post body
     if (thisPost.area == 'blog') {
 
-        thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@bradenthehair%20-%20&url=${site.root}${site.blog}${thisPost.link}">share this post</a> with your followers.</p>`;
+        thisPost.body += `<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=${thisPost.link.replace(/-/gi, '%20')}%20by%20@${site.socials.twitter}%20-%20&url=${site.root}${site.blog}${thisPost.link}">share this post</a> with your followers.</p>`;
 
     }
     return thisPost;
