@@ -34,7 +34,6 @@ function formatMedia() {
     document.querySelectorAll('video').forEach(video => {
         video.setAttribute('loop', true);
         video.setAttribute('muted', true);
-        video.setAttribute('playsinline', true);
     })
 
 
