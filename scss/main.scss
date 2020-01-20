@@ -92,6 +92,10 @@ svg {
     transition: var(--TR-S);
 }
 
+video {
+    background-color: var(--CL-4);
+}
+
 .hide {
     position: absolute !important;
     opacity: 0.001 !important;

@@ -30,6 +30,12 @@ function formatMedia() {
     })
 
 
+    // Autoplay videos on mobile
+    if (window.innerWidth < 1080) {
+        document.querySelectorAll('video').forEach(video => video.setAttribute('autoplay', true))
+    }
+
+
     // Populate codepens with fallback content in case of error
     document.querySelectorAll('.codepen').forEach(pen => populateCodepen(pen));
 

@@ -89,7 +89,7 @@ function addPostToFeed(post, wrapper) {
         if (key === 'media') {
 
             let mediaTypeCheck = new RegExp('mp4|webm|ogg');
-            let isVideo = String(value).match(mediaTypeCheck);
+            let isVideo = mediaTypeCheck.test(value);
             let media = isVideo ? `<video muted loop playsinline src="${value}"></video>` : `<img alt="" src="${value}" />`;
 
             element.after(media);
