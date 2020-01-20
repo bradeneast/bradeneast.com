@@ -30,13 +30,6 @@ function formatMedia() {
     })
 
 
-    // Format Videos
-    document.querySelectorAll('video').forEach(video => {
-        video.setAttribute('loop', true);
-        video.setAttribute('muted', true);
-    })
-
-
     // Populate codepens with fallback content in case of error
     document.querySelectorAll('.codepen').forEach(pen => populateCodepen(pen));
 
