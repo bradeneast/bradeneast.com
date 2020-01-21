@@ -1,7 +1,6 @@
 $mq: 1080px;
 
 :root {
-    font-size: 20px;
     --CL-1: #ff4a32;
     --CL-2: #dadee0;
     --CL-3: #535f66;
@@ -42,6 +41,16 @@ $mq: 1080px;
 *:focus {
     color: var(--CL-BLACK);
     outline-color: currentColor;
+    z-index: 99;
+    transform: translate3d(0, 0, 0);
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: var(--TR-S);
 }
 
 body {
@@ -53,14 +62,6 @@ body {
     grid-template-columns: calc(10vmax + 10rem) 1fr;
     grid-gap: var(--PAD-M);
     padding: 20vh var(--PAD-M) var(--PAD-S) var(--PAD-M);
-}
-
-body,
-html {
-    scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transition: var(--TR-S);
 }
 
 #main {
@@ -160,7 +161,6 @@ footer {
 
 @media (max-width: $mq) {
     :root {
-        font-size: 16px;
         --PAD-S: 0.8em;
         --PAD-M: 1.5em;
         --PAD-L: 2.4em;
