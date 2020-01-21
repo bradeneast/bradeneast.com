@@ -128,7 +128,18 @@
 
     <div id="main" data-stagger>
         <!--CONTENT WILL GO HERE-->
-    <link rel="preload" href="/_css/prism.css" as="style">
+    <!-- Critical Styles -->
+<style>
+    @media screen and (max-width: 1080px) {
+
+        :root,
+        html,
+        body {
+            font-size: 16px !important;
+        }
+    }
+</style>
+<link rel="preload" href="/_css/prism.css" as="style">
 <link rel="preload" href="https://static.codepen.io/assets/embed/ei.js" as="script">
 
 
@@ -227,19 +238,7 @@ scrollingList<span class="token punctuation">.</span><span class="token function
 </article>
 
 <link rel="stylesheet" href="/_css/prism.css" type="text/css">
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-<!-- Critical Styles -->
-<style>
-    @media (max-width: 1080px) {
-
-        :root,
-        html,
-        body {
-            font-size: 16px !important;
-        }
-    }
-</style></div>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
 
 
     <footer>
