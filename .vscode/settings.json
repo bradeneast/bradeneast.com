@@ -17,7 +17,7 @@
             "savePath": "/public/_css"
         }
     ],
-    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.generateMap": true,
     "minify.js": {
         "mangle": true,
         "compress": {
