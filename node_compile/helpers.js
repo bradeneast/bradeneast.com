@@ -1,5 +1,5 @@
 function linkify(string) {
-    return encodeURI(string.replace(/[^A-Za-z0-9\s]|--+/g, '').toLowerCase()).replace(/(%20)+/g, '-');
+    return encodeURI(string.replace(/[^A-Za-z0-9\s-]|---+/g, '').toLowerCase()).replace(/(%20|-)+/g, '-');
 }
 
 
