@@ -18,14 +18,7 @@
     <meta property="og:url" id="ogurl" content="https://www.bradeneast.com/about/">
     
 
-    <!-- Favicons -->
-    <link id="favicon" rel="shortcut icon" href="/_images/favicon-light.png" type="image/png">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="/_images/favicon-light--padded.png">
-    <link rel="apple-touch-icon-precomposed" href="/_images/favicon-light--padded.png">
-
-    <!--Preloads-->
-    <link rel="preload" href="/_css/main.css" as="style">
+    <!-- Preloads
     <link rel="preload" as="font" href="/_fonts/metropolis-light.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-light.woff" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff2" type="font/woff2" crossorigin="anonymous">
@@ -33,7 +26,7 @@
     <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous"> -->
 
     <!--Links-->
     <link rel="canonical" href="https://www.bradeneast.com">
@@ -43,6 +36,12 @@
     <!--Scripts-->
     <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <script defer src="/_scripts/main.js" type="text/javascript"></script>
+
+    <!-- Favicons -->
+    <link id="favicon" rel="shortcut icon" href="/_images/favicon-light.png" type="image/png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/_images/favicon-light--padded.png">
+    <link rel="apple-touch-icon-precomposed" href="/_images/favicon-light--padded.png">
 
 <meta name="description" content="I help midwestern churches develop a unique visual brand."></head>
 
@@ -103,11 +102,11 @@
                 </p>
 
                 <div class="button-container">
-                    <a class="button" href="mailto:bradeneastdesign@gmail.com">say hi</a>
+                    <a tabindex="1" class="button" href="mailto:bradeneastdesign@gmail.com">say hi</a>
                 </div>
             </div>
 
-            <button class="toggle" id="darkModeToggle" aria-label="toggle dark mode" onclick="toggleDarkMode()">
+            <button tabindex="2" class="toggle" id="darkModeToggle" aria-label="toggle dark mode" onclick="toggleDarkMode()">
                 <svg viewbox="0 0 72 72" id="night">
                     <path fill="currentColor" d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z"/>
                 </svg>
@@ -117,7 +116,7 @@
             </button>
 
             <div class="back-to-top">
-                <div role="button" tabindex="0" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+                <div role="button" tabindex="3" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
                     back to top
                 </div>
             </div>
