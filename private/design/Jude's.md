@@ -13,19 +13,19 @@ Because Jude’s is an established local business that stood on consistency, fam
 
 ![Jude's logo in an inline layout](/_assets/media/judes/judes-inline.svg)
 
-#### Patterns
+## Patterns
 With the 15th anniversary of Jude's coming up, I suggested creating patterns for use on special edition merchandise. Each pattern was based on the logo in a unique way.
 
 ![A pattern based on the Jude's identity](/_assets/media/judes/judes-pattern-1.svg)
 
 ![A less dense pattern based on the Jude's identity](/_assets/media/judes/judes-pattern-2.svg)
 
-#### Apparel
+## Apparel
 Branded apparel was an important part of the rebrand, for both customers and employees.
 
 ![A barista in the drive thru window, offering a cup of Jude's coffee](/_assets/media/judes/judes-drive-thru.jpg)
 
-#### Packaging
+## Packaging
 Because Jude's offers a variety of coffee and supplements, among many other things, there was a significant amount of packaging design involved. Aligning these packaging designs with the overall brand identity presented an acute challenge. They had to strike a perfect balance between premium and accessible.
 
 ![A beautiful menu that makes use of the Jude's colors, typography, and patterns](/_assets/media/judes/judes-menu.jpg)
@@ -34,7 +34,7 @@ Because Jude's offers a variety of coffee and supplements, among many other thin
 
 ![Jude's coffee packaging](/_assets/media/judes/judes-coffee.jpg)
 
-#### Advertising
+## Advertising
 Finally, to help extend the brand reach into neighboring communities, I applied the identity to the Jude's website and an eye-catching billboard.
 
 ![A new design of the Jude's website, featuring their status as best Bartlesville coffee shop](/_assets/media/judes/judes-website.jpg)

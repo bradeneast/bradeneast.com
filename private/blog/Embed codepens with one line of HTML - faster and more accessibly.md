@@ -24,7 +24,7 @@ This causes a few problems for bloggers/developers wanting to keep their website
 2. Customizing the attribution text requires manual edits and manual updates of each copied embed code.
 3. Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.
 
-#### Guessing the reasons
+## Guessing the reasons
 If you're anything like me, you're probably wondering why CodePen chose to include all that extra code.
 
 This decision isn't explicitly discussed in their [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), but It's pretty obvious that most of their reasons were for accessibility. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
@@ -37,7 +37,7 @@ This decision isn't explicitly discussed in their [documentation](https://blog.c
 
 That's a nice feature, but [some have pointed out](https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/) that CodePen embeds still have room to grow when it comes to accessibility. This post focuses on how we can improve our own experience significantly without compromising that of our readers.
 
-#### My solution
+## My solution
 Believe it or not, the only absolutely necessary part of a CodePen embed is the `data-slug-hash` attribute, so we can technically whittle the whole thing down to one line of HTML.
 
 ```html

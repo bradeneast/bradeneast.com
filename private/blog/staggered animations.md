@@ -77,7 +77,7 @@ Hopefully this illustrates why we'd want to use staggered motion in our designs,
 - SCSS `for` loop
 - Javascript `forEach` method
 
-#### The Pure CSS Approach
+## The Pure CSS Approach
 ```css
 .stagger-child-transitions > :nth-child(2) { transition-delay: .1s }
 .stagger-child-transitions > :nth-child(3) { transition-delay: .2s }
@@ -93,7 +93,7 @@ Another benefit to the pure CSS approach is that it's easy to override the trans
 - Or an ID: `#special { transition-delay: 0s; }`
 
 
-#### Using the SCSS `for` loop
+## Using the SCSS `for` loop
 The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn't affect the experience of the user, for better or worse.
 
 ```css
@@ -107,7 +107,7 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 That looks nice and clean!  The only drawback of this approach (and pure CSS) is that our stylesheet will start to bloat from extra rules (~1kb per 10 additional children). CSS isn't render-blocking like Javascript, but still has to be downloaded, parsed, and applied by the browser. If you're working with small numbers of children, this approach is probably your best bet.
 
 
-#### Using the Javascript `forEach()` method
+## Using the Javascript `forEach()` method
 
 100 items in the last example was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.
 

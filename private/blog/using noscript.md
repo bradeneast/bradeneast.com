@@ -8,7 +8,7 @@
 The first thing we should keep in mind is that `<noscript>` is only applicable when Javascript is blocked in the *browser's* settings. This is what I'm referring to as a 'noscript situation' in this article.  Firewalls and ad blockers will not trigger `<noscript>` content to be rendered on the page.
 
 
-#### What happens in a noscript situation?
+## What happens in a noscript situation?
 
 If a browser's settings block Javascript, content will be unwrapped from the `<noscript>` tags in its original location (with some exceptions, which is the topic for another article).
 
@@ -25,7 +25,7 @@ It seems like most people who have disabled Javascript in the first place probab
 There are also cases where we might want to show large amounts of alternate content under noscript circumstances. If you cringe at the thought of dozens of `<noscript>` tags all over your markup in the almighty name of accessibility, you're not alone. Thankfully, there are much easier ways to hedge against noscript situations.
 
 
-#### 1. Replace alternate content with dynamic content
+## 1. Replace alternate content with dynamic content
 
 ```html
 <div class="noscript" id="fact-of-the-day">
@@ -42,7 +42,7 @@ This is probably the most catch-all, straightforward solution. It's easy to impl
 In this case, we avoid using `<noscript>` altogether. Another feature of this approach is that it works just as well if Javascript is blocked by a firewall or ad blocker. The only consequence? Our alternate content will probably flash while the rest of the page is being loaded. If we want alternate content to ONLY EVER be shown in noscript circumstances, we need another option.
 
 
-#### 2. Show alternate content with CSS
+## 2. Show alternate content with CSS
 
 With a class to target, we can initially hide noscript content via CSS. Then we're free to override those styles with something higher-specificity in a noscript situation.
 
@@ -68,7 +68,7 @@ In this example, a noscript situation will cause the `<style>` element to be unw
 </div>
 ```
 
-#### Quirks
+## Quirks
 
 Let's look at the quirks and surprising behavior of `<noscript>`.
 
