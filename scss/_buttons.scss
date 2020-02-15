@@ -8,107 +8,29 @@ summary {
     touch-action: manipulation;
 }
 
-::-webkit-scrollbar {
-    background: transparent;
-
-    &-thumb {
-        background: var(--CL-2);
-        border-radius: 0.3rem;
-
-        &:hover {
-            background: var(--CL-1);
-        }
-    }
-}
-
-.button,
-button {
+button,
+.button {
     display: inline-block;
     position: relative;
+    background: none;
     box-shadow: none;
-    line-height: 1;
-    text-transform: lowercase;
-    color: white;
-    font-weight: 700;
-    padding: 0.7em 0.8em;
-    margin: 0.5em 0;
-    border-radius: var(--RADIUS);
-    border: var(--BDR) solid var(--CL-1);
-    background: var(--CL-1);
-    overflow: hidden;
-    transition: var(--TR-S);
-
-    &::after,
-    .button-animation {
-        --scale: 0;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 9em;
-        height: 9em;
-        border-radius: 50%;
-        z-index: 0;
-        transform: translate(-50%, -50%) scale(var(--scale));
-        background: white;
-        pointer-events: none;
-        transition: var(--TR-M), transform 0s;
-    }
-}
-
-button,
-.button,
-[role="button"],
-input[type="submit"] {
-    cursor: pointer;
-
-    &:hover::after,
-    &:focus::after {
-        --scale: 1;
-        opacity: 0;
-        transition: var(--TR-M);
-    }
-
-    &:focus::after {
-        opacity: 0.2;
-    }
-}
-
-.toggle {
-    color: var(--CL-2);
-    font-size: 1.5em;
-    width: 2em;
-    height: 1em;
-    padding: 0;
-    border-radius: 0.5em;
     border: none;
-    box-shadow: 0 0 0 0.1em currentColor;
-    background: currentColor;
+    font-size: inherit;
+    font-family: inherit;
     cursor: pointer;
 
-    &::after {
-        color: var(--CL-WHITE);
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        opacity: 1;
-        transform: none;
-        background: currentColor;
-        border-radius: 50%;
-        box-shadow: 0.1em 0 0.2em -0.1em var(--SHADE-M);
-        transition: var(--TR-M);
-    }
+    &:not(.unstyled) {
+        color: inherit;
+        background: var(--primary);
+        border: var(--border-width) var(--border-style) currentColor;
+        border-radius: var(--border-radius);
+        padding: .8em 1em;
+        margin-bottom: var(--flow-space-paragraph);
+        transition: var(--transition-short);
 
-    &:hover::after,
-    &:focus::after {
-        opacity: 1;
-        transform: translateX(10%);
-    }
-
-    svg {
-        width: 37%;
-        color: var(--CL-1);
+        &:hover,
+        &:focus {
+            border-radius: var(--border-radius-alt);
+        }
     }
 }

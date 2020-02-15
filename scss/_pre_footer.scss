@@ -1,0 +1,46 @@
+#dark_mode_toggle {
+    --tx: 0%;
+    --sx: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 2em;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 2em;
+    height: 1em;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+        transform: none;
+        background: currentColor;
+        border-radius: 50%;
+        transform-origin: left;
+        transform: translateX(var(--tx)) scaleX(var(--sx));
+        transition: var(--transition-short);
+    }
+
+    &:hover,
+    &:focus {
+        --sx: 1.1;
+    }
+
+    svg {
+        color: var(--primary);
+        transform: scale(.75);
+    }
+}
+
+#back_to_top {
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}

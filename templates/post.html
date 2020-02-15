@@ -1,0 +1,42 @@
+<link rel="preload" href="https://static.codepen.io/assets/embed/ei.js">
+<link rel="preload" href="/_assets/js/prism.js">
+<link rel="prefetch" href="[[ prev.href ]]">
+<link rel="prefetch" href="[[ next.href ]]">
+
+<link rel="stylesheet" href="/_assets/css/prism.min.css">
+<script defer src="/_assets/js/prism.js"></script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<article>
+
+    <h1 class="title">[[ name ]]</h1>
+
+    <div class="meta">
+        <div class="created">
+            <strong>Created:</strong> [[ created ]]
+        </div>
+        <div class="modified">
+            <strong>Modified:</strong> [[ modified ]]</div>
+        <div class="categories">
+            <strong>Categories:</strong> [[ categories ]]</div>
+    </div>
+
+    <div class="featured-media">
+        [[ media ]]
+    </div>
+
+    {{ CONTENT }}
+
+    {{ blog_cta }}
+</article>
+
+<div class="scope-nav">
+    <a href="[[ prev.href ]]">
+        <span class="label">Previous</span>
+        <p class="name">[[ prev.name ]]</p>
+    </a>
+    <a href="[[ next.href ]]">
+        <span class="label">Next</span>
+        <p class="name">[[ next.name ]]</p>
+    </a>
+</div>

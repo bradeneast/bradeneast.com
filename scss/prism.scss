@@ -1,14 +1,14 @@
-code[class*="language-"],
+code,
 pre {
-    color: #4a6568;
+    color: var(--mediumgrey);
     background: none;
     font-size: 0.9em;
     text-align: left;
     font-family: monospace !important;
     white-space: pre-wrap;
     word-spacing: normal;
-    word-break: break-all;
-    word-wrap: break-word;
+    overflow-x: auto;
+    white-space: pre;
     line-height: 1.5;
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -18,114 +18,80 @@ pre {
     -ms-hyphens: none;
     hyphens: none;
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     span {
         font-family: inherit;
-    }
-}
-
-code:not([class*="language-"]) {
-    position: relative;
-    font-family: monospace !important;
-    font-size: 0.95em;
-    padding: 2px 5px;
-    cursor: text;
-
-    &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--CL-1);
-        opacity: 0.15;
-        border-radius: var(--RADIUS);
     }
 }
 
 /* Code blocks */
 
 pre {
-    position: relative;
-    padding: var(--PAD-M);
-    border: var(--BDR) solid var(--CL-2);
-    border-radius: var(--RADIUS);
-
-    &[class*="language-"] {
-        padding: 1em;
-        margin: 0.5em 0;
-        overflow: auto;
-    }
-
-    &[class*="contains-"]::before {
-        content: "html";
-        display: block;
-        position: absolute;
-        top: var(--PAD-S);
-        right: var(--PAD-S);
-        font-size: 0.8em;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    &.contains-javascript::before {
-        content: "javascript";
-    }
-
-    &.contains-css::before {
-        content: "css";
-    }
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-    background: #3d3d3d;
+    margin-bottom: var(--flow-space-paragraph);
+    padding: var(--flow-space-paragraph);
+    border: var(--border-width) var(--border-style) currentColor;
+    border-radius: var(--border-radius);
+    overflow: auto;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
+    position: relative;
+    font-family: monospace !important;
+    font-weight: 600;
+    border-bottom: var(--border-width) var(--border-style) currentColor;
+    border-radius: 0;
+    font-size: 0.95em;
+    cursor: text;
     padding: 0.1em;
-    border-radius: 0.3em;
     white-space: normal;
 }
 
 .token {
+    $hueA: 200;
+    $hueB: 180;
+    $hueC: 50;
+    $sat: 85%;
+    $lit: 45%;
+
     &.comment,
     &.block-comment,
     &.prolog,
     &.doctype,
     &.cdata {
-        color: #afafaf;
+        color: hsl($hueB, $sat, $lit * 1);
     }
 
     &.punctuation {
-        color: #8f8f8f;
+        color: hsl($hueB, $sat, $lit * 0.9);
     }
 
     &.tag,
     &.attr-name,
     &.namespace,
     &.deleted {
-        color: #d38935;
+        color: hsl($hueC, $sat, $lit * 1);
     }
 
     &.function-name {
-        color: #863acc;
+        color: hsl($hueB, $sat, $lit * 0.9);
     }
 
     &.boolean,
     &.number,
-    &.function {
-        color: #1f7af1;
-        opacity: 1;
+    &.function,
+    &.inserted {
+        color: hsl($hueB, $sat, $lit * 0.8);
     }
 
     &.property,
     &.class-name,
     &.constant,
     &.symbol {
-        color: #10c756;
+        color: hsl($hueA, $sat, $lit * 1);
     }
 
     &.selector,
@@ -133,7 +99,7 @@ pre[class*="language-"] {
     &.atrule,
     &.keyword,
     &.builtin {
-        color: #e49f32;
+        color: hsl($hueC, $sat, $lit * 0.9);
     }
 
     &.string,
@@ -141,13 +107,13 @@ pre[class*="language-"] {
     &.attr-value,
     &.regex,
     &.variable {
-        color: #d12e2e;
+        color: hsl($hueA, $sat, $lit * 0.8);
     }
 
     &.operator,
     &.entity,
     &.url {
-        color: #07a7cf;
+        color: hsl($hueA, $sat, $lit * 0.7);
     }
 
     &.important,
@@ -161,9 +127,5 @@ pre[class*="language-"] {
 
     &.entity {
         cursor: help;
-    }
-
-    &.inserted {
-        color: green;
     }
 }

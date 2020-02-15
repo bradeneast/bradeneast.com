@@ -1,275 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-
-    <!--Meta-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="supported-color-schemes" content="light dark">
-    <title>Braden East | Embed CodePens with one line of code - faster and more accessibly</title>
-	<meta property="og:url" content="https://www.bradeneast.com//blog/embed-codepens-with-one-line-of-code-faster-and-more-accessibly">
-	<meta property="og:image" content="https://www.bradeneast.com/_images/blog/companion-cube-3d.mp4">
-	<meta property="og:title" content="Embed CodePens with one line of code - faster and more accessibly">
+
+    <title>embed codepens with one line of code - faster and more accessibly</title>
+
     <meta property="og:site_name" content="Braden East">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
-    
-    
+    <meta property="og:url" id="ogurl" content="https://www.bradeneast.com">
+    <meta property="og:image" id="ogimage" content="https://www.bradeneast.com/_images/close-up-3x2.jpg">
 
-    <!-- Preloads
-    <link rel="preload" as="font" href="/_fonts/metropolis-light.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-light.woff" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-regular.woff" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-regular-italic.woff" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="/_fonts/metropolis-semibold.woff" type="font/woff2" crossorigin="anonymous"> -->
-
-    <!--Links-->
     <link rel="canonical" href="https://www.bradeneast.com">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East&apos;s Blog" href="https://www.bradeneast.com/blog/feed.xml">
-    <link rel="stylesheet" href="/_css/main.css" type="text/css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Braden East's Blog" href="https://www.bradeneast.com/blog/feed.xml">
 
-    <!--Scripts-->
-    <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
-    <script defer src="/_scripts/main.js" type="text/javascript"></script>
+    <link rel="preload" as="style" href="/_assets/css/main.min.css">
+    <link rel="stylesheet" href="/_assets/css/main.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
 
-    <!-- Favicons -->
-    <link id="favicon" rel="shortcut icon" href="/_images/favicon-light.png" type="image/png">
+    <link id="favicon" rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="/_images/favicon-light--padded.png">
-    <link rel="apple-touch-icon-precomposed" href="/_images/favicon-light--padded.png">
+    <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png">
+    <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png">
 
-<link rel="prefetch" href="https://www.bradeneast.com/blog/the-simplest-pull-to-refresh"></head>
-
-<body class="loaded">
-
+    <script defer src="https://polyfill.io/v3/polyfill.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script defer src="/_assets/js/index.js" type="module"></script>
     <script>
-        // Check for dark mode
-        var setting = localStorage.getItem('darkModeOn');
-        var darkModeSetLocally = setting ? JSON.parse(setting) : false;
-        document.documentElement.classList.toggle('dm', darkModeSetLocally);
+        var dmName = 'dark_mode';
+        var dm = localStorage.getItem(dmName);
 
-        if (darkModeSetLocally) {
-            var favicon = document.getElementById('favicon');
-            favicon.setAttribute('href', favicon.href.replace('light', 'dark'));
+        if (dm == null) {
+            localStorage.setItem(dmName, false);
+        } else {
+            document.documentElement.classList.toggle(dmName, JSON.parse(dm));
         }
     </script>
 
-    <noscript>
 
-        <style>
-            body [data-load] {
-                animation: load var(--TR-M) forwards running !important;
-            }
+</head>
 
-            .back-to-top,
-            #darkModeToggle {
-                display: none !important;
-            }
+<body>
 
-            nav .cta {
-                margin-bottom: 0 !important;
-            }
+    <link rel="prefetch" href="/">
+<link rel="prefetch" href="/blog">
+<link rel="prefetch" href="/design">
 
-            nav a {
-                padding-left: 0 !important;
-            }
-        </style>
+<nav>
+    <a href="/">About</a>
+    <a href="/blog">Blog</a>
+    <a href="/design">Design</a>
+</nav>
 
-        <div class="noscript-message">
-            * It&apos;s not required, but you can level-up your experience on my site by enabling Javascript. Thanks!
+    <main>
+        <link rel="preload" href="https://static.codepen.io/assets/embed/ei.js">
+<link rel="preload" href="/_assets/js/prism.js">
+<link rel="prefetch" href="undefined">
+<link rel="prefetch" href="/blog/get-img-alt-attribute-automatically-from-src">
+
+<link rel="stylesheet" href="/_assets/css/prism.min.css">
+<script defer src="/_assets/js/prism.js"></script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<article>
+
+    <h1 class="title">embed codepens with one line of code - faster and more accessibly</h1>
+
+    <div class="meta">
+        <div class="created">
+            <strong>Created:</strong> Fri Feb 07 2020
         </div>
-
-    </noscript>
-
-    <nav>
-
-        <ul>
-            <li><a class="nav-item" href="/work">work</a></li>
-            <li><a class="nav-item" href="/about">about</a></li>
-            <li><a class="nav-item" href="/blog">blog</a></li>
-        </ul>
-
-        <div class="nav-end">
-            <div class="cta">
-                <h3>Let&apos;s work together!</h3>
-
-                <p>If you&apos;re working on a creative project, please reach out. I&apos;d love to collaborate and contribute.
-                </p>
-
-                <div class="button-container">
-                    <a tabindex="1" class="button" href="mailto:bradeneastdesign@gmail.com">say hi</a>
-                </div>
-            </div>
-
-            <button tabindex="2" class="toggle" id="darkModeToggle" aria-label="toggle dark mode" onclick="toggleDarkMode()">
-                <svg viewbox="0 0 72 72" id="night">
-                    <path fill="currentColor" d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z"/>
-                </svg>
-                <svg viewbox="0 0 72 72" id="day">
-                    <path fill="currentColor" d="M61.9,37.61A25.9,25.9,0,1,1,36,11.71,25.9,25.9,0,0,1,61.9,37.61ZM36,1.61a3.58,3.58,0,1,0,3.58,3.57A3.58,3.58,0,0,0,36,1.61ZM7.85,15.16a3.58,3.58,0,1,0,5-.57A3.59,3.59,0,0,0,7.85,15.16ZM.9,45.62a3.58,3.58,0,1,0,2.69-4.29A3.59,3.59,0,0,0,.9,45.62ZM20.38,70a3.58,3.58,0,1,0-1.67-4.78A3.58,3.58,0,0,0,20.38,70Zm31.24,0a3.58,3.58,0,1,0-4.78-1.67A3.58,3.58,0,0,0,51.62,70ZM71.1,45.62a3.58,3.58,0,1,0-4.29,2.69A3.58,3.58,0,0,0,71.1,45.62ZM64.15,15.16a3.58,3.58,0,1,0-.57,5A3.59,3.59,0,0,0,64.15,15.16Z"/>
-                </svg>
-            </button>
-
-            <div class="back-to-top">
-                <div role="button" tabindex="3" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
-                    back to top
-                </div>
-            </div>
-        </div>
-
-    </nav>
-
-
-    <div id="main" data-stagger>
-        <!--CONTENT WILL GO HERE-->
-    <link rel="preload" href="/_css/prism.css" as="style">
-<link rel="preload" href="https://static.codepen.io/assets/embed/ei.js" as="script">
-
-
-<article class="post">
-
-    <h1 class="title" data-load="clip">Embed CodePens with one line of code - faster and more accessibly</h1>
-    <div class="content">
-        <div class="meta">
-            <h4 class="date" data-load="clip" style="animation-delay: .05s;">2020/01/13</h4>
-            <h4 class="tags" data-load="clip" style="animation-delay: .1s;">
-                    <a class="tag" href="/blog/tags/blog">blog</a>, 
-                    <a class="tag" href="/blog/tags/html">html</a>, 
-                    <a class="tag" href="/blog/tags/performance">performance</a>, 
-                    <a class="tag" href="/blog/tags/accessibility">accessibility</a></h4>
-        </div>
-        <div class="main" data-load="move" style="animation-delay: .2s;">
-            <div class="body">
-<p><video id="featured-media" src="/_images/blog/companion-cube-3d.mp4"></video></p>
-<p>When I write for this blog, I usually embed a <a href="https://codepen.io/">CodePen</a> at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.</p>
-<blockquote>
-<p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop">Narbacular Drop</a></em> was released in 2005. After the game&#x2019;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal</a></em>.</p>
-</blockquote>
-<p class="codepen" data-slug-hash="povpQdr" data-theme-id="dark">
-</p><p>My biggest complaint is that CodePen embeds feel clunky to use and messy to customize. Here&#x2019;s the copy-and-paste code they provide by default.</p>
-<pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>codepen<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>265<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-default-tab</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>result<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-user</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bradeneast<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-slug-hash</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>povpQdr<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span> 265px<span class="token punctuation">;</span> <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span> <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token property">border</span><span class="token punctuation">:</span> 2px solid<span class="token punctuation">;</span> <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0<span class="token punctuation">;</span> <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-pen-title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Pure CSS 3D Portal Companion Cube<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>
-    See the Pen <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://codepen.io/bradeneast/pen/povpQdr<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Pure CSS 3D Portal Companion Cube<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> by Braden (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://codepen.io/bradeneast<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>@bradeneast<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>) on <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://codepen.io<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>CodePen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://static.codepen.io/assets/embed/ei.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-<p>We get <code>data</code> attributes all over the place, a myriad of inline styles, and more that&#x2019;s just plain unnecessary (we&#x2019;ll get to that). CodePen offers an <code>iframe</code> option, which is slightly cleaner, but gives us even less control over when and how the pen loads.</p>
-<p>This causes a few problems for bloggers/developers wanting to keep their websites clean and performant:</p>
-<ol>
-<li>Standardizing pen styles is difficult because the everthing is set inline (you&#x2019;ll have to use <code>!important</code> to override).</li>
-<li>Customizing the attribution text requires manual edits and manual updates of each copied embed code.</li>
-<li>Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.</li>
-</ol>
-<h4>Guessing the reasons</h4>
-<p>If you&#x2019;re anything like me, you&#x2019;re probably wondering why CodePen chose to include all that extra code.</p>
-<p>This decision isn&#x2019;t explicitly discussed in their <a href="https://blog.codepen.io/documentation/features/embedded-pens/">documentation</a>, but It&#x2019;s pretty obvious that most of their reasons were for accessibility. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).</p>
-<p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
-  <span>
-    See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>) on <a href="https://codepen.io">CodePen</a>.
-  </span>
-</p>
-<p>That&#x2019;s a nice feature, but <a href="https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/">some have pointed out</a> that CodePen embeds still have room to grow when it comes to accessibility. This post focuses on how we can improve our own experience significantly without compromising that of our readers.</p>
-<h4>My solution</h4>
-<p>Believe it or not, the only absolutely necessary part of a CodePen embed is the <code>data-slug-hash</code> attribute, so we can technically whittle the whole thing down to one line of HTML.</p>
-<pre class="contains-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>codepen<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-slug-hash</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>povpQdr<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-<p>We can get away with this if we include the <a href="https://static.codepen.io/assets/embed/ei.js">CodePen embed script</a> (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is <em><strong>gasp</strong></em> DOWN. To rememdy that, let&#x2019;s use a small bit Javascript that will add a fallback for us dynamically.</p>
-<pre class="contains-javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;.codepen&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">pen</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-	
-	<span class="token keyword">const</span> codePen <span class="token operator">=</span> <span class="token string">&quot;https://codepen.io/&quot;</span><span class="token punctuation">;</span>
-	<span class="token keyword">const</span> hash <span class="token operator">=</span> pen<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;data-slug-hash&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">const</span> user <span class="token operator">=</span> pen<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;data-user&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">const</span> fallback <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;p&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>hash<span class="token punctuation">)</span> fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">View &lt;a href=&quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>codePen<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">pen/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>hash<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot;&gt;this pen&lt;/a&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>hash <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">)</span> fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> by &lt;a href=&quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>codePen <span class="token operator">+</span> user<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot;&gt;@</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/a&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-
-	fallback<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&apos;codepen-fallback&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> hash <span class="token operator">||</span> user <span class="token operator">?</span> fallback<span class="token punctuation">.</span>innerHTML <span class="token operator">+</span> <span class="token string">&quot; on CodePen.&quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;This pen is unavailable.&quot;</span><span class="token punctuation">;</span>
-	pen<span class="token punctuation">.</span><span class="token function">insertAdjacentElement</span><span class="token punctuation">(</span><span class="token string">&quot;afterend&quot;</span><span class="token punctuation">,</span> fallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<p>Now we can see a link to the pen regardless of its status. If something goes wrong, our fallback text will indicate what was supposed to happen. To really put a bow on this solution, we can even add a placeholder to the <code>.codepen</code> element for <a href="/blog/using-noscript">noscript situations</a>.</p>
-<pre class="contains-css"><code class="language-css"><span class="token selector">.codepen::after</span> <span class="token punctuation">{</span>
-	<span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;Whoops! This pen is unavailable.&quot;</span><span class="token punctuation">;</span>
-	<span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-	<span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span>
-	<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-	<span class="token property">padding</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
-	<span class="token property">border</span><span class="token punctuation">:</span> 2px solid currentColor<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>This works because the CodePen embed script replaces the original <code>.codepen</code> element with an <code>iframe</code>. If all scripts are blocked, the element remains and shows our message.</p>
-<p>Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!</p>
-<p>Thanks for reading. If you learned something useful, <a target="_blank" href="https://twitter.com/share?text=embed%20codepens%20with%20one%20line%20of%20code%20faster%20and%20more%20accessibly%20by%20@bradenthehair%20-%20&amp;url=https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-code-faster-and-more-accessibly">share this post</a> with your followers.</p></div>
-        </div>
+        <div class="modified">
+            <strong>Modified:</strong> Fri Feb 14 2020</div>
+        <div class="categories">
+            <strong>Categories:</strong> <a href="/blog/categories/html">html</a>, <a href="/blog/categories/performance">performance</a>, <a href="/blog/categories/accessibility">accessibility</a></div>
     </div>
 
-    
+    <div class="featured-media">
+        <img src="/_assets/media/beach-ladder.jpg" alt=""/>
+    </div>
 
-    <section data-load="move">
-        <div class="post-nav">
-            <a href="/blog/the-simplest-pull-to-refresh" class="previous">
-                <div class="label">previous</div>
-                <div class="link-title">The simplest pull-to-refresh</div>
-            </a>
-            <a href="#" class="next" style="display: none;">
-                <div class="label">next</div>
-                <div class="link-title"></div>
-            </a>
-        </div>
-    </section>
+    <p>When I write for this blog, I usually embed a <a href="https://codepen.io/">CodePen</a> at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.</p><blockquote>
+<p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop">Narbacular Drop</a></em> was released in 2005. After the game&#39;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal</a></em>.</p></blockquote><p class="codepen" data-slug-hash="povpQdr">
 
+<p>My biggest complaint is that CodePen embeds feel clunky to use and messy to customize. Here&#39;s the copy-and-paste code they provide by default.</p><pre><code class="language-html">&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-default-tab=&quot;result&quot; data-user=&quot;bradeneast&quot; data-slug-hash=&quot;povpQdr&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;Pure CSS 3D Portal Companion Cube&quot;&gt;
+  &lt;span&gt;
+    See the Pen &lt;a href=&quot;https://codepen.io/bradeneast/pen/povpQdr&quot;&gt;Pure CSS 3D Portal Companion Cube&lt;/a&gt; by Braden (&lt;a href=&quot;https://codepen.io/bradeneast&quot;&gt;@bradeneast&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+  &lt;/span&gt;
+&lt;/p&gt;
+&lt;script async src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</code></pre><p>We get <code>data</code> attributes all over the place, a myriad of inline styles, and more that&#39;s just plain unnecessary (we&#39;ll get to that). CodePen offers an <code>iframe</code> option, which is slightly cleaner, but gives us even less control over when and how the pen loads.</p><p>This causes a few problems for bloggers/developers wanting to keep their websites clean and performant: </p><ol>
+<li>Standardizing pen styles is difficult because the everthing is set inline (you&#39;ll have to use <code>!important</code> to override).</li><li>Customizing the attribution text requires manual edits and manual updates of each copied embed code.</li><li>Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.</li></ol><h4 id="guessing-the-reasons">Guessing the reasons</h4><p>If you&#39;re anything like me, you&#39;re probably wondering why CodePen chose to include all that extra code.</p><p>This decision isn&#39;t explicitly discussed in their <a href="https://blog.codepen.io/documentation/features/embedded-pens/">documentation</a>, but It&#39;s pretty obvious that most of their reasons were for accessibility. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).</p><p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
+  <span>
+    See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>) on <a href="https://codepen.io">CodePen</a>.
+  </span></p><p>That&#39;s a nice feature, but <a href="https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/">some have pointed out</a> that CodePen embeds still have room to grow when it comes to accessibility. This post focuses on how we can improve our own experience significantly without compromising that of our readers.</p><h4 id="my-solution">My solution</h4><p>Believe it or not, the only absolutely necessary part of a CodePen embed is the <code>data-slug-hash</code> attribute, so we can technically whittle the whole thing down to one line of HTML.</p><pre><code class="language-html">&lt;p class=&quot;codepen&quot; data-slug-hash=&quot;povpQdr&quot;&gt;&lt;/p&gt;</code></pre><p>We can get away with this if we include the <a href="https://static.codepen.io/assets/embed/ei.js">CodePen embed script</a> (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is <strong><em>gasp</em></strong> DOWN. To rememdy that, let&#39;s use a small bit Javascript that will add a fallback for us dynamically.</p><pre><code class="language-javascript">document.querySelectorAll(&quot;.codepen&quot;).forEach(pen =&gt; {
+
+    const codePen = &quot;https://codepen.io/&quot;;
+    const hash = pen.getAttribute(&quot;data-slug-hash&quot;);
+    const user = pen.getAttribute(&quot;data-user&quot;);
+    const fallback = document.createElement(&#39;p&#39;);
+
+    if (hash) fallback.innerHTML += `View &lt;a href=&quot;${codePen}pen/${hash}&quot;&gt;this pen&lt;/a&gt;`;
+    if (hash &amp;&amp; user) fallback.innerHTML += ` by &lt;a href=&quot;${codePen + user}&quot;&gt;@${user}&lt;/a&gt;`;
+
+    fallback.classList.add(&#39;codepen-fallback&#39;);
+    fallback.innerHTML = hash || user ? fallback.innerHTML + &quot; on CodePen.&quot; : &quot;This pen is unavailable.&quot;;
+    pen.insertAdjacentElement(&quot;afterend&quot;, fallback);
+
+})</code></pre><p>Now we can see a link to the pen regardless of its status. If something goes wrong, our fallback text will indicate what was supposed to happen. To really put a bow on this solution, we can even add a placeholder to the <code>.codepen</code> element for <a href="/blog/using-noscript">noscript situations</a>.</p><pre><code class="language-css">.codepen::after {
+    content: &quot;Whoops! This pen is unavailable.&quot;;
+    display: block;
+    font-style: italic;
+    text-align: center;
+    padding: 2em;
+    border: 2px solid currentColor;
+}</code></pre><p>This works because the CodePen embed script replaces the original <code>.codepen</code> element with an <code>iframe</code>. If all scripts are blocked, the element remains and shows our message.</p><p>Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!</p></p>
+
+    <p id="blog_cta">
+    Thanks for being a reader! If you like this, contribute to the community and <a target="_blank" href="https://twitter.com/share?text=This%20was%20a%20great%20read!&url=https://bradeneast.com/blog/embed-codepens-with-one-line-of-code-faster-and-more-accessibly">share it</a> with your followers.
+</p>
 </article>
 
-<link rel="stylesheet" href="/_css/prism.css" type="text/css">
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+<div class="scope-nav">
+    <a href="undefined">
+        <span class="label">Previous</span>
+        <p class="name">undefined</p>
+    </a>
+    <a href="/blog/get-img-alt-attribute-automatically-from-src">
+        <span class="label">Next</span>
+        <p class="name">get img alt attribute automatically from src</p>
+    </a>
+</div>
+    </main>
 
+    <div id="pre_footer">
+
+    <div id="contact">
+
+    <h3>Let's work together!</h3>
+
+    <p>
+        If you're working on a creative project, please reach out. I'd love to collaborate and contribute.
+    </p>
+
+    <a class="button" href="mailto:bradeneastdesign@gmail.com">Say Hi 👋</a>
+
+</div>
+
+    <button id="dark_mode_toggle" aria-label="toggle dark mode">
+    <svg viewBox="0 0 72 72">
+        <path fill="currentColor" d="M61.9,37.61A25.9,25.9,0,1,1,36,11.71,25.9,25.9,0,0,1,61.9,37.61ZM36,1.61a3.58,3.58,0,1,0,3.58,3.57A3.58,3.58,0,0,0,36,1.61ZM7.85,15.16a3.58,3.58,0,1,0,5-.57A3.59,3.59,0,0,0,7.85,15.16ZM.9,45.62a3.58,3.58,0,1,0,2.69-4.29A3.59,3.59,0,0,0,.9,45.62ZM20.38,70a3.58,3.58,0,1,0-1.67-4.78A3.58,3.58,0,0,0,20.38,70Zm31.24,0a3.58,3.58,0,1,0-4.78-1.67A3.58,3.58,0,0,0,51.62,70ZM71.1,45.62a3.58,3.58,0,1,0-4.29,2.69A3.58,3.58,0,0,0,71.1,45.62ZM64.15,15.16a3.58,3.58,0,1,0-.57,5A3.59,3.59,0,0,0,64.15,15.16Z" />
+    </svg>
+    <svg viewBox="0 0 72 72">
+        <path fill="currentColor" d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z" />
+    </svg>
+</button>
+
+    <button class="unstyled" id="back_to_top" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+        back to top 🚀
+    </button>
+
+</div>
 
     <footer>
 
-        &#xA9; 2020 Braden East
+    &copy; 2020 Braden East
 
-        <div class="socials">
-            <a href="https://codepen.io/bradeneast" rel="noreferrer" aria-label="braden east on codepen" target="_blank">
-                <svg aria-hidden="true" focusable="false" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" viewbox="0 0 512 512">
-                    <path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://www.instagram.com/bradeneastdesign" rel="noreferrer" aria-label="braden east on instagram" target="_blank">
-                <svg aria-hidden="true" focusable="false" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" viewbox="0 0 448 512">
-                    <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://github.com/bradeneast" rel="noreferrer" aria-label="braden east on github" target="_blank">
-                <svg aria-hidden="true" focusable="false" data-icon="github-square" class="svg-inline--fa fa-github-square fa-w-14" role="img" viewbox="0 0 448 512">
-                    <path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://www.twitter.com/bradenthehair/" rel="noreferrer" aria-label="braden east on twitter" target="_blank">
-                <svg aria-hidden="true" focusable="false" data-icon="twitter" role="img" viewbox="0 0 448 512">
-                    <path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z">
-                    </path>
-                </svg>
-            </a>
-            <a href="/blog/feed.xml" target="_blank">
-                <svg aria-hidden="true" focusable="false" data-icon="rss-square" role="img" viewbox="0 0 448 512">
-                    <path fill="currentColor" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM112 416c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm157.533 0h-34.335c-6.011 0-11.051-4.636-11.442-10.634-5.214-80.05-69.243-143.92-149.123-149.123-5.997-.39-10.633-5.431-10.633-11.441v-34.335c0-6.535 5.468-11.777 11.994-11.425 110.546 5.974 198.997 94.536 204.964 204.964.352 6.526-4.89 11.994-11.425 11.994zm103.027 0h-34.334c-6.161 0-11.175-4.882-11.427-11.038-5.598-136.535-115.204-246.161-251.76-251.76C68.882 152.949 64 147.935 64 141.774V107.44c0-6.454 5.338-11.664 11.787-11.432 167.83 6.025 302.21 141.191 308.205 308.205.232 6.449-4.978 11.787-11.432 11.787z">
-                    </path>
-                </svg>
-            </a>
-        </div>
-    </footer>
+    <div id="socials">
+    <a href="https://codepen.io/bradeneast" aria-label="braden east on codepen">
+        <svg aria-hidden="true" focusable="false" data-icon="behance-square" class="svg-inline--fa fa-behance-square fa-w-14" role="img" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
+            </path>
+        </svg>
+    </a>
+    <a href="https://www.instagram.com/bradeneastdesign" aria-label="braden east on instagram">
+        <svg aria-hidden="true" focusable="false" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+            </path>
+        </svg>
+    </a>
+    <a href="https://github.com/bradeneast" aria-label="braden east on github">
+        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+            <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+        </svg>
+    </a>
+    <a href="https://www.twitter.com/bradenthehair/" aria-label="braden east on twitter">
+        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+        </svg>
+    </a>
+    <a href="/blog/feed.xml" style="display: none;">
+        <svg style="transform: scale(.9);" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rss" class="svg-inline--fa fa-rss fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"></path>
+        </svg>
+    </a>
+</div>
+
+</footer>
 </body>
-
-</html>

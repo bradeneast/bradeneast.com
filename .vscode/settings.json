@@ -1,64 +1,25 @@
 {
+    "liveServer.settings.root": "/public",
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/public/_assets/css"
+        }
+    ],
     "saveAndRun": {
         "commands": [
             {
-                "match": "\\.html$|\\.md$",
-                "cmd": "node ./node_compile/_index.js",
+                "match": "\\.ts",
+                "cmd": "deno run --allow-read --allow-write ./build/build.ts",
                 "silent": true
             }
         ]
     },
-    "liveServer.settings.root": "/public",
-    "liveServer.settings.wait": 600,
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "compressed",
-            "extensionName": ".css",
-            "savePath": "/public/_css"
-        }
-    ],
-    "liveSassCompile.settings.generateMap": true,
     "minify.js": {
         "mangle": true,
         "compress": {
-            "sequences": true,
-            "properties": true,
-            "dead_code": true,
-            "drop_debugger": true,
-            "unsafe": false,
-            "unsafe_comps": false,
-            "conditionals": true,
-            "comparisons": true,
-            "evaluate": true,
-            "booleans": true,
-            "loops": true,
-            "unused": true,
-            "hoist_funs": true,
-            "keep_fargs": false,
-            "keep_fnames": false,
-            "hoist_vars": false,
-            "if_return": true,
-            "join_vars": true,
             "collapse_vars": true,
-            "reduce_vars": true,
-            "side_effects": true,
-            "pure_getters": false,
-            "pure_funcs": null,
-            "negate_iife": false,
-            "drop_console": false,
-            "passes": 2,
-            "global_defs": {}
-        },
-        "output": {
-            "ascii_only": false,
-            "inline_script": false,
-            "max_line_len": 32000,
-            "braces": false,
-            "semicolons": true,
-            "comments": false,
-            "shebang": true,
-            "preamble": null,
-            "quote_style": "single"
         }
     }
 }
