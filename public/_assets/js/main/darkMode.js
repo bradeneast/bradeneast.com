@@ -1,4 +1,5 @@
-export default function toggleDarkMode() {
+// @ts-nocheck
+function toggleDarkMode() {
 
     let dmName = 'dark_mode';
     let dm = JSON.parse(localStorage.getItem(dmName));

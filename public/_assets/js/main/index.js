@@ -1,16 +1,5 @@
 // @ts-nocheck
-
-
-// add codepen fallbacks
-let codePens = document.querySelectorAll('.codepen');
-import addCodepenFallback from './addCodepenFallback.js';
-codePens.forEach(pen => addCodepenFallback(pen));
-
-
-// get alt attribute from img src
-let images = document.querySelectorAll('img');
-import altFromSrc from './altFromSrc.js';
-images.forEach(img => altFromSrc(img));
+// @ts-ignore
 
 
 // add active class to appropriate nav item
@@ -30,6 +19,17 @@ for (let i = 0; i < navItems.length; i++) {
 
 }
 
+
+// add codepen fallbacks
+let codePens = document.querySelectorAll('.codepen');
+codePens.forEach(pen => addCodepenFallback(pen));
+
+
+// get alt attribute from img src
+let images = document.querySelectorAll('img');
+images.forEach(img => altFromSrc(img));
+
+
 // open external links in a new tab
 let anchors = document.querySelectorAll('a');
 anchors.forEach(a => {
@@ -42,6 +42,6 @@ anchors.forEach(a => {
 })
 
 
+// listen for dark mode toggle
 let darkModeToggle = document.getElementById('dark_mode_toggle');
-import toggleDarkMode from './darkMode.js';
 darkModeToggle.addEventListener('click', toggleDarkMode);
