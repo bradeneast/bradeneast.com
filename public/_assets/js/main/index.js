@@ -34,7 +34,7 @@ images.forEach(img => altFromSrc(img));
 let anchors = document.querySelectorAll('a');
 anchors.forEach(a => {
 
-    if (a.href.includes('https://')) {
+    if (!a.href.includes(location.origin)) {
         a.target = '_blank';
         a.rel = 'noreferrer';
     }
