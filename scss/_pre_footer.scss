@@ -4,8 +4,8 @@
     background: none;
     border: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    border: var(--border-width) var(--border-style) currentColor;
     font-size: 2em;
 
     &::after {
@@ -13,8 +13,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 50%;
-        height: 100%;
+        width: 1em;
+        height: 1em;
         z-index: -1;
         transform: none;
         background: currentColor;
