@@ -1,12 +1,12 @@
 #dark_mode_toggle {
     --tx: 0%;
     --sx: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-size: 2em;
     background: none;
     border: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 2em;
     width: 2em;
     height: 1em;
 
