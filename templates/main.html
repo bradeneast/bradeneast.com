@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 {{ header }}
 
 <body>
@@ -5,10 +8,23 @@
     {{ global_nav }}
 
     <main>
+        <noscript>
+            I don't rely on javascript, but it does give you fun things like <strong>dark mode</strong> and more in the near future.
+            <style>
+                #dark_mode_toggle {
+                    display: none;
+                }
+            </style>
+        </noscript>
+
         {{ CONTENT }}
+
     </main>
 
     {{ pre_footer }}
 
     {{ footer }}
+
 </body>
+
+</html>
