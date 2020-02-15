@@ -9,6 +9,18 @@ function addCodepenFallback(pen) {
 
     if (!hash && !user) fallback.innerText = "This pen is unavailable.";
 
+    if (hash) {
+
+        let a = document.createElement('a');
+        let link = [codepenio, 'pen', hash].join('/');
+
+        a.href = link;
+        fallback.innerText += 'View ';
+        a.innerText = 'this pen';
+        fallback.appendChild(a);
+
+    }
+
     if (hash && user) {
 
         let a = document.createElement('a');
@@ -16,18 +28,7 @@ function addCodepenFallback(pen) {
 
         a.href = link;
         a.innerText = '@' + user;
-        fallback.appendChild('by ');
-        fallback.appendChild(a);
-
-    }
-
-    if (hash) {
-
-        let a = document.createElement('a');
-        let link = [codepenio, 'pen', hash].join('/');
-
-        a.href = link;
-        a.innerText = 'this pen';
+        fallback.innerText += 'by ';
         fallback.appendChild(a);
 
     }
