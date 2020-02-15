@@ -67,6 +67,7 @@ body {
     font-family: var(--ffb);
     letter-spacing: 0.02em;
     color: var(--charcoalgrey);
+    background: white;
     line-height: 1.8;
     padding: 7vh var(--flow-space) 1rem var(--flow-space);
     display: grid;
@@ -128,6 +129,23 @@ video {
     .scope-nav {
         display: block;
         margin-top: 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4,
+    h5 {
+        font-size: 1rem;
     }
 
     main {
