@@ -144,11 +144,6 @@ video {
         padding-top: var(--flow-space-section);
     }
 
-    pre {
-        font-size: .85rem;
-        letter-spacing: -.02em;
-    }
-
     h1 {
         font-size: 2rem;
     }
@@ -164,5 +159,10 @@ video {
     h4,
     h5 {
         font-size: 1rem;
+    }
+
+    pre {
+        font-size: .85rem;
+        letter-spacing: -.02em;
     }
 }

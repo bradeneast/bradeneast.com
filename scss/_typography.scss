@@ -76,19 +76,22 @@ h1 {
     line-height: 1.1;
     margin-bottom: var(--flow-space-section);
     font-size: 4rem;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.06em;
 }
 
 h2 {
+    letter-spacing: -.03em;
     font-size: 1.8rem;
 }
 
 h3 {
+    letter-spacing: -.03em;
     font-size: 1.4rem;
 }
 
 h4,
 h5 {
+    letter-spacing: -.02em;
     font-size: 1.2rem;
 }
 
