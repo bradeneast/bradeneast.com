@@ -3,6 +3,7 @@ pre {
     color: var(--mediumgrey);
     background: none;
     font-size: 0.9em;
+    letter-spacing: -1px;
     text-align: left;
     font-family: monospace !important;
     white-space: pre-wrap;
@@ -28,7 +29,6 @@ pre {
 }
 
 /* Code blocks */
-
 pre {
     margin-bottom: var(--flow-space-paragraph);
     padding: var(--flow-space-paragraph);
@@ -41,10 +41,8 @@ pre {
 :not(pre) > code {
     position: relative;
     font-family: monospace !important;
-    font-weight: 600;
     border-bottom: var(--border-width) var(--border-style) currentColor;
     border-radius: 0;
-    font-size: 0.95em;
     cursor: text;
     padding: 0.1em;
     white-space: normal;
@@ -85,6 +83,11 @@ pre {
     &.function,
     &.inserted {
         color: hsl($hueB, $sat, $lit * 0.8);
+    }
+
+    &.function {
+        font-weight: 700;
+        font-style: italic;
     }
 
     &.property,

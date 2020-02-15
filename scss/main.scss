@@ -136,6 +136,14 @@ video {
         margin-top: 0;
     }
 
+    main {
+        margin: var(--flow-space-section) 0;
+    }
+
+    #pre_footer {
+        padding-top: var(--flow-space-section);
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -151,13 +159,5 @@ video {
     h4,
     h5 {
         font-size: 1rem;
-    }
-
-    main {
-        margin: var(--flow-space-section) 0;
-    }
-
-    #pre_footer {
-        padding-top: var(--flow-space-section);
     }
 }

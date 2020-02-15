@@ -7,8 +7,6 @@
     display: grid;
     grid-template-columns: 50% 50%;
     font-size: 2em;
-    width: 2em;
-    height: 1em;
 
     &::after {
         content: '';
