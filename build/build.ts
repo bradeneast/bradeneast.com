@@ -6,7 +6,7 @@ import {
     emptyDirSync,
 } from 'https://deno.land/std/fs/mod.ts';
 import getFsTree from './fs_tree.ts';
-import { dynamicSort, deepCopy, tryFunc } from './utils.ts';
+import { dynamicSort, deepCopy, tryFunc, matchBetween } from './utils.ts';
 import includeComponents from './components.ts';
 import processFeeds from './feeds.ts';
 import includeVariables from './variables.ts';
@@ -67,12 +67,15 @@ async function build() {
         // Process feeds
         if (reFeed.test(page.content)) processFeeds(page);
 
+        let description = matchBetween(page.content, '<p>', '</p>');
+        page.description = description.replace(/<.+?>/g, '').replace(/(?=["'’`])/g, '\\');
+
         // Include variables
         page.content = includeVariables(page);
 
         // Create and write to file
         ensureFileSync(destination);
-        writeFileStrSync(destination, page.content);
+        writeFileStrSync(destination, '<!DOCTYPE html>' + page.content);
 
     }
 

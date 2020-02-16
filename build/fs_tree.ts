@@ -4,14 +4,16 @@ import options from '../options.ts';
 import getFsInfo from './fs_info.ts';
 
 
-export default function getFsTree(directory: string) {
+export default function getFsTree(directory: string, ignoreProps = {}) {
 
     let tree = [];
 
     for (let { filename, info } of walkSync(directory, { includeDirs: false })) {
 
         filename = slash(filename);
+
         if (filename.includes('/' + options.ignore)) continue;
+        
         tree.push(getFsInfo({ filename, info }));
 
     }

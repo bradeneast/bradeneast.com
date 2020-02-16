@@ -1,7 +1,7 @@
 import { readFileStrSync } from 'https://deno.land/std/fs/mod.ts';
 import slash from "https://deno.land/x/slash/mod.ts";
 import options from '../options.ts';
-import { linkify, walkAst, deepCopy } from './utils.ts';
+import { linkify, walkAst, deepCopy, matchBetween } from './utils.ts';
 import HTML from './deno_modules/html_parse_stringify/mod.ts';
 import marked from './deno_modules/marked/marked.ts';
 
@@ -15,6 +15,7 @@ export default function getFsInfo({ filename, info }) {
         ext: 'html',
         content: readFileStrSync(filename).trim(),
         excerpt: '',
+        description: '',
         href: '/',
         parentDir: '/',
         media: options.default.media,
@@ -39,42 +40,47 @@ export default function getFsInfo({ filename, info }) {
 
     // Convert Markdown to HTML
     if (page.ext == 'md') {
+
         page.content = marked.parse(page.content);
+        let matchMeta = /<meta.+?name=["'].+?>/gi;
+
+        // Get categories and other meta
+        if (matchMeta.test(page.content)) {
+
+            let ast = HTML.parse(page.content);
+
+            for (let elem of walkAst(ast)) {
+
+                if (elem.name != 'meta') continue;
+
+                let name = elem.attrs?.name;
+                let content = elem.attrs?.content;
+
+                if (!content || !name) continue;
+                if (name == 'categories') page.categories = content.split(', ');
+                else page[name] = content;
+
+            }
+
+            page.content = HTML.stringify(ast).replace(matchMeta, '').trim();
+
+        }
+
         page.ext = 'html';
     }
 
 
-    // Get categories and featured media
-    let matchMeta = /<meta.+?name=["'](media|categories).+?>/gi;
+    // Excerpt
+    {
 
-    if (matchMeta.test(page.content)) {
+        let length = options?.feeds?.excerpts?.length;
 
-        let ast = HTML.parse(page.content);
-
-        for (let elem of walkAst(ast)) {
-
-            if (elem.name != 'meta') continue;
-
-            let name = elem.attrs?.name;
-            let content = elem.attrs?.content;
-
-            if (!content) continue;
-            if (name == 'media') page.media = content;
-            if (name == 'categories') page.categories = content.split(', ');
-
+        if (typeof length == 'number') {
+            page.excerpt = page.content.substr(0, length);
+        } else {
+            page.excerpt = matchBetween(page.content, '<p>', '</p>') || '';
         }
 
-        page.content = HTML.stringify(ast).replace(matchMeta, '').trim();
-
-    }
-
-
-    // Excerpts
-    {
-        let length = options?.feeds?.excerpts?.length;
-        let cap = page.content.indexOf('</p>');
-        if (typeof length == 'number') cap = length
-        page.excerpt = page.content.substr(0, cap);
     }
 
 
