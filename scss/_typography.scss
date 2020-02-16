@@ -79,7 +79,7 @@ h1 {
     letter-spacing: -0.05em;
 
     &.alt {
-        margin-bottom: 0;
+        margin-bottom: var(--flow-space-paragraph);
     }
 }
 
