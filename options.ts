@@ -88,8 +88,7 @@ export default {
             sort: '!created',
             categories: {
                 categorize: true,
-                useComponent: 'category'
-
+                useComponent: 'category_feed',
             }
         },
         {
@@ -98,8 +97,7 @@ export default {
             sort: 'lexical',
             categories: {
                 categorize: true,
-                useComponent: 'category'
-
+                useComponent: 'category_feed_with_media',
             }
         },
     ],
