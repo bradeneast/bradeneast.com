@@ -77,6 +77,10 @@ h1 {
     margin-bottom: var(--flow-space-section);
     font-size: 4rem;
     letter-spacing: -0.05em;
+
+    &.alt {
+        margin-bottom: 0;
+    }
 }
 
 h2 {
