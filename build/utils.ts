@@ -13,7 +13,7 @@ export {
 function tryFunc(limit: number, callback: { (): any }, tries: number = 0) {
     try {
         callback();
-    } catch {
+    } catch (err) {
         if (tries < limit) {
             tryFunc(limit, callback, tries + 1);
         }
@@ -65,10 +65,10 @@ function dynamicSort(property) {
     return function (a, b) {
 
         let result = 0;
-        
+
         if (a[property] < b[property]) result = -1;
         else if (a[property] > b[property]) result = 1;
-        
+
         return result * sortOrder;
     }
 }

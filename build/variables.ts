@@ -2,14 +2,16 @@ import options from "../options.ts";
 import { linkify, escRegExp } from "./utils.ts";
 
 
-export default function includeVariables(page, context: string = null) {
+export default function includeVariables(page, context = '') {
 
     let ctx = context || page.content;
     let [a, b] = options.match.variables;
     let reVariables = new RegExp(`${escRegExp(a)} .+? ${escRegExp(b)}`, 'g');
     let matches = ctx.match(reVariables);
 
-    if (!matches.length) return ctx;
+    // console.log(String(ctx).match(new RegExp(` .+?(?=${escRegExp(a)})`)));
+
+    if (!matches?.length) return ctx;
 
     for (let i = 0; i < matches.length; i++) {
 
@@ -17,7 +19,7 @@ export default function includeVariables(page, context: string = null) {
         let reRef = new RegExp(`^${escRegExp(a)} | ${escRegExp(b)}$`, 'gm');
         let query = match.replace(reRef, '');
         let props = query.split('.');
-        let value = {...page};
+        let value = { ...page };
 
         props.map(prop => value = value?.[prop]);
 

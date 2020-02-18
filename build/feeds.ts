@@ -8,9 +8,9 @@ import { pages } from './build.ts';
 export default function processFeeds(page) {
 
     let ast = HTML.parse(page.content);
-    
+
     for (let elem of walkAst(ast)) {
-        
+
         if (elem.type == 'text') continue;
         if (!elem.attrs?.[options.feeds.attribute]) continue;
 

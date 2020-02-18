@@ -67,8 +67,9 @@ async function build() {
         // Process feeds
         if (reFeed.test(page.content)) processFeeds(page);
 
-        let description = matchBetween(page.content, '<p>', '</p>');
-        page.description = description.replace(/<.+?>/g, '').replace(/(?=["'’`])/g, '\\');
+        page.description = matchBetween(page.content, '<p>', '</p>');
+        page.description = page.description.replace(/<.+?>/g, '').replace(/(?=["'’`])/g, '\\');
+        page.description = includeVariables(page, page.description);
 
         // Include variables
         page.content = includeVariables(page);
