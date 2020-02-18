@@ -7,7 +7,7 @@ export default function includeVariables(page, context: string = null) {
     let ctx = context || page.content;
     let [a, b] = options.match.variables;
     let reVariables = new RegExp(`${escRegExp(a)} .+? ${escRegExp(b)}`, 'g');
-    let matches = ctx.match(reVariables) || [];
+    let matches = ctx.match(reVariables);
 
     if (!matches.length) return ctx;
 
@@ -17,14 +17,14 @@ export default function includeVariables(page, context: string = null) {
         let reRef = new RegExp(`^${escRegExp(a)} | ${escRegExp(b)}$`, 'gm');
         let query = match.replace(reRef, '');
         let props = query.split('.');
-        let value = page;
+        let value = {...page};
 
         props.map(prop => value = value?.[prop]);
 
         if (query.includes('media')) {
 
             if (/\.(webp|png|gif|jpg)/gi.test(value)) {
-                value = `<img src="${value}" alt=""/>`;
+                value = `<img src="${value}" alt="" />`;
             }
 
             if (/\.(mp4|webm|mov|webvtt|ogv|wmv|flv|avi|avchd)/gi.test(value)) {
@@ -48,8 +48,7 @@ export default function includeVariables(page, context: string = null) {
             value = result.join(', ');
         }
 
-        ctx = ctx.replace(match, String(value));
-
+        ctx = ctx.replace(match, value);
     }
 
     return ctx;

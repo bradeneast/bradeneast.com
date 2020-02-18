@@ -54,17 +54,26 @@ export default function makeCategoryPages(scope) {
 
             let component = components.find(c => c.name == useComponent);
             let ast = HTML.parse(component.content);
+            let feedElem: any;
 
-            let feedElem = ast.find(e => {
-                return Object.keys(e.attrs).some(k => {
-                    return k == options.feeds.attribute
-                })
-            });
+            for (let i = 0; i < ast.length; i++) {
+
+                let elem = ast[i];
+                if (elem.type == 'text') continue;
+
+                let keys = Object.keys(elem.attrs);
+                let hasFeedAttr = keys.some(key => key == options.feeds.attribute);
+
+                if (hasFeedAttr) {
+                    feedElem = elem;
+                    break;
+                }
+
+            }
 
             feedElem.attrs[options.feeds.attribute] = page.href;
             page.content = HTML.stringify(ast);
             
-
         } else {
 
             page.content = `
