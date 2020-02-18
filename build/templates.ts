@@ -1,4 +1,4 @@
-import { pages } from "./build.ts";
+import { pages, templates } from "./build.ts";
 import { dynamicSort } from "./utils.ts";
 import options from "../options.ts";
 import { readFileStrSync } from 'https://deno.land/std/fs/mod.ts';
@@ -28,9 +28,8 @@ export default function applyTemplates(scope: { target: string; sort?: string; }
         let prev = targetPages[i - 1];
 
         let current = page.scopes.find(s => s.target == scope.target);
-        let location = [options.paths.templates, current.templateName].join('/');
-        let html = readFileStrSync(location);
-        let [before, after] = html.split('{{ CONTENT }}');
+        let template = templates.find(t => t.name == current.templateName);
+        let [before, after] = template.content.split('{{ CONTENT }}');
 
         page.next = next?.depth == page.depth ? next : false;
         page.prev = prev?.depth == page.depth ? prev : false;

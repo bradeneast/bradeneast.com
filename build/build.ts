@@ -24,7 +24,6 @@ Deno.readDirSync(options.paths.dist).map(file => {
 
     if (file.name.charAt(0) == options.ignore) return;
     if (file.isDirectory()) emptyDirSync(path);
-
     if (existsSync(path)) tryFunc(5, () => Deno.removeSync(path));
 
 })
@@ -32,18 +31,14 @@ Deno.readDirSync(options.paths.dist).map(file => {
 
 export let pages = getFsTree(options.paths.src);
 export let components = getFsTree(options.paths.components);
+export let templates = getFsTree(options.paths.templates);
 
 
 async function build() {
 
     // Sort scopes by depth
     let scopes = deepCopy(options.scopes);
-
-    for (let i = 0; i < scopes.length; i++) {
-        let scope = scopes[i];
-        scope.depth = scope.target.length < 2 ? 1 : scope.target.split('/').length;
-    }
-
+    scopes.map(s => s.depth = s.target.length < 2 ? 1 : s.target.split('/').length);
     scopes.sort(dynamicSort('-depth'));
 
     // Make categories for scope and apply templates to applicable pages

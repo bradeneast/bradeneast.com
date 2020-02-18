@@ -79,11 +79,11 @@ export default {
     */
     scopes: [
         {
-            templateName: 'main.html',
+            templateName: 'main',
             target: '/',
         },
         {
-            templateName: 'post.html',
+            templateName: 'post',
             target: '/blog',
             sort: '!created',
             categories: {
@@ -92,7 +92,7 @@ export default {
             }
         },
         {
-            templateName: 'post.html',
+            templateName: 'post',
             target: '/design',
             sort: 'lexical',
             categories: {

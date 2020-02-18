@@ -23,20 +23,17 @@ export default function makeCategoryPages(scope) {
 
     }
 
+    // Ensure a file exists for each category
     for (let i = 0; i < categories.length; i++) {
-
         let category = categories[i];
         let destination = [categoryDir, category].join('/') + '.html';
-
         ensureFileSync(destination);
-
     }
 
+    // Get file info for each category page
     for (let { filename, info } of walkSync(categoryDir, { includeDirs: false })) {
-
         categoryPages.push(getFsInfo({ filename, info }));
         Deno.remove(filename);
-
     }
 
     for (let i = 0; i < categoryPages.length; i++) {
@@ -47,7 +44,7 @@ export default function makeCategoryPages(scope) {
 
         // let location = options.paths.dist + page.href + '.html';;
         // if (existsSync(location)) Deno.remove(location);
-        
+
         if (mainTemplate) page.scopes = [mainTemplate];
 
         if (useComponent) {
@@ -73,7 +70,7 @@ export default function makeCategoryPages(scope) {
 
             feedElem.attrs[options.feeds.attribute] = page.href;
             page.content = HTML.stringify(ast);
-            
+
         } else {
 
             page.content = `
