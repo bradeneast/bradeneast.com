@@ -42,7 +42,6 @@ body {
 }
 
 html.dark_mode {
-    
     body {
         --primary: var(--secondary);
         color: var(--lightgrey);
@@ -73,10 +72,10 @@ body {
     display: grid;
     grid-template-columns: minmax(16rem, 20rem) repeat(auto-fit, minmax(36rem, 1fr));
     grid-template-rows: 1fr auto auto;
-    grid-template-areas: 
-    "global_nav main"
-    "pre_footer main"
-    "footer footer";
+    grid-template-areas:
+        "global_nav main"
+        "pre_footer main"
+        "footer footer";
     grid-gap: var(--flow-space-paragraph);
 }
 
@@ -113,7 +112,7 @@ video {
 ::-webkit-scrollbar {
     appearance: none;
     background: none;
-    width: .6rem;
+    width: 0.6rem;
 
     &-thumb {
         background: var(--darkgrey);
@@ -124,14 +123,13 @@ video {
 @import "posts", "typography", "nav", "buttons", "pre_footer", "footer";
 
 @media screen and (max-width: 1080px) {
-
     :root {
         --flow-space: 1rem;
         --flow-space-paragraph: 2rem;
     }
 
     body,
-    .scope-nav {
+    .scope_nav {
         display: block;
         margin-top: 0;
     }
@@ -151,7 +149,7 @@ video {
     h2 {
         font-size: 1.5rem;
     }
-    
+
     h3 {
         font-size: 1.2rem;
     }
@@ -162,7 +160,7 @@ video {
     }
 
     pre {
-        font-size: .85rem;
-        letter-spacing: -.02em;
+        font-size: 0.85rem;
+        letter-spacing: -0.02em;
     }
 }
