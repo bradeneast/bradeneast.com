@@ -36,7 +36,7 @@ anchors.forEach(a => {
 
     if (!a.href.includes(location.origin)) {
         a.target = '_blank';
-        a.rel = 'noreferrer';
+        a.rel = 'noopener noreferrer';
     }
 
 })
