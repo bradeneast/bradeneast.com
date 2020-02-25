@@ -16,5 +16,4 @@ For file size, 8-bit PNG and JPG with medium compression will be very similar, d
 Honestly the best for performance and quality, but not well-supported yet.  If you're in a position to easily provide a JPG or PNG fallback for older browsers, absolutely use WebP!  I've experimented with using [imagemin](https://github.com/imagemin/imagemin) to convert images during my site build, but didn't feel comfortable its dependencies and complexities.
 
 4. GIF (Graphics Interchange Format)
-
-Ugh
+Very few use cases. MP4 will give you 1/2 to 1/6 the file size with the additional control HTML `video` elements provide.

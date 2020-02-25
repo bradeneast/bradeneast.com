@@ -40,11 +40,13 @@ function deepCopy(object = {}) {
 
 
 function linkify(path: string) {
-    return path
-        .replace(/['"`?!]/g, '')
-        .replace(/[ _,.:+=~*^$@;<>\[\]\(\)\{\}\|]/g, '-')
-        .replace(/\-+/g, '-')
-        .toLowerCase();
+    return encodeURI(
+        path
+            .replace(/['"`?!]/g, '')
+            .replace(/[ _,.:+=~*^$@;<>\[\]\(\)\{\}\|]/g, '-')
+            .replace(/\-+/g, '-')
+            .toLowerCase()
+    )
 }
 
 
