@@ -123,9 +123,9 @@
 &lt;/div&gt;</code></pre><h2 id="quirks">Quirks</h2><p>Let&#39;s look at the quirks and surprising behavior of <code>&lt;noscript&gt;</code>.</p><ol>
 <li><p><a href="https://ohgm.co.uk/breaking-head-quietly/">It seems as though</a> different browsers treat <code>&lt;noscript&gt;</code> in the <code>&lt;head&gt;</code> differently. In Chrome, doing this will land your content right after the opening <code>&lt;body&gt;</code> tag. Knowing that, it’s probably best to place <code>&lt;noscript&gt;</code> content exactly where you need it to end up in the first place.</p></li><li><p><code>&lt;noscript&gt;</code> elements are block-level, so <a href="https://htmlparser.info/parser/#noscript">they can’t be used inline</a>. If it’s really necessary, you could put a display of flex on the parent.</p></li></ol>
 
-    <p id="blog_cta">
+    <div id="blog_cta">
     Thanks for being a reader! If you like this, contribute to the community and <a target="_blank" href="https://twitter.com/share?text=This%20was%20a%20great%20read!&url=https://bradeneast.com/blog/using-noscript">share it</a> with your followers.
-</p>
+</div>
 </article>
 
 <div class="scope_nav">
