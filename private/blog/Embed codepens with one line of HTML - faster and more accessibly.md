@@ -44,7 +44,7 @@ Believe it or not, the only absolutely necessary part of a CodePen embed is the 
 <p class="codepen" data-slug-hash="povpQdr"></p>
 ```
 
-We can get away with this if we include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is ***gasp*** DOWN. To rememdy that, let's use a small bit Javascript that will add a fallback for us dynamically.
+We can get away with this if we include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is ***gasp*** DOWN. To remedy that, let's use a small bit Javascript that will add a fallback for us dynamically.
 
 ```javascript
 document.querySelectorAll(".codepen").forEach(pen => {
