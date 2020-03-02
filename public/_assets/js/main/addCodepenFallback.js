@@ -1,18 +1,18 @@
 // @ts-nocheck
 
-function addCodepenFallback(pen) {
+function add_cp_fb(pen) {
 
-    let codepenio = "https://codepen.io";
-    let hash = pen.getAttribute("data-slug-hash");
-    let user = pen.getAttribute("data-user");
-    let fallback = document.createElement('p');
+    var codepenio = "https://codepen.io";
+    var hash = pen.getAttribute("data-slug-hash");
+    var user = pen.getAttribute("data-user");
+    var fallback = document.createElement('p');
 
     if (!hash && !user) fallback.innerText = "This pen is unavailable.";
 
     if (hash) {
 
-        let a = document.createElement('a');
-        let link = [codepenio, 'pen', hash].join('/');
+        var a = document.createElement('a');
+        var link = [codepenio, 'pen', hash].join('/');
 
         a.href = link;
         fallback.innerText += 'View ';
@@ -23,8 +23,8 @@ function addCodepenFallback(pen) {
 
     if (hash && user) {
 
-        let a = document.createElement('a');
-        let link = [codepenio, user].join('/');
+        var a = document.createElement('a');
+        var link = [codepenio, user].join('/');
 
         a.href = link;
         a.innerText = '@' + user;

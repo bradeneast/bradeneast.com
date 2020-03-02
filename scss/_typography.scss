@@ -1,16 +1,64 @@
+/*
+METROPOLIS
+*/
+
+// @font-face {
+//     font-family: Metropolis;
+//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-regular.woff2") format("woff2"),
+//         url("/_assets/fonts/metropolis/metropolis-regular.woff") format("woff");
+//     font-weight: 400;
+//     font-display: swap;
+//     unicode-range: U+000-5FF;
+// }
+
+// @font-face {
+//     font-family: Metropolis;
+//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-regularitalic.woff2") format("woff2"),
+//         url("/_assets/fonts/metropolis/metropolis-regularitalic.woff") format("woff");
+//     font-weight: 400;
+//     font-style: italic;
+//     font-display: swap;
+//     unicode-range: U+000-5FF;
+// }
+
+// @font-face {
+//     font-family: Metropolis;
+//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-bold.woff2") format("woff2"),
+//         url("/_assets/fonts/metropolis/metropolis-bold.woff") format("woff");
+//     font-weight: 800;
+//     font-display: swap;
+//     unicode-range: U+000-5FF;
+// }
+
+// @font-face {
+//     font-family: Metropolis;
+//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-bolditalic.woff2") format("woff2"),
+//         url("/_assets/fonts/metropolis/metropolis-bolditalic.woff") format("woff");
+//     font-weight: 800;
+//     font-style: italic;
+//     font-display: swap;
+//     unicode-range: U+000-5FF;
+// }
+
+/*
+HK GROTESK
+*/
+
 @font-face {
-    font-family: Metropolis;
-    src: local("Metropolis"), url("/_assets/fonts/woff2/metropolis-regular.woff2") format("woff2"),
-        url("/_assets/fonts/woff/metropolis-regular.woff") format("woff");
+    font-family: HK Grotesk;
+    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2") format("woff2"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff") format("woff"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-Regular.eot") format("eot");
     font-weight: 400;
     font-display: swap;
     unicode-range: U+000-5FF;
 }
 
 @font-face {
-    font-family: Metropolis;
-    src: local("Metropolis"), url("/_assets/fonts/woff2/metropolis-regularitalic.woff2") format("woff2"),
-        url("/_assets/fonts/woff/metropolis-regularitalic.woff") format("woff");
+    font-family: HK Grotesk;
+    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2") format("woff2"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff") format("woff"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-Italic.eot") format("eot");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -18,18 +66,20 @@
 }
 
 @font-face {
-    font-family: Metropolis;
-    src: local("Metropolis"), url("/_assets/fonts/woff2/metropolis-bold.woff2") format("woff2"),
-        url("/_assets/fonts/woff/metropolis-bold.woff") format("woff");
+    font-family: HK Grotesk;
+    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-ExtraBold.woff2") format("woff2"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-ExtraBold.woff") format("woff"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-ExtraBold.eot") format("eot");
     font-weight: 800;
     font-display: swap;
     unicode-range: U+000-5FF;
 }
 
 @font-face {
-    font-family: Metropolis;
-    src: local("Metropolis"), url("/_assets/fonts/woff2/metropolis-bolditalic.woff2") format("woff2"),
-        url("/_assets/fonts/woff/metropolis-bolditalic.woff") format("woff");
+    font-family: HK Grotesk;
+    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-BoldItalic.woff2") format("woff2"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-BoldItalic.woff") format("woff"),
+        url("/_assets/fonts/hk_grotesk/HKGrotesk-BoldItalic.eot") format("eot");
     font-weight: 800;
     font-style: italic;
     font-display: swap;
@@ -43,30 +93,30 @@ h4,
 h5 {
     position: relative;
     display: inline-block;
-    font-family: var(--ffa);
+    font-family: $ffa;
     line-height: 1.4;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
 
     a {
+        z-index: 2;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 50%;
             left: 50%;
-            z-index: -1;
             width: calc(100% + 1.2em);
-            height: calc(100% + .5em);
+            height: calc(100% + 0.5em);
             transform: translate(-50%, -50%);
-            border: var(--border-width) var(--border-style) transparent;
-            border-radius: var(--border-radius-alt);
-            transition: var(--transition-short);
+            border: $border-width $border-style transparent;
+            border-radius: $border-radius-alt;
+            transition: $transition-short;
         }
 
         &:hover::after,
         &:focus::after {
-            border-color: var(--mediumgrey);
-            border-radius: var(--border-radius);
+            border-color: $mediumgrey;
+            border-radius: $border-radius;
         }
     }
 }
@@ -74,47 +124,47 @@ h5 {
 h1 {
     display: block;
     line-height: 1.1;
-    margin-bottom: var(--flow-space-section);
+    margin-bottom: $flow-space-section;
     font-size: 4rem;
     letter-spacing: -0.05em;
 
     &.alt {
-        margin-bottom: var(--flow-space-paragraph);
+        margin-bottom: $flow-space-paragraph;
     }
 }
 
 h2 {
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     font-size: 1.8rem;
 }
 
 h3 {
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     font-size: 1.4rem;
 }
 
 h4,
 h5 {
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
     font-size: 1.2rem;
 }
 
 p {
     font-size: 1rem;
     position: relative;
-    margin-bottom: var(--flow-space-paragraph);
+    margin-bottom: $flow-space-paragraph;
 
     a {
         text-decoration: underline;
     }
 
     & ~ h4 {
-        padding-top: var(--flow-space-paragraph);
+        padding-top: $flow-space-paragraph;
     }
 
     & ~ ul,
     & ~ ol {
-        margin: var(--flow-space-paragraph) 0;
+        margin: $flow-space-paragraph 0;
         padding-left: 1em;
 
         li {
@@ -127,22 +177,49 @@ p {
 
 a {
     font-weight: 800;
-    transition: var(--transition-short);
+    transition: $transition-short;
 
     &:hover,
     &:focus {
+        color: $primary;
         color: var(--primary);
     }
 }
 
 blockquote {
-    padding: var(--flow-space-paragraph);
-    margin-bottom: var(--flow-space-paragraph);
-    border: var(--border-width) var(--border-style) var(--primary);
-    border-radius: var(--border-radius);
+    padding: $flow-space-paragraph;
+    margin-bottom: $flow-space-paragraph;
+    border: $border-width $border-style $primary;
+    border-color: var(--primary);
+    border-radius: $border-radius;
     font-style: italic;
 
     p {
         margin: 0;
     }
+}
+
+code,
+pre {
+    color: #aaafba;
+}
+
+/* Code blocks */
+pre {
+    margin-bottom: $flow-space-paragraph;
+    padding: $flow-space-paragraph;
+    border: $border-width $border-style currentColor;
+    border-radius: $border-radius;
+    overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code {
+    position: relative;
+    font-family: monospace !important;
+    border-bottom: $border-width $border-style currentColor;
+    border-radius: 0;
+    cursor: text;
+    padding: 0.1em;
+    white-space: normal;
 }

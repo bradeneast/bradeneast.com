@@ -3,10 +3,10 @@ function altFromSrc(image) {
 
     if (!image || !image.getAttribute('src')) return;
 
-    let src = image.getAttribute('src');
-    let decoded = decodeURIComponent(src) || '';
-    let name = decoded.split('/').pop();
-    let readable = name.split('.').shift().replace(/-|\+/g, ' ');
+    var src = image.getAttribute('src');
+    var decoded = decodeURIComponent(src) || '';
+    var name = decoded.split('/').pop();
+    var readable = name.split('.').shift().replace(/-|\+/g, ' ');
 
     return readable || '';
 

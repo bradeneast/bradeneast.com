@@ -1,18 +1,19 @@
 nav {
-    transform: translateX(calc(var(--flow-space) * -2));
+    transform: translateX(#{$flow-space * -2});
 
     a {
-        padding: .5em 1em .5em calc(var(--flow-space) * 2);
-        border: var(--border-width) var(--border-style) transparent;
+        padding: 0.5em 1em 0.5em #{$flow-space * 2};
+        border: $border-width $border-style transparent;
         transition: none;
 
         &.active {
-            border-radius: var(--border-radius);
+            border-radius: $border-radius;
+            border-color: $primary;
             border-color: var(--primary);
 
             &:focus,
             &:hover {
-                border-radius: var(--border-radius-alt);
+                border-radius: $border-radius-alt;
             }
         }
     }

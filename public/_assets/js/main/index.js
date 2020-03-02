@@ -3,14 +3,15 @@
 
 
 // add active class to appropriate nav item
-let navItems = document.querySelectorAll('nav a');
+var nav = document.getElementById('nav');
+var navItems = Array.from(nav.getElementsByTagName('a'));
 
-for (let i = 0; i < navItems.length; i++) {
+for (var i = 0; i < navItems.length; i++) {
 
-    let url = location.pathname;
-    let area = url.length <= 1 ? url : url.split('/')[1];
-    let item = navItems[i];
-    let href = item.getAttribute('href');
+    var url = location.pathname;
+    var area = url.length <= 1 ? url : url.split('/')[1];
+    var item = navItems[i];
+    var href = item.getAttribute('href');
 
     if (href == area || href.split('/')[1].includes(area)) {
         item.classList.add('active');
@@ -21,27 +22,30 @@ for (let i = 0; i < navItems.length; i++) {
 
 
 // add codepen fallbacks
-let codePens = document.querySelectorAll('.codepen');
-codePens.forEach(pen => addCodepenFallback(pen));
+var codePens = Array.from(document.getElementsByClassName('codepen'));
+for (var i = 0; i < codePens.length; i++) add_cp_fb(codePens[i]);
 
 
 // get alt attribute from img src
-let images = document.querySelectorAll('img');
-images.forEach(img => altFromSrc(img));
+var images = Array.from(document.getElementsByTagName('img'));
+for (var i = 0; i < images.length; i++) altFromSrc(images[i]);
 
 
 // open external links in a new tab
-let anchors = document.querySelectorAll('a');
-anchors.forEach(a => {
+var anchors = Array.from(document.getElementsByTagName('a'));
 
-    if (!a.href.includes(location.origin)) {
+for (var i = 0; i < anchors.length; i++) {
+
+    var a = anchors[i];
+
+    if (!(new RegExp(location.origin, 'i').test(a.href))) {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
     }
 
-})
+}
 
 
 // listen for dark mode toggle
-let darkModeToggle = document.getElementById('dark_mode_toggle');
+var darkModeToggle = document.getElementById('dark_mode_toggle');
 darkModeToggle.addEventListener('click', toggleDarkMode);

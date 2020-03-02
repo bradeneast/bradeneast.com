@@ -1,35 +1,35 @@
 [data-feed] {
-        padding-left: 0;
+    padding-left: 0;
 
     & > * {
         padding-left: 0;
         list-style: none;
-        margin-bottom: var(--flow-space-section);
+        margin-bottom: $flow-space-section;
 
         a:hover img,
         a:focus img {
-            border-radius: var(--border-radius);
+            border-radius: $border-radius;
         }
 
         img {
-            border: var(--border-width) var(--border-style) currentColor;
-            border-radius: var(--border-radius-alt);
-            transition: var(--transition-short);
+            border: $border-width $border-style currentColor;
+            border-radius: $border-radius-alt;
+            transition: $transition-short;
         }
 
         &.includes_media {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-            grid-gap: var(--flow-space-paragraph);
+            grid-gap: $flow-space-paragraph;
         }
     }
 }
 
 article {
     .meta {
-        margin-bottom: var(--flow-space-paragraph);
-        padding-bottom: var(--flow-space-paragraph);
-        color: var(--slategrey);
+        margin-bottom: $flow-space-paragraph;
+        padding-bottom: $flow-space-paragraph;
+        color: $slategrey;
         line-height: 1.4;
 
         a {
@@ -39,7 +39,7 @@ article {
     }
 
     .featured-media {
-        margin-bottom: var(--flow-space-paragraph);
+        margin-bottom: $flow-space-paragraph;
     }
 
     .codepen {
@@ -60,7 +60,7 @@ article {
     }
 
     .cp_embed_wrapper {
-        margin-bottom: var(--flow-space-paragraph);
+        margin-bottom: $flow-space-paragraph;
     }
 
     .cp_embed_iframe {
@@ -71,22 +71,22 @@ article {
 .scope_nav {
     display: flex;
     width: 100%;
-    margin-top: var(--flow-space-section);
-    padding-top: var(--flow-space-section);
+    margin-top: $flow-space-section;
+    padding-top: $flow-space-section;
 
     a {
-        max-width: calc(50% - var(--flow-space-paragraph));
+        max-width: calc(50% - #{$flow-space-paragraph});
     }
 
     .label {
         display: block;
         font-weight: 400;
-        color: var(--slategrey);
+        color: $slategrey;
     }
 
     .name {
-        font-family: var(--ffa);
-        letter-spacing: -.02em;
+        font-family: $ffa;
+        letter-spacing: -0.02em;
     }
 
     a:last-of-type {

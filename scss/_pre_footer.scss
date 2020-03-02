@@ -1,42 +1,41 @@
 #dark_mode_toggle {
-    --tx: 0%;
-    --sx: 1;
+    font-size: 2em;
+    height: 1em;
+    display: flex;
     background: none;
     border: none;
     padding: 0;
-    display: flex;
-    font-size: 2em;
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 1em;
         height: 1em;
-        z-index: -1;
         transform: none;
-        background: currentColor;
-        border-radius: 50%;
+        background: $primary;
+        background: var(--primary);
         transform-origin: left;
-        transform: translateX(var(--tx)) scaleX(var(--sx));
-        transition: var(--transition-short);
+        border-radius: 50%;
+        transform: translateX(0) scaleX(1);
+        transition: $transition-short;
     }
 
-    &:hover,
-    &:focus {
-        --sx: 1.1;
+    &:hover::after,
+    &:focus::after {
+        transform: scaleX(1.1);
     }
 
     svg {
         width: 1em;
-        color: var(--primary);
-        transform: scale(.75);
+        color: currentColor;
+        transform: scale(0.75);
+        z-index: 2;
     }
 }
 
 #back_to_top {
-
     &:hover,
     &:focus {
         text-decoration: underline;

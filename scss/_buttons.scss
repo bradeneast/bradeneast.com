@@ -21,16 +21,17 @@ button,
 
     &:not(.unstyled) {
         color: inherit;
+        background: $primary;
         background: var(--primary);
-        border: var(--border-width) var(--border-style) currentColor;
-        border-radius: var(--border-radius);
-        padding: .8em 1em;
-        margin-bottom: var(--flow-space-paragraph);
-        transition: var(--transition-short);
+        border: $border-width $border-style currentColor;
+        border-radius: $border-radius;
+        padding: 0.8em 1em;
+        margin-bottom: $flow-space-paragraph;
+        transition: $transition-short;
 
         &:hover,
         &:focus {
-            border-radius: var(--border-radius-alt);
+            border-radius: $border-radius-alt;
         }
     }
 }

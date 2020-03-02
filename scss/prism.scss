@@ -1,6 +1,6 @@
 code,
 pre {
-    color: var(--mediumgrey);
+    color: #aaafba;
     background: none;
     font-size: 0.9em;
     text-align: left;
@@ -25,26 +25,6 @@ pre {
     span {
         font-family: inherit;
     }
-}
-
-/* Code blocks */
-pre {
-    margin-bottom: var(--flow-space-paragraph);
-    padding: var(--flow-space-paragraph);
-    border: var(--border-width) var(--border-style) currentColor;
-    border-radius: var(--border-radius);
-    overflow: auto;
-}
-
-/* Inline code */
-:not(pre) > code {
-    position: relative;
-    font-family: monospace !important;
-    border-bottom: var(--border-width) var(--border-style) currentColor;
-    border-radius: 0;
-    cursor: text;
-    padding: 0.1em;
-    white-space: normal;
 }
 
 .token {
