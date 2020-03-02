@@ -1,91 +1,3 @@
-/*
-METROPOLIS
-*/
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-regular.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-regular.woff") format("woff");
-//     font-weight: 400;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-regularitalic.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-regularitalic.woff") format("woff");
-//     font-weight: 400;
-//     font-style: italic;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-bold.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-bold.woff") format("woff");
-//     font-weight: 800;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-bolditalic.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-bolditalic.woff") format("woff");
-//     font-weight: 800;
-//     font-style: italic;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-/*
-HK GROTESK
-*/
-
-@font-face {
-    font-family: HK Grotesk;
-    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2") format("woff2"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff") format("woff"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-Regular.eot") format("eot");
-    font-weight: 400;
-    font-display: swap;
-    unicode-range: U+000-5FF;
-}
-
-@font-face {
-    font-family: HK Grotesk;
-    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2") format("woff2"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff") format("woff"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-Italic.eot") format("eot");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-    unicode-range: U+000-5FF;
-}
-
-@font-face {
-    font-family: HK Grotesk;
-    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-ExtraBold.woff2") format("woff2"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-ExtraBold.woff") format("woff"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-ExtraBold.eot") format("eot");
-    font-weight: 800;
-    font-display: swap;
-    unicode-range: U+000-5FF;
-}
-
-@font-face {
-    font-family: HK Grotesk;
-    src: local("HK Grotesk"), url("/_assets/fonts/hk_grotesk/HKGrotesk-BoldItalic.woff2") format("woff2"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-BoldItalic.woff") format("woff"),
-        url("/_assets/fonts/hk_grotesk/HKGrotesk-BoldItalic.eot") format("eot");
-    font-weight: 800;
-    font-style: italic;
-    font-display: swap;
-    unicode-range: U+000-5FF;
-}
-
 h1,
 h2,
 h3,
@@ -199,12 +111,12 @@ blockquote {
     }
 }
 
+/* Code */
 code,
 pre {
     color: #aaafba;
 }
 
-/* Code blocks */
 pre {
     margin-bottom: $flow-space-paragraph;
     padding: $flow-space-paragraph;
@@ -213,7 +125,6 @@ pre {
     overflow: auto;
 }
 
-/* Inline code */
 :not(pre) > code {
     position: relative;
     font-family: monospace !important;
