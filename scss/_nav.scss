@@ -1,8 +1,10 @@
 nav {
     transform: translateX(#{$flow-space * -2});
+    transform: translateX(calc(var(--flow-space) * -2));
 
     a {
         padding: 0.5em 1em 0.5em #{$flow-space * 2};
+        padding: 0.5em 1em 0.5em calc(var(--flow-space) * 2);
         border: $border-width $border-style transparent;
         transition: none;
 

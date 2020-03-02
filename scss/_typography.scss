@@ -33,16 +33,18 @@ h5 {
     }
 }
 
+h1.alt,
+p {
+    margin-bottom: $flow-space-paragraph;
+    margin-bottom: var(--flow-space-paragraph);
+}
+
 h1 {
     display: block;
     line-height: 1.1;
     margin-bottom: $flow-space-section;
     font-size: 4rem;
     letter-spacing: -0.05em;
-
-    &.alt {
-        margin-bottom: $flow-space-paragraph;
-    }
 }
 
 h2 {
@@ -64,19 +66,19 @@ h5 {
 p {
     font-size: 1rem;
     position: relative;
-    margin-bottom: $flow-space-paragraph;
 
     a {
         text-decoration: underline;
     }
 
     & ~ h4 {
-        padding-top: $flow-space-paragraph;
+        padding-top: var(--flow-space-paragraph);
     }
 
     & ~ ul,
     & ~ ol {
         margin: $flow-space-paragraph 0;
+        margin: var(--flow-space-paragraph) 0;
         padding-left: 1em;
 
         li {
@@ -98,12 +100,19 @@ a {
     }
 }
 
-blockquote {
+blockquote,
+pre {
     padding: $flow-space-paragraph;
+    padding: var(--flow-space-paragraph);
     margin-bottom: $flow-space-paragraph;
-    border: $border-width $border-style $primary;
-    border-color: var(--primary);
+    margin-bottom: var(--flow-space-paragraph);
+    border: $border-width $border-style currentColor;
     border-radius: $border-radius;
+}
+
+blockquote {
+    border-color: $primary;
+    border-color: var(--primary);
     font-style: italic;
 
     p {
@@ -115,12 +124,6 @@ blockquote {
 code,
 pre {
     color: #aaafba;
-}
-
-pre {
-    margin-bottom: $flow-space-paragraph;
-    padding: $flow-space-paragraph;
-    border: $border-width $border-style currentColor;
     border-radius: $border-radius;
     overflow: auto;
 }

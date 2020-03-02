@@ -19,6 +19,8 @@ $ffb: "HK Grotesk", sans-serif;
 :root {
     font-size: 20px;
     --primary: #{$primary};
+    --flow-space: #{$flow-space};
+    --flow-space-paragraph: #{$flow-space-paragraph};
 }
 
 *,
@@ -77,6 +79,7 @@ body {
     color: $charcoalgrey;
     line-height: 1.8;
     padding: 7vh $flow-space 1rem $flow-space;
+    padding: 7vh var(--flow-space) 1rem var(--flow-space);
 }
 
 @supports (display: grid) {
@@ -89,6 +92,7 @@ body {
             "pre_footer main"
             "footer footer";
         gap: $flow-space-paragraph;
+        gap: var(--flow-space);
     }
 }
 
@@ -138,8 +142,8 @@ video {
 @media screen and (max-width: 56rem) {
     :root {
         font-size: 17px;
-        $flow-space: 1rem;
-        $flow-space-paragraph: 2rem;
+        --flow-space: 1rem;
+        --flow-space-paragraph: 2rem;
     }
 
     body,

@@ -27,6 +27,7 @@ button,
         border-radius: $border-radius;
         padding: 0.8em 1em;
         margin-bottom: $flow-space-paragraph;
+        margin-bottom: var(--flow-space-paragraph);
         transition: $transition-short;
 
         &:hover,
