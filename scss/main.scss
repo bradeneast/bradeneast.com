@@ -11,9 +11,9 @@ $border-style: dotted;
 $border-radius: 3rem 1.5rem 2.5rem 2rem / 2rem 2.5rem 1.5rem 3rem;
 $border-radius-alt: 2rem 2.5rem 1.5rem 3rem / 3rem 1.5rem 2.5rem 2rem;
 $flow-space: 2rem;
-$flow-space-paragraph: 3rem;
+$flow-space-paragraph: 3.4rem;
 $flow-space-section: 5rem;
-$ffa: "Libre Baskerville", serif;
+$ffa: "Libre Baskerville", "HK Grotesk", sans-serif;
 $ffb: "HK Grotesk", sans-serif;
 
 :root {
@@ -139,7 +139,7 @@ video {
 
 @import "posts", "typography", "nav", "buttons", "pre_footer", "footer";
 
-@media screen and (max-width: 56rem) {
+@media screen and (max-width: 72rem) {
     :root {
         font-size: 17px;
         --flow-space: 1rem;
@@ -180,5 +180,14 @@ video {
     pre {
         font-size: 0.85rem;
         letter-spacing: -0.02em;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    article img {
+        width: 100vw;
+        margin-left: calc(var(--flow-space) * -1);
     }
 }
