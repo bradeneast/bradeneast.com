@@ -85,10 +85,10 @@
 
     <div class="meta">
         <div class="created">
-            <strong>Created:</strong> Sat Feb 15 2020
+            <strong>Created:</strong> Mon Feb 17 2020
         </div>
         <div class="modified">
-            <strong>Modified:</strong> Sat Feb 15 2020</div>
+            <strong>Modified:</strong> Tue Mar 03 2020</div>
         <div class="categories">
             <strong>Categories:</strong> <a href="/blog/categories/javascript">javascript</a>, <a href="/blog/categories/html">html</a>, <a href="/blog/categories/accessibility">accessibility</a></div>
     </div>
@@ -97,7 +97,7 @@
         <img src="/_assets/media/polaroids.jpg" alt="" />
     </div>
 
-    <p>I&#39;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#39;m usually adding <code>aria-label</code> and <code>tabindex</code> and <code>role</code> attributes later than I&#39;d like.</p><p>The repetition is also frustrating. If you&#39;re anything like me, you enjoy writing code because it helps you avoid repeating the same tasks over and over.</p><p>That said, some things are just too important to skip, namely image <code>alt</code> attributes. When I discovered <a href="https://moz.com/learn/seo/alt-text">why alt is so important</a>, I realized I had yet another detail to manage for better SEO and accessibility on my web projects.</p><p>Today, let&#39;s look at how to solve that problem by adding accessible <code>alt</code> attribute values to our <code>img</code> elements with vanilla javascript.</p><p>Check out the example HTML below.</p><pre><code class="language-html">&lt;div class=&quot;gallery&quot;&gt;
+    <p>I&#39;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#39;m usually adding <code>aria-label</code> and <code>tabindex</code> and <code>role</code> attributes later than I&#39;d like.</p><p>The repetition is also frustrating. If you&#39;re anything like me, you enjoy writing code because it helps you avoid repeating the same tasks over and over. That said, some things are just too important to skip, namely image <code>alt</code> attributes. When I discovered <a href="https://moz.com/learn/seo/alt-text">why alt is so important</a>, I realized I had yet another detail to manage for better SEO and accessibility on my web projects.</p><p>Today, let&#39;s look at how to solve that problem by adding accessible <code>alt</code> attribute values to our <code>img</code> elements with vanilla javascript. Check out the example HTML below.</p><pre><code class="language-html">&lt;div class=&quot;gallery&quot;&gt;
 
     &lt;div class=&quot;gallery__item&quot;&gt;
         &lt;img src=&quot;https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/_images/wboc-2-media-approved-preview-1521054875.jpeg?crop=1.00xw:0.870xh;0,0.130xh&amp;resize=1080:*&quot;&gt;
@@ -111,7 +111,7 @@
         &lt;img src=&quot;https://4.bp.blogspot.com/-ehuFRO8kWgM/V3yvBqhyLvI/AAAAAAAAwQY/-eaVSQkLFs8ioHS53M_Hjxj7DJuj-pWFQCLcB/w1200-h630-p-k-no-nu/pei-wei-summer-salads.jpg&quot;&gt;
     &lt;/div&gt;
 
-&lt;/div&gt;</code></pre><p>We have a delicious-looking gallery of asian-american food here. You (and people with screen readers) probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that servers can read, but we can&#39;t.</p><p>We want to isolate just the image titles. To help us do that, we&#39;ll use some fun native javascript methods that honestly sound like dance moves: <code>split()</code>, <code>shift()</code>, and <code>pop()</code>.</p><p>First, let&#39;s grab the <code>img</code> elements with <code>document.getElementsByTagName()</code>.</p><pre><code class="language-javascript">const images = Array.from(document.getElementsByTagName(&#39;img&#39;));
+&lt;/div&gt;</code></pre><p>We have a delicious-looking gallery of asian-american food here. You (and people with screen readers) probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that servers can read, but we can&#39;t.</p><p>We want to isolate just the image titles. To help us do that, we&#39;ll use some fun native javascript methods that honestly sound like dance moves: <code>split()</code>, <code>shift()</code>, and <code>pop()</code>. First, let&#39;s grab the <code>img</code> elements with <code>document.getElementsByTagName()</code>.</p><pre><code class="language-javascript">const images = Array.from(document.getElementsByTagName(&#39;img&#39;));
 
 images.map(image =&gt; {
     // do stuff
@@ -122,13 +122,12 @@ images.map(image =&gt; {
         // do stuff
 
     }
-})</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURIComponent()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">const imageSource = decodeURIComponent(image.getAttribute(&#39;src&#39;));</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>.</p><pre><code class="language-javascript">const imageSource = decodeURIComponent(image.getAttribute(&#39;src&#39;));
-const imageName = imageSource.split(&#39;/&#39;).pop(); // &#39;my-beautiful-image.jpg?format=small&#39;</code></pre><p>We&#39;ll use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">const imageTitle = imageName.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // &#39;my beautiful image&#39;</code></pre><pre><code class="language-javascript">images.map(image =&gt; {
+})</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image (color).jpg?format=small&#39;</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">images.map(image =&gt; {
 
     // will ignore images with alt already set
     if (!image.getAttribute(&#39;alt&#39;)) {
 
-        const imageSource = decodeURIComponent(image.getAttribute(&#39;src&#39;));
+        const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image (color).jpg?format=small&#39;
         const imageName = imageSource.split(&#39;/&#39;).pop(); // &#39;my-beautiful-image.jpg?format=small&#39;
         const imageTitle = imageName.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // &#39;my beautiful image&#39;
 
@@ -137,9 +136,9 @@ const imageName = imageSource.split(&#39;/&#39;).pop(); // &#39;my-beautiful-ima
     }
 })</code></pre><p>I hope this little bit of vanilla Javascript takes the headache out of <code>alt</code> attributes and helps you improve SEO and accessibility on your web projects.</p>
 
-    <div id="blog_cta">
+    <p id="blog_cta">
     Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/share?text=This%20was%20a%20great%20read!&url=https://bradeneast.com/blog/get-img-alt-attribute-automatically-from-src">share it</a> with your friends.
-</div>
+</p>
 </article>
 
 <div class="scope_nav">

@@ -38,13 +38,13 @@ export default function getFsInfo({ filename, info }) {
     }
 
 
-    // Convert Markdown to HTML
     if (page.ext == 'md') {
 
+        // Convert Markdown to HTML
         page.content = marked.parse(page.content);
-        let matchMeta = /<meta.+?name=["'].+?>/gi;
 
         // Get categories and other meta
+        let matchMeta = /<meta.+?name=["'].+?>/gi;
         if (matchMeta.test(page.content)) {
 
             let ast = HTML.parse(page.content);
@@ -53,12 +53,13 @@ export default function getFsInfo({ filename, info }) {
 
                 if (elem.name != 'meta') continue;
 
-                let name = elem.attrs?.name;
-                let content = elem.attrs?.content;
+                let nameValue = elem.attrs?.name;
+                let contentValue = elem.attrs?.content;
 
-                if (!content || !name) continue;
-                if (name == 'categories') page.categories = content.split(', ');
-                else page[name] = content;
+                // Get meta info
+                if (!contentValue || !nameValue) continue;
+                if (nameValue == 'categories') page.categories = contentValue.split(', ');
+                else page[nameValue] = contentValue;
 
             }
 

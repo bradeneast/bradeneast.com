@@ -3,11 +3,7 @@
 
 360 Farms is the only business that makes start-to-finish elderberry products for people seeking value and quality. The goal was to reinforce their brand with those who desire improved well-being in an era of McDonald’s and WalMart.
 
-360 Farms felt their previous brand identity was not striking a chord with customers, and did not represent their brand clearly.
-
-![The 360 Farms office, featuring a steel sign to welcome visitors](/_assets/media/360/360-office.jpg)
-
-In this design project, family was an extremely important brand attribute. The land on which the farm operated had been kept in the family since 1947. This made it important to convey a sense of heritage and belonging.
+360 Farms felt their previous brand identity was not striking a chord with customers, and did not represent their brand clearly. In this design project, family was an extremely important brand attribute. The land on which the farm operated had been kept in the family since 1947. This made it important to convey a sense of heritage and belonging.
 
 ![The 360 Farms logo in an inline layout](/_assets/media/360/360-inline.svg)
 
