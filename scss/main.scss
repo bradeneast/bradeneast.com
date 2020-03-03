@@ -186,7 +186,8 @@ video {
         display: none;
     }
 
-    article img {
+    main p img,
+    article .featured-media {
         width: 100vw;
         margin-left: calc(var(--flow-space) * -1);
     }
