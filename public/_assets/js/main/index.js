@@ -28,12 +28,11 @@ for (var i = 0; i < codePens.length; i++) add_cp_fb(codePens[i]);
 
 // get alt attribute from img src
 var images = Array.from(document.getElementsByTagName('img'));
+
 for (var i = 0; i < images.length; i++) {
 
-    var img = images[i];
-
-    img.parentElement.classList.add('has-img');
-    altFromSrc(img);
+    images[i].parentElement.classList.add('has-img');
+    altFromSrc(images[i]);
 
 }
 
