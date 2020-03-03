@@ -2,8 +2,8 @@ $transition-short: 0.28s ease;
 $primary: #ffb547;
 $secondary: #6b81ff;
 $lightgrey: #e0e3e5;
-$mediumgrey: #aaafba;
-$slategrey: #888f9a;
+$mediumgrey: #999ea9;
+$slategrey: #7b889a;
 $darkgrey: #666a75;
 $charcoalgrey: #33343f;
 $border-width: 5px;
@@ -74,7 +74,6 @@ html.dark_mode {
 
 body {
     font-family: $ffb;
-    // letter-spacing: 0.02em;
     min-height: 100vh;
     color: $charcoalgrey;
     line-height: 1.8;
@@ -92,7 +91,7 @@ body {
             "pre_footer main"
             "footer footer";
         gap: $flow-space-paragraph;
-        gap: var(--flow-space);
+        gap: var(--flow-space-paragraph);
     }
 }
 
@@ -105,7 +104,12 @@ nav {
 
 main {
     grid-area: main;
-    max-width: 960px;
+    max-width: 54rem;
+
+    p.has-img ~ p:not(.has-img) {
+        padding: 0 $flow-space-paragraph;
+        padding: 0 var(--flow-space-paragraph);
+    }
 }
 
 #pre_footer {
@@ -137,58 +141,4 @@ video {
     }
 }
 
-@import "posts", "typography", "nav", "buttons", "pre_footer", "footer";
-
-@media screen and (max-width: 72rem) {
-    :root {
-        font-size: 17px;
-        --flow-space: 1rem;
-        --flow-space-paragraph: 2rem;
-    }
-
-    body,
-    .scope_nav {
-        display: block;
-        margin-top: 0;
-    }
-
-    main {
-        margin: $flow-space-section 0;
-    }
-
-    #pre_footer {
-        padding-top: $flow-space-section;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    h4,
-    h5 {
-        font-size: 1rem;
-    }
-
-    pre {
-        font-size: 0.85rem;
-        letter-spacing: -0.02em;
-    }
-
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
-    main p img,
-    article .featured-media {
-        width: 100vw;
-        margin-left: calc(var(--flow-space) * -1);
-    }
-}
+@import "posts", "typography", "nav", "buttons", "pre_footer", "footer", "mobile";

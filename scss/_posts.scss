@@ -19,7 +19,7 @@
 
         &.includes_media {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
             gap: $flow-space-paragraph;
             gap: var(--flow-space-paragraph);
         }
@@ -44,6 +44,11 @@ article {
     .featured-media {
         margin-bottom: $flow-space-paragraph;
         margin-bottom: var(--flow-space-paragraph);
+    }
+
+    p {
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .codepen {

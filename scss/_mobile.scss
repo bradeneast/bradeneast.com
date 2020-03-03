@@ -1,0 +1,47 @@
+@media screen and (max-width: 72rem) {
+    :root {
+        font-size: 17px;
+        --flow-space: 1rem;
+        --flow-space-paragraph: 2rem;
+    }
+
+    body,
+    .scope_nav {
+        display: block;
+        margin-top: 0;
+    }
+
+    main {
+        margin: $flow-space-section auto;
+    }
+
+    #pre_footer {
+        padding-top: $flow-space-section;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4,
+    h5 {
+        font-size: 1rem;
+    }
+
+    pre {
+        font-size: 0.85rem;
+        letter-spacing: -0.02em;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
