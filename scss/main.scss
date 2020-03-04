@@ -50,24 +50,24 @@ html.dark_mode {
     background: $charcoalgrey;
 
     body {
+        background: inherit;
         --primary: #{$secondary};
         color: $lightgrey;
-        background: $charcoalgrey;
+    }
 
-        #dark_mode_toggle {
-            &::after {
-                transform-origin: right;
-                transform: translateX(100%);
-            }
+    #dark_mode_toggle {
+        &::after {
+            transform-origin: right;
+            transform: translateX(100%);
+        }
 
-            &:hover::after,
-            &:focus::after {
-                transform: translateX(100%) scaleX(1.1);
-            }
+        &:hover::after,
+        &:focus::after {
+            transform: translateX(100%) scaleX(1.1);
+        }
 
-            svg {
-                color: currentColor;
-            }
+        svg {
+            color: currentColor;
         }
     }
 }
@@ -77,22 +77,9 @@ body {
     min-height: 100vh;
     color: $charcoalgrey;
     line-height: 1.8;
+    letter-spacing: -0.02em;
     padding: 7vh $flow-space 1rem $flow-space;
     padding: 7vh var(--flow-space) 1rem var(--flow-space);
-}
-
-@supports (display: grid) {
-    body {
-        display: grid;
-        grid-template-columns: minmax(14rem, 17rem) repeat(auto-fit, minmax(36rem, 1fr));
-        grid-template-rows: 1fr auto auto;
-        grid-template-areas:
-            "global_nav main"
-            "pre_footer main"
-            "footer footer";
-        gap: $flow-space-paragraph;
-        gap: var(--flow-space-paragraph);
-    }
 }
 
 nav {
@@ -104,12 +91,7 @@ nav {
 
 main {
     grid-area: main;
-    max-width: 54rem;
-
-    p.has-img ~ p:not(.has-img) {
-        padding: 0 $flow-space-paragraph;
-        padding: 0 var(--flow-space-paragraph);
-    }
+    max-width: 48rem;
 }
 
 #pre_footer {
@@ -141,4 +123,4 @@ video {
     }
 }
 
-@import "posts", "typography", "nav", "buttons", "pre_footer", "footer", "mobile";
+@import "posts", "typography", "nav", "buttons", "pre_footer", "footer", "@media";

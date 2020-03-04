@@ -28,8 +28,6 @@
 
 article {
     .meta {
-        padding-bottom: $flow-space-paragraph;
-        padding-bottom: var(--flow-space-paragraph);
         color: $slategrey;
         line-height: 1.4;
 
@@ -44,11 +42,6 @@ article {
     .featured-media {
         margin-bottom: $flow-space-paragraph;
         margin-bottom: var(--flow-space-paragraph);
-    }
-
-    p {
-        margin-right: auto;
-        margin-left: auto;
     }
 
     .codepen {

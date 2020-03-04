@@ -1,0 +1,90 @@
+@media (prefers-reduced-motion: reduce) {
+    html,
+    body {
+        scroll-behavior: initial;
+    }
+}
+
+@supports (display: grid) {
+    body {
+        display: grid;
+        grid-template-columns: minmax(14rem, 17rem) repeat(auto-fit, minmax(36rem, 1fr));
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+            "global_nav main"
+            "pre_footer main"
+            "footer footer";
+        gap: $flow-space-section;
+    }
+}
+
+@media screen and (max-width: 72rem) {
+    :root {
+        font-size: 17px;
+        --flow-space: 1rem;
+        --flow-space-paragraph: 2rem;
+    }
+
+    body {
+        display: block;
+        line-height: 2;
+    }
+
+    main {
+        margin: $flow-space-section auto;
+
+        p.has-img {
+            width: calc(100% + #{$flow-space * 2});
+            width: calc(100% + var(--flow-space) * 2);
+            margin-left: #{$flow-space * -1};
+            margin-left: calc(var(--flow-space) * -1);
+        }
+
+        p,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            &:not(.has-img) {
+                text-align: initial;
+                padding: 0 !important;
+            }
+        }
+    }
+
+    #pre_footer {
+        padding-top: $flow-space-section;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4,
+    h5 {
+        font-size: 1rem;
+    }
+
+    pre {
+        font-size: 0.85rem;
+        letter-spacing: -0.02em;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scope_nav {
+        display: block;
+        margin-top: 0;
+    }
+}
