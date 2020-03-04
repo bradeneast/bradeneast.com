@@ -38,16 +38,28 @@ export default function includeVariables(page, context = '') {
         if (query.includes('categories')) {
 
             let result = [];
+            let defaults = options?.default?.categories || null;
+            let prepend = '';
+            let append = '';
+            let joinWith = ', ';
+
+            if (defaults) {
+                prepend = defaults?.prepend || prepend;
+                append = defaults?.append || append;
+                joinWith = defaults?.join || joinWith;
+            }
 
             for (let i = 0; i < value.length; i++) {
 
                 let category = value[i];
+
                 let link = [page.parentDir, 'categories', linkify(category)].join('/');
-                result.push(`<a href="/${link}">${category}</a>`);
+
+                result.push(`<a href="/${link}">${prepend + category + append}</a>`);
 
             }
 
-            value = result.join(', ');
+            value = result.join(joinWith);
         }
 
         ctx = ctx.replace(match, value);

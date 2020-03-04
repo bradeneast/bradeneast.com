@@ -61,6 +61,13 @@ export default {
         // video element attributes
         autoPlayVideos: true,
         loopVideos: true,
+        // transform category names and lists
+        categories: {
+            prepend: '#',
+            append: '',
+            split: ', ',
+            join: ' ',
+        },
     },
     /*
     scopes
@@ -98,6 +105,8 @@ export default {
             categories: {
                 categorize: true,
                 useComponent: 'category_feed_with_media',
+                prepend: '#',
+                split: ', ',
             }
         },
     ],

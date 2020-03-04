@@ -58,7 +58,7 @@ export default function getFsInfo({ filename, info }) {
 
                 // Get meta info
                 if (!contentValue || !nameValue) continue;
-                if (nameValue == 'categories') page.categories = contentValue.split(', ');
+                if (nameValue == 'categories') page.categories = contentValue.split(options.default?.categories?.split || ', ');
                 else page[nameValue] = contentValue;
 
             }

@@ -77,7 +77,6 @@ body {
     min-height: 100vh;
     color: $charcoalgrey;
     line-height: 1.8;
-    letter-spacing: -0.01em;
     padding: 7vh $flow-space 1rem $flow-space;
     padding: 7vh var(--flow-space) 1rem var(--flow-space);
 }
@@ -92,6 +91,7 @@ nav {
 main {
     grid-area: main;
     max-width: 48rem;
+    padding-top: 1rem;
 }
 
 #pre_footer {
