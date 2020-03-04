@@ -5,6 +5,12 @@
     }
 }
 
+@media (prefers-contrast: high) {
+    html {
+        filter: contrast(1.2);
+    }
+}
+
 @supports (display: grid) {
     body {
         display: grid;
