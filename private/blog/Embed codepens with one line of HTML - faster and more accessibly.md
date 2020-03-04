@@ -29,7 +29,7 @@ If you're anything like me, you're probably wondering why CodePen chose to inclu
 
 This decision isn't explicitly discussed in their [documentation](https://blog.codepen.io/documentation/features/embedded-pens/), but It's pretty obvious that most of their reasons were for accessibility. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).
 
-<p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
+<p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
   <span>
     See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>) on <a href="https://codepen.io">CodePen</a>.
   </span>

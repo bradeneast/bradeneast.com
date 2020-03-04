@@ -64,12 +64,19 @@ h5 {
     font-size: 1.2rem;
 }
 
-article p:not(.has-img) {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 40rem;
-    text-align: justify;
-    text-justify: newspaper;
+article {
+    h2 {
+        margin: $flow-space-paragraph 0;
+        margin: var(--flow-space-paragraph) 0;
+    }
+
+    & > p:not(.has-img):not([data-slug-hash]) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 40rem;
+        text-align: justify;
+        text-justify: newspaper;
+    }
 }
 
 p {
@@ -129,7 +136,6 @@ blockquote {
     }
 }
 
-/* Code */
 code,
 pre {
     color: #aaafba;
