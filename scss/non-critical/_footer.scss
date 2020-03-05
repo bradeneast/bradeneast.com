@@ -1,3 +1,8 @@
+footer {
+    display: flex;
+    grid-area: footer;
+}
+
 #socials {
     display: flex;
     align-items: flex-end;
@@ -5,6 +10,6 @@
 
     svg {
         width: 1.5em;
-        margin-left: .5em;
+        margin-left: 0.5em;
     }
 }

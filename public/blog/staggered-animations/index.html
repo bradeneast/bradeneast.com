@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
-    <link rel="preload" as="style" href="/_assets/css/non_critical.min.css" type="text/css" onload="this.onload=null;this.rel=`stylesheet`" />
+    <link class="deferredCSS" rel="preload" as="style" href="/_assets/css/non_critical.min.css" type="text/css" />
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
 
@@ -60,11 +60,13 @@
 
     <a style="position: absolute; opacity: .001;" aria-label="skip to main content" href="#main" onclick="function skipLink(e) { var main = document.getElementById('main'); main.setAttribute('tabindex', -1); main.focus() }"></a>
 
+    <div class="nav-wrapper">
     <nav id="nav">
-    <a href="/">About</a>
-    <a href="/blog">Blog</a>
-    <a href="/design">Design</a>
-</nav>
+        <a href="/">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/design">Design</a>
+    </nav>
+</div>
 
     <main id="main">
         <noscript>
@@ -73,7 +75,7 @@
 
         <link rel="preload" as="script" href="https://static.codepen.io/assets/embed/ei.js">
 <link rel="preload" as="script" href="/_assets/js/prism.js">
-<link rel="preload" as="style" href="/_assets/css/prism.min.css" onload="this.onload=null;this.rel=`stylesheet`" type="text/css">
+<link class="deferredCSS" rel="preload" as="style" href="/_assets/css/prism.min.css">
 
 <script defer src="/_assets/js/prism.js"></script>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>

@@ -55,3 +55,8 @@ for (var i = 0; i < anchors.length; i++) {
 // listen for dark mode toggle
 var darkModeToggle = document.getElementById('dark_mode_toggle');
 darkModeToggle.addEventListener('click', toggleDarkMode);
+
+
+// load non critical css
+var links = document.getElementsByClassName('deferredCSS');
+for (var i = 0; i < links.length; i++) links[i].rel = 'stylesheet';

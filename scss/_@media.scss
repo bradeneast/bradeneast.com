@@ -17,8 +17,8 @@
         grid-template-columns: minmax(14rem, 17rem) repeat(auto-fit, minmax(36rem, 1fr));
         grid-template-rows: 1fr auto auto;
         grid-template-areas:
-            "global_nav main"
-            "pre_footer main"
+            "aside main"
+            "aside main"
             "footer footer";
         gap: $flow-space-section;
     }
@@ -34,6 +34,10 @@
     body {
         display: block;
         line-height: 2;
+    }
+
+    nav {
+        position: initial;
     }
 
     main {
@@ -70,7 +74,6 @@
 
     pre {
         font-size: 0.85rem;
-        letter-spacing: -0.02em;
     }
 
     ::-webkit-scrollbar {

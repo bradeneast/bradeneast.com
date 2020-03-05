@@ -21,7 +21,7 @@ h5 {
         &::after {
             content: "";
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 50%;
             width: calc(100% + 1.2em);
             height: calc(100% + 0.5em);
@@ -160,4 +160,9 @@ pre {
     cursor: text;
     padding: 0.1em;
     white-space: normal;
+}
+
+::selection {
+    background: $primary;
+    background: var(--primary);
 }

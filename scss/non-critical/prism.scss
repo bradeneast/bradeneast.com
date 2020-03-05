@@ -3,6 +3,7 @@ pre {
     color: #aaafba;
     background: none;
     font-size: 0.9em;
+    letter-spacing: -0.02em;
     text-align: left;
     font-family: monospace !important;
     white-space: pre-wrap;
@@ -30,7 +31,7 @@ pre {
 .token {
     $hueA: 200;
     $hueB: 180;
-    $hueC: 50;
+    $hueC: 40;
     $sat: 85%;
     $lit: 45%;
 

@@ -1,22 +1,36 @@
 nav {
+    position: sticky;
+    display: grid;
+    place-content: start;
+    place-items: start;
+    top: $flow-space;
+    top: var(--flow-space);
     transform: translateX(#{$flow-space * -2});
     transform: translateX(calc(var(--flow-space) * -2));
 
     a {
-        padding: 0.5em 1em 0.5em #{$flow-space * 2};
-        padding: 0.5em 1em 0.5em calc(var(--flow-space) * 2);
+        display: block;
+        padding-left: #{$flow-space * 2};
+        padding-left: calc(var(--flow-space) * 2);
+        padding-right: 1em;
         border: $border-width $border-style transparent;
         transition: none;
 
         &.active {
+            padding-top: 0.5em;
+            padding-bottom: 0.37em;
+            margin-top: 0.37em;
+            font-family: $ffa;
+            font-size: 1.2em;
+            letter-spacing: 0.05em;
             border-radius: $border-radius;
             border-color: $primary;
             border-color: var(--primary);
+        }
 
-            &:focus,
-            &:hover {
-                border-radius: $border-radius-alt;
-            }
+        &:focus,
+        &:hover {
+            border-radius: $border-radius-alt;
         }
     }
 }

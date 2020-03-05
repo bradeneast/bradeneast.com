@@ -82,26 +82,10 @@ body {
     padding: 7vh var(--flow-space) 1rem var(--flow-space);
 }
 
-nav {
-    display: grid;
-    place-items: start;
-    place-content: start;
-    grid-area: global_nav;
-}
-
 main {
     grid-area: main;
     max-width: 48rem;
-    padding-top: 1rem;
-}
-
-#pre_footer {
-    grid-area: pre_footer;
-}
-
-footer {
-    display: flex;
-    grid-area: footer;
+    padding-top: 0.5rem;
 }
 
 img,
