@@ -26,17 +26,17 @@
     }
 }
 
-article {
-    .meta {
-        color: $slategrey;
-        line-height: 1.4;
+.meta {
+    color: $slategrey;
+    line-height: 1.4;
 
-        a {
-            font-weight: 400;
-            text-decoration: underline;
-        }
+    a {
+        font-weight: 400;
+        text-decoration: underline;
     }
+}
 
+article {
     .meta,
     .cp_embed_wrapper,
     .featured-media {
@@ -77,15 +77,14 @@ article {
         max-width: calc(50% - var(--flow-space-paragraph));
     }
 
+    .name {
+        display: block;
+    }
+
     .label {
         display: block;
         font-weight: 400;
         color: $slategrey;
-    }
-
-    .name {
-        font-family: $ffa;
-        letter-spacing: -0.02em;
     }
 
     a:last-of-type {

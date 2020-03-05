@@ -41,6 +41,20 @@ METROPOLIS
 // }
 
 /*
+PARISIEN NIGHT
+*/
+
+@font-face {
+    font-family: Parisien Night;
+    src: local("Parisien Night"), url("/_assets/fonts/parisien_night/ParisienNight.woff2") format("woff2"),
+        url("/_assets/fonts/parisien_night/ParisienNight.woff") format("woff"),
+        url("/_assets/fonts/parisien_night/ParisienNight.eot") format("eot");
+    font-weight: 500;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
+/*
 HK GROTESK
 */
 

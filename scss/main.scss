@@ -1,20 +1,4 @@
-$transition-short: 0.28s ease;
-$primary: #ffb547;
-$secondary: #6b81ff;
-$lightgrey: #e0e3e5;
-$mediumgrey: #999ea9;
-$slategrey: #7b889a;
-$darkgrey: #666a75;
-$charcoalgrey: #33343f;
-$border-width: 0.25rem;
-$border-style: dotted;
-$border-radius: 3rem 1.5rem 2.5rem 2rem / 2rem 2.5rem 1.5rem 3rem;
-$border-radius-alt: 2rem 2.5rem 1.5rem 3rem / 3rem 1.5rem 2.5rem 2rem;
-$flow-space: 2rem;
-$flow-space-paragraph: 3rem;
-$flow-space-section: 5rem;
-$ffa: "Libre Baskerville", "HK Grotesk", sans-serif;
-$ffb: "HK Grotesk", sans-serif;
+@import "./variables";
 
 :root {
     font-size: 20px;
@@ -53,6 +37,21 @@ html.dark_mode {
         background: inherit;
         --primary: #{$secondary};
         color: $lightgrey;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: 0.06em;
+    }
+
+    p ~ ul li,
+    p ~ ol li {
+        list-style-type: disc;
+        list-style-type: "🌔";
     }
 
     #dark_mode_toggle {
@@ -124,4 +123,4 @@ video {
     }
 }
 
-@import "posts", "typography", "nav", "buttons", "pre_footer", "footer", "@media";
+@import "./typography", "./nav", "./@media";

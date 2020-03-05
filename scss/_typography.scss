@@ -8,8 +8,10 @@ h5 {
     font-family: $ffa;
     line-height: 1.4;
     margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
 
     a {
+        font-weight: inherit;
         z-index: 2;
 
         &::after {
@@ -34,7 +36,7 @@ h5 {
 }
 
 h1.alt,
-p {
+article p {
     margin-bottom: $flow-space-paragraph;
     margin-bottom: var(--flow-space-paragraph);
 }
@@ -45,23 +47,21 @@ h1 {
     margin-bottom: $flow-space-paragraph;
     margin-bottom: var(--flow-space-paragraph);
     font-size: 4rem;
-    letter-spacing: -0.05em;
 }
 
 h2 {
-    letter-spacing: -0.02em;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 h3 {
-    letter-spacing: -0.02em;
     font-size: 1.4rem;
+    letter-spacing: 0.04em;
 }
 
 h4,
 h5 {
-    letter-spacing: -0.01em;
     font-size: 1.2rem;
+    letter-spacing: 0.04em;
 }
 
 article {
@@ -99,7 +99,9 @@ p {
 
         li {
             padding-left: 1em;
+            padding-bottom: 0.5em;
             list-style-type: disc;
+            list-style-type: "🌞";
             list-style-position: outside;
         }
     }

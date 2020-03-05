@@ -80,5 +80,9 @@
     .scope_nav {
         display: block;
         margin-top: 0;
+
+        .name {
+            font-size: 1.6rem;
+        }
     }
 }
