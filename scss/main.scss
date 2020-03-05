@@ -73,6 +73,7 @@ html.dark_mode {
 
 body {
     font-family: $ffb;
+    text-rendering: geometricPrecision;
     min-height: 100vh;
     color: $charcoalgrey;
     line-height: 1.8;
