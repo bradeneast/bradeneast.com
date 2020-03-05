@@ -22,8 +22,8 @@ for (var i = 0; i < navItems.length; i++) {
 
 
 // add codepen fallbacks
-var codePens = Array.from(document.getElementsByClassName('codepen'));
-for (var i = 0; i < codePens.length; i++) add_cp_fb(codePens[i]);
+var pens = Array.from(document.getElementsByClassName('codepen'));
+for (var i = 0; i < pens.length; i++) add_cp_fb(pens[i]);
 
 
 // get alt attribute from img src
@@ -31,8 +31,10 @@ var images = Array.from(document.getElementsByTagName('img'));
 
 for (var i = 0; i < images.length; i++) {
 
-    images[i].parentElement.classList.add('has-img');
-    altFromSrc(images[i]);
+    var img = images[i];
+
+    img.parentElement.classList.add('has-img');
+    altFromSrc(img);
 
 }
 
