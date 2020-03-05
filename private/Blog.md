@@ -5,5 +5,3 @@
         {{ feed_item }}
     </template>
 </ul>
-
-{{ blog_cta }}
