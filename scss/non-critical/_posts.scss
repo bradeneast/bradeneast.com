@@ -30,9 +30,14 @@
     color: $slategrey;
     line-height: 1.4;
 
+    .categories {
+        display: flex;
+    }
+
     a {
         font-weight: 400;
         text-decoration: underline;
+        margin-right: 0.37em;
     }
 }
 

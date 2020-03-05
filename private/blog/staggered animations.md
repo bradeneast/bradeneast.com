@@ -50,7 +50,7 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
 
 </style>
 
-**Simultaneous**
+### Simultaneous
 
 <div class="example-wrapper">
     <div class="example-circle"></div>
@@ -60,7 +60,7 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
     <div class="example-circle"></div>
 </div>
 
-**Staggered**
+### Staggered
 
 <div class="example-wrapper staggered">
     <div class="example-circle"></div>

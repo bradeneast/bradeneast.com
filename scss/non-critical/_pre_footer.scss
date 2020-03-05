@@ -1,3 +1,8 @@
+#contact p {
+    margin-bottom: $flow-space;
+    margin-bottom: var(--flow-space);
+}
+
 #dark_mode_toggle {
     font-size: 2em;
     height: 1em;

@@ -10,6 +10,10 @@ h5 {
     margin-bottom: 0.8rem;
     letter-spacing: 0.02em;
 
+    code {
+        font-size: 0.8em;
+    }
+
     a {
         font-weight: inherit;
         z-index: 2;
@@ -74,8 +78,11 @@ article {
         margin-left: auto;
         margin-right: auto;
         max-width: 40rem;
-        text-align: justify;
-        text-justify: newspaper;
+
+        & ~ ul,
+        & ~ ol {
+            max-width: 40rem;
+        }
     }
 }
 
@@ -93,8 +100,8 @@ p {
 
     & ~ ul,
     & ~ ol {
-        margin: $flow-space-paragraph 0;
-        margin: var(--flow-space-paragraph) 0;
+        margin: $flow-space-paragraph auto;
+        margin: var(--flow-space-paragraph) auto;
         padding-left: 1em;
 
         li {
