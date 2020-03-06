@@ -89,16 +89,6 @@ p {
     font-size: 1rem;
     position: relative;
 
-    a {
-        text-decoration: underline;
-        color: $slategrey;
-
-        &:hover,
-        &:focus {
-            color: inherit;
-        }
-    }
-
     & ~ h4 {
         padding-top: var(--flow-space-paragraph);
     }
@@ -126,6 +116,18 @@ a {
     &:focus {
         color: $primary;
         color: var(--primary);
+    }
+}
+
+p a,
+button.unstyled,
+#skip_link {
+    text-decoration: underline;
+    color: $slategrey;
+
+    &:hover,
+    &:focus {
+        color: inherit;
         text-decoration-color: $primary;
         text-decoration-color: var(--primary);
     }

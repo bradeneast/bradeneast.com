@@ -19,7 +19,7 @@
             }
         </style></noscript></head><body>
 
-    <a style="position: absolute; opacity: .001;" aria-label="skip to main content" href="#main" onclick="function skipLink(e) { var main = document.getElementById('main'); main.setAttribute('tabindex', -1); main.focus() }"></a><div class="nav-wrapper">
+    <a id="skip_link" aria-label="skip to main content" href="#main" onclick="function skipLink(e) { var main = document.getElementById('main'); main.setAttribute('tabindex', -1); main.focus() }">skip to content 👇</a><div class="nav-wrapper">
     <nav id="nav">
         <a href="/">About</a><a href="/blog">Blog</a><a href="/design">Design</a></nav></div><main id="main">
         <noscript>
@@ -39,7 +39,7 @@
     </p><a class="button" href="mailto:bradeneastdesign@gmail.com">Say Hi 👋</a></div><button id="dark_mode_toggle" aria-label="toggle dark mode">
     <svg viewBox="0 0 72 72">
         <path fill="currentColor" d="M61.9,37.61A25.9,25.9,0,1,1,36,11.71,25.9,25.9,0,0,1,61.9,37.61ZM36,1.61a3.58,3.58,0,1,0,3.58,3.57A3.58,3.58,0,0,0,36,1.61ZM7.85,15.16a3.58,3.58,0,1,0,5-.57A3.59,3.59,0,0,0,7.85,15.16ZM.9,45.62a3.58,3.58,0,1,0,2.69-4.29A3.59,3.59,0,0,0,.9,45.62ZM20.38,70a3.58,3.58,0,1,0-1.67-4.78A3.58,3.58,0,0,0,20.38,70Zm31.24,0a3.58,3.58,0,1,0-4.78-1.67A3.58,3.58,0,0,0,51.62,70ZM71.1,45.62a3.58,3.58,0,1,0-4.29,2.69A3.58,3.58,0,0,0,71.1,45.62ZM64.15,15.16a3.58,3.58,0,1,0-.57,5A3.59,3.59,0,0,0,64.15,15.16Z"/></svg><svg viewBox="0 0 72 72">
-        <path fill="currentColor" d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z"/></svg></button><button class="unstyled" id="back_to_top" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+        <path fill="currentColor" d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z"/></svg></button><button class="unstyled" id="back_to_top" aria-label="back to top of page" onclick="window.scrollTo(0,0); document.getElementById('skipLink').focus()">
         back to top 🚀
     </button></div><footer>
 

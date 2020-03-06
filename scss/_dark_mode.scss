@@ -1,0 +1,41 @@
+html.dark_mode {
+    background: $charcoalgrey;
+
+    body {
+        background: inherit;
+        --inverse: #{$charcoalgrey};
+        --primary: #{$secondary};
+        color: $lightgrey;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: 0.06em;
+    }
+
+    p ~ ul li,
+    p ~ ol li {
+        list-style-type: disc;
+        list-style-type: "🌔";
+    }
+
+    #dark_mode_toggle {
+        &::after {
+            transform-origin: right;
+            transform: translateX(100%);
+        }
+
+        &:hover::after,
+        &:focus::after {
+            transform: translateX(100%) scaleX(1.1);
+        }
+
+        svg {
+            color: currentColor;
+        }
+    }
+}

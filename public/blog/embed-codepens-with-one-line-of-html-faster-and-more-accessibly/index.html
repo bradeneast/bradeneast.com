@@ -58,7 +58,7 @@
 
 <body>
 
-    <a style="position: absolute; opacity: .001;" aria-label="skip to main content" href="#main" onclick="function skipLink(e) { var main = document.getElementById('main'); main.setAttribute('tabindex', -1); main.focus() }"></a>
+    <a id="skip_link" aria-label="skip to main content" href="#main" onclick="function skipLink(e) { var main = document.getElementById('main'); main.setAttribute('tabindex', -1); main.focus() }">skip to content 👇</a>
 
     <div class="nav-wrapper">
     <nav id="nav">
@@ -181,7 +181,7 @@
     </svg>
 </button>
 
-    <button class="unstyled" id="back_to_top" aria-label="back to top of page" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)">
+    <button class="unstyled" id="back_to_top" aria-label="back to top of page" onclick="window.scrollTo(0,0); document.getElementById('skipLink').focus()">
         back to top 🚀
     </button>
 
