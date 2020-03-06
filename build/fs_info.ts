@@ -115,13 +115,13 @@ export default function getFsInfo({ filename, info }) {
 
     // Get formatted and unix dates
     {
-        let modified = new Date(info.modified * 1000);
-        let created = new Date(info.created * 1000);
+        page.info.modified = new Date(info.modified * 1000);
+        page.info.created = new Date(info.created * 1000);
         let format = options?.default?.dateFormat || 'toDateString';
 
         if (format) {
-            page.modified = modified[format].apply(modified);
-            page.created = created[format].apply(created);
+            page.modified = page.info.modified[format].apply(page.info.modified);
+            page.created = page.info.created[format].apply(page.info.created);
         }
     }
 

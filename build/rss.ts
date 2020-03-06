@@ -6,7 +6,8 @@ import { pages } from './build.ts';
 export default (scope) => {
 
     let scopedPages = pages.filter(p => p.scopes.some(s => s.target == scope.target));
-    let link = options.paths.root + (scope.rss?.path || scope.target);
+    let link = options.paths.root + (scope.rss?.path || scope.target) + '/feed.xml';
+
     let feed = {
         path: options.paths.dist + (scope.rss?.path || scope.target) + '/feed.xml',
         head: `<?xml version="1.0" encoding="utf-8"?>
@@ -19,12 +20,12 @@ export default (scope) => {
         <atom:link href="${link}" rel="self" type="application/rss+xml" />`,
         items: scopedPages.map(page => `
         <item>
-            <title>${page.title}</title>
+            <title>${page.name}</title>
             <link>${options.paths.root + page.href}</link>
             <guid>${options.paths.root + page.href}</guid>
-            <pubDate>${page.created}</pubDate>
-            ${page.categories.join(' ')}
-            <description>${page.excerpt}</description>
+            <pubDate>${page.info.created.toUTCString()}</pubDate>
+            ${page.categories.map(c => `<category>${c}</category>`).join('\n')}
+            <description>${page.excerpt.replace(/<[^>]+>/g, '').replace(/\&.{1,5};/g, '')}</description>
         </item>`
         ),
         footer: '</channel></rss>',

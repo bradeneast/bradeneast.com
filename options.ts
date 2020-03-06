@@ -18,7 +18,7 @@ export default {
         dist: 'public',
         components: 'components',
         templates: 'templates',
-        root: 'bradeneast.com',
+        root: 'https://bradeneast.com',
     },
     /*
     */
