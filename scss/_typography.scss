@@ -91,6 +91,12 @@ p {
 
     a {
         text-decoration: underline;
+        color: $slategrey;
+
+        &:hover,
+        &:focus {
+            color: inherit;
+        }
     }
 
     & ~ h4 {
@@ -120,6 +126,8 @@ a {
     &:focus {
         color: $primary;
         color: var(--primary);
+        text-decoration-color: $primary;
+        text-decoration-color: var(--primary);
     }
 }
 

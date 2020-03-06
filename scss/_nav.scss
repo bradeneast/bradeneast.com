@@ -10,6 +10,7 @@ nav {
 
     a {
         display: block;
+        color: inherit;
         padding-left: #{$flow-space * 2};
         padding-left: calc(var(--flow-space) * 2);
         padding-right: 1em;
