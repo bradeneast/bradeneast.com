@@ -12,7 +12,7 @@ import processFeeds from './feeds.ts';
 import includeVariables from './variables.ts';
 import applyTemplates from './templates.ts';
 import makeCategoryPages from './categories.ts';
-
+import rss from './rss.ts';
 
 console.time('done');
 
@@ -35,6 +35,15 @@ export let templates = getFsTree(options.paths.templates);
 
 
 async function build() {
+
+
+
+    for (let scope of options.scopes) {
+
+        if (scope?.rss) rss(scope);
+
+    }
+    
 
     // Sort scopes by depth
     let scopes = deepCopy(options.scopes);

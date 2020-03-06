@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+        <channel>
+        <title>Blog of Braden East</title>
+        <link>/blog</link>
+        <description>The blog for dev-signers.</description>
+        <lastBuildDate>Fri, 06 Mar 2020 16:12:59 GMT</lastBuildDate>
+        <atom:link href="/blog" rel="self" type="application/rss+xml" />
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</link>
+            <guid>bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            html performance accessibility
+            <description>When I write for this blog, I usually embed a <a href="https://codepen.io/">CodePen</a> at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.</description>
+        </item>
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/get-img-alt-attribute-automatically-from-src</link>
+            <guid>bradeneast.com/blog/get-img-alt-attribute-automatically-from-src</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            javascript html accessibility
+            <description>I&#39;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#39;m usually adding <code>aria-label</code> and <code>tabindex</code> and <code>role</code> attributes later than I&#39;d like.</description>
+        </item>
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/knobs-and-dials-on-the-web</link>
+            <guid>bradeneast.com/blog/knobs-and-dials-on-the-web</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            html css ui
+            <description>In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</description>
+        </item>
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/staggered-animations</link>
+            <guid>bradeneast.com/blog/staggered-animations</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            ui design css javascript
+            <description>Today, let&#39;s talk about integrating motion into our websites and user interfaces.</description>
+        </item>
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/style-pseudo-elements-with-javascript</link>
+            <guid>bradeneast.com/blog/style-pseudo-elements-with-javascript</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            html css javascript
+            <description>I&#39;m a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#39;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</description>
+        </item>
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/the-simplest-pull-to-refresh</link>
+            <guid>bradeneast.com/blog/the-simplest-pull-to-refresh</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            design ui css
+            <description>Whether you like it or not, pull-to-refresh is here to stay, and it&#39;s something that designers and developers need to have in their reportoire.  While <a href="https://stackoverflow.com/questions/24475792/how-to-use-pull-to-refresh-in-swift">Swift has a native API</a> for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.</description>
+        </item>
+        <item>
+            <title>undefined</title>
+            <link>bradeneast.com/blog/using-noscript</link>
+            <guid>bradeneast.com/blog/using-noscript</guid>
+            <pubDate>Sat Feb 15 2020</pubDate>
+            javascript html accessibility
+            <description><code>&lt;noscript&gt;</code> is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn&#39;t available.</description>
+        </item></channel></rss>

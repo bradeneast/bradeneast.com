@@ -1,0 +1,36 @@
+import options from '../options.ts';
+import { ensureFileSync, writeFileStr } from 'https://deno.land/std/fs/mod.ts';
+import { pages } from './build.ts';
+
+
+export default (scope) => {
+
+    let scopedPages = pages.filter(p => p.scopes.some(s => s.target == scope.target));
+
+    let feed = {
+        path: options.paths.dist + (scope.rss?.path || scope.target) + '/feed.xml',
+        head: `<?xml version="1.0" encoding="utf-8"?>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+        <channel>
+        <title>${scope.rss?.name || scope.target}</title>
+        <link>${scope.rss?.path || scope.target}</link>
+        <description>${scope.rss?.description || ''}</description>
+        <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+        <atom:link href="${scope.rss?.path || scope.target}" rel="self" type="application/rss+xml" />`,
+        items: scopedPages.map(page => `
+        <item>
+            <title>${page.title}</title>
+            <link>${options.paths.root + page.href}</link>
+            <guid>${options.paths.root + page.href}</guid>
+            <pubDate>${page.created}</pubDate>
+            ${page.categories.join(' ')}
+            <description>${page.excerpt}</description>
+        </item>`
+        ),
+        footer: '</channel></rss>',
+    }
+
+    ensureFileSync(feed.path);
+    writeFileStr(feed.path, feed.head + feed.items.join('') + feed.footer);
+
+}

@@ -18,6 +18,7 @@ export default {
         dist: 'public',
         components: 'components',
         templates: 'templates',
+        root: 'bradeneast.com',
     },
     /*
     */
@@ -96,6 +97,11 @@ export default {
             categories: {
                 categorize: true,
                 useComponent: 'category_feed',
+            },
+            rss: {
+                name: 'Blog of Braden East',
+                description: 'The blog for dev-signers.',
+                path: '/blog'
             }
         },
         {
