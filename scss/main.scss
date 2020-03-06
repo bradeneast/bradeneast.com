@@ -1,4 +1,4 @@
-@import "./variables";
+@import "./variables", "./@media";
 
 :root {
     font-size: 20px;
@@ -108,4 +108,4 @@ video {
     }
 }
 
-@import "./typography", "./nav", "./@media";
+@import "./typography", "./nav";
