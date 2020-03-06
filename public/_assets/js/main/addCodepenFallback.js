@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-function add_cp_fb(pen) {
+export default function (pen) {
 
     var codepenio = "https://codepen.io";
     var hash = pen.getAttribute("data-slug-hash");

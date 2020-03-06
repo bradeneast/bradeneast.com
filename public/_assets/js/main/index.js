@@ -1,6 +1,8 @@
 // @ts-nocheck
 // @ts-ignore
-
+import addCodepenFallback from './addCodepenFallback.js';
+import toggleDarkMode from './toggleDarkMode.js';
+import altFromSrc from './altFromSrc.js';
 
 // add active class to appropriate nav item
 var nav = document.getElementById('nav');
@@ -23,7 +25,7 @@ for (var i = 0; i < navItems.length; i++) {
 
 // add codepen fallbacks
 var pens = Array.from(document.getElementsByClassName('codepen'));
-for (var i = 0; i < pens.length; i++) add_cp_fb(pens[i]);
+for (var i = 0; i < pens.length; i++) addCodepenFallback(pens[i]);
 
 
 // get alt attribute from img src
