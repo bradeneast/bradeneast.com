@@ -24,14 +24,15 @@ button,
         background: $primary;
         background: var(--primary);
         border: $border-width $border-style currentColor;
+        border-color: var(--inverse);
         border-radius: $border-radius;
         padding: 0.8em 1em;
         margin-bottom: $flow-space-paragraph;
         margin-bottom: var(--flow-space-paragraph);
-        transition: $transition-short;
 
         &:hover,
         &:focus {
+            border-color: currentColor;
             border-radius: $border-radius-alt;
         }
     }

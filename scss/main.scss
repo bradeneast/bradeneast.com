@@ -3,6 +3,7 @@
 :root {
     font-size: 20px;
     --primary: #{$primary};
+    --inverse: white;
     --flow-space: #{$flow-space};
     --flow-space-paragraph: #{$flow-space-paragraph};
 }
@@ -28,6 +29,7 @@ html,
 body {
     scroll-behavior: smooth;
     background: white;
+    background: var(--inverse);
 }
 
 html.dark_mode {
@@ -35,6 +37,7 @@ html.dark_mode {
 
     body {
         background: inherit;
+        --inverse: #{$charcoalgrey};
         --primary: #{$secondary};
         color: $lightgrey;
     }

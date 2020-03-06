@@ -28,7 +28,6 @@ h5 {
             transform: translate(-50%, -50%);
             border: $border-width $border-style transparent;
             border-radius: $border-radius-alt;
-            transition: $transition-short;
         }
 
         &:hover::after,
@@ -116,7 +115,6 @@ p {
 
 a {
     font-weight: 800;
-    transition: $transition-short;
 
     &:hover,
     &:focus {
