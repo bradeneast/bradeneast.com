@@ -26,66 +26,66 @@
 
 @media screen and (max-width: 72rem) {
     :root {
-        font-size: 17px;
-        --flow-space: 1rem;
-        --flow-space-paragraph: 2rem;
+        font-size: 17px !important;
     }
 
     body {
+        --flow-space: 1rem;
+        --flow-space-paragraph: 2rem;
         display: block;
         line-height: 2;
-    }
 
-    nav {
-        position: initial;
-    }
-
-    main {
-        margin: $flow-space-section auto;
-
-        .has-img {
-            width: calc(100% + #{$flow-space * 2});
-            width: calc(100% + var(--flow-space) * 2);
-            margin-left: #{$flow-space * -1};
-            margin-left: calc(var(--flow-space) * -1);
+        nav {
+            position: initial;
         }
-    }
 
-    #pre_footer {
-        padding-top: $flow-space-section;
-    }
+        main {
+            margin: $flow-space-section auto;
 
-    h1 {
-        font-size: 2.4rem;
-    }
+            .has-img {
+                width: calc(100% + #{$flow-space * 2});
+                width: calc(100% + var(--flow-space) * 2);
+                margin-left: #{$flow-space * -1};
+                margin-left: calc(var(--flow-space) * -1);
+            }
+        }
 
-    h2 {
-        font-size: 1.5rem;
-    }
+        #pre_footer {
+            padding-top: $flow-space-section;
+        }
 
-    h3 {
-        font-size: 1.2rem;
-    }
+        h1 {
+            font-size: 2.4rem;
+        }
 
-    h4,
-    h5 {
-        font-size: 1rem;
-    }
+        h2 {
+            font-size: 1.5rem;
+        }
 
-    pre {
-        font-size: 0.85rem;
-    }
+        h3 {
+            font-size: 1.2rem;
+        }
 
-    ::-webkit-scrollbar {
-        display: none;
-    }
+        h4,
+        h5 {
+            font-size: 1rem;
+        }
 
-    .scope_nav {
-        display: block;
-        margin-top: 0;
+        pre {
+            font-size: 0.85rem;
+        }
 
-        .name {
-            font-size: 1.6rem;
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scope_nav {
+            display: block;
+            margin-top: 0;
+
+            .name {
+                font-size: 1.6rem;
+            }
         }
     }
 }
