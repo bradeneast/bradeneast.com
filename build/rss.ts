@@ -23,7 +23,7 @@ export default (scope) => {
             <title>${page.name}</title>
             <link>${options.paths.root + page.href}</link>
             <guid>${options.paths.root + page.href}</guid>
-            <pubDate>${page.info.created.toUTCString()}</pubDate>
+            <pubDate>${new Date(page.created).toUTCString()}</pubDate>
             ${page.categories.map(c => `<category>${c}</category>`).join('\n')}
             <description>${page.excerpt.replace(/<[^>]+>/g, '').replace(/\&.{1,5};/g, '')}</description>
         </item>`

@@ -35,14 +35,6 @@ export let templates = getFsTree(options.paths.templates);
 
 
 async function build() {
-
-
-
-    for (let scope of options.scopes) {
-
-        if (scope?.rss) rss(scope);
-
-    }
     
 
     // Sort scopes by depth
@@ -52,9 +44,13 @@ async function build() {
 
     // Make categories for scope and apply templates to applicable pages
     for (let i = 0; i < scopes.length; i++) {
+
         let scope = scopes[i];
+
+        if (scope?.rss) rss(scope);
         if (scope?.categories?.categorize) makeCategoryPages(scope);
         applyTemplates(scope);
+
     }
 
 
@@ -62,7 +58,7 @@ async function build() {
     for (let i = 0; i < pages.length; i++) {
 
         let page = pages[i];
-        let reFeed = new RegExp(` ${options.feeds.attribute}="`);
+        let reFeed = new RegExp(` ${options.feeds.attribute}=`, 'gi');
         let destination = [options.paths.dist, page.href, 'index.html'].join('/');
 
         // Include components

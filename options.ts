@@ -75,13 +75,13 @@ export default {
         template name is the file the build will look for in your templates folder
         target indicates where to apply the template (must begin with a leading slash)
         
-        sort
-            lexical (default)  //  alphabetical
-            !lexical  //  reverse alphabetical
+        sort: available for any top-level page property whose value is a string or an integer. See examples below:
+            name (default)  //  alphabetical by name
+            -name  //  reverse alphabetical by name
             created  //  chronological created
-            !created  //  reverse chronological created
+            -created  //  reverse chronological created
             modified  //  chronological last modified
-            !modified  //  reverse chronological last modified
+            -modified  //  reverse chronological last modified
 
         categories indicates whether or not to create a feed page for each category in the target directory  //  defaults to false
     */
@@ -93,7 +93,7 @@ export default {
         {
             templateName: 'post',
             target: '/blog',
-            sort: '!created',
+            sort: '-created',
             categories: {
                 categorize: true,
                 useComponent: 'category_feed',
@@ -107,7 +107,7 @@ export default {
         {
             templateName: 'post',
             target: '/design',
-            sort: 'lexical',
+            sort: 'name',
             categories: {
                 categorize: true,
                 useComponent: 'category_feed_with_media',

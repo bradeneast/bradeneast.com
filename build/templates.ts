@@ -1,23 +1,19 @@
 import { pages, templates } from "./build.ts";
-import { dynamicSort } from "./utils.ts";
-import options from "../options.ts";
-import { readFileStrSync } from 'https://deno.land/std/fs/mod.ts';
+import { dynamicSort, deepCopy } from "./utils.ts";
 
 
 export default function applyTemplates(scope: { target: string; sort?: string; }) {
 
-    let targetPages = pages.filter(page => {
-        return page.scopes.some(p => p.target == scope.target);
-    });
+    let targetPages = pages.filter(page => page?.scopes?.some(p => p.target == scope.target));
+    let startPoint = pages.indexOf(targetPages[0]);
+
+    if (!targetPages.length) return;
 
     // Sort scoped items if a sort order is provided
     if (scope?.sort) {
 
-        let reverse = scope.sort[0] == '!';
-        let order = reverse ? scope.sort.substring(1) : scope.sort;
-
-        if (order.toLowerCase() != 'lexical') targetPages.sort(dynamicSort(order));
-        if (reverse) targetPages.reverse();
+        let order = scope.sort.toLowerCase();
+        targetPages.sort(dynamicSort(order));
 
     }
 
@@ -36,4 +32,6 @@ export default function applyTemplates(scope: { target: string; sort?: string; }
         page.content = before + page.content + after;
 
     }
+
+    pages.splice(startPoint, targetPages.length, ...targetPages);
 }

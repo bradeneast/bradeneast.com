@@ -42,7 +42,7 @@ function deepCopy(object = {}) {
 function linkify(path: string) {
     return encodeURI(
         path
-            .replace(/['"`?!]/g, '')
+            .replace(/['"`?!]|\&.{0,5};/g, '')
             .replace(/[ _,.:+=~*^$@;<>\[\]\(\)\{\}\|]/g, '-')
             .replace(/\-+/g, '-')
             .toLowerCase()
@@ -67,9 +67,11 @@ function dynamicSort(property) {
     return function (a, b) {
 
         let result = 0;
+        let aVal = parseInt(a[property]) || a[property];
+        let bVal = parseInt(b[property]) || b[property];
 
-        if (a[property] < b[property]) result = -1;
-        else if (a[property] > b[property]) result = 1;
+        if (aVal < bVal) result = -1;
+        else if (aVal > bVal) result = 1;
 
         return result * sortOrder;
     }

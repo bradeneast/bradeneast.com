@@ -22,8 +22,12 @@ export default function getFsInfo({ filename, info }) {
         categories: [],
         scopes: [],
         depth: 0,
-        modified: '',
-        created: '',
+        modified: 0,
+        created: 0,
+        date: {
+            created: '',
+            modified: '',
+        },
         info: info,
         next: {},
         prev: {},
@@ -51,15 +55,17 @@ export default function getFsInfo({ filename, info }) {
 
             for (let elem of walkAst(ast)) {
 
-                if (elem.name != 'meta') continue;
+                if (elem.name == 'meta') {
 
-                let nameValue = elem.attrs?.name;
-                let contentValue = elem.attrs?.content;
+                    let nameValue = elem.attrs?.name;
+                    let contentValue = elem.attrs?.content;
 
-                // Get meta info
-                if (!contentValue || !nameValue) continue;
-                if (nameValue == 'categories') page.categories = contentValue.split(options.default?.categories?.split || ', ');
-                else page[nameValue] = contentValue;
+                    // Get meta info
+                    if (!contentValue || !nameValue) continue;
+                    if (nameValue == 'categories') page.categories = contentValue.split(options.default?.categories?.split || ', ');
+                    else page[nameValue] = contentValue;
+
+                }
 
             }
 
@@ -115,14 +121,14 @@ export default function getFsInfo({ filename, info }) {
 
     // Get formatted and unix dates
     {
-        page.info.modified = new Date(info.modified * 1000);
-        page.info.created = new Date(info.created * 1000);
+        let modified = new Date(info.modified * 1000);
+        let created = new Date(info.created * 1000);
         let format = options?.default?.dateFormat || 'toDateString';
 
-        if (format) {
-            page.modified = page.info.modified[format].apply(page.info.modified);
-            page.created = page.info.created[format].apply(page.info.created);
-        }
+        page.modified = modified.getTime();
+        page.created = created.getTime();
+        page.date.modified = modified[format].apply(modified);
+        page.date.created = created[format].apply(created);
     }
 
     return page;

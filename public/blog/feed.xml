@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Fri, 06 Mar 2020 17:43:16 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 07 Mar 2020 21:15:55 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
@@ -17,9 +17,9 @@
             <description>When I write for this blog, I usually embed a CodePen at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.</description>
         </item>
         <item>
-            <title>Get img alt attribute automatically from src</title>
-            <link>https://www.bradeneast.com/blog/get-img-alt-attribute-automatically-from-src</link>
-            <guid>https://www.bradeneast.com/blog/get-img-alt-attribute-automatically-from-src</guid>
+            <title>Get alt value automatically from src attribute</title>
+            <link>https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute</link>
+            <guid>https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute</guid>
             <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
             <category>javascript</category>
 <category>html</category>
@@ -68,7 +68,7 @@
             <description>Whether you like it or not, pull-to-refresh is here to stay, and its something that designers and developers need to have in their reportoire.  While Swift has a native API for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.</description>
         </item>
         <item>
-            <title>Using noscript</title>
+            <title>Using &lt;noscript&gt;</title>
             <link>https://www.bradeneast.com/blog/using-noscript</link>
             <guid>https://www.bradeneast.com/blog/using-noscript</guid>
             <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
