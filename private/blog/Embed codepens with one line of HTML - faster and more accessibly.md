@@ -19,8 +19,8 @@ My biggest complaint is that CodePen embeds feel clunky to use and messy to cust
 
 We get `data` attributes all over the place, a myriad of inline styles, and more that's just plain unnecessary (we'll get to that). CodePen offers an `iframe` option, which is slightly cleaner, but gives us even less control over when and how the pen loads.
 
-This causes a few problems for bloggers/developers wanting to keep their websites clean and performant: 
-1. Standardizing pen styles is difficult because the everthing is set inline (you'll have to use `!important` to override).
+This causes a few problems for bloggers/developers wanting to keep their websites clean and fast: 
+1. Standardizing pen styles is difficult because the everything is set inline (you'll have to use `!important` to override).
 2. Customizing the attribution text requires manual edits and manual updates of each copied embed code.
 3. Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.
 
@@ -44,7 +44,7 @@ Believe it or not, the only absolutely necessary part of a CodePen embed is the 
 <p class="codepen" data-slug-hash="povpQdr"></p>
 ```
 
-We can get away with this if we include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is ***gasp*** DOWN. To remedy that, let's use a small bit Javascript that will add a fallback for us dynamically.
+We can get away with this if we include the [CodePen embed script](https://static.codepen.io/assets/embed/ei.js) (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is ***gasp*** DOWN. To remedy that, let's use a small bit of Javascript that will add a fallback for us dynamically.
 
 ```javascript
 document.querySelectorAll(".codepen").forEach(pen => {
