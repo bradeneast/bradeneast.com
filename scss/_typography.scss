@@ -4,7 +4,7 @@ h3,
 h4,
 h5 {
     position: relative;
-    display: inline-block;
+    // display: inline-block;
     font-family: $ffa;
     line-height: 1.4;
     margin-bottom: 0.8rem;
@@ -68,9 +68,30 @@ h5 {
 }
 
 article {
-    h2 {
-        margin: $flow-space-paragraph 0;
-        margin: var(--flow-space-paragraph) 0;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $flow-space-paragraph;
+        margin-top: var(--flow-space-paragraph);
+
+        & + p {
+            margin-top: $flow-space;
+            margin-top: var(--flow-space);
+        }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
     }
 
     & > p:not(.has-img):not([data-slug-hash]) {
@@ -88,10 +109,6 @@ article {
 p {
     font-size: 1rem;
     position: relative;
-
-    & ~ h4 {
-        padding-top: var(--flow-space-paragraph);
-    }
 
     & ~ ul,
     & ~ ol {
@@ -123,7 +140,7 @@ p a,
 button.unstyled,
 #skip_link {
     text-decoration: underline;
-    color: $slategrey;
+    color: $darkgrey;
 
     &:hover,
     &:focus {
