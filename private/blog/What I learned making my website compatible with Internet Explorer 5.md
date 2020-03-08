@@ -68,7 +68,7 @@ h1 {
 This is probably the most mysterious and elusive error I've encountered while coding. Googling didn't help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.
 
 
-### HTML 5 semantic elements are helpful but also not (IE 8 and below)
+### HTML5 semantic elements aren't semantic?! (IE 8 and below)
 I try to be a responsible developer, so I use semantic elements like `nav`, `article`, and `footer`. I was confused to find that content inside these elements gets unwrapped by Internet Explorer. IE goes looking for the next valid parent up the DOM tree and puts your content there instead.
 
 ```html
