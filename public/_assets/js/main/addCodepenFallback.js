@@ -1,4 +1,16 @@
-// @ts-nocheck
+// @ts-nocheckif (IE) {
+
+var pElems = document.getElementsByTagName('p');
+
+for (var i = 0; i < pElems.length; i++) {
+
+    var p = pElems[i];
+
+    if (p['data-slug-hash'] && p.innerHTML === "") {
+        p.innerHTML = "&#x1F62C; Yikes... this pen isn't available.";
+    }
+
+}
 
 function addCodepenFallback(pen) {
 
