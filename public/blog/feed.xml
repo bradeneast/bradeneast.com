@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Sun, 08 Mar 2020 15:26:59 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2020 17:43:54 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
@@ -78,13 +78,13 @@
             <description>noscript is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isnt available.</description>
         </item>
         <item>
-            <title>Weird things I learned making my website compatible with Internet Explorer 5</title>
-            <link>https://www.bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5</link>
-            <guid>https://www.bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5</guid>
+            <title>What I learned making my website compatible with Internet Explorer 5</title>
+            <link>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</link>
+            <guid>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</guid>
             <pubDate>Sun, 08 Mar 2020 14:06:18 GMT</pubDate>
             <category>html</category>
 <category>css</category>
 <category>javascript</category>
 <category>accessibility</category>
-            <description>This is probably the most mysterious and elusive error Ive encountered while coding. Googling didnt help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.</description>
+            <description>Theres a moment that happens for developers (or maybe just me). Its when you realize that 6 hours has gone by since you started debugging, and youre not sure if you remembered to breathe for most of that. Your neck hurts and your brain is foggy and the only thing that could possibly bring you back to reality is an ice bath of espresso.</description>
         </item></channel></rss>
