@@ -1,6 +1,6 @@
 <meta name="categories" content="html, css, javascript, accessibility">
 <meta name="media" content="/_assets/media/vintage-cassette.jpg">
-<meta name="excerpt" content="Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.">
+<meta name="excerpt" content="There's a moment that happens for developers (or maybe just me). It's when you realize that 6 hours has gone by since you started debugging, and you're not sure if you remembered to breathe for most of that. Let's look at some of the weird and surprising things you might want to know for the making my website work in Internet Explorer 5.">
 
 There's a moment that happens for developers (or maybe just me). It's when you realize that 6 hours has gone by since you started debugging, and you're not sure if you remembered to breathe for most of that. Your neck hurts and your brain is foggy and the only thing that could possibly bring you back to reality is an ice bath of espresso.
 
@@ -10,7 +10,7 @@ When I opened my website in an early version of Internet Explorer, it was *just 
 - IE developer tools are 🐌🐌🐌 (~10s to interactive on a very fast machine and connection)
 - `getElementByID()` and `getElementsByTagName()` are pretty much your only options for selecting elements in the DOM.
 - You WILL get very comfortable writing plain 'ol `for` loops
-- `try`/`catch` is supported?! I thought that was a new thing, but apparently not.
+- - `try`/`catch` is supported?! I thought that was a new thing, but apparently not.
 
 > Side note: There are Javascript transpilers that can usually get you from ES6 to ES3. I frequently use Typescript for other projects, but configuring and managing it would be significant overkill for the 2kb of JS on this website.
 
@@ -40,10 +40,13 @@ button {
 
 
 ### Type Mismatch Error (IE 9 and below)
+
+![type mismatch error in the console](/_assets/media/type-mismatch-error.png)
+
 This is probably the most mysterious and elusive error I've encountered while coding. Googling didn't help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.
 
 
-### Wave goodbye to CSS relative units 👋 (IE 8 and below)
+### Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)
 Enjoy using relative units like `rem`, `vw`, `vh`, `vmin`, `vmax`? Forget about it. You'll become well acquainted with `%` and `px` and `font-size: small`. This was annoying at first, because I use `rem` all over my stylesheets. My solution was to load in a separate stylesheet for 'retro' users, and make a small SCSS function that could convert rem-size numbers to pixels for me.
 
 ```css
@@ -58,7 +61,7 @@ h1 {
 
 
 ### HTML 5 semantic elements are helpful but also not (IE 8 and below)
-I try to be a responsible developer, so I use semantic elements like `nav`, `article`, and `footer`. I was confused to find that content inside these elements gets unwrapped by Internet Explorer. IE goes looking for the next valid parent up the DOM tree and puts it there instead.
+I try to be a responsible developer, so I use semantic elements like `nav`, `article`, and `footer`. I was confused to find that content inside these elements gets unwrapped by Internet Explorer. IE goes looking for the next valid parent up the DOM tree and puts your content there instead.
 
 ```html
 <!-- this -->
