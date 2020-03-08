@@ -13,55 +13,50 @@
                 "match": "\\.ts",
                 "cmd": "deno run --allow-read --allow-write ./build/build.ts",
                 "silent": true
-            },
-            {
-                "match": "\\.js",
-                "cmd": "esbuild --bundle ./public/_assets/js/main/index.js --outdir=./public/_assets/js --minify",
-                "silent": true
             }
         ]
     },
-    // "minify.js": {
-    //     "mangle": true,
-    //     "compress": {
-    //         "sequences": true,
-    //         "properties": true,
-    //         "dead_code": true,
-    //         "drop_debugger": true,
-    //         "unsafe": false,
-    //         "unsafe_comps": false,
-    //         "conditionals": true,
-    //         "comparisons": true,
-    //         "evaluate": true,
-    //         "booleans": true,
-    //         "loops": true,
-    //         "unused": true,
-    //         "hoist_funs": true,
-    //         "keep_fargs": false,
-    //         "keep_fnames": false,
-    //         "hoist_vars": false,
-    //         "if_return": true,
-    //         "join_vars": true,
-    //         "collapse_vars": false,
-    //         "reduce_vars": false,
-    //         "side_effects": true,
-    //         "pure_getters": false,
-    //         "pure_funcs": null,
-    //         "negate_iife": false,
-    //         "drop_console": true,
-    //         "passes": 2,
-    //         "global_defs": {}
-    //     },
-    //     "output": {
-    //         "ascii_only": false,
-    //         "inline_script": false,
-    //         "max_line_len": 32000,
-    //         "braces": false,
-    //         "semicolons": true,
-    //         "comments": false,
-    //         "shebang": true,
-    //         "preamble": null,
-    //         "quote_style": "single"
-    //     }
-    // }
+    "minify.js": {
+        "mangle": true,
+        "compress": {
+            "sequences": true,
+            "properties": true,
+            "dead_code": true,
+            "drop_debugger": true,
+            "unsafe": false,
+            "unsafe_comps": false,
+            "conditionals": true,
+            "comparisons": true,
+            "evaluate": true,
+            "booleans": true,
+            "loops": true,
+            "unused": true,
+            "hoist_funs": true,
+            "keep_fargs": false,
+            "keep_fnames": false,
+            "hoist_vars": false,
+            "if_return": true,
+            "join_vars": true,
+            "collapse_vars": false,
+            "reduce_vars": false,
+            "side_effects": true,
+            "pure_getters": false,
+            "pure_funcs": null,
+            "negate_iife": false,
+            "drop_console": true,
+            "passes": 2,
+            "global_defs": {}
+        },
+        "output": {
+            "ascii_only": false,
+            "inline_script": false,
+            "max_line_len": 32000,
+            "braces": false,
+            "semicolons": true,
+            "comments": false,
+            "shebang": true,
+            "preamble": null,
+            "quote_style": "single"
+        }
+    }
 }

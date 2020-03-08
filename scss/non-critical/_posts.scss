@@ -16,13 +16,6 @@
             border-radius: $border-radius-alt;
             transition: $transition-short;
         }
-
-        &.includes_media {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-            gap: $flow-space-paragraph;
-            gap: var(--flow-space-paragraph);
-        }
     }
 }
 
@@ -48,21 +41,22 @@
 article {
     .meta,
     .cp_embed_wrapper,
-    .featured-media {
+    .featured-media,
+    .codepen {
         margin-bottom: $flow-space-paragraph;
         margin-bottom: var(--flow-space-paragraph);
     }
 
     .codepen {
         width: 100%;
-        margin-bottom: 0;
 
         &::after {
             content: "\1F62C Yikes... this pen isn't available.";
             display: block;
             text-align: center;
             padding: 2em;
-            border: 2px solid currentColor;
+            border: $border-width $border-style currentColor;
+            border-radius: $border-radius-alt;
         }
     }
 

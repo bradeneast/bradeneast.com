@@ -1,0 +1,110 @@
+@import "./variables";
+
+@function rem($n) {
+    @return ($n * 20) + px;
+}
+
+body {
+    padding: 36px;
+
+    #ie_message {
+        display: block;
+    }
+
+    .banner {
+        padding: rem(1);
+        background: $primary;
+    }
+
+    #dark_mode_toggle,
+    #skip_link,
+    #back_to_top {
+        display: none;
+    }
+
+    .nav-wrapper a {
+        text-decoration: underline;
+        margin-right: rem(1);
+    }
+
+    img {
+        max-width: 540px;
+        width: 540px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: 1px;
+        margin-bottom: rem(1);
+    }
+
+    h1 {
+        font-size: rem($h1);
+    }
+
+    h2 {
+        font-size: rem($h2);
+    }
+
+    h3 {
+        font-size: rem($h3);
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: rem($h4-6);
+    }
+
+    .nav-wrapper,
+    .scope-nav,
+    pre,
+    img,
+    p,
+    ol,
+    ul,
+    #pre_footer {
+        margin-bottom: rem(2);
+    }
+
+    code,
+    pre {
+        color: inherit;
+        background: $ultralightgrey;
+        font-weight: 600;
+    }
+
+    pre {
+        padding: rem(2);
+    }
+
+    li .meta a {
+        margin-right: rem(0.37);
+    }
+
+    .codepen {
+        padding: rem(2);
+        border-width: $border-width;
+        border-style: $border-style;
+        border-color: $mediumgrey;
+    }
+
+    #pre_footer {
+        padding-top: rem(2);
+    }
+
+    button {
+        background-color: none;
+        background-image: none;
+        border-image: none;
+        cursor: pointer;
+        border-width: $border-width;
+        border-color: $primary;
+        border-style: $border-style;
+        margin: rem(1) 0;
+    }
+}

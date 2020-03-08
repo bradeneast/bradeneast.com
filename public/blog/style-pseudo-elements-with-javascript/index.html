@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
-    <link class="deferredCSS" rel="preload" as="style" href="/_assets/css/non_critical.min.css" type="text/css" />
+    <link defer="true" rel="preload" as="style" href="/_assets/css/non_critical.min.css" type="text/css" />
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
 
@@ -34,25 +34,38 @@
     </noscript>
 
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
-    <script defer src="/_assets/js/index.min.js"></script>
     <script>
         var dmName = 'dark_mode';
         var dm = localStorage.getItem(dmName);
+        var doc = document.documentElement;
+        var IE = false;
 
         if (dm == null) {
+
             localStorage.setItem(dmName, false);
+
         } else {
-            document.documentElement.classList.toggle(dmName, JSON.parse(dm));
+
+            try {
+
+                doc.classList.toggle(dmName, JSON.parse(dm));
+
+            } catch (e) {
+
+                IE = true;
+
+                var retroModeStyles = document.createElement('link');
+
+                retroModeStyles.rel = 'stylesheet';
+                retroModeStyles.href = '/_assets/css/retro_mode.min.css';
+                retroModeStyles.setAttribute('type', 'text/css');
+
+                doc.appendChild(retroModeStyles);
+
+            }
         }
     </script>
-
-    <noscript>
-        <style>
-            #dark_mode_toggle {
-                display: none;
-            }
-        </style>
-    </noscript>
+    <script defer src="/_assets/js/main.min.js"></script>
 
 </head>
 
@@ -69,13 +82,10 @@
 </div>
 
     <main id="main">
-        <noscript>
-            I don't rely on javascript, but it does give you fun things like <strong>dark mode</strong> and more in the near future.
-        </noscript>
 
         <link rel="preload" as="script" href="https://static.codepen.io/assets/embed/ei.js">
 <link rel="preload" as="script" href="/_assets/js/prism.js">
-<link class="deferredCSS" rel="preload" as="style" href="/_assets/css/prism.min.css">
+<link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css">
 
 <script defer src="/_assets/js/prism.js"></script>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -206,7 +216,51 @@ window.addEventListener(&#39;scroll&#39;, () =&gt; {
 
     <footer>
 
-    &copy; 2020 Braden East
+    <noscript>
+
+    <style>
+        #dark_mode_toggle,
+        #back_to_top,
+        #skip_link {
+            display: none !important;
+        }
+
+        p {
+            max-width: none !important;
+        }
+    </style>
+
+    <div class="banner info">
+        Are you blocking Javascript? I think privacy is awesome too. I don't use cookies, Google scripts, or other forms of tracking, but I do use Javascript to give you fun things like <strong>dark mode</strong>. Happy browsing!
+    </div>
+
+</noscript>
+
+    <div class="banner info" id="ie_message">
+        Are you in Internet Explorer? That's so cool - I love retro stuff too. You can enjoy about 80% of my site with IE. For that extra goodness, use your alternative browser of choice.
+    </div>
+
+    <script>
+        if (IE) {
+
+            var pElems = document.getElementsByTagName('p');
+
+            for (var i = 0; i < pElems.length; i++) {
+
+                var p = pElems[i];
+
+                if (p['data-slug-hash'] && p.innerHTML === "") {
+                    p.innerHTML = "&#x1F62C; Yikes... this pen isn't available.";
+                }
+
+            }
+
+        }
+    </script>
+
+    <div class="copyright">
+        &copy; 2019-2020 Braden East
+    </div>
 
     <div id="socials">
     <a href="https://codepen.io/bradeneast" aria-label="Braden East on CodePen">

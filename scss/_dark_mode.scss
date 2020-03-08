@@ -5,7 +5,14 @@ html.dark_mode {
         background: inherit;
         --inverse: #{$charcoalgrey};
         --primary: #{$secondary};
+        --primary-soft: #{$secondary-soft};
         color: $lightgrey;
+    }
+
+    p a,
+    button.unstyled,
+    #skip_link {
+        color: $mediumgrey;
     }
 
     h1,

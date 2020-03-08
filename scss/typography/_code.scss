@@ -1,0 +1,34 @@
+code,
+pre {
+    color: #aaafba;
+    border-radius: $border-radius;
+    background: none;
+    font-size: 0.9em;
+    letter-spacing: -0.02em;
+    text-align: left;
+    font-family: monospace !important;
+    white-space: pre;
+    word-spacing: normal;
+    overflow-x: auto;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    span {
+        font-family: inherit;
+    }
+}
+
+:not(pre) > code {
+    position: relative;
+    font-family: monospace !important;
+    border-bottom: $border-width $border-style currentColor;
+    border-radius: 0;
+    cursor: text;
+    padding: 0.1em;
+    white-space: normal;
+}

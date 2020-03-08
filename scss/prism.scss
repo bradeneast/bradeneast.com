@@ -1,32 +1,4 @@
-code,
-pre {
-    color: #aaafba;
-    background: none;
-    font-size: 0.9em;
-    letter-spacing: -0.02em;
-    text-align: left;
-    font-family: monospace !important;
-    white-space: pre-wrap;
-    word-spacing: normal;
-    overflow-x: auto;
-    white-space: pre;
-    line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    span {
-        font-family: inherit;
-    }
-}
+@import "./variables";
 
 .token {
     $hueA: 200;
@@ -50,12 +22,9 @@ pre {
     &.tag,
     &.attr-name,
     &.namespace,
-    &.deleted {
-        color: hsl($hueC, $sat, $lit * 1);
-    }
-
+    &.deleted,
     &.function-name {
-        color: hsl($hueB, $sat, $lit * 0.9);
+        color: $primary;
     }
 
     &.boolean,

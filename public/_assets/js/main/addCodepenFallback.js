@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-export default function (pen) {
+function addCodepenFallback(pen) {
 
     var codepenio = "https://codepen.io";
     var hash = pen.getAttribute("data-slug-hash");

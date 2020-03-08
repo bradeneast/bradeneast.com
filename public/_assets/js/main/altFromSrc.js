@@ -1,5 +1,5 @@
 // get image alt text from image src url
-export default function (image) {
+function altFromSrc (image) {
 
     if (!image || !image.getAttribute('src')) return;
 

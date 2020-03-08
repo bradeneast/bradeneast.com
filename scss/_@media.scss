@@ -21,6 +21,23 @@
             "aside main"
             "footer footer";
         gap: $flow-space-section;
+        max-width: none !important;
+        overflow-x: auto;
+    }
+
+    [data-feed] > .includes_media {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: $flow-space-paragraph;
+        gap: var(--flow-space-paragraph);
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: end;
+        gap: $flow-space;
+        gap: var(--flow-space);
     }
 }
 

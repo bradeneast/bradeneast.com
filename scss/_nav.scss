@@ -1,10 +1,13 @@
 nav {
     position: sticky;
-    display: grid;
-    place-content: start;
-    place-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     top: $flow-space;
     top: var(--flow-space);
+    margin-bottom: $flow-space-paragraph;
+    margin-bottom: var(--flow-space-paragraph);
     transform: translateX(#{$flow-space * -2});
     transform: translateX(calc(var(--flow-space) * -2));
 

@@ -1,0 +1,97 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+    position: relative;
+    font-family: $ffa;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
+
+    code {
+        font-size: 0.8em;
+    }
+
+    a {
+        font-weight: inherit;
+        z-index: 2;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: calc(100% + 1.2em);
+            height: calc(100% + 0.5em);
+            transform: translate(-50%, -50%);
+            border: $border-width $border-style transparent;
+            border-radius: $border-radius-alt;
+        }
+
+        &:hover::after,
+        &:focus::after {
+            border-color: $mediumgrey;
+            border-radius: $border-radius;
+        }
+    }
+}
+
+h1.alt,
+article p {
+    margin-bottom: $flow-space-paragraph;
+    margin-bottom: var(--flow-space-paragraph);
+}
+
+h1 {
+    display: block;
+    line-height: 1.1;
+    margin-bottom: $flow-space-paragraph;
+    margin-bottom: var(--flow-space-paragraph);
+    font-size: #{$h1}rem;
+}
+
+h2 {
+    font-size: #{$h2}rem;
+}
+
+h3 {
+    font-size: #{$h3}rem;
+    letter-spacing: 0.04em;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-size: #{$h4-6}rem;
+    letter-spacing: 0.04em;
+}
+
+article {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $flow-space-paragraph;
+        margin-top: var(--flow-space-paragraph);
+
+        & + p {
+            margin-top: $flow-space;
+            margin-top: var(--flow-space);
+        }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
+    }
+}

@@ -3,6 +3,7 @@
 :root {
     font-size: 20px;
     --primary: #{$primary};
+    --primary-soft: #{$primary-soft};
     --inverse: white;
     --flow-space: #{$flow-space};
     --flow-space-paragraph: #{$flow-space-paragraph};
@@ -34,13 +35,15 @@ body {
 
 body {
     font-family: $ffb;
-    text-rendering: geometricPrecision;
-    min-height: 100vh;
     color: $charcoalgrey;
     line-height: 1.8;
     letter-spacing: -0.01em;
+    text-rendering: geometricPrecision;
     padding: 7vh $flow-space 1rem $flow-space;
     padding: 7vh var(--flow-space) 1rem var(--flow-space);
+    min-height: 100vh;
+    max-width: 1080px;
+    overflow-x: hidden;
 }
 
 main {
@@ -83,4 +86,5 @@ video {
     }
 }
 
-@import "./dark_mode", "./typography", "./nav";
+@import "./dark_mode", "./nav";
+@import "./typography/headings", "./typography/general", "./typography/code";

@@ -1,8 +1,20 @@
 // @ts-nocheck
 // @ts-ignore
-import addCodepenFallback from './addCodepenFallback.js';
-import toggleDarkMode from './toggleDarkMode.js';
-import altFromSrc from './altFromSrc.js';
+
+
+// load non critical css
+var links = document.getElementsByTagName('link');
+
+for (var i = 0; i < links.length; i++) {
+
+    var link = links[i];
+
+    if (link['defer'] || link.getAttribute('defer')) {
+
+        link.rel = 'stylesheet';
+
+    }
+}
 
 // add active class to appropriate nav item
 var nav = document.getElementById('nav');
@@ -59,8 +71,3 @@ for (var i = 0; i < anchors.length; i++) {
 // listen for dark mode toggle
 var darkModeToggle = document.getElementById('dark_mode_toggle');
 darkModeToggle.addEventListener('click', toggleDarkMode);
-
-
-// load non critical css
-var links = document.getElementsByClassName('deferredCSS');
-for (var i = 0; i < links.length; i++) links[i].rel = 'stylesheet';
