@@ -3,6 +3,7 @@ footer {
 
     .copyright {
         order: -1;
+        line-height: 1;
     }
 
     .banner {
@@ -21,6 +22,7 @@ footer {
         display: flex;
         align-items: center;
         margin-left: auto;
+        line-height: 0;
 
         svg {
             width: 1.5em;
