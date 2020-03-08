@@ -1,10 +1,9 @@
 <meta name="categories" content="html, css, javascript, accessibility">
 <meta name="media" content="/_assets/media/vintage-cassette.jpg">
-<meta name="excerpt" content="There's a moment that happens for developers (or maybe just me). It's when you realize that 6 hours has gone by since you started debugging, and you're not sure if you remembered to breathe for most of that. Let's look at some of the weird and surprising things you might want to know for the making my website work in Internet Explorer 5.">
 
-There's a moment that happens for developers (or maybe just me). It's when you realize that 6 hours has gone by since you started debugging, and you're not sure if you remembered to breathe for most of that. Your neck hurts and your brain is foggy and the only thing that could possibly bring you back to reality is an ice bath of espresso.
+There's a special moment that happens when you're debugging code. It's when you realize that 6 hours has gone by since you started, and you're not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE.
 
-When I opened my website in an early version of Internet Explorer, it was *just good enough* that I thought "Hey, I can work with this." Many many hours later, I shut off my computer, went for a walk with my wife, and decided not to ever speak of it again. Now I think it might be helpful for somebody if I at least wrote a blog post about it. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.
+When I opened my website with Internet Explorer 5, it was *just good enough* that I thought "Hey, I can work with this." Many many hours later, I shut off my computer, went for a walk with my wife, and decided not to ever speak of it again. Now I think it might be helpful for somebody if I at least wrote a blog post about it. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.
 
 
 
