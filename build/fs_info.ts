@@ -20,6 +20,7 @@ export default function getFsInfo({ filename, info }) {
         parentDir: '/',
         media: options.default.media,
         categories: [],
+        categoriesStr: '',
         scopes: [],
         depth: 0,
         modified: 0,
@@ -62,7 +63,10 @@ export default function getFsInfo({ filename, info }) {
 
                     // Get meta info
                     if (!contentValue || !nameValue) continue;
-                    if (nameValue == 'categories') page.categories = contentValue.split(options.default?.categories?.split || ', ');
+                    if (nameValue == 'categories') {
+                        page.categories = contentValue.split(options.default?.categories?.split || ', ');
+                        page.categoriesStr = page.categories.join(',');
+                    }
                     else page[nameValue] = contentValue;
 
                 }

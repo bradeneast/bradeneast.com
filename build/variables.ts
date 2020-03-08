@@ -35,7 +35,7 @@ export default function includeVariables(page, context = '') {
 
         }
 
-        if (query.includes('categories')) {
+        if (query.toLowerCase() == 'categories') {
 
             let result = [];
             let defaults = options?.default?.categories || null;

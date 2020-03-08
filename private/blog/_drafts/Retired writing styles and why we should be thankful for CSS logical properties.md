@@ -1,19 +1,19 @@
 <meta name="categories" content="design, css, typography" />
 <meta name="media" content="/_assets/media/writing-styles.jpg" />
 
-With the advent of CSS [logical properties](https://css-tricks.com/css-logical-properties/), I think it's important for us to look closer at how and why we lay out text. You won't believe some of the ways language has been written in the past.
+With the advent of CSS [logical properties](https://css-tricks.com/css-logical-properties/), I think it's important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.
 
 This isn't just a history lesson, though. I want to help myself break out of the left-to-right-always-and-forever mindset that limits the creative ways I might otherwise solve layout and design problems. If you're down for that, keep reading.
 
 ## Retired writing styles
-Let's trace modern languages back through history a little ways. Western languages are made up of a Latin character set, which was developed from Greek, which was developed from Phoenician hieroglyphs. We could keep going back, but you probably get the idea. As written language evolved over thousands of years, the letters weren't the only thing that changed.
+Let's trace modern languages back through history a little ways. Western languages are made up of a Latin character set, which was developed from Greek, which was developed from Phoenician hieroglyphs. We could keep going back, but you probably get the idea. As written language evolved, the letters weren't the only thing that changed - the alignment, direction, and flow of information was up for experimentation as well.
 
 
 ### Bou·stro·phe·don
 
 #### Greek | "As the ox plows" 🐮
 
-Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would write one direction on a line of text, and the other direction on the next line.  If there’s a word that means “as the lawn is mowed” it might also be appropriate to describe boustrophedonic scripts.  Here's an example of what boustrophedonic writing would look like on the web:
+Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would write one direction on a line of text, and the other direction on the next line.  If there’s a word that means “as the lawn is mowed” it might also be appropriate to describe boustrophedon scripts.  Here's an example of what boustrophedonic text would look like on the web:
 
 <p class="codepen" data-slug-hash="YzXELwj">
 
@@ -31,7 +31,7 @@ Rongorongo is a form of boustrophedonic writing that was found on Easter Island 
 
 
 ## In the browser
-
+Software performs a significant amount of math to wrap text in a way that's predictable and mimics styles of print.
 
 ## Why does it matter?
 
