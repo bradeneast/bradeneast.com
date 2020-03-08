@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Sun, 08 Mar 2020 15:25:38 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2020 15:26:59 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
@@ -86,5 +86,5 @@
 <category>css</category>
 <category>javascript</category>
 <category>accessibility</category>
-            <description>Recently I was bored and felt like doing something that would make me want to jump off a bridge. Naturally, I decided to visit my personal website in the earliest available version of Internet Explorer. What I saw was terrible, dont get me wrong, but it was just good enough that I thought I can work with this.  So, I embarked on a weekend-long code spree.</description>
+            <description>This is probably the most mysterious and elusive error Ive encountered while coding. Googling didnt help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.</description>
         </item></channel></rss>

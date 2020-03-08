@@ -1,5 +1,5 @@
 <meta name="categories" content="html, css, javascript, accessibility">
-
+<meta name="media" content="/_assets/media/vintage-cassette.jpg">
 Recently I was bored and felt like doing something that would make me want to jump off a bridge. Naturally, I decided to visit my personal website in the earliest available version of Internet Explorer. What I saw was terrible, don't get me wrong, but it was *just good enough* that I thought "I can work with this."  So, I embarked on a weekend-long code spree.
 
 ## Highlights
