@@ -14,7 +14,7 @@ When I opened my website in an early version of Internet Explorer, it was *just 
 - You WILL get very comfortable writing plain 'ol `for` loops
 - `try`/`catch` is supported?! I thought that was a new thing, but apparently not.
 
-> Side note: There are Javascript transpilers that can usually turn ES6 features into something to as early as ES3. I frequently use Typescript to do this in other projects, but configuring and managing it would be significant overkill for the 2kb of JS on this website.
+> Side note: There are Javascript transpilers that can usually turn ES6 features into something to as early as ES3. I use Typescript to do this in other projects, but configuring and managing it would be overkill for the 2kb of JS on this website *imo*.
 
 
 
