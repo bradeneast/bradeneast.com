@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Braden East | Embed codepens with one line of HTML - faster and more accessibly</title>
+    <title>Braden East | Weird things I learned making my website compatible with Internet Explorer 5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="When I write for this blog, I usually embed a CodePen at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.">
+    <meta name="description" content="Recently I was bored and felt like doing something that would make me want to jump off a bridge. Naturally, I decided to visit my personal website in the earliest available version of Internet Explorer. What I saw was terrible, don&#39;t get me wrong, but it was just good enough that I thought &quot;I can work with this.&quot;  So, I embarked on a weekend-long code spree.">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -16,11 +16,11 @@
     <meta property="og:site_name" content="Braden East" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly" />
+    <meta property="og:url" content="https://www.bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="When I write for this blog, I usually embed a CodePen at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features." />
+    <meta property="og:description" content="Recently I was bored and felt like doing something that would make me want to jump off a bridge. Naturally, I decided to visit my personal website in the earliest available version of Internet Explorer. What I saw was terrible, don&#39;t get me wrong, but it was just good enough that I thought &quot;I can work with this.&quot;  So, I embarked on a weekend-long code spree." />
 
-    <link rel="canonical" href="https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly" />
+    <link rel="canonical" href="https://www.bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
@@ -92,19 +92,19 @@
 
 <article>
 
-    <h1 class="title">Embed codepens with one line of HTML - faster and more accessibly</h1>
+    <h1 class="title">Weird things I learned making my website compatible with Internet Explorer 5</h1>
 
     <div class="meta">
 
         <div class="created" aria-label="Date created:">
-            <strong>Created:</strong> Sat Feb 15 2020
+            <strong>Created:</strong> Sun Mar 08 2020
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Modified:</strong> Sat Mar 07 2020
+            <strong>Modified:</strong> Sun Mar 08 2020
         </div>
 
-        <p class="categories" aria-label="Categories:"><a href="/blog/categories/html">#html</a> <a href="/blog/categories/performance">#performance</a> <a href="/blog/categories/accessibility">#accessibility</a></p>
+        <p class="categories" aria-label="Categories:"><a href="/blog/categories/html">#html</a> <a href="/blog/categories/css">#css</a> <a href="/blog/categories/javascript">#javascript</a> <a href="/blog/categories/accessibility">#accessibility</a></p>
 
     </div>
 
@@ -114,55 +114,53 @@
 
     </div>
 
-    <p>When I write for this blog, I usually embed a <a href="https://codepen.io/">CodePen</a> at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.</p><blockquote>
-<p>The puzzle video game <em><a href="https://en.wikipedia.org/wiki/Narbacular_Drop">Narbacular Drop</a></em> was released in 2005. After the game&#39;s release, Valve hired several <em>Narbacular Drop</em> developers to help create <em><a href="https://en.wikipedia.org/wiki/Portal_(video_game)">Portal</a></em>.</p></blockquote><p class="codepen" data-slug-hash="povpQdr">
+    <p>Recently I was bored and felt like doing something that would make me want to jump off a bridge. Naturally, I decided to visit my personal website in the earliest available version of Internet Explorer. What I saw was terrible, don&#39;t get me wrong, but it was <em>just good enough</em> that I thought &quot;I can work with this.&quot;  So, I embarked on a weekend-long code spree.</p><h2 id="highlights">Highlights</h2><ul>
+<li>IE developer tools are 🐌🐌🐌</li><li><code>getElementByID()</code> and <code>getElementsByTagName()</code> are pretty much your only options for selecting elements.</li><li>You WILL get very comfortable writing plain &#39;ol <code>for</code> loops</li><li><code>try</code>/<code>catch</code> is supported?!</li></ul><h2 id="other-weird-ie-things">Other weird IE things</h2><h3 id="type-mismatch-error">Type Mismatch Error</h3><p>This is probably the most mysterious and elusive error I&#39;ve encountered while coding. Googling didn&#39;t help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.</p><h3 id="css-units">CSS Units</h3><p>Enjoy using relative units like <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>? Forget about it. You&#39;ll become well acquainted with <code>%</code> and <code>px</code> and <code>font-size: small</code>. This was annoying at first, because I use <code>rem</code> all over my stylesheets. My solution was to load in a separate stylesheet for &#39;retro&#39; users, and make a small SCSS function that could convert rem-size numbers to pixels for me.</p><pre><code class="language-css">@function rem($n) {
+    @return ($n * 20) + px;
+}
 
-<p>My biggest complaint is that CodePen embeds feel clunky to use and messy to customize. Here&#39;s the copy-and-paste code they provide by default.</p><pre><code class="language-html">&lt;p class=&quot;codepen&quot; data-height=&quot;265&quot; data-default-tab=&quot;result&quot; data-user=&quot;bradeneast&quot; data-slug-hash=&quot;povpQdr&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;Pure CSS 3D Portal Companion Cube&quot;&gt;
-  &lt;span&gt;
-    See the Pen &lt;a href=&quot;https://codepen.io/bradeneast/pen/povpQdr&quot;&gt;Pure CSS 3D Portal Companion Cube&lt;/a&gt; by Braden (&lt;a href=&quot;https://codepen.io/bradeneast&quot;&gt;@bradeneast&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-  &lt;/span&gt;
-&lt;/p&gt;
-&lt;script async src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</code></pre><p>We get <code>data</code> attributes all over the place, a myriad of inline styles, and more that&#39;s just plain unnecessary (we&#39;ll get to that). CodePen offers an <code>iframe</code> option, which is slightly cleaner, but gives us even less control over when and how the pen loads.</p><p>This causes a few problems for bloggers/developers wanting to keep their websites clean and fast: </p><ol>
-<li>Standardizing pen styles is difficult because the everything is set inline (you&#39;ll have to use <code>!important</code> to override).</li><li>Customizing the attribution text requires manual edits and manual updates of each copied embed code.</li><li>Only one embed script is necessary to load multiple pens on a page. Directly pasting more than one pen means several duplicate scripts that the browser has to parse and run.</li></ol><h2 id="guessing-the-reasons">Guessing the reasons</h2><p>If you&#39;re anything like me, you&#39;re probably wondering why CodePen chose to include all that extra code.</p><p>This decision isn&#39;t explicitly discussed in their <a href="https://blog.codepen.io/documentation/features/embedded-pens/">documentation</a>, but It&#39;s pretty obvious that most of their reasons were for accessibility. CodePens that encounter a network error will gracefully fall back to a contentful bordered box (see below).</p><p data-height="265" data-default-tab="result" data-user="bradeneast" data-slug-hash="povpQdr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; padding: 1em;" data-pen-title="Pure CSS 3D Portal Companion Cube">
-  <span>
-    See the Pen <a href="https://codepen.io/bradeneast/pen/povpQdr">Pure CSS 3D Portal Companion Cube</a> by Braden (<a href="https://codepen.io/bradeneast">@bradeneast</a>) on <a href="https://codepen.io">CodePen</a>.
-  </span></p><p>That&#39;s a nice feature, but <a href="https://www.matuzo.at/blog/improving-the-keyboard-accessibility-of-codepen-embeds/">some have pointed out</a> that CodePen embeds still have room to grow when it comes to accessibility. This post focuses on how we can improve our own experience significantly without compromising that of our readers.</p><h2 id="my-solution">My solution</h2><p>Believe it or not, the only absolutely necessary part of a CodePen embed is the <code>data-slug-hash</code> attribute, so we can technically whittle the whole thing down to one line of HTML.</p><pre><code class="language-html">&lt;p class=&quot;codepen&quot; data-slug-hash=&quot;povpQdr&quot;&gt;&lt;/p&gt;</code></pre><p>We can get away with this if we include the <a href="https://static.codepen.io/assets/embed/ei.js">CodePen embed script</a> (~5kb) on every page. However, we pay the price with an empty space when Javascript is blocked or CodePen is <strong><em>gasp</em></strong> DOWN. To remedy that, let&#39;s use a small bit of Javascript that will add a fallback for us dynamically.</p><pre><code class="language-javascript">document.querySelectorAll(&quot;.codepen&quot;).forEach(pen =&gt; {
+h1 {
+    font-size: rem(4); /* 80px */
+}</code></pre><h3 id="html-5-semantic-elements-are-helpful-but-also-not">HTML 5 semantic elements are helpful but also not</h3><p>I try to be a responsible developer, so I use semantic elements like <code>nav</code>, <code>article</code>, and <code>footer</code>. I was confused to find that content inside these elements gets unwrapped by Internet Explorer. IE goes looking for the next valid parent up the DOM tree and puts it there instead.</p><pre><code class="language-html">&lt;!-- this --&gt;
 
-    const codePen = &quot;https://codepen.io/&quot;;
-    const hash = pen.getAttribute(&quot;data-slug-hash&quot;);
-    const user = pen.getAttribute(&quot;data-user&quot;);
-    const fallback = document.createElement(&#39;p&#39;);
+&lt;footer&gt;
+    © 2020 Dev-Signers, Inc.
+&lt;/footer&gt;
 
-    if (hash) fallback.innerHTML += `View &lt;a href=&quot;${codePen}pen/${hash}&quot;&gt;this pen&lt;/a&gt;`;
-    if (hash &amp;&amp; user) fallback.innerHTML += ` by &lt;a href=&quot;${codePen + user}&quot;&gt;@${user}&lt;/a&gt;`;
+&lt;!-- becomes this --&gt;
 
-    fallback.classList.add(&#39;codepen-fallback&#39;);
-    fallback.innerHTML = hash || user ? fallback.innerHTML + &quot; on CodePen.&quot; : &quot;This pen is unavailable.&quot;;
-    pen.insertAdjacentElement(&quot;afterend&quot;, fallback);
+&lt;footer&gt;&lt;/footer&gt;
+© 2020 Dev-Signers, Inc.
+&lt;footer&gt;&lt;//footer&gt;</code></pre><p><em>Here&#39;s a list of HTML5 elements that won&#39;t work in Internet Explorer. See <a href="https://caniuse.com/#feat=html5semantic">caniuse.com</a> for details</em></p><ul>
+<li><code>section</code></li><li><code>article</code></li><li><code>aside</code></li><li><code>header</code></li><li><code>footer</code></li><li><code>nav</code></li><li><code>figure</code></li><li><code>figcaption</code></li><li><code>time</code></li><li><code>mark</code></li><li><code>main</code></li></ul><h3 id="css-variablescustom-properties">CSS Variables/Custom Properties</h3><p>As in the example earlier, I discovered that <a href="https://sass-lang.com/documentation/variables">SCSS variables</a> and functions are your friend when it comes to supporting IE. They compile down to vanilla CSS, which is fantastic.</p><p>Sometimes, we&#39;re planning on changing or overriding CSS custom properties later from a user interaction. Relying only on SCSS variables (which compile to static values), will keep modern browsers from getting the full functionality. That&#39;s fine! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it&#39;s easy to provide a static value as a fallback.</p><pre><code class="language-css">$primary: red;
 
-})</code></pre><p>Now we can see a link to the pen regardless of its status. If something goes wrong, our fallback text will indicate what was supposed to happen. To really put a bow on this solution, we can even add a placeholder to the <code>.codepen</code> element for <a href="/blog/using-noscript">noscript situations</a>.</p><pre><code class="language-css">.codepen::after {
-    content: &quot;Whoops! This pen is unavailable.&quot;;
-    display: block;
-    font-style: italic;
-    text-align: center;
-    padding: 2em;
-    border: 2px solid currentColor;
-}</code></pre><p>This works because the CodePen embed script replaces the original <code>.codepen</code> element with an <code>iframe</code>. If all scripts are blocked, the element remains and shows our message.</p><p>Now you can enjoy writing one-line CodePen embeds that are fully customizable and easy to maintain!</p></p>
+body {
+    --primary: #{$primary};
+}
+
+body.dark_mode {
+    --primary: blue; /* color will change for users with modern browsers */
+}
+
+button {
+    color: $primary; /* fallback value if no custom property support */
+    color: var(--primary);
+}</code></pre>
 
     <p id="blog_cta">
-    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/share?text=This%20was%20a%20great%20read!&url=https://bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly">share it</a> with your friends.
+    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/share?text=This%20was%20a%20great%20read!&url=https://bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5">share it</a> with your friends.
 </p>
 
 </article>
 
 <div class="scope_nav">
-    <a href="/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5">
+    <a href="undefined">
         <span class="label">Previous</span>
-        <h4 class="name">Weird things I learned making my website compatible with Internet Explorer 5</h4>
+        <h4 class="name">undefined</h4>
     </a>
-    <a href="/blog/get-alt-value-automatically-from-src-attribute">
+    <a href="/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly">
         <span class="label">Next</span>
-        <h4 class="name">Get alt value automatically from src attribute</h4>
+        <h4 class="name">Embed codepens with one line of HTML - faster and more accessibly</h4>
     </a>
 </div>
 

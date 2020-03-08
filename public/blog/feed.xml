@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Sun, 08 Mar 2020 14:03:57 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2020 15:25:38 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
@@ -76,4 +76,15 @@
 <category>html</category>
 <category>accessibility</category>
             <description>noscript is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isnt available.</description>
+        </item>
+        <item>
+            <title>Weird things I learned making my website compatible with Internet Explorer 5</title>
+            <link>https://www.bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5</link>
+            <guid>https://www.bradeneast.com/blog/weird-things-i-learned-making-my-website-compatible-with-internet-explorer-5</guid>
+            <pubDate>Sun, 08 Mar 2020 14:06:18 GMT</pubDate>
+            <category>html</category>
+<category>css</category>
+<category>javascript</category>
+<category>accessibility</category>
+            <description>Recently I was bored and felt like doing something that would make me want to jump off a bridge. Naturally, I decided to visit my personal website in the earliest available version of Internet Explorer. What I saw was terrible, dont get me wrong, but it was just good enough that I thought I can work with this.  So, I embarked on a weekend-long code spree.</description>
         </item></channel></rss>

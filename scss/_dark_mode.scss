@@ -24,8 +24,8 @@ html.dark_mode {
         letter-spacing: 0.06em;
     }
 
-    p ~ ul li,
-    p ~ ol li {
+    article ul li,
+    article ol li {
         list-style-type: disc;
         list-style-type: "🌔";
     }
