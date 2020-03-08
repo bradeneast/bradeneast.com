@@ -23,7 +23,7 @@ When I opened my website in an early version of Internet Explorer, it was *just 
 ### CSS Variables/Custom Properties (IE 11 and below)
 I discovered that [SCSS variables](https://sass-lang.com/documentation/variables) and functions are your friend when it comes to supporting IE. They compile down to vanilla CSS, which is fantastic.
 
-Sometimes, we're planning on changing or overriding CSS custom properties later from a user interaction. Relying only on SCSS variables (which compile to static values), will keep modern browsers from getting the full functionality. That's fine! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it's easy to provide a static value as a fallback.
+That's great, but sometimes we're planning on changing or overriding CSS custom properties later from a user interaction. SCSS variables (which compile to static values), can't do that. That's okay! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it doesn't hurt anything to use them, as long as you provide a static value as a fallback.
 
 ```css
 $primary: red;
