@@ -78,7 +78,7 @@ export default function getFsInfo({ filename, info }) {
 
 
     // Excerpt
-    {
+    if (!page.excerpt) {
 
         let length = options?.feeds?.excerpts?.length;
 
@@ -121,14 +121,16 @@ export default function getFsInfo({ filename, info }) {
 
     // Get formatted and unix dates
     {
-        let modified = new Date(info.modified * 1000);
-        let created = new Date(info.created * 1000);
         let format = options?.default?.dateFormat || 'toDateString';
 
-        page.modified = modified.getTime();
-        page.created = created.getTime();
-        page.date.modified = modified[format].apply(modified);
-        page.date.created = created[format].apply(created);
+        ['created', 'modified'].map(prop => {
+
+            let date = page[prop] ? new Date(page[prop]) : new Date(info[prop] * 1000);
+
+            page.date[prop] = date[format].apply(date);
+            page[prop] = date.getTime();
+
+        })
     }
 
     return page;
