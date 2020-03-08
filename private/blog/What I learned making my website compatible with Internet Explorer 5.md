@@ -10,7 +10,7 @@ When I opened my website in an early version of Internet Explorer, it was *just 
 - IE developer tools are 🐌🐌🐌 (~10s to interactive on a very fast machine and connection)
 - `getElementByID()` and `getElementsByTagName()` are pretty much your only options for selecting elements in the DOM.
 - You WILL get very comfortable writing plain 'ol `for` loops
-- - `try`/`catch` is supported?! I thought that was a new thing, but apparently not.
+- `try`/`catch` is supported?! I thought that was a new thing, but apparently not.
 
 > Side note: There are Javascript transpilers that can usually get you from ES6 to ES3. I frequently use Typescript for other projects, but configuring and managing it would be significant overkill for the 2kb of JS on this website.
 
