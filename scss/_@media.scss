@@ -52,6 +52,12 @@
         display: block;
         line-height: 2;
 
+        img,
+        svg,
+        video {
+            border-radius: 0;
+        }
+
         nav {
             position: initial;
         }

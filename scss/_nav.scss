@@ -8,14 +8,14 @@ nav {
     top: var(--flow-space);
     margin-bottom: $flow-space-paragraph;
     margin-bottom: var(--flow-space-paragraph);
-    transform: translateX(#{$flow-space * -2});
-    transform: translateX(calc(var(--flow-space) * -2));
+    transform: translateX(#{$flow-space-paragraph * -2});
+    transform: translateX(calc(var(--flow-space-paragraph) * -2));
 
     a {
         display: block;
         color: inherit;
-        padding-left: #{$flow-space * 2};
-        padding-left: calc(var(--flow-space) * 2);
+        padding-left: #{$flow-space-paragraph * 2};
+        padding-left: calc(var(--flow-space-paragraph) * 2);
         padding-right: 1em;
         border: $border-width $border-style transparent;
         transition: none;

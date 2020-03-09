@@ -65,6 +65,10 @@ video {
     object-fit: cover;
 }
 
+img {
+    border-radius: $border-radius-alt;
+}
+
 ::-webkit-scrollbar {
     appearance: none;
     background: none;
