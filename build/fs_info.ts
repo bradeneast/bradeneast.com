@@ -56,6 +56,10 @@ export default function getFsInfo({ filename, info }) {
 
             for (let elem of walkAst(ast)) {
 
+                if (elem.name == 'p' && elem?.attrs?.class == 'codepen') {
+                    elem.attrs['data-theme-id'] = options.default?.codePenTheme || 'dark';
+                }
+
                 if (elem.name == 'meta') {
 
                     let nameValue = elem.attrs?.name;
@@ -63,11 +67,13 @@ export default function getFsInfo({ filename, info }) {
 
                     // Get meta info
                     if (!contentValue || !nameValue) continue;
+
                     if (nameValue == 'categories') {
                         page.categories = contentValue.split(options.default?.categories?.split || ', ');
                         page.categoriesStr = page.categories.join(',');
+                    } else {
+                        page[nameValue] = contentValue;
                     }
-                    else page[nameValue] = contentValue;
 
                 }
 
