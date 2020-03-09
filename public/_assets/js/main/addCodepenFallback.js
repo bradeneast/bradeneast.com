@@ -6,9 +6,10 @@ for (var i = 0; i < pElems.length; i++) {
 
     var p = pElems[i];
 
-    if (p['data-slug-hash'] && p.innerHTML === "") {
-        p.innerHTML = "&#x1F62C; Yikes... this pen isn't available.";
-    }
+    if (!p['data-slug-hash']) continue;
+    if (p.innerHTML == "") p.innerHTML = "&#x1F62C; Yikes... this pen isn't available.";
+
+    addCodepenFallback(p)
 
 }
 
@@ -45,7 +46,7 @@ function addCodepenFallback(pen) {
 
     }
 
-    fallback.classList.add('codepen-fallback');
+    addClass(fallback, 'codepen-fallback');
     fallback.innerHTML += " on CodePen.";
     pen.insertAdjacentElement("afterend", fallback);
 
