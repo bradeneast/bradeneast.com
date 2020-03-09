@@ -8,7 +8,7 @@ When I opened my website with Internet Explorer 5, it was *just good enough* tha
 
 
 ## Highlights
-- IE developer tools are 🐌🐌🐌 (~10s to interactive on a very fast machine and connection)
+- IE developer tools are 🐌🐌🐌 (~10s to first interactive on a fast machine and connection)
 - `getElementByID()` and `getElementsByTagName()` are pretty much your only options for selecting elements in the DOM.
 - You WILL get very comfortable writing plain 'ol `for` loops
 - `try`/`catch` is supported?! I thought that was a new thing, but apparently not.

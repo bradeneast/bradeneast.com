@@ -1,5 +1,6 @@
 <meta name="categories" content="javascript, html, accessibility" />
 <meta name="media" content="/_assets/media/polaroids.jpg" />
+<meta name="created" content="Tue Feb 11 2020" />
 
 I'm sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I'm usually adding `aria-label` and `tabindex` and `role` attributes later than I'd like.
 
