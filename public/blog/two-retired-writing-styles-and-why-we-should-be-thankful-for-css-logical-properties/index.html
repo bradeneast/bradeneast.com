@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Braden East | What I learned making my website compatible with Internet Explorer 5</title>
+    <title>Braden East | Two retired writing styles and why we should be thankful for CSS logical properties</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE.">
+    <meta name="description" content="With the advent of CSS logical properties, I think it&#39;s important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -16,11 +16,11 @@
     <meta property="og:site_name" content="Braden East" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5" />
+    <meta property="og:url" content="https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE." />
+    <meta property="og:description" content="With the advent of CSS logical properties, I think it&#39;s important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web." />
 
-    <link rel="canonical" href="https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5" />
+    <link rel="canonical" href="https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
@@ -92,76 +92,51 @@
 
 <article>
 
-    <h1 class="title">What I learned making my website compatible with Internet Explorer 5</h1>
+    <h1 class="title">Two retired writing styles and why we should be thankful for CSS logical properties</h1>
 
     <div class="meta">
 
         <div class="created" aria-label="Date created:">
-            <strong>Created:</strong> Sun Mar 08 2020
+            <strong>Created:</strong> Tue Mar 10 2020
         </div>
 
         <div class="modified" aria-label="Date modified:">
             <strong>Modified:</strong> Sun Mar 08 2020
         </div>
 
-        <p class="categories" aria-label="Categories:"><a href="/blog/categories/html">#html</a> <a href="/blog/categories/css">#css</a> <a href="/blog/categories/javascript">#javascript</a> <a href="/blog/categories/accessibility">#accessibility</a></p>
+        <p class="categories" aria-label="Categories:"><a href="/blog/categories/design">#design</a> <a href="/blog/categories/css">#css</a> <a href="/blog/categories/typography">#typography</a></p>
 
     </div>
 
     <div class="featured-media" aria-label="Featured media:">
 
-        <img src="/_assets/media/vintage-cassette.jpg" alt="" />
+        <img src="/_assets/media/hebrew-text.jpg" alt="" />
 
     </div>
 
-    <p>There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE.</p><p>When I opened my website with Internet Explorer 5, it was <em>just good enough</em> that I thought &quot;Hey, I can work with this.&quot; Many many hours later, I shut off my computer, went for a walk with my wife, and decided not to ever speak of it again. Now I think it might be helpful for somebody if I at least wrote a blog post about it. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.</p><h2 id="highlights">Highlights</h2><ul>
-<li>IE developer tools are 🐌🐌🐌 (~10s to interactive on a very fast machine and connection)</li><li><code>getElementByID()</code> and <code>getElementsByTagName()</code> are pretty much your only options for selecting elements in the DOM.</li><li>You WILL get very comfortable writing plain &#39;ol <code>for</code> loops</li><li><code>try</code>/<code>catch</code> is supported?! I thought that was a new thing, but apparently not.</li></ul><blockquote>
-<p>Side note: There are Javascript transpilers that can usually turn ES6 features into something to as early as ES3. I use Typescript to do this in other projects, but configuring and managing it would be overkill for the 2kb of JS on this website <em>imo</em>.</p></blockquote><h2 id="moderately-weird-ie-things">Moderately weird IE things</h2><h3 id="css-variablescustom-properties-ie-11-and-below">CSS Variables/Custom Properties (IE 11 and below)</h3><p>I discovered that <a href="https://sass-lang.com/documentation/variables">SCSS variables</a> and functions are your friend when it comes to supporting IE. They compile down to vanilla CSS, which is fantastic.</p><p>That&#39;s great, but sometimes we&#39;re planning on changing or overriding CSS custom properties later from a user interaction. SCSS variables (which compile to static values), can&#39;t do that. That&#39;s okay! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it doesn&#39;t hurt anything to use them, as long as you provide a static value as a fallback.</p><pre><code class="language-css">$primary: red;
+    <p>With the advent of CSS <a href="https://css-tricks.com/css-logical-properties/">logical properties</a>, I think it&#39;s important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.</p><p>This isn&#39;t just a history lesson, though. I want to help myself break out of the left-to-right-always-and-forever mindset that limits the creative ways I might otherwise solve layout and design problems. If you&#39;re down for that, keep reading.</p><h2 id="retired-writing-styles">Retired writing styles</h2><p>Let&#39;s trace modern languages back through history a little ways. Western languages are made up of a Latin character set, which was developed from Greek, which was developed from Phoenician hieroglyphs. We could keep going back, but you probably get the idea. As written language evolved, the letters weren&#39;t the only thing that changed - the alignment, direction, and flow of information was up for experimentation as well.</p><h3 id="bou·stro·phe·don">Bou·stro·phe·don</h3><h4 id="greek--as-the-ox-plows-🐮">Greek | &quot;As the ox plows&quot; 🐮</h4><p>Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would write one direction on a line of text, and the other direction on the next line.  If there’s a word that means “as the lawn is mowed” it might also be appropriate to describe boustrophedon scripts.  Here&#39;s an example of what boustrophedonic text would look like on the web:</p><p class="codepen" data-slug-hash="YzXELwj" data-theme-id="dark">
 
-body {
-    --primary: #{$primary};
-}
 
-body.dark_mode {
-    --primary: blue; /* color will change for users with modern browsers */
-}
+<h3 id="ron·go·ron·go">Ron·go·ron·go</h3><h4 id="rapanui--easter-island-script-🗿">Rapanui | Easter Island Script 🗿</h4><p>Rongorongo is a form of boustrophedonic writing that was found on Easter Island in the 1800’s.  It reads left-to-right starting at the bottom line working its way up. Here&#39;s the catch: it is written upside-down on every other line, in this pattern: left-to-right right-side-up, right-to-left upside-down, and so on...</p><p class="codepen" data-slug-hash="PoqOmmb" data-theme-id="dark">
 
-button {
-    color: $primary; /* fallback value if no custom property support */
-    color: var(--primary);
-}</code></pre><h3 id="wave-goodbye-to-most-css-relative-units-👋-ie-8-and-below">Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)</h3><p>Enjoy using relative units like <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>? Forget about it. You&#39;ll become well acquainted with <code>%</code> and <code>px</code> and <code>font-size: small</code>. This was annoying at first, because I use <code>rem</code> all over my stylesheets. My solution was to load in a separate stylesheet for &#39;retro&#39; users, and make a small SCSS function that could convert rem-size numbers to pixels for me.</p><pre><code class="language-css">@function rem($n) {
-    @return ($n * 20) + px;
-}
 
-h1 {
-    font-size: rem(4); /* 80px */
-}</code></pre><h2 id="very-weird-ie-things">Very weird IE things</h2><h3 id="type-mismatch-error-ie-9-and-below">Type Mismatch Error (IE 9 and below)</h3><p><img src="/_assets/media/type-mismatch-error.png" alt="type mismatch error in the console"/></p><p>This is probably the most mysterious and elusive error I&#39;ve encountered while coding. Googling didn&#39;t help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.</p><h3 id="html5-semantic-elements-arent-semantic-ie-8-and-below">HTML5 semantic elements aren&#39;t semantic?! (IE 8 and below)</h3><p>I try to be a responsible developer, so I use semantic elements like <code>nav</code>, <code>article</code>, and <code>footer</code>. I was confused to find that content inside these elements gets unwrapped by Internet Explorer. IE goes looking for the next valid parent up the DOM tree and puts your content there instead.</p><pre><code class="language-html">&lt;!-- this --&gt;
 
-&lt;footer&gt;
-    © 2020 Dev-Signers, Inc.
-&lt;/footer&gt;
-
-&lt;!-- becomes this --&gt;
-
-&lt;footer&gt;&lt;/footer&gt;
-© 2020 Dev-Signers, Inc.
-&lt;footer&gt;&lt;//footer&gt;</code></pre><p><em>Here&#39;s a list of HTML5 elements that won&#39;t work in Internet Explorer. See <a href="https://caniuse.com/#feat=html5semantic">caniuse.com</a> for details.</em></p><ul>
-<li><code>section</code></li><li><code>article</code></li><li><code>aside</code></li><li><code>header</code></li><li><code>footer</code></li><li><code>nav</code></li><li><code>figure</code></li><li><code>figcaption</code></li><li><code>time</code></li><li><code>mark</code></li><li><code>main</code></li></ul>
+<h2 id="in-the-browser">In the browser</h2><p>Software performs a significant amount of math to wrap text in a way that&#39;s predictable and mimics styles of print.</p><h2 id="why-does-it-matter">Why does it matter?</h2><p>Writing/reading direction also <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00109/full">impacts our abstraction</a> of time into space. In other words, the way you and I might use hierarchy and flow in a design could be somewhat foreign to an East-Asian audience. Even with English as a second language, cultures with bi-directional writing systems do spatial reasoning differently from western cultures. Progress is naturally expected to happen from bottom-to-top or left-to-right. Designing wholistically with these considerations in mind is a mountain to climb on its own.</p><p><img src="/_assets/media/andy-barefoot-screengrab.jpg" alt="A screenshot from Andy Barefoot&#39;s &quot;off-the-page&quot; website"/></p><p>One of my favorite examples is <a href="http://andybarefoot.com/">Andy Barefoot</a>, who specializes in eccentric layouts, and making them semantic, accessible, and user-friendly. The web is a place where we have unlimited freedom to experiment and create. We can lay out our user interfaces in an infinite number of ways with an infinite volume of content. That kind of &quot;see what sticks&quot; experimentation is what led to the diverse creativity we have today, and I think we should do our best to embrace it.</p></p></p>
 
     <p id="blog_cta">
-    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=What I learned making my website compatible with Internet Explorer 5%0a&url=https://bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5&via=bradenthehair&hashtags=html,css,javascript,accessibility">share it</a> with your friends.
+    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Two retired writing styles and why we should be thankful for CSS logical properties%0a&url=https://bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties&via=bradenthehair&hashtags=design,css,typography">share it</a> with your friends.
 </p>
 
 </article>
 
 <div class="scope_nav">
-    <a href="/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties">
+    <a href="undefined">
         <span class="label">Previous</span>
-        <h4 class="name">Two retired writing styles and why we should be thankful for CSS logical properties</h4>
+        <h4 class="name">undefined</h4>
     </a>
-    <a href="/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly">
+    <a href="/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5">
         <span class="label">Next</span>
-        <h4 class="name">Embed codepens with one line of HTML - faster and more accessibly</h4>
+        <h4 class="name">What I learned making my website compatible with Internet Explorer 5</h4>
     </a>
 </div>
 
