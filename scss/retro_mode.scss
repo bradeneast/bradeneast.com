@@ -1,11 +1,14 @@
 @import "./variables";
 
+$rem: 20;
+
 @function rem($n) {
-    @return ($n * 20) + px;
+    @return ($n * $rem) + px;
 }
 
 body {
-    padding: 36px;
+    padding: 10%;
+    font-size: $rem;
 
     #ie_message {
         display: block;
