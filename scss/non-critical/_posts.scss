@@ -40,7 +40,6 @@
 
 article {
     .meta,
-    .cp_embed_wrapper,
     .featured-media,
     .codepen {
         margin-bottom: $flow-space-paragraph;
@@ -62,6 +61,11 @@ article {
 
     .codepen-fallback {
         margin-top: 0;
+    }
+
+    .cp_embed_wrapper {
+        margin-bottom: $flow-space;
+        margin-bottom: var(--flow-space);
     }
 
     .cp_embed_iframe {
