@@ -80,9 +80,12 @@ function dynamicSort(property) {
 
 function matchBetween(str: string, a, b) {
 
-    const first = typeof a == 'number' ? a : str.indexOf(a) + a.length;
-    const last = typeof b == 'number' ? b : str.indexOf(b, first);
-    const match = str.substring(first, last);
+    let first = typeof a == 'number' ? a : str.indexOf(a) + a.length;
+    let last = typeof b == 'number' ? b : str.indexOf(b, first);
+
+    if (first <= a.length - 1) return null;
+
+    let match = str.substring(first, last);
 
     return match.length ? match : null;
 }

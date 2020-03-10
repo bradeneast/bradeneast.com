@@ -13,7 +13,8 @@ function search(value, inArray, { matchProps } = {}) {
 
         props.map(prop => {
 
-            if (search.test(obj[prop])) results.push(obj);
+            var value = valueIn(obj, prop);
+            if (search.test(value)) results.push(obj);
 
         })
 
@@ -29,7 +30,6 @@ document.addEventListener('keyup', (e) => {
     if (e.target.id == 'search' && !IE) {
 
         resultListElem.querySelectorAll('li').forEach(item => item.remove());
-        if (!e.target.value.length) return;
 
         sitemap.then(pages => {
 
@@ -37,7 +37,7 @@ document.addEventListener('keyup', (e) => {
                 { matchProps: ['name', 'categories.names'] }
             );
 
-            results.map(page => {
+            [...new Set(results)].map(page => {
 
                 var template = document.importNode(resultTemplate.content, true);
                 var li = template.firstElementChild;

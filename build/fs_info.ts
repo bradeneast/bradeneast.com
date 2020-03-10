@@ -99,7 +99,7 @@ export default function getFsInfo({ filename, info }) {
                             page.categories.links += `<a href="/${link}">${category}</a>`;
 
                         })
-                            
+
                     } else {
 
                         page[nameValue] = contentValue;
