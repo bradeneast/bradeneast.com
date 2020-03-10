@@ -12,6 +12,7 @@ import processFeeds from './feeds.ts';
 import includeVariables from './variables.ts';
 import applyTemplates from './templates.ts';
 import makeCategoryPages from './categories.ts';
+import makeSitemap from './sitemap.ts';
 import rss from './rss.ts';
 
 console.time('done');
@@ -79,6 +80,9 @@ async function build() {
         writeFileStrSync(destination, '<!DOCTYPE html>' + page.content);
 
     }
+
+    // Make sitemap
+    makeSitemap();
 
 }
 

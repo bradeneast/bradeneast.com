@@ -7,6 +7,7 @@ export default {
     homepage  //  the name of the homepage file needs to be specified so its index.html is placed at the root of the distribution folder. this option distinguishes it from other top-level pages in the source folder.
     */
     homepage: 'About',
+    sitemap: true,
     /*
     src  //  the private folder where page edits are made
     dist  //  the folder where the compiled site is published (edits made in this folder will be lost unless the ignore character is present at the beginning of the file/directory name)
