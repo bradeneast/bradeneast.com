@@ -4,24 +4,35 @@ var resultTemplate = document.getElementById('search_result_template');
 
 function search(value, inArray, { matchProps } = {}) {
 
-    var search = new RegExp(value, 'gi');
-    var results = [];
+    let search = new RegExp(value, 'gi');
+    let results = [];
 
     inArray.map(obj => {
 
-        var props = matchProps || Object.keys(obj);
+        let props = matchProps || Object.keys(obj);
 
         props.map(prop => {
 
-            var value = valueIn(obj, prop);
-            if (search.test(value)) results.push(obj);
+            let value = valueIn(obj, prop);
+            let match = value.match(search);
+
+            if (search.test(value)) {
+
+                let result = {
+                    content: obj,
+                    match: match
+                }
+
+                if (results.indexOf(result) > -1) return;
+
+                results.push(result);
+            }
 
         })
 
     })
 
     return results;
-
 }
 
 
@@ -29,25 +40,31 @@ document.addEventListener('keyup', (e) => {
 
     if (e.target.id == 'search' && !IE) {
 
+        // clear previous search results
         resultListElem.querySelectorAll('li').forEach(item => item.remove());
 
         sitemap.then(pages => {
 
-            var results = search(e.target.value, pages,
-                { matchProps: ['name', 'categories.names'] }
+            // get matching pages from sitemap
+            let results = search(e.target.value, pages,
+                { matchProps: ['name'] }
             );
 
-            [...new Set(results)].map(page => {
+            // populate result template with new info for each page
+            results.map(result => {
 
-                var template = document.importNode(resultTemplate.content, true);
-                var li = template.firstElementChild;
-                var variableMatches = li.innerHTML.match(/result\..+?(?!\w|\.)/g) || [];
+                let page = result.content;
+                let match = result.match;
 
-                variableMatches.map(match => {
+                if (page.parentDir.split('/').pop() == 'categories') return;
 
-                    var value = valueIn(page, match.replace('result.', ''));
-                    li.innerHTML = li.innerHTML.replace(match, value);
+                let template = document.importNode(resultTemplate.content, true);
+                let li = template.firstElementChild;
+                let dynamicMatches = li.innerHTML.match(/result\..+?(?!\w|\.)/g) || [];
 
+                dynamicMatches.map(variable => {
+                    let value = valueIn(page, variable.replace('result.', ''));
+                    li.innerHTML = li.innerHTML.replace(variable, value);
                 })
 
                 resultListElem.appendChild(template);

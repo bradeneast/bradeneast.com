@@ -43,7 +43,7 @@
             "pure_getters": false,
             "pure_funcs": null,
             "negate_iife": false,
-            "drop_console": true,
+            "drop_console": false,
             "passes": 2,
             "global_defs": {}
         },
