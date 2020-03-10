@@ -5,7 +5,7 @@ import { pages } from './build.ts';
 export default function makeSitemap() {
 
     let sitemap = [options.paths.dist, 'sitemap.json'].join('/');
-    let ignore = ['content', 'info', 'excerpt', 'description'];
+    let ignore = ['content', 'info', 'excerpt', 'description', 'scopes', 'ext'];
 
     function cleanup(key, value) {
 
