@@ -18,7 +18,7 @@ export default function makeCategoryPages(scope) {
         let scopeMatch = page.scopes.find(s => s.target == scope.target);
         if (!scopeMatch) continue;
 
-        let newCategories = page.categories.filter(c => !categories.includes(c));
+        let newCategories = page.categories.names.filter(c => !categories.includes(c));
         if (newCategories) categories = categories.concat(newCategories);
 
     }

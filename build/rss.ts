@@ -24,7 +24,7 @@ export default (scope) => {
             <link>${options.paths.root + page.href}</link>
             <guid>${options.paths.root + page.href}</guid>
             <pubDate>${new Date(page.created).toUTCString()}</pubDate>
-            ${page.categories.map(c => `<category>${c}</category>`).join('\n')}
+            ${page.categories.names.map(c => `<category>${c}</category>`).join('\n')}
             <description>${page.excerpt.replace(/<[^>]+>/g, '').replace(/\&.{1,5};/g, '')}</description>
         </item>`
         ),

@@ -22,7 +22,7 @@ export default function processFeeds(page) {
         if (feedFrom.includes('/categories/')) {
 
             feedFrom = feedFrom.split('/categories/').pop();
-            targetPages = pages.filter(page => page.categories.some(c => linkify(c) == feedFrom));
+            targetPages = pages.filter(page => page.categories.names.some(c => linkify(c) == feedFrom));
 
         } else {
 

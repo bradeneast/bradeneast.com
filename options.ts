@@ -113,8 +113,6 @@ export default {
             categories: {
                 categorize: true,
                 useComponent: 'category_feed_with_media',
-                prepend: '#',
-                split: ', ',
             }
         },
     ],

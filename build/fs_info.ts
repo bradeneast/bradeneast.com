@@ -19,8 +19,11 @@ export default function getFsInfo({ filename, info }) {
         href: '/',
         parentDir: '/',
         media: options.default.media,
-        categories: [],
-        categoriesStr: '',
+        categories: {
+            names: [],
+            string: '',
+            links: '',
+        },
         scopes: [],
         depth: 0,
         modified: 0,
@@ -40,6 +43,22 @@ export default function getFsInfo({ filename, info }) {
         let [name, ...extension] = info.name.split('.');
         page.name = name;
         page.ext = extension.join('.').toLowerCase();
+    }
+
+
+    // Get href and parentDir from filename
+    if (page.name != options.homepage) {
+
+        let pathArray = filename.split('/');
+        let path = deepCopy(page.name);
+
+        if (pathArray.length > 2) {
+            page.parentDir = pathArray.slice(1, -1).join('/');
+            path = [page.parentDir, page.name].join('/');
+        }
+
+        page.href = '/' + linkify(path);
+        page.depth = pathArray?.length || 0;
     }
 
 
@@ -69,10 +88,22 @@ export default function getFsInfo({ filename, info }) {
                     if (!contentValue || !nameValue) continue;
 
                     if (nameValue == 'categories') {
-                        page.categories = contentValue.split(options.default?.categories?.split || ', ');
-                        page.categoriesStr = page.categories.join(',');
+
+                        page.categories.names = contentValue.split(options.default?.categories?.split || ', ');
+                        page.categories.string = contentValue;
+
+                        page.categories.names.map(category => {
+
+                            let link = [page.parentDir, 'categories', linkify(category)].join('/');
+
+                            page.categories.links += `<a href="/${link}">${category}</a>`;
+
+                        })
+                            
                     } else {
+
                         page[nameValue] = contentValue;
+
                     }
 
                 }
@@ -98,22 +129,6 @@ export default function getFsInfo({ filename, info }) {
             page.excerpt = matchBetween(page.content, '<p>', '</p>') || '';
         }
 
-    }
-
-
-    // Get href and parentDir from filename
-    if (page.name != options.homepage) {
-
-        let pathArray = filename.split('/');
-        let path = deepCopy(page.name);
-
-        if (pathArray.length > 2) {
-            page.parentDir = pathArray.slice(1, -1).join('/');
-            path = [page.parentDir, page.name].join('/');
-        }
-
-        page.href = '/' + linkify(path);
-        page.depth = pathArray?.length || 0;
     }
 
 
