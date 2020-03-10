@@ -74,11 +74,13 @@
     <a id="skip_link" aria-label="skip to main content" href="#main" onclick="function skipLink(e) { var main = document.getElementById('main'); main.setAttribute('tabindex', -1); main.focus() }">skip to content 👇</a>
 
     <div class="nav-wrapper" aria-label="navigation">
+
     <nav id="nav">
         <a href="/">About</a>
         <a href="/blog">Blog</a>
         <a href="/design">Design</a>
     </nav>
+
 </div>
 
     <main id="main">
@@ -86,6 +88,27 @@
         <h1 id="probably-a-404">Probably a 404?</h1>
 <h2 id="my-bad---that-page-isnt-here-right-now">My bad - that page isn&#39;t here right now.</h2>
 <p>📬️ Let me know if there&#39;s something I can help you find. <a href="mailto:bradeneastdesign@gmail.com">BradenEastDesign@gmail.com</a></p>
+<p><div class="search-wrapper">
+
+    <input type="text" placeholder="Search this site" name="search" id="search">
+
+    <ul id="search_results">
+        <template id="search_result_template">
+            <li>
+
+                <h3><a href="result.href">result.name</a></h3>
+
+                <p>result.excerpt</p>
+
+                <div class="meta">
+                    <p class="categories">result.categories.links</p>
+                </div>
+
+            </li>
+        </template>
+    </ul>
+
+</div></p>
 
 
     </main>
