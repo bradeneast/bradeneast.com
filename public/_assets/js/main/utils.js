@@ -4,3 +4,14 @@ function addClass(elem, className) {
     elem.setAttribute('class', classList + ' ' + className);
 
 }
+
+function valueIn(object, query = '') {
+
+    var props = query.split('.');
+    var value = { ...object };
+
+    props.map(prop => value = value[prop]);
+
+    return value;
+
+}
