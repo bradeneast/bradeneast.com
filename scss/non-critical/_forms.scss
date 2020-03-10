@@ -1,0 +1,55 @@
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+    touch-action: manipulation;
+}
+
+input[type="text"] {
+    padding: 1em;
+    font-size: inherit;
+    border: $border-width $border-style $primary;
+    border-color: var(--primary);
+    border-radius: $border-radius;
+    width: 100%;
+    background: none;
+}
+
+#search {
+    margin-top: $flow-space;
+    margin-top: var(--flow-space);
+    margin-bottom: $flow-space-section;
+}
+
+button,
+.button {
+    display: inline-block;
+    position: relative;
+    background: none;
+    box-shadow: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+
+    &:not(.unstyled) {
+        color: inherit;
+        background: $primary;
+        background: var(--primary);
+        border: $border-width $border-style currentColor;
+        border-color: var(--inverse);
+        border-radius: $border-radius;
+        padding: 0.8em 1em;
+        margin-bottom: $flow-space-paragraph;
+        margin-bottom: var(--flow-space-paragraph);
+
+        &:hover,
+        &:focus {
+            border-color: currentColor;
+            border-radius: $border-radius-alt;
+        }
+    }
+}

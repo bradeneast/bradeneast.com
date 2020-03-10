@@ -22,3 +22,11 @@ $h1: 4;
 $h2: 2.1;
 $h3: 1.6;
 $h4-6: 1.4;
+
+:root {
+    --primary: #{$primary};
+    --primary-soft: #{$primary-soft};
+    --inverse: white;
+    --flow-space: #{$flow-space};
+    --flow-space-paragraph: #{$flow-space-paragraph};
+}
