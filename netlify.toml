@@ -2,3 +2,7 @@
   from = "/*"
   to = "/404/"
   status = 404
+
+  from = "/about"
+  to = "/"
+  status = 301
