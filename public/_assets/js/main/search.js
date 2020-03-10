@@ -4,6 +4,8 @@ var resultTemplate = document.getElementById('search_result_template');
 
 function search(value, inArray, { matchProps } = {}) {
 
+    if (!value.length) return;
+
     let search = new RegExp(value, 'gi');
     let results = [];
 
