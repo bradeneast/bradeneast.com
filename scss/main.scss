@@ -33,7 +33,8 @@ body {
     color: $charcoalgrey;
     line-height: 1.8;
     letter-spacing: -0.01em;
-    text-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smooth: subpixel-antialiased;
     padding: 7vh $flow-space 1rem $flow-space;
     padding: 7vh var(--flow-space) 1rem var(--flow-space);
     min-height: 100vh;
