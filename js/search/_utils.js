@@ -1,11 +1,4 @@
-function addClass(elem, className) {
-
-    var classList = elem.getAttribute('class');
-    elem.setAttribute('class', classList + ' ' + className);
-
-}
-
-function valueIn(object, query = '') {
+export function valueIn(object, query = '') {
 
     var props = query.split('.');
     var value = { ...object };
@@ -21,7 +14,7 @@ function valueIn(object, query = '') {
 
 }
 
-function search(value, inArray, matchProps) {
+export function search(value, inArray, matchProps) {
 
     if (!value.length) return;
 

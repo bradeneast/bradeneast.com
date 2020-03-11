@@ -1,9 +1,5 @@
 // open external links in a new tab
-var anchors = document.getElementsByTagName('a');
-
-for (var i = 0; i < anchors.length; i++) {
-
-    var a = anchors[i];
+export default (a) => {
 
     if (!(new RegExp(location.origin, 'i').test(a.href))) {
         a.target = '_blank';

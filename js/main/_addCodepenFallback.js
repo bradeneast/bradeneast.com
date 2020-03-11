@@ -1,19 +1,6 @@
-// @ts-nocheckif (IE) {
+// @ts-nocheck
 
-var pElems = document.getElementsByTagName('p');
-
-for (var i = 0; i < pElems.length; i++) {
-
-    var p = pElems[i];
-
-    if (!p['data-slug-hash']) continue;
-    if (p.innerHTML == "") p.innerHTML = "&#x1F62C; Yikes... this pen isn't available.";
-
-    addCodepenFallback(p)
-
-}
-
-function addCodepenFallback(pen) {
+export default (pen) => {
 
     var codepenio = "https://codepen.io";
     var hash = pen.getAttribute("data-slug-hash");
