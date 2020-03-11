@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Wed, 11 Mar 2020 21:41:31 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Mar 2020 21:57:36 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
@@ -66,6 +66,16 @@
 <category>ui</category>
 <category>css</category>
             <description>Whether you like it or not, pull-to-refresh is here to stay, and its something that designers and developers need to have in their reportoire.  While Swift has a native API for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.</description>
+        </item>
+        <item>
+            <title>Two retired writing styles and why we should be thankful for CSS logical properties</title>
+            <link>https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties</link>
+            <guid>https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties</guid>
+            <pubDate>Tue, 10 Mar 2020 05:00:00 GMT</pubDate>
+            <category>design</category>
+<category>css</category>
+<category>typography</category>
+            <description>With the advent of CSS logical properties, I think its important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.</description>
         </item>
         <item>
             <title>Using &lt;noscript&gt;</title>
