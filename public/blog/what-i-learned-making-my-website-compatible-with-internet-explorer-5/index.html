@@ -131,7 +131,7 @@ body.dark_mode {
 button {
     color: $primary; /* fallback value if no custom property support */
     color: var(--primary);
-}</code></pre><h3 id="2-wave-goodbye-to-most-css-relative-units-👋-ie-8-and-below">2. Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)</h3><p>Enjoy using relative units like <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>? Forget about it. You&#39;ll become well acquainted with <code>%</code> and <code>px</code> and <code>font-size: small</code>. This was annoying at first, because I use <code>rem</code> all over my stylesheets. My solution was to load in a separate stylesheet for &#39;retro&#39; users, and make a small SCSS function that could convert rem-size numbers to pixels for me.</p><pre><code class="language-css">@function rem($n) {
+}</code></pre><h3 id="1-wave-goodbye-to-most-css-relative-units-👋-ie-8-and-below">1. Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)</h3><p>Enjoy using relative units like <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>? Forget about it. You&#39;ll become well acquainted with <code>%</code> and <code>px</code> and <code>font-size: small</code>. This was annoying at first, because I use <code>rem</code> all over my stylesheets. My solution was to load in a separate stylesheet for &#39;retro&#39; users, and make a small SCSS function that could convert rem-size numbers to pixels for me.</p><pre><code class="language-css">@function rem($n) {
     @return ($n * 20) + px;
 }
 

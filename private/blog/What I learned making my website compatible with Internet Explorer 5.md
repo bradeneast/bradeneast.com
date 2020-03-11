@@ -42,7 +42,7 @@ button {
 ```
 
 
-### 2. Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)
+### 1. Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)
 Enjoy using relative units like `rem`, `vw`, `vh`, `vmin`, `vmax`? Forget about it. You'll become well acquainted with `%` and `px` and `font-size: small`. This was annoying at first, because I use `rem` all over my stylesheets. My solution was to load in a separate stylesheet for 'retro' users, and make a small SCSS function that could convert rem-size numbers to pixels for me.
 
 ```css
