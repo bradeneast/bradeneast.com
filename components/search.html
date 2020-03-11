@@ -1,21 +1,19 @@
-<div class="search-wrapper">
+<div id="search_wrapper">
 
-    <input type="text" placeholder="Search this site" name="search" id="search">
+    <input type="text" placeholder="Search this site" name="search" id="search" onkeyup="handleSearchInput(this.value)">
 
     <ul id="search_results">
-        <template id="search_result_template">
-            <li>
+        <li id="search_result_template">
 
-                <h3><a href="result.href">result.name</a></h3>
+            <h2><a href="result.href">result.name</a></h2>
 
-                <p>result.excerpt</p>
+            <p>result.excerpt</p>
 
-                <div class="meta">
-                    <p class="categories">result.categories.links</p>
-                </div>
+            <div class="meta">
+                <p class="categories">result.categories.links</p>
+            </div>
 
-            </li>
-        </template>
+        </li>
     </ul>
 
 </div>

@@ -1,6 +1,4 @@
 // @ts-nocheck
-
-// listen for dark mode toggle
 var darkModeToggle = document.getElementById('dark_mode_toggle');
 
 function toggleDarkMode() {
@@ -14,8 +12,5 @@ function toggleDarkMode() {
 
 }
 
-if (darkModeToggle.addEventListener) {
-    darkModeToggle.addEventListener('click', toggleDarkMode);
-} else if (darkModeToggle.attachEvent) {
-    darkModeToggle.attachEvent('onclick', toggleDarkMode);
-}
+// listen for dark mode toggle
+darkModeToggle.addEventListener('click', toggleDarkMode);

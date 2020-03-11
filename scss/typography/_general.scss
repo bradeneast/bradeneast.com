@@ -29,6 +29,10 @@ a {
     &:focus {
         color: $primary;
         color: var(--primary);
+
+        mark {
+            color: var(--inverse);
+        }
     }
 }
 
@@ -66,7 +70,8 @@ blockquote {
     }
 }
 
-::selection {
+::selection,
+mark {
     background: $primary;
     background: var(--primary);
 }

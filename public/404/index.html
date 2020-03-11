@@ -8,7 +8,7 @@
     <title>Braden East | 404</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="📬️ Let me know if there&#39;s something I can help you find. BradenEastDesign@gmail.com">
+    <meta name="description" content="My bad - that page isn&#39;t here right now. Let me know if there&#39;s something I can help you find.">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -18,7 +18,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.bradeneast.com/404" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="📬️ Let me know if there&#39;s something I can help you find. BradenEastDesign@gmail.com" />
+    <meta property="og:description" content="My bad - that page isn&#39;t here right now. Let me know if there&#39;s something I can help you find." />
 
     <link rel="canonical" href="https://www.bradeneast.com/404" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
@@ -65,7 +65,7 @@
             }
         }
     </script>
-    <script defer src="/_assets/js/main.min.js"></script>
+    <script defer src="/_assets/js/main.js"></script>
 
 </head>
 
@@ -86,26 +86,24 @@
     <main id="main">
 
         <h1 id="probably-a-404">Probably a 404?</h1>
-<h2 id="my-bad---that-page-isnt-here-right-now">My bad - that page isn&#39;t here right now.</h2>
-<p>📬️ Let me know if there&#39;s something I can help you find. <a href="mailto:bradeneastdesign@gmail.com">BradenEastDesign@gmail.com</a></p>
-<p><div class="search-wrapper">
+<p>My bad - that page isn&#39;t here right now. Let me know if there&#39;s something I can help you find.</p>
+<p>📬️ <a href="mailto:bradeneastdesign@gmail.com">BradenEastDesign@gmail.com</a></p>
+<p><div id="search_wrapper">
 
-    <input type="text" placeholder="Search this site" name="search" id="search">
+    <input type="text" placeholder="Search this site" name="search" id="search" onkeyup="handleSearchInput(this.value)">
 
     <ul id="search_results">
-        <template id="search_result_template">
-            <li>
+        <li id="search_result_template">
 
-                <h3><a href="result.href">result.name</a></h3>
+            <h2><a href="result.href">result.name</a></h2>
 
-                <p>result.excerpt</p>
+            <p>result.excerpt</p>
 
-                <div class="meta">
-                    <p class="categories">result.categories.links</p>
-                </div>
+            <div class="meta">
+                <p class="categories">result.categories.links</p>
+            </div>
 
-            </li>
-        </template>
+        </li>
     </ul>
 
 </div></p>

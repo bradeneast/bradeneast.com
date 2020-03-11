@@ -10,8 +10,13 @@
     "saveAndRun": {
         "commands": [
             {
-                "match": "\\.ts",
+                "match": "\\.ts|\\.html",
                 "cmd": "deno run --allow-read --allow-write ./build/build.ts",
+                "silent": true
+            },
+            {
+                "match": "\\.js",
+                "cmd": "tsc",
                 "silent": true
             }
         ]
@@ -31,7 +36,7 @@
             "booleans": true,
             "loops": true,
             "unused": true,
-            "hoist_funs": true,
+            "hoist_funs": false,
             "keep_fargs": false,
             "keep_fnames": false,
             "hoist_vars": false,

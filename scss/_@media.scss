@@ -23,6 +23,12 @@
         gap: $flow-space-section;
         max-width: none !important;
         overflow-x: auto;
+
+        img,
+        svg,
+        video {
+            width: 100%;
+        }
     }
 
     [data-feed] > .includes_media {

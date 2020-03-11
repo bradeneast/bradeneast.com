@@ -11,17 +11,25 @@ summary {
 input[type="text"] {
     padding: 1em;
     font-size: inherit;
-    border: $border-width $border-style $primary;
-    border-color: var(--primary);
+    border: $border-width $border-style $mediumgrey;
     border-radius: $border-radius;
     width: 100%;
     background: none;
+
+    &:focus {
+        border-color: $primary;
+        border-color: var(--primary);
+    }
 }
 
 #search {
     margin-top: $flow-space;
     margin-top: var(--flow-space);
     margin-bottom: $flow-space-section;
+}
+
+#search_result_template {
+    display: none;
 }
 
 button,
