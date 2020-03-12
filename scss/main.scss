@@ -1,4 +1,4 @@
-@import "./variables", "./@media";
+@import "./variables", "./@rules";
 
 :root {
     font-size: 20px;
@@ -50,19 +50,6 @@ main {
     grid-area: main;
     max-width: 48rem;
     padding-top: 0.5rem;
-}
-
-img,
-svg,
-video {
-    width: 540px;
-    height: auto;
-    user-select: none;
-    object-fit: cover;
-}
-
-img {
-    border-radius: $border-radius-alt;
 }
 
 ::-webkit-scrollbar {

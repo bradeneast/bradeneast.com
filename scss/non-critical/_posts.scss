@@ -1,25 +1,3 @@
-[data-feed],
-#search_results {
-    padding-left: 0;
-
-    & > * {
-        padding-left: 0;
-        list-style: none;
-        margin-bottom: $flow-space-section;
-
-        a:hover img,
-        a:focus img {
-            border-radius: $border-radius;
-        }
-
-        img {
-            border: $border-width $border-style currentColor;
-            border-radius: $border-radius-alt;
-            transition: $transition-short;
-        }
-    }
-}
-
 .meta {
     line-height: 1.4;
     margin-top: 1rem;

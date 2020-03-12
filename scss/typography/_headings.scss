@@ -14,26 +14,9 @@ h5 {
     }
 
     a {
-        font-weight: inherit;
         z-index: 2;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            width: calc(100% + 1.2em);
-            height: calc(100% + 0.5em);
-            transform: translate(-50%, -50%);
-            border: $border-width $border-style transparent;
-            border-radius: $border-radius-alt;
-        }
-
-        &:hover::after,
-        &:focus::after {
-            border-color: $mediumgrey;
-            border-radius: $border-radius;
-        }
+        font-weight: inherit;
+        text-decoration: underline;
     }
 }
 
