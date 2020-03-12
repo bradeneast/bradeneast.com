@@ -71,7 +71,7 @@
         main {
             margin: $flow-space-section auto;
 
-            .has-img {
+            .has_img {
                 width: calc(100% + #{$flow-space * 2});
                 width: calc(100% + var(--flow-space) * 2);
                 margin-left: #{$flow-space * -1};

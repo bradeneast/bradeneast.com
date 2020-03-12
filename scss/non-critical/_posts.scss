@@ -23,7 +23,7 @@
 
 article {
     .meta,
-    .featured-media,
+    .featured_media,
     .codepen {
         margin-bottom: $flow-space-paragraph;
         margin-bottom: var(--flow-space-paragraph);
@@ -42,7 +42,7 @@ article {
         }
     }
 
-    .codepen-fallback {
+    .codepen_fallback {
         margin-top: 0;
     }
 

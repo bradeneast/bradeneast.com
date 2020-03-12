@@ -15,6 +15,7 @@
     list-style-type: none;
     text-decoration: none;
     outline-color: $primary;
+    position: relative;
 
     &:focus {
         outline: 2px solid;

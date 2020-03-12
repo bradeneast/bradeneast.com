@@ -33,7 +33,7 @@ export default (pen) => {
 
     }
 
-    fallback.classList.add('codepen-fallback');
+    fallback.classList.add('codepen_fallback');
     fallback.innerHTML += " on CodePen.";
     pen.insertAdjacentElement("afterend", fallback);
 

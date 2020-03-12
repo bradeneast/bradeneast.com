@@ -31,7 +31,7 @@ body {
         float: right;
     }
 
-    .nav-wrapper a {
+    .nav_wrapper a {
         text-decoration: underline;
         margin-right: rem(1);
     }
@@ -69,8 +69,8 @@ body {
         font-size: rem($h4-6);
     }
 
-    .nav-wrapper,
-    .scope-nav,
+    .nav_wrapper,
+    .scope_nav,
     pre,
     img,
     p,

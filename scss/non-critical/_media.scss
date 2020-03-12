@@ -9,15 +9,50 @@ video {
     position: relative;
 }
 
+.has_img {
+    position: relative;
+}
+
 img {
     border-radius: $border-radius-alt;
 }
 
-picture:hover::after {
-    content: attr(alt);
-    display: block;
+*:hover + .tooltip,
+*:focus + .tooltip {
+    opacity: 1;
+}
+
+.banner,
+.tooltip {
+    z-index: 9;
+    padding: 1.4em 2em;
+    border-radius: $border-radius;
+    text-align: center;
+    background: $primary;
+    background: var(--primary);
+
+    &.info {
+        background: $primary-soft;
+        background: var(--primary-soft);
+    }
+}
+
+.no_tooltip .tooltip {
+    display: none;
+}
+
+.tooltip {
+    font-size: 1rem;
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 22rem;
+    min-width: 16rem;
     pointer-events: none;
+    opacity: 0;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
 }
