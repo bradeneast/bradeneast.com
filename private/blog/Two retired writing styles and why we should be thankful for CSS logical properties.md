@@ -22,7 +22,7 @@ Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would
 ### Ron·go·ron·go
 
 #### Rapanui | Easter Island Script 🗿
-![A picture of a Tohau rongorongo writing board (source: https://www.boloji.com/articles/14555/deciphering-rongorongo)]()
+![A picture of a Tohau rongorongo writing board (source: https://www.boloji.com/articles/14555/deciphering-rongorongo)](/_assets/media/tohau-rongorongo.jpg)
 Rongorongo is a form of boustrophedonic writing that was found on Easter Island in the 1800’s.  It reads left-to-right starting at the bottom line working its way up. Here's the catch: it is written upside-down on every other line, in this pattern: left-to-right right-side-up, right-to-left upside-down, and so on...
 
 <p class="codepen" data-slug-hash="PoqOmmb">
