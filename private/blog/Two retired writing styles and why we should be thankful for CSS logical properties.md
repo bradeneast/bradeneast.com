@@ -19,10 +19,12 @@ Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would
 <p class="codepen" data-slug-hash="YzXELwj">
 
 
-### Ron·go·ron·go
+## Ron·go·ron·go
 
 #### Rapanui | Easter Island Script 🗿
+
 ![A picture of a Tohau rongorongo writing board (source: https://www.boloji.com/articles/14555/deciphering-rongorongo)](/_assets/media/tohau-rongorongo.jpg)
+
 Rongorongo is a form of boustrophedonic writing that was found on Easter Island in the 1800’s.  It reads left-to-right starting at the bottom line working its way up. Here's the catch: it is written upside-down on every other line, in this pattern: left-to-right right-side-up, right-to-left upside-down, and so on...
 
 <p class="codepen" data-slug-hash="PoqOmmb">
@@ -32,7 +34,7 @@ Rongorongo is a form of boustrophedonic writing that was found on Easter Island 
 ## In the browser
 Software performs a significant amount of math and optimization to wrap text in a way that's predictable and accounts for all edge cases.
 
-### Here's an excerpt from the [Wikipedia entry](https://en.wikipedia.org/wiki/Line_wrap_and_word_wrap)
+### Here's an excerpt from the [Wikipedia entry](https://en.wikipedia.org/wiki/Line_wrap_and_word_wrap) on line breaking:
 
 > Line breaking, also known as word wrapping, is breaking a section of text into lines so that it will fit into the available width of a page, window or other display area. In text display, line wrap is continuing on a new line when a line is full, so that each line fits into the viewable window, allowing text to be read from top to bottom without any horizontal scrolling.
 
