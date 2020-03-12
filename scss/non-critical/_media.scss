@@ -25,11 +25,12 @@ img {
 .banner,
 .tooltip {
     z-index: 9;
-    padding: 1.4em 2em;
+    padding: 1.2em 1.8em;
     border-radius: $border-radius;
     text-align: center;
     background: $primary;
     background: var(--primary);
+    line-height: 1.5;
 
     &.info {
         background: $primary-soft;
@@ -44,11 +45,11 @@ img {
 .tooltip {
     font-size: 1rem;
     position: absolute;
+    display: inline-block;
     bottom: -1rem;
     left: 50%;
     transform: translateX(-50%);
     max-width: 28rem;
-    white-space: nowrap;
     pointer-events: none;
     opacity: 0;
 
