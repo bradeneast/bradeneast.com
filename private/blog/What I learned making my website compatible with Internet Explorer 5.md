@@ -3,7 +3,7 @@
 
 There's a special moment that happens when you're debugging code. It's when you realize that 6 hours has gone by since you started, and you're not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE.
 
-When I opened my website with Internet Explorer 5, it was *just good enough* that I thought "Hey, I can work with this." Many many hours later, I shut off my computer, went for a walk with my wife, and decided not to ever speak of it again. Now I think it might be helpful for somebody if I at least wrote a blog post about it. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.
+When I opened my website with Internet Explorer 5, it was *just good enough* that I thought "Hey, I can work with this." I probably could've made worse, choices, but this one was up there. Anyway, I think it might be helpful for somebody if I wrote about what I found. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.
 
 
 

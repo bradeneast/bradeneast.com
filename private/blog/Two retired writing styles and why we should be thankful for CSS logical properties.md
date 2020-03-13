@@ -10,7 +10,7 @@ This isn't just a history lesson, though. I want to help myself break out of the
 Let's trace modern languages back through history a little ways. Western languages are made up of a Latin character set, which was developed from Greek, which was developed from Phoenician hieroglyphs. We could keep going back, but you probably get the idea. As written language evolved, the letters weren't the only thing that changed - the alignment, direction, and flow of information was up for experimentation as well.
 
 
-### Bou·stro·phe·don
+## Bou·stro·phe·don
 
 #### Greek | "As the ox plows" 🐮
 
