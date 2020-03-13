@@ -111,7 +111,7 @@
         }
 
         pre {
-            font-size: 0.85rem;
+            font-size: $font-size-small;
         }
 
         ::-webkit-scrollbar {
@@ -128,7 +128,10 @@
         }
 
         .tooltip {
-            max-width: 100%;
+            top: 80%;
+            bottom: auto;
+            max-width: none;
+            width: 100%;
         }
     }
 }
