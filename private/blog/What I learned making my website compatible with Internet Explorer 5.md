@@ -13,7 +13,7 @@ When I opened my website with Internet Explorer 5, it was *just good enough* tha
 - You WILL get very comfortable writing plain 'ol `for` loops
 - `try`/`catch` is supported?! I thought that was a new thing, but apparently not.
 
-> Side note: There are Javascript transpilers that can usually turn ES6 features into something to as early as ES3. I use Typescript to do this in other projects, but configuring and managing it would be overkill for the 2kb of JS on this website *imo*.
+> Side note: There are Javascript transpilers that can usually turn ES6 features into something to as early as ES3. I use Typescript to do this in other projects, but configuring and managing it would be overkill for the 2kb of JS on this website.
 
 
 
@@ -22,7 +22,7 @@ When I opened my website with Internet Explorer 5, it was *just good enough* tha
 ### 1. CSS Variables/Custom Properties (IE 11 and below)
 I discovered that [SCSS variables](https://sass-lang.com/documentation/variables) and functions are your friend when it comes to supporting IE. They compile down to vanilla CSS, which is fantastic.
 
-That's great, but sometimes we're planning on changing or overriding CSS custom properties later from a user interaction. SCSS variables (which compile to static values), can't do that. That's okay! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it doesn't hurt anything to use them, as long as you provide a static value as a fallback.
+That's great, but sometimes we need a variable to change at runtime, when somebody interacts with the site. SCSS variables (which compile to static values), can't do that. That's okay! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it doesn't hurt anything to use them, as long as you provide a static value as a fallback.
 
 ```css
 $primary: red;

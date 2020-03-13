@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Fri, 13 Mar 2020 01:06:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Mar 2020 01:11:47 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
