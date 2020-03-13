@@ -8,7 +8,7 @@
     <title>Braden East | What I learned making my website compatible with Internet Explorer 5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE.">
+    <meta name="description" content="There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. Thanks IE.">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -18,7 +18,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE." />
+    <meta property="og:description" content="There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. Thanks IE." />
 
     <link rel="canonical" href="https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
@@ -116,7 +116,7 @@
 
     </div>
 
-    <p>There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. An ice bath of espresso sounds nice. Thanks IE.</p><p>When I opened my website with Internet Explorer 5, it was <em>just good enough</em> that I thought &quot;Hey, I can work with this.&quot; I probably could&#39;ve made worse, choices, but this one was up there. Anyway, I think it might be helpful for somebody if I wrote about what I found. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.</p><h2 id="highlights">Highlights</h2><ul>
+    <p>There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. Thanks IE.</p><p>When I opened my website with Internet Explorer 5, it was <em>just good enough</em> that I thought &quot;Hey, I can work with this.&quot; I think it might be helpful for somebody if I wrote about what I found. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.</p><h2 id="highlights">Highlights</h2><ul>
 <li>IE developer tools are 🐌🐌🐌 (~10s to first interactive on a fast machine and connection)</li><li><code>getElementByID()</code> and <code>getElementsByTagName()</code> are pretty much your only options for selecting elements in the DOM.</li><li>You WILL get very comfortable writing plain &#39;ol <code>for</code> loops</li><li><code>try</code>/<code>catch</code> is supported?! I thought that was a new thing, but apparently not.</li></ul><blockquote>
 <p>Side note: There are Javascript transpilers that can usually turn ES6 features into something to as early as ES3. I use Typescript to do this in other projects, but configuring and managing it would be overkill for the 2kb of JS on this website <em>imo</em>.</p></blockquote><h2 id="moderately-weird-ie-things">Moderately weird IE things</h2><h3 id="1-css-variablescustom-properties-ie-11-and-below">1. CSS Variables/Custom Properties (IE 11 and below)</h3><p>I discovered that <a href="https://sass-lang.com/documentation/variables">SCSS variables</a> and functions are your friend when it comes to supporting IE. They compile down to vanilla CSS, which is fantastic.</p><p>That&#39;s great, but sometimes we&#39;re planning on changing or overriding CSS custom properties later from a user interaction. SCSS variables (which compile to static values), can&#39;t do that. That&#39;s okay! In Internet Explorer, CSS custom properties are treated the same as any other invalid property value, so it doesn&#39;t hurt anything to use them, as long as you provide a static value as a fallback.</p><pre><code class="language-css">$primary: red;
 
@@ -191,7 +191,6 @@ h1 {
         <path fill="currentColor" d="M55.6,35.84A28.95,28.95,0,0,1,6.3,56.44a28.48,28.48,0,0,0,4.26.32,29,29,0,0,0,28.95-29A28.85,28.85,0,0,0,30.9,7.2,29,29,0,0,1,55.6,35.84Zm2-18.58a3.89,3.89,0,0,0,2.94.39,3.87,3.87,0,1,0-2.94-.39Z" />
     </svg>
 </button>
-<span class="tooltip">Toggle dark mode</span>
 
     <button class="unstyled" id="back_to_top" aria-label="back to top of page" onclick="window.scrollTo(0,0); document.getElementById('skip_link').focus()">
         back to top 🚀
