@@ -54,7 +54,7 @@ images.map(image => {
 After that, we can get the `src` value, and convert URL-formatted characters with `decodeURI()`. This will replace an encoded character like `%20` with a standard space.
 
 ```javascript
-const imageSource = decodeURI(image.getAttribute('src')); // 'https://cdn.com/media/my-beautiful-image (color).jpg?format=small'
+const imageSource = decodeURI(image.getAttribute('src')); // 'https://cdn.com/media/my-beautiful-image.jpg?format=small'
 ```
 
 From here, we can isolate the title by splitting the URL into chunks between forward slashes with `Array.split()` and returning the last one of those chunks with `Array.pop()`. We'll also use `Array.split()` again to separate the file name from the file extension and return the former with `Array.shift()`. Finally, we can replace dashes with spaces, and we're done!
@@ -65,7 +65,7 @@ images.map(image => {
     // will ignore images with alt already set
     if (!image.getAttribute('alt')) {
 
-        const imageSource = decodeURI(image.getAttribute('src')); // 'https://cdn.com/media/my-beautiful-image (color).jpg?format=small'
+        const imageSource = decodeURI(image.getAttribute('src')); // 'https://cdn.com/media/my-beautiful-image.jpg?format=small'
         const imageName = imageSource.split('/').pop(); // 'my-beautiful-image.jpg?format=small'
         const imageTitle = imageName.split('.').shift().replace(/-/g, ' '); // 'my beautiful image'
 

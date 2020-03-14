@@ -102,7 +102,7 @@
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Modified:</strong> Wed Mar 11 2020
+            <strong>Modified:</strong> Sat Mar 14 2020
         </div>
 
         <p class="categories" aria-label="Categories:"><a href="/blog/categories/javascript">javascript</a><a href="/blog/categories/html">html</a><a href="/blog/categories/accessibility">accessibility</a></p>
@@ -140,12 +140,12 @@ images.map(image =&gt; {
         // do stuff
 
     }
-})</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image (color).jpg?format=small&#39;</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">images.map(image =&gt; {
+})</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image.jpg?format=small&#39;</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">images.map(image =&gt; {
 
     // will ignore images with alt already set
     if (!image.getAttribute(&#39;alt&#39;)) {
 
-        const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image (color).jpg?format=small&#39;
+        const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image.jpg?format=small&#39;
         const imageName = imageSource.split(&#39;/&#39;).pop(); // &#39;my-beautiful-image.jpg?format=small&#39;
         const imageTitle = imageName.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // &#39;my beautiful image&#39;
 
