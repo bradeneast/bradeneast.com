@@ -1,6 +1,7 @@
 code,
 pre {
-    color: #aaafba;
+    color: $body-color;
+    color: var(--body-color);
     border-radius: $border-radius;
     background: none;
     font-size: $font-size-small;
@@ -24,6 +25,7 @@ pre {
 }
 
 :not(pre) > code {
+    color: $slategrey;
     position: relative;
     font-family: monospace !important;
     border-bottom: $border-width $border-style currentColor;

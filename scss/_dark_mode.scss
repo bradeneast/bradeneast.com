@@ -16,7 +16,8 @@ html.dark_mode {
         color: $mediumgrey;
     }
 
-    .highlight {
+    .highlight,
+    :not(pre) > code {
         color: $mediumgrey;
 
         &:hover,

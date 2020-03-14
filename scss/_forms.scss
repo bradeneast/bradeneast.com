@@ -9,25 +9,17 @@ summary {
 }
 
 input[type="text"] {
+    width: 24rem;
     padding: 1em;
     font-size: inherit;
-    color: $slategrey;
-    border: $border-width $border-style currentColor;
+    border: $border-width $border-style transparent;
     border-radius: $border-radius;
-    width: 100%;
-    font-weight: 700;
-    background: none;
-
-    &::placeholder {
-        color: inherit;
-    }
-
-    &:placeholder-shown {
-        font-weight: 500;
-    }
+    background: $ultralightgrey;
+    transition: $transition-short;
 
     &:focus {
-        color: white;
+        outline: none;
+        width: 100%;
         border-color: $primary;
         border-color: var(--primary);
     }

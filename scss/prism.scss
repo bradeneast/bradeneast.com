@@ -1,22 +1,23 @@
 @import "./variables";
 
 .token {
-    $hueA: 200;
-    $hueB: 180;
-    $hueC: 40;
-    $sat: 85%;
-    $lit: 45%;
+    color: inherit;
+    $orange: #fa7453;
+    $green: #1acc91;
+    $lightblue: #29b0ff;
+    $purple: #aa7cff;
+    $pink: #ff3d9e;
 
     &.comment,
     &.block-comment,
     &.prolog,
     &.doctype,
     &.cdata {
-        color: hsl($hueB, $sat, $lit * 1);
+        color: $mediumgrey;
     }
 
     &.punctuation {
-        color: hsl($hueB, $sat, $lit * 0.9);
+        color: $mediumgrey;
     }
 
     &.tag,
@@ -24,14 +25,14 @@
     &.namespace,
     &.deleted,
     &.function-name {
-        color: $primary;
+        color: $lightblue;
     }
 
     &.boolean,
     &.number,
     &.function,
     &.inserted {
-        color: hsl($hueB, $sat, $lit * 0.8);
+        color: $primary;
     }
 
     &.function {
@@ -43,7 +44,7 @@
     &.class-name,
     &.constant,
     &.symbol {
-        color: hsl($hueA, $sat, $lit * 1);
+        color: $purple;
     }
 
     &.selector,
@@ -51,7 +52,7 @@
     &.atrule,
     &.keyword,
     &.builtin {
-        color: hsl($hueC, $sat, $lit * 0.9);
+        color: $orange;
     }
 
     &.string,
@@ -59,13 +60,13 @@
     &.attr-value,
     &.regex,
     &.variable {
-        color: hsl($hueA, $sat, $lit * 0.8);
+        color: $green;
     }
 
     &.operator,
     &.entity,
     &.url {
-        color: hsl($hueA, $sat, $lit * 0.7);
+        color: $pink;
     }
 
     &.important,

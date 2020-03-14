@@ -74,7 +74,7 @@ pre {
     padding: var(--flow-space-paragraph);
     margin-bottom: $flow-space-paragraph;
     margin-bottom: var(--flow-space-paragraph);
-    border: $border-width $border-style currentColor;
+    border: $border-width $border-style $mediumgrey;
     border-radius: $border-radius;
 }
 
