@@ -22,6 +22,7 @@
     outline-width: 3px;
     outline-color: $primary;
     outline-color: var(--primary);
+    outline-offset: 0.18em;
 }
 
 html,
@@ -80,5 +81,5 @@ main {
     }
 }
 
-@import "./dark_mode", "./nav";
+@import "./dark_mode", "./nav", "./forms";
 @import "./typography/headings", "./typography/general", "./typography/code";

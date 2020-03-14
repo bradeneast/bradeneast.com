@@ -13,7 +13,7 @@ nav {
 
     a {
         display: block;
-        color: inherit;
+        color: $mediumgrey;
         padding-left: #{$flow-space-paragraph * 2};
         padding-left: calc(var(--flow-space-paragraph) * 2);
         padding-right: 1em;
@@ -21,22 +21,27 @@ nav {
         transition: none;
 
         &.active {
+            color: inherit;
             padding-top: 0.5em;
             padding-bottom: 0.37em;
             margin-top: 0.37em;
+            margin-bottom: 0.37em;
             font-family: $ffa;
             font-size: 1.2em;
             letter-spacing: 0.05em;
             border-radius: $border-radius;
             border-color: $primary;
             border-color: var(--primary);
+
+            &:hover,
+            &:focus {
+                border-color: transparent;
+            }
         }
 
         &:focus,
         &:hover {
             border-radius: $border-radius-alt;
-            background: $body-color;
-            background: var(--body-color);
         }
     }
 }

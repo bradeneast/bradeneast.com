@@ -11,12 +11,23 @@ summary {
 input[type="text"] {
     padding: 1em;
     font-size: inherit;
-    border: $border-width $border-style $mediumgrey;
+    color: $slategrey;
+    border: $border-width $border-style currentColor;
     border-radius: $border-radius;
     width: 100%;
+    font-weight: 700;
     background: none;
 
+    &::placeholder {
+        color: inherit;
+    }
+
+    &:placeholder-shown {
+        font-weight: 500;
+    }
+
     &:focus {
+        color: white;
         border-color: $primary;
         border-color: var(--primary);
     }

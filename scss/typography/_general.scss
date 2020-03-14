@@ -24,7 +24,8 @@ article {
 
 a {
     font-weight: 800;
-    position: static;
+    display: inline-block;
+    position: relative;
 
     &:hover,
     &:focus {
@@ -34,6 +35,22 @@ a {
         mark {
             color: var(--inverse);
         }
+    }
+}
+
+.highlight {
+    color: $darkgrey;
+    border-radius: $border-radius;
+
+    a {
+        color: inherit;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        color: inherit;
+        background: $ultralightgrey;
     }
 }
 
@@ -75,4 +92,6 @@ blockquote {
 mark {
     background: $primary;
     background: var(--primary);
+    color: $body-color;
+    color: var(--body-color);
 }
