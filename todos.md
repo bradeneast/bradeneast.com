@@ -1,2 +1,1 @@
-- Add a netlify config file to indicate to 404 page
-- try adding redirects dynamically on compile?
+- add redirects dynamically on compile?
