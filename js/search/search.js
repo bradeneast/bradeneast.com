@@ -21,14 +21,12 @@ function handleSearchInput(inputValue) {
 
     // clear previous search results
     let prevResults = resultListElem.querySelectorAll('.result');
-    for (let i = 0; i < prevResults.length; i++) {
-        prevResults[i].remove();
-    }
+    prevResults.forEach(result => result.remove());
 
     sitemap.then(pages => {
 
         // get matching pages from sitemap
-        let matchProps = ['name'];
+        let matchProps = ['name', 'excerpt'];
         let results = search(inputValue, pages, matchProps);
 
         if (!results) return;
@@ -57,7 +55,7 @@ function handleSearchInput(inputValue) {
                 }
             }
 
-            template.id = '';
+            template.removeAttribute('id');
             template.classList.add('result');
             resultListElem.appendChild(template);
 

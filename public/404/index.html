@@ -76,9 +76,9 @@
     <div class="nav_wrapper" aria-label="navigation">
 
     <nav id="nav">
-        <a href="/">About</a>
-        <a href="/blog">Blog</a>
-        <a href="/design">Design</a>
+        <a class="highlight" href="/">About</a>
+        <a class="highlight" href="/blog">Blog</a>
+        <a class="highlight" href="/design">Design</a>
     </nav>
 
 </div>
@@ -93,9 +93,12 @@
     <input type="text" placeholder="Search this site" name="search" id="search">
 
     <ul id="search_results">
+
         <li id="search_result_template">
 
-            <h2><a href="result.href">result.name</a></h2>
+            <h2>
+                <a class="highlight" href="result.href">result.name</a>
+            </h2>
 
             <p>result.excerpt</p>
 
@@ -104,6 +107,7 @@
             </div>
 
         </li>
+
     </ul>
 
 </div>
