@@ -4,6 +4,7 @@ html.dark_mode {
     body {
         background: inherit;
         --inverse: #{$charcoalgrey};
+        --body-color: #{$lightgrey};
         --primary: #{$secondary};
         --primary-soft: #{$secondary-soft};
         color: $lightgrey;

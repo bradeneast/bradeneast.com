@@ -4,6 +4,7 @@ footer {
     .copyright {
         order: -1;
         line-height: 1;
+        align-self: center;
     }
 
     #socials {
@@ -13,9 +14,16 @@ footer {
         margin-left: auto;
         line-height: 0;
 
-        svg {
-            width: 1.5em;
-            margin-left: 0.5em;
+        a {
+            border-radius: $border-radius-alt;
+            padding: 0.5em;
+            width: 2.5em;
+
+            &:hover,
+            &:focus {
+                background: $body-color;
+                background: var(--body-color);
+            }
         }
     }
 }

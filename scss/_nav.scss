@@ -35,6 +35,8 @@ nav {
         &:focus,
         &:hover {
             border-radius: $border-radius-alt;
+            background: $body-color;
+            background: var(--body-color);
         }
     }
 }

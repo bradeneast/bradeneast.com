@@ -9,6 +9,8 @@ $mediumgrey: #999ea9;
 $slategrey: #7b889a;
 $darkgrey: #666a75;
 $charcoalgrey: #33343f;
+$body-color: $charcoalgrey;
+$inverse: $ultralightgrey;
 $border-width: 0.25rem;
 $border-style: dotted;
 $border-radius: 3rem 1.5rem 2.5rem 2rem / 2rem 2.5rem 1.5rem 3rem;
@@ -28,7 +30,8 @@ $line-height-small: 1.4;
 :root {
     --primary: #{$primary};
     --primary-soft: #{$primary-soft};
-    --inverse: white;
+    --inverse: #{$inverse};
+    --body-color: #{$body-color};
     --flow-space: #{$flow-space};
     --flow-space-paragraph: #{$flow-space-paragraph};
 }
