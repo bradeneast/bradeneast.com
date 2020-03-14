@@ -12,9 +12,8 @@ let resultListElem = document.getElementById('search_results');
 let resultTemplate = document.getElementById('search_result_template');
 let searchInput = document.getElementById('search');
 
-searchInput.addEventListener('keyup', e => {
-    handleSearchInput(e.target.value)
-})
+
+searchInput.addEventListener('keyup', e => { handleSearchInput(e.target.value) })
 
 
 function handleSearchInput(inputValue) {
@@ -45,20 +44,20 @@ function handleSearchInput(inputValue) {
 
                 if (matchProps.includes(query)) {
 
-                    let marked = value.replace(matchedBy[0], `<mark>${matchedBy[0]}</mark>`);
-                    template.innerHTML = template.innerHTML.replace(match, marked);
+                    let reMatch = new RegExp(matchedBy[0], 'gi');
 
-                } else {
-
+                    value = value.replace(reMatch, `<mark>${matchedBy[0]}</mark>`);
                     template.innerHTML = template.innerHTML.replace(match, value);
 
+                    continue;
                 }
+
+                template.innerHTML = template.innerHTML.replace(match, value);
             }
 
             template.removeAttribute('id');
             template.classList.add('result');
             resultListElem.appendChild(template);
-
         }
     })
 
