@@ -1,4 +1,4 @@
-@import "./variables", "./@rules/screen", "./@rules/prefers";
+@import "./variables";
 
 :root {
     font-size: 20px;
@@ -96,5 +96,6 @@ main {
     }
 }
 
+@import "./rules/screen", "./rules/prefers";
 @import "./dark_mode", "./nav", "./forms";
 @import "./typography/headings", "./typography/general", "./typography/code";

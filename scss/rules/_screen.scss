@@ -1,6 +1,6 @@
 @media screen and (max-width: 72rem) {
     :root {
-        font-size: 17px !important;
+        font-size: 17px;
     }
 
     body {
@@ -33,6 +33,11 @@
         #pre_footer {
             padding-top: $flow-space-section;
             padding-bottom: $flow-space-section;
+        }
+
+        footer #socials a {
+            width: 1.8em;
+            padding: 0.2em;
         }
 
         h1,
