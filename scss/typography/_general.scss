@@ -57,6 +57,7 @@ a {
 p a,
 button.unstyled,
 #skip_link {
+    display: inline;
     text-decoration: underline;
     color: $darkgrey;
 

@@ -12,7 +12,8 @@ html.dark_mode {
 
     p a,
     button.unstyled,
-    #skip_link {
+    #skip_link,
+    *::placeholder {
         color: $mediumgrey;
     }
 
@@ -26,6 +27,10 @@ html.dark_mode {
             color: inherit;
             background: $darkgrey;
         }
+    }
+
+    input[type="text"] {
+        background: $darkgrey;
     }
 
     nav a.active {

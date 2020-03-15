@@ -8,14 +8,19 @@ summary {
     touch-action: manipulation;
 }
 
+*::placeholder {
+    color: $slategrey;
+}
+
 input[type="text"] {
-    width: 24rem;
+    width: 100%;
+    max-width: 24rem;
     padding: 1em;
     font-size: inherit;
-    border: $border-width $border-style transparent;
+    border: none;
     border-radius: $border-radius;
     background: $ultralightgrey;
-    transition: $transition-short;
+    transition: max-width $transition-short;
 }
 
 #search {
@@ -24,10 +29,7 @@ input[type="text"] {
     margin-bottom: $flow-space-section;
 
     &:focus {
-        outline: none;
-        width: 100%;
-        border-color: $primary;
-        border-color: var(--primary);
+        max-width: 100%;
     }
 }
 
