@@ -78,6 +78,13 @@
             display: block;
             margin-top: 0;
 
+            a {
+                display: block;
+                max-width: 100%;
+                margin-bottom: $flow-space-paragraph;
+                margin-bottom: var(--flow-space-paragraph);
+            }
+
             .name {
                 font-size: 1.6rem;
             }
