@@ -1,0 +1,12 @@
+@media (prefers-reduced-motion: reduce) {
+    html,
+    body {
+        scroll-behavior: initial;
+    }
+}
+
+@media (prefers-contrast: high) {
+    html {
+        filter: contrast(1.2);
+    }
+}

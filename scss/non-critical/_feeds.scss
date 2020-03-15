@@ -27,3 +27,12 @@
         border-radius: $border-radius;
     }
 }
+
+@supports (display: grid) {
+    [data-feed] > .includes_media {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: $flow-space-paragraph;
+        gap: var(--flow-space-paragraph);
+    }
+}

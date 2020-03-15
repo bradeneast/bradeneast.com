@@ -1,4 +1,4 @@
-@import "./variables", "./@rules";
+@import "./variables", "./@rules/screen", "./@rules/prefers";
 
 :root {
     font-size: 20px;
@@ -47,6 +47,21 @@ body {
 
     .ie {
         display: none;
+    }
+}
+
+@supports (display: grid) {
+    body {
+        display: grid;
+        grid-template-columns: minmax(14rem, 17rem) repeat(auto-fit, minmax(36rem, 1fr));
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+            "aside main"
+            "aside main"
+            "footer footer";
+        gap: $flow-space-section;
+        max-width: none !important;
+        overflow-x: auto;
     }
 }
 

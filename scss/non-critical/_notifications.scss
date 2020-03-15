@@ -1,0 +1,40 @@
+*:hover + .tooltip,
+*:focus + .tooltip {
+    opacity: 1;
+}
+
+.banner,
+.tooltip {
+    z-index: 9;
+    font-size: $font-size-small;
+    padding: 1.2em 1.8em;
+    border-radius: $border-radius;
+    text-align: center;
+    background: $primary;
+    background: var(--primary);
+    line-height: $line-height-small;
+
+    &.info {
+        background: $primary-soft;
+        background: var(--primary-soft);
+    }
+}
+
+.no_tooltip .tooltip {
+    display: none;
+}
+
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 28rem;
+    pointer-events: none;
+    opacity: 0;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}

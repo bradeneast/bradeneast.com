@@ -27,3 +27,13 @@ footer {
         }
     }
 }
+
+@supports (display: grid) {
+    footer {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: end;
+        gap: $flow-space;
+        gap: var(--flow-space);
+    }
+}

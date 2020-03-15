@@ -1,0 +1,53 @@
+@media print {
+    :root {
+        font-size: 14px !important;
+    }
+
+    html.dark_mode:nth-child(1) {
+        background: white;
+
+        body {
+            --inverse: white;
+            --primary: #{$secondary};
+            --primary-soft: #{$secondary-soft};
+            --body-color: #{$charcoalgrey};
+            color: $charcoalgrey;
+        }
+    }
+
+    body {
+        display: block !important;
+        --flow-space: 1rem;
+        --flow-space-paragraph: 2rem;
+        --flow-space-section: 3rem;
+
+        .tooltip,
+        nav,
+        #pre_footer,
+        .scope_nav {
+            display: none;
+        }
+    }
+
+    img {
+        opacity: 0.82;
+    }
+
+    article {
+        widows: 3;
+        orphans: 3;
+
+        h2 {
+            break-before: avoid;
+        }
+
+        a {
+            font-weight: inherit;
+            word-wrap: break-word;
+
+            &::after {
+                content: " (" attr(href) ")";
+            }
+        }
+    }
+}

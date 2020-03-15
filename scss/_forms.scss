@@ -16,6 +16,12 @@ input[type="text"] {
     border-radius: $border-radius;
     background: $ultralightgrey;
     transition: $transition-short;
+}
+
+#search {
+    margin-top: $flow-space;
+    margin-top: var(--flow-space);
+    margin-bottom: $flow-space-section;
 
     &:focus {
         outline: none;
@@ -23,12 +29,6 @@ input[type="text"] {
         border-color: $primary;
         border-color: var(--primary);
     }
-}
-
-#search {
-    margin-top: $flow-space;
-    margin-top: var(--flow-space);
-    margin-bottom: $flow-space-section;
 }
 
 #search_result_template {
