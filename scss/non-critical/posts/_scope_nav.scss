@@ -1,0 +1,30 @@
+.scope_nav {
+    display: flex;
+    width: 100%;
+    margin-top: $flow-space-section;
+    padding-top: $flow-space-section;
+
+    a {
+        max-width: calc(50% - #{$flow-space-paragraph});
+        max-width: calc(50% - var(--flow-space-paragraph));
+    }
+
+    .name {
+        display: block;
+    }
+
+    .label {
+        display: block;
+        font-weight: 400;
+        color: $slategrey;
+    }
+
+    a:last-of-type {
+        text-align: right;
+        margin-left: auto;
+    }
+
+    [href="undefined"] {
+        display: none;
+    }
+}

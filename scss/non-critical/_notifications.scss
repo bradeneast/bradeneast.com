@@ -1,6 +1,7 @@
 *:hover + .tooltip,
 *:focus + .tooltip {
     opacity: 1;
+    transform: translateX(-50%) scale(1);
 }
 
 .banner,
@@ -29,10 +30,11 @@
     display: inline-block;
     bottom: -1rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0);
     max-width: 28rem;
     pointer-events: none;
     opacity: 0;
+    transition: $transition-short;
 
     &::first-letter {
         text-transform: uppercase;

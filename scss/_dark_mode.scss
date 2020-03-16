@@ -21,11 +21,7 @@ html.dark_mode {
     .highlight {
         color: $mediumgrey;
 
-        &:hover,
-        &:focus,
-        &:focus-within {
-            @include highlight($darkgrey);
-        }
+        @include highlight($darkgrey);
     }
 
     input[type="text"] {

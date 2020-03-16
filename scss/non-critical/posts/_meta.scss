@@ -1,0 +1,22 @@
+.meta {
+    line-height: $line-height-small;
+    margin-top: 1rem;
+
+    .created,
+    .modified {
+        color: $slategrey;
+    }
+
+    .categories {
+        display: flex;
+    }
+
+    a {
+        font-weight: 400;
+        margin-right: 0.37em;
+
+        &::before {
+            content: "#";
+        }
+    }
+}

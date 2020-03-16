@@ -1,40 +1,11 @@
-article {
-    & > p:not(.has_img):not([data-slug-hash]) {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 40rem;
-    }
-
-    ul,
-    ol {
-        max-width: 40rem;
-        margin: $flow-space-paragraph auto;
-        margin: var(--flow-space-paragraph) auto;
-        padding-left: 1em;
-
-        li {
-            padding-left: 1em;
-            padding-bottom: 0.5em;
-            list-style-type: disc;
-            list-style-type: "🌞";
-            list-style-position: outside;
-        }
-    }
-}
-
 a {
     font-weight: 800;
     display: inline-block;
     position: relative;
 
-    &:hover,
-    &:focus {
-        color: $primary;
-        color: var(--primary);
-
-        mark {
-            color: var(--inverse);
-        }
+    &:hover mark,
+    &:focus mark {
+        color: var(--inverse);
     }
 }
 
@@ -46,11 +17,7 @@ a {
         color: inherit;
     }
 
-    &:hover,
-    &:focus,
-    &:focus-within {
-        @include highlight($ultralightgrey);
-    }
+    @include highlight($ultralightgrey);
 }
 
 p a,

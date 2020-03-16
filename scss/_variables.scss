@@ -4,7 +4,7 @@ $primary-soft: rgba(255, 182, 71, 0.63);
 $secondary: #5b6fdf;
 $secondary-soft: rgba(91, 111, 223, 0.63);
 $ultralightgrey: #f0f3f6;
-$lightgrey: #e0e3e5;
+$lightgrey: #cacccf;
 $mediumgrey: #aab4ba;
 $slategrey: #7b889a;
 $darkgrey: #565a6a;
@@ -26,11 +26,34 @@ $h3: 1.6;
 $h4-6: 1.4;
 $font-size-small: 0.85rem;
 $line-height-small: 1.4;
+$highlight-offset: 0.2em;
 
 @mixin highlight($color) {
-    color: inherit;
-    background: $color;
-    box-shadow: 0 0 0 0.2em $color;
+    &::after {
+        content: "";
+        position: absolute;
+        top: -#{$highlight-offset};
+        left: -#{$highlight-offset};
+        width: calc(100% + #{$highlight-offset * 2});
+        height: calc(100% + #{$highlight-offset * 2});
+        z-index: -1;
+        border-radius: inherit;
+        background: $color;
+        transform: scale(0);
+        opacity: 0;
+        transition: $transition-short;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        color: inherit;
+
+        &::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 }
 
 :root {

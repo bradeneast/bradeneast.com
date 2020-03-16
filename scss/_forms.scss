@@ -10,8 +10,8 @@ summary {
     &:focus {
         outline: none;
         border-radius: $border-radius;
-        box-shadow: 0 0 0 2px $inverse, 0 0 0 5px $primary;
-        box-shadow: 0 0 0 2px var(--inverse), 0 0 0 5px var(--primary);
+        box-shadow: 0 0 0 0.2em $inverse, 0 0 0 0.4em $primary;
+        box-shadow: 0 0 0 0.2em var(--inverse), 0 0 0 0.4em var(--primary);
     }
 }
 
