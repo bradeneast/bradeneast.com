@@ -14,10 +14,15 @@ footer {
         margin-left: auto;
         line-height: 0;
 
+        svg {
+            height: 100%;
+        }
+
         a {
             border-radius: $border-radius-alt;
             padding: 0.5em;
             width: 2.5em;
+            height: 2.5em;
 
             &:hover,
             &:focus {

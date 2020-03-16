@@ -17,14 +17,6 @@
     position: relative;
 }
 
-*:focus {
-    outline-style: solid;
-    outline-width: 3px;
-    outline-color: $primary;
-    outline-color: var(--primary);
-    outline-offset: 0.18em;
-}
-
 html,
 body {
     scroll-behavior: smooth;

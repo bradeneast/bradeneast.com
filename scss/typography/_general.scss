@@ -49,8 +49,7 @@ a {
     &:hover,
     &:focus,
     &:focus-within {
-        color: inherit;
-        background: $ultralightgrey;
+        @include highlight($ultralightgrey);
     }
 }
 

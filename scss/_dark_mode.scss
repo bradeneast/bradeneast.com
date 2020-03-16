@@ -13,19 +13,18 @@ html.dark_mode {
     p a,
     button.unstyled,
     #skip_link,
-    *::placeholder {
+    *::placeholder,
+    :not(pre) > code {
         color: $mediumgrey;
     }
 
-    .highlight,
-    :not(pre) > code {
+    .highlight {
         color: $mediumgrey;
 
         &:hover,
         &:focus,
         &:focus-within {
-            color: inherit;
-            background: $darkgrey;
+            @include highlight($darkgrey);
         }
     }
 
