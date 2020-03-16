@@ -42,6 +42,6 @@ Software performs a significant amount of math and optimization to wrap text in 
 
 Writing/reading direction also [impacts our abstraction](https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00109/full) of time into space. In other words, the way you and I might use hierarchy and flow in a design could be somewhat foreign to an East-Asian audience. Even with English as a second language, cultures with bi-directional writing systems do spatial reasoning differently from western cultures. Progress is naturally expected to happen from bottom-to-top or left-to-right. Designing wholistically with these considerations in mind is a mountain to climb on its own.
 
-![A screenshot from Andy Barefoot's "off-the-page" website](/_assets/media/andy-barefoot-screengrab.jpg)
+![A screenshot from Andy Barefoot's extremely creative website](/_assets/media/andy-barefoot-screengrab.jpg)
 
 One of my favorite examples is [Andy Barefoot](http://andybarefoot.com/), who specializes in eccentric layouts, and making them semantic, accessible, and user-friendly. The web is a place where we have unlimited freedom to experiment and create. We can lay out our user interfaces in an infinite number of ways with an infinite volume of content. That kind of "see what sticks" experimentation is what led to the diverse creativity we have today, and I think we should do our best to embrace it.
