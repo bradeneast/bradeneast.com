@@ -44,8 +44,12 @@ for (let image of document.getElementsByTagName('img')) {
 // NAV
 let nav = document.getElementById('nav');
 let navItems = nav.getElementsByTagName('a');
-let activeNavItem = findActive(navItems);
-if (activeNavItem) activeNavItem.classList.add('active');
+let active = findActive(navItems);
+
+if (active) {
+    active.classList.add('active');
+    active.setAttribute('aria-current', 'page');
+}
 
 
 // DARK MODE
