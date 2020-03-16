@@ -1,0 +1,1 @@
+- add scroll indicator to overflowing `pre` elements

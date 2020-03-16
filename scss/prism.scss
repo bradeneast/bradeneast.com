@@ -52,7 +52,7 @@
     &.atrule,
     &.keyword,
     &.builtin {
-        color: $orange;
+        color: $green;
     }
 
     &.string,
@@ -60,7 +60,7 @@
     &.attr-value,
     &.regex,
     &.variable {
-        color: $green;
+        color: $orange;
     }
 
     &.operator,
