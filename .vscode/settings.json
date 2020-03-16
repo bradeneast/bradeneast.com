@@ -1,5 +1,6 @@
 {
     "liveServer.settings.root": "/public",
+    "liveServer.settings.file": "/404/index.html",
     "liveSassCompile.settings.formats": [
         {
             "format": "compressed",

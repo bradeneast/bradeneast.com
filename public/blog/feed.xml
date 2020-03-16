@@ -4,13 +4,13 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Sat, 14 Mar 2020 22:57:14 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Mar 2020 13:42:22 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
             <link>https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</link>
             <guid>https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</guid>
-            <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+            <pubDate>Mon, 17 Feb 2020 14:18:11 GMT</pubDate>
             <category>html</category>
 <category>performance</category>
 <category>accessibility</category>
@@ -30,7 +30,7 @@
             <title>Knobs and dials on the web</title>
             <link>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</link>
             <guid>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</guid>
-            <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+            <pubDate>Mon, 17 Feb 2020 14:18:11 GMT</pubDate>
             <category>html</category>
 <category>css</category>
 <category>ui</category>
@@ -40,7 +40,7 @@
             <title>Staggered animations</title>
             <link>https://www.bradeneast.com/blog/staggered-animations</link>
             <guid>https://www.bradeneast.com/blog/staggered-animations</guid>
-            <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+            <pubDate>Mon, 17 Feb 2020 14:18:11 GMT</pubDate>
             <category>ui</category>
 <category>design</category>
 <category>css</category>
@@ -48,10 +48,10 @@
             <description>Today, lets talk about integrating motion into our websites and user interfaces.</description>
         </item>
         <item>
-            <title>Style pseudo elements with Javascript</title>
+            <title>Style pseudo elements with javascript</title>
             <link>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</link>
             <guid>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</guid>
-            <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+            <pubDate>Mon, 17 Feb 2020 14:18:11 GMT</pubDate>
             <category>html</category>
 <category>css</category>
 <category>javascript</category>
@@ -61,7 +61,7 @@
             <title>The simplest pull-to-refresh</title>
             <link>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</link>
             <guid>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</guid>
-            <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+            <pubDate>Mon, 17 Feb 2020 14:18:11 GMT</pubDate>
             <category>design</category>
 <category>ui</category>
 <category>css</category>
@@ -91,7 +91,7 @@
             <title>What I learned making my website compatible with Internet Explorer 5</title>
             <link>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</link>
             <guid>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</guid>
-            <pubDate>Sun, 08 Mar 2020 14:06:18 GMT</pubDate>
+            <pubDate>Mon, 09 Mar 2020 13:14:36 GMT</pubDate>
             <category>html</category>
 <category>css</category>
 <category>javascript</category>
