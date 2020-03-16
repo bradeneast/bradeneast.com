@@ -21,7 +21,6 @@
     }
 
     &.tag,
-    &.attr-name,
     &.namespace,
     &.deleted,
     &.function-name {
@@ -40,6 +39,7 @@
         font-style: italic;
     }
 
+    &.attr-name,
     &.property,
     &.class-name,
     &.constant,
