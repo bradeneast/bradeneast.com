@@ -28,6 +28,16 @@ $font-size-small: 0.85rem;
 $line-height-small: 1.4;
 $highlight-offset: 0.2em;
 
+:root {
+    --transition-short: $transition-short;
+    --primary: #{$primary};
+    --primary-soft: #{$primary-soft};
+    --inverse: #{$inverse};
+    --body-color: #{$body-color};
+    --flow-space: #{$flow-space};
+    --flow-space-paragraph: #{$flow-space-paragraph};
+}
+
 @mixin highlight($color) {
     &::after {
         content: "";
@@ -42,6 +52,7 @@ $highlight-offset: 0.2em;
         transform: scale(0);
         opacity: 0;
         transition: $transition-short;
+        transition: var(--transition-short);
     }
 
     &:hover,
@@ -54,13 +65,4 @@ $highlight-offset: 0.2em;
             opacity: 1;
         }
     }
-}
-
-:root {
-    --primary: #{$primary};
-    --primary-soft: #{$primary-soft};
-    --inverse: #{$inverse};
-    --body-color: #{$body-color};
-    --flow-space: #{$flow-space};
-    --flow-space-paragraph: #{$flow-space-paragraph};
 }

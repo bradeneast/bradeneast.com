@@ -33,6 +33,7 @@
         border-radius: 50%;
         transform: translateX(0) scaleX(1);
         transition: $transition-short;
+        transition: var(--transition-short);
     }
 
     &:hover::after,

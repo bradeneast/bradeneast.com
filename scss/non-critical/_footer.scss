@@ -19,13 +19,16 @@ footer {
         }
 
         a {
+            font-size: 2.5em;
             border-radius: $border-radius-alt;
-            padding: 0.5em;
-            width: 2.5em;
-            height: 2.5em;
+            padding: 0.2em;
+            width: 1em;
+            height: 1em;
 
             &:hover,
             &:focus {
+                color: $primary;
+                color: var(--primary);
                 background: $body-color;
                 background: var(--body-color);
             }
