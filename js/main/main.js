@@ -23,6 +23,15 @@ for (let p of document.getElementsByTagName('p')) {
 }
 
 
+for (let pre of document.getElementsByTagName('pre')) {
+
+    if (pre.offsetWidth >= pre.scrollWidth) continue;
+
+    pre.classList.add('is_overflowing');
+
+}
+
+
 // A tags
 for (let a of document.getElementsByTagName('a')) processAnchor(a);
 
