@@ -5,16 +5,22 @@
     padding-top: $flow-space-section;
 
     a {
+        z-index: 9;
         max-width: calc(50% - #{$flow-space-paragraph});
         max-width: calc(50% - var(--flow-space-paragraph));
+
+        &::after {
+            z-index: 0;
+        }
     }
 
-    .name {
+    .name,
+    .label {
         display: block;
+        z-index: 9;
     }
 
     .label {
-        display: block;
         font-weight: 400;
         color: $slategrey;
     }
