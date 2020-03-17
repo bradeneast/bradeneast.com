@@ -25,10 +25,6 @@ footer {
             padding: 0.5em;
             width: 2.5em;
             height: 2.5em;
-
-            &::after {
-                z-index: 0;
-            }
         }
     }
 }

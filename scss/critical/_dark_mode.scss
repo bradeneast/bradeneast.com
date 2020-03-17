@@ -27,7 +27,7 @@ html.dark_mode {
         }
     }
 
-    .highlight::after,
+    .highlight::before,
     input[type="text"] {
         background: $darkgrey;
     }

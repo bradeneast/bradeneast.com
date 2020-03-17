@@ -1,0 +1,34 @@
+.highlight {
+    color: $darkgrey;
+
+    a {
+        color: inherit;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -#{$highlight-offset};
+        left: -#{$highlight-offset};
+        width: calc(100% + #{$highlight-offset * 2});
+        height: calc(100% + #{$highlight-offset * 2});
+        border-radius: $border-radius-alt;
+        background: $ultralightgrey;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all $transition-short, border-radius $transition-medium 0.05s;
+        transition: all var(--transition-short), border-radius var(--transition-medium) 0.05s;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        color: inherit;
+
+        &::before {
+            border-radius: $border-radius;
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

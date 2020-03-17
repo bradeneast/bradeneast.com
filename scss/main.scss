@@ -88,6 +88,5 @@ main {
     }
 }
 
-@import "./rules/screen", "./rules/prefers";
-@import "./dark_mode", "./nav", "./forms";
-@import "./typography/headings", "./typography/general", "./typography/code";
+@import "./critical/dark_mode", "./critical/nav", "./critical/forms", "./critical/typography", "./critical/highlights";
+@import "./critical/rules/screen", "./critical/rules/prefers";

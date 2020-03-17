@@ -35,18 +35,21 @@ $line-height-small: 1.4;
 
 // Miscellaneous
 $highlight-offset: 0.2em;
-$transition-short: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
+$easing: cubic-bezier(0.3, 0.3, 0.1, 1.3);
+$transition-short: 0.28s $easing;
+$transition-medium: 0.37s $easing;
 
 @function overflow-shadow($color: rgba(0, 0, 0, 0.2), $depth: 2) {
     @return inset -#{$depth}em 0 #{$depth}em -#{$depth}em $color;
 }
 
 :root {
-    --transition-short: #{$transition-short};
     --primary: #{$primary};
     --primary-soft: #{$primary-soft};
     --inverse: #{$inverse};
     --body-color: #{$body-color};
     --flow-space: #{$flow-space};
     --flow-space-paragraph: #{$flow-space-paragraph};
+    --transition-short: #{$transition-short};
+    --transition-medium: #{$transition-medium};
 }
