@@ -17,7 +17,32 @@ a {
         color: inherit;
     }
 
-    @include highlight($ultralightgrey);
+    &::after {
+        content: "";
+        position: absolute;
+        top: -#{$highlight-offset};
+        left: -#{$highlight-offset};
+        width: calc(100% + #{$highlight-offset * 2});
+        height: calc(100% + #{$highlight-offset * 2});
+        border-radius: inherit;
+        background: $ultralightgrey;
+        z-index: -1;
+        transform: scale(0);
+        opacity: 0;
+        transition: $transition-short;
+        transition: var(--transition-short);
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        color: inherit;
+
+        &::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 }
 
 p a,

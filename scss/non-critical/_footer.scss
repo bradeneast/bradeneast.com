@@ -16,21 +16,18 @@ footer {
 
         svg {
             height: 100%;
+            z-index: 9;
         }
 
         a {
-            font-size: 2.5em;
+            font-size: 1rem;
             border-radius: $border-radius-alt;
-            padding: 0.2em;
-            width: 1em;
-            height: 1em;
+            padding: 0.5em;
+            width: 2.5em;
+            height: 2.5em;
 
-            &:hover,
-            &:focus {
-                color: $primary;
-                color: var(--primary);
-                background: $body-color;
-                background: var(--body-color);
+            &::after {
+                z-index: 0;
             }
         }
     }

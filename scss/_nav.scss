@@ -32,15 +32,11 @@ nav {
             border-radius: $border-radius;
             border-color: $primary;
             border-color: var(--primary);
-
-            &:hover,
-            &:focus {
-                border-color: transparent;
-            }
         }
 
         &:focus,
         &:hover {
+            border-color: transparent;
             border-radius: $border-radius-alt;
         }
     }

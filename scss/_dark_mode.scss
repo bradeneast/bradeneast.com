@@ -21,9 +21,13 @@ html.dark_mode {
     .highlight {
         color: $mediumgrey;
 
-        @include highlight($darkgrey);
+        &:hover,
+        &:focus {
+            color: inherit;
+        }
     }
 
+    .highlight::after,
     input[type="text"] {
         background: $darkgrey;
     }
@@ -61,5 +65,9 @@ html.dark_mode {
         svg {
             color: currentColor;
         }
+    }
+
+    pre.is_overflowing {
+        box-shadow: overflow-shadow(rgba(0, 0, 0, 0.3));
     }
 }
