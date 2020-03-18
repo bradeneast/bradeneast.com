@@ -6,6 +6,7 @@ import addCodepenFallback from './_addCodepenFallback.js';
 import findActive from './_findActive.js';
 import { listen } from './_utils.js';
 import tooltip from './_tooltip.js';
+import skipToContent from './_skipToContent.js';
 
 
 // LINK tags
@@ -65,3 +66,7 @@ if (active) {
 // DARK MODE
 let darkModeToggle = document.getElementById('dark_mode_toggle');
 listen(darkModeToggle, 'click', toggleDarkMode);
+
+// SKIP LINK
+let skipLink = document.getElementById('skip_link');
+listen(skipLink, 'click', skipToContent);
