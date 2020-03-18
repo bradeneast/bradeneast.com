@@ -1,4 +1,4 @@
-html.dark_mode {
+.dark_mode {
     background: $charcoalgrey;
 
     body {
@@ -13,8 +13,11 @@ html.dark_mode {
     p a,
     button.unstyled,
     #skip_link,
-    *::placeholder,
     :not(pre) > code {
+        color: $mediumgrey;
+    }
+
+    *::placeholder {
         color: $mediumgrey;
     }
 

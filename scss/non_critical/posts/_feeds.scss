@@ -1,24 +1,18 @@
-[data-feed],
-#search_results {
+[data-feed] {
     padding-left: 0;
+
+    img {
+        border: $border-width $border-style currentColor;
+        border-radius: $border-radius-alt;
+    }
 
     & > * {
         padding-left: 0;
         list-style: none;
         margin-bottom: $flow-space-section;
-
-        img {
-            border: $border-width $border-style currentColor;
-            border-radius: $border-radius-alt;
-        }
     }
 
-    h1 a,
-    h2 a,
-    h3 a,
-    h4 a,
-    h5 a,
-    h6 a {
+    :not(p) > a {
         text-decoration: none;
     }
 
@@ -29,7 +23,7 @@
 }
 
 @supports (display: grid) {
-    [data-feed] > .includes_media {
+    [data-feed] .includes_media {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
         gap: $flow-space-paragraph;

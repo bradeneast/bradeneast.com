@@ -3,7 +3,7 @@
         font-size: 14px !important;
     }
 
-    html.dark_mode:nth-child(1) {
+    html.dark_mode {
         background: white;
 
         body {
@@ -12,6 +12,10 @@
             --primary-soft: #{$secondary-soft};
             --body-color: #{$charcoalgrey};
             color: $charcoalgrey;
+        }
+
+        input {
+            background: $ultralightgrey !important;
         }
     }
 

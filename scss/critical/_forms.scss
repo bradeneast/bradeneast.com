@@ -46,8 +46,7 @@ input[type="text"] {
 }
 
 button,
-.button,
-input[type="submit"] {
+.button {
     display: inline-block;
     position: relative;
     background: none;
@@ -56,28 +55,29 @@ input[type="submit"] {
     font-size: inherit;
     font-family: inherit;
     cursor: pointer;
+    margin-bottom: $flow-space-paragraph;
+    margin-bottom: var(--flow-space-paragraph);
+    border-color: $primary;
+    border-color: var(--primary);
 
-    &:not(.unstyled) {
-        margin-bottom: $flow-space-paragraph;
-        margin-bottom: var(--flow-space-paragraph);
-        border-color: $primary;
-        border-color: var(--primary);
+    .button__text {
+        z-index: 9;
+        color: inherit;
+        border: $border-width $border-style currentColor;
+        border-color: inherit;
+        border-radius: $border-radius;
+        padding: 0.8em 1em;
+    }
 
-        .button__text {
-            z-index: 9;
-            color: inherit;
-            border: $border-width $border-style currentColor;
-            border-color: inherit;
-            border-radius: $border-radius;
-            padding: 0.8em 1em;
-        }
+    &:hover,
+    &:focus {
+        color: $body-color;
+        color: var(--body-color);
+        border-color: currentColor;
+        border-radius: $border-radius-alt;
+    }
 
-        &:hover,
-        &:focus {
-            color: $body-color;
-            color: var(--body-color);
-            border-color: currentColor;
-            border-radius: $border-radius-alt;
-        }
+    .unstyled {
+        margin: 0;
     }
 }
