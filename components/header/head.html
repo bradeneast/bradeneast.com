@@ -37,32 +37,26 @@
         var dmName = 'dark_mode';
         var dm = localStorage.getItem(dmName);
         var doc = document.documentElement;
-        var IE = false;
+        var IE = navigator.userAgent.indexOf('MSIE') > -1 || navigator.appVersion.indexOf('Trident/') > -1;
 
-        if (dm == null) {
+        if (dm == null || IE) localStorage.setItem(dmName, false);
 
-            localStorage.setItem(dmName, false);
+        if (IE) {
+
+            var retroModeStyles = document.createElement('link');
+
+            retroModeStyles.rel = 'stylesheet';
+            retroModeStyles.href = '/_assets/css/retro_mode.min.css';
+            retroModeStyles.setAttribute('type', 'text/css');
+
+            doc.appendChild(retroModeStyles);
 
         } else {
 
-            try {
+            doc.classList.toggle(dmName, JSON.parse(dm));
 
-                doc.classList.toggle(dmName, JSON.parse(dm));
-
-            } catch (e) {
-
-                IE = true;
-
-                var retroModeStyles = document.createElement('link');
-
-                retroModeStyles.rel = 'stylesheet';
-                retroModeStyles.href = '/_assets/css/retro_mode.min.css';
-                retroModeStyles.setAttribute('type', 'text/css');
-
-                doc.appendChild(retroModeStyles);
-
-            }
         }
+
     </script>
 
 </head>

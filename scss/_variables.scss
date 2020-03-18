@@ -43,13 +43,15 @@ $transition-medium: 0.37s $easing;
     @return inset -#{$depth}em 0 #{$depth}em -#{$depth}em $color;
 }
 
-:root {
-    --primary: #{$primary};
-    --primary-soft: #{$primary-soft};
-    --inverse: #{$inverse};
-    --body-color: #{$body-color};
-    --flow-space: #{$flow-space};
-    --flow-space-paragraph: #{$flow-space-paragraph};
-    --transition-short: #{$transition-short};
-    --transition-medium: #{$transition-medium};
+@mixin root {
+    :root {
+        --primary: #{$primary};
+        --primary-soft: #{$primary-soft};
+        --inverse: #{$inverse};
+        --body-color: #{$body-color};
+        --flow-space: #{$flow-space};
+        --flow-space-paragraph: #{$flow-space-paragraph};
+        --transition-short: #{$transition-short};
+        --transition-medium: #{$transition-medium};
+    }
 }

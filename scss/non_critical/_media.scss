@@ -9,18 +9,18 @@ video {
     position: relative;
 }
 
-@supports (display: grid) {
-    img,
-    svg,
-    video {
-        width: 100%;
-    }
-}
-
 img {
     border-radius: $border-radius-alt;
 }
 
 .has_img {
     position: relative;
+}
+
+@supports (display: grid) {
+    img,
+    svg,
+    video {
+        width: 100%;
+    }
 }
