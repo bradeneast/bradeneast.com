@@ -1,4 +1,3 @@
-// @ts-nocheck
 export default () => {
 
     let dmName = 'dark_mode';
