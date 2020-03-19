@@ -36,7 +36,7 @@ export let templates = getFsTree(options.paths.templates);
 
 
 async function build() {
-    
+
 
     // Sort scopes by depth
     let scopes = deepCopy(options.scopes);
@@ -77,7 +77,7 @@ async function build() {
 
         // Create and write to file
         ensureFileSync(destination);
-        writeFileStrSync(destination, '<!DOCTYPE html>' + page.content);
+        writeFileStrSync(destination, '<!doctype html>\n' + page.content);
 
     }
 

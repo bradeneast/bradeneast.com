@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 
 <head>
 
@@ -20,6 +21,8 @@
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
     <meta property="og:description" content="Whether you like it or not, pull-to-refresh is here to stay, and it&#39;s something that designers and developers need to have in their reportoire.  While Swift has a native API for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best." />
 
+    <base href="/" />
+
     <link rel="canonical" href="https://www.bradeneast.com/blog/the-simplest-pull-to-refresh" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
@@ -35,6 +38,7 @@
 
     <script defer src="https://polyfill.io/v3/polyfill.min.js" crossorigin="anonymous"></script>
     <script defer src="/_assets/js/main.min.js"></script>
+    <script defer src="/service-worker.min.js"></script>
     <script>
         var dmName = 'dark_mode';
         var dm = localStorage.getItem(dmName);
