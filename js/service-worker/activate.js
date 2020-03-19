@@ -1,3 +1,6 @@
+import version from './service-worker.js';
+
+
 export default (event) => {
     /* Just like with the install event, event.waitUntil blocks activate on a promise.
        Activation will fail unless the promise is fulfilled.

@@ -2,6 +2,7 @@ import install from './install.js';
 import fetch from './fetch.js';
 import activate from './activate.js';
 
+export const version = '1::';
 
 // ServiceWorker is a progressive technology. Ignore unsupported browsers
 if ('serviceWorker' in navigator) {

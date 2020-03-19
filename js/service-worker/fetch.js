@@ -1,3 +1,5 @@
+import version from './service-worker.js';
+
 
 export default (event) => {
 

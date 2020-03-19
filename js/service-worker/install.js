@@ -1,3 +1,6 @@
+import version from './service-worker.js';
+
+
 export default (event) => {
 
     console.log('WORKER: install event in progress.');
