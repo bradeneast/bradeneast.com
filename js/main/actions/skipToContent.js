@@ -1,4 +1,6 @@
-export default () => {
+export default (e) => {
+
+    e.preventDefault();
 
     let main = document.getElementById('main');
 
