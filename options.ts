@@ -11,20 +11,20 @@ export default {
     /*
     src  //  the private folder where page edits are made
     dist  //  the folder where the compiled site is published (edits made in this folder will be lost unless the ignore character is present at the beginning of the file/directory name)
-    components  //  the private folder for the html or text building blocks used in the website
+    partials  //  the private folder for the html or text building blocks used in the website
     templates  //  the private folder for html page templates
     */
     paths: {
         src: 'private',
         dist: 'public',
-        components: 'components',
+        partials: 'partials',
         templates: 'templates',
         root: 'https://www.bradeneast.com',
     },
     /*
     */
     match: {
-        components: ['{{', '}}'],
+        partials: ['{{', '}}'],
         variables: ['[[', ']]'],
     },
     /*
@@ -98,7 +98,7 @@ export default {
             sort: '-created',
             categories: {
                 categorize: true,
-                useComponent: 'category_feed',
+                usePartial: 'category_feed',
             },
             rss: {
                 name: 'Blog of Braden East',
@@ -112,7 +112,7 @@ export default {
             sort: 'name',
             categories: {
                 categorize: true,
-                useComponent: 'category_feed_with_media',
+                usePartial: 'category_feed_with_media',
             }
         },
     ],

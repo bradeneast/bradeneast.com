@@ -1,4 +1,4 @@
-import { pages, components } from "./build.ts";
+import { pages, partials } from "./build.ts";
 import options from "../options.ts";
 import { ensureFileSync, walkSync } from 'https://deno.land/std/fs/mod.ts';
 import applyTemplates from "./templates.ts";
@@ -40,17 +40,17 @@ export default function makeCategoryPages(scope) {
 
         let page = categoryPages[i];
         let mainTemplate = options.scopes.find(t => t.target.length < 2);
-        let useComponent = scope?.categories?.useComponent;
+        let usePartial = scope?.categories?.usePartial;
 
         // let location = options.paths.dist + page.href + '.html';;
         // if (existsSync(location)) Deno.remove(location);
 
         if (mainTemplate) page.scopes = [mainTemplate];
 
-        if (useComponent) {
+        if (usePartial) {
 
-            let component = components.find(c => c.name == useComponent);
-            let ast = HTML.parse(component.content);
+            let partial = partials.find(c => c.name == usePartial);
+            let ast = HTML.parse(partial.content);
             let feedElem: any;
 
             for (let i = 0; i < ast.length; i++) {

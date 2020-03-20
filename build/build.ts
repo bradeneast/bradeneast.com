@@ -7,7 +7,7 @@ import {
 } from 'https://deno.land/std/fs/mod.ts';
 import getFsTree from './fs_tree.ts';
 import { dynamicSort, deepCopy, tryFunc, matchBetween } from './utils.ts';
-import includeComponents from './components.ts';
+import includePartials from './partials.ts';
 import processFeeds from './feeds.ts';
 import includeVariables from './variables.ts';
 import applyTemplates from './templates.ts';
@@ -31,7 +31,7 @@ Deno.readDirSync(options.paths.dist).map(file => {
 
 
 export let pages = getFsTree(options.paths.src);
-export let components = getFsTree(options.paths.components);
+export let partials = getFsTree(options.paths.partials);
 export let templates = getFsTree(options.paths.templates);
 
 
@@ -62,8 +62,8 @@ async function build() {
         let reFeed = new RegExp(` ${options.feeds.attribute}=`, 'gi');
         let destination = [options.paths.dist, page.href, 'index.html'].join('/');
 
-        // Include components
-        includeComponents(page);
+        // Include partials
+        includePartials(page);
 
         // Process feeds
         if (reFeed.test(page.content)) processFeeds(page);
