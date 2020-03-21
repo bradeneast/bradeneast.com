@@ -78,6 +78,7 @@ function dynamicSort(property) {
 }
 
 
+/** matches a string between two characters or sets of characters */
 function matchBetween(str: string, a, b) {
 
     let first = typeof a == 'number' ? a : str.indexOf(a) + a.length;
