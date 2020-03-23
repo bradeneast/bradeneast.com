@@ -17,7 +17,6 @@ import rss from './rss.ts';
 
 console.time('done');
 
-
 // Clear dist folder
 Deno.readDirSync(options.paths.dist).map(file => {
 
