@@ -42,7 +42,7 @@ button {
 ```
 
 
-### 1. Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)
+### 2. Wave goodbye to (most) CSS relative units 👋 (IE 8 and below)
 Enjoy using relative units like `rem`, `vw`, `vh`, `vmin`, `vmax`? Forget about it. You'll become well acquainted with `%` and `px` and `font-size: small`. This was annoying at first, because I use `rem` all over my stylesheets. My solution was to load in a separate stylesheet for 'retro' users, and make a small SCSS function that could convert rem-size numbers to pixels for me.
 
 ```css
@@ -60,14 +60,14 @@ h1 {
 ## Very weird IE things
 
 
-### 2. Type Mismatch Error (IE 9 and below)
+### 3. Type Mismatch Error (IE 9 and below)
 
 ![type mismatch error in the console](/_assets/media/type-mismatch-error.png)
 
 This is probably the most mysterious and elusive error I've encountered while coding. Googling didn't help, and I ended up just trying different methods or APIs until it went away. Let me know if you have some insight on this one - for real.
 
 
-### 2. HTML5 semantic elements aren't semantic?! (IE 8 and below)
+### 4. HTML5 semantic elements aren't semantic?! (IE 8 and below)
 I try to be a responsible developer, so I use semantic elements like `nav`, `article`, and `footer`. I was confused to find that content inside these elements gets unwrapped by Internet Explorer. IE goes looking for the next valid parent up the DOM tree and puts your content there instead.
 
 ```html
