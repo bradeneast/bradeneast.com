@@ -29,21 +29,31 @@ for (let p of document.getElementsByTagName('p')) {
 }
 
 
-for (let pre of document.getElementsByTagName('pre')) {
+// PRE tags
+let pres = document.getElementsByTagName('pre');
 
-    if (pre.offsetWidth >= pre.scrollWidth) continue;
-
-    let overflowClass = 'is_overflowing';
-    pre.classList.add(overflowClass);
-
-    setInterval(() => {
-        pre.classList.toggle(
-            overflowClass,
-            pre.scrollLeft <= pre.scrollWidth - pre.offsetWidth - 10
-        )
-    }, 300)
-
+for (let pre of pres) {
+    if (pre.scrollWidth >= pre.offsetWidth) {
+        pre.classList.add('is_overflowing');
+    }
 }
+
+setInterval(() => {
+
+    let scrolledToEnd = false;
+    let overflowProp = '--overflow-shadow';
+
+    for (let pre of pres) {
+        if (pre.scrollLeft >= pre.scrollWidth - pre.offsetWidth - 20) {
+            scrolledToEnd = true;
+        }
+    }
+
+    scrolledToEnd ?
+        document.body.style.setProperty(overflowProp, 'inset 0 0 0 transparent')
+        : document.body.style.removeProperty(overflowProp);
+
+}, 350)
 
 
 // A tags

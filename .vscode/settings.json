@@ -28,11 +28,6 @@
             },
             {
                 "match": "\\.js",
-                "cmd": "esbuild --bundle ./js/service-worker/service-worker.js --outdir=./public --minify",
-                "silent": true
-            },
-            {
-                "match": "\\.js",
                 "cmd": "tsc",
                 "silent": true
             }

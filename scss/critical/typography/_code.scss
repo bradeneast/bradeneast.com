@@ -26,7 +26,8 @@ pre {
     }
 
     &.is_overflowing {
-        box-shadow: overflow-shadow(rgba(0, 0, 0, 0.2));
+        box-shadow: $overflow-shadow;
+        box-shadow: var(--overflow-shadow);
     }
 }
 
