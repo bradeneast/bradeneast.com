@@ -24,11 +24,6 @@ pre {
     span {
         font-family: inherit;
     }
-
-    &.is_overflowing {
-        box-shadow: $overflow-shadow;
-        box-shadow: var(--overflow-shadow);
-    }
 }
 
 :not(pre) > code {

@@ -29,33 +29,6 @@ for (let p of document.getElementsByTagName('p')) {
 }
 
 
-// PRE tags
-let pres = document.getElementsByTagName('pre');
-
-for (let pre of pres) {
-    if (pre.scrollWidth >= pre.offsetWidth) {
-        pre.classList.add('is_overflowing');
-    }
-}
-
-setInterval(() => {
-
-    let scrolledToEnd = false;
-    let overflowProp = '--overflow-shadow';
-
-    for (let pre of pres) {
-        if (pre.scrollLeft >= pre.scrollWidth - pre.offsetWidth - 20) {
-            scrolledToEnd = true;
-        }
-    }
-
-    scrolledToEnd ?
-        document.body.style.setProperty(overflowProp, 'inset 0 0 0 transparent')
-        : document.body.style.removeProperty(overflowProp);
-
-}, 350)
-
-
 // A tags
 for (let a of document.getElementsByTagName('a')) processAnchor(a);
 
