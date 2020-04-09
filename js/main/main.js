@@ -31,25 +31,17 @@ for (let p of document.getElementsByTagName('p')) {
 
 for (let pre of document.getElementsByTagName('pre')) {
 
-    let overflowClass = 'is_overflowing';
-
     if (pre.offsetWidth >= pre.scrollWidth) continue;
+
+    let overflowClass = 'is_overflowing';
     pre.classList.add(overflowClass);
 
-    listen(pre, (e) => {
-
-        requestAnimationFrame(frame => {
-
-            let t = e.target;
-
-            t.classList.toggle(
-                overflowClass,
-                t.scrollLeft <= t.scrollWidth - t.offsetWidth - 10
-            )
-
-        })
-
-    }, 'scroll');
+    setInterval(() => {
+        pre.classList.toggle(
+            overflowClass,
+            pre.scrollLeft <= pre.scrollWidth - pre.offsetWidth - 10
+        )
+    }, 300)
 
 }
 
