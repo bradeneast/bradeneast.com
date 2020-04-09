@@ -38,12 +38,16 @@ for (let pre of document.getElementsByTagName('pre')) {
 
     listen(pre, (e) => {
 
-        let t = e.target;
+        requestAnimationFrame(frame => {
 
-        t.classList.toggle(
-            overflowClass,
-            t.scrollLeft <= t.scrollWidth - t.offsetWidth - 10
-        )
+            let t = e.target;
+
+            t.classList.toggle(
+                overflowClass,
+                t.scrollLeft <= t.scrollWidth - t.offsetWidth - 10
+            )
+
+        })
 
     }, 'scroll');
 
