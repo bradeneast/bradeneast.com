@@ -31,8 +31,21 @@ for (let p of document.getElementsByTagName('p')) {
 
 for (let pre of document.getElementsByTagName('pre')) {
 
+    let overflowClass = 'is_overflowing';
+
     if (pre.offsetWidth >= pre.scrollWidth) continue;
-    pre.classList.add('is_overflowing');
+    pre.classList.add(overflowClass);
+
+    listen(pre, (e) => {
+
+        let t = e.target;
+
+        t.classList.toggle(
+            overflowClass,
+            t.scrollLeft <= t.scrollWidth - t.offsetWidth - 10
+        )
+
+    }, 'scroll');
 
 }
 

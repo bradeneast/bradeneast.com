@@ -39,7 +39,7 @@ $easing: cubic-bezier(0.3, 0.3, 0.1, 1.3);
 $transition-short: 0.28s $easing;
 $transition-medium: 0.37s $easing;
 
-@function overflow-shadow($color: rgba(0, 0, 0, 0.2), $depth: 2) {
+@function overflow-shadow($color: rgba(0, 0, 0, 0.2), $depth: 1) {
     @return inset -#{$depth}em 0 #{$depth}em -#{$depth}em $color;
 }
 
