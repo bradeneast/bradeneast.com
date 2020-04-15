@@ -7,7 +7,6 @@
         --flow-space: 1rem;
         --flow-space-paragraph: 2rem;
         display: block;
-        line-height: 2;
 
         img,
         svg,
@@ -64,6 +63,16 @@
         h4,
         h5 {
             font-size: 1rem;
+        }
+
+        [data-feed] .highlight {
+            color: inherit;
+
+            &::before {
+                border-radius: $border-radius;
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         pre {

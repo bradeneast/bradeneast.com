@@ -1,46 +1,4 @@
 /*
-METROPOLIS
-*/
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-regular.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-regular.woff") format("woff");
-//     font-weight: 400;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-regularitalic.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-regularitalic.woff") format("woff");
-//     font-weight: 400;
-//     font-style: italic;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-bold.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-bold.woff") format("woff");
-//     font-weight: 800;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-// @font-face {
-//     font-family: Metropolis;
-//     src: local("Metropolis"), url("/_assets/fonts/metropolis/metropolis-bolditalic.woff2") format("woff2"),
-//         url("/_assets/fonts/metropolis/metropolis-bolditalic.woff") format("woff");
-//     font-weight: 800;
-//     font-style: italic;
-//     font-display: swap;
-//     unicode-range: U+000-5FF;
-// }
-
-/*
 PARISIEN NIGHT
 */
 
@@ -49,6 +7,20 @@ PARISIEN NIGHT
     src: local("Parisien Night"), url("/_assets/fonts/parisien_night/ParisienNight.woff2") format("woff2"),
         url("/_assets/fonts/parisien_night/ParisienNight.woff") format("woff"),
         url("/_assets/fonts/parisien_night/ParisienNight.eot") format("eot");
+    font-weight: 500;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
+/*
+SOLWAY
+*/
+
+@font-face {
+    font-family: Solway;
+    src: local("Solway"), url("/_assets/fonts/solway/Solway-Medium.woff2") format("woff2"),
+        url("/_assets/fonts/solway/Solway-Medium.woff") format("woff"),
+        url("/_assets/fonts/solway/Solway-Medium.eot") format("eot");
     font-weight: 500;
     font-display: swap;
     unicode-range: U+000-5FF;
