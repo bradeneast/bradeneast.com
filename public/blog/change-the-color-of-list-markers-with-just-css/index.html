@@ -107,7 +107,7 @@
     </div>
 
     <p>The web is mostly lists. Ever been to a website without a navigation menu? That said, not everything on the web <em>looks</em> like a list. It&#39;s easy to un-style a list, but is there a pure CSS way to change the color of list markers, without the use of an image?</p><p>Let&#39;s start with a simple unordered list.</p><ul>
-    <li style="list-style-type: disc">1 whole egg</li><li style="list-style-type: disc">2 egg whites</li><li style="list-style-type: disc">2oz cream cheese</li></ul><p>That&#39;s right. You&#39;re getting a bonus waffle recipe out of this. By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color?</p><p>We have 2 pure CSS options:</p><h2 id="option-1-a-pseudo-element">Option 1: A pseudo element</h2><p>This option is the most open-ended. Add <code>::before</code> or <code>::after</code> to <code>li</code> elements, then style the pseudo element to your heart&#39;s content.</p><pre><code class="language-css">li::before {
+    <li style="list-style-type: disc">30g casein protein</li><li style="list-style-type: disc">1 cup whole milk</li><li style="list-style-type: disc">1 Tbsp ground flaxseed</li></ul><p>That&#39;s right. You&#39;re getting a bonus waffle recipe out of this. By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color?</p><p>We have 2 pure CSS options:</p><h2 id="option-1-a-pseudo-element">Option 1: A pseudo element</h2><p>This option is the most open-ended. Add <code>::before</code> or <code>::after</code> to <code>li</code> elements, then style the pseudo element to your heart&#39;s content.</p><pre><code class="language-css">li::before {
     content: &#39;&#39;;
     position: absolute;
     left: -1em;
@@ -130,14 +130,14 @@
         transform: rotate(45deg);
         background: dodgerblue;
     }
-</style><ul aria-label="These list item markers should look like blue diamonds." class="pseudo-element-example">
-    <li style="list-style-type: disc">2 Tbsp almond flour</li><li style="list-style-type: disc">2 Tbsp brown sugar</li></ul><h2 id="option-2-the-list-style-image-property">Option 2: The <code>list-style-image</code> property</h2><p>Images are fine, but updating a png/svg/jpg is not always easy, and won&#39;t match if we change the theme color. Thankfully, <code>list-style-image</code> accepts gradient values, and that&#39;s the secret.</p><pre><code class="language-css">ul {
+</style><ul class="pseudo-element-example">
+    <h4>These list item markers should look like blue diamonds.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><h2 id="option-2-the-list-style-image-property">Option 2: The <code>list-style-image</code> property</h2><p>Images are fine, but updating a png/svg/jpg is not always easy, and won&#39;t match if we change the theme color. Thankfully, <code>list-style-image</code> accepts gradient values, and that&#39;s the secret.</p><pre><code class="language-css">ul {
     list-style-image: radial-gradient(coral 65%, transparent 0);
-}</code></pre><ul aria-label="These list item markers should be coral colored." style="list-style-image: radial-gradient(coral 65%, transparent 0);">
-    <li style="list-style-type: disc">1 tsp vanilla extract</li><li style="list-style-type: disc">1 tsp baking powder</li></ul><pre><code class="language-css">ul {
+}</code></pre><ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
+    <h4>These list item markers should be coral colored.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><pre><code class="language-css">ul {
     list-style-image: linear-gradient(-45deg, dodgerblue 50%, transparent 0);
-}</code></pre><ul aria-label="These list item markers should look like gems." style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
-    <li style="list-style-type: disc">1/2 tsp salt</li><li style="list-style-type: disc">1/4 tsp almond extract</li></ul><p>We can do more fun things with this, but I&#39;ll leave discovering those up to you. Unfortunately, layering multiple gradients won&#39;t work. This approach limits you to a single gradient, within the size of the marker box.</p><p>Both of these approaches are a little bit hacky. That&#39;s okay, because we have a much more straightforward way coming soon.  By next year, we might be using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">the ::marker pseudo element</a> instead. At the time of writing, <code>::marker</code> is still a draft in the CSS spec.</p>
+}</code></pre><ul style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
+    <h4>These list item markers should look like gems.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><p>We can do more fun things with this, but I&#39;ll leave discovering those up to you. Unfortunately, layering multiple gradients won&#39;t work. This approach limits you to a single gradient, within the size of the marker box.</p><p>Both of these approaches are a little bit hacky. That&#39;s okay, because we have a much more straightforward way coming soon.  By next year, we might be using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">the ::marker pseudo element</a> instead. At the time of writing, <code>::marker</code> is still a draft in the CSS spec.</p>
 
     <p id="blog_cta">
     Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Change the color of list markers with just CSS%0a&url=https://bradeneast.com/blog/change-the-color-of-list-markers-with-just-css&via=bradenthehair&hashtags=html,css">share it</a> with your friends.

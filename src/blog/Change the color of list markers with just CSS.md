@@ -6,9 +6,9 @@ The web is mostly lists. Ever been to a website without a navigation menu? That 
 Let's start with a simple unordered list.
 
 <ul>
-    <li style="list-style-type: disc">1 whole egg</li>
-    <li style="list-style-type: disc">2 egg whites</li>
-    <li style="list-style-type: disc">2oz cream cheese</li>
+    <li style="list-style-type: disc">30g casein protein</li>
+    <li style="list-style-type: disc">1 cup whole milk</li>
+    <li style="list-style-type: disc">1 Tbsp ground flaxseed</li>
 </ul>
 
 That's right. You're getting a bonus waffle recipe out of this. By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color?
@@ -48,9 +48,11 @@ li::before {
         background: dodgerblue;
     }
 </style>
-<ul aria-label="These list item markers should look like blue diamonds." class="pseudo-element-example">
-    <li style="list-style-type: disc">2 Tbsp almond flour</li>
-    <li style="list-style-type: disc">2 Tbsp brown sugar</li>
+<ul class="pseudo-element-example">
+    <h4>These list item markers should look like blue diamonds.</h4>
+    <li>30g casein protein</li>
+    <li>1 cup whole milk</li>
+    <li>1 Tbsp ground flaxseed</li>
 </ul>
 
 
@@ -63,9 +65,11 @@ ul {
     list-style-image: radial-gradient(coral 65%, transparent 0);
 }
 ```
-<ul aria-label="These list item markers should be coral colored." style="list-style-image: radial-gradient(coral 65%, transparent 0);">
-    <li style="list-style-type: disc">1 tsp vanilla extract</li>
-    <li style="list-style-type: disc">1 tsp baking powder</li>
+<ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
+    <h4>These list item markers should be coral colored.</h4>
+    <li>30g casein protein</li>
+    <li>1 cup whole milk</li>
+    <li>1 Tbsp ground flaxseed</li>
 </ul>
 
 ```css
@@ -74,9 +78,11 @@ ul {
 }
 ```
 
-<ul aria-label="These list item markers should look like gems." style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
-    <li style="list-style-type: disc">1/2 tsp salt</li>
-    <li style="list-style-type: disc">1/4 tsp almond extract</li>
+<ul style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
+    <h4>These list item markers should look like gems.</h4>
+    <li>30g casein protein</li>
+    <li>1 cup whole milk</li>
+    <li>1 Tbsp ground flaxseed</li>
 </ul>
 
 We can do more fun things with this, but I'll leave discovering those up to you. Unfortunately, layering multiple gradients won't work. This approach limits you to a single gradient, within the size of the marker box.
