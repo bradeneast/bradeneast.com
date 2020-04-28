@@ -3,7 +3,7 @@
 
 The web is mostly lists. Think about it. What comes up when we search Google? How would we navigate any website without a **list** of possible pages to visit (a menu)?
 
-That said, not everything on the web *looks* like a list. It's easy to I want to share a quick, pure CSS way to add colored list markers, without the use of an image.
+That said, not everything on the web *looks* like a list. It's easy to un-style a list, but is there a pure CSS way to add colored list markers, without the use of an image?
 
 Here's a simple unordered list.
 
@@ -20,13 +20,14 @@ Here's a simple unordered list.
     <li style="list-style-type: disc">1/4 tsp almond extract</li>
 </ul>
 
-That's right. You're getting a bonus waffle recipe out of this. By default, the list marker color inherits the color of the list item. Let's say we're working with a specific theme color throughout a new project. How would we change the color of HTML list markers to make them match our theme color?
+That's right. You're getting a bonus waffle recipe out of this. By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color?
 
-We have 2 options:
+We have 2 pure CSS options:
+
 
 ## Option 1: A pseudo element
 
-This option is relatively straightforward and open-ended. Add `::before` or `::after` to `li` elements, then position and style the pseudo element as needed.
+This option is the most open-ended. Add `::before` or `::after` to `li` elements, then style the pseudo element to your heart's content.
 
 ```css
 li::before {
@@ -62,6 +63,7 @@ li::before {
     <li>I as well.</li>
 </ul>
 
+
 ## Option 2: The `list-style-image` property
 
 Images are fine, but updating a png/svg/jpg is not always easy, and won't match if we change the theme color. Thankfully, `list-style-image` accepts gradient values, and that's the secret.
@@ -89,6 +91,6 @@ ul {
     <li>I as well.</li>
 </ul>
 
-We can do more fun things with this, but I'll leave discovering those up to you.
+We can do more fun things with this, but I'll leave discovering those up to you. Unfortunately, layering multiple gradients won't work. This approach limits you to a single gradient, within the size of the marker box.
 
-Unfortunately, layering multiple gradients won't work. This approach limits you to a single gradient, within the size of the marker box. That's okay, as we have a much more straightforward way coming soon.  By next year, we might be using [the ::marker pseudo element](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker) instead. At the time of writing, `::marker` is still a draft in the CSS spec.
+Both of these approaches are a little bit hacky. That's okay, because we have a much more straightforward way coming soon.  By next year, we might be using [the ::marker pseudo element](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker) instead. At the time of writing, `::marker` is still a draft in the CSS spec.
