@@ -1,5 +1,5 @@
 <meta name="categories" content="html, css">
-<meta name="media" content="/_assets/media/polaroids.jpg" />
+<meta name="media" content="/_assets/media/stack-of-books-on-a-table.jpg" />
 
 The web is 80% lists. Think about it. What comes up when we search Google? How would we navigate any website without a **list** of possible pages to visit (a menu)?
 
