@@ -6,10 +6,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Braden East | Get alt value automatically from src attribute</title>
+    <title>Braden East | Change the color of list markers with CSS</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I&#39;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#39;m usually adding aria-label and tabindex and role attributes later than I&#39;d like.">
+    <meta name="description" content="The web is 80% lists. Think about it. What comes up when we search Google? How would we navigate any website without a list of possible pages to visit (a menu)?">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -17,13 +17,13 @@
     <meta property="og:site_name" content="Braden East" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute" />
+    <meta property="og:url" content="https://www.bradeneast.com/blog/change-the-color-of-list-markers-with-css" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="I&#39;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#39;m usually adding aria-label and tabindex and role attributes later than I&#39;d like." />
+    <meta property="og:description" content="The web is 80% lists. Think about it. What comes up when we search Google? How would we navigate any website without a list of possible pages to visit (a menu)?" />
 
     <base href="/" />
 
-    <link rel="canonical" href="https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute" />
+    <link rel="canonical" href="https://www.bradeneast.com/blog/change-the-color-of-list-markers-with-css" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
@@ -84,19 +84,19 @@
 
 <article>
 
-    <h1 class="title">Get alt value automatically from src attribute</h1>
+    <h1 class="title">Change the color of list markers with CSS</h1>
 
     <div class="meta">
 
         <div class="created" aria-label="Date created:">
-            <strong>Created:</strong> Tue Feb 11 2020
+            <strong>Created:</strong> Mon Apr 27 2020
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Modified:</strong> Sat Mar 14 2020
+            <strong>Modified:</strong> Mon Apr 27 2020
         </div>
 
-        <p class="categories" aria-label="Categories:"><a href="/blog/categories/javascript">javascript</a><a href="/blog/categories/html">html</a><a href="/blog/categories/accessibility">accessibility</a></p>
+        <p class="categories" aria-label="Categories:"><a href="/blog/categories/html">html</a><a href="/blog/categories/css">css</a></p>
 
     </div>
 
@@ -106,59 +106,29 @@
 
     </div>
 
-    <p>I&#39;m sometimes lazy when it comes to accessibility on web projects. No matter how hard I try, I&#39;m usually adding <code>aria-label</code> and <code>tabindex</code> and <code>role</code> attributes later than I&#39;d like.</p><p>The repetition is also frustrating. If you&#39;re anything like me, you enjoy writing code because it helps you avoid repeating the same tasks over and over. That said, some things are just too important to skip, namely image <code>alt</code> attributes. When I discovered <a href="https://moz.com/learn/seo/alt-text">why alt is so important</a>, I realized I had yet another detail to manage for better SEO and accessibility on my web projects.</p><p>Today, let&#39;s look at how to solve that problem by adding accessible <code>alt</code> attribute values to our <code>img</code> elements with vanilla javascript. Check out the example HTML below.</p><pre><code class="language-html">&lt;div class=&quot;gallery&quot;&gt;
-
-    &lt;div class=&quot;gallery__item&quot;&gt;
-        &lt;img src=&quot;https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/_images/wboc-2-media-approved-preview-1521054875.jpeg?crop=1.00xw:0.870xh;0,0.130xh&amp;resize=1080:*&quot;&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;gallery__item&quot;&gt;
-        &lt;img src=&quot;https://media-cdn.tripadvisor.com/media/photo-s/09/3a/1b/8a/sesame-chicken-yum.jpg&quot;&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;gallery__item&quot;&gt;
-        &lt;img src=&quot;https://4.bp.blogspot.com/-ehuFRO8kWgM/V3yvBqhyLvI/AAAAAAAAwQY/-eaVSQkLFs8ioHS53M_Hjxj7DJuj-pWFQCLcB/w1200-h630-p-k-no-nu/pei-wei-summer-salads.jpg&quot;&gt;
-    &lt;/div&gt;
-
-&lt;/div&gt;</code></pre><p>We have a delicious-looking gallery of asian-american food here. You (and people with screen readers) probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that servers can read, but we can&#39;t.</p><p>We want to isolate just the image titles. To help us do that, we&#39;ll use some fun native javascript methods that honestly sound like dance moves: <code>split()</code>, <code>shift()</code>, and <code>pop()</code>. First, let&#39;s grab the <code>img</code> elements with <code>document.getElementsByTagName()</code>.</p><pre><code class="language-javascript">const images = Array.from(document.getElementsByTagName(&#39;img&#39;));
-
-images.map(image =&gt; {
-    // do stuff
-})</code></pre><p>Next, let&#39;s make sure the image doesn&#39;t already have an <code>alt</code> value already set.</p><pre><code class="language-javascript">images.map(image =&gt; {
-
-    if (!image.getAttribute(&#39;alt&#39;)) {
-
-        // do stuff
-
-    }
-})</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image.jpg?format=small&#39;</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">images.map(image =&gt; {
-
-    // will ignore images with alt already set
-    if (!image.getAttribute(&#39;alt&#39;)) {
-
-        const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image.jpg?format=small&#39;
-        const imageName = imageSource.split(&#39;/&#39;).pop(); // &#39;my-beautiful-image.jpg?format=small&#39;
-        const imageTitle = imageName.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // &#39;my beautiful image&#39;
-
-        image.setAttribute(&#39;alt&#39;, imageTitle);
-
-    }
-})</code></pre><p>I hope this little bit of vanilla Javascript takes the headache out of <code>alt</code> attributes and helps you improve SEO and accessibility on your web projects.</p>
+    <p>The web is 80% lists. Think about it. What comes up when we search Google? How would we navigate any website without a <strong>list</strong> of possible pages to visit (a menu)?</p><p>That said, not everything on the web <em>looks</em> like a list. I want to share a quick, pure CSS way to add colored list markers, without the use of an image.</p><p>Here&#39;s a simple unordered list.</p><ul>
+    <li style="list-style-type: disc">1 whole egg</li><li style="list-style-type: disc">2 egg whites</li><li style="list-style-type: disc">2oz cream cheese</li><li style="list-style-type: disc">2 Tbsp almond flour</li><li style="list-style-type: disc">1 Tbsp brown sugar</li><li style="list-style-type: disc">1 Tbsp sucralose</li><li style="list-style-type: disc">1 tsp vanilla extract</li><li style="list-style-type: disc">1 tsp baking powder</li><li style="list-style-type: disc">1/2 tsp salt</li><li style="list-style-type: disc">1/4 tsp almond extract</li></ul><p>That&#39;s right. You&#39;re getting a bonus waffle recipe out of this. By default, the list marker color inherits the color of the list item. Let&#39;s say we&#39;re working with a specific theme color throughout a new project. How would we change the color of HTML list markers to make them match our theme color?</p><h3 id="the-list-style-image-property">The <code>list-style-image</code> property</h3><p>Images are fine, but updating a png/svg/jpg is not always easy, and won&#39;t match if we change the theme color. Thankfully, <code>list-style-image</code> accepts gradient values, and that&#39;s the secret.</p><pre><code class="language-css">ul {
+    list-style-image: radial-gradient(coral 65%, transparent 0);
+}</code></pre><ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
+    <li>My marker should be <code>coral</code></li><li>Me too!</li><li>I as well.</li></ul><pre><code class="language-css">ul {
+    list-style-image: linear-gradient(-45deg, dodgerblue 50%, transparent 0);
+}</code></pre><ul style="list-style-image: linear-gradient(-45deg, dodgerblue 50%, transparent 0)">
+    <li>I should be interestingly shaped</li><li>Me too!</li><li>I as well.</li></ul><p>We can do more fun things with this, but I&#39;ll leave discovering those up to you.</p><p>Unfortunately, layering multiple gradients won&#39;t work. This approach limits you to a single gradient, within the size of the marker box. That&#39;s okay, as we have a much more straightforward way coming soon.  By next year, we might be using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">the ::marker pseudo element</a> instead. At the time of writing, <code>::marker</code> is still a draft in the CSS spec.</p>
 
     <p id="blog_cta">
-    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Get alt value automatically from src attribute%0a&url=https://bradeneast.com/blog/get-alt-value-automatically-from-src-attribute&via=bradenthehair&hashtags=javascript,html,accessibility">share it</a> with your friends.
+    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Change the color of list markers with CSS%0a&url=https://bradeneast.com/blog/change-the-color-of-list-markers-with-css&via=bradenthehair&hashtags=html,css">share it</a> with your friends.
 </p>
 
 </article>
 
 <div class="scope_nav">
-    <a class="highlight" href="/blog/the-simplest-pull-to-refresh">
-        <span class="label">Previous</span>
-        <h4 class="name">The simplest pull-to-refresh</h4>
-    </a>
     <a class="highlight" href="undefined">
-        <span class="label">Next</span>
+        <span class="label">Previous</span>
         <h4 class="name">undefined</h4>
+    </a>
+    <a class="highlight" href="/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties">
+        <span class="label">Next</span>
+        <h4 class="name">Two retired writing styles and why we should be thankful for CSS logical properties</h4>
     </a>
 </div>
 

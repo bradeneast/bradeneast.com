@@ -15,19 +15,13 @@
         if (dm == null || IE) localStorage.setItem(dmName, false);
 
         if (IE) {
-
             var retroModeStyles = document.createElement('link');
-
             retroModeStyles.rel = 'stylesheet';
             retroModeStyles.href = '/_assets/css/retro_mode.min.css';
             retroModeStyles.setAttribute('type', 'text/css');
-
             doc.appendChild(retroModeStyles);
-
         } else {
-
             doc.classList.toggle(dmName, JSON.parse(dm));
-
         }
 
     </script></head><body>
@@ -39,6 +33,9 @@
 
         <p>
     <h1>Posts about #css</h1></p><ul data-feed="/blog/categories/css"><li>
+    <h2>
+        <a class="highlight" href="/blog/change-the-color-of-list-markers-with-css">Change the color of list markers with CSS</a></h2><p>The web is 80% lists. Think about it. What comes up when we search Google? How would we navigate any website without a <strong>list</strong> of possible pages to visit (a menu)?</p><div class="meta">
+        <p class="categories"><a href="/blog/categories/html">html</a><a href="/blog/categories/css">css</a></p></div></li><li>
     <h2>
         <a class="highlight" href="/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties">Two retired writing styles and why we should be thankful for CSS logical properties</a></h2><p>With the advent of CSS <a href="https://css-tricks.com/css-logical-properties/">logical properties</a>, I think it&#39;s important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.</p><div class="meta">
         <p class="categories"><a href="/blog/categories/design">design</a><a href="/blog/categories/css">css</a><a href="/blog/categories/typography">typography</a></p></div></li><li>

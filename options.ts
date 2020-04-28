@@ -6,7 +6,7 @@ export default {
     sitemap: true,
     paths: {
         /** the private folder where page edits are made */
-        src: 'private',
+        src: 'src',
         /** the folder where the compiled site is published (edits made in this folder will be lost unless the ignore character is present at the beginning of the file/directory name) */
         dist: 'public',
         /** the private folder for the html or text building blocks used in the website */

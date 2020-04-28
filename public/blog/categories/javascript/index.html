@@ -15,19 +15,13 @@
         if (dm == null || IE) localStorage.setItem(dmName, false);
 
         if (IE) {
-
             var retroModeStyles = document.createElement('link');
-
             retroModeStyles.rel = 'stylesheet';
             retroModeStyles.href = '/_assets/css/retro_mode.min.css';
             retroModeStyles.setAttribute('type', 'text/css');
-
             doc.appendChild(retroModeStyles);
-
         } else {
-
             doc.classList.toggle(dmName, JSON.parse(dm));
-
         }
 
     </script></head><body>
