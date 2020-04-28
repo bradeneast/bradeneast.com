@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Tue, 28 Apr 2020 00:59:40 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Apr 2020 01:16:36 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Change the color of list markers with CSS</title>
@@ -13,7 +13,7 @@
             <pubDate>Mon, 27 Apr 2020 22:55:54 GMT</pubDate>
             <category>html</category>
 <category>css</category>
-            <description>The web is 80% lists. Think about it. What comes up when we search Google? How would we navigate any website without a list of possible pages to visit (a menu)?</description>
+            <description>The web is mostly lists. Think about it. What comes up when we search Google? How would we navigate any website without a list of possible pages to visit (a menu)?</description>
         </item>
         <item>
             <title>Embed codepens with one line of HTML - faster and more accessibly</title>
