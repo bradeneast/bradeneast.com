@@ -1,23 +1,14 @@
 <meta name="categories" content="html, css">
 <meta name="media" content="/_assets/media/stack-of-books-on-a-table.jpg" />
 
-The web is mostly lists. Think about it. What comes up when we search Google? How would we navigate any website without a **list** of possible pages to visit (a menu)?
+The web is mostly lists. Ever been to a website without a navigation menu? That said, not everything on the web *looks* like a list. It's easy to un-style a list, but is there a pure CSS way to change the color of list markers, without the use of an image?
 
-That said, not everything on the web *looks* like a list. It's easy to un-style a list, but is there a pure CSS way to add colored list markers, without the use of an image?
-
-Here's a simple unordered list.
+Let's start with a simple unordered list.
 
 <ul>
     <li style="list-style-type: disc">1 whole egg</li>
     <li style="list-style-type: disc">2 egg whites</li>
     <li style="list-style-type: disc">2oz cream cheese</li>
-    <li style="list-style-type: disc">2 Tbsp almond flour</li>
-    <li style="list-style-type: disc">1 Tbsp brown sugar</li>
-    <li style="list-style-type: disc">1 Tbsp sucralose</li>
-    <li style="list-style-type: disc">1 tsp vanilla extract</li>
-    <li style="list-style-type: disc">1 tsp baking powder</li>
-    <li style="list-style-type: disc">1/2 tsp salt</li>
-    <li style="list-style-type: disc">1/4 tsp almond extract</li>
 </ul>
 
 That's right. You're getting a bonus waffle recipe out of this. By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color?
@@ -57,10 +48,9 @@ li::before {
         background: dodgerblue;
     }
 </style>
-<ul class="pseudo-element-example">
-    <li>My marker should be a blue diamond.</li>
-    <li>Me too!</li>
-    <li>I as well.</li>
+<ul aria-label="These list item markers should look like blue diamonds." class="pseudo-element-example">
+    <li style="list-style-type: disc">2 Tbsp almond flour</li>
+    <li style="list-style-type: disc">2 Tbsp brown sugar</li>
 </ul>
 
 
@@ -73,10 +63,9 @@ ul {
     list-style-image: radial-gradient(coral 65%, transparent 0);
 }
 ```
-<ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
-    <li>My marker should be an orange disc.</li>
-    <li>Me too!</li>
-    <li>I as well.</li>
+<ul aria-label="These list item markers should be coral colored." style="list-style-image: radial-gradient(coral 65%, transparent 0);">
+    <li style="list-style-type: disc">1 tsp vanilla extract</li>
+    <li style="list-style-type: disc">1 tsp baking powder</li>
 </ul>
 
 ```css
@@ -85,10 +74,9 @@ ul {
 }
 ```
 
-<ul style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
-    <li>My marker should look like a gem.</li>
-    <li>Me too!</li>
-    <li>I as well.</li>
+<ul aria-label="These list item markers should look like gems." style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
+    <li style="list-style-type: disc">1/2 tsp salt</li>
+    <li style="list-style-type: disc">1/4 tsp almond extract</li>
 </ul>
 
 We can do more fun things with this, but I'll leave discovering those up to you. Unfortunately, layering multiple gradients won't work. This approach limits you to a single gradient, within the size of the marker box.
