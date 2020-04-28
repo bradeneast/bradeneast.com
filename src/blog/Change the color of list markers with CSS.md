@@ -22,7 +22,7 @@ Here's a simple unordered list.
 
 That's right. You're getting a bonus waffle recipe out of this. By default, the list marker color inherits the color of the list item. Let's say we're working with a specific theme color throughout a new project. How would we change the color of HTML list markers to make them match our theme color?
 
-### The `list-style-image` property
+## The `list-style-image` property
 
 Images are fine, but updating a png/svg/jpg is not always easy, and won't match if we change the theme color. Thankfully, `list-style-image` accepts gradient values, and that's the secret.
 
