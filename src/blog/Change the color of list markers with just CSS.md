@@ -3,7 +3,7 @@
 
 The web is mostly lists. Ever been to a website without a navigation menu? That said, not everything on the web *looks* like a list. It's easy to un-style a list, but is there a pure CSS way to change the color of list markers, without the use of an image?
 
-Let's start with a simple unordered list.
+I'm currently on vacation and missing my protein shakes at home, so lets use the ingredients as our example list to help me cope. 
 
 <ul>
     <li style="list-style-type: disc">30g casein protein</li>
@@ -11,9 +11,7 @@ Let's start with a simple unordered list.
     <li style="list-style-type: disc">1 Tbsp ground flaxseed</li>
 </ul>
 
-That's right. You're getting a bonus waffle recipe out of this. By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color?
-
-We have 2 pure CSS options:
+By default, the list marker inherits the text color of the list item. But how would we change the color of HTML list markers to make them match our theme color? We have 2 pure CSS options:
 
 
 ## Option 1: A pseudo element
