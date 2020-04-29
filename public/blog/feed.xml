@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Wed, 29 Apr 2020 16:21:55 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Apr 2020 16:27:16 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Change the color of list markers with just CSS</title>
@@ -61,7 +61,8 @@
             <link>https://www.bradeneast.com/blog/stop-using-gifs</link>
             <guid>https://www.bradeneast.com/blog/stop-using-gifs</guid>
             <pubDate>Wed, 29 Apr 2020 15:38:56 GMT</pubDate>
-            <category>html</category>
+            <category>media</category>
+<category>html</category>
 <category>performance</category>
 <category>accessibility</category>
             <description>If you care about web performance, please stop using animated GIFs on your website.  Heck, even Giphy, the largest gif library in the world, serves GIFs as MP4 files. Actual GIF format is their last possible fallback.</description>
