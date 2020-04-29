@@ -6,6 +6,8 @@
     body {
         --flow-space: 1rem;
         --flow-space-paragraph: 2rem;
+        --transition-short: 0.3s ease;
+        --transition-medium: 0.4s ease;
         display: block;
 
         img,
@@ -103,7 +105,7 @@
             top: 80%;
             bottom: auto;
             max-width: none;
-            width: 100%;
+            width: calc(100% - var(--flow-space));
         }
     }
 }
