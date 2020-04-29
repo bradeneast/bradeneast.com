@@ -6,9 +6,12 @@ If you care about web performance, please stop using animated GIFs on your websi
 MP4, WebM, and WebP offer 1/2 to 1/6 the file size of GIFs, so there's an immediate benefit of faster page loads. Not only that, but HTML `video` elements have the benefit of fallbacks using `source` . If you've not used them before, here's a quick example of how to make a `video` element behave like a GIF.
 
 ```html
+<!-- The easy way -->
 <video src="animation.mp4" autoplay muted loop playsinline></video>
+```
 
-<!-- or add fallbacks -->
+```html
+<!-- The easy way, but with fallbacks -->
 <video autoplay muted loop playsinline>
     <source src="animation.webm" type="video/webm">
     <source src="animation.mp4" type="video/mp4">
