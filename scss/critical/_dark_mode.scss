@@ -11,6 +11,8 @@
     }
 
     p a,
+    article ul a,
+    article ol a,
     button.unstyled,
     #skip_link,
     :not(pre) > code {

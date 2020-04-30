@@ -49,7 +49,8 @@
         }
 
         h1 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
+            word-wrap: break-word;
         }
 
         h2 {
@@ -81,6 +82,16 @@
 
         ::-webkit-scrollbar {
             display: none;
+        }
+
+        article {
+            ul,
+            ol {
+                list-style-image: radial-gradient(circle at 50% 35%, var(--primary) 40%, transparent 42%);
+            }
+            li {
+                padding-left: 0;
+            }
         }
 
         .scope_nav {
