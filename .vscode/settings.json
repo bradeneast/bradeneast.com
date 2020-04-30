@@ -1,11 +1,11 @@
 {
-    "liveServer.settings.root": "/public",
+    "liveServer.settings.root": "/dist",
     "liveServer.settings.file": "/404/index.html",
     "liveSassCompile.settings.formats": [
         {
             "format": "compressed",
             "extensionName": ".min.css",
-            "savePath": "/public/_assets/css"
+            "savePath": "/dist/_assets/css"
         }
     ],
     "minify.minifyExistingOnSave": false,
@@ -14,6 +14,7 @@
             {
                 "match": "\\.ts|\\.html|\\.md",
                 "cmd": "deno run --allow-read --allow-write ./build/build.ts",
+                "isAsync": true,
                 "silent": true
             },
             {

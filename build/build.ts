@@ -22,7 +22,7 @@ Deno.readDirSync(options.paths.dist).map(file => {
 
     let path = [options.paths.dist, file.name].join('/');
 
-    if (file.name.charAt(0) == options.ignore) return;
+    if (file.name?.charAt(0) == options.ignore) return;
     if (file.isDirectory()) emptyDirSync(path);
     if (existsSync(path)) tryFunc(5, () => Deno.removeSync(path));
 
