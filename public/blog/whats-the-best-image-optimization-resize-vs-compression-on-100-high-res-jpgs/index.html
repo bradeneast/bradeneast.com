@@ -6,10 +6,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Braden East | Stop using GIFs</title>
+    <title>Braden East | What's the best image optimization&quest; Resize vs compression on 100 high-res JPGs</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="If you care about web performance, please stop using gifs for animatinos on your website. Heck, even Giphy, the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their last possible fallback.">
+    <meta name="description" content="What is the best way, objectively, to reduce the file size of an image for the web? Let&#39;s get scientific today, and do some quantitative testing.">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -17,13 +17,13 @@
     <meta property="og:site_name" content="Braden East" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.bradeneast.com/blog/stop-using-gifs" />
+    <meta property="og:url" content="https://www.bradeneast.com/blog/whats-the-best-image-optimization-resize-vs-compression-on-100-high-res-jpgs" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="If you care about web performance, please stop using gifs for animatinos on your website. Heck, even Giphy, the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their last possible fallback." />
+    <meta property="og:description" content="What is the best way, objectively, to reduce the file size of an image for the web? Let&#39;s get scientific today, and do some quantitative testing." />
 
     <base href="/" />
 
-    <link rel="canonical" href="https://www.bradeneast.com/blog/stop-using-gifs" />
+    <link rel="canonical" href="https://www.bradeneast.com/blog/whats-the-best-image-optimization-resize-vs-compression-on-100-high-res-jpgs" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
@@ -84,50 +84,54 @@
 
 <article>
 
-    <h1 class="title">Stop using GIFs</h1>
+    <h1 class="title">What's the best image optimization&quest; Resize vs compression on 100 high-res JPGs</h1>
 
     <div class="meta">
 
         <div class="created" aria-label="Date created:">
-            <strong>Created:</strong> Wed Apr 29 2020
+            <strong>Created:</strong> Thu Apr 30 2020
         </div>
 
         <div class="modified" aria-label="Date modified:">
             <strong>Updated:</strong> Thu Apr 30 2020
         </div>
 
-        <p class="categories" aria-label="Categories:"><a href="/blog/categories/media">media</a><a href="/blog/categories/html">html</a><a href="/blog/categories/performance">performance</a><a href="/blog/categories/accessibility">accessibility</a></p>
+        <p class="categories" aria-label="Categories:"><a href="/blog/categories/media">media</a><a href="/blog/categories/performance">performance</a><a href="/blog/categories/accessibility">accessibility</a></p>
 
     </div>
 
     <div class="featured_media" aria-label="Featured media:">
 
-        <img src="/_assets/media/smart-thinking.jpg" alt="" />
+        <img src="/_assets/media/person-holding-a-DSLR-camera.jpg" alt="" />
 
     </div>
 
-    <p>If you care about web performance, please stop using gifs for animatinos on your website. Heck, even <a href="https://giphy.com/">Giphy</a>, the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their <strong><em>last possible fallback</em></strong>.</p><p>MP4, WebM, and WebP will almost always be 1/5 to 1/2 the file size of GIF, so there&#39;s an immediate benefit of faster page loads and better performance. Not only that, but HTML <code>video</code> elements have the benefit of fallbacks using <code>source</code> . If you&#39;ve not used them before, here&#39;s a quick example of how to make a <code>video</code> element behave like a gif.</p><pre><code class="language-html">&lt;!-- The easy way --&gt;
-&lt;video src=&quot;animation.mp4&quot; autoplay muted loop playsinline&gt;&lt;/video&gt;</code></pre><pre><code class="language-html">&lt;!-- The easy way, but with fallbacks --&gt;
-&lt;video autoplay muted loop playsinline&gt;
-    &lt;source src=&quot;animation.webm&quot; type=&quot;video/webm&quot;&gt;
-    &lt;source src=&quot;animation.mp4&quot; type=&quot;video/mp4&quot;&gt;
-    Your browser doesn&#39;t support embedded videos.
-&lt;/video&gt;</code></pre><p>Pretty easy right?  One quick note: When possible, always use the <code>muted</code> and <code>autoplay</code> attributes together. The reason for this is that most mobile browsers will ignore <code>autoplay</code> if <code>muted</code> is not also present.</p><p>Already use gifs in production on your site? Use a service like <a href="https://ezgif.com/">Ezgif.com</a> to convert them to MP4 and optimize them for the smallest possible file size. You&#39;ll be amazed at the results.</p>
+    <p>What is the best way, objectively, to reduce the file size of an image for the web? Let&#39;s get scientific today, and do some quantitative testing.</p><p>For the last decade or so, the standard for large images has been 1920px wide with medium compression, usually weighing in at 300kb-400kb. That&#39;s changing quickly. In a few years, everything will have a 4k or 8k display. When I switched to a 4k monitor, I immediately noticed that most images on the web are too small for these displays. In fact, finding a &quot;sharp at 4k&quot; image online is rare.*</p><p><em>*Don&#39;t forget the occasional 6mb image that nobody bothered to optimize.</em></p><p>That said, is there a way to squeeze more mileage out of high-res images for the web? That&#39;s what I wanted to find out, so I tested the two most common optimizations: Compression and Resizing.</p><h2 id="control-group">Control group</h2><ul>
+<li>100 JPG images from the <a href="https://unsplash.com">Unsplash homepage</a></li><li>Landscape and portrait orientations</li><li>Wide variety of subjects, color ranges, noise levels, and dark/light areas</li><li>Minimum dimension: 4096 pixels (4k)</li><li>Maximum dimension: 4096 pixels (4k)</li><li>Avg. file size: 2,510kb</li></ul><p>To test so many images programmatically, I used Photoshop&#39;s Image Processor. I&#39;m honestly amazed that I have used Photoshop this long without knowing of it. The use cases are endless.</p><h2 id="results">Results</h2><table>
+<thead>
+<tr>
+<th>Test Group</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr>
+<td><em>Resized to (px)</em></td><td>4096</td><td>1920</td><td>2880</td></tr><tr>
+<td><em>Compression level</em></td><td>Max</td><td>None</td><td>Heavy</td></tr><tr>
+<td><em>Avg. file size (kb)</em></td><td>345</td><td>947</td><td>294</td></tr><tr>
+<td><em>% of original</em></td><td>14%</td><td>35%</td><td>11%</td></tr><tr>
+<td><em>Artifacting (at 4k)</em></td><td>High</td><td>None</td><td>Low</td></tr><tr>
+<td><em>Blurring (at 4k)</em></td><td>None</td><td>Moderate</td><td>Low</td></tr></tbody></table><p>While it was easy to spot artifacting in heavily compressed photos with large swaths of color and gradients, most images did incredibly well. Even when JPG images were compressed into oblivion, their first-glance appearance held up remarkably well. Most looked exceptional. Aside from the Max Compression Group, every group was crisp and could even withstand some zoom in 4k before appearing distorted.</p><p><strong>Main takeaway: Compression has a much greater effect on file size than resizing (shrinking dimensions).</strong></p>
 
     <p id="blog_cta">
-    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Stop using GIFs%0a&url=https://bradeneast.com/blog/stop-using-gifs&via=bradenthehair&hashtags=media,html,performance,accessibility">share it</a> with your friends.
+    Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=What's the best image optimization&quest; Resize vs compression on 100 high-res JPGs%0a&url=https://bradeneast.com/blog/whats-the-best-image-optimization-resize-vs-compression-on-100-high-res-jpgs&via=bradenthehair&hashtags=media,performance,accessibility">share it</a> with your friends.
 </p>
 
 </article>
 
 <div class="scope_nav">
-    <a class="highlight" href="/blog/whats-the-best-image-optimization-resize-vs-compression-on-100-high-res-jpgs">
+    <a class="highlight" href="undefined">
         <span class="label">Previous</span>
-        <h4 class="name">What's the best image optimization&quest; Resize vs compression on 100 high-res JPGs</h4>
+        <h4 class="name">undefined</h4>
     </a>
-    <a class="highlight" href="/blog/change-the-color-of-list-markers-with-just-css">
+    <a class="highlight" href="/blog/stop-using-gifs">
         <span class="label">Next</span>
-        <h4 class="name">Change the color of list markers with just CSS</h4>
+        <h4 class="name">Stop using GIFs</h4>
     </a>
 </div>
 

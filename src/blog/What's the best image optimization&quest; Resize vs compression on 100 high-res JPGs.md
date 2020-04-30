@@ -4,7 +4,7 @@
 
 What is the best way, objectively, to reduce the file size of an image for the web? Let's get scientific today, and do some quantitative testing.
 
-For the last decade or so, the standard for large images has been ~1920x1080 pixels with medium compression, weighing in around 250kb-400kb. That's changing quickly. In a few years, everything will have a 4k or 8k display. When I switched to a 4k monitor, I immediately noticed that most images on the web are too small for these displays. In fact, finding a "sharp at 4k" image online is rare.*
+For the last decade or so, the standard for large images has been 1920px wide with medium compression, usually weighing in at 300kb-400kb. That's changing quickly. In a few years, everything will have a 4k or 8k display. When I switched to a 4k monitor, I immediately noticed that most images on the web are too small for these displays. In fact, finding a "sharp at 4k" image online is rare.*
 
 **Don't forget the occasional 6mb image that nobody bothered to optimize.*
 
@@ -24,24 +24,14 @@ To test so many images programmatically, I used Photoshop's Image Processor. I'm
 
 
 ## Results
-
-### Max Compression @4096 (4k) Group
-- Avg. file size: 345kb || ~86% reduction
-- Artifacting at 4k: High
-- Blurring at 4k: None
-
-
-### No Compression @1920 Group
-- Avg. file size: 947kb || ~65% reduction
-- Artifacting at 4k: None
-- Blurring at 4k: Moderate
-
-
-
-###  Heavy Compression @2880 Group
-- Avg. file size: 294kb || ~89% reduction
-- Artifacting at 4k: Moderate
-- Blurring at 4k: Low
+| Test Group            | A    | B        | C     |
+| --------------------- | ---- | -------- | ----- |
+| *Resized to (px)*     | 4096 | 1920     | 2880  |
+| *Compression level*   | Max  | None     | Heavy |
+| *Avg. file size (kb)* | 345  | 947      | 294   |
+| *% of original*       | 14%  | 35%      | 11%   |
+| *Artifacting (at 4k)* | High | None     | Low   |
+| *Blurring (at 4k)*    | None | Moderate | Low   |
 
 
 

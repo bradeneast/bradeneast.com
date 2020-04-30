@@ -4,7 +4,7 @@
         <title>Blog of Braden East</title>
         <link>https://www.bradeneast.com/blog/feed.xml</link>
         <description>The blog for dev-signers.</description>
-        <lastBuildDate>Thu, 30 Apr 2020 21:44:59 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Apr 2020 22:33:57 GMT</lastBuildDate>
         <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Change the color of list markers with just CSS</title>
@@ -117,4 +117,14 @@
 <category>javascript</category>
 <category>accessibility</category>
             <description>Theres a special moment that happens when youre debugging code. Its when you realize that 6 hours has gone by since you started, and youre not sure if you remembered to breathe for most of that. Thanks IE.</description>
+        </item>
+        <item>
+            <title>What's the best image optimization&quest; Resize vs compression on 100 high-res JPGs</title>
+            <link>https://www.bradeneast.com/blog/whats-the-best-image-optimization-resize-vs-compression-on-100-high-res-jpgs</link>
+            <guid>https://www.bradeneast.com/blog/whats-the-best-image-optimization-resize-vs-compression-on-100-high-res-jpgs</guid>
+            <pubDate>Thu, 30 Apr 2020 05:00:00 GMT</pubDate>
+            <category>media</category>
+<category>performance</category>
+<category>accessibility</category>
+            <description>What is the best way, objectively, to reduce the file size of an image for the web? Lets get scientific today, and do some quantitative testing.</description>
         </item></channel></rss>
