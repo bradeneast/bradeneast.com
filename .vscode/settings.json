@@ -1,11 +1,11 @@
 {
-    "liveServer.settings.root": "/dist",
+    "liveServer.settings.root": "/public",
     "liveServer.settings.file": "/404/index.html",
     "liveSassCompile.settings.formats": [
         {
             "format": "compressed",
             "extensionName": ".min.css",
-            "savePath": "/dist/_assets/css"
+            "savePath": "/public/_assets/css"
         }
     ],
     "minify.minifyExistingOnSave": false,
