@@ -12,11 +12,37 @@ article {
         max-width: 40rem;
     }
 
+    table {
+        width: 100%;
+        margin-bottom: $flow-space-paragraph;
+        margin-bottom: var(--flow-space-paragraph);
+
+        td,
+        th {
+            border-right: $border-width $border-style $primary;
+            border-bottom: $border-width $border-style $primary;
+            border-color: $lightgrey;
+            padding: 0 0.37em;
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
+        tr:last-of-type td {
+            border-bottom: none;
+        }
+
+        th {
+            text-align: inherit;
+        }
+    }
+
     ul,
     ol {
         max-width: 40rem;
-        margin: $flow-space-paragraph auto;
-        margin: var(--flow-space-paragraph) auto;
+        margin: 0 auto $flow-space-paragraph auto;
+        margin: 0 auto var(--flow-space-paragraph) auto;
         padding-left: 1em;
 
         li {

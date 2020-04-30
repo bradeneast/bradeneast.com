@@ -37,6 +37,12 @@
         background: $darkgrey;
     }
 
+    table,
+    td,
+    th {
+        border-color: $darkgrey;
+    }
+
     nav a.active {
         color: inherit;
     }
