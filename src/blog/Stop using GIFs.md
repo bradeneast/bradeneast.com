@@ -1,7 +1,7 @@
 <meta name="categories" content="media, html, performance, accessibility">
 <meta name="media" content="/_assets/media/smart-thinking.jpg">
 
-If you care about web performance, please stop using gifs for animatinos on your website. Heck, even [Giphy](https://giphy.com/), the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their ***last possible fallback***.
+If you care about web performance, please stop using gifs for animations on your website. Heck, even [Giphy](https://giphy.com/), the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their ***last possible fallback***.
 
 MP4, WebM, and WebP will almost always be 1/5 to 1/2 the file size of GIF, so there's an immediate benefit of faster page loads and better performance. Not only that, but HTML `video` elements have the benefit of fallbacks using `source` . If you've not used them before, here's a quick example of how to make a `video` element behave like a gif.
 
