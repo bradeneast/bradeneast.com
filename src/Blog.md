@@ -5,3 +5,5 @@
         {{ feed_item }}
     </template>
 </ul>
+
+{{ twitter_cta }}
