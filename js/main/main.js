@@ -4,6 +4,7 @@ import altFromSrc from './dom/altFromSrc.js';
 import addCodepenFallback from './dom/addCodepenFallback.js';
 import findActive from './dom/findActive.js';
 import tooltip from './dom/tooltip.js';
+import addIcon from './dom/addIcon.js';
 
 // ACTIONS
 import toggleDarkMode from './actions/toggleDarkMode.js';
@@ -68,3 +69,13 @@ listen(darkModeToggle, toggleDarkMode);
 // SKIP LINK
 let skipLink = document.getElementById('skip_link');
 listen(skipLink, skipToContent);
+
+
+// PRE tags
+let pres = document.getElementsByTagName('pre');
+for (let pre of pres) addIcon(pre, '</>');
+
+
+// BLOCKQUOTE tags
+let blockquotes = document.getElementsByTagName('blockquote');
+for (let blockquote of blockquotes) addIcon(blockquote, 'i');
