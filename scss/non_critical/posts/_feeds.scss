@@ -1,11 +1,6 @@
 [data-feed] {
     padding-left: 0;
 
-    img {
-        border: $border-width $border-style currentColor;
-        border-radius: $border-radius-alt;
-    }
-
     & > * {
         padding: 1em 0;
         list-style: none;
@@ -14,11 +9,6 @@
 
     :not(p) > a {
         text-decoration: none;
-    }
-
-    a:hover img,
-    a:focus img {
-        border-radius: $border-radius;
     }
 }
 

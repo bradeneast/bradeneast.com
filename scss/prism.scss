@@ -2,10 +2,11 @@
 
 .token {
     color: inherit;
-    $orange: #fa7453;
-    $green: #00ceb2;
-    $lightblue: #29b0ff;
-    $purple: #aa7cff;
+    $green: #13e5ec;
+    $teal: #58bcff;
+    $lightblue: #4f9bff;
+    $blue: #7e8bff;
+    $purple: #da8bff;
     $pink: #ff3d9e;
 
     &.comment,
@@ -24,14 +25,14 @@
     &.namespace,
     &.deleted,
     &.function-name {
-        color: $lightblue;
+        color: $purple;
     }
 
     &.boolean,
     &.number,
     &.function,
     &.inserted {
-        color: $primary;
+        color: $teal;
     }
 
     &.function {
@@ -44,7 +45,7 @@
     &.class-name,
     &.constant,
     &.symbol {
-        color: $purple;
+        color: $green;
     }
 
     &.selector,
@@ -52,7 +53,7 @@
     &.atrule,
     &.keyword,
     &.builtin {
-        color: $green;
+        color: $lightblue;
     }
 
     &.string,
@@ -60,7 +61,7 @@
     &.attr-value,
     &.regex,
     &.variable {
-        color: $orange;
+        color: $blue;
     }
 
     &.operator,

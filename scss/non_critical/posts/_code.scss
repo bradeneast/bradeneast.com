@@ -27,12 +27,11 @@ pre {
 }
 
 :not(pre) > code {
-    color: $slategrey;
+    color: $darkgrey;
     position: relative;
     font-family: monospace !important;
-    border-bottom: $border-width $border-style currentColor;
-    border-radius: 0;
+    background: $ultralightgrey;
     cursor: text;
-    padding: 0.1em;
+    padding: 0.1em 0.2em;
     white-space: normal;
 }

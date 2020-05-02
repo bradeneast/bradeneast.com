@@ -32,35 +32,36 @@ pre {
     padding: var(--flow-space-paragraph);
     margin-bottom: $flow-space-paragraph;
     margin-bottom: var(--flow-space-paragraph);
-    border: $border-width $border-style $mediumgrey;
+    border: $border-width $border-style $lightgrey;
     border-radius: $border-radius;
-}
-
-.icon {
-    position: absolute;
-    font-size: 1.2em;
-    width: 2em;
-    height: 2em;
-    text-align: center;
-    font-family: "Solway", sans-serif;
-    letter-spacing: -0.05em;
-    border-radius: $border-radius;
-    background: $inverse;
-    background: var(--inverse);
-    transform: translate(-0.3em, -0.3em);
-    z-index: 5;
 }
 
 blockquote {
-    background: $inverse;
-    background: var(--primary);
-    border-color: $inverse;
-    border-color: var(--inverse);
+    background: $ultralightgrey;
+    border: none;
     font-style: italic;
 
     p {
         margin-bottom: 0;
     }
+}
+
+.icon {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    font-size: 1.2em;
+    line-height: 1.63;
+    text-align: center;
+    font-family: "Solway", sans-serif;
+    letter-spacing: -0.05em;
+    border: $border-width $border-style $primary;
+    border-color: var(--primary);
+    background: $inverse;
+    background: var(--inverse);
+    border-radius: $border-radius;
+    transform: translate(-0.3em, -0.3em);
+    z-index: 5;
 }
 
 ::selection,

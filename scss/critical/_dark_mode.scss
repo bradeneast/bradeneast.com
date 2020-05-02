@@ -62,6 +62,11 @@
         list-style-type: "🌔";
     }
 
+    blockquote,
+    :not(pre) > code {
+        background: $darkgrey;
+    }
+
     #dark_mode_toggle {
         &::after {
             transform-origin: right;
@@ -76,9 +81,5 @@
         svg {
             color: currentColor;
         }
-    }
-
-    pre.is_overflowing {
-        box-shadow: overflow-shadow(rgba(0, 0, 0, 0.3));
     }
 }
