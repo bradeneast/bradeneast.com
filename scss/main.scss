@@ -22,13 +22,13 @@
 html,
 body {
     scroll-behavior: smooth;
-    background: white;
+    background: $inverse;
     background: var(--inverse);
 }
 
 body {
     font-family: $ffb;
-    color: $charcoalgrey;
+    color: $body-color;
     line-height: 1.8;
     letter-spacing: -0.01em;
     text-rendering: optimizeLegibility;
