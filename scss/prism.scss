@@ -2,12 +2,12 @@
 
 .token {
     color: inherit;
-    $green: #13e5ec;
-    $teal: #58bcff;
-    $lightblue: #4f9bff;
-    $blue: #7e8bff;
-    $purple: #da8bff;
-    $pink: #ff3d9e;
+    $green: #00b9b9;
+    $lightblue: #6faeff;
+    $blue: #a0a9fd;
+    $purple: #f584ff;
+    $pink: #ff7abc;
+    $red: #ff7373;
 
     &.comment,
     &.block-comment,
@@ -32,7 +32,7 @@
     &.number,
     &.function,
     &.inserted {
-        color: $teal;
+        color: $red;
     }
 
     &.function {
