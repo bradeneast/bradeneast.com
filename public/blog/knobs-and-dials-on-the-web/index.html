@@ -97,7 +97,7 @@
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Updated:</strong> Sat Feb 15 2020
+            <strong>Updated:</strong> Sun May 03 2020
         </div>
 
         <p class="categories" aria-label="Categories:"><a href="/blog/categories/html">html</a><a href="/blog/categories/css">css</a><a href="/blog/categories/ui">ui</a></p>
@@ -126,30 +126,41 @@
     &lt;input type=&quot;range&quot; oninput=&quot;this.parentElement.style.setProperty(&#39;--knob-position&#39;, this.value)&quot;&gt;
     &lt;div class=&quot;knob&quot;&gt;&lt;/div&gt;
     &lt;input type=&quot;range&quot;&gt;
-&lt;/div&gt;</code></pre><p>Using the <code>range</code> input this way works as expected for desktop devices. However, touch devices (especially iOS) don&#39;t play well with range inputs. To support these users, we’ll add a <code>touchstart</code> and <code>touchmove</code> event listeners to the knob. This way, we can update our custom <code>--knob-position</code> property on the parent element using <code>setProperty()</code>. I&#39;m also throttling the <code>touchmove</code> event with <code>requestAnimationFrame</code> for better performance.</p><pre><code class="language-javascript">const knob = document.querySelector(&#39;.adjustment&#39;);
+&lt;/div&gt;</code></pre><p>Using the <code>range</code> input this way works as expected for desktop devices. However, touch devices (especially iOS) don&#39;t play well with range inputs. To support these users, we’ll add a <code>touchstart</code> and <code>touchmove</code> event listeners to the knob. This way, we can update our custom <code>--knob-position</code> property on the parent element using <code>setProperty()</code>. I&#39;m also throttling the <code>touchmove</code> event with <code>requestAnimationFrame</code> for better performance.</p><pre><code class="language-javascript">let knob = document.querySelector(&#39;.adjustment&#39;);
+
+// Establish an object to store touch values
 let touch = {
   start: 0,
   current: 0,
   diff: 0
 }
 
+// Set initial touch values on the touchstart event
 knob.addEventListener(&#39;touchstart&#39;, (e) =&gt; {
   touch.start = e.changedTouches[0].screenY;
 })
 
 knob.addEventListener(&#39;touchmove&#39;, (e) =&gt; {
   requestAnimationFrame(() =&gt; {
+
+    // Update touch values
     touch.current = e.changedTouches[0].screenY;
     touch.diff = (touch.current - touch.start) * -1;
-    knob.style.setProperty(&#39;--knob-position&#39;, limit(touch.diff, 0, 100));    
-  })
-})
 
-function limit(n, min, max) {
-  if (n &lt; min) return min;
-  if (n &gt; max) return max;
-  return n;
-}</code></pre><p>The only thing left is to set up the CSS that will rotate the knob accordingly.  First, we should divide the knob value by 100, since the HTML <code>range</code> input defaults to <code>min=&quot;0&quot;</code> and <code>max=&quot;100&quot;</code>. Next, let&#39;s set a range of motion for the knob so works like we would expect from the real thing. To do that, we can do a little more <code>calc()</code> math that limits the rotation to a specified range.</p><pre><code class="language-css">.adjustment {
+    function clamp(n, min, max) {
+      if (n &lt; min) return min;
+      if (n &gt; max) return max;
+      return n;
+    }
+
+    // Update the knob position in CSS
+    knob.style.setProperty(
+        &#39;--knob-position&#39;, 
+        clamp(touch.diff, 0, 100)
+    );
+
+  })
+})</code></pre><p>The only thing left is to set up the CSS that will rotate the knob accordingly.  First, we should divide the knob value by 100, since the HTML <code>range</code> input defaults to <code>min=&quot;0&quot;</code> and <code>max=&quot;100&quot;</code>. Next, let&#39;s set a range of motion for the knob so works like we would expect from the real thing. To do that, we can do a little more <code>calc()</code> math that limits the rotation to a specified range.</p><pre><code class="language-css">.adjustment {
     /* set a default position for the knob */
     --knob-position: 100;
 

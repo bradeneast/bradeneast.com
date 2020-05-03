@@ -107,21 +107,18 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 That looks nice and clean!  The only drawback of this approach (and pure CSS) is that our stylesheet will start to bloat from extra rules (~1kb per 10 additional children). CSS isn't render-blocking like Javascript, but still has to be downloaded, parsed, and applied by the browser. If you're working with small numbers of children, this approach is probably your best bet.
 
 
-## Using the Javascript `forEach()` method
+## Using Javascript
 
 100 items in the last example was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.
 
 ```javascript
-const targets = document.querySelectorAll('.stagger-child-transitions');
+let targets = document.querySelectorAll('.stagger-child-transitions');
 
-targets.forEach(element => {
-
-    element.children.forEach((child, index) => {
-
-        child.style.transitionDelay = (index * .1) + 's';
-
+for (let element of targets) {
+    element.children.map((child, i) => {
+        child.style.transitionDelay = `${i * .1}s`;
     })
-})
+}
 ```
 
 This solves our code bloating problem, and won't noticably affect the performance of our page.  The main advantage to using Javascript is that it's not limited to a finite number of elements, and it allows us to do more complex things, [like this](https://codepen.io/bradeneast/pen/PooozNJ).

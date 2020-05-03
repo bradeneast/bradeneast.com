@@ -43,30 +43,41 @@ Now, let's make our knob rotate as we drag up and down.
 Using the `range` input this way works as expected for desktop devices. However, touch devices (especially iOS) don't play well with range inputs. To support these users, we’ll add a `touchstart` and `touchmove` event listeners to the knob. This way, we can update our custom `--knob-position` property on the parent element using `setProperty()`. I'm also throttling the `touchmove` event with `requestAnimationFrame` for better performance.
 
 ```javascript
-const knob = document.querySelector('.adjustment');
+let knob = document.querySelector('.adjustment');
+
+// Establish an object to store touch values
 let touch = {
   start: 0,
   current: 0,
   diff: 0
 }
 
+// Set initial touch values on the touchstart event
 knob.addEventListener('touchstart', (e) => {
   touch.start = e.changedTouches[0].screenY;
 })
 
 knob.addEventListener('touchmove', (e) => {
   requestAnimationFrame(() => {
+
+    // Update touch values
     touch.current = e.changedTouches[0].screenY;
     touch.diff = (touch.current - touch.start) * -1;
-    knob.style.setProperty('--knob-position', limit(touch.diff, 0, 100));    
+
+    function clamp(n, min, max) {
+      if (n < min) return min;
+      if (n > max) return max;
+      return n;
+    }
+
+    // Update the knob position in CSS
+    knob.style.setProperty(
+        '--knob-position', 
+        clamp(touch.diff, 0, 100)
+    );
+
   })
 })
-
-function limit(n, min, max) {
-  if (n < min) return min;
-  if (n > max) return max;
-  return n;
-}
 ```
 
 The only thing left is to set up the CSS that will rotate the knob accordingly.  First, we should divide the knob value by 100, since the HTML `range` input defaults to `min="0"` and `max="100"`. Next, let's set a range of motion for the knob so works like we would expect from the real thing. To do that, we can do a little more `calc()` math that limits the rotation to a specified range.
