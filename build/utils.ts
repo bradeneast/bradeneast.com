@@ -7,6 +7,28 @@ export {
     walkAst,
     escRegExp,
     tryFunc,
+    tag,
+    tab,
+}
+
+
+function tab(n) {
+    let tabs = '\t';
+    for (let i = 0; i < n - 1; i++) tabs += '\t';
+    return tabs;
+}
+
+
+function tag({
+    name,
+    attributes = [],
+    content = ''
+}) {
+    let attrs = [];
+    attributes.map(a => attrs.push(
+        `${a.name}="${a.value}"`
+    ))
+    return `<${name}${attributes.length ? ' ' + attrs.join(' ') : ''}${content.length ? '>' + content + '</' + name + '>' : '/>'}`
 }
 
 
