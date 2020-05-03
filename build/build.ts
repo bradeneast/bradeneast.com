@@ -12,7 +12,7 @@ import processFeeds from './feeds.ts';
 import includeVariables from './variables.ts';
 import applyTemplates from './templates.ts';
 import makeCategoryPages from './categories.ts';
-import makeSitemap from './sitemap.ts';
+import makeSitemaps from './sitemap.ts';
 import rss from './rss.ts';
 
 console.time('done');
@@ -32,6 +32,7 @@ Deno.readDirSync(options.paths.dist).map(file => {
 export let pages = getFsTree(options.paths.src);
 export let partials = getFsTree(options.paths.partials);
 export let templates = getFsTree(options.paths.templates);
+export let xmlStart = '<?xml version="1.0" encoding="UTF-8"?>';
 
 
 async function build() {
@@ -80,8 +81,8 @@ async function build() {
 
     }
 
-    // Make sitemap
-    makeSitemap();
+    // Make sitemaps
+    makeSitemaps();
 
 }
 
