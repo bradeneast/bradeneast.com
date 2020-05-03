@@ -92,4 +92,10 @@ for (let pre of pres) {
 
 // BLOCKQUOTE tags
 let blockquotes = document.getElementsByTagName('blockquote');
-for (let blockquote of blockquotes) addIcon(blockquote, 'i');
+for (let blockquote of blockquotes) {
+    if (blockquote.classList.contains('warning')) {
+        addIcon(blockquote, '!');
+    } else {
+        addIcon(blockquote, 'i');
+    }
+}

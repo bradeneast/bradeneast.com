@@ -7,7 +7,8 @@ label,
 summary {
     touch-action: manipulation;
 
-    &:focus {
+    &:focus,
+    &:focus-within {
         outline: none;
         border-radius: $border-radius;
         box-shadow: 0 0 0 0.2em $inverse, 0 0 0 0.4em $primary;
@@ -35,9 +36,12 @@ input[type="text"] {
     margin-top: $flow-space;
     margin-top: var(--flow-space);
     margin-bottom: $flow-space-section;
+    box-shadow: none;
+    border: $border-width $border-style transparent;
 
     &:focus {
         max-width: 100%;
+        border-color: var(--primary);
     }
 }
 

@@ -1,5 +1,6 @@
 {
   "files": [
+    "./js/randomPost.js",
     "./js/main.min.js",
     "./js/search.min.js",
     "./js/prism.min.js",

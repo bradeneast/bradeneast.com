@@ -9,9 +9,7 @@
     <title>Braden East | Random</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="
-        If you\'re working on a creative project, please reach out. I\'d love to collaborate and contribute.
-    ">
+    <meta name="description" content="result.excerpt">
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
     <meta name="supported-color-schemes" content="light dark" />
@@ -21,9 +19,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.bradeneast.com/random" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <meta property="og:description" content="
-        If you\'re working on a creative project, please reach out. I\'d love to collaborate and contribute.
-    " />
+    <meta property="og:description" content="result.excerpt" />
 
     <base href="/" />
 
@@ -83,33 +79,35 @@
 
     <main id="main">
 
-        <script>
-    try {
+        <script src="/_assets/js/randomPost.js" async></script>
 
-        var sitemap = fetch('/sitemap.json').then(r => r.json());
-        var include = 'blog/';
-        var exclude = '/blog/categories/'
+<h1>Random</h1>
 
-        sitemap.then(pages => {
+<blockquote class="warning">
+    Whoops! If you're reading this, something went wrong.
+</blockquote>
 
-            var filtered = [];
+<script defer src="/_assets/js/search.min.js"></script>
 
-            for (var page of pages) {
-                if (page.href.includes(include) && !page.href.includes(exclude)) {
-                    filtered.push(page);
-                }
-            }
+<div id="search_wrapper">
 
-            var index = Math.round((filtered.length - 1) * Math.random());
-            window.location = filtered[index]?.href;
+    <input type="text" placeholder="Search this site" name="search" id="search">
 
-        })
+    <ul data-feed id="search_results">
 
-    } catch (e) {
-        console.log(e);
-        window.location = '/';
-    }
-</script>
+        <li id="search_result_template">
+            <h2>
+                <a class="highlight" href="result.href">result.name</a>
+            </h2>
+            <p>result.excerpt</p>
+            <div class="meta">
+                <p class="categories">result.categories.links</p>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
 
     </main>
 
