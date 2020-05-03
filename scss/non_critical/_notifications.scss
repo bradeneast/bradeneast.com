@@ -28,14 +28,15 @@
 }
 
 .tooltip {
+    font-family: "Parisien Night", sans-serif;
     position: absolute;
     display: inline-block;
+    pointer-events: none;
     bottom: -1rem;
     left: 50%;
-    transform: translateX(-50%) scale(0);
     max-width: 28rem;
-    pointer-events: none;
     opacity: 0;
+    transform: translateX(-50%) scale(0);
     transition: $transition-short;
     transition: var(--transition-short);
 

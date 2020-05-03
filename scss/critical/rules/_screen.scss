@@ -116,6 +116,7 @@
 
         .tooltip {
             top: 80%;
+            font-size: inherit;
             bottom: auto;
             max-width: none;
             width: calc(100% - var(--flow-space));
