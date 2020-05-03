@@ -30,7 +30,7 @@
         background: $primary;
         background: var(--primary);
         transform-origin: left;
-        border-radius: 50%;
+        border-radius: $border-radius;
         transform: translateX(0) scaleX(1);
         transition: $transition-short;
         transition: var(--transition-short);
@@ -38,6 +38,7 @@
 
     &:hover::after,
     &:focus::after {
+        border-radius: $border-radius-alt;
         transform: scaleX(1.1);
     }
 
@@ -46,5 +47,10 @@
         color: currentColor;
         transform: scale(0.75);
         z-index: 2;
+
+        &:first-of-type {
+            color: $inverse;
+            color: var(--inverse);
+        }
     }
 }

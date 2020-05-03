@@ -79,7 +79,13 @@
         }
 
         svg {
-            color: currentColor;
+            &:first-of-type {
+                color: currentColor;
+            }
+            &:last-of-type {
+                color: $inverse;
+                color: var(--inverse);
+            }
         }
     }
 }

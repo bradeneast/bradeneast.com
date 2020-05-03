@@ -7,13 +7,15 @@
 .banner,
 .tooltip {
     z-index: 9;
+    color: $inverse;
+    color: var(--inverse);
     font-size: $font-size-small;
+    text-align: center;
+    line-height: $line-height-small;
     padding: 1.2em 1.8em;
     border-radius: $border-radius;
-    text-align: center;
     background: $primary;
     background: var(--primary);
-    line-height: $line-height-small;
 
     &.info {
         background: $primary-soft;

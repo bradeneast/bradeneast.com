@@ -1,7 +1,7 @@
 @media (prefers-reduced-motion: reduce) {
     html,
     body {
-        scroll-behavior: initial;
+        scroll-behavior: auto;
         --transition-short: 0.001s ease;
     }
 }
