@@ -9,11 +9,28 @@ export {
     tryFunc,
     tag,
     tab,
+    leadingZero,
     escapeEntities,
+    pageMatchesBlob,
+}
+
+function pageMatchesBlob(page, str: string) {
+    let testAgainst = /\/\*/.test(str) ? 'parentDir' : 'href';
+    str = str.toLowerCase().replace(/(^\/)|(\/\*$)/gm, '');
+    return page[testAgainst].includes(str);
 }
 
 
-let escapeEntities = (str: string) => {
+function leadingZero(n) {
+    if (typeof n == 'string') {
+        n = parseInt(n);
+    }
+    if (n < 10) return `0${n}`;
+    if (n > 10) return n.toString();
+}
+
+
+function escapeEntities(str: string) {
     return str
         .replace(/\&/g, '&#x26;')
         .replace(/'/g, '&#x27;')

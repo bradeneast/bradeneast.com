@@ -1,7 +1,7 @@
 import options from '../options.ts';
 import { ensureFileSync, writeFileStr } from 'https://deno.land/std/fs/mod.ts';
 import { pages, xmlStart } from './build.ts';
-import { tag, escapeEntities } from './utils.ts';
+import { tag, escapeEntities, leadingZero, pageMatchesBlob } from './utils.ts';
 
 
 export default function makeSitemaps() {
@@ -21,36 +21,41 @@ export default function makeSitemaps() {
     writeFileStr(jsonSitemap, JSON.stringify(pages, jsonCleanup));
 
 
+    if (!options.sitemap) return;
+
     // XML Sitemap (for crawlers/SEO)
     let xmlSitemap = [options.paths.dist, 'sitemap.xml'].join('/');
-    let exclude = ['404', 'categories'];
     let urls = [];
 
     pages.map(page => {
 
-        if (new RegExp(exclude.join('|')).test(page.href)) return;
+        let exclude = false;
+        options.sitemap?.exclude?.map(blob => {
+            if (pageMatchesBlob(page, blob)) exclude = true;
+        });
+        if (exclude) return;
+
+        let prioritize = false;
+        options.sitemap?.prioritize?.map(blob => {
+            if (pageMatchesBlob(page, blob)) prioritize = true;
+        });
 
         let mod = new Date(page.date.modified);
-        let fmt = {
-            yyyy: mod.getFullYear().toString(),
-            mm: mod.getMonth().toString(),
-            dd: mod.getDate().toString()
-        }
-        if (fmt.mm.length < 2) fmt.mm = `0${fmt.mm}`;
-        if (fmt.dd.length < 2) fmt.dd = `0${fmt.dd}`;
-        let formattedDate = `${fmt.yyyy}-${fmt.mm}-${fmt.dd}`;
+        let date = [
+            mod.getFullYear().toString(),
+            leadingZero(mod.getMonth()),
+            leadingZero(mod.getDate())
+        ];
 
-        let priority = 0.5;
-
-        if (page.href.includes('design')) priority = 0.2;
-        if (!page.depth) priority = 0.8;
+        let msDiff = new Date().getTime() - mod.getTime();
+        let diff = Math.round(msDiff / 1000 / 60 / 60 / 24);
 
         urls.push(
             `\t<url>
             ${tag({ name: 'loc', content: escapeEntities(options.paths.root + page.href) })}
-            ${tag({ name: 'lastmod', content: formattedDate })}
-            ${tag({ name: 'changefreq', content: 'weekly' })}
-            ${tag({ name: 'priority', content: priority.toString() })}
+            ${tag({ name: 'lastmod', content: date.join('-') })}
+            ${tag({ name: 'changefreq', content: diff < 7 ? 'daily' : diff < 30 ? 'weekly' : 'monthly' })}
+            ${tag({ name: 'priority', content: prioritize ? '1' : '0.5' })}
         </url>`
         )
     });

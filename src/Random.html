@@ -1,0 +1,27 @@
+<script>
+    try {
+
+        var sitemap = fetch('/sitemap.json').then(r => r.json());
+        var include = 'blog/';
+        var exclude = '/blog/categories/'
+
+        sitemap.then(pages => {
+
+            var filtered = [];
+
+            for (var page of pages) {
+                if (page.href.includes(include) && !page.href.includes(exclude)) {
+                    filtered.push(page);
+                }
+            }
+
+            var index = Math.round((filtered.length - 1) * Math.random());
+            window.location = filtered[index]?.href;
+
+        })
+
+    } catch (e) {
+        console.log(e);
+        window.location = '/';
+    }
+</script>

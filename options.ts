@@ -3,7 +3,17 @@ export default {
     ignore: '_',
     /** the name of the homepage file needs to be specified so its index.html is placed at the root of the distribution folder. this option distinguishes it from other top-level pages in the source folder. */
     homepage: 'About',
-    sitemap: true,
+    sitemap: {
+        generate: true,
+        exclude: [
+            '/design',
+            '/design/*',
+            '/404'
+        ],
+        prioritize: [
+            '/blog/*'
+        ]
+    },
     paths: {
         /** the private folder where page edits are made */
         src: 'src',
