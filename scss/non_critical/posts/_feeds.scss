@@ -7,6 +7,10 @@
         margin-bottom: $flow-space-section;
     }
 
+    p {
+        margin-bottom: 0;
+    }
+
     :not(p) > a {
         text-decoration: none;
     }

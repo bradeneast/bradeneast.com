@@ -1,3 +1,14 @@
+p,
+hr {
+    margin-bottom: $flow-space-paragraph;
+    margin-bottom: var(--flow-space-paragraph);
+}
+
+hr {
+    border: none;
+    border-bottom: $border-width $border-style $slategrey;
+}
+
 a,
 .link {
     font-weight: 800;

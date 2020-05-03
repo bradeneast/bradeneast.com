@@ -1,7 +1,8 @@
 # [[ name ]]
 
-Feeling lucky? [Read a random post](/random).
-<br /><br /><br />
+For your moments of spontaneity, [here's a random post](/random).
+
+<hr />
 
 <ul data-feed="/blog">
     <template>
