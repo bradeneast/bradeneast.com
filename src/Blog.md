@@ -1,6 +1,7 @@
 # [[ name ]]
 
 Feeling lucky? [Read a random post](/random).
+<br /><br /><br />
 
 <ul data-feed="/blog">
     <template>
@@ -8,4 +9,4 @@ Feeling lucky? [Read a random post](/random).
     </template>
 </ul>
 
-{{ twitter_cta }}
+> {{ twitter_cta }}

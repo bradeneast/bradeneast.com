@@ -23,7 +23,7 @@
     &:hover,
     &:focus,
     &:focus-within {
-        color: inherit;
+        color: $charcoalgrey;
 
         &::before {
             border-radius: $border-radius;
