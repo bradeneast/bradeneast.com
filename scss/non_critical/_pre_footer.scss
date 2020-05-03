@@ -47,10 +47,5 @@
         color: currentColor;
         transform: scale(0.75);
         z-index: 2;
-
-        &:first-of-type {
-            color: $inverse;
-            color: var(--inverse);
-        }
     }
 }

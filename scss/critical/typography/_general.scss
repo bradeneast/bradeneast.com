@@ -48,20 +48,27 @@ blockquote {
 
 .icon {
     position: absolute;
-    width: 2em;
-    height: 2em;
-    font-size: 1.2em;
-    line-height: 1.63;
     text-align: center;
     font-family: "Solway", sans-serif;
     letter-spacing: -0.05em;
+    padding: 0.12em 0.37em;
+    min-width: 2.37em;
     border: $border-width $border-style $primary;
     border-color: var(--primary);
     background: $inverse;
     background: var(--inverse);
     border-radius: $border-radius;
-    transform: translate(-0.3em, -0.3em);
+    transform: translate(-0.63em, -0.63em);
     z-index: 5;
+}
+
+small,
+.small {
+    font-size: $font-size-small;
+}
+
+.no-select {
+    user-select: none;
 }
 
 ::selection,

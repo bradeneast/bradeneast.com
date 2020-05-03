@@ -7,11 +7,12 @@
 .banner,
 .tooltip {
     z-index: 9;
+    font-family: "Parisien Night", sans-serif;
+    line-height: $line-height-small;
+    letter-spacing: 0.03em;
     color: $inverse;
     color: var(--inverse);
-    font-size: $font-size-small;
     text-align: center;
-    line-height: $line-height-small;
     padding: 1.2em 1.8em;
     border-radius: $border-radius;
     background: $primary;
@@ -28,7 +29,6 @@
 }
 
 .tooltip {
-    font-family: "Parisien Night", sans-serif;
     position: absolute;
     display: inline-block;
     pointer-events: none;
