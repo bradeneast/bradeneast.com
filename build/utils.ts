@@ -9,6 +9,17 @@ export {
     tryFunc,
     tag,
     tab,
+    escapeEntities,
+}
+
+
+let escapeEntities = (str: string) => {
+    return str
+        .replace(/\&/g, '&#x26;')
+        .replace(/'/g, '&#x27;')
+        .replace(/"/g, '&#x22;')
+        .replace(/\>/g, '&#x3E;')
+        .replace(/\</g, '&#x3c;')
 }
 
 

@@ -1,7 +1,7 @@
 import options from '../options.ts';
 import { ensureFileSync, writeFileStr } from 'https://deno.land/std/fs/mod.ts';
 import { pages, xmlStart } from './build.ts';
-import { tag, tab } from './utils.ts';
+import { tag, tab, escapeEntities } from './utils.ts';
 import { Html5Entities } from "https://deno.land/x/html_entities@v1.0/mod.js";
 
 
@@ -14,15 +14,24 @@ export default (scope) => {
 
     scopedPages.map(page => {
 
-        let removeEntities = (str) => str.replace(/\&.{1,5};/g, '');
-        let desc = removeEntities(page.excerpt.replace(/<[^>]+>/g, ''));
+        let desc = escapeEntities(
+            Html5Entities.decode(
+                page.excerpt
+            )
+        );
+        let title = escapeEntities(
+            Html5Entities.decode(
+                page.name
+            )
+        );
+        let guid = escapeEntities(options.paths.root + page.href);
 
-        items.push(`${tab(5)}<item>
-                        <title>${removeEntities(page.name)}</title>
-                        <link>${options.paths.root + page.href}</link>
-                        <guid>${options.paths.root + page.href}</guid>
+        items.push(`${tab(4)}<item>
+                        <title>${title}</title>
+                        <link>${guid}</link>
+                        <guid>${guid}</guid>
                         <pubDate>${new Date(page.created).toUTCString()}</pubDate>
-                        ${page.categories.names.map(c => `<category>${c}</category>`).join('\n' + tab(6))}
+                        ${page.categories.names.map(c => `<category>${c}</category>`).join('\n' + tab(5))}
                         <description>${desc}</description>
                     </item>`
         );
@@ -63,9 +72,7 @@ export default (scope) => {
                 { name: 'type', value: 'application/rss+xml' },
             ]
         })}
-                <items>
 ${items.join('\n')}
-                </items>
     </channel>
 `
     })}`;
