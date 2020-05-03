@@ -73,7 +73,21 @@ listen(skipLink, skipToContent);
 
 // PRE tags
 let pres = document.getElementsByTagName('pre');
-for (let pre of pres) addIcon(pre, '</>');
+for (let pre of pres) {
+
+    let icon = '&lt;/&gt;';
+    let codeClass = pre.firstElementChild?.getAttribute('class')
+    let lang = codeClass ? codeClass.trim().replace(/language\-/i, '') : null;
+
+    if (lang) {
+        addIcon(pre, `${icon} <small>${lang.toUpperCase()}</small>`);
+    }
+
+    if (!lang) {
+        addIcon(pre, icon);
+    }
+
+}
 
 
 // BLOCKQUOTE tags
