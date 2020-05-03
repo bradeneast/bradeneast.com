@@ -2,115 +2,115 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
             <loc>https://www.bradeneast.com/</loc>
-            <lastmod>Fri, 06 Mar 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-02-06</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/when-is-it-better-to-use-png</loc>
-            <lastmod>Fri, 01 May 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-04-01</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/resize-vs-compression-on-100-high-res-jpgs</loc>
-            <lastmod>Fri, 01 May 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-04-01</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/stop-using-gifs</loc>
-            <lastmod>Thu, 30 Apr 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-03-30</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/change-the-color-of-list-markers-with-just-css</loc>
-            <lastmod>Tue, 28 Apr 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-03-28</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties</loc>
-            <lastmod>Mon, 16 Mar 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-02-16</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</loc>
-            <lastmod>Wed, 08 Apr 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-03-08</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/using-noscript</loc>
-            <lastmod>Wed, 11 Mar 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-02-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</loc>
-            <lastmod>Sat, 07 Mar 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-02-07</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</loc>
-            <lastmod>Sat, 15 Feb 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-01-15</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/staggered-animations</loc>
-            <lastmod>Fri, 06 Mar 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-02-06</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</loc>
-            <lastmod>Sat, 15 Feb 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-01-15</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</loc>
-            <lastmod>Sat, 15 Feb 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-01-15</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute</loc>
-            <lastmod>Sat, 14 Mar 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-02-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog</loc>
-            <lastmod>Fri, 01 May 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-04-01</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/design/360-farms</loc>
-            <lastmod>Sat, 14 Mar 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-02-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.2</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/design/judes</loc>
-            <lastmod>Sat, 14 Mar 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-02-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.2</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/design/the-elderberry-wine-company</loc>
-            <lastmod>Sat, 14 Mar 2020 05:00:00 GMT</lastmod>
+            <lastmod>2020-02-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.2</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/design</loc>
-            <lastmod>Sat, 15 Feb 2020 06:00:00 GMT</lastmod>
+            <lastmod>2020-01-15</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.2</priority>
         </url>

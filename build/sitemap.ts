@@ -30,18 +30,29 @@ export default function makeSitemaps() {
 
         if (new RegExp(exclude.join('|')).test(page.href)) return;
 
+        let mod = new Date(page.date.modified);
+        let fmt = {
+            yyyy: mod.getFullYear().toString(),
+            mm: mod.getMonth().toString(),
+            dd: mod.getDate().toString()
+        }
+        if (fmt.mm.length < 2) fmt.mm = `0${fmt.mm}`;
+        if (fmt.dd.length < 2) fmt.dd = `0${fmt.dd}`;
+        let formattedDate = `${fmt.yyyy}-${fmt.mm}-${fmt.dd}`;
+
         let priority = 0.5;
+
         if (page.href.includes('design')) priority = 0.2;
         if (!page.depth) priority = 0.8;
 
         urls.push(
             `\t<url>
             ${tag({ name: 'loc', content: escapeEntities(options.paths.root + page.href) })}
-            ${tag({ name: 'lastmod', content: new Date(page.date.modified).toUTCString() })}
+            ${tag({ name: 'lastmod', content: formattedDate })}
             ${tag({ name: 'changefreq', content: 'weekly' })}
             ${tag({ name: 'priority', content: priority.toString() })}
-        </url>`);
-
+        </url>`
+        )
     });
 
     let xml = `${xmlStart}
