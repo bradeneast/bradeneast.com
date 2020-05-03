@@ -31,6 +31,18 @@ article {
             }
         }
 
+        td strong::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 0.5em;
+            height: 0.5em;
+            background: $primary;
+            background: var(--primary);
+            border-radius: $border-radius-alt;
+        }
+
         tr:last-of-type td {
             border-bottom: none;
         }

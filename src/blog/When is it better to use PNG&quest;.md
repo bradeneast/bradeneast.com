@@ -5,15 +5,19 @@ I've been writing a lot about images on the web lately, but I haven't mentioned 
 
 When you're presented with the export dialogue in a program or web app, it's helpful to have some intuition for what settings to choose. Let's run some tests to find out if and when PNG is a good choice.
 
+> The Portable Networks Graphic (PNG) compression algorithm was actually created as a replacement for GIF, which was patented and controlled by a large tech company. Open-source wins again!
+
 ## Test results (all values in kb)
 
-| Application      | JPG   | PNG   | PNG-8 | SVG   |
-| ---------------- | ----- | ----- | ----- | ----- |
-| *Logo Wordmark*  | 40    | 7     | 4     | 8     |
-| *Flat Pattern*   | 152   | 35    | 17    | 26    |
-| *Paragraph Text* | 123   | 18    | 10    | 21    |
-| *Small Photo*    | 186   | 285   | 129   | 1327  |
-| *Large Photo*    | 1,224 | 2,742 | 1,317 | 1,327 |
+All values shown in kilobytes (kb). Winners indicated for each test.
+
+| Application      | JPG (no compression) | PNG   | PNG-8   | SVG   |
+| ---------------- | -------------------- | ----- | ------- | ----- |
+| *Logo Wordmark*  | 40                   | 7     | **4**   | 8     |
+| *Flat Pattern*   | 152                  | 35    | **17**  | 26    |
+| *Paragraph Text* | 123                  | 18    | **10**  | 21    |
+| *Small Photo*    | 186                  | 285   | **129** | 1327  |
+| *Large Photo*    | **1,224**            | 2,742 | 1,317   | 1,327 |
 
 ## Takeaways
 
