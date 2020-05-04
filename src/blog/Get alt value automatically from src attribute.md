@@ -31,45 +31,45 @@ We have a delicious-looking gallery of asian-american food here. You (and people
 We want to isolate just the image titles. To help us do that, we'll use some fun native javascript methods that honestly sound like dance moves: `split()`, `shift()`, and `pop()`. First, let's grab the `img` elements with `document.getElementsByTagName()`.
 
 ```javascript
-const images = Array.from(document.getElementsByTagName('img'));
+const images = document.getElementsByTagName('img');
 
-images.map(image => {
+for (let image of images) {
     // do stuff
-})
+}
 ```
 
 Next, let's make sure the image doesn't already have an `alt` value already set.
 
 ```javascript
-images.map(image => {
-
-    if (!image.getAttribute('alt')) {
-
-        // do stuff
-
-    }
-})
+if (!image.alt || !image.alt.length) {
+    // do stuff
+}
 ```
 
 After that, we can get the `src` value, and convert URL-formatted characters with `decodeURI()`. This will replace an encoded character like `%20` with a standard space.
 
 ```javascript
-const imageSource = decodeURI(image.getAttribute('src')); // 'https://cdn.com/media/my-beautiful-image.jpg?format=small'
+let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
 ```
 
 From here, we can isolate the title by splitting the URL into chunks between forward slashes with `Array.split()` and returning the last one of those chunks with `Array.pop()`. We'll also use `Array.split()` again to separate the file name from the file extension and return the former with `Array.shift()`. Finally, we can replace dashes with spaces, and we're done!
 
 ```javascript
+for (let image of images) {
+    if (!image.alt || !image.alt.length) {
+        // do stuff
+    }
+}
 images.map(image => {
 
     // will ignore images with alt already set
-    if (!image.getAttribute('alt')) {
+    if (!image.alt || !image.alt.length) {
 
-        const imageSource = decodeURI(image.getAttribute('src')); // 'https://cdn.com/media/my-beautiful-image.jpg?format=small'
-        const imageName = imageSource.split('/').pop(); // 'my-beautiful-image.jpg?format=small'
-        const imageTitle = imageName.split('.').shift().replace(/-/g, ' '); // 'my beautiful image'
+        let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
+        let name = src.split('/').pop(); // my-beautiful-image.jpg?format=small
+        let title = name.split('.').shift().replace(/-/g, ' '); // my beautiful image
 
-        image.setAttribute('alt', imageTitle);
+        image.alt = imageTitle;
 
     }
 })

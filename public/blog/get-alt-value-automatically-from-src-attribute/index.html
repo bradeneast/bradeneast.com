@@ -97,7 +97,7 @@
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Updated:</strong> Sat Mar 14 2020
+            <strong>Updated:</strong> Mon May 04 2020
         </div>
 
         <p class="categories" aria-label="Categories:"><a href="/blog/categories/javascript">javascript</a><a href="/blog/categories/html">html</a><a href="/blog/categories/accessibility">accessibility</a></p>
@@ -124,27 +124,27 @@
         &lt;img src=&quot;https://4.bp.blogspot.com/-ehuFRO8kWgM/V3yvBqhyLvI/AAAAAAAAwQY/-eaVSQkLFs8ioHS53M_Hjxj7DJuj-pWFQCLcB/w1200-h630-p-k-no-nu/pei-wei-summer-salads.jpg&quot;&gt;
     &lt;/div&gt;
 
-&lt;/div&gt;</code></pre><p>We have a delicious-looking gallery of asian-american food here. You (and people with screen readers) probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that servers can read, but we can&#39;t.</p><p>We want to isolate just the image titles. To help us do that, we&#39;ll use some fun native javascript methods that honestly sound like dance moves: <code>split()</code>, <code>shift()</code>, and <code>pop()</code>. First, let&#39;s grab the <code>img</code> elements with <code>document.getElementsByTagName()</code>.</p><pre><code class="language-javascript">const images = Array.from(document.getElementsByTagName(&#39;img&#39;));
+&lt;/div&gt;</code></pre><p>We have a delicious-looking gallery of asian-american food here. You (and people with screen readers) probably had some difficulty figuring that out though, because the actual image titles come after a long, nonsensical string of characters that servers can read, but we can&#39;t.</p><p>We want to isolate just the image titles. To help us do that, we&#39;ll use some fun native javascript methods that honestly sound like dance moves: <code>split()</code>, <code>shift()</code>, and <code>pop()</code>. First, let&#39;s grab the <code>img</code> elements with <code>document.getElementsByTagName()</code>.</p><pre><code class="language-javascript">const images = document.getElementsByTagName(&#39;img&#39;);
 
-images.map(image =&gt; {
+for (let image of images) {
     // do stuff
-})</code></pre><p>Next, let&#39;s make sure the image doesn&#39;t already have an <code>alt</code> value already set.</p><pre><code class="language-javascript">images.map(image =&gt; {
-
-    if (!image.getAttribute(&#39;alt&#39;)) {
-
+}</code></pre><p>Next, let&#39;s make sure the image doesn&#39;t already have an <code>alt</code> value already set.</p><pre><code class="language-javascript">if (!image.alt || !image.alt.length) {
+    // do stuff
+}</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">for (let image of images) {
+    if (!image.alt || !image.alt.length) {
         // do stuff
-
     }
-})</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image.jpg?format=small&#39;</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">images.map(image =&gt; {
+}
+images.map(image =&gt; {
 
     // will ignore images with alt already set
-    if (!image.getAttribute(&#39;alt&#39;)) {
+    if (!image.alt || !image.alt.length) {
 
-        const imageSource = decodeURI(image.getAttribute(&#39;src&#39;)); // &#39;https://cdn.com/media/my-beautiful-image.jpg?format=small&#39;
-        const imageName = imageSource.split(&#39;/&#39;).pop(); // &#39;my-beautiful-image.jpg?format=small&#39;
-        const imageTitle = imageName.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // &#39;my beautiful image&#39;
+        let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
+        let name = src.split(&#39;/&#39;).pop(); // my-beautiful-image.jpg?format=small
+        let title = name.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // my beautiful image
 
-        image.setAttribute(&#39;alt&#39;, imageTitle);
+        image.alt = imageTitle;
 
     }
 })</code></pre><p>I hope this little bit of vanilla Javascript takes the headache out of <code>alt</code> attributes and helps you improve SEO and accessibility on your web projects.</p>
