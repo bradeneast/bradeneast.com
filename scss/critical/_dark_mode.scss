@@ -66,23 +66,14 @@
     }
 
     #dark_mode_toggle {
-        &::after {
-            transform-origin: right;
-            transform: translateX(100%);
-        }
-
-        &:hover::after,
-        &:focus::after {
-            transform: translateX(100%) scaleX(1.1);
-        }
+        border-radius: $border-radius-alt;
 
         svg {
             &:first-of-type {
-                color: currentColor;
+                --active: 0;
             }
             &:last-of-type {
-                color: $inverse;
-                color: var(--inverse);
+                --active: 1;
             }
         }
     }

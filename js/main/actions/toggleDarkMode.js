@@ -5,6 +5,5 @@ export default () => {
 
     document.documentElement.classList.toggle(dmName, !dm);
     localStorage.setItem(dmName, JSON.stringify(!dm));
-    document.activeElement.blur();
 
 }

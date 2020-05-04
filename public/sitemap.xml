@@ -27,7 +27,7 @@
 	<url>
             <loc>https://www.bradeneast.com/blog/change-the-color-of-list-markers-with-just-css</loc>
             <lastmod>2020-03-28</lastmod>
-            <changefreq>daily</changefreq>
+            <changefreq>weekly</changefreq>
             <priority>1</priority>
         </url>
 	<url>
@@ -92,7 +92,7 @@
         </url>
 	<url>
             <loc>https://www.bradeneast.com/random</loc>
-            <lastmod>2020-04-03</lastmod>
+            <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
