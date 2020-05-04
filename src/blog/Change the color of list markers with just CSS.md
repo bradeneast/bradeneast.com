@@ -72,11 +72,17 @@ ul {
 
 ```css
 ul {
-    list-style-image: linear-gradient(-45deg, dodgerblue 50%, transparent 0);
+    list-style-image: linear-gradient(
+        -45deg, 
+        green 37%, 
+        lightgreen 37%, 
+        lightgreen 63%, 
+        transparent 0
+    );
 }
 ```
 
-<ul style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
+<ul style="list-style-image: linear-gradient(-45deg, green 37%, lightgreen 37%, lightgreen 63%, transparent 0)">
     <h4>These list item markers should look like gems.</h4>
     <li>30g casein protein</li>
     <li>1 cup whole milk</li>

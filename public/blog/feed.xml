@@ -4,7 +4,7 @@
                 <title>Blog of Braden East</title>
                 <link>https://www.bradeneast.com/blog/feed.xml</link>
                 <description>The blog for dev-signers.</description>
-                <lastBuildDate>Mon, 04 May 2020 23:33:06 GMT</lastBuildDate>
+                <lastBuildDate>Mon, 04 May 2020 23:42:33 GMT</lastBuildDate>
                 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
 				<item>
                         <title>Change the color of list markers with just CSS</title>

@@ -93,7 +93,7 @@
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Updated:</strong> Tue Apr 28 2020
+            <strong>Updated:</strong> Mon May 04 2020
         </div>
 
         <p class="categories" aria-label="Categories:"><a href="/blog/categories/html">html</a><a href="/blog/categories/css">css</a></p>
@@ -135,8 +135,14 @@
     list-style-image: radial-gradient(coral 65%, transparent 0);
 }</code></pre><ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
     <h4>These list item markers should be coral colored.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><pre><code class="language-css">ul {
-    list-style-image: linear-gradient(-45deg, dodgerblue 50%, transparent 0);
-}</code></pre><ul style="list-style-image: linear-gradient(-45deg, #44aa77 37%, #66dd99 37%, #99ffbb 63%, transparent 0)">
+    list-style-image: linear-gradient(
+        -45deg, 
+        green 37%, 
+        lightgreen 37%, 
+        lightgreen 63%, 
+        transparent 0
+    );
+}</code></pre><ul style="list-style-image: linear-gradient(-45deg, green 37%, lightgreen 37%, lightgreen 63%, transparent 0)">
     <h4>These list item markers should look like gems.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><p>We can do more fun things with this, but I&#39;ll leave discovering those up to you. Unfortunately, layering multiple gradients won&#39;t work. This approach limits you to a single gradient, within the size of the marker box.</p><p>Both of these approaches are a little bit hacky. That&#39;s okay, because we have a much more straightforward way coming soon.  By next year, we might be using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">the ::marker pseudo element</a> instead. At the time of writing, <code>::marker</code> is still a draft in the CSS spec.</p>
 
     <p id="blog_cta">
