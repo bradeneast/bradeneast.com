@@ -13,9 +13,9 @@
     p a,
     article ul a,
     article ol a,
+    article code,
     button.unstyled,
-    #skip_link,
-    :not(pre) > code {
+    #skip_link {
         color: $mediumgrey;
     }
 
@@ -23,9 +23,7 @@
         color: $mediumgrey;
     }
 
-    .highlight,
-    *::placeholder,
-    pre code {
+    .highlight {
         color: $mediumgrey;
 
         &:hover,
