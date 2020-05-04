@@ -23,7 +23,9 @@
         color: $mediumgrey;
     }
 
-    .highlight {
+    .highlight,
+    *::placeholder,
+    pre code {
         color: $mediumgrey;
 
         &:hover,

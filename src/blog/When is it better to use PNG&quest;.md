@@ -13,11 +13,11 @@ All values shown in kilobytes (kb). Winners indicated for each test.
 
 | Application      | JPG (no compression) | PNG   | PNG-8   | SVG   |
 | ---------------- | -------------------- | ----- | ------- | ----- |
-| *Logo Wordmark*  | 40                   | 7     | **4**   | 8     |
-| *Flat Pattern*   | 152                  | 35    | **17**  | 26    |
-| *Paragraph Text* | 123                  | 18    | **10**  | 21    |
-| *Small Photo*    | 186                  | 285   | **129** | 1327  |
-| *Large Photo*    | **1,224**            | 2,742 | 1,317   | 1,327 |
+| Logo Wordmark  | 40                   | 7     | **4**   | 8     |
+| Flat Pattern   | 152                  | 35    | **17**  | 26    |
+| Paragraph Text | 123                  | 18    | **10**  | 21    |
+| Small Photo    | 186                  | 285   | **129** | 1327  |
+| Large Photo    | **1,224**            | 2,742 | 1,317   | 1,327 |
 
 ## Takeaways
 

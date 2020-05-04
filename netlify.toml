@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/about"
-  to = "/"
+  from = "/"
+  to = "/about"
   status = 301
 
 [[redirects]]

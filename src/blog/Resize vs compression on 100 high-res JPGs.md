@@ -25,12 +25,12 @@ To test so many images programmatically, I used Photoshop's Image Processor. I'm
 ## Results
 | Test Group            | A    | B    | C     |
 | --------------------- | ---- | ---- | ----- |
-| *Resized to (px)*     | 4096 | 1080 | 2880  |
-| *Compression level*   | Max  | None | Heavy |
-| *Avg. file size (kb)* | 345  | 397  | 294   |
-| *% of original*       | 14%  | 16%  | 11%   |
-| *Artifacting (at 4k)* | High | None | Low   |
-| *Blurring (at 4k)*    | None | High | Low   |
+| Resized to (px)     | 4096 | 1080 | 2880  |
+| Compression level   | Max  | None | Heavy |
+| Avg. file size (kb) | 345  | 397  | 294   |
+| % of original       | 14%  | 16%  | 11%   |
+| Artifacting (at 4k) | High | None | Low   |
+| Blurring (at 4k)    | None | High | Low   |
 
 
 While it was easy to spot artifacting in heavily compressed photos with large swaths of color and gradients, most images did incredibly well. Even when JPG images were compressed into oblivion, their first-glance appearance held up remarkably well. Most looked exceptional. Aside from the Max Compression Group, every group was crisp and could even withstand some zoom in 4k before appearing distorted.

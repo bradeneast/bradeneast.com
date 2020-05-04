@@ -12,46 +12,6 @@ article {
         max-width: 40rem;
     }
 
-    table {
-        text-align: left;
-        width: 100%;
-        margin-bottom: $flow-space-paragraph;
-        margin-bottom: var(--flow-space-paragraph);
-
-        td,
-        th {
-            line-height: 1.2;
-            border-right: $border-width $border-style $primary;
-            border-bottom: $border-width $border-style $primary;
-            border-color: $lightgrey;
-            padding: 0.37em;
-
-            &:last-of-type {
-                border-right: none;
-            }
-        }
-
-        td strong::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 100%;
-            width: 0.5em;
-            height: 0.5em;
-            background: $primary;
-            background: var(--primary);
-            border-radius: $border-radius-alt;
-        }
-
-        tr:last-of-type td {
-            border-bottom: none;
-        }
-
-        * {
-            text-align: inherit;
-        }
-    }
-
     ul,
     ol {
         max-width: 40rem;
