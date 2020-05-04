@@ -1,10 +1,12 @@
-try {
+document.body.style.opacity = 0;
 
-    let sitemap = fetch('/sitemap.json').then(r => r.json());
-    let include = 'blog/';
-    let exclude = '/blog/categories/'
+let sitemap = fetch('/sitemap.json').then(r => r.json());
+let include = 'blog/';
+let exclude = '/blog/categories/';
 
-    sitemap.then(pages => {
+sitemap.then(pages => {
+
+    try {
 
         let filtered = [];
 
@@ -17,9 +19,9 @@ try {
         let index = Math.round((filtered.length - 1) * Math.random());
         window.location = filtered[index]?.href;
 
-    })
+    } catch (e) {
+        console.log(e);
+        document.body.style.opacity = 1;
+    }
 
-} catch (e) {
-    console.log(e);
-    window.location = '/';
-}
+})
