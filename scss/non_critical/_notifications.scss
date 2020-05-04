@@ -19,8 +19,8 @@
     background: var(--primary);
 
     &.info {
-        background: $primary-soft;
-        background: var(--primary-soft);
+        color: $charcoalgrey;
+        background: $primary;
     }
 }
 
