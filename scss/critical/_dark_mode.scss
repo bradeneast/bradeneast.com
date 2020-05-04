@@ -13,7 +13,8 @@
     p a,
     article ul a,
     article ol a,
-    article code,
+    :not(pre) > code,
+    pre code,
     button.unstyled,
     #skip_link {
         color: $mediumgrey;
@@ -33,7 +34,9 @@
     }
 
     .highlight::before,
-    input[type="text"] {
+    input[type="text"],
+    blockquote,
+    :not(pre) > code {
         background: $darkgrey;
     }
 
@@ -60,11 +63,6 @@
     article ol li {
         list-style-type: disc;
         list-style-type: "🌔";
-    }
-
-    blockquote,
-    :not(pre) > code {
-        background: $darkgrey;
     }
 
     #dark_mode_toggle {

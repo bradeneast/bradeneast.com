@@ -3,11 +3,12 @@
 .token {
     color: inherit;
     $green: #23d4e0;
-    $lightblue: #6dacff;
+    $lightblue: #7db5ff;
     $blue: #99a3ff;
     $purple: #f588ff;
     $pink: #ff7bbd;
     $red: #ff8080;
+    $punctuation: rgba(100, 100, 155, 0.37);
 
     &.comment,
     &.block-comment,
@@ -18,7 +19,7 @@
     }
 
     &.punctuation {
-        color: $mediumgrey;
+        color: $punctuation;
     }
 
     &.tag,
@@ -81,5 +82,15 @@
 
     &.entity {
         cursor: help;
+    }
+}
+
+.dark_mode .token {
+    &.comment,
+    &.block-comment,
+    &.prolog,
+    &.doctype,
+    &.cdata {
+        color: $slategrey;
     }
 }
