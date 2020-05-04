@@ -1,6 +1,7 @@
 # [[ name ]]
 
 For your moments of spontaneity, [here's a random post](/random).
+<link rel="prerender" href="/random" />
 
 <hr />
 
