@@ -21,9 +21,7 @@ a,
     }
 }
 
-p a,
-article ul a,
-article ol a,
+a:not([class]),
 button.unstyled,
 #skip_link {
     cursor: pointer;

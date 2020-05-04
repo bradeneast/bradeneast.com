@@ -10,9 +10,7 @@
         color: $ultralightgrey;
     }
 
-    p a,
-    article ul a,
-    article ol a,
+    a:not([class]),
     :not(pre) > code,
     pre code,
     button.unstyled,
