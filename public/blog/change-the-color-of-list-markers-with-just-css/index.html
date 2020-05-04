@@ -130,11 +130,11 @@
         transform: rotate(45deg);
         background: dodgerblue;
     }
-</style><ul class="pseudo-element-example">
-    <h4>These list item markers should look like blue diamonds.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><h2 id="option-2-the-list-style-image-property">Option 2: The <code>list-style-image</code> property</h2><p>Images are fine, but updating a png/svg/jpg is not always easy, and won&#39;t match if we change the theme color. Thankfully, <code>list-style-image</code> accepts gradient values, and that&#39;s the secret.</p><pre><code class="language-css">ul {
+</style><h4 id="these-list-item-markers-should-look-like-blue-diamonds">These list item markers should look like blue diamonds.</h4><ul class="pseudo-element-example">
+    <li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><h2 id="option-2-the-list-style-image-property">Option 2: The <code>list-style-image</code> property</h2><p>Images are fine, but updating a png/svg/jpg is not always easy, and won&#39;t match if we change the theme color. Thankfully, <code>list-style-image</code> accepts gradient values, and that&#39;s the secret.</p><pre><code class="language-css">ul {
     list-style-image: radial-gradient(coral 65%, transparent 0);
-}</code></pre><ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
-    <h4>These list item markers should be coral colored.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><pre><code class="language-css">ul {
+}</code></pre><h4 id="these-list-item-markers-should-be-coral-colored">These list item markers should be coral colored.</h4><ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
+    <li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><pre><code class="language-css">ul {
     list-style-image: linear-gradient(
         -45deg, 
         green 37%, 
@@ -142,8 +142,8 @@
         lightgreen 63%, 
         transparent 0
     );
-}</code></pre><ul style="list-style-image: linear-gradient(-45deg, green 37%, lightgreen 37%, lightgreen 63%, transparent 0)">
-    <h4>These list item markers should look like gems.</h4><li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><p>We can do more fun things with this, but I&#39;ll leave discovering those up to you. Unfortunately, layering multiple gradients won&#39;t work. This approach limits you to a single gradient, within the size of the marker box.</p><p>Both of these approaches are a little bit hacky. That&#39;s okay, because we have a much more straightforward way coming soon.  By next year, we might be using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">the ::marker pseudo element</a> instead. At the time of writing, <code>::marker</code> is still a draft in the CSS spec.</p>
+}</code></pre><h4 id="these-list-item-markers-should-look-like-gems">These list item markers should look like gems.</h4><ul style="list-style-image: linear-gradient(-45deg, green 37%, lightgreen 37%, lightgreen 63%, transparent 0)">
+    <li>30g casein protein</li><li>1 cup whole milk</li><li>1 Tbsp ground flaxseed</li></ul><p>We can do more fun things with this, but I&#39;ll leave discovering those up to you. Unfortunately, layering multiple gradients won&#39;t work. This approach limits you to a single gradient, within the size of the marker box.</p><p>Both of these approaches are a little bit hacky. That&#39;s okay, because we have a much more straightforward way coming soon.  By next year, we might be using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">the ::marker pseudo element</a> instead. At the time of writing, <code>::marker</code> is still a draft in the CSS spec.</p>
 
     <p id="blog_cta">
     Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Change the color of list markers with just CSS%0a&url=https://bradeneast.com/blog/change-the-color-of-list-markers-with-just-css&via=bradenthehair&hashtags=html,css">share it</a> with your friends.

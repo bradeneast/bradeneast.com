@@ -46,8 +46,9 @@ li::before {
         background: dodgerblue;
     }
 </style>
+
+#### These list item markers should look like blue diamonds.
 <ul class="pseudo-element-example">
-    <h4>These list item markers should look like blue diamonds.</h4>
     <li>30g casein protein</li>
     <li>1 cup whole milk</li>
     <li>1 Tbsp ground flaxseed</li>
@@ -63,8 +64,9 @@ ul {
     list-style-image: radial-gradient(coral 65%, transparent 0);
 }
 ```
+
+#### These list item markers should be coral colored.
 <ul style="list-style-image: radial-gradient(coral 65%, transparent 0);">
-    <h4>These list item markers should be coral colored.</h4>
     <li>30g casein protein</li>
     <li>1 cup whole milk</li>
     <li>1 Tbsp ground flaxseed</li>
@@ -82,8 +84,8 @@ ul {
 }
 ```
 
+#### These list item markers should look like gems.
 <ul style="list-style-image: linear-gradient(-45deg, green 37%, lightgreen 37%, lightgreen 63%, transparent 0)">
-    <h4>These list item markers should look like gems.</h4>
     <li>30g casein protein</li>
     <li>1 cup whole milk</li>
     <li>1 Tbsp ground flaxseed</li>
