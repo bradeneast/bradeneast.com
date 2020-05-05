@@ -93,7 +93,7 @@
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Updated:</strong> Mon May 04 2020
+            <strong>Updated:</strong> Tue May 05 2020
         </div>
 
         <p class="categories" aria-label="Categories:"><a href="/blog/categories/javascript">javascript</a><a href="/blog/categories/html">html</a><a href="/blog/categories/accessibility">accessibility</a></p>
@@ -127,23 +127,17 @@ for (let image of images) {
 }</code></pre><p>Next, let&#39;s make sure the image doesn&#39;t already have an <code>alt</code> value already set.</p><pre><code class="language-javascript">if (!image.alt || !image.alt.length) {
     // do stuff
 }</code></pre><p>After that, we can get the <code>src</code> value, and convert URL-formatted characters with <code>decodeURI()</code>. This will replace an encoded character like <code>%20</code> with a standard space.</p><pre><code class="language-javascript">let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small</code></pre><p>From here, we can isolate the title by splitting the URL into chunks between forward slashes with <code>Array.split()</code> and returning the last one of those chunks with <code>Array.pop()</code>. We&#39;ll also use <code>Array.split()</code> again to separate the file name from the file extension and return the former with <code>Array.shift()</code>. Finally, we can replace dashes with spaces, and we&#39;re done!</p><pre><code class="language-javascript">for (let image of images) {
-    if (!image.alt || !image.alt.length) {
-        // do stuff
-    }
-}
-images.map(image =&gt; {
 
-    // will ignore images with alt already set
-    if (!image.alt || !image.alt.length) {
+    // skip images with alt already set
+    if (image.alt &amp;&amp; image.alt.length) continue;
 
-        let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
-        let name = src.split(&#39;/&#39;).pop(); // my-beautiful-image.jpg?format=small
-        let title = name.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // my beautiful image
+    let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
+    let name = src.split(&#39;/&#39;).pop(); // my-beautiful-image.jpg?format=small
+    let title = name.split(&#39;.&#39;).shift().replace(/-/g, &#39; &#39;); // my beautiful image
 
-        image.alt = imageTitle;
+    image.alt = imageTitle;
 
-    }
-})</code></pre><p>I hope this little bit of vanilla Javascript takes the headache out of <code>alt</code> attributes and helps you improve SEO and accessibility on your web projects.</p>
+}</code></pre><p>I hope this little bit of vanilla Javascript takes the headache out of <code>alt</code> attributes and helps you improve SEO and accessibility on your web projects.</p>
 
     <p id="blog_cta">
     Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=Get alt value automatically from src attribute%0a&url=https://bradeneast.com/blog/get-alt-value-automatically-from-src-attribute&via=bradenthehair&hashtags=javascript,html,accessibility">share it</a> with your friends.

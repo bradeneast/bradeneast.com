@@ -23,7 +23,7 @@ To test so many images programmatically, I used Photoshop's Image Processor. I'm
 
 
 ## Results
-| Test Group          | A    | B    | C     |
+|       | A    | B    | C     |
 | ------------------- | ---- | ---- | ----- |
 | Resized to (px)     | 4096 | 1080 | 2880  |
 | Compression level   | Max  | None | Heavy |

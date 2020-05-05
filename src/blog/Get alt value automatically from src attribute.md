@@ -56,23 +56,17 @@ From here, we can isolate the title by splitting the URL into chunks between for
 
 ```javascript
 for (let image of images) {
-    if (!image.alt || !image.alt.length) {
-        // do stuff
-    }
+
+    // skip images with alt already set
+    if (image.alt && image.alt.length) continue;
+
+    let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
+    let name = src.split('/').pop(); // my-beautiful-image.jpg?format=small
+    let title = name.split('.').shift().replace(/-/g, ' '); // my beautiful image
+
+    image.alt = imageTitle;
+
 }
-images.map(image => {
-
-    // will ignore images with alt already set
-    if (!image.alt || !image.alt.length) {
-
-        let src = decodeURI(image.src); // https://cdn.com/media/my-beautiful-image.jpg?format=small
-        let name = src.split('/').pop(); // my-beautiful-image.jpg?format=small
-        let title = name.split('.').shift().replace(/-/g, ' '); // my beautiful image
-
-        image.alt = imageTitle;
-
-    }
-})
 ```
 
 I hope this little bit of vanilla Javascript takes the headache out of `alt` attributes and helps you improve SEO and accessibility on your web projects.
