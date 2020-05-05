@@ -72,30 +72,30 @@ listen(skipLink, skipToContent);
 
 
 // PRE tags
-let pres = document.getElementsByTagName('pre');
-for (let pre of pres) {
+for (let pre of document.getElementsByTagName('pre')) {
 
-    let icon = '&lt;/&gt;';
+    let icon = '&#x7B;/&#x7D;';
     let codeClass = pre.firstElementChild?.getAttribute('class')
     let lang = codeClass ? codeClass.trim().replace(/language\-/i, '') : null;
 
     if (lang) {
         addIcon(pre, `${icon} <small>${lang.toUpperCase()}</small>`);
+        continue;
     }
 
-    if (!lang) {
-        addIcon(pre, icon);
-    }
+    addIcon(pre, icon);
 
 }
 
 
 // BLOCKQUOTE tags
-let blockquotes = document.getElementsByTagName('blockquote');
-for (let blockquote of blockquotes) {
+for (let blockquote of document.getElementsByTagName('blockquote')) {
+
     if (blockquote.classList.contains('warning')) {
         addIcon(blockquote, '!');
-    } else {
-        addIcon(blockquote, 'i');
+        continue;
     }
+
+    addIcon(blockquote, 'i');
+
 }
