@@ -9,7 +9,7 @@ footer {
     .space.horizontal {
         padding-right: 1em;
         margin-right: 1em;
-        border-right: $border-width $border-style $lightgrey;
+        border-right: $border-width $border-style $mediumgrey;
 
         &:last-child {
             margin-right: 0;
@@ -41,7 +41,7 @@ footer {
     }
 }
 
-#dark_mode_toggle {
+button.toggle {
     display: inline;
     margin: 0;
 

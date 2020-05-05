@@ -44,6 +44,11 @@
         border-color: $darkgrey;
     }
 
+    hr,
+    .space.horizontal {
+        border-color: $slategrey;
+    }
+
     nav a.active {
         color: inherit;
     }
@@ -63,16 +68,12 @@
         list-style-type: "🌔";
     }
 
-    #dark_mode_toggle {
-        border-radius: $border-radius-alt;
-
-        svg {
-            &:first-of-type {
-                --active: 0;
-            }
-            &:last-of-type {
-                --active: 1;
-            }
+    #dark_mode_toggle svg {
+        &:first-of-type {
+            --active: 0;
+        }
+        &:last-of-type {
+            --active: 1;
         }
     }
 }
