@@ -1,6 +1,6 @@
 <meta name="categories" content="media, performance">
-<meta name="created" content="04/30/2020">
 <meta name="media" content="/_assets/media/person-holding-a-DSLR-camera.jpg">
+<meta name="created" content="April 30 2020">
 
 What is the best way, objectively, to reduce the file size of a JPG image for the web? Let's get scientific today, and do some quantitative testing.
 
@@ -23,8 +23,8 @@ To test so many images programmatically, I used Photoshop's Image Processor. I'm
 
 
 ## Results
-| Test Group            | A    | B    | C     |
-| --------------------- | ---- | ---- | ----- |
+| Test Group          | A    | B    | C     |
+| ------------------- | ---- | ---- | ----- |
 | Resized to (px)     | 4096 | 1080 | 2880  |
 | Compression level   | Max  | None | Heavy |
 | Avg. file size (kb) | 345  | 397  | 294   |

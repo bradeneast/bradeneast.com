@@ -20,7 +20,7 @@
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/stop-using-gifs</loc>
-            <lastmod>2020-03-30</lastmod>
+            <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
@@ -32,54 +32,54 @@
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties</loc>
-            <lastmod>2020-02-16</lastmod>
-            <changefreq>monthly</changefreq>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</loc>
-            <lastmod>2020-03-08</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/blog/using-noscript</loc>
-            <lastmod>2020-02-11</lastmod>
-            <changefreq>monthly</changefreq>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</loc>
-            <lastmod>2020-02-07</lastmod>
-            <changefreq>monthly</changefreq>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
 	<url>
-            <loc>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</loc>
-            <lastmod>2020-04-03</lastmod>
+            <loc>https://www.bradeneast.com/blog/using-noscript</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>1</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>1</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</loc>
+            <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/staggered-animations</loc>
-            <lastmod>2020-04-03</lastmod>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>1</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</loc>
+            <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>1</priority>
         </url>
 	<url>
             <loc>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</loc>
-            <lastmod>2020-01-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>1</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</loc>
-            <lastmod>2020-01-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>1</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/blog/get-alt-value-automatically-from-src-attribute</loc>
             <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>1</priority>

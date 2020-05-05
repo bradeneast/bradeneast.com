@@ -1,5 +1,6 @@
 <meta name="categories" content="html, css, javascript, accessibility">
 <meta name="media" content="/_assets/media/vintage-cassette.jpg">
+<meta name="created" content="March 27 2020">
 
 There's a special moment that happens when you're debugging code. It's when you realize that 6 hours has gone by since you started, and you're not sure if you remembered to breathe for most of that. Thanks IE.
 

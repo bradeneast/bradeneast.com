@@ -1,4 +1,5 @@
-<meta name="categories" content="html, performance, accessibility" />
+<meta name="categories" content="html, performance, accessibility">
+<meta name="created" content="March 10 2020">
 
 When I write for this blog, I usually embed a [CodePen](https://codepen.io/) at the end of the post, as a proof-of-concept of sorts. The problem is, embedded pens are not as friendly and easy to use as most other CodePen features.
 

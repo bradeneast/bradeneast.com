@@ -1,6 +1,6 @@
-<meta name="categories" content="javascript, html, accessibility" />
-<meta name="media" content="/_assets/media/no.jpg" />
-<meta name="created" content="Sat Feb 21 2020" />
+<meta name="categories" content="javascript, html, accessibility">
+<meta name="media" content="/_assets/media/no.jpg">
+<meta name="created" content="February 21 2020">
 
 `<noscript>` is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn't available.
 

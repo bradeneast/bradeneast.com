@@ -1,5 +1,6 @@
 <meta name="categories" content="html, css">
-<meta name="media" content="/_assets/media/stack-of-books-on-a-table.jpg" />
+<meta name="media" content="/_assets/media/stack-of-books-on-a-table.jpg">
+<meta name="created" content="April 23 2020">
 
 The web is mostly lists. Ever been to a website without a navigation menu? That said, not everything on the web *looks* like a list. It's easy to un-style a list, but is there a pure CSS way to change the color of list markers, without the use of an image?
 

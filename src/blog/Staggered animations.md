@@ -1,5 +1,6 @@
-<meta name="categories" content="ui, design, css, javascript" />
-<meta name="media" content="/_assets/media/people-in-motion.jpg" />
+<meta name="categories" content="ui, design, css, javascript">
+<meta name="media" content="/_assets/media/people-in-motion.jpg">
+<meta name="created" content="January 5 2020">
 
 Today, let's talk about integrating motion into our websites and user interfaces.
 

@@ -1,5 +1,6 @@
 <meta name="categories" content="media, performance">
 <meta name="media" content="/_assets/media/polaroid-camera-on-a-shelf.jpg">
+<meta name="created" content="May 1 2020">
 
 I've been writing a lot about images on the web lately, but I haven't mentioned PNG format, or when PNG might be a better alternative to its lossy counterparts. Because PNG is a lossless format, it holds up much better to being scaled up, decoded/re-encoded, and modified, so it's worth taking a look at.
 
@@ -11,8 +12,8 @@ When you're presented with the export dialogue in a program or web app, it's hel
 
 All values shown in kilobytes (kb). Winners indicated for each test.
 
-| Application      | JPG (no compression) | PNG   | PNG-8   | SVG   |
-| ---------------- | -------------------- | ----- | ------- | ----- |
+| Application    | JPG (no compression) | PNG   | PNG-8   | SVG   |
+| -------------- | -------------------- | ----- | ------- | ----- |
 | Logo Wordmark  | 40                   | 7     | **4**   | 8     |
 | Flat Pattern   | 152                  | 35    | **17**  | 26    |
 | Paragraph Text | 123                  | 18    | **10**  | 21    |

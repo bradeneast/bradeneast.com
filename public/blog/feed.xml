@@ -4,13 +4,13 @@
                 <title>Blog of Braden East</title>
                 <link>https://www.bradeneast.com/blog/feed.xml</link>
                 <description>The blog for dev-signers.</description>
-                <lastBuildDate>Tue, 05 May 2020 00:02:32 GMT</lastBuildDate>
+                <lastBuildDate>Tue, 05 May 2020 00:29:37 GMT</lastBuildDate>
                 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
 				<item>
                         <title>Change the color of list markers with just CSS</title>
                         <link>https://www.bradeneast.com/blog/change-the-color-of-list-markers-with-just-css</link>
                         <guid>https://www.bradeneast.com/blog/change-the-color-of-list-markers-with-just-css</guid>
-                        <pubDate>Mon, 27 Apr 2020 22:55:54 GMT</pubDate>
+                        <pubDate>Thu, 23 Apr 2020 05:00:00 GMT</pubDate>
                         <category>html</category>
 					<category>css</category>
                         <description>The web is mostly lists. Ever been to a website without a navigation menu? That said, not everything on the web &#x3c;em&#x3E;looks&#x3c;/em&#x3E; like a list. It&#x27;s easy to un-style a list, but is there a pure CSS way to change the color of list markers, without the use of an image?</description>
@@ -19,7 +19,7 @@
                         <title>Embed codepens with one line of HTML - faster and more accessibly</title>
                         <link>https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</link>
                         <guid>https://www.bradeneast.com/blog/embed-codepens-with-one-line-of-html-faster-and-more-accessibly</guid>
-                        <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+                        <pubDate>Tue, 10 Mar 2020 05:00:00 GMT</pubDate>
                         <category>html</category>
 					<category>performance</category>
 					<category>accessibility</category>
@@ -39,7 +39,7 @@
                         <title>Knobs and dials on the web</title>
                         <link>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</link>
                         <guid>https://www.bradeneast.com/blog/knobs-and-dials-on-the-web</guid>
-                        <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+                        <pubDate>Sat, 14 Dec 2019 06:00:00 GMT</pubDate>
                         <category>html</category>
 					<category>css</category>
 					<category>ui</category>
@@ -58,7 +58,7 @@
                         <title>Staggered animations</title>
                         <link>https://www.bradeneast.com/blog/staggered-animations</link>
                         <guid>https://www.bradeneast.com/blog/staggered-animations</guid>
-                        <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+                        <pubDate>Sun, 05 Jan 2020 06:00:00 GMT</pubDate>
                         <category>ui</category>
 					<category>design</category>
 					<category>css</category>
@@ -69,7 +69,7 @@
                         <title>Stop using GIFs</title>
                         <link>https://www.bradeneast.com/blog/stop-using-gifs</link>
                         <guid>https://www.bradeneast.com/blog/stop-using-gifs</guid>
-                        <pubDate>Wed, 29 Apr 2020 15:38:56 GMT</pubDate>
+                        <pubDate>Sat, 25 Apr 2020 05:00:00 GMT</pubDate>
                         <category>media</category>
 					<category>html</category>
 					<category>performance</category>
@@ -80,7 +80,7 @@
                         <title>Style pseudo elements with Javascript</title>
                         <link>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</link>
                         <guid>https://www.bradeneast.com/blog/style-pseudo-elements-with-javascript</guid>
-                        <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+                        <pubDate>Sun, 08 Dec 2019 06:00:00 GMT</pubDate>
                         <category>html</category>
 					<category>css</category>
 					<category>javascript</category>
@@ -90,7 +90,7 @@
                         <title>The simplest pull-to-refresh</title>
                         <link>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</link>
                         <guid>https://www.bradeneast.com/blog/the-simplest-pull-to-refresh</guid>
-                        <pubDate>Sat, 15 Feb 2020 18:35:00 GMT</pubDate>
+                        <pubDate>Wed, 22 Jan 2020 06:00:00 GMT</pubDate>
                         <category>design</category>
 					<category>ui</category>
 					<category>css</category>
@@ -100,7 +100,7 @@
                         <title>Two retired writing styles and why we should be thankful for CSS logical properties</title>
                         <link>https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties</link>
                         <guid>https://www.bradeneast.com/blog/two-retired-writing-styles-and-why-we-should-be-thankful-for-css-logical-properties</guid>
-                        <pubDate>Tue, 10 Mar 2020 05:00:00 GMT</pubDate>
+                        <pubDate>Fri, 03 Apr 2020 05:00:00 GMT</pubDate>
                         <category>design</category>
 					<category>css</category>
 					<category>typography</category>
@@ -120,7 +120,7 @@
                         <title>What I learned making my website compatible with Internet Explorer 5</title>
                         <link>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</link>
                         <guid>https://www.bradeneast.com/blog/what-i-learned-making-my-website-compatible-with-internet-explorer-5</guid>
-                        <pubDate>Sun, 08 Mar 2020 14:06:18 GMT</pubDate>
+                        <pubDate>Fri, 27 Mar 2020 05:00:00 GMT</pubDate>
                         <category>html</category>
 					<category>css</category>
 					<category>javascript</category>
@@ -131,7 +131,7 @@
                         <title>When is it better to use PNG?</title>
                         <link>https://www.bradeneast.com/blog/when-is-it-better-to-use-png</link>
                         <guid>https://www.bradeneast.com/blog/when-is-it-better-to-use-png</guid>
-                        <pubDate>Fri, 01 May 2020 17:21:16 GMT</pubDate>
+                        <pubDate>Fri, 01 May 2020 05:00:00 GMT</pubDate>
                         <category>media</category>
 					<category>performance</category>
                         <description>I&#x27;ve been writing a lot about images on the web lately, but I haven&#x27;t mentioned PNG format, or when PNG might be a better alternative to its lossy counterparts. Because PNG is a lossless format, it holds up much better to being scaled up, decoded/re-encoded, and modified, so it&#x27;s worth taking a look at.</description>

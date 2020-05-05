@@ -1,5 +1,6 @@
-<meta name="categories" content="design, ui, css" />
-<meta name="media" content="/_assets/media/pull.jpg" />
+<meta name="categories" content="design, ui, css">
+<meta name="media" content="/_assets/media/pull.jpg">
+<meta name="created" content="January 22 2020">
 
 Whether you like it or not, pull-to-refresh is here to stay, and it's something that designers and developers need to have in their reportoire.  While [Swift has a native API](https://stackoverflow.com/questions/24475792/how-to-use-pull-to-refresh-in-swift) for pull-to-refresh, web developers have to figure out their own Javascript implementation of the concept, which is unpleasantly buggy at worst and time-consuming at best.
 

@@ -1,5 +1,6 @@
-<meta name="categories" content="html, css, javascript" />
-<meta name="media" content="/_assets/media/wave.jpg" />
+<meta name="categories" content="html, css, javascript">
+<meta name="media" content="/_assets/media/wave.jpg">
+<meta name="created" content="December 8 2019">
 
 I'm a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we're taking a look at styling pseudo elements with Javascript for that little extra sparkle.
 

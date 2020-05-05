@@ -1,5 +1,6 @@
 <meta name="categories" content="media, html, performance, accessibility">
 <meta name="media" content="/_assets/media/smart-thinking.jpg">
+<meta name="created" content="April 25 2020">
 
 If you care about web performance, please stop using gifs for animations on your website. Heck, even [Giphy](https://giphy.com/), the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their ***last possible fallback***.
 

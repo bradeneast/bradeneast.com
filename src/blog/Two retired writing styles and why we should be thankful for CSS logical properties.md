@@ -1,6 +1,6 @@
-<meta name="categories" content="design, css, typography" />
-<meta name="media" content="/_assets/media/hebrew-text.jpg" />
-<meta name="created" content="Tue Mar 10 2020" />
+<meta name="categories" content="design, css, typography">
+<meta name="media" content="/_assets/media/hebrew-text.jpg">
+<meta name="created" content="April 3 2020">
 
 With the advent of CSS [logical properties](https://css-tricks.com/css-logical-properties/), I think it's important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.
 
