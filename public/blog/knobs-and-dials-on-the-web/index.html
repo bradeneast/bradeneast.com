@@ -157,10 +157,7 @@ knob.addEventListener(&#39;touchmove&#39;, (e) =&gt; {
 
   })
 })</code></pre><p>The only thing left is to set up the CSS that will rotate the knob accordingly.  First, we should divide the knob value by 100, since the HTML <code>range</code> input defaults to <code>min=&quot;0&quot;</code> and <code>max=&quot;100&quot;</code>. Next, let&#39;s set a range of motion for the knob so works like we would expect from the real thing. To do that, we can do a little more <code>calc()</code> math that limits the rotation to a specified range.</p><pre><code class="language-css">.adjustment {
-    /* set a default position for the knob */
     --knob-position: 100;
-
-    /* set a range for the knob to turn within */
     --knob-range: 280deg;
 }
 

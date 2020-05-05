@@ -85,10 +85,7 @@ The only thing left is to set up the CSS that will rotate the knob accordingly. 
 
 ```css
 .adjustment {
-    /* set a default position for the knob */
     --knob-position: 100;
-
-    /* set a range for the knob to turn within */
     --knob-range: 280deg;
 }
 
