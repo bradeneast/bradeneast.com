@@ -74,9 +74,10 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
 Despite being almost in sync, the slight variation between each element in the second example makes their movement much more interesting and appealing.
 
 Hopefully this illustrates why we'd want to use staggered motion in our designs, but what's the best way to code it? There are a few options at our disposal, so we'll look at the pros and cons of each.
+
 - Pure CSS
 - SCSS `for` loop
-- Javascript `forEach` method
+- Javascript
 
 ## The Pure CSS Approach
 ```css

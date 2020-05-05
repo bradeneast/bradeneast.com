@@ -93,7 +93,7 @@
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Updated:</strong> Mon May 04 2020
+            <strong>Updated:</strong> Tue May 05 2020
         </div>
 
         <p class="categories" aria-label="Categories:"><a href="/blog/categories/ui">ui</a><a href="/blog/categories/design">design</a><a href="/blog/categories/css">css</a><a href="/blog/categories/javascript">javascript</a></p>
@@ -149,7 +149,7 @@
 </style><h3 id="simultaneous">Simultaneous</h3><div class="example-wrapper">
     <div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div></div><h3 id="staggered">Staggered</h3><div class="example-wrapper staggered">
     <div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div></div><p>Despite being almost in sync, the slight variation between each element in the second example makes their movement much more interesting and appealing.</p><p>Hopefully this illustrates why we&#39;d want to use staggered motion in our designs, but what&#39;s the best way to code it? There are a few options at our disposal, so we&#39;ll look at the pros and cons of each.</p><ul>
-<li>Pure CSS</li><li>SCSS <code>for</code> loop</li><li>Javascript <code>forEach</code> method</li></ul><h2 id="the-pure-css-approach">The Pure CSS Approach</h2><pre><code class="language-css">.stagger-child-transitions &gt; :nth-child(2) { transition-delay: .1s }
+<li>Pure CSS</li><li>SCSS <code>for</code> loop</li><li>Javascript</li></ul><h2 id="the-pure-css-approach">The Pure CSS Approach</h2><pre><code class="language-css">.stagger-child-transitions &gt; :nth-child(2) { transition-delay: .1s }
 .stagger-child-transitions &gt; :nth-child(3) { transition-delay: .2s }
 .stagger-child-transitions &gt; :nth-child(4) { transition-delay: .3s }
 .stagger-child-transitions &gt; :nth-child(5) { transition-delay: .4s }
