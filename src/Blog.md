@@ -1,6 +1,6 @@
 # [[ page.name ]]
 
-For your moments of spontaneity, [here's a random post](/random).
+For moments of spontaneity, [here's a random post](/random).
 
 <hr />
 

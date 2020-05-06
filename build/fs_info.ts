@@ -4,6 +4,7 @@ import options from '../options.ts';
 import { linkify, walkAst, deepCopy, matchBetween } from './utils.ts';
 import HTML from './deno_modules/html_parse_stringify/mod.ts';
 import marked from './deno_modules/marked/marked.ts';
+import { formatDate } from './deno_modules/date_formatter/mod.ts';
 
 
 export default function getFsInfo({ filename, info }) {
@@ -148,15 +149,11 @@ export default function getFsInfo({ filename, info }) {
 
     // Get formatted and unix dates
     {
-        let format = options?.default?.dateFormat || 'toDateString';
-
         ['created', 'modified'].map(prop => {
-
             let date = page[prop] ? new Date(page[prop]) : new Date(info[prop] * 1000);
 
-            page.date[prop] = date[format].apply(date);
+            page.date[prop] = formatDate(date, options.default.dateFormat);
             page[prop] = date.getTime();
-
         })
     }
 
