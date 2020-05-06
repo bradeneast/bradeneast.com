@@ -1,8 +1,5 @@
 // DOM
-import processAnchor from './dom/processAnchor.js';
 import altFromSrc from './dom/altFromSrc.js';
-import addCodepenFallback from './dom/addCodepenFallback.js';
-import tooltip from './dom/tooltip.js';
 import addIcon from './dom/addIcon.js';
 
 // ACTIONS
@@ -18,32 +15,28 @@ for (let link of document.getElementsByTagName('link')) {
 }
 
 
-// Codepens
-for (let p of document.getElementsByTagName('p')) {
-
-    if (!p['data-slug-hash']) continue;
-    if (p.innerHTML == "") p.innerHTML = "&#x1F62C; Yikes... this pen isn't available.";
-
-    addCodepenFallback(p);
-
-}
-
-
 // A tags
-for (let a of document.getElementsByTagName('a')) processAnchor(a);
+for (let a of document.getElementsByTagName('a')) {
+    if (a.href.includes(location.origin)) continue;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+}
 
 
 // IMG tags
 for (let image of document.getElementsByTagName('img')) {
 
     let alt = image.getAttribute('alt');
+    let tip = document.createElement('span');
 
     if (!alt) {
         alt = altFromSrc(image);
         image.setAttribute('alt', alt);
     }
 
-    image.insertAdjacentElement('afterend', tooltip(alt));
+    tip.innerText = alt;
+    tip.classList.add('tooltip');
+    image.insertAdjacentElement('afterend', tip);
     image.parentElement.classList.add('has_img');
 
 }
