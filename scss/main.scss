@@ -92,5 +92,9 @@ main {
     }
 }
 
+.hide {
+    display: none;
+}
+
 @import "./critical/dark_mode", "./critical/nav", "./critical/forms", "./critical/typography", "./critical/highlights";
 @import "./critical/rules/screen", "./critical/rules/prefers";
