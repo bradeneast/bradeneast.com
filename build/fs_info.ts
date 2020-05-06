@@ -134,13 +134,15 @@ export default function getFsInfo({ filename, info }) {
 
     // Get applicable templates
     {
-        let unique = [...new Set(options.scopes)];
-        let applicableScopes = unique.filter(scope => {
-            if (scope.target.length < 2) return true;
-            return scope.target.substring(1) == page.parentDir.split('/')[0];
-        }) || [];
+        page.scopes = [...new Set(options.scopes)].filter(scope => {
 
-        page.scopes = applicableScopes;
+            if (scope.target.length < 2) {
+                return true;
+            } else {
+                return scope.target.substring(1) == page.parentDir.split('/')[0];
+            }
+
+        }) || [];
     }
 
 

@@ -1,4 +1,3 @@
-"use strict";
 document.body.style.opacity = 0;
 function bail(err) {
     console.log(err);

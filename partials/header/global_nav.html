@@ -1,8 +1,8 @@
 <div class="nav_wrapper" aria-label="navigation">
 
     <nav id="nav">
-        <a class="highlight" href="/">About</a>
-        <a class="highlight" href="/blog">Blog</a>
+        <a class="highlight [[ page.href.split('/')[1] == '' ? 'active' : '' ]]" href="/">About</a>
+        <a class="highlight [[ page.href.split('/')[1] == 'blog' ? 'active' : '' ]]" href="/blog">Blog</a>
     </nav>
 
 </div>

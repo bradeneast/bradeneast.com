@@ -58,15 +58,6 @@ export default {
         dateFormat: 'toDateString',
         /** Path to fallback media for items with no featured media specified */
         media: '/_assets/media/beach-ladder.jpg',
-        autoPlayVideos: true,
-        loopVideos: true,
-        /** Transformations category names and lists */
-        categories: {
-            prepend: '#',
-            append: '',
-            split: ', ',
-            join: ' ',
-        },
         codePenTheme: 'dark',
     },
     /** Template name is the file the build will look for in your templates folder. Target indicates where to apply the template (must begin with a leading slash)

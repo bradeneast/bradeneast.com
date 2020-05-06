@@ -1,4 +1,4 @@
-# [[ name ]]
+# [[ page.name ]]
 
 ## Hi, I'm Braden.
 

@@ -1,4 +1,4 @@
-# [[ name ]]
+# [[ page.name ]]
 
 <ul data-feed="/design">
     <template>

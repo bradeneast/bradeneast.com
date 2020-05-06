@@ -68,6 +68,7 @@ async function build() {
         // Process feeds
         if (reFeed.test(page.content)) processFeeds(page);
 
+        // Include and sanitize page description
         page.description = matchBetween(page.content, '<p>', '</p>') || '';
         page.description = page.description.replace(/<.+?>/g, '').replace(/(?=["'’`])/g, '\\');
         page.description = includeVariables(page, page.description);

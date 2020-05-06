@@ -2,7 +2,6 @@
 import processAnchor from './dom/processAnchor.js';
 import altFromSrc from './dom/altFromSrc.js';
 import addCodepenFallback from './dom/addCodepenFallback.js';
-import findActive from './dom/findActive.js';
 import tooltip from './dom/tooltip.js';
 import addIcon from './dom/addIcon.js';
 
@@ -47,17 +46,6 @@ for (let image of document.getElementsByTagName('img')) {
     image.insertAdjacentElement('afterend', tooltip(alt));
     image.parentElement.classList.add('has_img');
 
-}
-
-
-// NAV
-let nav = document.getElementById('nav');
-let navItems = nav.getElementsByTagName('a');
-let active = findActive(navItems);
-
-if (active) {
-    active.classList.add('active');
-    active.setAttribute('aria-current', 'page');
 }
 
 

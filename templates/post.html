@@ -7,25 +7,25 @@
 
 <article>
 
-    <h1 class="title">[[ name ]]</h1>
+    <h1 class="title">[[ page.name ]]</h1>
 
     <div class="meta">
 
         <div class="created" aria-label="Date created:">
-            <strong>Created:</strong> [[ date.created ]]
+            <strong>Created:</strong> [[ page.date.created ]]
         </div>
 
         <div class="modified" aria-label="Date modified:">
-            <strong>Updated:</strong> [[ date.modified ]]
+            <strong>Updated:</strong> [[ page.date.modified ]]
         </div>
 
-        <p class="categories" aria-label="Categories:">[[ categories.links ]]</p>
+        <p class="categories" aria-label="Categories:">[[ page.categories.links ]]</p>
 
     </div>
 
     <div class="featured_media" aria-label="Featured media:">
 
-        [[ media ]]
+        <img src="[[ page.media ]]" alt="" />
 
     </div>
 

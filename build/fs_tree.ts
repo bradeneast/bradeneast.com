@@ -11,9 +11,7 @@ export default function getFsTree(directory: string, ignoreProps = {}) {
     for (let { filename, info } of walkSync(directory, { includeDirs: false })) {
 
         filename = slash(filename);
-
         if (filename.includes('/' + options.ignore)) continue;
-        
         tree.push(getFsInfo({ filename, info }));
 
     }

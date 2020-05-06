@@ -1,4 +1,4 @@
-# [[ name ]]
+# [[ page.name ]]
 
 For your moments of spontaneity, [here's a random post](/random).
 
