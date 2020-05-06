@@ -7,30 +7,30 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="[[ page.description ]]">
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
-    <meta name="supported-color-schemes" content="light dark" />
-
     <meta property="og:site_name" content="Braden East" />
     <meta property="og:description" content="[[ page.description ]]" />
     <meta property="og:url" content="https://www.bradeneast.com[[ page.href ]]" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
-    <link rel="canonical" href="https://www.bradeneast.com[[ page.href ]]" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/_assets/favicon-light--padded.png" />
+    <meta name="supported-color-schemes" content="light dark" />
 
     <base href="/" />
+    <link rel="canonical" href="https://www.bradeneast.com[[ page.href ]]" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
-    <link rel="prefetch" as="font" href="/public/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2" type="font/woff2" />
-    <link rel="prefetch" as="font" href="/public/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2.woff2" type="font/woff2" />
-    <link rel="prefetch" as="font" href="/public/_assets/fonts/hk_grotesk/HKGrotesk-Bold.woff2" type="font/woff2" />
-    <link rel="preload" as="fetch" href="/sitemap.json" />
+    <link rel="prefetch" as="font" href="/_assets/fonts/parisien_night/ParisienNight.woff2" type="font/woff2" />
+    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2" type="font/woff2" />
+    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2.woff2" type="font/woff2" />
+    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Bold.woff2" type="font/woff2" />
+    [[ page.parentDir == 'blog' ? '<link rel="prefetch" as="font" href="/_assets/fonts/solway/Solway-Medium.woff2" type="font/woff2" />' : '' ]]
+    [[ /randomPost\.js|search\.min\.js/i.test(page.content) ? '<link rel="preload" as="fetch" href="/sitemap.json" />' : '' ]]
+
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
-
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
-
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     <noscript>
         <link rel="stylesheet" href="/_assets/css/non_critical.min.css" type="text/css" />
@@ -55,7 +55,6 @@
         } else {
             doc.classList.toggle(dmName, JSON.parse(dm));
         }
-
     </script>
 
 </head>
