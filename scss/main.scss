@@ -24,6 +24,7 @@ body {
     scroll-behavior: smooth;
     background: $inverse;
     background: var(--inverse);
+    transition: $transition-short;
 }
 
 body {

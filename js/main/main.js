@@ -5,21 +5,12 @@ import addIcon from './dom/addIcon.js';
 // ACTIONS
 import toggleDarkMode from './actions/toggleDarkMode.js';
 import skipToContent from './actions/skipToContent.js';
-
 import { listen } from './utils.js';
 
 
 // LINK tags
 for (let link of document.getElementsByTagName('link')) {
     if (link.href.includes('.css') && link.getAttribute('defer')) link.rel = 'stylesheet';
-}
-
-
-// A tags
-for (let a of document.getElementsByTagName('a')) {
-    if (a.href.includes(location.origin)) continue;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
 }
 
 
@@ -42,16 +33,6 @@ for (let image of document.getElementsByTagName('img')) {
 }
 
 
-// DARK MODE
-let darkModeToggle = document.getElementById('dark_mode_toggle');
-listen(darkModeToggle, toggleDarkMode);
-
-
-// SKIP LINK
-let skipLink = document.getElementById('skip_link');
-listen(skipLink, skipToContent);
-
-
 // PRE tags
 for (let pre of document.getElementsByTagName('pre')) {
 
@@ -71,12 +52,27 @@ for (let pre of document.getElementsByTagName('pre')) {
 
 // BLOCKQUOTE tags
 for (let blockquote of document.getElementsByTagName('blockquote')) {
+    blockquote.classList.contains('warning') ? addIcon(blockquote, '!') : addIcon(blockquote, 'i');
+}
 
-    if (blockquote.classList.contains('warning')) {
-        addIcon(blockquote, '!');
-        continue;
-    }
 
-    addIcon(blockquote, 'i');
+// LINKS
+for (let a of document.getElementsByTagName('a')) {
+
+    if (a.href.includes(location.origin)) continue;
+    if (!a.href.includes('http')) continue;
+
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
 
 }
+
+
+// DARK MODE
+let darkModeToggle = document.getElementById('dark_mode_toggle');
+listen(darkModeToggle, toggleDarkMode);
+
+
+// SKIP LINK
+let skipLink = document.getElementById('skip_link');
+listen(skipLink, skipToContent);
