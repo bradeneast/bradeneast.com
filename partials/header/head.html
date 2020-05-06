@@ -23,12 +23,15 @@
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
-    <link rel="preload" href="/sitemap.json" as="fetch" />
+    <link rel="prefetch" as="font" href="/public/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2" type="font/woff2" />
+    <link rel="prefetch" as="font" href="/public/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2.woff2" type="font/woff2" />
+    <link rel="prefetch" as="font" href="/public/_assets/fonts/hk_grotesk/HKGrotesk-Bold.woff2" type="font/woff2" />
+    <link rel="preload" as="fetch" href="/sitemap.json" />
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
-    <link defer="true" rel="preload" as="style" href="/_assets/css/non_critical.min.css" type="text/css" />
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
 
+    <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     <noscript>
         <link rel="stylesheet" href="/_assets/css/non_critical.min.css" type="text/css" />
     </noscript>
