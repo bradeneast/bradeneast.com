@@ -55,7 +55,7 @@ export default {
         toUTCString: Wed, 23 Jan 2019 09: 23: 42 GMT
         toISOString: 2019 - 01 - 23T09: 23: 42.079Z
         */
-        dateFormat: 'Monday January 1, 2020',
+        dateFormat: 'Monday April 9, 2020',
         categories: {
             split: ', '
         },
