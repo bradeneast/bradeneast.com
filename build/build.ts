@@ -71,9 +71,9 @@ async function build() {
         // Include and sanitize page description
         page.description = matchBetween(page.content, '<p>', '</p>') || '';
         page.description = page.description.replace(/<.+?>/g, '').replace(/(?=["'’`])/g, '\\');
-        page.description = includeVariables(page, page.description);
 
         // Include variables
+        page.description = includeVariables(page, page.description);
         page.content = includeVariables(page);
 
         // Create and write to file

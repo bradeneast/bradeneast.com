@@ -28,7 +28,7 @@ export default {
     },
     match: {
         partials: ['{{', '}}'],
-        variables: ['[[', ']]'],
+        variables: ['[[', ']]']
     },
     /** Feeds are lists of metadata or content from other pages. The first element child will be copied and used as the template for each feed item. */
     feeds: {
@@ -56,6 +56,9 @@ export default {
         toISOString: 2019 - 01 - 23T09: 23: 42.079Z
         */
         dateFormat: 'toDateString',
+        categories: {
+            split: ', '
+        },
         /** Path to fallback media for items with no featured media specified */
         media: '/_assets/media/beach-ladder.jpg',
         codePenTheme: 'dark',
