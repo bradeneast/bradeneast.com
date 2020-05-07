@@ -5,15 +5,15 @@ function bail(err) {
 }
 try {
     var sitemap = fetch('/sitemap.json').then(function (r) { return r.json(); });
-    var include_1 = 'blog/';
-    var exclude_1 = '/blog/categories/';
+    var include_1 = /blog\//i;
+    var exclude_1 = /\/blog\/categories/i;
     sitemap.then(function (pages) {
         var _a;
         try {
             var filtered = [];
             for (var _i = 0, pages_1 = pages; _i < pages_1.length; _i++) {
                 var page = pages_1[_i];
-                if (page.href.includes(include_1) && !page.href.includes(exclude_1)) {
+                if (include_1.test(page.href) && !exclude_1.test(page.href)) {
                     filtered.push(page);
                 }
             }

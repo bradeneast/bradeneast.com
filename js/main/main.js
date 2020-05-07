@@ -3,7 +3,7 @@ import altFromSrc from './dom/altFromSrc.js';
 import addIcon from './dom/addIcon.js';
 
 // FUNCTIONS
-import { listen, playAudio } from './utils.js';
+import { listen, playAudio, escapeRegex } from './utils.js';
 
 // ACTIONS
 import toggleDarkMode from './actions/toggleDarkMode.js';
@@ -14,7 +14,7 @@ import backToTop from './actions/backToTop.js';
 
 // LINK tags
 for (let link of document.getElementsByTagName('link')) {
-    if (link.href.includes('.css') && link.getAttribute('defer')) link.rel = 'stylesheet';
+    if (/\.css/i.test(link.href) && link.getAttribute('defer')) link.rel = 'stylesheet';
 }
 
 
@@ -29,10 +29,12 @@ for (let image of document.getElementsByTagName('img')) {
         image.setAttribute('alt', alt);
     }
 
-    tip.innerText = alt;
-    tip.classList.add('tooltip');
-    image.insertAdjacentElement('afterend', tip);
-    image.parentElement.classList.add('has_img');
+    try {
+        tip.innerText = alt;
+        tip.classList.add('tooltip');
+        image.insertAdjacentElement('afterend', tip);
+        image.parentElement.classList.add('has_img');
+    } catch (e) { }
 
 }
 
@@ -63,8 +65,9 @@ for (let blockquote of document.getElementsByTagName('blockquote')) {
 // LINKS
 for (let a of document.getElementsByTagName('a')) {
 
-    if (a.href.includes(location.origin)) continue;
-    if (!a.href.includes('http')) continue;
+    let origin = new RegExp(escapeRegex(location.origin), 'i');
+    if (origin.test(a.href)) continue;
+    if (!/http/i.test(a.href)) continue;
 
     a.target = '_blank';
     a.rel = 'noopener noreferrer';

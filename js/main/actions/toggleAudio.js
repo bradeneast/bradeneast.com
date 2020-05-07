@@ -1,4 +1,4 @@
-import { playAudio } from "../utils.js";
+import { playAudio, toggleClass } from "../utils.js";
 
 export default (e) => {
 
@@ -10,7 +10,11 @@ export default (e) => {
     }
 
     if (value) playAudio('blip');
-    document.documentElement.classList.toggle(name, !value);
+    try {
+        document.documentElement.classList.toggle(name, !value);
+    } catch (e) {
+        toggleClass(document.documentElement, name, !value);
+    }
     localStorage.setItem(name, JSON.stringify(!value));
 
 }

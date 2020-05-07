@@ -1,13 +1,18 @@
-import { playAudio } from "../utils.js";
+import { playAudio, toggleClass } from "../utils.js";
 
 export default () => {
 
     playAudio('bloop');
 
-    let dmName = 'dark_mode';
-    let dm = JSON.parse(localStorage.getItem(dmName));
+    let name = 'dark_mode';
+    let value = JSON.parse(localStorage.getItem(name));
 
-    document.documentElement.classList.toggle(dmName, !dm);
-    localStorage.setItem(dmName, JSON.stringify(!dm));
+    try {
+        document.documentElement.classList.toggle(name, !value);
+    } catch (e) {
+        toggleClass(document.documentElement, name, !value);
+    }
+
+    localStorage.setItem(name, JSON.stringify(!value));
 
 }

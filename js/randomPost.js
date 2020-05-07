@@ -8,8 +8,8 @@ function bail(err) {
 try {
 
     let sitemap = fetch('/sitemap.json').then(r => r.json());
-    let include = 'blog/';
-    let exclude = '/blog/categories/';
+    let include = /blog\//i;
+    let exclude = /\/blog\/categories/i;
 
     sitemap.then(pages => {
 
@@ -18,7 +18,7 @@ try {
             let filtered = [];
 
             for (let page of pages) {
-                if (page.href.includes(include) && !page.href.includes(exclude)) {
+                if (include.test(page.href) && !exclude.test(page.href)) {
                     filtered.push(page);
                 }
             }

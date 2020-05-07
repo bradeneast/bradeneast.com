@@ -10,7 +10,6 @@ body {
     margin: 10%;
     font-size: rem(1);
 
-    #dark_mode_toggle,
     #search,
     .tooltip {
         display: none;
@@ -81,6 +80,11 @@ body {
         margin-bottom: rem(2);
     }
 
+    .scope_nav .next {
+        text-align: right;
+        float: right;
+    }
+
     code,
     pre {
         color: inherit;
@@ -119,5 +123,37 @@ body {
         border-style: $border-style;
         margin: rem(1) 0;
         font-size: rem($font-size-small);
+    }
+
+    button.toggle svg {
+        transform: none;
+        top: 0;
+        left: 0.37em;
+
+        &.off {
+            display: none;
+        }
+    }
+}
+
+html.muted {
+    #audio_toggle {
+        .on {
+            display: none;
+        }
+        .off {
+            display: block;
+        }
+    }
+}
+
+html.dark_mode {
+    #dark_mode_toggle {
+        .on {
+            display: none;
+        }
+        .off {
+            display: block;
+        }
     }
 }
