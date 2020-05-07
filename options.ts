@@ -94,14 +94,14 @@ export default {
                 path: '/blog'
             }
         },
-        {
-            templateName: 'post',
-            target: '/design',
-            sort: 'name',
-            categories: {
-                categorize: true,
-                usePartial: 'category_feed_with_media',
-            }
-        },
+        // {
+        //     templateName: 'post',
+        //     target: '/design',
+        //     sort: 'name',
+        //     categories: {
+        //         categorize: true,
+        //         usePartial: 'category_feed_with_media',
+        //     }
+        // },
     ],
 }
