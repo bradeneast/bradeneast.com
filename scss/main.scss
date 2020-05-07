@@ -96,5 +96,14 @@ main {
     display: none;
 }
 
+html.muted #audio_toggle svg {
+    &:first-of-type {
+        --active: 0;
+    }
+    &:last-of-type {
+        --active: 1;
+    }
+}
+
 @import "./critical/dark_mode", "./critical/nav", "./critical/forms", "./critical/typography", "./critical/highlights";
 @import "./critical/rules/screen", "./critical/rules/prefers";

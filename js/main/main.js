@@ -2,10 +2,14 @@
 import altFromSrc from './dom/altFromSrc.js';
 import addIcon from './dom/addIcon.js';
 
+// FUNCTIONS
+import { listen, playAudio } from './utils.js';
+
 // ACTIONS
 import toggleDarkMode from './actions/toggleDarkMode.js';
+import toggleAudio from './actions/toggleAudio.js';
 import skipToContent from './actions/skipToContent.js';
-import { listen } from './utils.js';
+import backToTop from './actions/backToTop.js';
 
 
 // LINK tags
@@ -67,12 +71,13 @@ for (let a of document.getElementsByTagName('a')) {
 
 }
 
+for (let audio of document.getElementsByTagName('audio')) {
+    audio.muted = JSON.parse(localStorage.getItem('muted'));
+}
 
-// DARK MODE
-let darkModeToggle = document.getElementById('dark_mode_toggle');
-listen(darkModeToggle, toggleDarkMode);
 
-
-// SKIP LINK
-let skipLink = document.getElementById('skip_link');
-listen(skipLink, skipToContent);
+listen(document.getElementById('audio_toggle'), toggleAudio);
+listen(document.getElementById('dark_mode_toggle'), toggleDarkMode);
+listen(document.getElementById('skip_link'), skipToContent);
+listen(document.getElementById('back_to_top'), backToTop);
+listen(document.querySelectorAll('img'), (e) => playAudio('loboi'), 'mouseover');
