@@ -22,9 +22,11 @@
 html,
 body {
     scroll-behavior: smooth;
+}
+
+html {
     background: $inverse;
     background: var(--inverse);
-    transition: $transition-short;
 }
 
 body {
