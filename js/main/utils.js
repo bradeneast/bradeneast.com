@@ -1,15 +1,22 @@
 export function listen(element, callback, event = 'click') {
-    if (typeof element[Symbol.iterator] == 'function') {
+    if (element.length) {
         for (let elem of element) {
             try { elem.addEventListener(event, callback) }
             catch (e) {
-                try { elem.attachEvent(`on${event}`, callback) } catch (e) { }
+                console.log(e)
+                try { elem.attachEvent(`on${event}`, callback) } catch (e) {
+                    console.log(e)
+                }
             }
         }
-    } else {
+    }
+    else {
         try { element.addEventListener(event, callback) }
         catch (e) {
-            try { element.attachEvent(`on${event}`, callback) } catch (e) { }
+            console.log(e)
+            try { element.attachEvent(`on${event}`, callback) } catch (e) {
+                console.log(e)
+            }
         }
     }
 }
@@ -26,25 +33,13 @@ export function escapeRegex(str = '') {
 }
 
 
-export function toggleClass(elem, className = '', force = null) {
+export function toggleClass(elem, className = '', force) {
 
-    let classList = elem.getAttribute('class');
+    let classList = elem.getAttribute('class') || '';
     let matchName = new RegExp(escapeRegex(className), 'i');
+    let isPresent = matchName.test(classList);
 
-    if (force == null) return;
-
-    if (matchName.test(classList) || !force) {
-        elem.setAttribute(
-            'class',
-            classList.replace(matchName, '')
-        );
-    }
-
-    if (!matchName.test(classList) || force) {
-        elem.setAttribute(
-            'class',
-            classList + ' ' + className
-        );
-    }
+    if (isPresent || !force) elem.setAttribute('class', classList.replace(matchName, ''));
+    if (!isPresent || force) elem.setAttribute('class', classList + ' ' + className);
 
 }

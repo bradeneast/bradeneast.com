@@ -88,8 +88,11 @@ body {
     code,
     pre {
         color: inherit;
-        background: $ultralightgrey;
         font-weight: 600;
+    }
+
+    .icon {
+        background: $primary;
     }
 
     pre {
@@ -132,6 +135,14 @@ body {
 
         &.off {
             display: none;
+        }
+    }
+
+    footer {
+        display: block;
+
+        .right {
+            display: block;
         }
     }
 }
