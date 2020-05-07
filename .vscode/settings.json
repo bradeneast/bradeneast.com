@@ -31,6 +31,11 @@
             },
             {
                 "match": "\\.js",
+                "cmd": "esbuild --bundle ./js/random/random.js --outdir=./js --minify",
+                "silent": true
+            },
+            {
+                "match": "\\.js",
                 "cmd": "tsc",
                 "silent": true
             }
