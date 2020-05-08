@@ -98,12 +98,18 @@ main {
     display: none;
 }
 
-html.muted #audio_toggle svg {
-    &:first-of-type {
-        --active: 0;
+html.muted #audio_toggle {
+    audio {
+        display: none;
     }
-    &:last-of-type {
-        --active: 1;
+
+    svg {
+        &:first-of-type {
+            --active: 0;
+        }
+        &:last-of-type {
+            --active: 1;
+        }
     }
 }
 

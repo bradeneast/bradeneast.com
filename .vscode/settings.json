@@ -21,17 +21,7 @@
             },
             {
                 "match": "\\.js",
-                "cmd": "esbuild --bundle ./js/main/main.js --outdir=./js --minify",
-                "silent": true
-            },
-            {
-                "match": "\\.js",
-                "cmd": "esbuild --bundle ./js/search/search.js --outdir=./js --minify",
-                "silent": true
-            },
-            {
-                "match": "\\.js",
-                "cmd": "esbuild --bundle ./js/random/random.js --outdir=./js --minify",
+                "cmd": "esbuild --bundle ./js/main/main.js ./js/search/search.js ./js/random/random.js ./js/critical/critical.js --outdir=./js --minify",
                 "silent": true
             },
             {

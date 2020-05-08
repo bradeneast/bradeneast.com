@@ -74,15 +74,16 @@ for (let a of document.getElementsByTagName('a')) {
 
 }
 
-if (/muted/i.test(document.documentElement.getAttribute('class'))) {
-    for (let audio of document.getElementsByTagName('audio')) {
-        audio.muted = true;
-    }
-}
-
 
 listen(document.getElementById('audio_toggle'), toggleAudio);
 listen(document.getElementById('dark_mode_toggle'), toggleDarkMode);
 listen(document.getElementById('skip_link'), skipToContent);
 listen(document.getElementById('back_to_top'), backToTop);
 listen(document.querySelectorAll('img'), function () { playAudio('loboi') }, 'mouseover');
+
+
+if (JSON.parse(localStorage.getItem('muted'))) {
+    for (let audio of document.getElementsByTagName('audio')) {
+        audio.muted = true;
+    }
+}

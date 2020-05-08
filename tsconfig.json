@@ -1,7 +1,8 @@
 {
   "files": [
-    "./js/random.min.js",
+    "./js/critical.min.js",
     "./js/main.min.js",
+    "./js/random.min.js",
     "./js/search.min.js",
     "./js/prism.min.js",
   ],

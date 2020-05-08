@@ -28,42 +28,17 @@
     <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2" type="font/woff2" />
     <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2" type="font/woff2" />
     <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Bold.woff2" type="font/woff2" />
-    
-    <link rel="preload" as="fetch" href="/sitemap.json" />
-
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
-    <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
+    <link rel="preload" as="fetch" href="/sitemap.json" />
+    
+    <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
         <link rel="stylesheet" href="/_assets/css/non_critical.min.css" type="text/css" />
     </noscript>
 
+    <script async src="/_assets/js/critical.min.js"></script>
     <script defer src="/_assets/js/main.min.js"></script>
-    <script>
-
-        var doc = document.documentElement;
-        var IE = navigator.userAgent.indexOf('MSIE') > -1 || navigator.appVersion.indexOf('Trident/') > -1;
-
-        function checkPreference(name) {
-            var value = JSON.parse(localStorage.getItem(name)) || false;
-            var classList = doc.getAttribute('class') || '';
-            if (value == null) value = false;
-            if (value) doc.setAttribute('class', classList + ' ' + name);
-            localStorage.setItem(name, JSON.stringify(value));
-        }
-
-        checkPreference('dark_mode');
-        checkPreference('muted');
-
-        if (IE) {
-            var retroModeStyles = document.createElement('link');
-            retroModeStyles.rel = 'stylesheet';
-            retroModeStyles.href = '/_assets/css/retro_mode.min.css';
-            retroModeStyles.setAttribute('type', 'text/css');
-            doc.appendChild(retroModeStyles);
-        }
-
-    </script>
 
 </head>
 
