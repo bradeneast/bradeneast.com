@@ -7,6 +7,7 @@ import { tag, escapeEntities, leadingZero, pageMatchesBlob } from './utils.ts';
 export default function makeSitemaps() {
 
 
+
     // JSON Sitemap (for local searching)
     let jsonSitemap = [options.paths.dist, 'sitemap.json'].join('/');
     let ignore = ['content', 'info', 'description', 'scopes', 'ext'];
@@ -21,9 +22,11 @@ export default function makeSitemaps() {
     writeFileStr(jsonSitemap, JSON.stringify(pages, jsonCleanup));
 
 
-    if (!options.sitemap) return;
+
 
     // XML Sitemap (for crawlers/SEO)
+    if (!options.sitemap) return;
+
     let xmlSitemap = [options.paths.dist, 'sitemap.xml'].join('/');
     let urls = [];
 
@@ -31,13 +34,18 @@ export default function makeSitemaps() {
 
         let exclude = false;
         options.sitemap?.exclude?.map(blob => {
-            if (pageMatchesBlob(page, blob)) exclude = true;
+            if (pageMatchesBlob(page, blob)) {
+                exclude = true;
+            }
         });
+
         if (exclude) return;
 
         let prioritize = false;
         options.sitemap?.prioritize?.map(blob => {
-            if (pageMatchesBlob(page, blob)) prioritize = true;
+            if (pageMatchesBlob(page, blob)) {
+                prioritize = true;
+            }
         });
 
         let mod = new Date(page.date.modified);

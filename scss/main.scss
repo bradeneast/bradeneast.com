@@ -101,6 +101,7 @@ main {
 html.muted #audio_toggle {
     audio {
         display: none;
+        visibility: hidden;
     }
 
     svg {

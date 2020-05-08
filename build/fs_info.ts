@@ -1,7 +1,7 @@
 import { readFileStrSync } from 'https://deno.land/std/fs/mod.ts';
 import slash from "https://deno.land/x/slash/mod.ts";
 import options from '../options.ts';
-import { linkify, walkAst, deepCopy, matchBetween } from './utils.ts';
+import { linkify, walkAst, deepCopy, matchBetween, tag } from './utils.ts';
 import HTML from './deno_modules/html_parse_stringify/mod.ts';
 import marked from './deno_modules/marked/marked.ts';
 import { formatDate } from './deno_modules/date_formatter/mod.ts';
@@ -23,7 +23,7 @@ export default function getFsInfo({ filename, info }) {
         categories: {
             names: [],
             string: '',
-            links: '',
+            links: [],
         },
         scopes: [],
         depth: 0,
@@ -93,20 +93,17 @@ export default function getFsInfo({ filename, info }) {
                         page.categories.names = contentValue.split(options.default?.categories?.split || ', ');
                         page.categories.string = contentValue;
 
-                        page.categories.names.map(category => {
-
-                            let link = [page.parentDir, 'categories', linkify(category)].join('/');
-
-                            page.categories.links += `<a href="/${link}">${category}</a>`;
-
-                        })
-
-                    } else {
-
-                        page[nameValue] = contentValue;
+                        page.categories.links = page.categories.names.map(category => tag({
+                            name: 'a',
+                            attributes: [{
+                                name: 'href',
+                                value: [page.parentDir, 'categories', linkify(category)].join('/')
+                            }],
+                            content: category
+                        }))
 
                     }
-
+                    else page[nameValue] = contentValue;
                 }
 
             }
