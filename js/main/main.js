@@ -12,6 +12,19 @@ import skipToContent from './actions/skipToContent.js';
 import backToTop from './actions/backToTop.js';
 
 
+// INTERNET EXPLORER CHECK
+if (navigator.userAgent.indexOf('MSIE') > -1 || navigator.appVersion.indexOf('Trident/') > -1) {
+
+    let retroModeStyles = document.createElement('link');
+
+    retroModeStyles.rel = 'stylesheet';
+    retroModeStyles.href = '/_assets/css/retro_mode.min.css';
+    retroModeStyles.setAttribute('type', 'text/css');
+    doc.appendChild(retroModeStyles);
+
+}
+
+
 // LINK tags
 for (let link of document.getElementsByTagName('link')) {
     if (/\.css/i.test(link.href) && link.getAttribute('defer')) link.rel = 'stylesheet';
