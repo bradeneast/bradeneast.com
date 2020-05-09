@@ -1,6 +1,6 @@
 // @ts-nocheck
 // DOM
-import altFromSrc from './dom/altFromSrc.js';
+import appendToolTip from './dom/appendToolTip.js';
 import addIcon from './dom/addIcon.js';
 import quicklink from './quicklink.js';
 
@@ -34,22 +34,13 @@ for (let link of document.getElementsByTagName('link')) {
 
 // IMG tags
 for (let image of document.getElementsByTagName('img')) {
+    try { elem.parentElement.classList.add('has_img') } catch (e) { }
+    appendToolTip(image);
+}
 
-    let alt = image.getAttribute('alt');
-    let tip = document.createElement('span');
-
-    if (!alt) {
-        alt = altFromSrc(image);
-        image.setAttribute('alt', alt);
-    }
-
-    try {
-        tip.innerText = alt;
-        tip.classList.add('tooltip');
-        image.insertAdjacentElement('afterend', tip);
-        image.parentElement.classList.add('has_img');
-    } catch (e) { }
-
+// VIDEO tags
+for (let video of document.getElementsByTagName('video')) {
+    appendToolTip(video);
 }
 
 

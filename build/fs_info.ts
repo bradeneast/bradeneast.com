@@ -133,13 +133,11 @@ export default function getFsInfo({ filename, info }) {
     // Get applicable templates
     {
         page.scopes = [...new Set(options.scopes)].filter(scope => {
-
             if (scope.target.length < 2) {
                 return true;
             } else {
                 return scope.target.substring(1) == page.parentDir.split('/')[0];
             }
-
         }) || [];
     }
 

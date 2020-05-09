@@ -6,7 +6,7 @@ For moments of spontaneity, [here's a random post](/random).
 
 <ul data-feed="/blog">
     <template>
-        {{ blog_feed_item }}
+        {{ post_feed_item }}
     </template>
 </ul>
 

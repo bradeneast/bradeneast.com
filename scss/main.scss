@@ -114,5 +114,6 @@ html.muted #audio_toggle {
     }
 }
 
-@import "./critical/dark_mode", "./critical/nav", "./critical/forms", "./critical/typography", "./critical/highlights";
+@import "./critical/dark_mode", "./critical/media", "./critical/nav", "./critical/forms", "./critical/typography",
+    "./critical/highlights";
 @import "./critical/rules/screen", "./critical/rules/prefers";

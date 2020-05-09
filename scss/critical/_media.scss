@@ -1,6 +1,7 @@
 img,
 svg,
 picture,
+object,
 video {
     width: 540px;
     height: auto;
@@ -9,7 +10,10 @@ video {
     position: relative;
 }
 
-img {
+img,
+object,
+video {
+    background: $mediumgrey;
     border-radius: $border-radius-alt;
 }
 
@@ -20,6 +24,7 @@ img {
 @supports (display: grid) {
     img,
     svg,
+    object,
     video {
         width: 100%;
     }

@@ -8,6 +8,6 @@ This is a collection of personal projects I've built in my spare time.
 
 <ul data-feed="/projects">
     <template>
-        {{ projects_feed_item }}
+        {{ project_feed_item }}
     </template>
 </ul>

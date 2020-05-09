@@ -1,4 +1,4 @@
-<meta name="media" content="/_assets/media/wrds/main-screen-from-wrds.jpg">
+<meta name="media" content="/_assets/media/wrds/wrds-demo.mp4">
 <meta name="categories" content="web app, javascript, lit-html">
 
 WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, create templates, export/import data, and write unlimited styles.
@@ -6,6 +6,8 @@ WRDS is a super-lightweight web app for fast, templated document creation. It le
 > [Try it out for yourself](https://wrds.netlify.app) and let me know how it can be improved.
 
 My goal with this project was to use as few libraries as possible. It also needed to be modular and easy to scale as I continue to add new features. WRDS is built to take advantage of the responsiveness of the web, which gives it an edge over programs like Microsoft Word and Adobe Acrobat.
+
+Finally, WRDS is also privacy-first, meaning your data is never shared with a server. Everything is stored locally on your machine, giving you total control and privacy.
 
 
 ## Technologies used
@@ -21,6 +23,3 @@ I used ES6 modules to split up components, organize functions, and share data be
 
 ### Prism
 Since WRDS gives you the option to write and apply CSS to your document, I've included [Prism](https://prismjs.com) for syntax highlighting.
-
-
-## Lessons learned

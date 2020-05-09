@@ -9,9 +9,10 @@ html.dark_mode [data-feed] li {
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: $flow-space;
     gap: var(--flow-space);
-    border-radius: $border-radius;
-    background: $ultralightgrey;
     padding: 0;
+    background: $ultralightgrey;
+    border-radius: $border-radius;
+    overflow: hidden;
     transition: $transition-long;
 
     .tooltip {
@@ -33,17 +34,11 @@ html.dark_mode [data-feed] li {
 
         .meta {
             align-self: end;
-            color: $mediumgrey;
         }
     }
 
     .media {
-        &:hover img,
-        &:focus img {
-            transform: translateY(-50%) scale(1.05);
-        }
-
-        img {
+        video {
             position: absolute;
             right: 0;
             top: 50%;
@@ -64,11 +59,9 @@ html.dark_mode [data-feed] li {
             transform: translateX(#{$flow-space * -1});
         }
 
-        .media {
-            img {
-                height: 85%;
-                width: calc(100% + var(--flow-space));
-            }
+        .media video {
+            height: 85%;
+            width: calc(100% + var(--flow-space));
         }
     }
 }
