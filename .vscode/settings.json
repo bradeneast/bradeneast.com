@@ -1,5 +1,4 @@
 {
-    "html.format.enable": false,
     "liveServer.settings.root": "/public",
     "liveServer.settings.file": "/404/index.html",
     "typescript.validate.enable": false,
@@ -31,4 +30,6 @@
             }
         ]
     },
+    "html.format.enable": false,
+    "deno.enable": false,
 }

@@ -12,14 +12,18 @@ export default function includePartials(page) {
 
     for (let match of matches) {
 
-        let reRef = new RegExp(`^${a} | ${b}$`, 'gm');
-        let ref = match.replace(reRef, '');
-        let comp = partials.find(c => c.name == ref);
+        let matchPartialName = new RegExp(`^${a} | ${b}$`, 'gm');
+        let partialName = match.replace(matchPartialName, '');
+        let matchingPartial = partials.find(c => c.name == partialName);
 
-        page.content = page.content.replace(match, comp.content);
+        if (!matchingPartial) {
+            console.log(`${page.name} page says, "Couldn't find a match for "${partialName}".`);
+            page.content = page.content.replace(match, '');
+            continue;
+        }
 
+        page.content = page.content.replace(match, matchingPartial.content);
     }
 
     if (between.test(page.content)) includePartials(page);
-
 }

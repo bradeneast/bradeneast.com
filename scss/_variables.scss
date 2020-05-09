@@ -38,6 +38,7 @@ $highlight-offset: 0.2em;
 $easing: cubic-bezier(0.3, 0.3, 0.1, 1.3);
 $transition-short: 0.28s $easing;
 $transition-medium: 0.37s $easing;
+$transition-long: 0.63s cubic-bezier(0.2, 0.63, 0.2, 1);
 
 @mixin root {
     :root {
@@ -49,5 +50,6 @@ $transition-medium: 0.37s $easing;
         --flow-space-paragraph: #{$flow-space-paragraph};
         --transition-short: #{$transition-short};
         --transition-medium: #{$transition-medium};
+        --transition-long: #{$transition-long};
     }
 }

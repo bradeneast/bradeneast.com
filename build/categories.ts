@@ -4,6 +4,7 @@ import { ensureFileSync, walkSync } from 'https://deno.land/std/fs/mod.ts';
 import applyTemplates from "./templates.ts";
 import HTML from './deno_modules/html_parse_stringify/mod.ts';
 import getFsInfo from "./fs_info.ts";
+import { tag } from "./utils.ts";
 
 
 export default function makeCategoryPages(scope) {
@@ -12,9 +13,8 @@ export default function makeCategoryPages(scope) {
     let categoryDir = [options.paths.dist, scope.target, 'categories'].join('/');
     let categoryPages = [];
 
-    for (let i = 0; i < pages.length; i++) {
+    for (let page of pages) {
 
-        let page = pages[i];
         let scopeMatch = page.scopes.find(s => s.target == scope.target);
         if (!scopeMatch) continue;
 
@@ -23,11 +23,13 @@ export default function makeCategoryPages(scope) {
 
     }
 
+    if (!categories.length) return;
+
     // Ensure a file exists for each category
-    for (let i = 0; i < categories.length; i++) {
-        let category = categories[i];
-        let destination = [categoryDir, category].join('/') + '.html';
-        ensureFileSync(destination);
+    for (let category of categories) {
+        ensureFileSync(
+            [categoryDir, category].join('/') + '.html'
+        );
     }
 
     // Get file info for each category page
@@ -36,14 +38,10 @@ export default function makeCategoryPages(scope) {
         Deno.remove(filename);
     }
 
-    for (let i = 0; i < categoryPages.length; i++) {
+    for (let page of categoryPages) {
 
-        let page = categoryPages[i];
         let mainTemplate = options.scopes.find(t => t.target.length < 2);
         let usePartial = scope?.categories?.usePartial;
-
-        // let location = options.paths.dist + page.href + '.html';;
-        // if (existsSync(location)) Deno.remove(location);
 
         if (mainTemplate) page.scopes = [mainTemplate];
 
@@ -53,33 +51,42 @@ export default function makeCategoryPages(scope) {
             let ast = HTML.parse(partial.content);
             let feedElem: any;
 
-            for (let i = 0; i < ast.length; i++) {
-
-                let elem = ast[i];
+            for (let elem of ast) {
                 if (elem.type == 'text') continue;
-
                 let keys = Object.keys(elem.attrs);
                 let hasFeedAttr = keys.some(key => key == options.feeds.attribute);
 
-                if (hasFeedAttr) {
-                    feedElem = elem;
-                    break;
-                }
-
+                if (!hasFeedAttr) continue;
+                feedElem = elem;
+                break;
             }
 
             feedElem.attrs[options.feeds.attribute] = page.href;
             page.content = HTML.stringify(ast);
 
-        } else {
+        }
 
-            page.content = `
-            <h1>[[ name ]]</h1>
-            <ul ${options.feeds.attribute}="${page.href}">
-                <template>
-                    {{ feed_item }}
-                </template>
-            </ul>`;
+        if (!usePartial) {
+
+            let defaultCategoryFeed = tag({
+                name: 'template',
+                content: `<li>
+                    <a href="[[ page.href ]]">[[ page.name ]]</a>
+                </li>`,
+            });
+            let defaultCategoryPage = `
+            ${tag({ name: 'h1', content: '[[ name ]]' })}
+            <hr />
+            ${tag({
+                name: 'ul',
+                attributes: [{
+                    name: options.feeds.attribute,
+                    value: page.href
+                }],
+                content: defaultCategoryFeed
+            })}`;
+
+            page.content += defaultCategoryPage;
         }
 
         pages.push(page);

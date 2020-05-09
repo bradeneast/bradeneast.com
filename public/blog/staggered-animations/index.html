@@ -25,13 +25,10 @@
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
-    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2" type="font/woff2" />
-    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2" type="font/woff2" />
-    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Bold.woff2" type="font/woff2" />
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     
-    
+
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
         <link rel="stylesheet" href="/_assets/css/non_critical.min.css" type="text/css" />
@@ -132,19 +129,19 @@
     animation-delay: .4s;
 }
 
-</style><h3 id="simultaneous">Simultaneous</h3><div class="example-wrapper">
-    <div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div></div><h3 id="staggered">Staggered</h3><div class="example-wrapper staggered">
+</style><h3>Simultaneous</h3><div class="example-wrapper">
+    <div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div></div><h3>Staggered</h3><div class="example-wrapper staggered">
     <div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div><div class="example-circle"></div></div><p>Despite being almost in sync, the slight variation between each element in the second example makes their movement much more interesting and appealing.</p><p>Hopefully this illustrates why we&#39;d want to use staggered motion in our designs, but what&#39;s the best way to code it? There are a few options at our disposal, so we&#39;ll look at the pros and cons of each.</p><ul>
-<li>Pure CSS</li><li>SCSS <code>for</code> loop</li><li>Javascript</li></ul><h2 id="the-pure-css-approach">The Pure CSS Approach</h2><pre><code class="language-css">.stagger-child-transitions &gt; :nth-child(2) { transition-delay: .1s }
+<li>Pure CSS</li><li>SCSS <code>for</code> loop</li><li>Javascript</li></ul><h2>The Pure CSS Approach</h2><pre><code class="language-css">.stagger-child-transitions &gt; :nth-child(2) { transition-delay: .1s }
 .stagger-child-transitions &gt; :nth-child(3) { transition-delay: .2s }
 .stagger-child-transitions &gt; :nth-child(4) { transition-delay: .3s }
 .stagger-child-transitions &gt; :nth-child(5) { transition-delay: .4s }
 /* etc.... */</code></pre><p>If you&#39;ll always have a managable number of children, this approach is probably the most straightforward. Just put your <code>stagger-child-transitions</code> class on the parent element, and animate the child elements however you like!</p><p>Another benefit to the pure CSS approach is that it&#39;s easy to override the transition delay if necessary. Type selectors like <code>:nth-child()</code> are low-specificity, which means those styles can be overriden with a class or ID at the same level:</p><ul>
-<li>Using a class: <code>.stagger-child-transitions .child { transition-delay: 0s; }</code></li><li>Or an ID: <code>#special { transition-delay: 0s; }</code></li></ul><h2 id="using-the-scss-for-loop">Using the SCSS <code>for</code> loop</h2><p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn&#39;t affect the experience of the user, for better or worse.</p><pre><code class="language-css">@for $i from 1 through 100 {
+<li>Using a class: <code>.stagger-child-transitions .child { transition-delay: 0s; }</code></li><li>Or an ID: <code>#special { transition-delay: 0s; }</code></li></ul><h2>Using the SCSS <code>for</code> loop</h2><p>The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a a pre-processed language that compiles into regular CSS, it makes writing CSS quite a bit easier for us, but doesn&#39;t affect the experience of the user, for better or worse.</p><pre><code class="language-css">@for $i from 1 through 100 {
     .stagger-child-transitions &gt; :nth-child(#{$i}) {
         transition-delay: ($i * .1)s;
     }
-}</code></pre><p>That looks nice and clean!  The only drawback of this approach (and pure CSS) is that our stylesheet will start to bloat from extra rules (~1kb per 10 additional children). CSS isn&#39;t render-blocking like Javascript, but still has to be downloaded, parsed, and applied by the browser. If you&#39;re working with small numbers of children, this approach is probably your best bet.</p><h2 id="using-javascript">Using Javascript</h2><p>100 items in the last example was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.</p><pre><code class="language-javascript">let targets = document.querySelectorAll(&#39;.stagger-child-transitions&#39;);
+}</code></pre><p>That looks nice and clean!  The only drawback of this approach (and pure CSS) is that our stylesheet will start to bloat from extra rules (~1kb per 10 additional children). CSS isn&#39;t render-blocking like Javascript, but still has to be downloaded, parsed, and applied by the browser. If you&#39;re working with small numbers of children, this approach is probably your best bet.</p><h2>Using Javascript</h2><p>100 items in the last example was probably overkill, but we might want a method with less limitations in case we increase our element count later. This is where a couple lines of Javascript could be a good alternative to the SCSS approach.</p><pre><code class="language-javascript">let targets = document.querySelectorAll(&#39;.stagger-child-transitions&#39;);
 
 for (let element of targets) {
     element.children.map((child, i) =&gt; {

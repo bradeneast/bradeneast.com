@@ -66,7 +66,7 @@ export default function getFsInfo({ filename, info }) {
     if (page.ext == 'md') {
 
         // Convert Markdown to HTML
-        page.content = marked.parse(page.content);
+        page.content = marked.parse(page.content, { headerIds: false });
 
         // Get categories and other meta
         let matchMeta = /<meta.+?name=["'].+?>/gi;

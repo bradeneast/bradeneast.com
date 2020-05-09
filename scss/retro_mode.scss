@@ -138,11 +138,25 @@ body {
         }
     }
 
-    footer {
+    footer,
+    footer .right {
         display: block;
+    }
 
-        .right {
+    [data-feed] li {
+        transition: none;
+        overflow: visible;
+        border-radius: $border-radius-alt;
+
+        .media {
+            display: none;
+        }
+
+        .content,
+        .name {
             display: block;
+            border: none;
+            transform: none;
         }
     }
 }

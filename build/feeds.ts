@@ -13,6 +13,7 @@ export default function processFeeds(page) {
 
         if (elem.type == 'text') continue;
         if (!elem.attrs?.[options.feeds.attribute]) continue;
+        if (!elem.attrs?.[options.feeds.attribute]?.length) continue;
 
         let feedItems = [];
         let itemTemplate = firstElementChild(elem);
@@ -20,26 +21,33 @@ export default function processFeeds(page) {
         let targetPages = [];
 
         if (feedFrom.includes('/categories/')) {
-
             feedFrom = feedFrom.split('/categories/').pop();
-            targetPages = pages.filter(page => page.categories.names.some(c => linkify(c) == feedFrom));
-
+            targetPages = pages.filter(
+                page => page.categories.names.some(
+                    c => linkify(c) == feedFrom
+                )
+            );
         } else {
-
-            targetPages = pages.filter(page => page.scopes.some(s => s.target == feedFrom));
-
+            targetPages = pages.filter(
+                page => page.scopes.some(
+                    s => s.target == feedFrom
+                )
+            );
         }
 
-        for (let i = 0; i < targetPages.length; i++) {
+        for (let page of targetPages) {
 
-            let page = targetPages[i];
-            let elem = firstElementChild(itemTemplate);
-            let unwrapped = deepCopy(elem);
-            let itemStr = HTML.stringify([unwrapped]);
-            let populated = includeVariables(page, itemStr);
+            let templateElement = deepCopy(firstElementChild(itemTemplate));
+            if (!templateElement.children) continue;
 
-            feedItems.push(HTML.parse(populated)[0]);
+            let hydrated = includeVariables(
+                page,
+                HTML.stringify(
+                    [templateElement]
+                )
+            );
 
+            feedItems.push(HTML.parse(hydrated)[0]);
         }
 
         elem.children = feedItems;

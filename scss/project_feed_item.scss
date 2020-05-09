@@ -1,0 +1,97 @@
+@import "./variables";
+
+html.dark_mode [data-feed] li {
+    .content,
+    .media {
+        background: $darkgrey;
+    }
+
+    .media img {
+        filter: brightness(95%);
+    }
+}
+
+[data-feed] li {
+    display: block;
+    height: 20rem;
+    height: calc(10rem + 20vmax);
+    overflow: hidden;
+    border-radius: $border-radius;
+    transition: $transition-long;
+    transition: var(--transition-long);
+
+    .tooltip {
+        display: none;
+    }
+
+    .content,
+    .name,
+    .media {
+        font-weight: inherit;
+        transition: inherit;
+    }
+
+    .content,
+    .media {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: $ultralightgrey;
+    }
+
+    .name {
+        text-shadow: 0.1em 0.1em $inverse;
+        text-shadow: 0.1em 0.1em var(--inverse);
+        transform: translateX(calc(100% + #{$flow-space * 2}));
+        transform: translateX(calc(100% + var(--flow-space) * 2));
+    }
+
+    .content {
+        display: grid;
+        align-items: start;
+        grid-template-rows: auto 1fr;
+        left: 0;
+        z-index: 2;
+        width: 63%;
+        padding: $flow-space;
+        padding: var(--flow-space);
+        border-right: $border-width $border-style $primary;
+        border-color: var(--primary);
+        transform: translateX(-100%);
+
+        .meta {
+            align-self: end;
+            color: $mediumgrey;
+        }
+    }
+
+    .media {
+        display: flex;
+        align-items: center;
+        right: 0;
+        width: 100%;
+
+        img {
+            border-radius: 0;
+            height: 100%;
+            object-fit: cover;
+            transition: inherit;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        border-radius: $border-radius-alt;
+
+        .media {
+            width: 37%;
+        }
+
+        .content,
+        .name {
+            color: inherit;
+            transform: translateX(0);
+        }
+    }
+}

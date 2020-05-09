@@ -91,6 +91,18 @@
             <priority>0.5</priority>
         </url>
 	<url>
+            <loc>https://www.bradeneast.com/projects/wrds</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/projects</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+	<url>
             <loc>https://www.bradeneast.com/random</loc>
             <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
@@ -143,5 +155,23 @@
             <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>1</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/projects/categories/lit-html</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/projects/categories/open-source</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+	<url>
+            <loc>https://www.bradeneast.com/projects/categories/web-app</loc>
+            <lastmod>2020-04-04</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
         </url>
 </urlset>

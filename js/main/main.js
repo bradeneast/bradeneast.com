@@ -1,6 +1,8 @@
+// @ts-nocheck
 // DOM
 import altFromSrc from './dom/altFromSrc.js';
 import addIcon from './dom/addIcon.js';
+import quicklink from './quicklink.js';
 
 // FUNCTIONS
 import { listen, playAudio, escapeRegex } from './utils.js';
@@ -11,7 +13,6 @@ import toggleAudio from './actions/toggleAudio.js';
 import skipToContent from './actions/skipToContent.js';
 import backToTop from './actions/backToTop.js';
 
-
 // INTERNET EXPLORER CHECK
 if (navigator.userAgent.indexOf('MSIE') > -1 || navigator.appVersion.indexOf('Trident/') > -1) {
 
@@ -20,7 +21,7 @@ if (navigator.userAgent.indexOf('MSIE') > -1 || navigator.appVersion.indexOf('Tr
     retroModeStyles.rel = 'stylesheet';
     retroModeStyles.href = '/_assets/css/retro_mode.min.css';
     retroModeStyles.setAttribute('type', 'text/css');
-    doc.appendChild(retroModeStyles);
+    document.documentElement.appendChild(retroModeStyles);
 
 }
 
@@ -93,6 +94,7 @@ listen(document.getElementById('dark_mode_toggle'), toggleDarkMode);
 listen(document.getElementById('skip_link'), skipToContent);
 listen(document.getElementById('back_to_top'), backToTop);
 listen(document.querySelectorAll('img'), function () { playAudio('loboi') }, 'mouseover');
+quicklink.listen();
 
 
 if (JSON.parse(localStorage.getItem('muted'))) {

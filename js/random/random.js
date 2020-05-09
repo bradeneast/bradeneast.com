@@ -9,7 +9,7 @@ xhttp.onreadystatechange = function () {
 
         let pages = JSON.parse(xhttp.responseText);
         let include = /blog\//i;
-        let exclude = /\/blog\/categories/i;
+        let exclude = /\/blog\/categories|\/projects/i;
         let filtered = [];
 
         for (let page of pages) {

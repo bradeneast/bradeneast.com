@@ -25,13 +25,10 @@
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
-    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Regular.woff2" type="font/woff2" />
-    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Italic.woff2" type="font/woff2" />
-    <link rel="prefetch" as="font" href="/_assets/fonts/hk_grotesk/HKGrotesk-Bold.woff2" type="font/woff2" />
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     
-    
+
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
         <link rel="stylesheet" href="/_assets/css/non_critical.min.css" type="text/css" />
@@ -93,7 +90,7 @@
     </div>
 
     <p>I&#39;ve been writing a lot about images on the web lately, but I haven&#39;t mentioned PNG format, or when PNG might be a better alternative to its lossy counterparts. Because PNG is a lossless format, it holds up much better to being scaled up, decoded/re-encoded, and modified, so it&#39;s worth taking a look at.</p><p>Obviously PNGs are good for transparency. SVG also offers transparency, but will quickly bloat as the complexity of the image increases. I ran some simple tests to find out if and when PNG is probably good choice for non-transparent images.</p><blockquote>
-<p>The Portable Networks Graphic (PNG) compression algorithm was actually created as a replacement for GIF, which was patented and controlled by a large tech company. Open-source wins again!</p></blockquote><h2 id="test-results-all-values-in-kb">Test results (all values in kb)</h2><p>All values shown in kilobytes (kb). Winners indicated for each test.</p><table>
+<p>The Portable Networks Graphic (PNG) compression algorithm was actually created as a replacement for GIF, which was patented and controlled by a large tech company. Open-source wins again!</p></blockquote><h2>Test results (all values in kb)</h2><p>All values shown in kilobytes (kb). Winners indicated for each test.</p><table>
 <thead>
 <tr>
 <th>Application</th><th>JPG (no compression)</th><th>PNG</th><th>PNG-8</th><th>SVG</th></tr></thead><tbody><tr>
@@ -101,7 +98,7 @@
 <td>Flat Pattern</td><td>152</td><td>35</td><td><strong>17</strong></td><td>26</td></tr><tr>
 <td>Paragraph Text</td><td>123</td><td>18</td><td><strong>10</strong></td><td>21</td></tr><tr>
 <td>Small Photo</td><td>186</td><td>285</td><td><strong>129</strong></td><td>1327</td></tr><tr>
-<td>Large Photo</td><td><strong>1,224</strong></td><td>2,742</td><td>1,317</td><td>1,327</td></tr></tbody></table><h2 id="takeaways">Takeaways</h2><h3 id="1-pngs-work-well-for-flat-designs">1. PNGs work well for flat designs</h3><p>Flat designs like patterns and typography are a great application for PNG images. These compress well, and may in some cases be smaller than SVG. If it&#39;s a simple logo, SVG is probably a better option, because vectors.</p><h3 id="2-8-bit-is-better">2. 8-bit is better</h3><p>In this simple study, 8-bit PNGs averaged 49% smaller than ordinary 24-bit PNGs. This was a significant reduction in the size of the image. Even with less colors, there wasn&#39;t a noticable difference in visual quality.</p>
+<td>Large Photo</td><td><strong>1,224</strong></td><td>2,742</td><td>1,317</td><td>1,327</td></tr></tbody></table><h2>Takeaways</h2><h3>1. PNGs work well for flat designs</h3><p>Flat designs like patterns and typography are a great application for PNG images. These compress well, and may in some cases be smaller than SVG. If it&#39;s a simple logo, SVG is probably a better option, because vectors.</p><h3>2. 8-bit is better</h3><p>In this simple study, 8-bit PNGs averaged 49% smaller than ordinary 24-bit PNGs. This was a significant reduction in the size of the image. Even with less colors, there wasn&#39;t a noticable difference in visual quality.</p>
 
     <p id="blog_cta">
     Thanks for reading! If you like this, <a target="_blank" href="https://twitter.com/intent/tweet?text=When is it better to use PNG&quest;%0a&url=https://bradeneast.com/blog/when-is-it-better-to-use-png&via=bradenthehair&hashtags=media,performance">share it</a> with your friends.
