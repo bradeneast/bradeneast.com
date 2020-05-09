@@ -9,9 +9,9 @@
     <title>Braden East | WRDS</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I&#39;m excited to announce that WRDS is open for business!">
+    <meta name="description" content="WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, create templates, export/import data, and write unlimited styles.">
     <meta property="og:site_name" content="Braden East" />
-    <meta property="og:description" content="I&#39;m excited to announce that WRDS is open for business!" />
+    <meta property="og:description" content="WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, create templates, export/import data, and write unlimited styles." />
     <meta property="og:url" content="https://www.bradeneast.com/projects/wrds" />
     <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
     <meta property="og:locale" content="en_US" />
@@ -54,6 +54,7 @@
     <nav id="nav">
         <a class="highlight " href="/">About</a>
         <a class="highlight " href="/blog">Blog</a>
+        <a class="highlight active" href="/projects">Projects</a>
     </nav>
 
 </div>
@@ -66,16 +67,17 @@
 
     <div class="meta">
         <div class="modified" aria-label="Date Modified">
-            <strong>Updated:</strong> Friday May 4, 2020
+            <strong>Updated:</strong> Saturday May 4, 2020
         </div>
-        <p class="categories" aria-label="Categories:"><a href="projects/categories/web-app">web app</a><a href="projects/categories/lit-html">lit-html</a><a href="projects/categories/open-source">open source</a></p>
+        <p class="categories" aria-label="Categories:"><a href="projects/categories/web-app">web app</a><a href="projects/categories/javascript">javascript</a><a href="projects/categories/lit-html">lit-html</a></p>
     </div>
 
     <div class="featured_media">
         <img src="/_assets/media/wrds/main-screen-from-wrds.jpg" alt="" />
     </div>
 
-    <p>I&#39;m excited to announce that <a href="https://wrds.netlify.app">WRDS</a> is open for business!</p>
+    <p>WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, create templates, export/import data, and write unlimited styles.</p><blockquote>
+<p><a href="https://wrds.netlify.app">Try it out for yourself</a> and let me know how it can be improved.</p></blockquote><p>My goal with this project was to use as few libraries as possible. It also needed to be modular and easy to scale as I continue to add new features. WRDS is built to take advantage of the responsiveness of the web, which gives it an edge over programs like Microsoft Word and Adobe Acrobat.</p><h2>Technologies used</h2><h3>Javascript</h3><p>I used ES6 modules to split up components, organize functions, and share data between parts of the app. The app isn&#39;t &quot;bundled&quot; per-say, but I did take advantage of Typescript&#39;s compiler to make the code more universally accessible.</p><h3>lit-html</h3><p><a href="https://lit-html.polymer-project.org/">Lit-html</a> is my go-to web app foundation. It&#39;s a templating and rendering library that capitalizes on features of modern Javascript, like template literals. I selected it for it&#39;s <a href="https://lit-html.polymer-project.org/guide">size, simplicity, and efficiency</a>.</p><h3>Marked</h3><p><a href="https://marked.js.org/">Marked</a> is the fastest and most straightforward library available for making HTML from markdown. It helps WRDS turn your notes into something polished.</p><h3>Prism</h3><p>Since WRDS gives you the option to write and apply CSS to your document, I&#39;ve included <a href="https://prismjs.com">Prism</a> for syntax highlighting.</p><h2>Lessons learned</h2>
 
 </article>
 

@@ -1,63 +1,35 @@
 @import "./variables";
 
 html.dark_mode [data-feed] li {
-    .content,
-    .media {
-        background: $darkgrey;
-    }
-
-    .media img {
-        filter: brightness(95%);
-    }
+    background: $darkgrey;
 }
 
 [data-feed] li {
-    display: block;
-    height: 20rem;
-    height: calc(10rem + 20vmax);
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: $flow-space;
+    gap: var(--flow-space);
     border-radius: $border-radius;
+    background: $ultralightgrey;
+    padding: 0;
     transition: $transition-long;
-    transition: var(--transition-long);
 
     .tooltip {
         display: none;
     }
 
     .content,
-    .name,
     .media {
-        font-weight: inherit;
         transition: inherit;
-    }
-
-    .content,
-    .media {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        background: $ultralightgrey;
-    }
-
-    .name {
-        text-shadow: 0.1em 0.1em $inverse;
-        text-shadow: 0.1em 0.1em var(--inverse);
-        transform: translateX(calc(100% + #{$flow-space * 2}));
-        transform: translateX(calc(100% + var(--flow-space) * 2));
+        min-height: 20rem;
+        display: grid;
     }
 
     .content {
-        display: grid;
-        align-items: start;
         grid-template-rows: auto 1fr;
-        left: 0;
-        z-index: 2;
-        width: 63%;
         padding: $flow-space;
         padding: var(--flow-space);
-        border-right: $border-width $border-style $primary;
-        border-color: var(--primary);
-        transform: translateX(-100%);
+        will-change: transform;
 
         .meta {
             align-self: end;
@@ -66,16 +38,19 @@ html.dark_mode [data-feed] li {
     }
 
     .media {
-        display: flex;
-        align-items: center;
-        right: 0;
-        width: 100%;
+        &:hover img,
+        &:focus img {
+            transform: translateY(-50%) scale(1.05);
+        }
 
         img {
-            border-radius: 0;
+            position: absolute;
+            right: 0;
+            top: 50%;
             height: 100%;
-            object-fit: cover;
+            transform: translateY(-50%);
             transition: inherit;
+            will-change: transform;
         }
     }
 
@@ -83,15 +58,17 @@ html.dark_mode [data-feed] li {
     &:focus,
     &:focus-within {
         border-radius: $border-radius-alt;
+        background: none !important;
 
-        .media {
-            width: 37%;
+        .content {
+            transform: translateX(#{$flow-space * -1});
         }
 
-        .content,
-        .name {
-            color: inherit;
-            transform: translateX(0);
+        .media {
+            img {
+                height: 85%;
+                width: calc(100% + var(--flow-space));
+            }
         }
     }
 }

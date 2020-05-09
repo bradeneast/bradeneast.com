@@ -1,4 +1,26 @@
 <meta name="media" content="/_assets/media/wrds/main-screen-from-wrds.jpg">
-<meta name="categories" content="web app, lit-html, open source">
+<meta name="categories" content="web app, javascript, lit-html">
 
-I'm excited to announce that [WRDS](https://wrds.netlify.app) is open for business!
+WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, create templates, export/import data, and write unlimited styles.
+
+> [Try it out for yourself](https://wrds.netlify.app) and let me know how it can be improved.
+
+My goal with this project was to use as few libraries as possible. It also needed to be modular and easy to scale as I continue to add new features. WRDS is built to take advantage of the responsiveness of the web, which gives it an edge over programs like Microsoft Word and Adobe Acrobat.
+
+
+## Technologies used
+
+### Javascript
+I used ES6 modules to split up components, organize functions, and share data between parts of the app. The app isn't "bundled" per-say, but I did take advantage of Typescript's compiler to make the code more universally accessible.
+
+### lit-html
+[Lit-html](https://lit-html.polymer-project.org/) is my go-to web app foundation. It's a templating and rendering library that capitalizes on features of modern Javascript, like template literals. I selected it for it's [size, simplicity, and efficiency](https://lit-html.polymer-project.org/guide).
+
+### Marked
+[Marked](https://marked.js.org/) is the fastest and most straightforward library available for making HTML from markdown. It helps WRDS turn your notes into something polished.
+
+### Prism
+Since WRDS gives you the option to write and apply CSS to your document, I've included [Prism](https://prismjs.com) for syntax highlighting.
+
+
+## Lessons learned

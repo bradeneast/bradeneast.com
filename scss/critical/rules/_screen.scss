@@ -66,13 +66,20 @@
             font-size: 1rem;
         }
 
-        [data-feed] .highlight {
-            color: inherit;
+        [data-feed] li {
+            .content {
+                transform: none;
+                padding: $flow-space;
+            }
 
-            &::before {
-                border-radius: $border-radius;
-                transform: scale(1);
-                opacity: 1;
+            .highlight {
+                color: inherit;
+
+                &::before {
+                    border-radius: $border-radius;
+                    transform: scale(1);
+                    opacity: 1;
+                }
             }
         }
 
