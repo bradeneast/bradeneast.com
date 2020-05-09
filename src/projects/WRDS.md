@@ -1,7 +1,7 @@
 <meta name="media" content="/_assets/media/wrds/wrds-demo.mp4">
 <meta name="categories" content="web app, javascript, lit-html">
 
-WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, create templates, export/import data, and write unlimited styles.
+WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, export/import data, and write unlimited styles.
 
 > [Try it out for yourself](https://wrds.netlify.app) and let me know how it can be improved.
 
