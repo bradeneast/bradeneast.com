@@ -30,9 +30,7 @@ Since WRDS gives you the option to write and apply CSS to your document, I've in
 ## What I learned
 
 ### Global state is much easier said than done.
-As the complexity of the app increased, I found myself trying to write lookups from memory, and getting parts of the state mixed up. In the future, I want to add a layer of abstraction for accessing shared objects.
-
-> From what I understand, this is what state-management libraries are for.
+As the complexity of the app increased, I found myself trying to write lookups from memory, and getting parts of the state mixed up. In the future, I want to add a layer of abstraction for accessing shared objects. (*From what I understand, this is what state-management libraries are for.*)
 
 ### More interesting things
 - [Blobs are cool](https://developer.mozilla.org/en/docs/Web/API/Blob)
