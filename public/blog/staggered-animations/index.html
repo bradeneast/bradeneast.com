@@ -28,6 +28,8 @@
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     
+    <link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>
+    
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
@@ -50,25 +52,20 @@
     <button class="unstyled" id="skip_link" aria-label="skip to main content">skip to content 👇</button>
 
     <div class="nav_wrapper" aria-label="navigation">
-
     <nav id="nav">
-        <a class="highlight " href="/">About</a>
-        <a class="highlight active" href="/blog">Blog</a>
-        <a class="highlight " href="/projects">Projects</a>
-    </nav>
 
+        <a class="highlight " href="/about">About</a>
+
+        <a class="highlight active" href="/blog">Blog</a>
+
+        <a class="highlight " href="/projects">Projects</a>
+
+    </nav>
 </div>
 
     <main id="main">
 
-        <!-- CodePen embed script -->
-
-
-<!-- Syntax highlighting with PrismJS -->
-<link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>
-
-
-<article>
+        <article>
 
     <h1 class="title">Staggered animations</h1>
 
@@ -87,7 +84,10 @@
     </div>
 
     <div class="featured_media">
-        <img src="/_assets/media/people-in-motion.jpg" alt="" />
+        <video autoplay playsinline loop muted>
+            <source src="/_assets/media/people-in-motion.jpg">
+            <img src="/_assets/media/people-in-motion.jpg" alt="">
+        </video>
     </div>
 
     <p>Today, let&#39;s talk about integrating motion into our websites and user interfaces.</p><blockquote>

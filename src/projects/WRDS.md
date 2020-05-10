@@ -23,3 +23,9 @@ I used ES6 modules to split up components, organize functions, and share data be
 
 ### Prism
 Since WRDS gives you the option to write and apply CSS to your document, I've included [Prism](https://prismjs.com) for syntax highlighting.
+
+
+## What I learned
+- Global state is much easier said than done
+- How to use [blobs](https://developer.mozilla.org/en/docs/Web/API/Blob)
+- How to re-link an unlinked object reference in Javascript

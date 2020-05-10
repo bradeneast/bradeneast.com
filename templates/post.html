@@ -1,10 +1,3 @@
-<!-- CodePen embed script -->
-[[ /class=\"codepen"/gi.test(page.content) ? '<script async src="https://static.codepen.io/assets/embed/ei.js"></script>' : '' ]]
-
-<!-- Syntax highlighting with PrismJS -->
-[[  /pre\>/gi.test(page.content) ? '<link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>' : '' ]]
-
-
 <article>
 
     <h1 class="title">[[ page.name ]]</h1>
@@ -24,7 +17,10 @@
     </div>
 
     <div class="featured_media">
-        <img src="[[ page.media ]]" alt="" />
+        <video autoplay playsinline loop muted>
+            <source src="[[ page.media ]]">
+            <img src="[[ page.media ]]" alt="">
+        </video>
     </div>
 
     {{ CONTENT }}

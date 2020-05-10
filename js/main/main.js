@@ -34,12 +34,14 @@ for (let link of document.getElementsByTagName('link')) {
 
 // IMG tags
 for (let image of document.getElementsByTagName('img')) {
-    try { elem.parentElement.classList.add('has_img') } catch (e) { }
+    try { image.parentElement.classList.add('has-media') } catch (e) { }
     appendToolTip(image);
 }
 
+
 // VIDEO tags
 for (let video of document.getElementsByTagName('video')) {
+    try { video.parentElement.classList.add('has-media') } catch (e) { }
     appendToolTip(video);
 }
 

@@ -28,6 +28,8 @@
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     
+    <link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>
+    
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
@@ -50,25 +52,20 @@
     <button class="unstyled" id="skip_link" aria-label="skip to main content">skip to content 👇</button>
 
     <div class="nav_wrapper" aria-label="navigation">
-
     <nav id="nav">
-        <a class="highlight " href="/">About</a>
-        <a class="highlight active" href="/blog">Blog</a>
-        <a class="highlight " href="/projects">Projects</a>
-    </nav>
 
+        <a class="highlight " href="/about">About</a>
+
+        <a class="highlight active" href="/blog">Blog</a>
+
+        <a class="highlight " href="/projects">Projects</a>
+
+    </nav>
 </div>
 
     <main id="main">
 
-        <!-- CodePen embed script -->
-
-
-<!-- Syntax highlighting with PrismJS -->
-<link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>
-
-
-<article>
+        <article>
 
     <h1 class="title">Style pseudo elements with Javascript</h1>
 
@@ -87,7 +84,10 @@
     </div>
 
     <div class="featured_media">
-        <img src="/_assets/media/wave.jpg" alt="" />
+        <video autoplay playsinline loop muted>
+            <source src="/_assets/media/wave.jpg">
+            <img src="/_assets/media/wave.jpg" alt="">
+        </video>
     </div>
 
     <p>I&#39;m a proponent of styles in CSS over styles in Javascript where at all possible. That said, sometimes we want to add a little bit of extra zest that requires JS. Today, we&#39;re taking a look at styling pseudo elements with Javascript for that little extra sparkle.</p><p>I&#39;m discovering more uses every day for <code>::before</code> and <code>::after</code>, letting me write cleaner, dryer code.  The problem is, pseudo elements haven&#39;t been the easiest to manipulate with Javascript in the past! There are lots of really complex solutions out there, but let&#39;s look at a simple example of how we can animate and style pseudo elements with vanilla Javascript.</p><p>Let&#39;s say we want to animate a pseudo element as the user scrolls down our page.  Or, what if we are using pseudo elements for tooltips, shown on the <code>onclick</code> event. Take this wavy background element for example:</p><pre><code class="language-css">.wavy-background {

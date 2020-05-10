@@ -27,6 +27,8 @@
 
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
     
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
@@ -50,25 +52,20 @@
     <button class="unstyled" id="skip_link" aria-label="skip to main content">skip to content 👇</button>
 
     <div class="nav_wrapper" aria-label="navigation">
-
     <nav id="nav">
-        <a class="highlight " href="/">About</a>
-        <a class="highlight active" href="/blog">Blog</a>
-        <a class="highlight " href="/projects">Projects</a>
-    </nav>
 
+        <a class="highlight " href="/about">About</a>
+
+        <a class="highlight active" href="/blog">Blog</a>
+
+        <a class="highlight " href="/projects">Projects</a>
+
+    </nav>
 </div>
 
     <main id="main">
 
-        <!-- CodePen embed script -->
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-<!-- Syntax highlighting with PrismJS -->
-
-
-
-<article>
+        <article>
 
     <h1 class="title">Two retired writing styles and why we should be thankful for CSS logical properties</h1>
 
@@ -87,7 +84,10 @@
     </div>
 
     <div class="featured_media">
-        <img src="/_assets/media/hebrew-text.jpg" alt="" />
+        <video autoplay playsinline loop muted>
+            <source src="/_assets/media/hebrew-text.jpg">
+            <img src="/_assets/media/hebrew-text.jpg" alt="">
+        </video>
     </div>
 
     <p>With the advent of CSS <a href="https://css-tricks.com/css-logical-properties/">logical properties</a>, I think it&#39;s important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.</p><p>This isn&#39;t just a history lesson, though. I want to help myself break out of the left-to-right-always-and-forever mindset that limits the creative ways I might otherwise solve layout and design problems. If you&#39;re down for that, keep reading.</p><h2>Retired writing styles</h2><p>Let&#39;s trace modern languages back through history a little ways. Western languages are made up of a Latin character set, which was developed from Greek, which was developed from Phoenician hieroglyphs. We could keep going back, but you probably get the idea. As written language evolved, the letters weren&#39;t the only thing that changed - the alignment, direction, and flow of information was up for experimentation as well.</p><h2>Bou·stro·phe·don</h2><h4>Greek | &quot;As the ox plows&quot; 🐮</h4><p>Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would write one direction on a line of text, and the other direction on the next line.  If there’s a word that means “as the lawn is mowed” it might also be appropriate to describe boustrophedon scripts.  Here&#39;s an example of what boustrophedonic text would look like on the web:</p><p class="codepen" data-slug-hash="YzXELwj" data-theme-id="dark">

@@ -3,14 +3,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Braden East | [[ page.name ]]</title>
+    <title>[[ options.sitename ]] | [[ page.name ]]</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="[[ page.description ]]">
-    <meta property="og:site_name" content="Braden East" />
+    <meta property="og:site_name" content="[[ options.sitename ]]" />
     <meta property="og:description" content="[[ page.description ]]" />
-    <meta property="og:url" content="https://www.bradeneast.com[[ page.href ]]" />
-    <meta property="og:image" content="https://www.bradeneast.com/_assets/on-a-rock-small.jpg" />
+    <meta property="og:url" content="[[ options.paths.root ]][[ page.href ]]" />
+    <meta property="og:image" content="[[ options.paths.root ]]/_assets/on-a-rock-small.jpg" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
@@ -18,12 +18,14 @@
     <meta name="supported-color-schemes" content="light dark" />
 
     <base href="/" />
-    <link rel="canonical" href="https://www.bradeneast.com[[ page.href ]]" />
+    <link rel="canonical" href="[[ options.paths.root ]][[ page.href ]]" />
     <link rel="shortcut icon" href="/_assets/favicon-light.png" type="image/png" />
     <link rel="apple-touch-icon-precomposed" href="/_assets/favicon-light--padded.png" type="image/png" />
 
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
+    [[ /class=\"codepen"/gi.test(page.content) ? '<script async src="https://static.codepen.io/assets/embed/ei.js"></script>' : '' ]]
+    [[  /pre\>/gi.test(page.content) ? '<link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>' : '' ]]
     [[ /random\.min\.js|search\.min\.js/i.test(page.content) ? '<link rel="preload" as="fetch" href="/sitemap.json" />' : '' ]]
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />

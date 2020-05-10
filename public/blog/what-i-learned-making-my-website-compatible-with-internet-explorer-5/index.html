@@ -28,6 +28,8 @@
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     
+    <link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>
+    
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
@@ -50,25 +52,20 @@
     <button class="unstyled" id="skip_link" aria-label="skip to main content">skip to content 👇</button>
 
     <div class="nav_wrapper" aria-label="navigation">
-
     <nav id="nav">
-        <a class="highlight " href="/">About</a>
-        <a class="highlight active" href="/blog">Blog</a>
-        <a class="highlight " href="/projects">Projects</a>
-    </nav>
 
+        <a class="highlight " href="/about">About</a>
+
+        <a class="highlight active" href="/blog">Blog</a>
+
+        <a class="highlight " href="/projects">Projects</a>
+
+    </nav>
 </div>
 
     <main id="main">
 
-        <!-- CodePen embed script -->
-
-
-<!-- Syntax highlighting with PrismJS -->
-<link defer="true" rel="preload" as="style" href="/_assets/css/prism.min.css"><script defer src="/_assets/js/prism.min.js"></script>
-
-
-<article>
+        <article>
 
     <h1 class="title">What I learned making my website compatible with Internet Explorer 5</h1>
 
@@ -87,7 +84,10 @@
     </div>
 
     <div class="featured_media">
-        <img src="/_assets/media/vintage-cassette.jpg" alt="" />
+        <video autoplay playsinline loop muted>
+            <source src="/_assets/media/vintage-cassette.jpg">
+            <img src="/_assets/media/vintage-cassette.jpg" alt="">
+        </video>
     </div>
 
     <p>There&#39;s a special moment that happens when you&#39;re debugging code. It&#39;s when you realize that 6 hours has gone by since you started, and you&#39;re not sure if you remembered to breathe for most of that. Thanks IE.</p><p>When I opened my website with Internet Explorer 5, it was <em>just good enough</em> that I thought &quot;Hey, I can work with this.&quot; I think it might be helpful for somebody if I wrote about what I found. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.</p><h2>Highlights</h2><ul>

@@ -2,7 +2,8 @@ export default {
     /** the private folder for html page templates */
     ignore: '_',
     /** the name of the homepage file needs to be specified so its index.html is placed at the root of the distribution folder. this option distinguishes it from other top-level pages in the source folder. */
-    homepage: 'About',
+    homepage: '',
+    sitename: 'Braden East',
     sitemap: {
         generate: true,
         exclude: [

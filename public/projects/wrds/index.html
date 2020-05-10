@@ -28,6 +28,8 @@
     <link rel="preload" as="style" href="/_assets/css/main.min.css" type="text/css" />
     <link rel="preload" as="style" defer="true" href="/_assets/css/non_critical.min.css" type="text/css" />
     
+    
+    
 
     <link rel="stylesheet" href="/_assets/css/main.min.css" type="text/css" />
     <noscript>
@@ -50,13 +52,15 @@
     <button class="unstyled" id="skip_link" aria-label="skip to main content">skip to content 👇</button>
 
     <div class="nav_wrapper" aria-label="navigation">
-
     <nav id="nav">
-        <a class="highlight " href="/">About</a>
-        <a class="highlight " href="/blog">Blog</a>
-        <a class="highlight active" href="/projects">Projects</a>
-    </nav>
 
+        <a class="highlight " href="/about">About</a>
+
+        <a class="highlight " href="/blog">Blog</a>
+
+        <a class="highlight active" href="/projects">Projects</a>
+
+    </nav>
 </div>
 
     <main id="main">
@@ -80,7 +84,8 @@
     </div>
 
     <p>WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, export/import data, and write unlimited styles.</p><blockquote>
-<p><a href="https://wrds.netlify.app">Try it out for yourself</a> and let me know how it can be improved.</p></blockquote><p>My goal with this project was to use as few libraries as possible. It also needed to be modular and easy to scale as I continue to add new features. WRDS is built to take advantage of the responsiveness of the web, which gives it an edge over programs like Microsoft Word and Adobe Acrobat.</p><p>Finally, WRDS is also privacy-first, meaning your data is never shared with a server. Everything is stored locally on your machine, giving you total control and privacy.</p><h2>Technologies used</h2><h3>Javascript</h3><p>I used ES6 modules to split up components, organize functions, and share data between parts of the app. The app isn&#39;t &quot;bundled&quot; per-say, but I did take advantage of Typescript&#39;s compiler to make the code more universally accessible.</p><h3>lit-html</h3><p><a href="https://lit-html.polymer-project.org/">Lit-html</a> is my go-to web app foundation. It&#39;s a templating and rendering library that capitalizes on features of modern Javascript, like template literals. I selected it for it&#39;s <a href="https://lit-html.polymer-project.org/guide">size, simplicity, and efficiency</a>.</p><h3>Marked</h3><p><a href="https://marked.js.org/">Marked</a> is the fastest and most straightforward library available for making HTML from markdown. It helps WRDS turn your notes into something polished.</p><h3>Prism</h3><p>Since WRDS gives you the option to write and apply CSS to your document, I&#39;ve included <a href="https://prismjs.com">Prism</a> for syntax highlighting.</p>
+<p><a href="https://wrds.netlify.app">Try it out for yourself</a> and let me know how it can be improved.</p></blockquote><p>My goal with this project was to use as few libraries as possible. It also needed to be modular and easy to scale as I continue to add new features. WRDS is built to take advantage of the responsiveness of the web, which gives it an edge over programs like Microsoft Word and Adobe Acrobat.</p><p>Finally, WRDS is also privacy-first, meaning your data is never shared with a server. Everything is stored locally on your machine, giving you total control and privacy.</p><h2>Technologies used</h2><h3>Javascript</h3><p>I used ES6 modules to split up components, organize functions, and share data between parts of the app. The app isn&#39;t &quot;bundled&quot; per-say, but I did take advantage of Typescript&#39;s compiler to make the code more universally accessible.</p><h3>lit-html</h3><p><a href="https://lit-html.polymer-project.org/">Lit-html</a> is my go-to web app foundation. It&#39;s a templating and rendering library that capitalizes on features of modern Javascript, like template literals. I selected it for it&#39;s <a href="https://lit-html.polymer-project.org/guide">size, simplicity, and efficiency</a>.</p><h3>Marked</h3><p><a href="https://marked.js.org/">Marked</a> is the fastest and most straightforward library available for making HTML from markdown. It helps WRDS turn your notes into something polished.</p><h3>Prism</h3><p>Since WRDS gives you the option to write and apply CSS to your document, I&#39;ve included <a href="https://prismjs.com">Prism</a> for syntax highlighting.</p><h2>What I learned</h2><ul>
+<li>Global state is much easier said than done</li><li>How to use <a href="https://developer.mozilla.org/en/docs/Web/API/Blob">blobs</a></li><li>How to re-link an unlinked object reference in Javascript</li></ul>
 
 </article>
 
