@@ -20,7 +20,7 @@ export default function processFeeds(page) {
         let feedFrom = elem.attrs[options.feeds.attribute];
         let targetPages = [];
 
-        if (feedFrom.includes('/categories/')) {
+        if (/categories/i.test(feedFrom)) {
             feedFrom = feedFrom.split('/categories/').pop();
             targetPages = pages.filter(
                 page => page.categories.names.some(

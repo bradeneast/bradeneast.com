@@ -133,12 +133,6 @@
             <priority>1</priority>
         </url>
 	<url>
-            <loc>https://www.bradeneast.com/blog/categories/lit-html</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>1</priority>
-        </url>
-	<url>
             <loc>https://www.bradeneast.com/blog/categories/media</loc>
             <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
@@ -163,30 +157,6 @@
             <priority>1</priority>
         </url>
 	<url>
-            <loc>https://www.bradeneast.com/blog/categories/web-app</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>1</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/accessibility</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/css</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/html</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
             <loc>https://www.bradeneast.com/projects/categories/javascript</loc>
             <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
@@ -194,30 +164,6 @@
         </url>
 	<url>
             <loc>https://www.bradeneast.com/projects/categories/lit-html</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/media</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/performance</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/typography</loc>
-            <lastmod>2020-04-04</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-        </url>
-	<url>
-            <loc>https://www.bradeneast.com/projects/categories/ui</loc>
             <lastmod>2020-04-04</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>

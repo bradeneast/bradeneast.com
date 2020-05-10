@@ -11,18 +11,14 @@ export default function makeCategoryPages(scope) {
 
     let categories = [];
     let categoryDir = [options.paths.dist, scope.target, 'categories'].join('/');
-    let categoryPages = [];
 
     for (let page of pages) {
-
-        if (!page.parentDir == scope.target) continue;
-
-        let newCategories = page.categories.names.filter(c => !categories.includes(c));
-        if (newCategories) categories = categories.concat(newCategories);
-
+        if (page.parentDir == scope.target.substring(1)) {
+            categories = categories.concat(
+                page.categories.names.filter(c => !categories.includes(c)) || []
+            );
+        }
     }
-
-    if (!categories.length) return;
 
     // Ensure a file exists for each category
     for (let category of categories) {
@@ -30,8 +26,12 @@ export default function makeCategoryPages(scope) {
             [categoryDir, category].join('/') + '.html'
         );
     }
+    if (!categories.length) return;
+
 
     // Get file info for each category page
+    let categoryPages = [];
+
     for (let { filename, info } of walkSync(categoryDir, { includeDirs: false })) {
         categoryPages.push(getFsInfo({ filename, info }));
         Deno.remove(filename);
