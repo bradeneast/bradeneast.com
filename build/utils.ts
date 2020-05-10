@@ -12,6 +12,12 @@ export {
     leadingZero,
     escapeEntities,
     pageMatchesBlob,
+    sanitizeForPlainText,
+}
+
+
+function sanitizeForPlainText(str: string) {
+    return str.replace(/<.+?>/g, '').replace(/(?=["'`“”‘’])/g, '\\');
 }
 
 function pageMatchesBlob(page, str: string) {

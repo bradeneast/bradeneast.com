@@ -1,4 +1,4 @@
-<h1>Posts about #[[ page.name ]]</h1>
+<h1>[[ page.parentDir.split('/')[0] == 'projects' ? '#' + page.name + ' projects' : 'Posts about #' + page.name ]]</h1>
 
 <hr />
 

@@ -13,7 +13,6 @@ export default function getFsInfo({ filename, info }) {
 
     let page = {
         name: '',
-        ext: 'html',
         content: readFileStrSync(filename).trim(),
         excerpt: '',
         description: '',
@@ -40,30 +39,28 @@ export default function getFsInfo({ filename, info }) {
 
 
     // Basic info
-    {
-        let [name, ...extension] = info.name.split('.');
-        page.name = name;
-        page.ext = extension.join('.').toLowerCase();
-    }
+    let [name, ...extension] = info.name.split('.');
+    page.name = name;
 
 
     // Get href and parentDir from filename
     if (page.name != options.homepage) {
 
-        let pathArray = filename.split('/');
-        let path = deepCopy(page.name);
+        let hrefParts = filename.split('/');
+        let href = deepCopy(page.name);
 
-        if (pathArray.length > 2) {
-            page.parentDir = pathArray.slice(1, -1).join('/');
-            path = [page.parentDir, page.name].join('/');
+        page.depth = hrefParts?.length || 0;
+
+        if (page.depth > 2) {
+            page.parentDir = hrefParts.slice(1, -1).join('/');
+            href = [page.parentDir, page.name].join('/');
         }
 
-        page.href = '/' + linkify(path);
-        page.depth = pathArray?.length || 0;
+        page.href = '/' + linkify(href);
     }
 
 
-    if (page.ext == 'md') {
+    if (/md/.test(extension)) {
 
         // Convert Markdown to HTML
         page.content = marked.parse(page.content, { headerIds: false });
@@ -105,14 +102,9 @@ export default function getFsInfo({ filename, info }) {
                     }
                     else page[nameValue] = contentValue;
                 }
-
             }
-
             page.content = HTML.stringify(ast).replace(matchMeta, '').trim();
-
         }
-
-        page.ext = 'html';
     }
 
 
@@ -131,26 +123,23 @@ export default function getFsInfo({ filename, info }) {
 
 
     // Get applicable templates
-    {
-        page.scopes = [...new Set(options.scopes)].filter(scope => {
-            if (scope.target.length < 2) {
-                return true;
-            } else {
-                return scope.target.substring(1) == page.parentDir.split('/')[0];
-            }
-        }) || [];
-    }
+    page.scopes = [...new Set(options.scopes)].filter(scope => {
+        if (scope.target.length < 2) {
+            return true;
+        } else {
+            return scope.target.substring(1) == page.parentDir.split('/')[0];
+        }
+    }) || [];
 
 
     // Get formatted and unix dates
-    {
-        ['created', 'modified'].map(prop => {
-            let date = page[prop] ? new Date(page[prop]) : new Date(info[prop] * 1000);
+    ['created', 'modified'].map(prop => {
+        let date = page[prop] ? new Date(page[prop]) : new Date(info[prop] * 1000);
 
-            page.date[prop] = formatDate(date, options.default.dateFormat);
-            page[prop] = date.getTime();
-        })
-    }
+        page.date[prop] = formatDate(date, options.default.dateFormat);
+        page[prop] = date.getTime();
+    })
+
 
     return page;
 }

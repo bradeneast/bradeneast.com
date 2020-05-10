@@ -54,10 +54,6 @@ html.dark_mode [data-feed] li {
         border-radius: $border-radius-alt;
         background: none !important;
 
-        .content {
-            transform: translateX(#{$flow-space * -1});
-        }
-
         .media video {
             height: 85%;
             width: calc(100% + var(--flow-space));

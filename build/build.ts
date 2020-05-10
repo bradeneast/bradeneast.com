@@ -1,12 +1,13 @@
 import options from '../options.ts';
 import {
     writeFileStrSync,
+    writeFileStr,
     ensureFileSync,
     existsSync,
     emptyDirSync,
 } from 'https://deno.land/std/fs/mod.ts';
 import getFsTree from './fs_tree.ts';
-import { dynamicSort, deepCopy, tryFunc, matchBetween } from './utils.ts';
+import { dynamicSort, deepCopy, tryFunc, matchBetween, sanitizeForPlainText } from './utils.ts';
 import includePartials from './partials.ts';
 import processFeeds from './feeds.ts';
 import includeVariables from './variables.ts';
@@ -44,43 +45,43 @@ async function build() {
     scopes.sort(dynamicSort('-depth'));
 
     // Make categories for scope and apply templates to applicable pages
-    for (let i = 0; i < scopes.length; i++) {
-
-        let scope = scopes[i];
-
+    for (let scope of scopes) {
         if (scope?.rss) rss(scope);
         if (scope?.categories?.categorize) makeCategoryPages(scope);
         applyTemplates(scope);
-
     }
 
 
     // Perform final transforms
-    for (let i = 0; i < pages.length; i++) {
-
-        let page = pages[i];
-        let reFeed = new RegExp(` ${options.feeds.attribute}=`, 'gi');
-        let destination = [options.paths.dist, page.href, 'index.html'].join('/');
+    for (let page of pages) {
 
         // Include partials
         includePartials(page);
 
         // Process feeds
+        let reFeed = new RegExp(` ${options.feeds.attribute}=`, 'gi');
         if (reFeed.test(page.content)) processFeeds(page);
 
-        // Include and sanitize page description
-        page.description = matchBetween(page.content, '<p>', '</p>') || '';
-        page.description = page.description.replace(/<.+?>/g, '').replace(/(?=["'’`])/g, '\\');
+        // Find and sanitize page description
+        page.description = sanitizeForPlainText(
+            matchBetween(page.content, '<p>', '</p>') || ''
+        );
 
         // Include variables
         page.description = includeVariables(page, page.description);
         page.content = includeVariables(page);
 
         // Create and write to file
+        let destination = [options.paths.dist, page.href, 'index.html'].join('/');
+
         ensureFileSync(destination);
-        writeFileStrSync(destination, '<!doctype html>\n' + page.content);
+        writeFileStr(
+            destination,
+            '<!doctype html>\n' + page.content
+        );
 
     }
+
 
     // Make sitemaps
     makeSitemaps();
