@@ -128,7 +128,8 @@
             font-size: inherit;
             bottom: auto;
             max-width: none;
-            width: calc(100% - var(--flow-space));
+            width: 63%;
+            width: calc(100% - var(--flow-space-paragraph));
         }
     }
 }
