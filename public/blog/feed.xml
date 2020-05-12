@@ -4,7 +4,7 @@
                 <title>Blog of Braden East</title>
                 <link>https://www.bradeneast.com/blog/feed.xml</link>
                 <description>The blog for dev-signers.</description>
-                <lastBuildDate>Sun, 10 May 2020 16:29:58 GMT</lastBuildDate>
+                <lastBuildDate>Tue, 12 May 2020 20:29:51 GMT</lastBuildDate>
                 <atom:link href="https://www.bradeneast.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
 				<item>
                         <title>Change the color of list markers with just CSS</title>
@@ -125,7 +125,7 @@
 					<category>css</category>
 					<category>javascript</category>
 					<category>accessibility</category>
-                        <description>There&#x27;s a special moment that happens when you&#x27;re debugging code. It&#x27;s when you realize that 6 hours has gone by since you started, and you&#x27;re not sure if you remembered to breathe for most of that. Thanks IE.</description>
+                        <description>When I opened my website with Internet Explorer 5, it was &#x3c;em&#x3E;just good enough&#x3c;/em&#x3E; that I thought &#x22;Hey, I can work with this.&#x22; I think it might be helpful for somebody if I wrote about what I found. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.</description>
                     </item>
 				<item>
                         <title>When is it better to use PNG?</title>

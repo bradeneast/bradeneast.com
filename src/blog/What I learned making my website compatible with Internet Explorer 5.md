@@ -2,8 +2,6 @@
 <meta name="media" content="/_assets/media/vintage-cassette.jpg">
 <meta name="created" content="March 27 2020">
 
-There's a special moment that happens when you're debugging code. It's when you realize that 6 hours has gone by since you started, and you're not sure if you remembered to breathe for most of that. Thanks IE.
-
 When I opened my website with Internet Explorer 5, it was *just good enough* that I thought "Hey, I can work with this." I think it might be helpful for somebody if I wrote about what I found. Here are some of the weird and surprising things I learned making my website work in Internet Explorer 5.
 
 
