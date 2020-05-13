@@ -64,7 +64,6 @@ export function formatDate(date: Date, format = 'Mon Jan 01 2020') {
             }
 
             if (part.length < 4) {
-
                 if (dateParsed) {
                     partResult = date.getFullYear();
                 }
@@ -76,9 +75,7 @@ export function formatDate(date: Date, format = 'Mon Jan 01 2020') {
                     partResult = date.getMonth();
                     monthParsed = true;
                 }
-
             }
-
         }
 
         partResult += hasComma ? ',' : '';
