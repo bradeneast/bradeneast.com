@@ -1,11 +1,11 @@
 {
-  "name": "ritz",
+  "name": "bradeneast.com",
   "version": "1.0.0",
-  "description": "a lightweight static site generator with familiar syntax and stuff",
+  "description": "My personal website",
   "main": "./ritz/index.js",
   "type": "module",
   "scripts": {
-    "ritz-create": "node ./ritz/index.js"
+    "ritz-build": "node ./ritz/index.js"
   },
   "author": "",
   "license": "ISC",
