@@ -67,6 +67,7 @@ var __values = (this && this.__values) || function(o) {
         return __generator(this, function (_d) {
             switch (_d.label) {
                 case 0:
+                    document.body.style.opacity = 0, setTimeout(function () { return document.body.style.opacity = 1; }, 1e3);
                     a = [], b = ["/blog/.+"];
                     return [4, f()];
                 case 1:

@@ -39,6 +39,7 @@ body {
 	grid-template-rows: 1fr auto;
 	padding: 4vh 2vw 1vh 2vw;
 	background: var(--g8);
+	transition: var(--colorTransition);
 
 	& > * {
 		padding-top: inherit;

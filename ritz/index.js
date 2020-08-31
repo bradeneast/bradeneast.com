@@ -11,7 +11,6 @@ for (let filename of fs.readdirSync(config.paths.dist)) {
   if (config.ignorePattern.test(filename)) continue;
   fs.removeSync(slash(config.paths.dist, filename));
 }
-console.log('Dist Directory Cleared');
 
 
 let tree = makeTree();
