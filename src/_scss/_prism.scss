@@ -1,0 +1,124 @@
+code,
+pre {
+	background: var(--g7);
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	overflow-x: auto;
+	line-height: 1.5;
+	tab-size: 2;
+	hyphens: none;
+	font-size: 0.85rem;
+	font-variation-settings: "CASL" 0, "MONO" 1;
+	max-width: calc(100vw - var(--flow2) * 2);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	span {
+		font-family: inherit;
+	}
+}
+
+:not(pre) > code {
+	cursor: text;
+	color: var(--g2);
+	padding: 0.1em 0.2em;
+	white-space: normal;
+}
+
+.token {
+	color: inherit;
+	$d: #e2647f;
+	$a: #ff5448;
+	$c: #f1ad2f;
+	$b: #965385;
+	$e: #af8650;
+	$punctuation: rgba(120, 120, 155, 0.72);
+
+	&.comment,
+	&.block-comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: var(--g4);
+	}
+
+	&.punctuation {
+		color: $punctuation;
+	}
+
+	&.tag,
+	&.namespace,
+	&.deleted,
+	&.function-name {
+		color: $a;
+	}
+
+	&.boolean,
+	&.number,
+	&.function,
+	&.inserted {
+		color: $b;
+	}
+
+	&.function {
+		font-weight: 700;
+		font-variation-settings: nth($fontVariations, 2);
+	}
+
+	&.attr-name,
+	&.property,
+	&.class-name,
+	&.constant,
+	&.symbol {
+		color: $c;
+		font-weight: 700;
+	}
+
+	&.selector,
+	&.important,
+	&.keyword,
+	&.builtin {
+		color: $d;
+	}
+
+	&.string,
+	&.char,
+	&.attr-value,
+	&.atrule,
+	&.regex,
+	&.variable {
+		color: $e;
+	}
+
+	&.operator,
+	&.entity,
+	&.url {
+		color: $a;
+	}
+
+	&.important,
+	&.bold {
+		font-weight: 700;
+	}
+
+	&.italic {
+		font-style: italic;
+	}
+
+	&.entity {
+		cursor: help;
+	}
+}
+
+.dark_mode .token {
+	&.comment,
+	&.block-comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: var(--g5);
+	}
+}

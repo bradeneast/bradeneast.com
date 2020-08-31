@@ -1,0 +1,36 @@
+<Brick use="_bricks/organisms/main.html">
+
+	<Title>
+		<Slot name="Title"></Slot>
+	</Title>
+
+	<Content>
+
+		<div class="post--image">
+			<img width="540" height="360" src="{{Image}}" />
+		</div>
+
+		<div class="post--info">
+			<h1>
+				<Slot name="Title"></Slot>
+			</h1>
+			<div class="post--info__tags">
+				<Slot name="Tags"></Slot>
+			</div>
+			<div class="post--info__length">
+				<Slot name="Type">
+					@{{Math.round(Body.split(' ').length * .01)}}-minute read
+				</Slot>
+			</div>
+		</div>
+
+		<article>
+			<Slot name="Body"></Slot>
+			<p>
+				<a href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
+			</p>
+		</article>
+
+	</Content>
+
+</Brick>

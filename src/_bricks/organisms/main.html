@@ -1,0 +1,19 @@
+<Brick use="_bricks/molecules/head.html">
+	<Title>
+		<Slot name="Title"></Slot>
+	</Title>
+</Brick>
+
+<body>
+
+	<aside>
+		<Brick use="_bricks/molecules/nav.html"></Brick>
+	</aside>
+
+	<main class="border-left">
+		<Slot name="Content"></Slot>
+	</main>
+	
+	<Brick use="_bricks/molecules/footer.html"></Brick>
+
+</body>

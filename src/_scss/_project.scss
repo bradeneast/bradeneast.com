@@ -1,0 +1,85 @@
+.embedded_project {
+	background-size: cover;
+	background-position: center;
+	margin-bottom: var(--flow1);
+	width: 100%;
+
+	.iframe_wrapper {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-top: 540px;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			background: none;
+		}
+	}
+
+	button {
+		position: absolute;
+		padding: 0.63em 1em;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: var(--borderWidth) var(--borderStyle) transparent;
+
+		&:hover,
+		&:focus {
+			border-color: var(--primary);
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		display: grid;
+		place-items: center;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		text-align: center;
+		padding: var(--flow1);
+		background: var(--g8);
+		transition: var(--colorTransition);
+	}
+
+	&:hover,
+	&:focus-within {
+		&::before {
+			opacity: 0.63;
+		}
+	}
+
+	&.loaded {
+		border-radius: 0;
+		box-shadow: var(--shadow);
+		resize: both;
+
+		button {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&::before {
+			opacity: 1;
+			background: var(--g7);
+			animation: $fallback;
+		}
+	}
+}
+
+@media screen and (max-width: #{$mobile}) {
+	.embedded_project {
+		&::before {
+			opacity: 0.37;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+footer {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-items: flex-end;
+	width: 100%;
+
+	* {
+		margin-left: auto;
+	}
+}
+
+.copyright {
+	flex: 1;
+	min-width: 9em;
+	justify-self: flex-start;
+}

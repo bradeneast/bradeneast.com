@@ -1,0 +1,43 @@
+table {
+	width: 100%;
+	text-align: left;
+	margin-bottom: var(--flow1);
+	font-variation-settings: "MONO" 1, "CASL" 1;
+
+	td,
+	th {
+		word-wrap: break-word;
+		word-break: break-all;
+		padding: 0.37em;
+		line-height: 1.2;
+		border-right: var(--borderWidth) var(--borderStyle) var(--g7);
+		border-bottom: var(--borderWidth) var(--borderStyle) var(--g7);
+
+		&:last-of-type {
+			border-right: none;
+		}
+	}
+
+	td:first-of-type {
+		font-variation-settings: nth($fontVariations, 2);
+	}
+
+	td strong::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 0.5em;
+		height: 0.5em;
+		background: var(--primary);
+		border-radius: 50%;
+	}
+
+	tr:last-of-type td {
+		border-bottom: none;
+	}
+
+	* {
+		text-align: inherit;
+	}
+}

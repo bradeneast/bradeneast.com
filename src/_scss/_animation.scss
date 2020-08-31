@@ -1,0 +1,79 @@
+@keyframes showFallback {
+	0% {
+		content: "Loading";
+	}
+	10% {
+		content: "Loading.";
+	}
+	20% {
+		content: "Loading..";
+	}
+	30% {
+		content: "Loading...";
+	}
+	40% {
+		content: "Loading.";
+	}
+	50% {
+		content: "Loading..";
+	}
+	60% {
+		content: "Loading...";
+	}
+	100% {
+		content: "\1F62C Yikes... this external resource isn't available right now.";
+	}
+}
+
+html {
+	main {
+		transition: var(--smoothTransition);
+	}
+
+	footer[class*="border-"]::before {
+		transition-delay: 0.3s !important;
+	}
+
+	[class*="border-"] {
+		&::before {
+			transition: var(--smoothTransition);
+			transform-origin: top left;
+		}
+
+		&:nth-child(2)::before {
+			transition-delay: 0.1s;
+		}
+
+		&:nth-child(3)::before {
+			transition-delay: 0.2s;
+		}
+
+		&:nth-child(4)::before {
+			transition-delay: 0.3s;
+		}
+	}
+
+	&[data-schwifty="in"] {
+		transition-duration: 0.1s;
+	}
+
+	&[data-schwifty] {
+		main {
+			opacity: 0;
+		}
+
+		nav a[aria-current]::after {
+			transform: scaleY(0);
+		}
+
+		.border-left::before,
+		.border-right::before {
+			transform: scaleY(0);
+		}
+
+		.border-top::before,
+		.border-bottom::before {
+			transform: scaleX(0);
+		}
+	}
+}

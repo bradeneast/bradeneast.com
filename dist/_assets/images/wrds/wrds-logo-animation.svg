@@ -1,0 +1,11 @@
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
+
+    <text y="50" class="main-text" font-weight="900" font-family="Metropolis, HK Grotesk, Helvetica, sans-serif" fill="white">
+        WRDS
+        <animate attributeName="letter-spacing" values="0;18" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="x" values="27;0" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="opacity" keytimes="0;.1;1" values="0;1;0" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="transform" values="scale(1);scale(1.1)" dur="7s" repeatCount="indefinite" />
+    </text>
+
+</svg>

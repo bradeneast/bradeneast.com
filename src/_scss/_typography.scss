@@ -1,0 +1,106 @@
+@font-face {
+	font-family: "Recursive";
+	src: url("/_assets/fonts/Recursive.woff2") format("woff2-variations");
+	font-weight: 300 1000;
+	font-display: swap;
+}
+
+:root {
+	font-size: calc(12px + 0.85vmin);
+	font-family: "Recursive", "Helvetica", -apple-system, BlinkMacSystemFont, sans-serif;
+	font-variation-settings: nth($fontVariations, 1);
+	line-height: 1.63;
+	color: var(--g0);
+}
+
+body {
+	text-rendering: optimizeSpeed;
+	-webkit-font-smooth: subpixel-antialiased;
+}
+
+p,
+blockquote,
+pre,
+ul,
+ol {
+	margin-bottom: var(--flow1);
+}
+
+ul,
+ol {
+	padding-left: var(--flow1);
+}
+
+pre,
+blockquote {
+	padding: var(--flow1);
+	color: var(--g2);
+	background: var(--g7);
+
+	p {
+		margin: 0;
+	}
+}
+
+blockquote {
+	border-left: var(--borderWidth) var(--borderStyle) var(--primary);
+}
+
+em {
+	font-style: normal;
+	color: var(--primary);
+	font-variation-settings: nth($fontVariations, 2);
+}
+
+::selection,
+mark {
+	background: var(--primary);
+	color: var(--g8);
+}
+
+a {
+	color: var(--g3);
+	touch-action: manipulation;
+	text-decoration-thickness: 0.1em;
+	transition: var(--colorTransition);
+
+	&:hover,
+	&:focus {
+		color: inherit;
+		font-weight: var(--fontWeightHeavy);
+		text-decoration-color: var(--primary);
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	margin-bottom: 0.37em;
+	font-weight: var(--fontWeightHeavy);
+	font-variation-settings: nth($fontVariations, 3);
+
+	a {
+		font-weight: var(--fontWeightMedium);
+		text-decoration-color: transparent;
+	}
+}
+
+h1 {
+	font-size: calc(1.5em + 1.5vmin);
+}
+
+h2,
+h3 {
+	color: var(--g1);
+}
+
+h4,
+h5,
+h6 {
+	color: var(--g2);
+}

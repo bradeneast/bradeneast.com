@@ -1,0 +1,19 @@
+{
+  "name": "ritz",
+  "version": "1.0.0",
+  "description": "a lightweight static site generator with familiar syntax and stuff",
+  "main": "./ritz/index.js",
+  "type": "module",
+  "scripts": {
+    "ritz-create": "node ./ritz/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "html-parse-stringify": "^2.0.0",
+    "marked": "1.1.1",
+    "prismjs": "^1.21.0",
+    "safe-eval": "^0.4.1"
+  }
+}

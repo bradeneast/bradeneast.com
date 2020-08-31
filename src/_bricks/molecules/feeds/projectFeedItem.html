@@ -1,0 +1,21 @@
+<li>
+	<div class="post--info">
+		<h2>
+			<a href="{{sys.href}}">
+				<Slot name="Title"></Slot>
+			</a>
+		</h2>
+
+		<div class="post--info__tags">
+			<Slot name="Tags"></Slot>
+		</div>
+
+		<div class="post--info__date">
+			Interactive
+		</div>
+
+		<div class="post--info__excerpt">
+			@{{Body.split(/\n/).shift()}}
+		</div>
+	</div>
+</li>

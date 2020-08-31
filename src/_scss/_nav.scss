@@ -1,0 +1,112 @@
+nav a {
+	color: var(--g4);
+	text-decoration: none;
+}
+
+@media screen and (min-width: #{$mobile}) {
+	nav {
+		display: grid;
+		position: sticky;
+		top: var(--flow2);
+
+		a {
+			&[aria-current] {
+				color: inherit;
+				font-weight: var(--fontWeightHeavy);
+
+				&.border-bottom::before {
+					color: var(--g7);
+				}
+			}
+
+			&.border-bottom::before {
+				color: transparent;
+			}
+
+			&:hover,
+			&:focus {
+				color: var(--primary);
+			}
+
+			&:not(:first-child) {
+				padding-top: var(--flow1);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: #{$mobile}) {
+	nav {
+		display: flex;
+		overflow: hidden;
+		position: relative;
+		top: 0;
+
+		:not([aria-current]) {
+			border-color: var(--g7);
+
+			&::after {
+				color: transparent;
+			}
+		}
+
+		[aria-current] {
+			color: inherit;
+			font-weight: var(--fontWeightHeavy);
+		}
+
+		a {
+			padding-left: var(--flow1);
+			padding-bottom: var(--flow1);
+
+			&:hover,
+			&:focus {
+				outline: none;
+			}
+
+			&:not(:first-child) {
+				padding-top: 0;
+			}
+
+			&.border-bottom::before {
+				color: var(--g7);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: calc(50% + var(--flow1) / 2);
+				height: 1em;
+				width: var(--borderWidth);
+				color: var(--g7);
+				background: currentColor;
+				transform-origin: bottom;
+				transition: var(--smoothTransition);
+			}
+
+			&:nth-child(2)::after {
+				transition-delay: 0.1s;
+			}
+
+			&:nth-child(3)::after {
+				transition-delay: 0.2s;
+			}
+
+			&:nth-child(4)::after {
+				transition-delay: 0.3s;
+			}
+
+			&:nth-child(5)::after {
+				transition-delay: 0.4s;
+			}
+
+			&[aria-current] ~ a {
+				&::after,
+				&::before {
+					color: transparent;
+				}
+			}
+		}
+	}
+}

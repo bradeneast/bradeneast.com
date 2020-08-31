@@ -1,0 +1,23 @@
+input {
+	background: var(--g7);
+	border: none;
+	color: inherit;
+	font-size: inherit;
+	transition: var(--colorTransition);
+
+	&::placeholder {
+		color: var(--g3);
+	}
+
+	&[type="search"],
+	&[type="text"],
+	&[type="number"] {
+		padding: 0.37em 0.63em;
+		border-bottom: var(--borderWidth) var(--borderStyle) transparent;
+
+		&:not(:placeholder-shown) {
+			background: var(--g8);
+			border-color: var(--primary);
+		}
+	}
+}

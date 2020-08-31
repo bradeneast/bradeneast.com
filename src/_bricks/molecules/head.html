@@ -1,0 +1,48 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>
+		<Slot name="Title">Document</Slot>
+	</title>
+	<meta name="description" content="{{siteName}} | {{Title}}">
+
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="{{siteName}}" />
+	<meta property="og:image" content="{{siteRoot}}{{Image}}" />
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="supported-color-schemes" content="light dark" />
+	<meta name="msapplication-TileImage" content="{{siteRoot}}/_assets/favicon_padded.png" />
+
+	<base href="/" />
+	<link rel="canonical" href="{{siteRoot}}{{sys.href}}">
+	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
+	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
+
+	<link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" />
+	<link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net" />
+	<link rel="preload" href="/_assets/css/main.css" as="style" />
+	<link rel="preload" href="/_assets/fonts/Recursive.woff2" as="font/woff2" />
+	<link rel="stylesheet" href="/_assets/css/main.css">
+
+	<script>
+		var preferences = ['dark_mode'];
+
+		for (var preference of preferences) {
+			var locallySaved = JSON.parse(localStorage.getItem(preference));
+			if (locallySaved == undefined) locallySaved = false;
+
+			document
+				.documentElement
+				.classList
+				.toggle(
+					preference,
+					locallySaved
+				);
+
+			localStorage.setItem(preference, locallySaved);
+		}
+	</script>
+	<script defer src="/_assets/js/main.js"></script>
+</head>

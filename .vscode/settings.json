@@ -1,35 +1,39 @@
 {
-    "liveServer.settings.root": "/public",
-    "liveServer.settings.file": "/404/index.html",
-    "typescript.validate.enable": false,
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "compressed",
-            "extensionName": ".min.css",
-            "savePath": "/public/_assets/css"
-        }
-    ],
-    "minify.minifyExistingOnSave": false,
-    "saveAndRun": {
-        "commands": [
-            {
-                "match": "\\.ts|\\.html|\\.md",
-                "cmd": "deno run --allow-read --allow-write ./build/build.ts",
-                "isAsync": true,
-                "silent": true
-            },
-            {
-                "match": "\\.js",
-                "cmd": "esbuild --bundle ./js/main/main.js ./js/search/search.js ./js/random/random.js ./js/critical/critical.js --outdir=./js --minify",
-                "silent": true
-            },
-            {
-                "match": "\\.js",
-                "cmd": "tsc",
-                "silent": true
-            }
-        ]
-    },
-    "html.format.enable": false,
-    "deno.enable": false
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "compressed",
+			"extensionName": ".css",
+			"savePath": "/dist/_assets/css"
+		}
+	],
+	"liveServer.settings.root": "/dist",
+	"liveServer.settings.file": "/404/index.html",
+	"saveAndRun": {
+		"commands": [
+			{
+				"cmd": "node ./ritz/index.js",
+				"match": ".*(html|md)",
+				"isAsync": true,
+				"silent": true,
+			},
+			{
+				"cmd": "esbuild --bundle --minify ./src/_js/main.js --outfile=./dist/_assets/js/main.js",
+				"match": ".*src.*js",
+				"isAsync": true,
+				"silent": true,
+			},
+			{
+				"cmd": "esbuild --bundle --minify ./src/_js/random.js --outfile=./dist/_assets/js/random.js",
+				"match": ".*src.*js",
+				"isAsync": true,
+				"silent": true,
+			},
+			{
+				"cmd": "esbuild --bundle --minify ./src/_js/search.js --outfile=./dist/_assets/js/search.js",
+				"match": ".*src.*js",
+				"isAsync": true,
+				"silent": true,
+			}
+		]
+	},
 }

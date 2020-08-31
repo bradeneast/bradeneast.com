@@ -1,0 +1,44 @@
+.feed {
+	padding-top: var(--flow2);
+	margin-top: var(--flow2);
+
+	li {
+		list-style-type: none;
+
+		&:not(:last-child) {
+			margin-bottom: var(--flow3);
+		}
+
+		a:hover,
+		a:focus {
+			& ~ * a {
+				font-weight: var(--fontWeightBold);
+				color: inherit;
+				text-decoration-color: var(--primary);
+			}
+		}
+	}
+
+	li:hover,
+	li:focus-within {
+		&.post--info,
+		.post--info {
+			transform: scale(1.04);
+			box-shadow: var(--shadowLarge);
+		}
+	}
+
+	&.design {
+		.post--info {
+			max-width: 30rem;
+		}
+	}
+
+	.post--info {
+		display: inline-grid;
+
+		&__excerpt {
+			margin-bottom: 0;
+		}
+	}
+}

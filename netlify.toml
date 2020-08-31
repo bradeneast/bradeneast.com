@@ -1,9 +1,8 @@
-[[redirects]]
-  from = "/"
-  to = "/about"
-  status = 301
+[[plugins]]
+package = "@netlify/plugin-sitemap"
 
-[[redirects]]
-  from = "/*"
-  to = "/404/"
-  status = 404
+[plugins.inputs]
+exclude = [
+  '**/404/*',
+  '**/random/*',
+]
