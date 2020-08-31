@@ -45,7 +45,7 @@ var __values = (this && this.__values) || function(o) {
     };
     throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
-(function () { var e = function (a, b) {
+(function () { var d = function (a, b) {
     if (b === void 0) { b = document; }
     return b.querySelectorAll(a);
 }; function f() {
@@ -62,20 +62,20 @@ var __values = (this && this.__values) || function(o) {
     }); });
 } (function () {
     return __awaiter(this, void 0, void 0, function () {
-        var a, b, h, _a, _b, d, i, c, g;
+        var a, b, h, _a, _b, c, i, e, g;
         var e_1, _c;
         return __generator(this, function (_d) {
             switch (_d.label) {
                 case 0:
-                    document.body.style.opacity = 0, setTimeout(function () { return document.body.style.opacity = 1; }, 1e3);
+                    setTimeout(function () { return d(".hidden").forEach(function (c) { return c.classList.remove("hidden"); }); }, 1e3);
                     a = [], b = ["/blog/.+"];
                     return [4, f()];
                 case 1:
                     h = _d.sent();
                     try {
-                        for (_a = __values(e("loc", h)), _b = _a.next(); !_b.done; _b = _a.next()) {
-                            d = _b.value;
-                            a.push(d.textContent.trim());
+                        for (_a = __values(d("loc", h)), _b = _a.next(); !_b.done; _b = _a.next()) {
+                            c = _b.value;
+                            a.push(c.textContent.trim());
                         }
                     }
                     catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -85,8 +85,8 @@ var __values = (this && this.__values) || function(o) {
                         }
                         finally { if (e_1) throw e_1.error; }
                     }
-                    i = new RegExp("(" + b.join(")|(") + ")"), c = a.filter(function (d) { return i.test(d); }), g = Math.round((c.length - 1) * Math.random());
-                    c[g] && (window.location = c[g]);
+                    i = new RegExp("(" + b.join(")|(") + ")"), e = a.filter(function (c) { return i.test(c); }), g = Math.round((e.length - 1) * Math.random());
+                    e[g] && (window.location = e[g]);
                     return [2];
             }
         });

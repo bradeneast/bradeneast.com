@@ -32,7 +32,7 @@
         "affectsGlobalScope": true
       },
       "./es/random.js": {
-        "version": "0770c0b56b08ca993cb213f1012588664a58212d8a39c836d228ae0179f8465c",
+        "version": "f2240b6fba9df546285769956ea0af59f4413666f7fdf2313e88a51ac973f137",
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": true
       },

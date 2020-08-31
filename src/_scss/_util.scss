@@ -2,6 +2,11 @@
 	display: flex;
 }
 
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
 [class*="border-"] {
 	&::before {
 		content: "";

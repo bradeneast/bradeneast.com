@@ -2,8 +2,12 @@ import { $$, getSitemap } from "./utils";
 
 (async function () {
 
-	document.body.style.opacity = 0;
-	setTimeout(() => document.body.style.opacity = 1, 1000);
+	setTimeout(() =>
+		$$('.hidden').forEach(elem =>
+			elem.classList.remove('hidden')
+		),
+		1000
+	);
 
 	let hrefs = [];
 	let include = ['/blog/.+'];
