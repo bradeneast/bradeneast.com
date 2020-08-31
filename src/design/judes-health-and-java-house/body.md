@@ -26,8 +26,6 @@ Because Jude's offers a variety of coffee and supplements, among many other thin
 
 ![Two bottles of supplements with Jude's branded packaging. Tumeric and Elderberry, respectively](/_assets/images/judes/judes-supplements.jpg)
 
-![Jude's coffee packaging](/_assets/images/judes/judes-coffee.jpg)
-
 ![A new design of the Jude's website, featuring their status as best Bartlesville coffee shop](/_assets/images/judes/judes-website.jpg)
 
 Finally, to help extend the brand reach into neighboring communities, I applied the identity to the Jude's website and an eye-catching billboard.
