@@ -17,23 +17,26 @@
 				"silent": true,
 			},
 			{
-				"cmd": "esbuild --bundle --minify ./src/_js/main.js --outfile=./dist/_assets/js/main.js",
+				"cmd": "esbuild --bundle --minify ./src/_js/main.js --outfile=./dist/_assets/js/es/main.js",
+				"match": ".*src.*js",
+				"silent": true,
+			},
+			{
+				"cmd": "esbuild --bundle --minify ./src/_js/random.js --outfile=./dist/_assets/js/es/random.js",
+				"match": ".*src.*js",
+				"silent": true,
+			},
+			{
+				"cmd": "esbuild --bundle --minify ./src/_js/search.js --outfile=./dist/_assets/js/es/search.js",
+				"match": ".*src.*js",
+				"silent": true,
+			},
+			{
+				"cmd": "tsc",
 				"match": ".*src.*js",
 				"isAsync": true,
 				"silent": true,
 			},
-			{
-				"cmd": "esbuild --bundle --minify ./src/_js/random.js --outfile=./dist/_assets/js/random.js",
-				"match": ".*src.*js",
-				"isAsync": true,
-				"silent": true,
-			},
-			{
-				"cmd": "esbuild --bundle --minify ./src/_js/search.js --outfile=./dist/_assets/js/search.js",
-				"match": ".*src.*js",
-				"isAsync": true,
-				"silent": true,
-			}
 		]
 	},
 }

@@ -15,7 +15,7 @@ $('input[type="search"]')
 async function searchSite(query) {
 	let results = [];
 	let queryRegExp = new RegExp(query, 'i');
-	let sitemap = await getSitemap();
+	let sitemap = await getSitemap(); z
 
 	for (let loc of $$('loc', sitemap)) {
 		let url = loc.textContent.trim();
