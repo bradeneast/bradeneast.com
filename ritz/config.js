@@ -1,7 +1,7 @@
 export default {
 	global: {
 		siteName: 'Braden East',
-		siteRoot: 'https://bradeneast.com'
+		siteRoot: 'https://www.bradeneast.com'
 	},
 	paths: {
 		src: './src',
