@@ -25,8 +25,10 @@ export function altFromSrc(src = '') {
 	return result || '';
 }
 
-export async function getSitemap() {
-	const response = await fetch('/sitemap.xml');
-	const text = await response.text();
-	return new DOMParser().parseFromString(text, 'text/xml');
+export function getSitemap() {
+	return fetch('/sitemap.xml')
+		.then(response => response.text())
+		.then(text =>
+			new DOMParser().parseFromString(text, 'text/xml')
+		)
 }

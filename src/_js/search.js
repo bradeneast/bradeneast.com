@@ -12,25 +12,27 @@ $('input[type="search"]')
 
 
 /**Takes a query and returns a list of pages  */
-async function searchSite(query) {
+function searchSite(query) {
 	let results = [];
 	let queryRegExp = new RegExp(query, 'i');
-	let sitemap = await getSitemap(); z
 
-	for (let loc of $$('loc', sitemap)) {
-		let url = loc.textContent.trim();
-		results.push({
-			absolute: url,
-			relative: url.split('/').pop()
-		});
-	}
+	return getSitemap().then(sitemap => {
 
-	results = results.filter(result =>
-		queryRegExp.test(altFromSrc(result.relative))
-		&& result.relative.length > 1
-	);
+		for (let loc of $$('loc', sitemap)) {
+			let url = loc.textContent.trim();
+			results.push({
+				absolute: url,
+				relative: url.split('/').pop()
+			});
+		}
 
-	return [...new Set(results)];
+		results = results.filter(result =>
+			queryRegExp.test(altFromSrc(result.relative))
+			&& result.relative.length > 1
+		);
+
+		return [...new Set(results)];
+	})
 }
 
 

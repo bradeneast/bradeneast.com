@@ -32,12 +32,12 @@
         "affectsGlobalScope": true
       },
       "./es/random.js": {
-        "version": "f2240b6fba9df546285769956ea0af59f4413666f7fdf2313e88a51ac973f137",
+        "version": "cce0750ac42b0c76bc45e4aa544279aef761d258118b13db5f85df193af2f5fa",
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": true
       },
       "./es/search.js": {
-        "version": "181abfffa3490b4b6687fe08c0e8172af3b498fce964fc94d4f71dd05ac824f5",
+        "version": "a66ec22abd72ef8c37b97397ce2d06d674395266f881e2691ee00d9e56553929",
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": true
       }

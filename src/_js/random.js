@@ -1,17 +1,14 @@
 import { $$, getSitemap } from "./utils";
 
-(async function () {
+let hrefs = [];
+let include = ['/blog/.+'];
 
-	setTimeout(() =>
-		$$('.hidden').forEach(elem =>
-			elem.classList.remove('hidden')
-		),
-		1000
-	);
+setTimeout(() =>
+	$$('.hidden').forEach(elem => elem.classList.remove('hidden')),
+	1000
+);
 
-	let hrefs = [];
-	let include = ['/blog/.+'];
-	let sitemap = await getSitemap();
+getSitemap().then(sitemap => {
 
 	for (let loc of $$('loc', sitemap))
 		hrefs.push(loc.textContent.trim());
@@ -22,5 +19,4 @@ import { $$, getSitemap } from "./utils";
 
 	if (filtered[index])
 		window.location = filtered[index];
-
-})();
+})
