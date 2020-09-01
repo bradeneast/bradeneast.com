@@ -32,12 +32,12 @@
         "affectsGlobalScope": true
       },
       "./es/random.js": {
-        "version": "cce0750ac42b0c76bc45e4aa544279aef761d258118b13db5f85df193af2f5fa",
+        "version": "693269bffa0a1b19c65701c597292a18a03c3412e6d4034f2da3226a7e7019c1",
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": true
       },
       "./es/search.js": {
-        "version": "a66ec22abd72ef8c37b97397ce2d06d674395266f881e2691ee00d9e56553929",
+        "version": "3e0430cd2964d535606e52159cc402b9336d469303369c6db5d657e7866fd21c",
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": true
       }

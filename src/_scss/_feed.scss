@@ -4,6 +4,7 @@
 
 	li {
 		list-style-type: none;
+		text-transform: capitalize;
 
 		&:not(:last-child) {
 			margin-bottom: var(--flow3);
@@ -19,6 +20,12 @@
 		}
 	}
 
+	.post--info {
+		&__excerpt {
+			margin-bottom: 0;
+		}
+	}
+
 	li:hover,
 	li:focus-within {
 		&.post--info,
@@ -31,14 +38,13 @@
 	&.design {
 		.post--info {
 			max-width: 30rem;
+			display: inline-grid;
 		}
 	}
 
-	.post--info {
-		display: inline-grid;
-
-		&__excerpt {
-			margin-bottom: 0;
-		}
+	&.results li {
+		list-style-type: initial;
+		margin-left: var(--flow1);
+		margin-bottom: var(--flow1);
 	}
 }

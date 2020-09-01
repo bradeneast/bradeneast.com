@@ -1,7 +1,7 @@
 import { $, $$, getSitemap, altFromSrc, elem } from "./utils";
 
 
-let resultContainer = $('#results');
+let resultContainer = $('.results');
 let inputThrottle;
 
 $('input[type="search"]')
@@ -57,7 +57,6 @@ function handleSearch(event) {
 				h2.append(a);
 
 				li.append(h2);
-				li.classList.add('post--info');
 				resultContainer.append(li);
 			}
 		})

@@ -12,7 +12,7 @@ var __values = (this && this.__values) || function(o) {
 (function () { var b = function (a, c) {
     if (c === void 0) { c = document; }
     return c.querySelectorAll(a);
-}; function f() { return fetch("/sitemap.xml").then(function (a) { return a.text(); }).then(function (a) { return new DOMParser().parseFromString(a, "text/xml"); }); } var g = [], i = ["/blog/.+"]; setTimeout(function () { return b(".hidden").forEach(function (a) { return a.classList.remove("hidden"); }); }, 1e3); f().then(function (a) {
+}; function f() { return fetch("//bradeneast.com/sitemap.xml").then(function (a) { return a.text(); }).then(function (a) { return new DOMParser().parseFromString(a, "text/xml"); }); } var g = [], i = ["/blog/.+"]; setTimeout(function () { return b(".hidden").forEach(function (a) { return a.classList.remove("hidden"); }); }, 1e3); f().then(function (a) {
     var e_1, _a;
     try {
         for (var _b = __values(b("loc", a)), _c = _b.next(); !_c.done; _c = _b.next()) {
