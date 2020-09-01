@@ -44,7 +44,7 @@ var __spread = (this && this.__spread) || function () {
     if (a === void 0) { a = ""; }
     var b = decodeURIComponent(a) || "", c = b.split("/").pop(), e = (_b = (_a = c === null || c === void 0 ? void 0 : c.split(".")) === null || _a === void 0 ? void 0 : _a.shift()) === null || _b === void 0 ? void 0 : _b.replace(/-|\+/g, " ");
     return e || "";
-} function k() { return fetch("//bradeneast.com/sitemap.xml").then(function (a) { return a.text(); }).then(function (a) { return new DOMParser().parseFromString(a, "text/xml"); }); } var l = h(".results"), m; h('input[type="search"]').addEventListener("input", function (a) { clearTimeout(m), m = setTimeout(function () { return p(a); }, 200); }); function o(a) { var b = [], c = new RegExp(a, "i"); return k().then(function (e) {
+} function k() { return fetch("/sitemap.xml").then(function (a) { return a.text(); }).then(function (a) { return new DOMParser().parseFromString(a, "text/xml"); }); } var l = h(".results"), m; h('input[type="search"]').addEventListener("input", function (a) { clearTimeout(m), m = setTimeout(function () { return p(a); }, 200); }); function o(a) { var b = [], c = new RegExp(a, "i"); return k().then(function (e) {
     var e_1, _a;
     try {
         for (var _b = __values(j("loc", e)), _c = _b.next(); !_c.done; _c = _b.next()) {
