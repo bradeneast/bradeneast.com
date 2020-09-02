@@ -6,6 +6,9 @@ import config from '../config.js';
 /**Joins parts of a URL with a forward slash */
 export let slash = (...parts) => parts.join('/');
 
+/**JSON.stringify() callback for filtering out long values */
+export let removeLongValues = (key, value) => value?.length > 20000 ? undefined : value;
+
 /**Matches the outer HTML of the first tag with that name */
 export let matchTag = (tagName = '') => new RegExp(`[\t ]*<${tagName}(.|\n|\r)+?<\/${tagName}>`, 'g');
 
@@ -32,7 +35,10 @@ export function getAbsolutePath(path, currentDir) {
 
 /**Reads a local file and parses it as markdown if the extension is '.md' */
 export function readLocal(path) {
+
+	fs.ensureFileSync(path);
 	let isMarkdown = /md/i.test(path.split('.').pop());
+
 	if (isMarkdown)
 		marked.setOptions({
 			smartLists: true,
@@ -40,6 +46,7 @@ export function readLocal(path) {
 			highlight: (code, lang, callback) =>
 				prism.highlight(code, prism.languages[lang], lang),
 		});
+
 	return isMarkdown
 		? marked(fs.readFileSync(path, 'utf-8'))
 		: fs.readFileSync(path, 'utf-8');

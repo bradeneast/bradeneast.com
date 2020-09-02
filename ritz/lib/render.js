@@ -3,41 +3,32 @@ import config from '../config.js';
 import { getSortParameter, dynamicSort, matchTag, slash, getAttributes, readLocal } from './utils.js';
 import { addGarnish, hydrate } from './parse.js';
 
+export default function render({ filename, props }) {
 
-export default async function render(pages) {
+  let content = props.sys.content;
+  let destination = filename.replace(config.paths.src, config.paths.dist);
+  let matchEach = matchTag('Each');
 
-  for (let { filename, props } of pages) {
+  // Parse <Each> Elements
+  while (matchEach.test(content)) {
+    content = content.replace(matchEach, string => {
 
-    let content = props.sys.content;
-    let destination = filename.replace(config.paths.src, config.paths.dist);
-    let matchEach = matchTag('Each');
+      let attrs = getAttributes(string);
+      let path = attrs.use.trim();
+      let pathPrefix = /^\./.test(path) ? props.sys.href : '';
+      let brickContent = readLocal(slash(config.paths.src, pathPrefix, path));
 
-    // Parse <Each> Elements
-    while (matchEach.test(content)) {
-      content = content.replace(matchEach, string => {
+      let matchPattern = new RegExp(attrs.from.trim());
+      let matchingPages = pages.filter(p => matchPattern.test(p.filename)) || [];
+      let sortParam = getSortParameter(attrs.sort);
 
-        let attrs = getAttributes(string);
-        let path = attrs.use.trim();
-        let pathPrefix = /^\./.test(path) ? props.sys.href : '';
-        let brickContent = readLocal(slash(config.paths.src, pathPrefix, path));
-
-        let matchPattern = new RegExp(attrs.from.trim());
-        let matchingPages = pages.filter(p => matchPattern.test(p.filename)) || [];
-        let sortParam = getSortParameter(attrs.sort);
-
-        return matchingPages
-          .sort(dynamicSort(sortParam))
-          .map(page => hydrate(brickContent, page.props))
-          .join('')
-      })
-    }
-
-    fs.ensureFile(destination)
-      .then(() =>
-        fs.writeFile(
-          destination,
-          addGarnish(content, props).trim()
-        )
-      );
+      return matchingPages
+        .sort(dynamicSort(sortParam))
+        .map(page => hydrate(brickContent, page.props))
+        .join('')
+    })
   }
+
+  fs.ensureFileSync(destination);
+  fs.writeFile(destination, addGarnish(content, props).trim());
 }
