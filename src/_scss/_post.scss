@@ -2,14 +2,14 @@
 	&--image {
 		height: 24rem;
 		overflow: hidden;
-		margin-bottom: calc($flow3 * -1);
+		margin-bottom: -$flow3;
 	}
 
 	&--info {
 		display: inline-grid;
 		margin-right: auto;
 		padding: $flow1;
-		transform: translateX(calc($flow1 * -1));
+		transform: translateX(#{-$flow1});
 		background: var(--g8);
 		box-shadow: var(--shadow);
 		transition: $motionTransition;

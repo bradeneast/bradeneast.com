@@ -76,7 +76,7 @@ nav a {
 				content: "";
 				position: absolute;
 				bottom: 0;
-				left: calc(50% + $flow1 / 2);
+				left: calc(50% + #{$flow1} / 2);
 				height: 1em;
 				width: $borderWidth;
 				color: var(--g7);
