@@ -3,11 +3,23 @@ import marked from 'marked';
 import prism from 'prismjs';
 import config from '../config.js';
 
-
+/**Joins parts of a URL with a forward slash */
 export let slash = (...parts) => parts.join('/');
+
+/**Matches the outer HTML of the first tag with that name */
 export let matchTag = (tagName = '') => new RegExp(`[\t ]*<${tagName}(.|\n|\r)+?<\/${tagName}>`, 'g');
 
 
+/**Gets the inner HTML of a tag */
+export function getInner(string) {
+	let tagName = string.match(/(?<=<).+?(?=[ >])/)[0];
+	let start = string.indexOf('>') + 1;
+	let end = string.indexOf(`</${tagName}>`);
+	return string.slice(start, end);
+};
+
+
+/**Takes a relative path and converts it to an absolute path in the src folder */
 export function getAbsolutePath(path, currentDir) {
 	path = path.trim();
 	return slash(
@@ -18,6 +30,7 @@ export function getAbsolutePath(path, currentDir) {
 }
 
 
+/**Reads a local file and parses it as markdown if the extension is '.md' */
 export function readLocal(path) {
 	let isMarkdown = /md/i.test(path.split('.').pop());
 	if (isMarkdown)
@@ -33,6 +46,7 @@ export function readLocal(path) {
 }
 
 
+/**Takes a 'path' of properties and returns the value at the end of the 'path' within a given object */
 export function accessProp(string = '', obj = {}) {
 	let tokens = string.split('.');
 	let index = 0;
@@ -49,6 +63,7 @@ export function accessProp(string = '', obj = {}) {
 }
 
 
+/**Hard to explain */
 export function getSortParameter(string = '') {
 	let reverse = '';
 	if (string[0] == '-') {
@@ -86,18 +101,10 @@ export function dynamicSort(property) {
 	}
 }
 
-
+/**Checks if the argument can be parsed as a valid date */
 export function isValidDate(date) {
 	return date && Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date);
 }
-
-
-export function getInner(string) {
-	let tagName = string.match(/(?<=<).+?(?=[ >])/)[0];
-	let start = string.indexOf('>') + 1;
-	let end = string.indexOf(`</${tagName}>`);
-	return string.slice(start, end);
-};
 
 
 export function getAttributes(string) {
@@ -114,7 +121,7 @@ export function getAttributes(string) {
 	return attributes;
 }
 
-
+/**Returns a deep iterable of files from the given directory */
 export function* walkDirSync(dirname, ignorePattern) {
 	for (let filename of fs.readdirSync(dirname)) {
 		if (ignorePattern.test(filename)) continue;
@@ -130,7 +137,7 @@ export function* walkDirSync(dirname, ignorePattern) {
 	}
 }
 
-
+/**Clears the dist directory */
 export async function clearDist() {
 	// Clear Dist Directory
 	for (let filename of fs.readdirSync(config.paths.dist)) {
