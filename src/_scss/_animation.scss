@@ -27,7 +27,7 @@
 
 html {
 	main {
-		transition: var(--smoothTransition);
+		transition: $smoothTransition;
 	}
 
 	footer[class*="border-"]::before {
@@ -36,7 +36,7 @@ html {
 
 	[class*="border-"] {
 		&::before {
-			transition: var(--smoothTransition);
+			transition: $smoothTransition;
 			transform-origin: top left;
 		}
 

@@ -7,7 +7,7 @@
 
 :root {
 	font-size: calc(12px + 0.85vmin);
-	font-family: "Recursive", "Helvetica", -apple-system, BlinkMacSystemFont, sans-serif;
+	font-family: "Recursive", "Helvetica", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
 	font-variation-settings: nth($fontVariations, 1);
 	line-height: 1.63;
 	color: var(--g0);
@@ -23,17 +23,17 @@ blockquote,
 pre,
 ul,
 ol {
-	margin-bottom: var(--flow1);
+	margin-bottom: $flow1;
 }
 
 ul,
 ol {
-	padding-left: var(--flow1);
+	padding-left: $flow1;
 }
 
 pre,
 blockquote {
-	padding: var(--flow1);
+	padding: $flow1;
 	color: var(--g2);
 	background: var(--g7);
 
@@ -43,7 +43,7 @@ blockquote {
 }
 
 blockquote {
-	border-left: var(--borderWidth) var(--borderStyle) var(--primary);
+	border-left: $borderWidth $borderStyle var(--primary);
 }
 
 em {
@@ -62,7 +62,7 @@ a {
 	color: var(--g3);
 	touch-action: manipulation;
 	text-decoration-thickness: 0.1em;
-	transition: var(--colorTransition);
+	transition: $colorTransition;
 
 	&:hover,
 	&:focus {

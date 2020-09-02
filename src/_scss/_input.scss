@@ -3,7 +3,7 @@ input {
 	border: none;
 	color: inherit;
 	font-size: inherit;
-	transition: var(--colorTransition);
+	transition: $colorTransition;
 
 	&::placeholder {
 		color: var(--g3);
@@ -15,7 +15,7 @@ input {
 		appearance: none;
 		border-radius: 0 !important;
 		padding: 0.37em 0.63em;
-		border-bottom: var(--borderWidth) var(--borderStyle) transparent;
+		border-bottom: $borderWidth $borderStyle transparent;
 
 		&:not(:placeholder-shown) {
 			background: var(--g8);

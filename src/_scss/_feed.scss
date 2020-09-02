@@ -1,12 +1,12 @@
 .feed {
-	padding-top: var(--flow2);
-	margin-top: var(--flow2);
+	padding-top: $flow2;
+	margin-top: $flow2;
 
 	li {
 		list-style-type: none;
 
 		&:not(:last-child) {
-			margin-bottom: var(--flow3);
+			margin-bottom: $flow3;
 		}
 
 		a:hover,
@@ -43,7 +43,7 @@
 
 	&.results li {
 		list-style-type: initial;
-		margin-left: var(--flow1);
-		margin-bottom: var(--flow1);
+		margin-left: $flow1;
+		margin-bottom: $flow1;
 	}
 }

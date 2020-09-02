@@ -2,17 +2,17 @@
 	&--image {
 		height: 24rem;
 		overflow: hidden;
-		margin-bottom: calc(var(--flow3) * -1);
+		margin-bottom: calc($flow3 * -1);
 	}
 
 	&--info {
 		display: inline-grid;
 		margin-right: auto;
-		padding: var(--flow1);
-		transform: translateX(calc(var(--flow1) * -1));
+		padding: $flow1;
+		transform: translateX(calc($flow1 * -1));
 		background: var(--g8);
 		box-shadow: var(--shadow);
-		transition: var(--motionTransition);
+		transition: $motionTransition;
 
 		h1,
 		h2 {
@@ -40,18 +40,18 @@
 }
 
 :not(.feed) article {
-	margin-top: var(--flow2);
-	margin-bottom: var(--flow2);
+	margin-top: $flow2;
+	margin-bottom: $flow2;
 
 	.has-img {
-		margin-top: var(--flow3);
+		margin-top: $flow3;
 
 		& + .has-img {
 			margin-top: 0;
 		}
 
 		& + p {
-			margin-top: var(--flow3);
+			margin-top: $flow3;
 		}
 	}
 
@@ -64,16 +64,16 @@
 	}
 
 	h2 {
-		margin-top: var(--flow2);
+		margin-top: $flow2;
 	}
 
 	h3,
 	h4 {
-		margin-top: var(--flow1);
+		margin-top: $flow1;
 	}
 
 	.cp_embed_wrapper {
-		margin-bottom: var(--flow1);
+		margin-bottom: $flow1;
 		padding-top: 540px;
 
 		iframe,

@@ -1,7 +1,7 @@
 .embedded_project {
 	background-size: cover;
 	background-position: center;
-	margin-bottom: var(--flow1);
+	margin-bottom: $flow1;
 	width: 100%;
 
 	.iframe_wrapper {
@@ -27,7 +27,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		border: var(--borderWidth) var(--borderStyle) transparent;
+		border: $borderWidth $borderStyle transparent;
 
 		&:hover,
 		&:focus {
@@ -46,9 +46,9 @@
 		left: 0;
 		opacity: 0;
 		text-align: center;
-		padding: var(--flow1);
+		padding: $flow1;
 		background: var(--g8);
-		transition: var(--colorTransition);
+		transition: $colorTransition;
 	}
 
 	&:hover,

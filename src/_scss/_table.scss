@@ -1,7 +1,7 @@
 table {
 	width: 100%;
 	text-align: left;
-	margin-bottom: var(--flow1);
+	margin-bottom: $flow1;
 	font-variation-settings: "MONO" 1, "CASL" 1;
 
 	td,
@@ -10,8 +10,8 @@ table {
 		word-break: break-all;
 		padding: 0.37em;
 		line-height: 1.2;
-		border-right: var(--borderWidth) var(--borderStyle) var(--g7);
-		border-bottom: var(--borderWidth) var(--borderStyle) var(--g7);
+		border-right: $borderWidth $borderStyle var(--g7);
+		border-bottom: $borderWidth $borderStyle var(--g7);
 
 		&:last-of-type {
 			border-right: none;

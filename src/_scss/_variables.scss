@@ -7,6 +7,20 @@ $g5: #9faabd;
 $g6: #c5cacf;
 $g7: #eff0f1;
 $g8: white;
+$primary: #2873ff;
+$secondary: #ff3848;
+$flow1: 1rem;
+$flow2: 2rem;
+$flow3: 3rem;
+$flow4: 4rem;
+$fontWeightRegular: 360;
+$fontWeightMedium: 480;
+$fontWeightHeavy: 820;
+$borderWidth: 0.2rem;
+$borderStyle: solid;
+$motionTransition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
+$colorTransition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
+$smoothTransition: 0.28s ease;
 $mobile: 54em;
 $fallback: showFallback 5s forwards;
 $fontVariations: (("CASL" 0, "slnt" 0), ("CASL" 1, "slnt" -13), ("CASL" 1, "slnt" 0));
@@ -21,20 +35,10 @@ $fontVariations: (("CASL" 0, "slnt" 0), ("CASL" 1, "slnt" -13), ("CASL" 1, "slnt
 	--g6: #{$g6};
 	--g7: #{$g7};
 	--g8: #{$g8};
-	--primary: #2873ff;
-	--secondary: #ff3848;
-	--flow1: 1rem;
-	--flow2: 2rem;
-	--flow3: 3rem;
-	--flow4: 4rem;
-	--fontWeightRegular: 360;
-	--fontWeightMedium: 480;
-	--fontWeightHeavy: 820;
-	--borderWidth: 0.2rem;
-	--borderStyle: solid;
-	--motionTransition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
-	--colorTransition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
-	--smoothTransition: 0.28s ease;
+	--primary: #{$primary};
+	--fontWeightRegular: #{$fontWeightRegular};
+	--fontWeightMedium: #{$fontWeightMedium};
+	--fontWeightHeavy: #{$fontWeightHeavy};
 	--shadowColor: rgba(0, 10, 50, 0.1);
 	--shadow: 0 0.6rem 0.8rem -0.2rem var(--shadowColor), 0 0.4rem 0.5rem -0.1rem var(--shadowColor);
 	--shadowLarge: 0 0.6rem 1.2rem -0.2rem var(--shadowColor), 0 0.4rem 0.7rem -0.1rem var(--shadowColor);
@@ -43,7 +47,6 @@ $fontVariations: (("CASL" 0, "slnt" 0), ("CASL" 1, "slnt" -13), ("CASL" 1, "slnt
 
 html {
 	&.dark_mode {
-		--primary: var(--secondary);
 		--g0: #{$g8};
 		--g1: #{$g7};
 		--g2: #{$g6};
@@ -53,6 +56,7 @@ html {
 		--g6: #{$g2};
 		--g7: #{$g1};
 		--g8: #{$g0};
+		--primary: #{$secondary};
 		--shadowColor: rgba(200, 210, 255, 0.1);
 		--shadowColor: rgba(0, 0, 0, 0.4);
 		--fontWeightRegular: 300;

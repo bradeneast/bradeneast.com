@@ -22,13 +22,13 @@
 .border-left::before,
 .border-right::before {
 	height: 100%;
-	width: var(--borderWidth);
+	width: $borderWidth;
 }
 
 .border-top::before,
 .border-bottom::before {
 	width: 100%;
-	height: var(--borderWidth);
+	height: $borderWidth;
 }
 
 .border-bottom::before,

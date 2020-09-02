@@ -3,7 +3,7 @@ button {
 	background: none;
 	border: none;
 	cursor: pointer;
-	transition: var(--colorTransition);
+	transition: $colorTransition;
 
 	&:hover,
 	&:focus {
@@ -24,7 +24,7 @@ button {
 	border-radius: 50%;
 	height: 3em;
 	width: 3em;
-	transition: var(--colorTransition);
+	transition: $colorTransition;
 
 	&:hover,
 	&:focus {
@@ -38,7 +38,7 @@ button {
 
 	svg {
 		height: 100%;
-		transition: var(--motionTransition);
+		transition: $motionTransition;
 		will-change: transform;
 		backface-visibility: hidden;
 		transform: scale(var(--iconSize)) translate3d(1px, 1px, 1px);

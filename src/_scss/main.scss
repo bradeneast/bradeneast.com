@@ -15,8 +15,8 @@
 }
 
 *:focus {
-	outline: var(--borderWidth) var(--borderStyle) var(--g6);
-	outline-offset: var(--borderWidth);
+	outline: $borderWidth $borderStyle var(--g6);
+	outline-offset: $borderWidth;
 }
 
 html {
@@ -39,7 +39,7 @@ body {
 	grid-template-rows: 1fr auto;
 	padding: 4vh 2vw 1vh 2vw;
 	background: var(--g8);
-	transition: var(--colorTransition);
+	transition: $colorTransition;
 
 	& > * {
 		padding-top: inherit;
@@ -52,15 +52,15 @@ body {
 
 	main {
 		max-width: 42rem;
-		padding-bottom: var(--flow2);
+		padding-bottom: $flow2;
 
 		& > * {
-			margin-left: var(--flow2);
+			margin-left: $flow2;
 		}
 
 		& > ul {
 			margin-left: 0;
-			padding-left: var(--flow2);
+			padding-left: $flow2;
 		}
 	}
 }
@@ -100,10 +100,11 @@ video {
 @import "./project";
 @import "./footer";
 @import "./prism";
+@import "./retro";
 
-@media screen and (max-width: #{$mobile}) {
+@media screen and (max-width: $mobile) {
 	body {
-		padding-top: var(--flow1);
+		padding-top: $flow1;
 		grid-template-columns: 1fr;
 		grid-template-rows: initial;
 		align-content: start;
@@ -114,18 +115,18 @@ video {
 
 		main,
 		aside {
-			padding-top: var(--flow2);
+			padding-top: $flow2;
 		}
 
 		main > * {
-			margin-right: var(--flow1);
+			margin-right: $flow1;
 			margin-left: 1rem;
 		}
 	}
 
 	.feed h2 a {
 		color: inherit;
-		font-weight: var(--fontWeightHeavy);
+		font-weight: $fontWeightHeavy;
 		text-decoration-color: var(--primary);
 	}
 }

@@ -7,7 +7,7 @@ nav a {
 	nav {
 		display: grid;
 		position: sticky;
-		top: var(--flow2);
+		top: $flow2;
 
 		a {
 			&[aria-current] {
@@ -29,7 +29,7 @@ nav a {
 			}
 
 			&:not(:first-child) {
-				padding-top: var(--flow1);
+				padding-top: $flow1;
 			}
 		}
 	}
@@ -56,8 +56,8 @@ nav a {
 		}
 
 		a {
-			padding-left: var(--flow1);
-			padding-bottom: var(--flow1);
+			padding-left: $flow1;
+			padding-bottom: $flow1;
 
 			&:hover,
 			&:focus {
@@ -76,13 +76,13 @@ nav a {
 				content: "";
 				position: absolute;
 				bottom: 0;
-				left: calc(50% + var(--flow1) / 2);
+				left: calc(50% + $flow1 / 2);
 				height: 1em;
-				width: var(--borderWidth);
+				width: $borderWidth;
 				color: var(--g7);
 				background: currentColor;
 				transform-origin: bottom;
-				transition: var(--smoothTransition);
+				transition: $smoothTransition;
 			}
 
 			&:nth-child(2)::after {
