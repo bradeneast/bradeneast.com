@@ -14,6 +14,11 @@
 		box-shadow: var(--shadow);
 		transition: var(--motionTransition);
 
+		h1,
+		h2 {
+			text-transform: capitalize;
+		}
+
 		&__date,
 		&__tags,
 		&__length {

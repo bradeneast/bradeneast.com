@@ -4,7 +4,6 @@
 
 	li {
 		list-style-type: none;
-		text-transform: capitalize;
 
 		&:not(:last-child) {
 			margin-bottom: var(--flow3);
