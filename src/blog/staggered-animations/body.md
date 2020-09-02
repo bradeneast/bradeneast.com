@@ -13,8 +13,16 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
         transform: translate(0);
     }
     50% {
-        transform: translateX(10em);
-        --delay: 0s;
+        transform: translateX(10rem);
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        transform: translate(0);
+    }
+    50% {
+        transform: translateX(10rem);
     }
 }
 
@@ -23,16 +31,17 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
     position: relative;
     height: auto;
     width: 100%;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .example-wrapper .example-circle {
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
+    background: dodgerblue;
     background: var(--primary);
+    -webkit-animation: move 4s ease-in-out alternate infinite running;
     animation: move 4s ease-in-out alternate infinite running;
-    animation-delay: var(--delay);
 }
 
 .staggered>:nth-child(4),
