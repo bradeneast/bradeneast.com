@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +37,8 @@ Knobs and dials on the web
 	<script>
 		var preferences = ['dark_mode'];
 
-		for (var preference of preferences) {
+		for (var i in preferences) {
+			var preference = preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
@@ -162,7 +166,7 @@ adjustmentWrapper<span class="token punctuation">.</span><span class="token func
 			</p>
 		</article>
 	</main>
-	
+
 <footer class="border-top">
 
 	<div class="copyright">
@@ -212,3 +216,5 @@ adjustmentWrapper<span class="token punctuation">.</span><span class="token func
 </footer>
 
 </body>
+
+</html>

@@ -34,7 +34,8 @@
 	<script>
 		var preferences = ['dark_mode'];
 
-		for (var preference of preferences) {
+		for (var i in preferences) {
+			var preference = preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 

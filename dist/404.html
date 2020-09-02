@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +37,8 @@
 	<script>
 		var preferences = ['dark_mode'];
 
-		for (var preference of preferences) {
+		for (var i in preferences) {
+			var preference = preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
@@ -73,7 +77,7 @@
 <input type="search" inputmode="search" placeholder="Search this site" />
 <ul class="results feed border-top"></ul>
 	</main>
-	
+
 <footer class="border-top">
 
 	<div class="copyright">
@@ -123,6 +127,8 @@
 </footer>
 
 </body>
+
+</html>
 	</Content>
 
 </Brick>

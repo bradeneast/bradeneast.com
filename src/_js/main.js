@@ -43,7 +43,11 @@ function init() {
 
 init();
 
-new Schwifty({
-	preserveAttributes: true,
-	onload: init,
-})
+try {
+	new Schwifty({
+		preserveAttributes: true,
+		onload: init,
+	})
+} catch (err) {
+	console.log(err);
+}

@@ -24,7 +24,7 @@ var __values = (this && this.__values) || function(o) {
         }, M = function (b) { return b.target.closest(d) || {}; }, G = function () { return s(d).forEach(function (b) { return L.observe(b); }); }, j = function (b, c) {
             if (c === void 0) { c = window; }
             return c.dispatchEvent(new Event(b));
-        }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(o); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1e3; }, N = function (b) { if (!b)
+        }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(o); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1000; }, N = function (b) { if (!b)
             return; var c = new XMLHttpRequest(); c.onreadystatechange = function () { this.status == 200 && k.set(b, c.responseXML); }, c.open("GET", b, !0), c.responseType = "document", c.send(); }, J = function (b) {
             var e_1, _a;
             var c = k.get(b);
@@ -97,9 +97,9 @@ var __values = (this && this.__values) || function(o) {
     var g = document.createElement(a);
     return g.innerHTML = d, g;
 }, E = function (a, d) { return d == void 0 ? JSON.parse(localStorage.getItem(a)) : localStorage.setItem(a, JSON.stringify(d)); }, B = function (a) { var d = E(a); document.documentElement.classList.toggle(a, !d), E(a, !d); }; function A(a) {
-    var _a, _b;
     if (a === void 0) { a = ""; }
-    var d = decodeURIComponent(a) || "", g = d.split("/").pop(), w = (_b = (_a = g === null || g === void 0 ? void 0 : g.split(".")) === null || _a === void 0 ? void 0 : _a.shift()) === null || _b === void 0 ? void 0 : _b.replace(/-|\+/g, " ");
+    var _a, _b, _c;
+    var d = decodeURIComponent(a) || "", g = d.split("/").pop(), w = (_c = (_b = (_a = g) === null || _a === void 0 ? void 0 : _a.split(".")) === null || _b === void 0 ? void 0 : _b.shift()) === null || _c === void 0 ? void 0 : _c.replace(/-|\+/g, " ");
     return w || "";
 } function D() {
     var e_4, _a, e_5, _b, e_6, _c;
@@ -157,4 +157,9 @@ var __values = (this && this.__values) || function(o) {
         }
         finally { if (e_6) throw e_6.error; }
     }
-} D(); new z({ preserveAttributes: !0, onload: D }); })();
+} D(); try {
+    new z({ preserveAttributes: !0, onload: D });
+}
+catch (a) {
+    console.log(a);
+} })();

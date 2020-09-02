@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +37,8 @@ The blog for dev-signers
 	<script>
 		var preferences = ['dark_mode'];
 
-		for (var preference of preferences) {
+		for (var i in preferences) {
+			var preference = preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
@@ -92,8 +96,7 @@ UX, Product Design
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -115,8 +118,7 @@ Accessibility, Performance
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -138,8 +140,7 @@ Accessibility, Performance
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -161,8 +162,7 @@ Accessibility, Performance, HTML
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -184,8 +184,7 @@ CSS, HTML, Typography
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -207,8 +206,7 @@ Design, Typography
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -230,8 +228,7 @@ Javascript, HTML, Accessibility
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -253,8 +250,7 @@ CSS, UI, Animation
 		</div>
 
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 
 		<h2>
@@ -279,7 +275,7 @@ UI, CSS, HTML
 </li>
 		</ul>
 	</main>
-	
+
 <footer class="border-top">
 
 	<div class="copyright">
@@ -329,3 +325,5 @@ UI, CSS, HTML
 </footer>
 
 </body>
+
+</html>

@@ -4,7 +4,7 @@ import { getSortParameter, dynamicSort, matchTag, slash, getAttributes, readLoca
 import { addGarnish, hydrate } from './parse.js';
 
 
-export default function render(pages) {
+export default async function render(pages) {
 
   for (let { filename, props } of pages) {
 
@@ -28,11 +28,16 @@ export default function render(pages) {
         return matchingPages
           .sort(dynamicSort(sortParam))
           .map(page => hydrate(brickContent, page.props))
-          .join('\n')
+          .join('')
       })
     }
 
-    fs.ensureFileSync(destination);
-    fs.writeFile(destination, addGarnish(content, props));
+    fs.ensureFile(destination)
+      .then(() =>
+        fs.writeFile(
+          destination,
+          addGarnish(content, props).trim()
+        )
+      );
   }
 }

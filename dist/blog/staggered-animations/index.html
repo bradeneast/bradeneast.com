@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +37,8 @@ Staggered Animations
 	<script>
 		var preferences = ['dark_mode'];
 
-		for (var preference of preferences) {
+		for (var i in preferences) {
+			var preference = preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
@@ -195,7 +199,7 @@ CSS, UI, Animation
 			</p>
 		</article>
 	</main>
-	
+
 <footer class="border-top">
 
 	<div class="copyright">
@@ -245,3 +249,5 @@ CSS, UI, Animation
 </footer>
 
 </body>
+
+</html>

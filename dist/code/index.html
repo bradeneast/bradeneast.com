@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +37,8 @@ Code I've written
 	<script>
 		var preferences = ['dark_mode'];
 
-		for (var preference of preferences) {
+		for (var i in preferences) {
+			var preference = preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
@@ -90,8 +94,7 @@ Javascript, Performance
 			<p>This is an ongoing project where I re-create popular Javascript libraries from scratch, making them smaller and simpler. So simple in fact, I’ve given myself a budget of ~1kb (minified and gzipped) for each library.</p>
 		</div>
 	</div>
-</li>
-<li>
+</li><li>
 	<div class="post--info">
 		<h2>
 			<a href="/code/WRDS/">
@@ -114,7 +117,7 @@ Javascript, Web App, lit-html
 </li>
 		</ul>
 	</main>
-	
+
 <footer class="border-top">
 
 	<div class="copyright">
@@ -164,3 +167,5 @@ Javascript, Web App, lit-html
 </footer>
 
 </body>
+
+</html>
