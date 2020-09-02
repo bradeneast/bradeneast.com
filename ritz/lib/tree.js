@@ -3,7 +3,7 @@ import { walkDirSync, matchTag } from './utils.js';
 import { parseBrick } from './parse.js';
 
 
-export default function makeTree() {
+export default async function makeTree() {
 
   let tree = [];
 

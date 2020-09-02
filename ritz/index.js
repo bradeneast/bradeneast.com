@@ -1,18 +1,13 @@
-import fs from 'fs-extra';
 import makeTree from './lib/tree.js';
 import render from './lib/render.js';
-import config from './config.js';
-import { slash } from './lib/utils.js';
+import { clearDist } from './lib/utils.js';
+
 
 console.time('Build Success');
 
-// Clear Dist Directory
-for (let filename of fs.readdirSync(config.paths.dist)) {
-  if (config.ignorePattern.test(filename)) continue;
-  fs.removeSync(slash(config.paths.dist, filename));
-}
+let treeIsBuilt = makeTree();
+let distIsCleared = clearDist();
+let readyToRender = Promise.all([treeIsBuilt, distIsCleared]);
 
-
-let tree = makeTree();
-render(tree);
+readyToRender.then(([tree, distCleared]) => render(tree));
 console.timeEnd('Build Success');
