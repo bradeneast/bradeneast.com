@@ -16,10 +16,9 @@ export function parseBrick(string, props) {
 		let elem = props.sys.content.match(matchTag(name))[0];
 		let attrs = getAttributes(elem);
 		let inner = getInner(elem).trim();
-		let datedValue = new Date(inner);
 
-		if (isValidDate(datedValue))
-			props[name] = datedValue;
+		if (isValidDate(inner))
+			props[name] = new Date(inner);
 		else if (attrs?.use)
 			props[name] = readLocal(getAbsolutePath(attrs.use, props.sys.href));
 		else

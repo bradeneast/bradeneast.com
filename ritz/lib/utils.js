@@ -109,8 +109,9 @@ export function dynamicSort(property) {
 }
 
 /**Checks if the argument can be parsed as a valid date */
-export function isValidDate(date) {
-	return date && Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date);
+export function isValidDate(value) {
+	value = new Date(value);
+	return value && Object.prototype.toString.call(value) === "[object Date]" && !isNaN(value);
 }
 
 

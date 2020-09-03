@@ -5,6 +5,7 @@ import { parseBrick } from './parse.js';
 let tree = [];
 
 for (let { filename, content } of walkDirSync(config.paths.src, config.ignorePattern)) {
+  // Ignore non-html files
   if (!/\.html$/i.test(filename)) continue;
 
   let matchBrick = matchTag('Brick');
