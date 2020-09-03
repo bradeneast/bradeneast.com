@@ -42,10 +42,7 @@
 			document
 				.documentElement
 				.classList
-				.toggle(
-					preference,
-					locallySaved
-				);
+				.toggle(preference, locallySaved);
 
 			localStorage.setItem(preference, locallySaved);
 		}

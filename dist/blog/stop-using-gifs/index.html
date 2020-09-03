@@ -6,17 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>
-404 Not Found
+Stop Using Gifs
 	</title>
-	<meta name="description" content="Braden East | 404 Not Found" />
+	<meta name="description" content="Braden East | Stop Using Gifs" />
 
-	<meta property="og:title" content="404 Not Found" />
-	<meta property="og:description" content="Braden East | 404 Not Found" />
+	<meta property="og:title" content="Stop Using Gifs" />
+	<meta property="og:description" content="Braden East | Stop Using Gifs" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="https://www.bradeneast.com/404.html" />
+	<meta property="og:url" content="https://www.bradeneast.com/blog/stop-using-gifs/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Braden East" />
-	<meta property="og:image" content="https://www.bradeneast.comundefined" />
+	<meta property="og:image" content="https://www.bradeneast.com/_assets/images/star-wars.jpg" />
 	<meta property="og:image:width" content="1620" />
 	<meta property="og:image:height" content="1080" />
 	<meta name="msapplication-TileColor" content="#FFFFFF" />
@@ -24,7 +24,7 @@
 	<meta name="msapplication-TileImage" content="https://www.bradeneast.com/_assets/favicon_padded.png" />
 
 	<base href="/" />
-	<link rel="canonical" href="https://www.bradeneast.com/404.html">
+	<link rel="canonical" href="https://www.bradeneast.com/blog/stop-using-gifs/">
 	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
 	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
 
@@ -59,20 +59,49 @@
 	<aside>
 <nav>
 	<a class="border-bottom"  href="/">About</a>
-	<a class="border-bottom"  href="/blog">Blog</a>
+	<a class="border-bottom" aria-current href="/blog">Blog</a>
 	<a class="border-bottom"  href="/code">Code</a>
 	<a class="border-bottom"  href="/design">Design</a>
 </nav>
 	</aside>
 
 	<main class="border-left">
-<h1>404</h1>
-		<p>
-			My bad, yo. If you can't find what you're looking for, email me at <a href="mailto:braden.east.design@gmail.com">braden.east.design@gmail.com</a>
-		</p>
-<script defer src="/_assets/js/search.js"></script>
-<input type="search" inputmode="search" placeholder="Search this site" />
-<ul class="results feed border-top"></ul>
+<div class="post--image">
+			<img width="540" height="360" src="/_assets/images/star-wars.jpg" />
+		</div>
+
+		<div class="post--info">
+			<h1>
+Stop Using Gifs
+			</h1>
+			<div class="post--info__tags">
+Accessibility, Performance, HTML
+			</div>
+			<div class="post--info__length">
+
+					3-minute read
+				
+			</div>
+		</div>
+
+		<article>
+<p>If you care about web performance, please stop using gifs for animations on your website. Heck, even <a href="https://giphy.com/">Giphy</a>, the largest gif library in the world, serves gifs as MP4 files. Actual GIF format is their <strong><em>last possible fallback</em></strong>.</p>
+<p>MP4, WebM, and WebP will almost always be 1/5 to 1/2 the file size of GIF, so there’s an immediate benefit of faster page loads and better performance. Not only that, but HTML <code>video</code> elements have the benefit of fallbacks using <code>source</code> . If you’ve not used them before, here’s a quick example of how to make a <code>video</code> element behave like a gif.</p>
+<pre><code class="language-html"><span class="token comment">&lt;!-- The easy way --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>animation.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">autoplay</span> <span class="token attr-name">muted</span> <span class="token attr-name">loop</span> <span class="token attr-name">playsinline</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<pre><code class="language-html"><span class="token comment">&lt;!-- The easy way, but with fallbacks --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">muted</span> <span class="token attr-name">loop</span> <span class="token attr-name">playsinline</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>animation.webm<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>animation.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Your browser doesn't support embedded videos.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>Pretty easy right?  One quick note: When possible, always use the <code>muted</code> and <code>autoplay</code> attributes together. The reason for this is that most mobile browsers will ignore <code>autoplay</code> if <code>muted</code> is not also present.</p>
+<p>Already use gifs in production on your site? Use a service like <a href="https://ezgif.com/">Ezgif.com</a> to convert them to MP4 and optimize them for the smallest possible file size. You’ll be amazed at the results.</p>
+
+			<p>
+				<a href="https://twitter.com/intent/tweet?text=Stop Using Gifs&amp;url=https://www.bradeneast.com/blog/stop-using-gifs/&amp;via=bradenthehair">Share this on Twitter</a>
+			</p>
+		</article>
 	</main>
 
 <footer class="border-top">
@@ -126,6 +155,3 @@
 </body>
 
 </html>
-	</Content>
-
-</Brick>

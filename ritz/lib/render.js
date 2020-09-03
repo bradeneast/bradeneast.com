@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import config from '../config.js';
 import { getSortParameter, dynamicSort, matchTag, slash, getAttributes, readLocal } from './utils.js';
+import tree from './tree.js';
 import { addGarnish, hydrate } from './parse.js';
 
 export default function render({ filename, props }) {
@@ -19,7 +20,7 @@ export default function render({ filename, props }) {
       let brickContent = readLocal(slash(config.paths.src, pathPrefix, path));
 
       let matchPattern = new RegExp(attrs.from.trim());
-      let matchingPages = pages.filter(p => matchPattern.test(p.filename)) || [];
+      let matchingPages = tree.filter(p => matchPattern.test(p.filename)) || [];
       let sortParam = getSortParameter(attrs.sort);
 
       return matchingPages

@@ -11,7 +11,7 @@
 	"saveAndRun": {
 		"commands": [
 			{
-				"cmd": "node ./ritz/index.js",
+				"cmd": "node ./ritz/index.js -dev",
 				"match": ".*(html|md)",
 				"isAsync": true,
 				"silent": true,

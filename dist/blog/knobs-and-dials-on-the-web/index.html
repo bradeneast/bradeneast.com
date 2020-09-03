@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>
+Knobs and dials on the web
+	</title>
+	<meta name="description" content="Braden East | Knobs and dials on the web" />
+
+	<meta property="og:title" content="Knobs and dials on the web" />
+	<meta property="og:description" content="Braden East | Knobs and dials on the web" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:url" content="https://www.bradeneast.com/blog/knobs-and-dials-on-the-web/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Braden East" />
+	<meta property="og:image" content="https://www.bradeneast.com/_assets/images/sound-board.jpg" />
+	<meta property="og:image:width" content="1620" />
+	<meta property="og:image:height" content="1080" />
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="supported-color-schemes" content="light dark" />
+	<meta name="msapplication-TileImage" content="https://www.bradeneast.com/_assets/favicon_padded.png" />
+
+	<base href="/" />
+	<link rel="canonical" href="https://www.bradeneast.com/blog/knobs-and-dials-on-the-web/">
+	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
+	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
+
+	<link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" />
+	<link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net" />
+	<link rel="preload" href="/_assets/css/main.css" as="style" />
+	<link rel="preload" href="/_assets/fonts/Recursive.woff2" as="font/woff2" />
+	<link rel="stylesheet" href="/_assets/css/main.css">
+
+	<script>
+		var preferences = ['dark_mode'];
+
+		for (var i in preferences) {
+			var preference = preferences[i];
+			var locallySaved = JSON.parse(localStorage.getItem(preference));
+			if (locallySaved == undefined) locallySaved = false;
+
+			document
+				.documentElement
+				.classList
+				.toggle(preference, locallySaved);
+
+			localStorage.setItem(preference, locallySaved);
+		}
+	</script>
+	<script defer src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script defer src="/_assets/js/main.js"></script>
+</head>
+
+<body>
+
+	<aside>
+<nav>
+	<a class="border-bottom"  href="/">About</a>
+	<a class="border-bottom" aria-current href="/blog">Blog</a>
+	<a class="border-bottom"  href="/code">Code</a>
+	<a class="border-bottom"  href="/design">Design</a>
+</nav>
+	</aside>
+
+	<main class="border-left">
+<div class="post--image">
+			<img width="540" height="360" src="/_assets/images/sound-board.jpg" />
+		</div>
+
+		<div class="post--info">
+			<h1>
+Knobs and dials on the web
+			</h1>
+			<div class="post--info__tags">
+UI, CSS, HTML
+			</div>
+			<div class="post--info__length">
+
+					11-minute read
+				
+			</div>
+		</div>
+
+		<article>
+<p>In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</p>
+<blockquote>
+<p><em>Stairway to Heaven</em> (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the ‘forbidden riff.’</p>
+</blockquote>
+<p>Most audio and electronic equipment relies heavily on knobs and dials. On the web however, it’s pretty rare to see these kind of inputs, when sliders are quick and easy and work out of the box.</p>
+<p>Let’s imagine we’re coding an audio application that needs some knobs to simulate the analog experience. The most semantic way I’ve found to accomplish this is to use the HTML <code>range</code> input and a little bit of CSS trickery.</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>adjustment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>range<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>knob<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The basic idea is to give the <code>range</code> input an opacity of 0 and position it on top of an empty element. We can also add a width and height of 100% to make sure the input will intercept a click anywhere on the element.</p>
+<pre><code class="language-css"><span class="token selector">input[type="range"]</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Now, let’s make our knob rotate as we drag up and down.</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>adjustment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>range<span class="token punctuation">"</span></span> <span class="token attr-name">oninput</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>this.parentElement.style.setProperty(<span class="token punctuation">'</span>--knobPosition<span class="token punctuation">'</span>, this.value)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>knob<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Using the <code>range</code> input this way works as expected for desktop devices. However, touch devices (especially iOS) don’t play well with range inputs. To support these users, we’ll add a <code>touchstart</code> and <code>touchmove</code> event listeners to the knob. This way, we can update our custom <code>--knobPosition</code> property on the parent element using <code>setProperty()</code>. I’m also throttling the <code>touchmove</code> event with <code>requestAnimationFrame</code> for better performance.</p>
+<pre><code class="language-javascript"><span class="token keyword">let</span> adjustmentWrapper <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.adjustment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Establish an object to store touch values</span>
+<span class="token keyword">let</span> touch <span class="token operator">=</span> <span class="token punctuation">{</span>
+  start<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  current<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  diff<span class="token operator">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Set initial touch values on the touchstart event</span>
+adjustmentWrapper<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=></span>
+  touch<span class="token punctuation">.</span>start <span class="token operator">=</span> event<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>screenY<span class="token punctuation">;</span>
+<span class="token punctuation">)</span>
+
+adjustmentWrapper<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchmove'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=></span>
+  <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// Update touch values</span>
+    touch<span class="token punctuation">.</span>current <span class="token operator">=</span> event<span class="token punctuation">.</span>changedTouches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>screenY<span class="token punctuation">;</span>
+    touch<span class="token punctuation">.</span>diff <span class="token operator">=</span> <span class="token punctuation">(</span>touch<span class="token punctuation">.</span>current <span class="token operator">-</span> touch<span class="token punctuation">.</span>start<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">clamp</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> min<span class="token punctuation">)</span> <span class="token keyword">return</span> min<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">></span> max<span class="token punctuation">)</span> <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Update the knob position</span>
+    adjustmentWrapper<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span>
+        <span class="token string">'--knobPosition'</span><span class="token punctuation">,</span> 
+        <span class="token function">clamp</span><span class="token punctuation">(</span>touch<span class="token punctuation">.</span>diff<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+<p>The only thing left is to set up the CSS that will rotate the knob accordingly.  First, we should divide the knob value by 100, since the HTML <code>range</code> input defaults to <code>min=&quot;0&quot;</code> and <code>max=&quot;100&quot;</code>. Next, let’s set a range of motion for the knob so works like we would expect from the real thing. To do that, we can do a little more <code>calc()</code> math that limits the rotation to a specified range.</p>
+<pre><code class="language-css"><span class="token selector">.adjustment</span> <span class="token punctuation">{</span>
+    <span class="token property">--knobPosition</span><span class="token punctuation">:</span> 100<span class="token punctuation">;</span>
+    <span class="token property">--knobRange</span><span class="token punctuation">:</span> 280deg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.knob</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* Get the knob position as a percentage of the range */</span>
+    <span class="token property">--knob-rotation</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knobPosition<span class="token punctuation">)</span> / 100 * <span class="token function">var</span><span class="token punctuation">(</span>--knobRange<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/* Center the knob range */</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knob-rotation<span class="token punctuation">)</span> - <span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--knobRange<span class="token punctuation">)</span> / 2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>If you’re feeling especially adventurous, you can add a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">CSS counter</a> to display the numeric value of the knob using a CSS variable hack by <a href="https://twitter.com/cassiecodes">Cassie Evans</a>. Here’s the demo where I’ve pieced it all together.</p>
+<p class="codepen" data-slug-hash="qBWxKro"></p>
+			<p>
+				<a href="https://twitter.com/intent/tweet?text=Knobs and dials on the web&amp;url=https://www.bradeneast.com/blog/knobs-and-dials-on-the-web/&amp;via=bradenthehair">Share this on Twitter</a>
+			</p>
+		</article>
+	</main>
+
+<footer class="border-top">
+
+	<div class="copyright">
+		&copy; 2019-2020 Braden East
+	</div>
+
+<div class="flex">
+	<a class="highlight" href="https://codepen.io/bradeneast" title="Braden East on CodePen">
+		<svg aria-hidden="true" focusable="false" data-icon="codepen" role="img" viewBox="0 0 512 512">
+			Codepen
+			<path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
+			</path>
+		</svg>
+	</a>
+	<a class="highlight" href="https://github.com/bradeneast" title="Braden East on Github">
+		<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+			Github
+			<path fill="currentColor" d="M165.9,389.4c0,2-2.3,3.6-5.2,3.6-3.3.3-5.6-1.3-5.6-3.6,0-2,2.3-3.6,5.2-3.6C163.3,385.5,165.9,387.1,165.9,389.4Zm-31.1-4.5c-.7,2,1.3,4.3,4.3,4.9,2.6,1,5.6,0,6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2,2.3Zm44.2-1.7c-2.9.7-4.9,2.6-4.6,4.9.3,2,2.9,3.3,5.9,2.6s4.9-2.6,4.6-4.6S181.9,382.9,179,383.2ZM244.8,0C106.1,0,0,105.3,0,244,0,354.9,69.8,449.8,169.5,483.2c12.8,2.3,17.3-5.6,17.3-12.1,0-6.2-.3-40.4-.3-61.4,0,0-70,15-84.7-29.8,0,0-11.4-29.1-27.8-36.6,0,0-22.9-15.7,1.6-15.4,0,0,24.9,2,38.6,25.8,21.9,38.6,58.6,27.5,72.9,20.9,2.3-16,8.8-27.1,16-33.7-55.9-6.2-112.3-14.3-112.3-110.5,0-27.5,7.6-41.3,23.6-58.9-2.6-6.5-11.1-33.3,2.6-67.9,20.9-6.5,69,27,69,27a236.24,236.24,0,0,1,125.6,0s48.1-33.6,69-27c13.7,34.7,5.2,61.4,2.6,67.9,16,17.7,25.8,31.5,25.8,58.9,0,96.5-58.9,104.2-114.8,110.5,9.2,7.9,17,22.9,17,46.4,0,33.7-.3,75.4-.3,83.6,0,6.5,4.6,14.4,17.3,12.1C428.2,449.8,496,354.9,496,244,496,105.3,383.5,0,244.8,0ZM97.2,344.9c-1.3,1-1,3.3.7,5.2,1.6,1.6,3.9,2.3,5.2,1,1.3-1,1-3.3-.7-5.2C100.8,344.3,98.5,343.6,97.2,344.9Zm-10.8-8.1c-.7,1.3.3,2.9,2.3,3.9,1.6,1,3.6.7,4.3-.7s-.3-2.9-2.3-3.9C88.7,335.5,87.1,335.8,86.4,336.8Zm32.4,35.6c-1.6,1.3-1,4.3,1.3,6.2,2.3,2.3,5.2,2.6,6.5,1,1.3-1.3.7-4.3-1.3-6.2C123.1,371.1,120.1,370.8,118.8,372.4Zm-11.4-14.7c-1.6,1-1.6,3.6,0,5.9s4.3,3.3,5.6,2.3c1.6-1.3,1.6-3.9,0-6.2-1.4-2.3-4-3.3-5.6-2Z"></path>
+		</svg>
+	</a>
+	<a class="highlight" href="https://www.twitter.com/bradenthehair/" title="Braden East on Twitter">
+		<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 504">
+			Twitter
+			<path fill="currentColor" d="M459.37,150.72c.33,4.54.33,9.09.33,13.64,0,138.72-105.59,298.56-298.56,298.56A296.51,296.51,0,0,1,0,415.81a215.83,215.83,0,0,0,25.34,1.3,210.15,210.15,0,0,0,130.27-44.83A105.12,105.12,0,0,1,57.5,299.51a132.94,132.94,0,0,0,19.82,1.62,111.09,111.09,0,0,0,27.61-3.57,105,105,0,0,1-84.14-103v-1.29a105.67,105.67,0,0,0,47.43,13.31A105.07,105.07,0,0,1,35.74,66.25,298.28,298.28,0,0,0,252.1,176.06a118.78,118.78,0,0,1-2.6-24,105,105,0,0,1,181.6-71.8,206.58,206.58,0,0,0,66.6-25.34,104.61,104.61,0,0,1-46.13,57.83A210.61,210.61,0,0,0,512,96.46a225.62,225.62,0,0,1-52.63,54.26Z"></path>
+		</svg>
+	</a>
+</div>
+<div class="flex">
+	<!-- <button class="toggle highlight" id="muted_toggle" title="Toggle sound effects">
+		<svg title="sound" width="0" height="0" class="on" aria-hidden="true" viewBox="0 0 72 72">
+			<path fill="currentColor" d="M65.87,15.76a5.63,5.63,0,1,1-5.65-5.63,5.63,5.63,0,0,1,5.65,5.63Zm-2.2,14.65A5.63,5.63,0,1,0,69.31,36a5.64,5.64,0,0,0-5.64-5.63ZM60.22,50.69a5.63,5.63,0,1,0,5.61,5.64h0A5.62,5.62,0,0,0,60.22,50.69ZM36.38,6.45,15,22.31a4.27,4.27,0,0,1-2,.77l-3,.63C8.14,24,6.76,25.29,6.8,26.83V45.36A3.39,3.39,0,0,0,10,48.42l3,.64a4.17,4.17,0,0,1,2,.77l21.43,15.8a4.49,4.49,0,0,0,5.42-.2,3.13,3.13,0,0,0,.66-.81h0a57.65,57.65,0,0,0,0-57.16h0a4.25,4.25,0,0,0-5.08-1.55A4,4,0,0,0,36.38,6.45Z" />
+		</svg>
+		<svg title="muted" width="0" height="0" class="off" aria-hidden="true" viewBox="0 0 72 72">
+			<path fill="currentColor" d="M56,25.35a57.73,57.73,0,0,1-6.56,39.27,3.35,3.35,0,0,1-.66.81,4.5,4.5,0,0,1-5.43.2L27.85,54.23ZM62.69,7.71a3.38,3.38,0,0,0-4.78.07l-5.58,5.73a66,66,0,0,0-2.94-6,4.36,4.36,0,0,0-6.09-1L21.87,22.31a4.27,4.27,0,0,1-2,.77L17,23.71a3.39,3.39,0,0,0-3.23,3.12V45.36A3.4,3.4,0,0,0,17,48.42l1.17.25-6.86,7.06a3.38,3.38,0,0,0,4.84,4.71l46.65-48A3.38,3.38,0,0,0,62.69,7.71Z" />
+		</svg>
+	</button> -->
+
+	<button class="toggle highlight" id="dark_mode_toggle" title="Toggle dark mode">
+		<svg title="sun" width="0" height="0" class="on" aria-hidden="true" viewBox="0 0 72 72">
+			<path fill="currentColor" d="M63.39,37.15A27.4,27.4,0,0,1,36,64.55C-.39,63.07-.28,11.23,36,9.75A27.4,27.4,0,0,1,63.39,37.15ZM36,.31c-4.81.11-4.81,7.17,0,7.37C40.81,7.48,40.81.42,36,.31ZM7.15,14.23a3.67,3.67,0,1,0,5.16-.56A3.67,3.67,0,0,0,7.15,14.23ZM.08,45.34C1.31,50,8.17,48.41,7.25,43.7,6,39-.84,40.63.08,45.34Zm20,25c4.4,2,7.47-4.4,3.17-6.55S15.74,68.05,20,70.3ZM52,70.3c4.3-2.25,1.23-8.59-3.17-6.55S47.56,72.25,52,70.3Zm20-25C72.84,40.63,66,39,64.75,43.7,63.83,48.41,70.69,50,71.92,45.34ZM64.85,14.23c-3.06-3.68-8.69.61-5.73,4.5C62.09,22.42,67.72,18,64.85,14.23Z" />
+		</svg>
+		<svg title="moon" width="0" height="0" class="off" aria-hidden="true" viewBox="0 0 72 72">
+			<path fill="currentColor" d="M59,35.79C59.06,65,23.32,79.87,2.65,59.32c31.4,4.57,50.7-33.92,28.09-56.19A33.05,33.05,0,0,1,59,35.79Zm2.28-21.12a4.45,4.45,0,0,0,6.51-4.91,4.38,4.38,0,1,0-6.51,4.91Z" />
+		</svg>
+	</button>
+</div>
+</footer>
+
+</body>
+
+</html>

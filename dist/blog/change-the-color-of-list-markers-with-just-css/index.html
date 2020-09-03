@@ -45,10 +45,7 @@ Change the color of list markers with just CSS
 			document
 				.documentElement
 				.classList
-				.toggle(
-					preference,
-					locallySaved
-				);
+				.toggle(preference, locallySaved);
 
 			localStorage.setItem(preference, locallySaved);
 		}

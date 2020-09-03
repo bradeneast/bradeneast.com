@@ -1,29 +1,32 @@
 import { readLocal, clearDist } from './lib/utils.js';
-import makeTree from './lib/tree.js';
+import tree from './lib/tree.js';
 import render from './lib/render.js';
 import fs from 'fs-extra';
 
 console.time('Build Success');
 
-let treeReady = makeTree();
-let cacheReady = readLocal('./cache');
-let readyToRender = Promise.all([treeReady, cacheReady]);
+let useCache = /-dev/i.test(process.argv.toString());
+let cache = readLocal('./cache');
+fs.writeFile('./cache', JSON.stringify(tree));
 
-readyToRender.then(([tree, cached]) => {
-	fs.writeFile('./cache', JSON.stringify(tree));
+if (!cache || !useCache) {
+	clearDist();
+	tree.map(render);
+}
 
-	if (cached) {
-		cached = JSON.parse(cached);
-		console.log(tree.length, cached.length);
-		tree.map((page, index) => {
-			if (page.props.sys.content == cached[index].props.sys.content) return;
-			if (page.props.sys.href == cached[index].props.sys.href) return;
+if (cache) {
+	cache = JSON.parse(cache);
+
+	tree.map((page, index) => {
+
+		let pageSys = page.props.sys;
+		let cacheSys = cache[index].props.sys;
+
+		if (pageSys.content != cacheSys.content)
 			render(page);
-		})
-	}
-	else {
-		clearDist().then(() => tree.map(render));
-	}
+		else if (pageSys.href != cacheSys.href)
+			render(page);
+	})
+}
 
-	console.timeEnd('Build Success');
-});
+console.timeEnd('Build Success');
