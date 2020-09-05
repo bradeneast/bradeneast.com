@@ -14,7 +14,7 @@ if (!cache || !useCache) {
 	tree.map(render);
 }
 
-if (cache) {
+if (cache && cache.length) {
 	cache = JSON.parse(cache);
 
 	tree.map((page, index) => {
