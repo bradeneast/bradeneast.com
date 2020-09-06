@@ -1,31 +1,37 @@
 import safeEval from 'safe-eval';
-import html from 'html-parse-stringify';
-import { matchTag, getAttributes, getInner, accessProp, readLocal, getAbsolutePath, isValidDate } from './utils.js';
+import { matchTag, getAttributes, getInner, accessProp, readLocal, getAbsolutePath, isValidDate, getElementProps } from './utils.js';
 import config from '../config.js';
 
 
-export function parseBrick(string, props) {
+export function parseBrick(string, pageProps) {
 
-	let attrs = getAttributes(string);
-	let ast = html.parse(getInner(string));
-	let brickContent = readLocal(getAbsolutePath(attrs.use, props.sys.href));
+	let { attrs, inner } = getElementProps(string);
+	let location = pageProps.sys.href;
+	let brickElementChildren = inner.match(matchTag());
+	let brickContent = readLocal(getAbsolutePath(attrs.use, location));
+	let brickProps = {};
 
-	for (let { name, children } of ast) {
-		if (!children) continue;
-
-		let elem = props.sys.content.match(matchTag(name))[0];
-		let attrs = getAttributes(elem);
-		let inner = getInner(elem).trim();
-
-		if (isValidDate(inner))
-			props[name] = new Date(inner);
-		else if (attrs?.use)
-			props[name] = readLocal(getAbsolutePath(attrs.use, props.sys.href));
-		else
-			props[name] = inner;
+	let setProps = (name, value) => {
+		brickProps[name] = value;
+		pageProps[name] = value;
 	}
 
-	return fillSlots(brickContent, props);
+	for (let elem of brickElementChildren || []) {
+		let { name, attrs, inner } = getElementProps(elem);
+		if (isValidDate(inner))
+			setProps(name, new Date(inner));
+		else if (attrs?.use)
+			setProps(
+				name,
+				readLocal(
+					getAbsolutePath(attrs.use, location)
+				)
+			);
+		else
+			setProps(name, inner.trim());
+	}
+
+	return fillSlots(brickContent, brickProps);
 }
 
 

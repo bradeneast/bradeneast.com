@@ -20,11 +20,11 @@ if (cache && cache.length) {
 	tree.map((page, index) => {
 
 		let pageSys = page.props.sys;
-		let cacheSys = cache[index].props.sys;
+		let cacheSys = cache[index]?.props?.sys;
 
-		if (pageSys.content != cacheSys.content)
+		if (pageSys.content != cacheSys?.content)
 			render(page);
-		else if (pageSys.href != cacheSys.href)
+		else if (pageSys.href != cacheSys?.href)
 			render(page);
 	})
 }

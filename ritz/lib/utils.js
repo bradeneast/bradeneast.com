@@ -4,7 +4,11 @@ import prism from 'prismjs';
 import config from '../config.js';
 
 /**Joins parts of a URL with a forward slash */
-export let slash = (...parts) => parts.join('/');
+export let slash = (...parts) => parts
+	.map(part =>
+		part.trim().replace(/^\/+|\/+$/, '')
+	)
+	.join('/');
 
 /**Gets the tag name of the first HTML element in a string */
 export let getTagName = string => string.match(/(?<=<).+?(?=[ >])/)?.[0];
@@ -15,21 +19,46 @@ export let matchTag = tagName => tagName
 	: /<(\w*)\b.*?>((.|\n|\r)(?!<\1))*?<\/\1>/g;
 
 
+export function getElementProps(string) {
+	return {
+		inner: getInner(string),
+		attrs: getAttributes(string),
+		name: getTagName(string)
+	}
+}
+
+
 /**Gets the inner HTML of a tag */
 export function getInner(string) {
 	let tagName = getTagName(string);
 	let matcher = new RegExp(`(?<=<${tagName}.*?>)((.|\n|\r)(?!<${tagName}))+?(?=<\/${tagName}>)`);
 	return string.match(matcher)?.[0] || '';
-};
+}
+
+/**Takes a stringified HTML element and returns a map of its attributes */
+export function getAttributes(string) {
+	let firstLine = string.split(/[\n\r]/)[0];
+	let attributeChunks = firstLine.match(/(?<= +).+?=["'].+?(?=["'])/g);
+	let attributes = {};
+
+	if (attributeChunks)
+		attributeChunks.map(chunk => {
+			let [key, value] = chunk.split('="');
+			attributes[key] = value;
+		});
+
+	return attributes;
+}
 
 
 /**Takes a relative path and converts it to an absolute path in the src folder */
 export function getAbsolutePath(path, currentDir) {
 	path = path.trim();
+	let isRelative = path[0] == '.';
 	return slash(
 		config.paths.src,
-		path[0] == '.' ? currentDir : '',
-		path
+		isRelative ? currentDir : '',
+		isRelative ? path.slice(1) : path
 	)
 }
 
@@ -113,21 +142,6 @@ export function dynamicSort(property) {
 export function isValidDate(value) {
 	value = new Date(value);
 	return value && Object.prototype.toString.call(value) === "[object Date]" && !isNaN(value);
-}
-
-
-export function getAttributes(string) {
-	let firstLine = string.split(/[\n\r]/)[0];
-	let attributeChunks = firstLine.match(/(?<= +).+?=["'].+?(?=["'])/g);
-	let attributes = {};
-
-	if (attributeChunks)
-		attributeChunks.map(chunk => {
-			let [key, value] = chunk.split('="');
-			attributes[key] = value;
-		});
-
-	return attributes;
 }
 
 /**Returns a deep iterable of files from the given directory */
