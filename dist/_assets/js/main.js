@@ -14,17 +14,17 @@ var __values = (this && this.__values) || function(o) {
         var _b = _a === void 0 ? {} : _a, a = _b.onload, _c = _b.selector, d = _c === void 0 ? "a[href^=\"" + window.location.origin + "\"]:not([data-no-schwifty]), a[href^=\"/\"]:not([data-no-schwifty])" : _c, _d = _b.cacheLimit, g = _d === void 0 ? 85 : _d, _e = _b.preserveScroll, w = _e === void 0 ? !1 : _e, _f = _b.transitioningAttribute, x = _f === void 0 ? "data-schwifty" : _f, q = _b.preserveAttributes;
         var y = q === !0;
         typeof q != "object" && (q = { documentElement: y, head: y, body: y });
-        var m = "schwifty-preload", n = 'link[rel="stylesheet"]', e = document, o = e.documentElement, r = "innerHTML", k = new Map(), L = new IntersectionObserver(function (b, c) { return b.forEach(function (p) { var t = p.isIntersecting, u = p.target.href; if (!t && t != void 0)
+        var m = "schwifty-preload", n = 'link[rel="stylesheet"]', f = document, o = f.documentElement, r = "innerHTML", k = new Map(), L = new IntersectionObserver(function (b, c) { return b.forEach(function (p) { var t = p.isIntersecting, u = p.target.href; if (!t && t != void 0)
             return; k.size >= g && k["delete"](k.keys()[0]), k.get(u) ? c.unobserve(p.target) : N(u); }); }, { threshold: .5 }), F = function (b, c) {
-            if (c === void 0) { c = e; }
+            if (c === void 0) { c = f; }
             return c.querySelector(b);
         }, s = function (b, c) {
-            if (c === void 0) { c = e; }
+            if (c === void 0) { c = f; }
             return c.querySelectorAll(b);
-        }, M = function (b) { return b.target.closest(d) || {}; }, G = function () { return s(d).forEach(function (b) { return L.observe(b); }); }, j = function (b, c) {
+        }, M = function (b) { return b.target.closest(d) || {}; }, G = function () { return s(d).forEach(function (b) { return L.observe(b); }); }, h = function (b, c) {
             if (c === void 0) { c = window; }
             return c.dispatchEvent(new Event(b));
-        }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(o); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1000; }, N = function (b) { if (!b)
+        }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(o); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1e3; }, N = function (b) { if (!b)
             return; var c = new XMLHttpRequest(); c.onreadystatechange = function () { this.status == 200 && k.set(b, c.responseXML); }, c.open("GET", b, !0), c.responseType = "document", c.send(); }, J = function (b) {
             var e_1, _a;
             var c = k.get(b);
@@ -32,15 +32,15 @@ var __values = (this && this.__values) || function(o) {
                 location = b;
                 return;
             }
-            history.replaceState(null, null, b), s(n + ":not(." + m + ")").forEach(function (f) { var h = f.href.replace(location.origin, ""), i = F(n + "." + m + "[href=\"" + h + "\"]"), K = F(n + "[href=\"" + h + "\"]", c); K && !i && (f.classList.add(m), o.append(f)), !K && i && i.remove(); });
+            history.replaceState(null, null, b), s(n + ":not(." + m + ")").forEach(function (e) { var i = e.href.replace(location.origin, ""), j = F(n + "." + m + "[href=\"" + i + "\"]"), K = F(n + "[href=\"" + i + "\"]", c); K && !j && (e.classList.add(m), o.append(e)), !K && j && j.remove(); });
             var p = n + ":not(." + m + ")", t = n + "." + m, u = s(p, c), O = s(t);
-            var _loop_1 = function (f) {
-                Array.from(u).some(function (h) { return h.href == f.href; }) || f.remove();
+            var _loop_1 = function (e) {
+                Array.from(u).some(function (i) { return i.href == e.href; }) || e.remove();
             };
             try {
                 for (var O_1 = __values(O), O_1_1 = O_1.next(); !O_1_1.done; O_1_1 = O_1.next()) {
-                    var f = O_1_1.value;
-                    _loop_1(f);
+                    var e = O_1_1.value;
+                    _loop_1(e);
                 }
             }
             catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -50,15 +50,15 @@ var __values = (this && this.__values) || function(o) {
                 }
                 finally { if (e_1) throw e_1.error; }
             }
-            ["body", "head", "documentElement"].forEach(function (f) {
+            ["body", "head", "documentElement"].forEach(function (e) {
                 var e_2, _a, e_3, _b;
-                if (q[f])
+                if (q[e])
                     return;
-                var h = e[f];
+                var i = f[e];
                 try {
-                    for (var _c = __values(h.attributes), _d = _c.next(); !_d.done; _d = _c.next()) {
-                        var i = _d.value;
-                        h.removeAttribute(i.name);
+                    for (var _c = __values(i.attributes), _d = _c.next(); !_d.done; _d = _c.next()) {
+                        var j = _d.value;
+                        i.removeAttribute(j.name);
                     }
                 }
                 catch (e_2_1) { e_2 = { error: e_2_1 }; }
@@ -69,9 +69,9 @@ var __values = (this && this.__values) || function(o) {
                     finally { if (e_2) throw e_2.error; }
                 }
                 try {
-                    for (var _e = __values(c[f].attributes), _f = _e.next(); !_f.done; _f = _e.next()) {
-                        var i = _f.value;
-                        h.setAttribute(i.name, i.value);
+                    for (var _e = __values(c[e].attributes), _f = _e.next(); !_f.done; _f = _e.next()) {
+                        var j = _f.value;
+                        i.setAttribute(j.name, j.value);
                     }
                 }
                 catch (e_3_1) { e_3 = { error: e_3_1 }; }
@@ -81,9 +81,9 @@ var __values = (this && this.__values) || function(o) {
                     }
                     finally { if (e_3) throw e_3.error; }
                 }
-            }), o.setAttribute(x, "out"), j("unload"), setTimeout(function () { j("loading", e), e.body[r] = c.body[r], e.head[r] = c.head[r], o.setAttribute(x, "in"), j("interactive", e), j("DOMContentLoaded", e), w || scrollTo(0, 0), a && a(), G(), setTimeout(function () { return o.removeAttribute(x); }, I()), j("complete", e), j("load"); }, I());
+            }), o.setAttribute(x, "out"), h("pagehide"), h("unload"), setTimeout(function () { h("loading", f), f.body[r] = c.body[r], f.head[r] = c.head[r], o.setAttribute(x, "in"), h("interactive", f), h("DOMContentLoaded", f), w || scrollTo(0, 0), a && (a.length ? a.map(function (e) { return e(); }) : a()), G(), setTimeout(function () { return o.removeAttribute(x); }, I()), h("complete", f), h("load"), h("pageshow"); }, I());
         };
-        G(), addEventListener("popstate", function (b) { return J(location.href); }), addEventListener("click", function (b) { var c = M(b).href; c && (b.preventDefault(), j("beforeunload"), history.pushState(null, null, location.href), J(c)); });
+        G(), addEventListener("popstate", function (b) { return J(location.href); }), addEventListener("click", function (b) { var c = M(b).href; c && (b.preventDefault(), h("beforeunload"), history.pushState(null, null, location.href), J(c)); });
     }
     return z;
 }());  var l = function (a, d) {
@@ -97,9 +97,9 @@ var __values = (this && this.__values) || function(o) {
     var g = document.createElement(a);
     return g.innerHTML = d, g;
 }, E = function (a, d) { return d == void 0 ? JSON.parse(localStorage.getItem(a)) : localStorage.setItem(a, JSON.stringify(d)); }, B = function (a) { var d = E(a); document.documentElement.classList.toggle(a, !d), E(a, !d); }; function A(a) {
+    var _a, _b;
     if (a === void 0) { a = ""; }
-    var _a, _b, _c;
-    var d = decodeURIComponent(a) || "", g = d.split("/").pop(), w = (_c = (_b = (_a = g) === null || _a === void 0 ? void 0 : _a.split(".")) === null || _b === void 0 ? void 0 : _b.shift()) === null || _c === void 0 ? void 0 : _c.replace(/-|\+/g, " ");
+    var d = decodeURIComponent(a) || "", g = d.split("/").pop(), w = (_b = (_a = g === null || g === void 0 ? void 0 : g.split(".")) === null || _a === void 0 ? void 0 : _a.shift()) === null || _b === void 0 ? void 0 : _b.replace(/-|\+/g, " ");
     return w || "";
 } function D() {
     var e_4, _a, e_5, _b, e_6, _c;

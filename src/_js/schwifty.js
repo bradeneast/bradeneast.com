@@ -5,7 +5,7 @@
 export default class Schwifty {
 
 	constructor({
-		onload, // the callback that runs when a new page is rendered
+		onload, // the callback(s) that run when a new page is rendered
 		selector = `a[href^="${window.location.origin}"]:not([data-no-schwifty]), a[href^="/"]:not([data-no-schwifty])`, // the DOM selector used to find preloadable links
 		cacheLimit = 85, // the maximum number of pages allowed to be preloaded in the cache
 		preserveScroll = false, // preserve scroll position on page load
@@ -118,7 +118,9 @@ export default class Schwifty {
 
 			for (let preloadedSheet of preloadedStyleSheets) {
 				if (
-					!Array.from(currentStyleSheets).some(s => s.href == preloadedSheet.href)
+					!Array
+						.from(currentStyleSheets)
+						.some(s => s.href == preloadedSheet.href)
 				)
 					preloadedSheet.remove();
 			}
@@ -129,13 +131,16 @@ export default class Schwifty {
 					tagName => {
 						if (preserveAttributes[tagName]) return;
 						let elem = doc[tagName];
-						for (let attr of elem.attributes) elem.removeAttribute(attr.name);
-						for (let attr of preloaded[tagName].attributes) elem.setAttribute(attr.name, attr.value);
+						for (let attr of elem.attributes)
+							elem.removeAttribute(attr.name);
+						for (let attr of preloaded[tagName].attributes)
+							elem.setAttribute(attr.name, attr.value);
 					}
 				);
 
 			// Transition out current page
 			html.setAttribute(transitioningAttribute, 'out');
+			dispatch('pagehide');
 			dispatch('unload');
 			setTimeout(
 				() => {
@@ -152,7 +157,10 @@ export default class Schwifty {
 
 					// Callbacks
 					if (!preserveScroll) scrollTo(0, 0);
-					if (onload) onload();
+					if (onload)
+						onload.length
+							? onload.map(func => func())
+							: onload();
 					observeTargets();
 
 					setTimeout(() =>
@@ -163,14 +171,12 @@ export default class Schwifty {
 					// Dispatch some more events
 					dispatch('complete', doc);
 					dispatch('load');
+					dispatch('pageshow');
 
 				},
 				getTransitionTime()
 			);
-
 		}
-
-
 
 		// Listen + Observe
 		observeTargets();
@@ -184,7 +190,5 @@ export default class Schwifty {
 				load(href);
 			}
 		});
-
-
 	}
 }
