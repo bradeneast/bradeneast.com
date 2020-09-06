@@ -3,10 +3,15 @@
 	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 	gap: $flow2;
 	align-items: center;
-	padding: $flow4 0;
-	margin-bottom: $flow4;
+	padding: $flow3 0;
+	margin-bottom: $flow3;
 
 	&:first-of-type {
-		margin-top: $flow4;
+		margin-top: $flow3;
+	}
+
+	&--image {
+		display: grid;
+		place-items: center;
 	}
 }

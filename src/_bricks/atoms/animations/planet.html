@@ -1,0 +1,180 @@
+<style>
+	.illustration {
+		font-size: .9rem;
+		--lightAngle: -37deg;
+		--planetColor: linear-gradient(var(--lightAngle), deeppink, var(--primary));
+		width: 10em;
+		height: 10em;
+		transform: rotate(-4deg);
+	}
+
+	.planet {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 37% 44% 50% 44% / 44% 37% 44% 50%;
+		background: var(--planetColor);
+		overflow: hidden;
+		animation: float 7s ease-in-out infinite reverse;
+	}
+
+	.moon--wrapper {
+		--y: 0;
+		position: absolute;
+		width: 175%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: orbit-y 5s linear infinite;
+	}
+
+	.moon {
+		top: 50%;
+		left: 0;
+		width: 2.5em;
+		height: 2.5em;
+		transform: translate(-50%, -50%);
+		background: linear-gradient(var(--lightAngle), var(--g3), var(--g5));
+		border-radius: 50%;
+		animation: orbit-x 5s ease-in-out infinite;
+	}
+
+	.orbit--front,
+	.orbit--back {
+		width: 175%;
+		height: 4em;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		border: 0.63em solid var(--g7);
+	}
+
+	.orbit--back {
+		clip-path: polygon(0 0, 0 50%, 100% 50%, 100% 0%);
+	}
+
+	.orbit--front {
+		clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%);
+		z-index: 1;
+	}
+
+	.pockmark {
+		--size: 3em;
+		--x: 0;
+		--y: 0;
+		position: absolute;
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		opacity: 0.37;
+		top: var(--y);
+		left: var(--x);
+		transform: translate(-50%, -50%);
+		background: linear-gradient(to right, transparent, black);
+	}
+
+	.pockmark:nth-of-type(1) {
+		--size: 1.4em;
+		--x: 55%;
+		--y: 15%;
+	}
+
+	.pockmark:nth-of-type(2) {
+		--size: 4.4em;
+		--x: 70%;
+		--y: 55%;
+	}
+
+	.pockmark:nth-of-type(3) {
+		--size: 3em;
+		--x: 40%;
+		--y: 95%;
+	}
+
+	.pockmark:nth-of-type(4) {
+		--size: 3.3em;
+		--x: 18%;
+		--y: 30%;
+	}
+
+	.pockmark:nth-of-type(5) {
+		--size: 2em;
+		--x: 5%;
+		--y: 65%;
+	}
+
+	@keyframes orbit-x {
+		0% {
+			left: 0;
+		}
+
+		50% {
+			left: 100%;
+		}
+
+		100% {
+			left: 0;
+		}
+	}
+
+	@keyframes orbit-y {
+		0% {
+			top: 0;
+			z-index: 1;
+		}
+
+		25% {
+			top: -1.7em;
+			z-index: 0;
+		}
+
+		50% {
+			top: 0;
+			z-index: 1;
+		}
+
+		75% {
+			top: 1.7em;
+		}
+
+		100% {
+			top: 0;
+			z-index: 1;
+		}
+	}
+
+	@keyframes float {
+		0% {
+			top: -0.2em;
+		}
+
+		50% {
+			top: 0.6em;
+		}
+
+		100% {
+			top: -0.2em;
+		}
+	}
+</style>
+
+<div id="planet" class="illustration--wrapper">
+	<div class="illustration">
+		<div class="orbit--front"></div>
+		<div class="orbit--back"></div>
+		<div class="moon--wrapper">
+			<div class="moon"></div>
+		</div>
+		<div class="planet">
+			<div class="pockmark"></div>
+			<div class="pockmark"></div>
+			<div class="pockmark"></div>
+			<div class="pockmark"></div>
+			<div class="pockmark"></div>
+		</div>
+	</div>
+</div>
