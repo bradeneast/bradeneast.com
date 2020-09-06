@@ -82,7 +82,7 @@ svg {
 	height: auto;
 }
 
-img,
+img:not([src*="png"]):not([src*="svg"]),
 iframe,
 video {
 	background: var(--g5);
@@ -95,6 +95,7 @@ video {
 @import "./animation";
 @import "./input";
 @import "./post";
+@import "./blurb";
 @import "./feed";
 @import "./table";
 @import "./project";

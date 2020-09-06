@@ -1,0 +1,12 @@
+.blurb {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	gap: $flow2;
+	align-items: center;
+	padding: $flow4 0;
+	margin-bottom: $flow4;
+
+	&:first-of-type {
+		margin-top: $flow4;
+	}
+}
