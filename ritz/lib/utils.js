@@ -6,19 +6,20 @@ import config from '../config.js';
 /**Joins parts of a URL with a forward slash */
 export let slash = (...parts) => parts.join('/');
 
-/**JSON.stringify() callback for filtering out long values */
-export let removeLongValues = (key, value) => value?.length > 20000 ? undefined : value;
+/**Gets the tag name of the first HTML element in a string */
+export let getTagName = string => string.match(/(?<=<).+?(?=[ >])/)?.[0];
 
 /**Matches the outer HTML of the first tag with that name */
-export let matchTag = (tagName = '') => new RegExp(`[\t ]*<${tagName}(.|\n|\r)+?<\/${tagName}>`, 'g');
+export let matchTag = tagName => tagName
+	? new RegExp(`<${tagName}((.|\n|\r)(?!<${tagName}))+?<\/${tagName}>`, 'g')
+	: /<(\w*)\b.*?>((.|\n|\r)(?!<\1))*?<\/\1>/g;
 
 
 /**Gets the inner HTML of a tag */
 export function getInner(string) {
-	let tagName = string.match(/(?<=<).+?(?=[ >])/)[0];
-	let start = string.indexOf('>') + 1;
-	let end = string.indexOf(`</${tagName}>`);
-	return string.slice(start, end);
+	let tagName = getTagName(string);
+	let matcher = new RegExp(`(?<=<${tagName}.*?>)((.|\n|\r)(?!<${tagName}))+?(?=<\/${tagName}>)`);
+	return string.match(matcher)?.[0] || '';
 };
 
 

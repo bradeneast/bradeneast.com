@@ -8,6 +8,9 @@
 	],
 	"liveServer.settings.root": "/dist",
 	"liveServer.settings.file": "/404/index.html",
+	"liveServer.settings.ignoreFiles": [
+		"ritz/**",
+	],
 	"saveAndRun": {
 		"commands": [
 			{
