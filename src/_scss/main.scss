@@ -71,6 +71,7 @@ video,
 iframe,
 svg {
 	width: 100%;
+	max-width: $mobile / 2;
 	max-height: 100%;
 	user-select: none;
 }
@@ -121,8 +122,8 @@ video {
 		}
 
 		main > * {
-			margin-right: $flow1;
-			margin-left: 1rem;
+			margin-right: $flow1 / 2;
+			margin-left: $flow1;
 		}
 	}
 
