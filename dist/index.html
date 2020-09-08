@@ -319,10 +319,13 @@
 	}
 
 	#rocket {
+		--angle: -37deg;
+		--size: 14em;
 		--tint: rgba(0, 0, 0, 0.37);
 		width: 100%;
-		height: 14em;
+		height: var(--size);
 		overflow: hidden;
+		will-change: transform;
 	}
 
 	#rocket .rocket--wrapper {
@@ -332,9 +335,9 @@
 	#rocket .rocket {
 		top: 50%;
 		left: 50%;
-		width: 14em;
-		height: 7em;
-		transform: translate(-40%, -80%) scale(.85) rotate(-37deg);
+		width: var(--size);
+		height: calc(var(--size) / 2);
+		transform: translate(-40%, -80%) scale(.85) rotate(var(--angle));
 	}
 
 	#rocket .body {
@@ -407,7 +410,7 @@
 	}
 
 	#rocket .stars {
-		animation: starsPassBy 7s linear infinite;
+		transform: rotate(var(--angle));
 	}
 
 	#rocket .star {
@@ -416,27 +419,16 @@
 		height: var(--amt);
 		clip-path: polygon(0 50%, 37% 37%, 50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%);
 		background: radial-gradient(var(--primary), var(--accent));
-		animation: starMoves 7s linear infinite;
-		animation-duration: calc(7s / (var(--amt) / 1em));
+		animation: starMoves 5s linear infinite;
 	}
 
 	@keyframes starMoves {
-		0% {
-			transform: rotate(-37deg) translate(var(--amt) * 2);
-		}
-
-		100% {
-			transform: rotate(-37deg) translateX(calc(var(--amt) * -2));
-		}
-	}
-
-	@keyframes starsPassBy {
 		from {
-			transform: translate(100%, -100%);
+			transform: translateX(calc(var(--size) + var(--amt) * 10)) rotate(calc(var(--angle) * -1));
 		}
 
 		to {
-			transform: translate(-100%, 100%);
+			transform: translateX(calc(var(--size) * -1 + var(--amt) * -10)) rotate(calc(var(--angle) * -1));
 		}
 	}
 
@@ -457,13 +449,14 @@
 
 <div id="rocket" class="illustration">
 	<div class="stars">
-		<div class="star" style="--amt: .8em"></div>
-		<div class="star" style="top: 25%; left: -10%; --amt: 2em;"></div>
+		<div class="star" style="top: 70%; left: 15%; --amt: .8em;"></div>
+		<div class="star" style="top: 90%; left: 35%; --amt: .8em;"></div>
+		<div class="star" style="top: 105%; left: 90%;"></div>
 		<div class="star" style="top: -10%; left: 50%;"></div>
-		<div class="star" style="top: 40%; left: 75%; --amt: 2.4em"></div>
-		<div class="star" style="top: 100%; left: 72%;"></div>
-		<div class="star" style="top: 70%; left: 35%; --amt: 1.6em;"></div>
-		<div class="star" style="top: 130%; left: 15%; --amt: .8em"></div>
+		<div class="star" style="--amt: 1.4em;"></div>
+		<div class="star" style="top: -10%; left: 100%; --amt: 1.4em;"></div>
+		<div class="star" style="top: 20%; left: 30%; --amt: 2em;"></div>
+		<div class="star" style="top: 70%; left: 125%; --amt: 2em;"></div>
 	</div>
 	<div class="rocket--wrapper">
 		<div class="rocket">
