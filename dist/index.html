@@ -82,13 +82,26 @@
 	</div>
 	<div class="blurb--image">
 		<style>
-	.illustration {
-		font-size: .9rem;
+	#planet.illustration {
 		--lightAngle: -37deg;
-		--planetColor: linear-gradient(var(--lightAngle), deeppink, var(--primary));
+		--contrast: rgba(0, 0, 0, 0.3);
+		--planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
+		transform: translateY(-1em) rotate(-4deg);
+		font-size: .9rem;
 		width: 10em;
 		height: 10em;
-		transform: rotate(-4deg);
+		will-change: transform;
+	}
+
+	#planet.illustration::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2em;
+		background: var(--contrast);
+		border-radius: 50%;
+		top: calc(100% + 1em);
+		animation: planetShadow 7s ease-in-out infinite reverse;
 	}
 
 	.planet {
@@ -97,10 +110,11 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		border-radius: 37% 44% 50% 44% / 44% 37% 44% 50%;
-		background: var(--planetColor);
+		border-radius: 40% 45% 50% 45% / 45% 40% 45% 50%;
+		background-image: var(--planetColor);
+		background-color: var(--primary);
 		overflow: hidden;
-		animation: float 7s ease-in-out infinite reverse;
+		animation: planetFloat 7s ease-in-out infinite reverse;
 	}
 
 	.moon--wrapper {
@@ -110,7 +124,7 @@
 		height: 100%;
 		left: 50%;
 		transform: translateX(-50%);
-		animation: orbit-y 5s linear infinite;
+		animation: orbitY 5s linear infinite;
 	}
 
 	.moon {
@@ -121,7 +135,7 @@
 		transform: translate(-50%, -50%);
 		background: linear-gradient(var(--lightAngle), var(--g3), var(--g5));
 		border-radius: 50%;
-		animation: orbit-x 5s ease-in-out infinite;
+		animation: orbitX 5s ease-in-out infinite;
 	}
 
 	.orbit--front,
@@ -190,7 +204,27 @@
 		--y: 65%;
 	}
 
-	@keyframes orbit-x {
+	@keyframes planetShadow {
+		0% {
+			transform: scaleX(1);
+			opacity: 0.63;
+			filter: blur(.5em);
+		}
+
+		50% {
+			transform: scaleX(.85);
+			opacity: 1;
+			filter: blur(.3em);
+		}
+
+		100% {
+			transform: scaleX(1);
+			opacity: 0.63;
+			filter: blur(.5em);
+		}
+	}
+
+	@keyframes orbitX {
 		0% {
 			left: 0;
 		}
@@ -204,7 +238,7 @@
 		}
 	}
 
-	@keyframes orbit-y {
+	@keyframes orbitY {
 		0% {
 			top: 0;
 			z-index: 1;
@@ -230,7 +264,7 @@
 		}
 	}
 
-	@keyframes float {
+	@keyframes planetFloat {
 		0% {
 			top: -0.2em;
 		}
@@ -245,19 +279,167 @@
 	}
 </style>
 
-<div id="planet" class="illustration--wrapper">
-	<div class="illustration">
-		<div class="orbit--front"></div>
-		<div class="orbit--back"></div>
-		<div class="moon--wrapper">
-			<div class="moon"></div>
-		</div>
-		<div class="planet">
-			<div class="pockmark"></div>
-			<div class="pockmark"></div>
-			<div class="pockmark"></div>
-			<div class="pockmark"></div>
-			<div class="pockmark"></div>
+<div id="planet" class="illustration">
+	<div class="orbit--front"></div>
+	<div class="orbit--back"></div>
+	<div class="moon--wrapper">
+		<div class="moon"></div>
+	</div>
+	<div class="planet">
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+	</div>
+</div>
+	</div>
+</div>
+
+		<div class="blurb">
+	<div class="blurb--content">
+		<h2 class="blurb--headline">
+			What about tomorrow?
+		</h2>
+		<p class="blurb--description">
+			I'm really into <em>designing logos</em>, so I'm starting to help <a href="/design">organizations on a mission</a> create resilient brands.
+		</p>
+	</div>
+	<div class="blurb--image">
+		<style>
+	#rocket *,
+	#rocket *::before,
+	#rocket *::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	#rocket {
+		--accent: #ff48e0;
+		--tint: rgba(0, 0, 0, 0.37);
+		width: 14em;
+		height: 7em;
+	}
+
+	#rocket .rocket {
+		animation: rocketFloat 7s ease-in-out infinite;
+	}
+
+	#rocket .body {
+		background-color: var(--g7);
+		background-image: linear-gradient(transparent, var(--tint)), linear-gradient(to right, transparent 85%, var(--g6) 0);
+		border-radius: 0 50% 50% 0;
+	}
+
+	#rocket .flame {
+		width: 3.7em;
+		height: 3.7em;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(-45deg);
+		border-radius: 0% 50% 50% 50%;
+		background: linear-gradient(to top left, var(--accent), var(--primary));
+	}
+
+	#rocket .window {
+		border-radius: 50%;
+		width: 5em;
+		height: 5em;
+		left: 37%;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: var(--primary);
+		background-image: linear-gradient(transparent, transparent, var(--tint));
+		border: .37em solid var(--g6);
+	}
+
+	#rocket .window::after {
+		background: white;
+		border-radius: 50%;
+		left: 50%;
+		top: 10%;
+		width: 2em;
+		height: .63em;
+		transform: translateX(-50%);
+	}
+
+	#rocket .fin {
+		--x: -50%;
+		--y: -50%;
+		background-color: var(--g6);
+		background-image: linear-gradient(transparent, var(--tint));
+		top: 100%;
+		height: 50%;
+		width: 85%;
+		left: -2em;
+		transform: translateY(var(--y));
+		border-radius: 100% 0 0 0 / 100% 0 0 0;
+		clip-path: polygon(0 0, 100% 0, 37% 100%, 0% 100%);
+	}
+
+	#rocket .fin:nth-of-type(2) {
+		--y: 50%;
+		top: auto;
+		bottom: 100%;
+		border-radius: 0 0 0 100% / 0 0 0 100%;
+		clip-path: polygon(0 0, 37% 0, 100% 100%, 0 100%);
+	}
+
+	#rocket .fin:nth-of-type(3) {
+		border-radius: 0;
+		width: 50%;
+		top: 50%;
+		z-index: 2;
+		height: .5em;
+		clip-path: polygon(0 50%, 10% 0, 100% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
+		background: var(--g5);
+	}
+
+	#rocket .star {
+		background: radial-gradient(var(--accent), var(--primary), var(--primary));
+		width: 1em;
+		height: 1em;
+		clip-path: polygon(0 50%, 37% 37%, 50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%);
+	}
+
+	@keyframes rocketFloat {
+		0% {
+			transform: scale(.85) translateY(.5em) rotate(-37deg);
+		}
+
+		50% {
+			transform: scale(.85) translateY(0) rotate(-37deg);
+		}
+
+		100% {
+			transform: scale(.85) translateY(.5em) rotate(-37deg);
+		}
+	}
+</style>
+
+<div id="rocket" class="illustration">
+	<div class="stars">
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+	</div>
+	<div class="rocket">
+		<div class="fin"></div>
+		<div class="fin"></div>
+		<div class="fin"></div>
+		<div class="flame"></div>
+		<div class="body">
+			<div class="window"></div>
 		</div>
 	</div>
 </div>
@@ -276,7 +458,7 @@
 		</p>
 	</div>
 	<div class="blurb--image">
-		<img src="_assets/images/about/me.jpg" />
+		<img style="border-radius: 50%;" src="_assets/images/about/me.jpg" />
 	</div>
 </div>
 	</main>
