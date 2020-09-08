@@ -1,5 +1,5 @@
 <style>
-	#planet.illustration {
+	#planet.animation {
 		--lightAngle: -37deg;
 		--contrast: rgba(0, 0, 0, 0.3);
 		--planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
@@ -10,7 +10,7 @@
 		will-change: transform;
 	}
 
-	#planet.illustration::after {
+	#planet.animation::after {
 		content: '';
 		position: absolute;
 		width: 100%;
@@ -196,7 +196,7 @@
 	}
 </style>
 
-<div id="planet" class="illustration">
+<div id="planet" class="animation">
 	<div class="orbit--front"></div>
 	<div class="orbit--back"></div>
 	<div class="moon--wrapper">

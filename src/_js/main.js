@@ -10,6 +10,17 @@ function init() {
 			toggle.addEventListener('click', () => togglePreference(preference))
 	}
 
+	// Pause animations outside the viewport
+	let animationHandler = new IntersectionObserver(entries =>
+		entries.map(entry =>
+			entry.target.classList
+				.toggle('paused', !entry.isIntersecting)
+		)
+	);
+	for (let animation of $$('.animation')) {
+		animationHandler.observe(animation);
+	}
+
 
 	// Image Titles and Alts
 	for (let img of $$('img')) {

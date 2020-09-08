@@ -25,6 +25,11 @@
 	}
 }
 
+.paused,
+.paused * {
+	animation-play-state: paused !important;
+}
+
 html {
 	main {
 		transition: $smoothTransition;
