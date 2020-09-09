@@ -3,11 +3,11 @@
 	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 	gap: $flow2;
 	align-items: center;
-	padding: $flow3 0;
-	margin-bottom: $flow3;
+	padding: $flow2 0;
+	margin-bottom: $flow2;
 
 	&:first-of-type {
-		margin-top: $flow3;
+		margin-top: $flow2;
 	}
 
 	&--image {
