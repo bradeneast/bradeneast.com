@@ -53,25 +53,27 @@
 		animation: orbitX 5s ease-in-out infinite;
 	}
 
-	.orbit--front,
-	.orbit--back {
-		width: 175%;
-		height: 4em;
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		border-radius: 50%;
-		border: 0.63em solid var(--g7);
-	}
+	.orbit {
+		&--front,
+		&--back {
+			width: 175%;
+			height: 4em;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			border: 0.63em solid var(--g7);
+		}
 
-	.orbit--back {
-		clip-path: polygon(0 0, 0 50%, 100% 50%, 100% 0%);
-	}
+		&--front {
+			clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%);
+			z-index: 1;
+		}
 
-	.orbit--front {
-		clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%);
-		z-index: 1;
+		&--back {
+			clip-path: polygon(0 0, 0 50%, 100% 50%, 100% 0%);
+		}
 	}
 
 	.pockmark {
@@ -87,36 +89,36 @@
 		left: var(--x);
 		transform: translate(-50%, -50%);
 		background: linear-gradient(to right, transparent, black);
-	}
 
-	.pockmark:nth-of-type(1) {
-		--size: 1.4em;
-		--x: 55%;
-		--y: 15%;
-	}
+		&:nth-of-type(1) {
+			--size: 1.4em;
+			--x: 55%;
+			--y: 15%;
+		}
 
-	.pockmark:nth-of-type(2) {
-		--size: 4.4em;
-		--x: 70%;
-		--y: 55%;
-	}
+		&:nth-of-type(2) {
+			--size: 4.4em;
+			--x: 70%;
+			--y: 55%;
+		}
 
-	.pockmark:nth-of-type(3) {
-		--size: 3em;
-		--x: 40%;
-		--y: 95%;
-	}
+		&:nth-of-type(3) {
+			--size: 3em;
+			--x: 40%;
+			--y: 95%;
+		}
 
-	.pockmark:nth-of-type(4) {
-		--size: 3.3em;
-		--x: 18%;
-		--y: 30%;
-	}
+		&:nth-of-type(4) {
+			--size: 3.3em;
+			--x: 18%;
+			--y: 30%;
+		}
 
-	.pockmark:nth-of-type(5) {
-		--size: 2em;
-		--x: 5%;
-		--y: 65%;
+		&:nth-of-type(5) {
+			--size: 2em;
+			--x: 5%;
+			--y: 65%;
+		}
 	}
 }
 

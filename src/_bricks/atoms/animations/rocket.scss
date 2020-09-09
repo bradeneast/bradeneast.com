@@ -55,16 +55,16 @@
 		background-color: var(--primary);
 		background-image: linear-gradient(transparent, transparent, var(--tint));
 		border: 0.37em solid var(--g6);
-	}
 
-	.window::after {
-		background: white;
-		border-radius: 50%;
-		left: 50%;
-		top: 10%;
-		width: 2em;
-		height: 0.63em;
-		transform: translateX(-50%);
+		&::after {
+			background: white;
+			border-radius: 50%;
+			left: 50%;
+			top: 10%;
+			width: 2em;
+			height: 0.63em;
+			transform: translateX(-50%);
+		}
 	}
 
 	.fin {
@@ -79,24 +79,24 @@
 		transform: translateY(var(--y));
 		border-radius: 100% 0 0 0 / 100% 0 0 0;
 		clip-path: polygon(0 0, 100% 0, 37% 100%, 0% 100%);
-	}
 
-	.fin:nth-of-type(2) {
-		--y: 50%;
-		top: auto;
-		bottom: 100%;
-		border-radius: 0 0 0 100% / 0 0 0 100%;
-		clip-path: polygon(0 0, 37% 0, 100% 100%, 0 100%);
-	}
+		&:nth-of-type(2) {
+			--y: 50%;
+			top: auto;
+			bottom: 100%;
+			border-radius: 0 0 0 100% / 0 0 0 100%;
+			clip-path: polygon(0 0, 37% 0, 100% 100%, 0 100%);
+		}
 
-	.fin:nth-of-type(3) {
-		border-radius: 0;
-		width: 50%;
-		top: 50%;
-		z-index: 2;
-		height: 0.5em;
-		clip-path: polygon(0 50%, 10% 0, 100% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
-		background: var(--g5);
+		&:nth-of-type(3) {
+			border-radius: 0;
+			width: 50%;
+			top: 50%;
+			z-index: 2;
+			height: 0.5em;
+			clip-path: polygon(0 50%, 10% 0, 100% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
+			background: var(--g5);
+		}
 	}
 
 	.stars {
