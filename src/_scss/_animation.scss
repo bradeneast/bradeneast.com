@@ -89,14 +89,16 @@ html {
 	$dotsPerLine: 44;
 	$spread: 0.037;
 	--dotSize: 0.2em;
-	--durationR: 19s;
 	--directionR: 1;
 	--animationX: segmentX;
 	--animationY: segmentY;
+	--animationR: lineRotate;
 	--durationX: 5s;
 	--durationY: 5s;
+	--durationR: 19s;
 	--easingX: linear;
 	--easingY: ease-in-out;
+	--easingR: linear;
 	height: 12em;
 	width: 12em;
 	will-change: transform;
@@ -120,15 +122,14 @@ html {
 	}
 
 	.line {
-		opacity: 0;
-		animation: lineAnimation var(--durationR) linear infinite;
+		animation: var(--animationR) var(--durationR) var(--easingR) infinite;
 	}
 
 	.segment {
 		opacity: 0;
 		width: var(--dotSize);
 		color: var(--primary);
-		animation: var(--animationX) var(--durationX) var(--easingX) infinite;
+		animation: var(--animationX) var(--durationX) var(--easingX) infinite, fadeInOut var(--durationX) ease infinite;
 		animation-delay: var(--delay);
 		transition: $smoothTransition;
 
@@ -151,7 +152,7 @@ html {
 		}
 	}
 
-	@keyframes lineAnimation {
+	@keyframes lineRotate {
 		from {
 			opacity: 1;
 			transform: scale(0.95) rotate(0deg);
@@ -159,6 +160,39 @@ html {
 		to {
 			opacity: 1;
 			transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
+		}
+	}
+
+	@keyframes fadeInOut {
+		0% {
+			opacity: 0;
+		}
+		10% {
+			opacity: 1;
+		}
+		90% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes segmentX {
+		0% {
+			transform: translateX(0);
+		}
+		25% {
+			transform: translateX(3em);
+		}
+		50% {
+			transform: translateX(6em);
+		}
+		75% {
+			transform: translateX(9em);
+		}
+		100% {
+			transform: translateX(12em);
 		}
 	}
 
@@ -177,28 +211,6 @@ html {
 		}
 		100% {
 			transform: translateY(0);
-		}
-	}
-
-	@keyframes segmentX {
-		0% {
-			transform: translateX(0);
-			opacity: 0;
-		}
-		25% {
-			transform: translateX(3em);
-			opacity: 1;
-		}
-		50% {
-			transform: translateX(6em);
-		}
-		75% {
-			transform: translateX(9em);
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(12em);
-			opacity: 0;
 		}
 	}
 }

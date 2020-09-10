@@ -603,14 +603,16 @@ html[data-schwifty] .border-bottom::before {
 
 .animation {
   --dotSize: 0.2em;
-  --durationR: 19s;
   --directionR: 1;
   --animationX: segmentX;
   --animationY: segmentY;
+  --animationR: lineRotate;
   --durationX: 5s;
   --durationY: 5s;
+  --durationR: 19s;
   --easingX: linear;
   --easingY: ease-in-out;
+  --easingR: linear;
   height: 12em;
   width: 12em;
   will-change: transform;
@@ -634,17 +636,16 @@ html[data-schwifty] .border-bottom::before {
 }
 
 .animation .line {
-  opacity: 0;
-  -webkit-animation: lineAnimation var(--durationR) linear infinite;
-          animation: lineAnimation var(--durationR) linear infinite;
+  -webkit-animation: var(--animationR) var(--durationR) var(--easingR) infinite;
+          animation: var(--animationR) var(--durationR) var(--easingR) infinite;
 }
 
 .animation .segment {
   opacity: 0;
   width: var(--dotSize);
   color: var(--primary);
-  -webkit-animation: var(--animationX) var(--durationX) var(--easingX) infinite;
-          animation: var(--animationX) var(--durationX) var(--easingX) infinite;
+  -webkit-animation: var(--animationX) var(--durationX) var(--easingX) infinite, fadeInOut var(--durationX) ease infinite;
+          animation: var(--animationX) var(--durationX) var(--easingX) infinite, fadeInOut var(--durationX) ease infinite;
   -webkit-animation-delay: var(--delay);
           animation-delay: var(--delay);
   -webkit-transition: 0.28s ease;
@@ -881,7 +882,7 @@ html[data-schwifty] .border-bottom::before {
   transition: 0.28s ease;
 }
 
-@-webkit-keyframes lineAnimation {
+@-webkit-keyframes lineRotate {
   from {
     opacity: 1;
     -webkit-transform: scale(0.95) rotate(0deg);
@@ -894,7 +895,7 @@ html[data-schwifty] .border-bottom::before {
   }
 }
 
-@keyframes lineAnimation {
+@keyframes lineRotate {
   from {
     opacity: 1;
     -webkit-transform: scale(0.95) rotate(0deg);
@@ -904,6 +905,82 @@ html[data-schwifty] .border-bottom::before {
     opacity: 1;
     -webkit-transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
             transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
+  }
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes segmentX {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
+  }
+  50% {
+    -webkit-transform: translateX(6em);
+            transform: translateX(6em);
+  }
+  75% {
+    -webkit-transform: translateX(9em);
+            transform: translateX(9em);
+  }
+  100% {
+    -webkit-transform: translateX(12em);
+            transform: translateX(12em);
+  }
+}
+
+@keyframes segmentX {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
+  }
+  50% {
+    -webkit-transform: translateX(6em);
+            transform: translateX(6em);
+  }
+  75% {
+    -webkit-transform: translateX(9em);
+            transform: translateX(9em);
+  }
+  100% {
+    -webkit-transform: translateX(12em);
+            transform: translateX(12em);
   }
 }
 
@@ -950,60 +1027,6 @@ html[data-schwifty] .border-bottom::before {
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes segmentX {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: translateX(3em);
-            transform: translateX(3em);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: translateX(6em);
-            transform: translateX(6em);
-  }
-  75% {
-    -webkit-transform: translateX(9em);
-            transform: translateX(9em);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(12em);
-            transform: translateX(12em);
-    opacity: 0;
-  }
-}
-
-@keyframes segmentX {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: translateX(3em);
-            transform: translateX(3em);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: translateX(6em);
-            transform: translateX(6em);
-  }
-  75% {
-    -webkit-transform: translateX(9em);
-            transform: translateX(9em);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(12em);
-            transform: translateX(12em);
-    opacity: 0;
   }
 }
 
