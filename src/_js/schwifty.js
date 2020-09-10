@@ -169,7 +169,6 @@ export default class Schwifty {
 					);
 
 					// Dispatch some more events
-					dispatch('complete', doc);
 					dispatch('load');
 					dispatch('pageshow');
 

@@ -81,7 +81,7 @@ var __values = (this && this.__values) || function(o) {
                     }
                     finally { if (e_3) throw e_3.error; }
                 }
-            }), p.setAttribute(x, "out"), h("pagehide"), h("unload"), setTimeout(function () { h("loading", g), g.body[t] = d.body[t], g.head[t] = d.head[t], p.setAttribute(x, "in"), h("interactive", g), h("DOMContentLoaded", g), k || scrollTo(0, 0), c && (c.length ? c.map(function (f) { return f(); }) : c()), G(), setTimeout(function () { return p.removeAttribute(x); }, I()), h("complete", g), h("load"), h("pageshow"); }, I());
+            }), p.setAttribute(x, "out"), h("pagehide"), h("unload"), setTimeout(function () { h("loading", g), g.body[t] = d.body[t], g.head[t] = d.head[t], p.setAttribute(x, "in"), h("interactive", g), h("DOMContentLoaded", g), k || scrollTo(0, 0), c && (c.length ? c.map(function (f) { return f(); }) : c()), G(), setTimeout(function () { return p.removeAttribute(x); }, I()), h("load"), h("pageshow"); }, I());
         };
         G(), addEventListener("popstate", function (b) { return J(location.href); }), addEventListener("click", function (b) { var d = M(b).href; d && (b.preventDefault(), h("beforeunload"), history.pushState(null, null, location.href), J(d)); });
     }
