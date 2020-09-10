@@ -46,6 +46,11 @@ blockquote {
 	border-left: $borderWidth $borderStyle var(--primary);
 }
 
+hr {
+	border: none;
+	border-top: $borderWidth $borderStyle var(--g7);
+}
+
 em {
 	font-style: normal;
 	color: var(--primary);

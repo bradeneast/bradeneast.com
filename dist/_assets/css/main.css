@@ -129,6 +129,11 @@ svg {
           user-select: none;
 }
 
+.has-img::after {
+  content: "Photo credit: " attr(title);
+  color: var(--g4);
+}
+
 img,
 video,
 svg {
@@ -192,6 +197,11 @@ blockquote p {
 
 blockquote {
   border-left: 0.2rem solid var(--primary);
+}
+
+hr {
+  border: none;
+  border-top: 0.2rem solid var(--g7);
 }
 
 em {
@@ -601,7 +611,6 @@ html[data-schwifty] .border-bottom::before {
   --durationY: 5s;
   --easingX: linear;
   --easingY: ease-in-out;
-  background: var(--g7);
   height: 12em;
   width: 12em;
   will-change: transform;
@@ -613,12 +622,19 @@ html[data-schwifty] .border-bottom::before {
 
 .animation *,
 .animation *::before,
-.animation *::after {
+.animation *::after, .animation::before, .animation::after {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.animation::before {
+  content: "";
+  background: var(--g7);
+  -webkit-transform: translate(var(--x), var(--y));
+          transform: translate(var(--x), var(--y));
 }
 
 .animation .line {
@@ -1396,7 +1412,7 @@ pre {
   -webkit-hyphens: none;
       -ms-hyphens: none;
           hyphens: none;
-  font-size: 0.85em;
+  font-size: 0.9em;
   font-variation-settings: "CASL" 0, "MONO" 1;
   max-width: calc(100vw - 2.5rem);
 }

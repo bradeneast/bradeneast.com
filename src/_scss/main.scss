@@ -76,6 +76,11 @@ svg {
 	user-select: none;
 }
 
+.has-img::after {
+	content: "Photo credit: " attr(title);
+	color: var(--g4);
+}
+
 img,
 video,
 svg {
