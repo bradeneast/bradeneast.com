@@ -1,1 +1,272 @@
-#planet.animation{--lightAngle: -37deg;--contrast: rgba(0, 0, 0, 0.3);--planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);-webkit-transform:translateY(-1em) rotate(-4deg);transform:translateY(-1em) rotate(-4deg);font-size:0.9rem;width:10em;height:10em;will-change:transform}#planet.animation::after{content:"";position:absolute;width:100%;height:2em;background:var(--contrast);border-radius:50%;top:calc(100% + 1em);animation:planetShadow 7s ease-in-out infinite reverse}#planet.animation .planet{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:40% 45% 50% 45% / 45% 40% 45% 50%;background-image:-webkit-gradient(linear, left top, left bottom, from(var(--lightAngle)), color-stop(var(--accent)), color-stop(var(--primary)), to(var(--primary)));background-image:linear-gradient(var(--lightAngle), var(--accent), var(--primary), var(--primary));background-color:var(--primary);overflow:hidden;animation:planetFloat 7s ease-in-out infinite reverse}#planet.animation .moon--wrapper{--y: 0;position:absolute;width:175%;height:100%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);-webkit-animation:orbitY 5s linear infinite;animation:orbitY 5s linear infinite}#planet.animation .moon{top:50%;left:0;width:2.5em;height:2.5em;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);background:-webkit-gradient(linear, left top, left bottom, from(var(--lightAngle)), color-stop(var(--g4)), to(var(--g6)));background:linear-gradient(var(--lightAngle), var(--g4), var(--g6));border-radius:50%;-webkit-animation:orbitX 5s ease-in-out infinite;animation:orbitX 5s ease-in-out infinite}#planet.animation .orbit--front,#planet.animation .orbit--back{width:175%;height:4em;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);border-radius:50%;border:0.63em solid var(--g7)}#planet.animation .orbit--front{-webkit-clip-path:polygon(0 50%, 0 100%, 100% 100%, 100% 50%);clip-path:polygon(0 50%, 0 100%, 100% 100%, 100% 50%);z-index:1}#planet.animation .orbit--back{-webkit-clip-path:polygon(0 0, 0 50%, 100% 50%, 100% 0%);clip-path:polygon(0 0, 0 50%, 100% 50%, 100% 0%)}#planet.animation .pockmark{--size: 3em;--x: 0;--y: 0;position:absolute;width:var(--size);height:var(--size);border-radius:50%;opacity:0.37;top:var(--y);left:var(--x);-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);background:-webkit-gradient(linear, left top, right top, from(transparent), to(black));background:linear-gradient(to right, transparent, black)}#planet.animation .pockmark:nth-of-type(1){--size: 1.4em;--x: 55%;--y: 15%}#planet.animation .pockmark:nth-of-type(2){--size: 4.4em;--x: 70%;--y: 55%}#planet.animation .pockmark:nth-of-type(3){--size: 3em;--x: 40%;--y: 95%}#planet.animation .pockmark:nth-of-type(4){--size: 3.3em;--x: 18%;--y: 30%}#planet.animation .pockmark:nth-of-type(5){--size: 2em;--x: 5%;--y: 65%}@-webkit-keyframes planetShadow{0%{-webkit-transform:scaleX(1);transform:scaleX(1);opacity:0.63;-webkit-filter:blur(0.5em);filter:blur(0.5em)}50%{-webkit-transform:scaleX(0.85);transform:scaleX(0.85);opacity:1;-webkit-filter:blur(0.3em);filter:blur(0.3em)}100%{-webkit-transform:scaleX(1);transform:scaleX(1);opacity:0.63;-webkit-filter:blur(0.5em);filter:blur(0.5em)}}@keyframes planetShadow{0%{-webkit-transform:scaleX(1);transform:scaleX(1);opacity:0.63;-webkit-filter:blur(0.5em);filter:blur(0.5em)}50%{-webkit-transform:scaleX(0.85);transform:scaleX(0.85);opacity:1;-webkit-filter:blur(0.3em);filter:blur(0.3em)}100%{-webkit-transform:scaleX(1);transform:scaleX(1);opacity:0.63;-webkit-filter:blur(0.5em);filter:blur(0.5em)}}@-webkit-keyframes orbitX{0%{left:0}50%{left:100%}100%{left:0}}@keyframes orbitX{0%{left:0}50%{left:100%}100%{left:0}}@-webkit-keyframes orbitY{0%{top:0;z-index:1}25%{top:-1.7em;z-index:0}50%{top:0;z-index:1}75%{top:1.7em}100%{top:0;z-index:1}}@keyframes orbitY{0%{top:0;z-index:1}25%{top:-1.7em;z-index:0}50%{top:0;z-index:1}75%{top:1.7em}100%{top:0;z-index:1}}@-webkit-keyframes planetFloat{0%{top:-0.2em}50%{top:0.6em}100%{top:-0.2em}}@keyframes planetFloat{0%{top:-0.2em}50%{top:0.6em}100%{top:-0.2em}}
+#planet.animation {
+  --lightAngle: -37deg;
+  --contrast: rgba(0, 0, 0, 0.3);
+  --planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
+  -webkit-transform: translateY(-1em) rotate(-4deg);
+          transform: translateY(-1em) rotate(-4deg);
+  font-size: 0.9rem;
+  width: 10em;
+  height: 10em;
+  will-change: transform;
+}
+
+#planet.animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2em;
+  background: var(--contrast);
+  border-radius: 50%;
+  top: calc(100% + 1em);
+  animation: planetShadow 7s ease-in-out infinite reverse;
+}
+
+#planet.animation .planet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40% 45% 50% 45% / 45% 40% 45% 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--lightAngle)), color-stop(var(--accent)), color-stop(var(--primary)), to(var(--primary)));
+  background-image: linear-gradient(var(--lightAngle), var(--accent), var(--primary), var(--primary));
+  background-color: var(--primary);
+  overflow: hidden;
+  animation: planetFloat 7s ease-in-out infinite reverse;
+}
+
+#planet.animation .moon--wrapper {
+  --y: 0;
+  position: absolute;
+  width: 175%;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: orbitY 5s linear infinite;
+          animation: orbitY 5s linear infinite;
+}
+
+#planet.animation .moon {
+  top: 50%;
+  left: 0;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--lightAngle)), color-stop(var(--g4)), to(var(--g6)));
+  background: linear-gradient(var(--lightAngle), var(--g4), var(--g6));
+  border-radius: 50%;
+  -webkit-animation: orbitX 5s ease-in-out infinite;
+          animation: orbitX 5s ease-in-out infinite;
+}
+
+#planet.animation .orbit--front, #planet.animation .orbit--back {
+  width: 175%;
+  height: 4em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 0.63em solid var(--g7);
+}
+
+#planet.animation .orbit--front {
+  -webkit-clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%);
+          clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%);
+  z-index: 1;
+}
+
+#planet.animation .orbit--back {
+  -webkit-clip-path: polygon(0 0, 0 50%, 100% 50%, 100% 0%);
+          clip-path: polygon(0 0, 0 50%, 100% 50%, 100% 0%);
+}
+
+#planet.animation .pockmark {
+  --size: 3em;
+  --x: 0;
+  --y: 0;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  opacity: 0.37;
+  top: var(--y);
+  left: var(--x);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(black));
+  background: linear-gradient(to right, transparent, black);
+}
+
+#planet.animation .pockmark:nth-of-type(1) {
+  --size: 1.4em;
+  --x: 55%;
+  --y: 15%;
+}
+
+#planet.animation .pockmark:nth-of-type(2) {
+  --size: 4.4em;
+  --x: 70%;
+  --y: 55%;
+}
+
+#planet.animation .pockmark:nth-of-type(3) {
+  --size: 3em;
+  --x: 40%;
+  --y: 95%;
+}
+
+#planet.animation .pockmark:nth-of-type(4) {
+  --size: 3.3em;
+  --x: 18%;
+  --y: 30%;
+}
+
+#planet.animation .pockmark:nth-of-type(5) {
+  --size: 2em;
+  --x: 5%;
+  --y: 65%;
+}
+
+@-webkit-keyframes planetShadow {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 0.63;
+    -webkit-filter: blur(0.5em);
+            filter: blur(0.5em);
+  }
+  50% {
+    -webkit-transform: scaleX(0.85);
+            transform: scaleX(0.85);
+    opacity: 1;
+    -webkit-filter: blur(0.3em);
+            filter: blur(0.3em);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 0.63;
+    -webkit-filter: blur(0.5em);
+            filter: blur(0.5em);
+  }
+}
+
+@keyframes planetShadow {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 0.63;
+    -webkit-filter: blur(0.5em);
+            filter: blur(0.5em);
+  }
+  50% {
+    -webkit-transform: scaleX(0.85);
+            transform: scaleX(0.85);
+    opacity: 1;
+    -webkit-filter: blur(0.3em);
+            filter: blur(0.3em);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 0.63;
+    -webkit-filter: blur(0.5em);
+            filter: blur(0.5em);
+  }
+}
+
+@-webkit-keyframes orbitX {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes orbitX {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes orbitY {
+  0% {
+    top: 0;
+    z-index: 1;
+  }
+  25% {
+    top: -1.7em;
+    z-index: 0;
+  }
+  50% {
+    top: 0;
+    z-index: 1;
+  }
+  75% {
+    top: 1.7em;
+  }
+  100% {
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@keyframes orbitY {
+  0% {
+    top: 0;
+    z-index: 1;
+  }
+  25% {
+    top: -1.7em;
+    z-index: 0;
+  }
+  50% {
+    top: 0;
+    z-index: 1;
+  }
+  75% {
+    top: 1.7em;
+  }
+  100% {
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes planetFloat {
+  0% {
+    top: -0.2em;
+  }
+  50% {
+    top: 0.6em;
+  }
+  100% {
+    top: -0.2em;
+  }
+}
+
+@keyframes planetFloat {
+  0% {
+    top: -0.2em;
+  }
+  50% {
+    top: 0.6em;
+  }
+  100% {
+    top: -0.2em;
+  }
+}

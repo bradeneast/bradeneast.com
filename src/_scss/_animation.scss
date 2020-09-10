@@ -86,9 +86,10 @@ html {
 }
 
 .animation {
-	$dotsPerLine: 24;
-	$spacing: 0.063;
-	--durationR: 11s;
+	$dotsPerLine: 48;
+	$spacing: 0.037;
+	--dotSize: 0.2em;
+	--durationR: 17s;
 	--directionR: 1;
 	--animationX: segmentX;
 	--animationY: segmentY;
@@ -100,6 +101,10 @@ html {
 	height: 12em;
 	width: 12em;
 	will-change: transform;
+
+	&:hover {
+		--dotSize: 1.5em;
+	}
 
 	*,
 	*::before,
@@ -116,31 +121,29 @@ html {
 	}
 
 	.segment {
-		width: 0.5em;
+		width: var(--dotSize);
+		color: var(--primary);
 		animation: var(--animationX) var(--durationX) var(--easingX) infinite;
+		animation-delay: var(--delay);
+		transition: $smoothTransition;
 
-		@for $i from 0 to $dotsPerLine {
-			&:nth-of-type(#{$i + 1}) {
+		@for $i from 1 to $dotsPerLine {
+			&:nth-of-type(#{$i}) {
 				$space: $spacing * $i;
-				$color: rgba(
-					$color: $accent,
-					$alpha: $space,
-				);
-				animation-delay: #{$space}s;
-
-				&::after {
-					background-image: linear-gradient($color, $color);
-					animation-delay: #{$space}s;
-				}
+				color: rgba($color: $accent, $alpha: round(($i * 100) / $dotsPerLine) / 100);
+				--delay: #{$space}s;
 			}
 		}
 
 		&::after {
 			content: "";
-			height: 0.5em;
+			height: var(--dotSize);
 			border-radius: 50%;
 			background-color: var(--primary);
+			background-image: linear-gradient(currentColor, currentColor);
 			animation: var(--animationY) var(--durationY) var(--easingY) infinite;
+			animation-delay: var(--delay);
+			transition: $smoothTransition;
 		}
 	}
 
