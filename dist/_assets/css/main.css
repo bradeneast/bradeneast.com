@@ -608,7 +608,7 @@ html[data-schwifty] .border-bottom::before {
 }
 
 .animation:hover {
-  --dotSize: 1.5em;
+  --dotSize: 2em;
 }
 
 .animation *,
@@ -622,11 +622,13 @@ html[data-schwifty] .border-bottom::before {
 }
 
 .animation .line {
+  opacity: 0;
   -webkit-animation: lineAnimation var(--durationR) linear infinite;
           animation: lineAnimation var(--durationR) linear infinite;
 }
 
 .animation .segment {
+  opacity: 0;
   width: var(--dotSize);
   color: var(--primary);
   -webkit-animation: var(--animationX) var(--durationX) var(--easingX) infinite;
@@ -889,10 +891,12 @@ html[data-schwifty] .border-bottom::before {
 
 @-webkit-keyframes lineAnimation {
   from {
+    opacity: 1;
     -webkit-transform: scale(0.95) rotate(0deg);
             transform: scale(0.95) rotate(0deg);
   }
   to {
+    opacity: 1;
     -webkit-transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
             transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
   }
@@ -900,10 +904,12 @@ html[data-schwifty] .border-bottom::before {
 
 @keyframes lineAnimation {
   from {
+    opacity: 1;
     -webkit-transform: scale(0.95) rotate(0deg);
             transform: scale(0.95) rotate(0deg);
   }
   to {
+    opacity: 1;
     -webkit-transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
             transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
   }
@@ -959,10 +965,12 @@ html[data-schwifty] .border-bottom::before {
   0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 0;
   }
   25% {
     -webkit-transform: translateX(3em);
             transform: translateX(3em);
+    opacity: 1;
   }
   50% {
     -webkit-transform: translateX(6em);
@@ -971,10 +979,12 @@ html[data-schwifty] .border-bottom::before {
   75% {
     -webkit-transform: translateX(9em);
             transform: translateX(9em);
+    opacity: 1;
   }
   100% {
     -webkit-transform: translateX(12em);
             transform: translateX(12em);
+    opacity: 0;
   }
 }
 
@@ -982,10 +992,12 @@ html[data-schwifty] .border-bottom::before {
   0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 0;
   }
   25% {
     -webkit-transform: translateX(3em);
             transform: translateX(3em);
+    opacity: 1;
   }
   50% {
     -webkit-transform: translateX(6em);
@@ -994,10 +1006,12 @@ html[data-schwifty] .border-bottom::before {
   75% {
     -webkit-transform: translateX(9em);
             transform: translateX(9em);
+    opacity: 1;
   }
   100% {
     -webkit-transform: translateX(12em);
             transform: translateX(12em);
+    opacity: 0;
   }
 }
 
