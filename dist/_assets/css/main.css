@@ -603,7 +603,7 @@ html[data-schwifty] .border-bottom::before {
 
 .animation {
   --dotSize: 0.2em;
-  --durationR: 17s;
+  --durationR: 19s;
   --directionR: 1;
   --animationX: segmentX;
   --animationY: segmentY;
@@ -630,13 +630,6 @@ html[data-schwifty] .border-bottom::before {
   height: 100%;
   top: 0;
   left: 0;
-}
-
-.animation::before {
-  content: "";
-  background: var(--g7);
-  -webkit-transform: translate(var(--x), var(--y));
-          transform: translate(var(--x), var(--y));
 }
 
 .animation .line {

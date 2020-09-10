@@ -89,7 +89,7 @@ html {
 	$dotsPerLine: 44;
 	$spread: 0.037;
 	--dotSize: 0.2em;
-	--durationR: 17s;
+	--durationR: 19s;
 	--directionR: 1;
 	--animationX: segmentX;
 	--animationY: segmentY;
@@ -116,12 +116,6 @@ html {
 		height: 100%;
 		top: 0;
 		left: 0;
-	}
-
-	&::before {
-		content: "";
-		background: var(--g7);
-		transform: translate(var(--x), var(--y));
 	}
 
 	.line {
