@@ -17,7 +17,7 @@ function init() {
 				.toggle('paused', !entry.isIntersecting)
 		),
 		{
-			threshold: .37
+			threshold: .63
 		}
 	);
 	for (let animation of $$('.animation')) {
