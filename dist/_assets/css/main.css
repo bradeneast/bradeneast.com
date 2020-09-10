@@ -130,7 +130,7 @@ svg {
 }
 
 .has-img::after {
-  content: "Photo credit: " attr(title);
+  content: attr(title);
   color: var(--g4);
 }
 
