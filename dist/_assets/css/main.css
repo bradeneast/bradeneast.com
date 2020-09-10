@@ -1396,7 +1396,7 @@ pre {
   -webkit-hyphens: none;
       -ms-hyphens: none;
           hyphens: none;
-  font-size: 0.85rem;
+  font-size: 0.85em;
   font-variation-settings: "CASL" 0, "MONO" 1;
   max-width: calc(100vw - 2.5rem);
 }
