@@ -25,11 +25,12 @@ function init() {
 	}
 
 
-	// Image Titles and Alts
+	// Image alts
 	for (let img of $$('img')) {
-		if (img.title?.length) continue;
-		img.title = !img.alt ? altFromSrc(img.src) : img.alt
+		if (!img.alt?.length)
+			img.alt = img.alt || altFromSrc(img.src);
 		img.parentElement.classList.add('has-img');
+		img.parentElement.title = img.title;
 	}
 
 

@@ -11,36 +11,36 @@ var __values = (this && this.__values) || function(o) {
 };
 (function () { var z = (function () {
     function z(_a) {
-        var _b = _a === void 0 ? {} : _a, c = _b.onload, _c = _b.selector, a = _c === void 0 ? "a[href^=\"" + window.location.origin + "\"]:not([data-no-schwifty]), a[href^=\"/\"]:not([data-no-schwifty])" : _c, _d = _b.cacheLimit, e = _d === void 0 ? 85 : _d, _e = _b.preserveScroll, k = _e === void 0 ? !1 : _e, _f = _b.transitioningAttribute, x = _f === void 0 ? "data-schwifty" : _f, s = _b.preserveAttributes;
+        var _b = _a === void 0 ? {} : _a, c = _b.onload, _c = _b.selector, a = _c === void 0 ? "a[href^='" + window.location.origin + "']:not([data-no-schwifty]), a[href^='/']:not([data-no-schwifty])" : _c, _d = _b.cacheLimit, e = _d === void 0 ? 85 : _d, _e = _b.preserveScroll, j = _e === void 0 ? !1 : _e, _f = _b.transitioningAttribute, x = _f === void 0 ? "data-schwifty" : _f, s = _b.preserveAttributes;
         var y = s === !0;
         typeof s != "object" && (s = { documentElement: y, head: y, body: y });
-        var n = "schwifty-preload", o = 'link[rel="stylesheet"]', g = document, p = g.documentElement, t = "innerHTML", l = new Map(), L = new IntersectionObserver(function (b, d) { return b.forEach(function (q) { var v = q.isIntersecting, w = q.target.href; if (!v && v != void 0)
-            return; l.size >= e && l["delete"](l.keys()[0]), l.get(w) ? d.unobserve(q.target) : N(w); }); }, { threshold: .5 }), F = function (b, d) {
-            if (d === void 0) { d = g; }
+        var n = "schwifty-preload", o = 'link[rel="stylesheet"]', f = document, p = f.documentElement, t = "innerHTML", k = new Map(), L = new IntersectionObserver(function (b, d) { return b.forEach(function (q) { var v = q.isIntersecting, w = q.target.href; if (!v && v != void 0)
+            return; k.size >= e && k["delete"](k.keys()[0]), k.get(w) ? d.unobserve(q.target) : N(w); }); }, { threshold: .5 }), F = function (b, d) {
+            if (d === void 0) { d = f; }
             return d.querySelector(b);
         }, u = function (b, d) {
-            if (d === void 0) { d = g; }
+            if (d === void 0) { d = f; }
             return d.querySelectorAll(b);
-        }, M = function (b) { return b.target.closest(a) || {}; }, G = function () { return u(a).forEach(function (b) { return L.observe(b); }); }, h = function (b, d) {
+        }, M = function (b) { return b.target.closest(a) || {}; }, G = function () { return u(a).forEach(function (b) { return L.observe(b); }); }, l = function (b, d) {
             if (d === void 0) { d = window; }
             return d.dispatchEvent(new Event(b));
         }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(p); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1000; }, N = function (b) { if (!b)
-            return; var d = new XMLHttpRequest(); d.onreadystatechange = function () { this.status == 200 && l.set(b, d.responseXML); }, d.open("GET", b, !0), d.responseType = "document", d.send(); }, J = function (b) {
+            return; var d = new XMLHttpRequest(); d.onreadystatechange = function () { this.status == 200 && k.set(b, d.responseXML); }, d.open("GET", b, !0), d.responseType = "document", d.send(); }, J = function (b) {
             var e_1, _a;
-            var d = l.get(b);
+            var d = k.get(b);
             if (!d) {
                 location = b;
                 return;
             }
-            history.replaceState(null, null, b), u(o + ":not(." + n + ")").forEach(function (f) { var i = f.href.replace(location.origin, ""), j = F(o + "." + n + "[href=\"" + i + "\"]"), K = F(o + "[href=\"" + i + "\"]", d); K && !j && (f.classList.add(n), p.append(f)), !K && j && j.remove(); });
+            history.replaceState(null, null, b), u(o + ":not(." + n + ")").forEach(function (g) { var h = g.href.replace(location.origin, ""), i = F(o + "." + n + "[href=\"" + h + "\"]"), K = F(o + "[href=\"" + h + "\"]", d); K && !i && (g.classList.add(n), p.append(g)), !K && i && i.remove(); });
             var q = o + ":not(." + n + ")", v = o + "." + n, w = u(q, d), O = u(v);
-            var _loop_1 = function (f) {
-                Array.from(w).some(function (i) { return i.href == f.href; }) || f.remove();
+            var _loop_1 = function (g) {
+                Array.from(w).some(function (h) { return h.href == g.href; }) || g.remove();
             };
             try {
                 for (var O_1 = __values(O), O_1_1 = O_1.next(); !O_1_1.done; O_1_1 = O_1.next()) {
-                    var f = O_1_1.value;
-                    _loop_1(f);
+                    var g = O_1_1.value;
+                    _loop_1(g);
                 }
             }
             catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -50,15 +50,15 @@ var __values = (this && this.__values) || function(o) {
                 }
                 finally { if (e_1) throw e_1.error; }
             }
-            ["body", "head", "documentElement"].forEach(function (f) {
+            ["body", "head", "documentElement"].forEach(function (g) {
                 var e_2, _a, e_3, _b;
-                if (s[f])
+                if (s[g])
                     return;
-                var i = g[f];
+                var h = f[g];
                 try {
-                    for (var _c = __values(i.attributes), _d = _c.next(); !_d.done; _d = _c.next()) {
-                        var j = _d.value;
-                        i.removeAttribute(j.name);
+                    for (var _c = __values(h.attributes), _d = _c.next(); !_d.done; _d = _c.next()) {
+                        var i = _d.value;
+                        h.removeAttribute(i.name);
                     }
                 }
                 catch (e_2_1) { e_2 = { error: e_2_1 }; }
@@ -69,9 +69,9 @@ var __values = (this && this.__values) || function(o) {
                     finally { if (e_2) throw e_2.error; }
                 }
                 try {
-                    for (var _e = __values(d[f].attributes), _f = _e.next(); !_f.done; _f = _e.next()) {
-                        var j = _f.value;
-                        i.setAttribute(j.name, j.value);
+                    for (var _e = __values(d[g].attributes), _f = _e.next(); !_f.done; _f = _e.next()) {
+                        var i = _f.value;
+                        h.setAttribute(i.name, i.value);
                     }
                 }
                 catch (e_3_1) { e_3 = { error: e_3_1 }; }
@@ -81,9 +81,9 @@ var __values = (this && this.__values) || function(o) {
                     }
                     finally { if (e_3) throw e_3.error; }
                 }
-            }), p.setAttribute(x, "out"), h("pagehide"), h("unload"), setTimeout(function () { h("loading", g), g.body[t] = d.body[t], g.head[t] = d.head[t], p.setAttribute(x, "in"), h("interactive", g), h("DOMContentLoaded", g), k || scrollTo(0, 0), c && (c.length ? c.map(function (f) { return f(); }) : c()), G(), setTimeout(function () { return p.removeAttribute(x); }, I()), h("load"), h("pageshow"); }, I());
+            }), p.setAttribute(x, "out"), l("pagehide"), l("unload"), setTimeout(function () { f.readyState = "loading", f.body[t] = d.body[t], f.head[t] = d.head[t], p.setAttribute(x, "in"), f.visibilityState = "visible", f.readyState = "interactive", l("DOMContentLoaded", f), j || scrollTo(0, 0), c && (c.length ? c.map(function (g) { return g(); }) : c()), G(), setTimeout(function () { return p.removeAttribute(x); }, I()), f.readyState = "complete", l("load"), l("pageshow"); }, I());
         };
-        G(), addEventListener("popstate", function (b) { return J(location.href); }), addEventListener("click", function (b) { var d = M(b).href; d && (b.preventDefault(), h("beforeunload"), history.pushState(null, null, location.href), J(d)); });
+        G(), addEventListener("popstate", function (b) { f.visibilityState = "hidden", J(location.href); }), addEventListener("click", function (b) { var d = M(b).href; d && (b.preventDefault(), f.visibilityState = "hidden", l("beforeunload"), history.pushState(null, null, location.href), J(d)); });
     }
     return z;
 }());  var m = function (c, a) {
@@ -99,8 +99,8 @@ var __values = (this && this.__values) || function(o) {
 }, E = function (c, a) { return a == void 0 ? JSON.parse(localStorage.getItem(c)) : localStorage.setItem(c, JSON.stringify(a)); }, B = function (c) { var a = E(c); document.documentElement.classList.toggle(c, !a), E(c, !a); }; function A(c) {
     var _a, _b;
     if (c === void 0) { c = ""; }
-    var a = decodeURIComponent(c) || "", e = a.split("/").pop(), k = (_b = (_a = e === null || e === void 0 ? void 0 : e.split(".")) === null || _a === void 0 ? void 0 : _a.shift()) === null || _b === void 0 ? void 0 : _b.replace(/-|\+/g, " ");
-    return k || "";
+    var a = decodeURIComponent(c) || "", e = a.split("/").pop(), j = (_b = (_a = e === null || e === void 0 ? void 0 : e.split(".")) === null || _a === void 0 ? void 0 : _a.shift()) === null || _b === void 0 ? void 0 : _b.replace(/-|\+/g, " ");
+    return j || "";
 } function D() {
     var e_4, _a, e_5, _b, e_6, _c, e_7, _d;
     var _e;
@@ -138,9 +138,7 @@ var __values = (this && this.__values) || function(o) {
     try {
         for (var _k = __values(r("img")), _l = _k.next(); !_l.done; _l = _k.next()) {
             var a = _l.value;
-            if ((_e = a.title) === null || _e === void 0 ? void 0 : _e.length)
-                continue;
-            a.title = a.alt ? a.alt : A(a.src), a.parentElement.classList.add("has-img");
+            ((_e = a.alt) === null || _e === void 0 ? void 0 : _e.length) || (a.alt = a.alt || A(a.src)), a.parentElement.classList.add("has-img"), a.parentElement.title = a.title;
         }
     }
     catch (e_6_1) { e_6 = { error: e_6_1 }; }
@@ -155,8 +153,8 @@ var __values = (this && this.__values) || function(o) {
         a.src = "https://static.codepen.io/assets/embed/ei.js", a.async = !0, document.body.append(a);
     }
     var _loop_3 = function (a) {
-        var e = m("button", a), k = m("iframe", a);
-        e.addEventListener("click", function () { k.src = k.getAttribute("data-src"), a.classList.add("loaded"); });
+        var e = m("button", a), j = m("iframe", a);
+        e.addEventListener("click", function () { j.src = j.getAttribute("data-src"), a.classList.add("loaded"); });
     };
     try {
         for (var _m = __values(r(".embedded_project")), _o = _m.next(); !_o.done; _o = _m.next()) {

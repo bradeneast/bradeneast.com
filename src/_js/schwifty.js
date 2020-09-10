@@ -6,7 +6,7 @@ export default class Schwifty {
 
 	constructor({
 		onload, // the callback(s) that run when a new page is rendered
-		selector = `a[href^="${window.location.origin}"]:not([data-no-schwifty]), a[href^="/"]:not([data-no-schwifty])`, // the DOM selector used to find preloadable links
+		selector = `a[href^='${window.location.origin}']:not([data-no-schwifty]), a[href^='/']:not([data-no-schwifty])`, // the DOM selector used to find preloadable links
 		cacheLimit = 85, // the maximum number of pages allowed to be preloaded in the cache
 		preserveScroll = false, // preserve scroll position on page load
 		transitioningAttribute = 'data-schwifty', // attribute updated on the `documentElement` during a page transition
@@ -77,7 +77,7 @@ export default class Schwifty {
 				if (this.status == 200) cache.set(href, xhttp.responseXML);
 			}
 
-			xhttp.open("GET", href, true);
+			xhttp.open('GET', href, true);
 			xhttp.responseType = 'document';
 			xhttp.send();
 		}
@@ -144,7 +144,7 @@ export default class Schwifty {
 			dispatch('unload');
 			setTimeout(
 				() => {
-					dispatch('loading', doc);
+					doc.readyState = 'loading';
 
 					// Replace Content
 					doc.body[innerHTML] = preloaded.body[innerHTML];
@@ -152,8 +152,9 @@ export default class Schwifty {
 					html.setAttribute(transitioningAttribute, 'in');
 
 					// Dispatch some events
-					dispatch('interactive', doc);
-					dispatch("DOMContentLoaded", doc);
+					doc.visibilityState = 'visible';
+					doc.readyState = 'interactive';
+					dispatch('DOMContentLoaded', doc);
 
 					// Callbacks
 					if (!preserveScroll) scrollTo(0, 0);
@@ -169,6 +170,7 @@ export default class Schwifty {
 					);
 
 					// Dispatch some more events
+					doc.readyState = 'complete';
 					dispatch('load');
 					dispatch('pageshow');
 
@@ -179,11 +181,15 @@ export default class Schwifty {
 
 		// Listen + Observe
 		observeTargets();
-		addEventListener('popstate', event => load(location.href));
+		addEventListener('popstate', event => {
+			doc.visibilityState = 'hidden';
+			load(location.href)
+		});
 		addEventListener('click', event => {
 			let href = anchor(event).href;
 			if (href) {
 				event.preventDefault();
+				doc.visibilityState = 'hidden';
 				dispatch('beforeunload');
 				history.pushState(null, null, location.href);
 				load(href);
