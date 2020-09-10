@@ -5,9 +5,7 @@ import config from '../config.js';
 
 /**Joins parts of a URL with a forward slash */
 export let slash = (...parts) => parts
-	.map(part =>
-		part.trim().replace(/^\/+|\/+$/, '')
-	)
+	.map(part => part.trim().replace(/^\/+|\/+$/, ''))
 	.join('/');
 
 /**Gets the tag name of the first HTML element in a string */
