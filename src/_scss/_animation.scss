@@ -86,7 +86,7 @@ html {
 }
 
 .animation {
-	$dotsPerLine: 48;
+	$dotsPerLine: 44;
 	$spread: 0.037;
 	--dotSize: 0.2em;
 	--durationR: 17s;
@@ -100,6 +100,7 @@ html {
 	height: 12em;
 	width: 12em;
 	will-change: transform;
+	transform: translate3d(0, 0, 0);
 
 	&:hover {
 		--dotSize: 2em;

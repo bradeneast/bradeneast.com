@@ -614,6 +614,8 @@ html[data-schwifty] .border-bottom::before {
   height: 12em;
   width: 12em;
   will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 .animation:hover {
@@ -661,233 +663,213 @@ html[data-schwifty] .border-bottom::before {
 }
 
 .animation .segment:nth-of-type(2) {
-  color: rgba(255, 72, 224, 0.04);
+  color: rgba(255, 72, 224, 0.05);
   --delay: 0.074s;
 }
 
 .animation .segment:nth-of-type(3) {
-  color: rgba(255, 72, 224, 0.06);
+  color: rgba(255, 72, 224, 0.07);
   --delay: 0.111s;
 }
 
 .animation .segment:nth-of-type(4) {
-  color: rgba(255, 72, 224, 0.08);
+  color: rgba(255, 72, 224, 0.09);
   --delay: 0.148s;
 }
 
 .animation .segment:nth-of-type(5) {
-  color: rgba(255, 72, 224, 0.1);
+  color: rgba(255, 72, 224, 0.11);
   --delay: 0.185s;
 }
 
 .animation .segment:nth-of-type(6) {
-  color: rgba(255, 72, 224, 0.13);
+  color: rgba(255, 72, 224, 0.14);
   --delay: 0.222s;
 }
 
 .animation .segment:nth-of-type(7) {
-  color: rgba(255, 72, 224, 0.15);
+  color: rgba(255, 72, 224, 0.16);
   --delay: 0.259s;
 }
 
 .animation .segment:nth-of-type(8) {
-  color: rgba(255, 72, 224, 0.17);
+  color: rgba(255, 72, 224, 0.18);
   --delay: 0.296s;
 }
 
 .animation .segment:nth-of-type(9) {
-  color: rgba(255, 72, 224, 0.19);
+  color: rgba(255, 72, 224, 0.2);
   --delay: 0.333s;
 }
 
 .animation .segment:nth-of-type(10) {
-  color: rgba(255, 72, 224, 0.21);
+  color: rgba(255, 72, 224, 0.23);
   --delay: 0.37s;
 }
 
 .animation .segment:nth-of-type(11) {
-  color: rgba(255, 72, 224, 0.23);
+  color: rgba(255, 72, 224, 0.25);
   --delay: 0.407s;
 }
 
 .animation .segment:nth-of-type(12) {
-  color: rgba(255, 72, 224, 0.25);
+  color: rgba(255, 72, 224, 0.27);
   --delay: 0.444s;
 }
 
 .animation .segment:nth-of-type(13) {
-  color: rgba(255, 72, 224, 0.27);
+  color: rgba(255, 72, 224, 0.3);
   --delay: 0.481s;
 }
 
 .animation .segment:nth-of-type(14) {
-  color: rgba(255, 72, 224, 0.29);
+  color: rgba(255, 72, 224, 0.32);
   --delay: 0.518s;
 }
 
 .animation .segment:nth-of-type(15) {
-  color: rgba(255, 72, 224, 0.31);
+  color: rgba(255, 72, 224, 0.34);
   --delay: 0.555s;
 }
 
 .animation .segment:nth-of-type(16) {
-  color: rgba(255, 72, 224, 0.33);
+  color: rgba(255, 72, 224, 0.36);
   --delay: 0.592s;
 }
 
 .animation .segment:nth-of-type(17) {
-  color: rgba(255, 72, 224, 0.35);
+  color: rgba(255, 72, 224, 0.39);
   --delay: 0.629s;
 }
 
 .animation .segment:nth-of-type(18) {
-  color: rgba(255, 72, 224, 0.38);
+  color: rgba(255, 72, 224, 0.41);
   --delay: 0.666s;
 }
 
 .animation .segment:nth-of-type(19) {
-  color: rgba(255, 72, 224, 0.4);
+  color: rgba(255, 72, 224, 0.43);
   --delay: 0.703s;
 }
 
 .animation .segment:nth-of-type(20) {
-  color: rgba(255, 72, 224, 0.42);
+  color: rgba(255, 72, 224, 0.45);
   --delay: 0.74s;
 }
 
 .animation .segment:nth-of-type(21) {
-  color: rgba(255, 72, 224, 0.44);
+  color: rgba(255, 72, 224, 0.48);
   --delay: 0.777s;
 }
 
 .animation .segment:nth-of-type(22) {
-  color: rgba(255, 72, 224, 0.46);
+  color: rgba(255, 72, 224, 0.5);
   --delay: 0.814s;
 }
 
 .animation .segment:nth-of-type(23) {
-  color: rgba(255, 72, 224, 0.48);
+  color: rgba(255, 72, 224, 0.52);
   --delay: 0.851s;
 }
 
 .animation .segment:nth-of-type(24) {
-  color: rgba(255, 72, 224, 0.5);
+  color: rgba(255, 72, 224, 0.55);
   --delay: 0.888s;
 }
 
 .animation .segment:nth-of-type(25) {
-  color: rgba(255, 72, 224, 0.52);
+  color: rgba(255, 72, 224, 0.57);
   --delay: 0.925s;
 }
 
 .animation .segment:nth-of-type(26) {
-  color: rgba(255, 72, 224, 0.54);
+  color: rgba(255, 72, 224, 0.59);
   --delay: 0.962s;
 }
 
 .animation .segment:nth-of-type(27) {
-  color: rgba(255, 72, 224, 0.56);
+  color: rgba(255, 72, 224, 0.61);
   --delay: 0.999s;
 }
 
 .animation .segment:nth-of-type(28) {
-  color: rgba(255, 72, 224, 0.58);
+  color: rgba(255, 72, 224, 0.64);
   --delay: 1.036s;
 }
 
 .animation .segment:nth-of-type(29) {
-  color: rgba(255, 72, 224, 0.6);
+  color: rgba(255, 72, 224, 0.66);
   --delay: 1.073s;
 }
 
 .animation .segment:nth-of-type(30) {
-  color: rgba(255, 72, 224, 0.63);
+  color: rgba(255, 72, 224, 0.68);
   --delay: 1.11s;
 }
 
 .animation .segment:nth-of-type(31) {
-  color: rgba(255, 72, 224, 0.65);
+  color: rgba(255, 72, 224, 0.7);
   --delay: 1.147s;
 }
 
 .animation .segment:nth-of-type(32) {
-  color: rgba(255, 72, 224, 0.67);
+  color: rgba(255, 72, 224, 0.73);
   --delay: 1.184s;
 }
 
 .animation .segment:nth-of-type(33) {
-  color: rgba(255, 72, 224, 0.69);
+  color: rgba(255, 72, 224, 0.75);
   --delay: 1.221s;
 }
 
 .animation .segment:nth-of-type(34) {
-  color: rgba(255, 72, 224, 0.71);
+  color: rgba(255, 72, 224, 0.77);
   --delay: 1.258s;
 }
 
 .animation .segment:nth-of-type(35) {
-  color: rgba(255, 72, 224, 0.73);
+  color: rgba(255, 72, 224, 0.8);
   --delay: 1.295s;
 }
 
 .animation .segment:nth-of-type(36) {
-  color: rgba(255, 72, 224, 0.75);
+  color: rgba(255, 72, 224, 0.82);
   --delay: 1.332s;
 }
 
 .animation .segment:nth-of-type(37) {
-  color: rgba(255, 72, 224, 0.77);
+  color: rgba(255, 72, 224, 0.84);
   --delay: 1.369s;
 }
 
 .animation .segment:nth-of-type(38) {
-  color: rgba(255, 72, 224, 0.79);
+  color: rgba(255, 72, 224, 0.86);
   --delay: 1.406s;
 }
 
 .animation .segment:nth-of-type(39) {
-  color: rgba(255, 72, 224, 0.81);
+  color: rgba(255, 72, 224, 0.89);
   --delay: 1.443s;
 }
 
 .animation .segment:nth-of-type(40) {
-  color: rgba(255, 72, 224, 0.83);
+  color: rgba(255, 72, 224, 0.91);
   --delay: 1.48s;
 }
 
 .animation .segment:nth-of-type(41) {
-  color: rgba(255, 72, 224, 0.85);
+  color: rgba(255, 72, 224, 0.93);
   --delay: 1.517s;
 }
 
 .animation .segment:nth-of-type(42) {
-  color: rgba(255, 72, 224, 0.88);
+  color: rgba(255, 72, 224, 0.95);
   --delay: 1.554s;
 }
 
 .animation .segment:nth-of-type(43) {
-  color: rgba(255, 72, 224, 0.9);
-  --delay: 1.591s;
-}
-
-.animation .segment:nth-of-type(44) {
-  color: rgba(255, 72, 224, 0.92);
-  --delay: 1.628s;
-}
-
-.animation .segment:nth-of-type(45) {
-  color: rgba(255, 72, 224, 0.94);
-  --delay: 1.665s;
-}
-
-.animation .segment:nth-of-type(46) {
-  color: rgba(255, 72, 224, 0.96);
-  --delay: 1.702s;
-}
-
-.animation .segment:nth-of-type(47) {
   color: rgba(255, 72, 224, 0.98);
-  --delay: 1.739s;
+  --delay: 1.591s;
 }
 
 .animation .segment::after {
