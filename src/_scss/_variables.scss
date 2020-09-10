@@ -9,6 +9,7 @@ $g7: #eff0f1;
 $g8: white;
 $primary: #196aff;
 $secondary: #ff3848;
+$accent: #ff48e0;
 $flow1: 1rem;
 $flow2: 2rem;
 $flow3: 3rem;
@@ -36,7 +37,8 @@ $fontVariations: (("CASL" 0, "slnt" 0), ("CASL" 1, "slnt" -13), ("CASL" 1, "slnt
 	--g7: #{$g7};
 	--g8: #{$g8};
 	--primary: #{$primary};
-	--accent: #ff48e0;
+	--secondary: #{$secondary};
+	--accent: #{$accent};
 	--fontWeightRegular: #{$fontWeightRegular};
 	--fontWeightMedium: #{$fontWeightMedium};
 	--fontWeightHeavy: #{$fontWeightHeavy};
@@ -58,6 +60,7 @@ html {
 		--g7: #{$g1};
 		--g8: #{$g0};
 		--primary: #{$secondary};
+		--secondary: #{$primary};
 		--shadowColor: rgba(200, 210, 255, 0.1);
 		--shadowColor: rgba(0, 0, 0, 0.4);
 		--fontWeightRegular: 300;

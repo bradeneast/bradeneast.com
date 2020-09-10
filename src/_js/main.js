@@ -15,7 +15,10 @@ function init() {
 		entries.map(entry =>
 			entry.target.classList
 				.toggle('paused', !entry.isIntersecting)
-		)
+		),
+		{
+			threshold: .37
+		}
 	);
 	for (let animation of $$('.animation')) {
 		animationHandler.observe(animation);

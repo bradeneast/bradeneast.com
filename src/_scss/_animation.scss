@@ -26,7 +26,9 @@
 }
 
 .paused,
-.paused * {
+.paused *,
+.paused *::after,
+.paused *::before {
 	animation-play-state: paused !important;
 }
 
@@ -79,6 +81,111 @@ html {
 		.border-top::before,
 		.border-bottom::before {
 			transform: scaleX(0);
+		}
+	}
+}
+
+.animation {
+	$dotsPerLine: 28;
+	$spacing: 0.063;
+	--durationR: 11s;
+	--directionR: 1;
+	--animationX: segmentX;
+	--animationY: segmentY;
+	--durationX: 5s;
+	--durationY: 5s;
+	--easingX: linear;
+	--easingY: ease-in-out;
+	background: var(--g7);
+	height: 12em;
+	width: 12em;
+	will-change: transform;
+
+	*,
+	*::before,
+	*::after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.line {
+		animation: lineAnimation var(--durationR) linear infinite;
+	}
+
+	.segment {
+		width: 0.5em;
+		animation: var(--animationX) var(--durationX) var(--easingX) infinite;
+
+		@for $i from 0 to $dotsPerLine {
+			&:nth-of-type(#{$i + 1}) {
+				$space: $spacing * $i;
+				$color: rgba(
+					$color: $accent,
+					$alpha: $space,
+				);
+				animation-delay: #{$space}s;
+
+				&::after {
+					background-image: linear-gradient($color, $color);
+					animation-delay: #{$space}s;
+				}
+			}
+		}
+
+		&::after {
+			content: "";
+			height: 0.5em;
+			border-radius: 50%;
+			background-color: var(--primary);
+			animation: var(--animationY) var(--durationY) var(--easingY) infinite;
+		}
+	}
+
+	@keyframes lineAnimation {
+		from {
+			transform: scale(0.95) rotate(0deg);
+		}
+		to {
+			transform: scale(0.95) rotate(calc(360deg * var(--directionR)));
+		}
+	}
+
+	@keyframes segmentY {
+		0% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateY(12em);
+		}
+		50% {
+			transform: translateY(0);
+		}
+		75% {
+			transform: translateY(12em);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes segmentX {
+		0% {
+			transform: translateX(0);
+		}
+		25% {
+			transform: translateX(3em);
+		}
+		50% {
+			transform: translateX(6em);
+		}
+		75% {
+			transform: translateX(9em);
+		}
+		100% {
+			transform: translateX(12em);
 		}
 	}
 }

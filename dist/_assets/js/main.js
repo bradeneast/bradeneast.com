@@ -24,7 +24,7 @@ var __values = (this && this.__values) || function(o) {
         }, M = function (b) { return b.target.closest(a) || {}; }, G = function () { return u(a).forEach(function (b) { return L.observe(b); }); }, h = function (b, d) {
             if (d === void 0) { d = window; }
             return d.dispatchEvent(new Event(b));
-        }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(p); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1000; }, N = function (b) { if (!b)
+        }, H = function (b) { return b.replace(/m?s/gi, ""); }, I = function () { var b = getComputedStyle(p); return (H(b.transitionDelay) + H(b.transitionDuration)) * 1e3; }, N = function (b) { if (!b)
             return; var d = new XMLHttpRequest(); d.onreadystatechange = function () { this.status == 200 && l.set(b, d.responseXML); }, d.open("GET", b, !0), d.responseType = "document", d.send(); }, J = function (b) {
             var e_1, _a;
             var d = l.get(b);
@@ -121,7 +121,7 @@ var __values = (this && this.__values) || function(o) {
         }
         finally { if (e_4) throw e_4.error; }
     }
-    var c = new IntersectionObserver(function (a) { return a.map(function (e) { return e.target.classList.toggle("paused", !e.isIntersecting); }); });
+    var c = new IntersectionObserver(function (a) { return a.map(function (e) { return e.target.classList.toggle("paused", !e.isIntersecting); }); }, { threshold: .37 });
     try {
         for (var _h = __values(r(".animation")), _j = _h.next(); !_j.done; _j = _h.next()) {
             var a = _j.value;
