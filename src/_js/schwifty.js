@@ -144,7 +144,6 @@ export default class Schwifty {
 			dispatch('unload');
 			setTimeout(
 				() => {
-					doc.readyState = 'loading';
 
 					// Replace Content
 					doc.body[innerHTML] = preloaded.body[innerHTML];
@@ -152,8 +151,6 @@ export default class Schwifty {
 					html.setAttribute(transitioningAttribute, 'in');
 
 					// Dispatch some events
-					doc.visibilityState = 'visible';
-					doc.readyState = 'interactive';
 					dispatch('DOMContentLoaded', doc);
 
 					// Callbacks
@@ -170,7 +167,6 @@ export default class Schwifty {
 					);
 
 					// Dispatch some more events
-					doc.readyState = 'complete';
 					dispatch('load');
 					dispatch('pageshow');
 
@@ -182,14 +178,12 @@ export default class Schwifty {
 		// Listen + Observe
 		observeTargets();
 		addEventListener('popstate', event => {
-			doc.visibilityState = 'hidden';
 			load(location.href)
 		});
 		addEventListener('click', event => {
 			let href = anchor(event).href;
 			if (href) {
 				event.preventDefault();
-				doc.visibilityState = 'hidden';
 				dispatch('beforeunload');
 				history.pushState(null, null, location.href);
 				load(href);
