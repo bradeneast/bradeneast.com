@@ -11,4 +11,18 @@ So, I started coding WRDS to take advantage of the responsive, open-ended nature
 
 My objective with this project was to use as few libraries as possible, and make something that was easy to scale as I continue to add new features.
 
+## Technologies
+
+<Brick use="_bricks/atoms/blurb.html">
+	<BlurbTitle>
+		<h3>lit-html</h3>
+	</BlurbTitle>
+	<BlurbDescription>
+		Lit-html is a templating library from Google's <a href="https://www.polymer-project.org/">Polymer Project</a>. I chose it because of its simplicity and extensibility.
+	</BlurbDescription>
+	<BlurbImage>
+		<img src="/_assets/images/technologies/lit-html.svg" />
+	</BlurbImage>
+</Brick>
+
 Finally, WRDS is also privacy-first, meaning your data is never shared with a server. Everything is stored locally on your machine, giving you total control and privacy.
