@@ -4,12 +4,8 @@
 	gap: $flow2;
 	align-items: center;
 	padding: $flow2 0;
+	margin-top: $flow2;
 	margin-bottom: $flow2;
-
-	&:first-of-type {
-		padding-top: $flow4;
-		margin-top: $flow2;
-	}
 
 	&--image {
 		display: grid;

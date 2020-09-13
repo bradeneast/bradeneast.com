@@ -1144,12 +1144,8 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem 0;
-  margin-bottom: 2rem;
-}
-
-.blurb:first-of-type {
-  padding-top: 4rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .blurb--image {
