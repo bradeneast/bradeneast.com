@@ -1,7 +1,7 @@
 WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, export/import data, and write unlimited styles.
 
 ## Why build another word processor?
-WRDS was built to solve the problems I encountered designing copy-centered PDFs like press-releases and guides. For me, programs like Microsoft Word and Adobe InDesign weren't quite right for quickly creating and modifying these types of documents. I felt like I was using an electric drill when I really needed a hammer.
+WRDS was built to solve the problems I encountered designing copy-centered PDFs like press-releases and guides. For me, programs like Microsoft Word and Adobe InDesign weren't quite right for quickly creating and modifying these types of documents. I felt like I was using an electric drill when what I really needed was a hammer.
 
 <video loop autoplay muted playsinline src="/_assets/images/wrds/wrds-demo.mp4"></video>
 
