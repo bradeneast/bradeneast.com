@@ -551,8 +551,8 @@ button.toggle {
           animation-play-state: paused !important;
 }
 
-html .feed li,
-html article p,
+html .feed > *,
+html article > *,
 html .blurb {
   -webkit-transition: opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), -webkit-transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
   transition: opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), -webkit-transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
@@ -560,25 +560,32 @@ html .blurb {
   transition: transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), -webkit-transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
 }
 
-html .feed li:nth-child(2),
-html article p:nth-child(2),
+html .feed > *:nth-child(2),
+html article > *:nth-child(2),
 html .blurb:nth-child(2) {
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
 
-html .feed li:nth-child(3),
-html article p:nth-child(3),
+html .feed > *:nth-child(3),
+html article > *:nth-child(3),
 html .blurb:nth-child(3) {
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
 
-html .feed li:nth-child(4),
-html article p:nth-child(4),
+html .feed > *:nth-child(4),
+html article > *:nth-child(4),
 html .blurb:nth-child(4) {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+}
+
+html .feed > *:nth-child(5),
+html article > *:nth-child(5),
+html .blurb:nth-child(5) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 
 html main {
