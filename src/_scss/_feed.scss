@@ -1,13 +1,15 @@
+.feed:not(.grid) {
+	li:not(:last-child) {
+		margin-bottom: $flow3;
+	}
+}
+
 .feed {
 	padding-top: $flow2;
 	margin-top: $flow2;
 
 	li {
 		list-style-type: none;
-
-		&:not(:last-child) {
-			margin-bottom: $flow3;
-		}
 
 		a:hover,
 		a:focus {
@@ -17,6 +19,10 @@
 				text-decoration-color: var(--primary);
 			}
 		}
+	}
+
+	.post--image {
+		max-height: 16rem;
 	}
 
 	.post--info {

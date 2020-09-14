@@ -7,6 +7,12 @@
 	pointer-events: none;
 }
 
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: $flow2;
+}
+
 [class*="border-"] {
 	&::before {
 		content: "";

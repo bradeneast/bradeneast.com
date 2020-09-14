@@ -104,8 +104,8 @@ body footer {
 
 body main {
   padding-top: 4rem;
-  max-width: 42rem;
   padding-bottom: 2rem;
+  max-width: 44rem;
 }
 
 body main > * {
@@ -288,6 +288,14 @@ h6 {
   pointer-events: none;
 }
 
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
 [class*="border-"]::before {
   content: "";
   position: absolute;
@@ -392,8 +400,8 @@ nav a {
     background: currentColor;
     -webkit-transform-origin: bottom;
             transform-origin: bottom;
-    -webkit-transition: 0.28s ease;
-    transition: 0.28s ease;
+    -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+    transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
   }
   nav a:nth-child(2)::after {
     -webkit-transition-delay: 0.1s;
@@ -543,9 +551,37 @@ button.toggle {
           animation-play-state: paused !important;
 }
 
+html .feed li,
+html article p,
+html .blurb {
+  -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+}
+
+html .feed li:nth-child(2),
+html article p:nth-child(2),
+html .blurb:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+html .feed li:nth-child(3),
+html article p:nth-child(3),
+html .blurb:nth-child(3) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+html .feed li:nth-child(4),
+html article p:nth-child(4),
+html .blurb:nth-child(4) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
 html main {
-  -webkit-transition: 0.28s ease;
-  transition: 0.28s ease;
+  -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
 }
 
 html footer[class*="border-"]::before {
@@ -554,8 +590,8 @@ html footer[class*="border-"]::before {
 }
 
 html [class*="border-"]::before {
-  -webkit-transition: 0.28s ease;
-  transition: 0.28s ease;
+  -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
   -webkit-transform-origin: top left;
           transform-origin: top left;
 }
@@ -581,6 +617,14 @@ html[data-schwifty="in"] {
 }
 
 html[data-schwifty] main {
+  opacity: 0;
+}
+
+html[data-schwifty] .feed li,
+html[data-schwifty] article p,
+html[data-schwifty] .blurb {
+  -webkit-transform: translateY(1em);
+          transform: translateY(1em);
   opacity: 0;
 }
 
@@ -648,8 +692,8 @@ html[data-schwifty] .border-bottom::before {
           animation: var(--animationX) var(--durationX) var(--easingX) infinite, fadeInOut var(--durationX) ease infinite;
   -webkit-animation-delay: var(--delay);
           animation-delay: var(--delay);
-  -webkit-transition: 0.28s ease;
-  transition: 0.28s ease;
+  -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
 }
 
 .animation .segment:nth-of-type(1) {
@@ -843,8 +887,8 @@ html[data-schwifty] .border-bottom::before {
           animation: var(--animationY) var(--durationY) var(--easingY) infinite;
   -webkit-animation-delay: var(--delay);
           animation-delay: var(--delay);
-  -webkit-transition: 0.28s ease;
-  transition: 0.28s ease;
+  -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
 }
 
 @-webkit-keyframes lineRotate {
@@ -1130,15 +1174,6 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   }
 }
 
-.blurb,
-.technologies {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 2rem;
-}
-
 .blurb {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1169,6 +1204,10 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           filter: drop-shadow(0 0.2em 0.4em var(--g7));
 }
 
+.feed:not(.grid) li:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
 .feed {
   padding-top: 2rem;
   margin-top: 2rem;
@@ -1178,16 +1217,16 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   list-style-type: none;
 }
 
-.feed li:not(:last-child) {
-  margin-bottom: 3rem;
-}
-
 .feed li a:hover ~ * a,
 .feed li a:focus ~ * a {
   font-weight: var(--fontWeightBold);
   color: inherit;
   -webkit-text-decoration-color: var(--primary);
           text-decoration-color: var(--primary);
+}
+
+.feed .post--image {
+  max-height: 16rem;
 }
 
 .feed .post--info__excerpt {

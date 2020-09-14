@@ -21,7 +21,7 @@ $borderWidth: 0.2rem;
 $borderStyle: solid;
 $motionTransition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
 $colorTransition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
-$smoothTransition: 0.28s ease;
+$smoothTransition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
 $mobile: 54em;
 $fallback: showFallback 5s forwards;
 $fontVariations: (("CASL" 0, "slnt" 0), ("CASL" 1, "slnt" -13), ("CASL" 1, "slnt" 0));
