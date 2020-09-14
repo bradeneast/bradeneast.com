@@ -1,11 +1,11 @@
-WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, and export/import data for portability.
+WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, and export your data for portability.
 
 ## Why another word processor?
-WRDS was built to solve the problems I encountered designing copy-centered PDFs like press-releases and guides. For me, programs like Microsoft Word and Adobe InDesign weren't quite right for quickly creating and modifying these types of documents. I felt like I was using a multi-purpose drill when what I really needed was a simple screwdriver.
-
-<video loop autoplay muted playsinline src="/_assets/images/wrds/wrds-demo.mp4"></video>
+WRDS was built to solve the problems I encountered designing copy-centered PDFs like press-releases and guides. For me, programs like Microsoft Word and Adobe InDesign weren't quite right for quickly creating and modifying these types of documents. I felt like I was using a table saw where I really just needed a pocket-knife.
 
 I started coding WRDS to take advantage of the responsive nature of the web, the flexibility of Markdown syntax, and the power of CSS.
+
+<video loop autoplay muted playsinline src="/_assets/images/wrds/wrds-demo.mp4"></video>
 
 > Building this app from scratch has really broadened my practical knowledge of Javascript, but it's also given me a huge appreciation for how larger web apps handle edge-cases and extensibility.
 
@@ -13,7 +13,7 @@ My objective with this project was to make something that was easy to scale as I
 
 ## Technologies
 
-<ul class="technologies">
+<ul class="technologies grid">
 
 <Brick use="_bricks/atoms/tech.html">
 	<TechName>Typescript</TechName>
@@ -45,7 +45,7 @@ My objective with this project was to make something that was easy to scale as I
 <Brick use="_bricks/atoms/tech.html">
 	<TechName>Netlify</TechName>
 	<TechUse>
-		I'm hosting this project on Netlify for continuous deployment from the WRDS repository on Github.
+		I'm hosting WRDS on Netlify and deploying from its GitHub repository.
 	</TechUse>
 	<TechLogo>
 		<img src="/_assets/images/technologies/netlify.svg" />

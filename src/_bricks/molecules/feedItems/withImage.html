@@ -19,7 +19,9 @@
 		</div>
 
 		<div class="post--info__length">
-			<Slot name="Type"></Slot>
+			<Slot name="Type">
+				@{{Math.round(Body.split(' ').length * .01)}}-minute read
+			</Slot>
 		</div>
 
 	</div>
