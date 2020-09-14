@@ -44,14 +44,12 @@
 	margin-bottom: $flow2;
 
 	.has-img {
-		margin-top: $flow3;
-
 		& + .has-img {
 			margin-top: 0;
 		}
 
 		& + p {
-			margin-top: $flow3;
+			margin-top: $flow2;
 		}
 	}
 
