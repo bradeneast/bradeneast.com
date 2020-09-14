@@ -1,8 +1,10 @@
 .post {
 	&--image {
-		height: 24rem;
+		max-height: 24rem;
 		overflow: hidden;
 		margin-bottom: -$flow3;
+		display: grid;
+		place-items: center;
 	}
 
 	&--info {

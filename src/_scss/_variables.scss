@@ -65,6 +65,19 @@ html {
 		--shadowColor: rgba(0, 0, 0, 0.4);
 		--fontWeightRegular: 300;
 
+		body {
+			color: var(--g1);
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: var(--g0);
+		}
+
 		#dark_mode_toggle {
 			--on: 0;
 		}
