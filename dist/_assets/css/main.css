@@ -1234,10 +1234,6 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           text-decoration-color: var(--primary);
 }
 
-.feed .post--image {
-  max-height: 16rem;
-}
-
 .feed .post--info__excerpt {
   margin-bottom: 0;
 }
@@ -1597,9 +1593,9 @@ pre span {
     margin-right: 0.5rem;
     margin-left: 1rem;
   }
-  img {
+  .post--image img {
     max-width: 27em;
-    height: 360px;
+    height: 280px;
   }
   .feed h2 a {
     color: inherit;
