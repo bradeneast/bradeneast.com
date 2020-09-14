@@ -36,7 +36,7 @@ html {
 	.feed li,
 	article p,
 	.blurb {
-		transition: $smoothTransition;
+		transition: transform $smoothTransition, opacity $smoothTransition;
 
 		&:nth-child(2) {
 			transition-delay: 0.1s;

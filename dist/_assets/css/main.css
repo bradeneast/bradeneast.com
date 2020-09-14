@@ -554,8 +554,10 @@ button.toggle {
 html .feed li,
 html article p,
 html .blurb {
-  -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
-  transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  -webkit-transition: opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), -webkit-transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), -webkit-transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
+  transition: transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), opacity 0.63s cubic-bezier(0.4, 0.3, 0.1, 1), -webkit-transform 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
 }
 
 html .feed li:nth-child(2),
@@ -1590,6 +1592,7 @@ pre span {
   }
   img {
     max-width: 27em;
+    height: 360px;
   }
   .feed h2 a {
     color: inherit;
