@@ -26,9 +26,9 @@ function searchSite(query) {
 			});
 		}
 
-		results = results.filter(result =>
-			queryRegExp.test(altFromSrc(result.relative))
-			&& result.relative.length > 1
+		results = results.filter(url =>
+			queryRegExp.test(altFromSrc(url.relative))
+			&& url.relative.length > 1
 		);
 
 		return [...new Set(results)];
@@ -54,6 +54,7 @@ function handleSearch(event) {
 
 				a.innerText = altFromSrc(result.relative);
 				a.href = result.absolute;
+				a.setAttribute('data-no-schwifty', 1);
 				h2.append(a);
 
 				li.append(h2);
