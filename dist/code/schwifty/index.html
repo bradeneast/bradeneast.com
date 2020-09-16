@@ -102,11 +102,11 @@
 </ol>
 <p>It’s possible to have these all dialed in, but even a highly-optimized server is sometimes not able to deliver smooth, instantaneous navigation.</p>
 <blockquote>
-<p>Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections usually wait at least 300ms for page loads.</p>
+<p>Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections can wait at least 300ms for page loads.</p>
 </blockquote>
 <p><video autoplay playsinline loop muted src="/_assets/images/schwifty/speedDemo.mp4"></video></p>
 <h2 id="how-does-schwifty-solve-this-problem">How does Schwifty solve this problem?</h2>
-<p>Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It combines Javascript’s <code>IntersectionObserver</code> with an asynchronous HTTP request to <del>lazy-load</del> <em>lazy-preload</em> links in the viewport.</p>
+<p>Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It essentially <del>lazy-loads</del> <em>lazy-preloads</em> links as they scroll into view.</p>
 <p>When a link is clicked, the content is swapped out and navigation happens. Then Schwifty emits the appropriate events and runs the <code>onload</code> callback, which allows for the CSS-animated page transitions you see on this site.</p>
 <p>Finally, Schwifty is built for the lightest possible client-side load. That’s why it’s only <strong><em>1.1kb minified and gzipped</em></strong>.</p>
 <h2 id="technologies">Technologies</h2>
@@ -120,7 +120,7 @@
 		Git & Github
 	</h3>
 	<p>
-		I used git branches to incrementally add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
+		I used git branches to add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
 	</p>
 </div>
 

@@ -12,12 +12,12 @@ Schwfity is my first published Javascript library. It aims to help static sites 
 
 It's possible to have these all dialed in, but even a highly-optimized server is sometimes not able to deliver smooth, instantaneous navigation.
 
-> Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections usually wait at least 300ms for page loads.
+> Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections can wait at least 300ms for page loads.
 
 <video autoplay playsinline loop muted src="/_assets/images/schwifty/speedDemo.mp4"></video>
 
 ## How does Schwifty solve this problem?
-Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It combines Javascript's `IntersectionObserver` with an asynchronous HTTP request to ~lazy-load~ *lazy-preload* links in the viewport.
+Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It essentially ~lazy-loads~ *lazy-preloads* links as they scroll into view.
 
 When a link is clicked, the content is swapped out and navigation happens. Then Schwifty emits the appropriate events and runs the `onload` callback, which allows for the CSS-animated page transitions you see on this site.
 
@@ -30,7 +30,7 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 <Brick use="_bricks/atoms/tech.html">
 	<TechName>Git & Github</TechName>
 	<TechUse>
-		I used git branches to incrementally add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
+		I used git branches to add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
 	</TechUse>
 	<TechLogo>
 		<img src="/_assets/images/technologies/github.svg" />
