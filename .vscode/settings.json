@@ -25,11 +25,6 @@
 				"silent": true,
 			},
 			{
-				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/random.js --outfile=./dist/_assets/js/random.js",
-				"match": ".*src.*js",
-				"silent": true,
-			},
-			{
 				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/search.js --outfile=./dist/_assets/js/search.js",
 				"match": ".*src.*js",
 				"silent": true,

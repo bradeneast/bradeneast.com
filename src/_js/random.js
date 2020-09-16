@@ -4,11 +4,6 @@ export default function random() {
 	let hrefs = [];
 	let include = ['/blog/.+'];
 
-	setTimeout(() =>
-		$$('.hidden').forEach(elem => elem.classList.remove('hidden')),
-		1000
-	);
-
 	getSitemap().then(sitemap => {
 
 		for (let loc of $$('loc', sitemap))
