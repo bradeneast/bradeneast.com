@@ -26,10 +26,15 @@
 }
 
 .paused,
-.paused *,
-.paused *::after,
-.paused *::before {
+.reduced-motion {
 	animation-play-state: paused !important;
+	transition: none !important;
+	*,
+	*::after,
+	*::before {
+		animation-play-state: paused !important;
+		transition: none !important;
+	}
 }
 
 html {

@@ -564,11 +564,23 @@ button.toggle {
 }
 
 .paused,
-.paused *,
-.paused *::after,
-.paused *::before {
+.reduced-motion {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.paused *,
+.paused *::after,
+.paused *::before,
+.reduced-motion *,
+.reduced-motion *::after,
+.reduced-motion *::before {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 html .feed > *,
