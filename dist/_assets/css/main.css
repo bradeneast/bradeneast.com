@@ -196,6 +196,12 @@ ol {
   padding-left: 1rem;
 }
 
+ul li::marker,
+ol li::marker {
+  color: var(--g4);
+  font-weight: 820;
+}
+
 pre,
 blockquote {
   padding: 1rem;
@@ -307,6 +313,7 @@ h6 {
   -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 [class*="border-"]::before {
@@ -447,7 +454,7 @@ button {
 }
 
 button:hover, button:focus {
-  background: var(--g7);
+  background-color: var(--g7);
 }
 
 button.toggle {
@@ -1092,6 +1099,16 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   margin-top: 2rem;
 }
 
+:not(.feed) article ul,
+:not(.feed) article ol {
+  margin-left: 1rem;
+}
+
+:not(.feed) article ul li,
+:not(.feed) article ol li {
+  padding-left: 1rem;
+}
+
 :not(.feed) article h2,
 :not(.feed) article h3,
 :not(.feed) article h4,
@@ -1150,8 +1167,6 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .technologies {
-  padding: 0;
-  list-style-type: none;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -1261,6 +1276,8 @@ table * {
   background-position: center;
   margin-bottom: 1rem;
   width: 100%;
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
 }
 
 .embedded_project .iframe_wrapper {
@@ -1288,10 +1305,12 @@ table * {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border: 0.2rem solid transparent;
+  color: white;
+  background: var(--primary);
 }
 
 .embedded_project button:hover, .embedded_project button:focus {
-  border-color: var(--primary);
+  background-color: var(--accent);
 }
 
 .embedded_project::before {
@@ -1304,22 +1323,18 @@ table * {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0.37;
   text-align: center;
   padding: 1rem;
   background: var(--g8);
   -webkit-transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
   transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
-}
-
-.embedded_project:hover::before, .embedded_project:focus-within::before {
-  opacity: 0.63;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
 .embedded_project.loaded {
   border-radius: 0;
-  -webkit-box-shadow: var(--shadow);
-          box-shadow: var(--shadow);
   resize: both;
 }
 

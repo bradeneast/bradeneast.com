@@ -55,6 +55,15 @@
 		}
 	}
 
+	ul,
+	ol {
+		margin-left: $flow1;
+
+		li {
+			padding-left: $flow1;
+		}
+	}
+
 	h2,
 	h3,
 	h4,

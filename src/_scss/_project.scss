@@ -3,6 +3,7 @@
 	background-position: center;
 	margin-bottom: $flow1;
 	width: 100%;
+	box-shadow: var(--shadow);
 
 	.iframe_wrapper {
 		position: relative;
@@ -28,10 +29,12 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		border: $borderWidth $borderStyle transparent;
+		color: $g8;
+		background: var(--primary);
 
 		&:hover,
 		&:focus {
-			border-color: var(--primary);
+			background-color: var(--accent);
 		}
 	}
 
@@ -44,23 +47,16 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		opacity: 0;
+		opacity: 0.37;
 		text-align: center;
 		padding: $flow1;
 		background: var(--g8);
 		transition: $colorTransition;
-	}
-
-	&:hover,
-	&:focus-within {
-		&::before {
-			opacity: 0.63;
-		}
+		backdrop-filter: blur(2px);
 	}
 
 	&.loaded {
 		border-radius: 0;
-		box-shadow: var(--shadow);
 		resize: both;
 
 		button {

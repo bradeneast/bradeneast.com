@@ -29,6 +29,11 @@ ol {
 ul,
 ol {
 	padding-left: $flow1;
+
+	li::marker {
+		color: var(--g4);
+		font-weight: $fontWeightHeavy;
+	}
 }
 
 pre,
