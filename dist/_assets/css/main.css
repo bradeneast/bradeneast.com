@@ -661,8 +661,8 @@ html[data-schwifty] main {
   opacity: 0;
 }
 
-html[data-schwifty] .feed li,
-html[data-schwifty] article p,
+html[data-schwifty] .feed > *,
+html[data-schwifty] article > *,
 html[data-schwifty] .blurb {
   -webkit-transform: translateY(1em);
           transform: translateY(1em);

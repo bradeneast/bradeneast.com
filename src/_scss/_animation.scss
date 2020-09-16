@@ -96,8 +96,8 @@ html {
 			opacity: 0;
 		}
 
-		.feed li,
-		article p,
+		.feed > *,
+		article > *,
 		.blurb {
 			transform: translateY(1em);
 			opacity: 0;
