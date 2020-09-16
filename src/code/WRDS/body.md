@@ -13,7 +13,7 @@ My objective with this project was to make something that was easy to scale as I
 
 ## Technologies
 
-<ul class="technologies grid">
+<div class="technologies grid">
 
 <Brick use="_bricks/atoms/tech.html">
 	<TechName>Typescript</TechName>
@@ -52,4 +52,4 @@ My objective with this project was to make something that was easy to scale as I
 	</TechLogo>
 </Brick>
 
-</ul>
+</div>

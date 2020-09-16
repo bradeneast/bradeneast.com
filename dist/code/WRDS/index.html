@@ -13,7 +13,7 @@
 	<meta property="og:title" content="WRDS" />
 	<meta property="og:description" content="Braden East | WRDS" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="https://www.bradeneast.com/code/WRDS/" />
+	<meta property="og:url" content="https://www.bradeneast.com/code/wrds/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Braden East" />
 	<meta property="og:image" content="https://www.bradeneast.com/_assets/images/wrds/logo.svg" />
@@ -27,7 +27,7 @@
 	<meta name="msapplication-TileImage" content="https://www.bradeneast.com/_assets/favicon_padded.png" />
 
 	<base href="/" />
-	<link rel="canonical" href="https://www.bradeneast.com/code/WRDS/">
+	<link rel="canonical" href="https://www.bradeneast.com/code/wrds/">
 	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
 	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
 
@@ -99,9 +99,9 @@
 </blockquote>
 <p>My objective with this project was to make something that was easy to scale as I continue to add new features. Finally, WRDS is also privacy-first, meaning your data is never shared with a server. Everything is stored locally on your machine, giving you total control and privacy.</p>
 <h2 id="technologies">Technologies</h2>
-<ul class="technologies grid">
+<div class="technologies grid">
 
-<li class="technology">
+<div class="technology">
 	<div class="technology--image">
 		<img src="/_assets/images/technologies/typescript.svg" />
 	</div>
@@ -111,9 +111,9 @@
 	<p>
 		I used Typescript's compiler to generate an accessible bundle from source code written in ES6+ syntax.
 	</p>
-</li>
+</div>
 
-<li class="technology">
+<div class="technology">
 	<div class="technology--image">
 		<img src="/_assets/images/technologies/lit-html.svg" />
 	</div>
@@ -123,9 +123,9 @@
 	<p>
 		I used this templating library from Google's <a href="https://www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
 	</p>
-</li>
+</div>
 
-<li class="technology">
+<div class="technology">
 	<div class="technology--image">
 		
 			<img src="/_assets/images/technologies/default-tech.svg" />
@@ -137,9 +137,9 @@
 	<p>
 		Since the source code was split up into components and templates, I used <a href="https://github.com/evanw/esbuild">esbuild</a> to bundle and minify the application.
 	</p>
-</li>
+</div>
 
-<li class="technology">
+<div class="technology">
 	<div class="technology--image">
 		<img src="/_assets/images/technologies/netlify.svg" />
 	</div>
@@ -149,9 +149,9 @@
 	<p>
 		I'm hosting WRDS on Netlify and deploying from its GitHub repository.
 	</p>
-</li>
+</div>
 
-</ul>
+</div>
 
 			<link rel="preconnect" href="https://wrds.netlify.app" />
 <link rel="dns-prefetch" href="https://wrds.netlify.app" />
@@ -162,11 +162,13 @@
 		<iframe height="540" width="100%" data-src="https://wrds.netlify.app" allowtransparency="true" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
 	</div>
 
-	<button class="interact">Interact</button>
+	<button class="interact">Load Frame</button>
 
 </div>
 
-<p>See the live demo of this project <a target="_blank" href="https://wrds.netlify.app">in a new tab.</a></p>
+<p>
+	See the live demo <a target="_blank" href="https://wrds.netlify.app">in a new tab.</a>
+</p>
 
 		</article>
 	</main>

@@ -6,17 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>
-		Code I've written
+		Schwifty.js
 	</title>
-	<meta name="description" content="Braden East | Code I've written" />
+	<meta name="description" content="Braden East | Schwifty.js" />
 
-	<meta property="og:title" content="Code I've written" />
-	<meta property="og:description" content="Braden East | Code I've written" />
+	<meta property="og:title" content="Schwifty.js" />
+	<meta property="og:description" content="Braden East | Schwifty.js" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="https://www.bradeneast.com/code/" />
+	<meta property="og:url" content="https://www.bradeneast.com/code/schwifty/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Braden East" />
-	<meta property="og:image" content="https://www.bradeneast.comundefined" />
+	<meta property="og:image" content="https://www.bradeneast.com/_assets/images/schwifty/logo.svg" />
 	<meta property="og:image:width" content="1620" />
 	<meta property="og:image:height" content="1080" />
 	<meta name="twitter:card" content="summary" />
@@ -27,7 +27,7 @@
 	<meta name="msapplication-TileImage" content="https://www.bradeneast.com/_assets/favicon_padded.png" />
 
 	<base href="/" />
-	<link rel="canonical" href="https://www.bradeneast.com/code/">
+	<link rel="canonical" href="https://www.bradeneast.com/code/schwifty/">
 	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
 	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
 
@@ -68,63 +68,108 @@
 	</aside>
 
 	<main class="border-left">
-		<h1>Technical things I've made for the <em>front-end</em>.</h1>
-		<p>
-			Here you'll find the things I'm a little bit proud of that make the web fun and easy.
-		</p>
-		<ul class="grid feed border-top">
-			<li>
-
-	<a href="/code/schwifty/">
 		<div class="post--image">
-			<img src=/_assets/images/schwifty/logo.svg>
+			<img width="540" height="360" src="/_assets/images/schwifty/logo.svg" />
 		</div>
-	</a>
 
-	<div class="post--info">
-
-		<h2>
-			<a href="/code/schwifty/">
+		<div class="post--info">
+			<h1>
 				Schwifty.js
-			</a>
-		</h2>
+			</h1>
 
-		<div class="post--info__tags">
-			Javascript, Performance, Static-Sites
+			<div class="post--info__tags">
+				Javascript, Performance, Static-Sites
+			</div>
+
+			<div class="post--info__date">
+				Library
+			</div>
+
 		</div>
 
-		<div class="post--info__length">
-			Library
-		</div>
+		<article>
 
+			<p>Schwfity is my first published Javascript library. It aims to help static sites join the instant-load party 🥳 with native and progressive apps.</p>
+<h2 id="arent-static-sites-already-fast">Aren’t static sites already fast?</h2>
+<p><em>Yes!</em> Static sites can have serious performance advantages. However, there are several “gotchas” where they can be slowed down <strong><em>dramatically</em></strong>.</p>
+<ol>
+<li>Slow DNS lookup</li>
+<li>Slow server response</li>
+<li>Slow SSL negotiation</li>
+<li>No asset compression (GZIP, Brotli, etc.)</li>
+<li>No server-side caching</li>
+<li>Resources spread out over lots of domains (CDNs, third-party scripts, Google fonts, etc.)</li>
+</ol>
+<p>It’s possible to have these all dialed in, but even a highly-optimized server is sometimes not able to deliver smooth, instantaneous navigation.</p>
+<blockquote>
+<p>Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections usually wait at least 300ms for page loads.</p>
+</blockquote>
+<p><video autoplay playsinline loop muted src="/_assets/images/schwifty/speedDemo.mp4"></video></p>
+<h2 id="how-does-schwifty-solve-this-problem">How does Schwifty solve this problem?</h2>
+<p>Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It combines Javascript’s <code>IntersectionObserver</code> with an asynchronous HTTP request to <del>lazy-load</del> <em>lazy-preload</em> links in the viewport.</p>
+<p>When a link is clicked, the content is swapped out and navigation happens. Then Schwifty emits the appropriate events and runs the <code>onload</code> callback, which allows for the CSS-animated page transitions you see on this site.</p>
+<p>Finally, Schwifty is built for the lightest possible client-side load. That’s why it’s only <strong><em>1.1kb minified and gzipped</em></strong>.</p>
+<h2 id="technologies">Technologies</h2>
+<div class="technologies grid">
+
+<div class="technology">
+	<div class="technology--image">
+		<img src="/_assets/images/technologies/github.svg" />
 	</div>
-</li><li>
+	<h3>
+		Git & Github
+	</h3>
+	<p>
+		I used git branches to incrementally add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
+	</p>
+</div>
 
-	<a href="/code/wrds/">
-		<div class="post--image">
-			<img src=/_assets/images/wrds/logo.svg>
-		</div>
-	</a>
-
-	<div class="post--info">
-
-		<h2>
-			<a href="/code/wrds/">
-				WRDS
-			</a>
-		</h2>
-
-		<div class="post--info__tags">
-			Typescript, lit-html, Netlify, esbuild
-		</div>
-
-		<div class="post--info__length">
-			Web App
-		</div>
-
+<div class="technology">
+	<div class="technology--image">
+		<img src="/_assets/images/technologies/javascript.svg" />
 	</div>
-</li>
-		</ul>
+	<h3>
+		Javascript ES6
+	</h3>
+	<p>
+		I leveraged several features of modern Javascript, including Classes, new Array methods, and the Intersection Observer API.
+	</p>
+</div>
+
+<div class="technology">
+	<div class="technology--image">
+		
+			<img src="/_assets/images/technologies/default-tech.svg" />
+		
+	</div>
+	<h3>
+		esbuild
+	</h3>
+	<p>
+		I used the <a target="_blank" href="https://github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
+	</p>
+</div>
+
+</div>
+
+			<link rel="preconnect" href="https://1kb.netlify.app/schwifty/" />
+<link rel="dns-prefetch" href="https://1kb.netlify.app/schwifty/" />
+
+<div class="embedded_project" style="background-image: url(/_assets/images/schwifty/screenshot.png)">
+
+	<div class="iframe_wrapper">
+		<iframe height="540" width="100%" data-src="https://1kb.netlify.app/schwifty/" allowtransparency="true" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
+	</div>
+
+	<button class="interact">Load Frame</button>
+
+</div>
+
+<p>
+	See the live demo <a target="_blank" href="https://1kb.netlify.app/schwifty/">in a new tab.</a>
+</p>
+
+		</article>
 	</main>
 
 	<footer class="border-top">

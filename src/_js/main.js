@@ -3,6 +3,8 @@ import { $, altFromSrc, togglePreference, $$, elem } from './utils';
 
 function init() {
 
+	document.body.classList.remove('reduced-motion');
+
 	// Preference Toggles
 	for (let preference of ['dark_mode', 'muted']) {
 		let toggle = $(`#${preference}_toggle`);
