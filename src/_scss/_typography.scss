@@ -62,6 +62,10 @@ em {
 	font-variation-settings: nth($fontVariations, 2);
 }
 
+del {
+	color: var(--g4);
+}
+
 ::selection,
 mark {
 	background: var(--primary);

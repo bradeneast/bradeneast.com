@@ -229,6 +229,10 @@ em {
   font-variation-settings: "CASL" 1, "slnt" -13;
 }
 
+del {
+  color: var(--g4);
+}
+
 ::-moz-selection,
 mark {
   background: var(--primary);
