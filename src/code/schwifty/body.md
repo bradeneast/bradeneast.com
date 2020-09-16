@@ -19,9 +19,7 @@ It's possible to have these all dialed in, but even a highly-optimized server is
 ## How does Schwifty solve this problem?
 Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It essentially ~lazy-loads~ *lazy-preloads* links as they scroll into view.
 
-When a link is clicked, the content is swapped out and navigation happens. Then Schwifty emits the appropriate events and runs the `onload` callback, which allows for the CSS-animated page transitions you see on this site.
-
-Finally, Schwifty is built for the lightest possible client-side load. That's why it's only ***1.1kb minified and gzipped***.
+When a link is clicked, the content is swapped out and navigation happens. Then Schwifty emits the appropriate events and runs the `onload` callback, which allows for the CSS-animated page transitions you see on this site. Finally, Schwifty is built for the lightest possible client-side load. That's why it's only ***1.1kb minified and gzipped***.
 
 ## Technologies
 
