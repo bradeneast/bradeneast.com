@@ -9,7 +9,10 @@ function init() {
 
 	// Listen on all links to the random page
 	for (let randomLink of $$('a[href*="/random"]'))
-		randomLink.addEventListener('click', random);
+		randomLink.addEventListener('click', event => {
+			event.preventDefault();
+			random();
+		});
 
 	// Preference Toggles
 	for (let preference of ['dark_mode', 'muted']) {
