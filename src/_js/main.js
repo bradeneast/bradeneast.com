@@ -1,9 +1,15 @@
 import Schwifty from './schwifty.js';
 import { $, altFromSrc, togglePreference, $$, elem } from './utils';
+import random from './random.js';
 
 function init() {
 
+	// If this script doesn't run, the reduced-motion class is left on the body element
 	document.body.classList.remove('reduced-motion');
+
+	// Listen on all links to the random page
+	for (let randomLink of $$('a[href*="/random"]'))
+		randomLink.addEventListener('click', random);
 
 	// Preference Toggles
 	for (let preference of ['dark_mode', 'muted']) {
