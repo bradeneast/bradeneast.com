@@ -59,7 +59,7 @@ body {
 			margin-left: $flow2;
 		}
 
-		& > ul {
+		[class*="border-"] {
 			margin-left: 0;
 			padding-left: $flow2;
 		}

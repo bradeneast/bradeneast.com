@@ -124,7 +124,7 @@ body main > * {
   margin-left: 2rem;
 }
 
-body main > ul {
+body main [class*="border-"] {
   margin-left: 0;
   padding-left: 2rem;
 }
