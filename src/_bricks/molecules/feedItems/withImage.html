@@ -1,9 +1,7 @@
 <li>
 
-	<a href="{{sys.href}}">
-		<div class="post--image">
-			<img src={{Image}}>
-		</div>
+	<a class="post--image" href="{{sys.href}}">
+		<img src={{Image}}>
 	</a>
 
 	<div class="post--info">
@@ -22,6 +20,10 @@
 			<Slot name="Type">
 				@{{Math.round(Body.split(' ').length * .01)}}-minute read
 			</Slot>
+		</div>
+
+		<div class="post--info__excerpt">
+			@{{Body.split(/\n/).shift()}}
 		</div>
 
 	</div>

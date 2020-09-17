@@ -5,18 +5,30 @@
 }
 
 .feed {
-	padding-top: $flow2;
-	margin-top: $flow2;
+	padding: $flow4;
+	gap: $flow4;
+	grid-auto-rows: 32rem;
+	margin-top: $flow4;
 
 	li {
 		list-style-type: none;
+		display: flex;
+		flex-direction: column;
 
-		a:hover,
-		a:focus {
-			& ~ * a {
-				font-weight: var(--fontWeightBold);
-				color: inherit;
-				text-decoration-color: var(--primary);
+		.post--image {
+			flex-grow: 9;
+		}
+
+		a {
+			color: inherit;
+
+			&:hover,
+			&:focus {
+				& ~ * a {
+					font-weight: var(--fontWeightBold);
+					color: inherit;
+					text-decoration-color: var(--primary);
+				}
 			}
 		}
 	}

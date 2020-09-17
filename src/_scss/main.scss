@@ -54,7 +54,6 @@ body {
 	main {
 		padding-top: $flow4;
 		padding-bottom: $flow2;
-		max-width: 44rem;
 
 		& > * {
 			margin-left: $flow2;
@@ -71,7 +70,7 @@ img,
 video,
 iframe,
 svg {
-	width: 100%;
+	min-width: 100%;
 	max-height: 100%;
 	user-select: none;
 }
@@ -84,9 +83,9 @@ svg {
 img,
 video,
 svg {
+	height: 100%;
 	object-position: center;
 	object-fit: cover;
-	height: auto;
 }
 
 img:not([src*="png"]):not([src*="svg"]),
@@ -130,11 +129,6 @@ video {
 			margin-right: $flow1 / 2;
 			margin-left: $flow1;
 		}
-	}
-
-	.post--image img {
-		max-width: $mobile / 2;
-		height: 280px;
 	}
 
 	.feed h2 a {

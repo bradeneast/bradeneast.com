@@ -1,10 +1,88 @@
+article {
+	.post--image {
+		height: 24rem;
+	}
+}
+
 .post {
 	&--image {
-		max-height: 24rem;
 		overflow: hidden;
 		margin-bottom: -$flow3;
 		display: grid;
 		place-items: center;
+	}
+
+	&--info,
+	&--body {
+		max-width: 42rem;
+	}
+
+	&--body {
+		margin-top: $flow2;
+		margin-bottom: $flow2;
+
+		.has-img {
+			overflow: hidden;
+
+			img {
+				height: auto;
+				width: 100%;
+				object-fit: contain;
+			}
+
+			& + .has-img {
+				margin-top: 0;
+			}
+
+			& + p {
+				margin-top: $flow2;
+			}
+		}
+
+		ul,
+		ol {
+			margin-left: $flow1;
+
+			li {
+				padding-left: $flow1;
+			}
+		}
+
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-bottom: 0.63em;
+		}
+
+		h2 {
+			margin-top: $flow2;
+		}
+
+		h3,
+		h4 {
+			margin-top: $flow1;
+		}
+
+		.cp_embed_wrapper {
+			margin-bottom: $flow1;
+			padding-top: 540px;
+
+			iframe,
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			&::before {
+				animation: $fallback;
+				z-index: 99;
+			}
+		}
 	}
 
 	&--info {
@@ -24,9 +102,13 @@
 		&__date,
 		&__tags,
 		&__length {
+			line-height: 1.1;
+			font-size: 0.85em;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
 			display: inline-block;
 			margin-right: auto;
-			padding: 0 0.2em;
+			padding: 0.2em;
 			color: var(--g3);
 			background: var(--g7);
 		}
@@ -37,66 +119,6 @@
 
 		&__excerpt {
 			margin-top: 0.63rem;
-		}
-	}
-}
-
-:not(.feed) article {
-	margin-top: $flow2;
-	margin-bottom: $flow2;
-
-	.has-img {
-		& + .has-img {
-			margin-top: 0;
-		}
-
-		& + p {
-			margin-top: $flow2;
-		}
-	}
-
-	ul,
-	ol {
-		margin-left: $flow1;
-
-		li {
-			padding-left: $flow1;
-		}
-	}
-
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-bottom: 0.63em;
-	}
-
-	h2 {
-		margin-top: $flow2;
-	}
-
-	h3,
-	h4 {
-		margin-top: $flow1;
-	}
-
-	.cp_embed_wrapper {
-		margin-bottom: $flow1;
-		padding-top: 540px;
-
-		iframe,
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-		}
-
-		&::before {
-			animation: $fallback;
-			z-index: 99;
 		}
 	}
 }

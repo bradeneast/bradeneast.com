@@ -29,6 +29,7 @@
 .reduced-motion {
 	animation-play-state: paused !important;
 	transition: none !important;
+
 	*,
 	*::after,
 	*::before {
@@ -38,28 +39,6 @@
 }
 
 html {
-	.feed > *,
-	article > *,
-	.blurb {
-		transition: transform $smoothTransition, opacity $smoothTransition;
-
-		&:nth-child(2) {
-			transition-delay: 0.1s;
-		}
-
-		&:nth-child(3) {
-			transition-delay: 0.2s;
-		}
-
-		&:nth-child(4) {
-			transition-delay: 0.3s;
-		}
-
-		&:nth-child(5) {
-			transition-delay: 0.4s;
-		}
-	}
-
 	main {
 		transition: $smoothTransition;
 	}
@@ -87,19 +66,49 @@ html {
 		}
 	}
 
+	.feed > *,
+	.post--body > *,
+	.blurb {
+		transition: transform $smoothTransition, opacity $smoothTransition;
+
+		&:nth-child(2) {
+			transition-delay: 0.1s;
+		}
+
+		&:nth-child(3) {
+			transition-delay: 0.2s;
+		}
+
+		&:nth-child(4) {
+			transition-delay: 0.3s;
+		}
+
+		&:nth-child(5) {
+			transition-delay: 0.4s;
+		}
+
+		&:nth-child(6) {
+			transition-delay: 0.5s;
+		}
+
+		&:nth-child(7) {
+			transition-delay: 0.6s;
+		}
+	}
+
 	&[data-schwifty="in"] {
 		transition-duration: 0.1s;
 	}
 
 	&[data-schwifty] {
-		main {
+		.feed > *,
+		.post--body > *,
+		.blurb {
+			transform: translateY(1em);
 			opacity: 0;
 		}
 
-		.feed > *,
-		article > *,
-		.blurb {
-			transform: translateY(1em);
+		main {
 			opacity: 0;
 		}
 
