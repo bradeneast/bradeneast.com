@@ -7,7 +7,7 @@ export default function random() {
 	getSitemap()
 		.then(sitemap => {
 
-			if (/parseerror/i.test(sitemap.activeElement.tagName)) {
+			if (/parsererror/i.test(sitemap.activeElement.tagName)) {
 				window.location = '/random';
 				return;
 			}
