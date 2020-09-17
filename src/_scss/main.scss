@@ -129,6 +129,23 @@ video {
 			margin-right: $flow1 / 2;
 			margin-left: $flow1;
 		}
+
+		.blurb,
+		.grid {
+			grid-template-columns: 1fr;
+		}
+
+		footer {
+			flex-flow: row wrap;
+
+			* {
+				margin-left: auto;
+			}
+		}
+	}
+
+	.animation {
+		width: 100%;
 	}
 
 	.feed {

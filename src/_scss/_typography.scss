@@ -64,6 +64,8 @@ em {
 
 del {
 	color: var(--g4);
+	display: inline;
+	overflow-wrap: break-word;
 }
 
 ::selection,

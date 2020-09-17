@@ -230,6 +230,8 @@ em {
 
 del {
   color: var(--g4);
+  display: inline;
+  overflow-wrap: break-word;
 }
 
 ::-moz-selection,
@@ -309,8 +311,8 @@ h6 {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(26rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+  -ms-grid-columns: (minmax(24rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -1204,9 +1206,7 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .blurb--image {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  max-width: 24rem;
 }
 
 .technologies {
@@ -1623,6 +1623,23 @@ pre span {
   body main > * {
     margin-right: 0.5rem;
     margin-left: 1rem;
+  }
+  body .blurb,
+  body .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  body footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  body footer * {
+    margin-left: auto;
+  }
+  .animation {
+    width: 100%;
   }
   .feed {
     padding-left: 1rem;

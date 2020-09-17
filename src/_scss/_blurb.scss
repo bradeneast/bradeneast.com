@@ -5,8 +5,7 @@
 	margin-bottom: $flow2;
 
 	&--image {
-		display: grid;
-		place-items: center;
+		max-width: 24rem;
 	}
 }
 
