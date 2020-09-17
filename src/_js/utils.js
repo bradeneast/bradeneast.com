@@ -28,7 +28,5 @@ export function altFromSrc(src = '') {
 export function getSitemap() {
 	return fetch('/sitemap.xml')
 		.then(response => response.text())
-		.then(text =>
-			new DOMParser().parseFromString(text, 'text/xml')
-		)
+		.then(text => new DOMParser().parseFromString(text, 'text/xml'))
 }

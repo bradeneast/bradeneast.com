@@ -4,16 +4,22 @@ export default function random() {
 	let hrefs = [];
 	let include = ['/blog/.+'];
 
-	getSitemap().then(sitemap => {
+	getSitemap()
+		.then(sitemap => {
 
-		for (let loc of $$('loc', sitemap))
-			hrefs.push(loc.textContent.trim());
+			if (sitemap.activeElement.tagName = 'parseerror') {
+				window.location = '/random';
+				return;
+			}
 
-		let includePattern = new RegExp(`(${include.join(')|(')})`);
-		let filtered = hrefs.filter(href => includePattern.test(href));
-		let index = Math.round((filtered.length - 1) * Math.random());
+			for (let loc of $$('loc', sitemap))
+				hrefs.push(loc.textContent.trim());
 
-		if (filtered[index])
-			window.location = filtered[index];
-	})
+			let includePattern = new RegExp(`(${include.join(')|(')})`);
+			let filtered = hrefs.filter(href => includePattern.test(href));
+			let index = Math.round((filtered.length - 1) * Math.random());
+
+			if (filtered[index])
+				window.location = filtered[index];
+		})
 }
