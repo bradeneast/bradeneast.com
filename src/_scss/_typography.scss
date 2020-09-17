@@ -51,6 +51,13 @@ blockquote {
 	border-left: $borderWidth $borderStyle var(--primary);
 }
 
+br {
+	display: block;
+	width: 100%;
+	margin-top: $flow1;
+	padding-bottom: $flow1;
+}
+
 hr {
 	border: none;
 	border-top: $borderWidth $borderStyle var(--g7);

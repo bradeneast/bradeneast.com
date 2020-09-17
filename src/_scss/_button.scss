@@ -9,12 +9,14 @@ button,
 	background: var(--primary);
 	text-decoration: none;
 	font-weight: $fontWeightHeavy;
-	filter: drop-shadow(#{$borderWidth} #{$borderWidth} 0 var(--g6));
+	box-shadow: var(--blockShadow);
 
 	&:hover,
 	&:focus {
 		color: $g8;
 		background-color: var(--accent);
+		border-color: var(--g0);
+		box-shadow: none;
 	}
 
 	&.toggle {
@@ -24,7 +26,7 @@ button,
 		padding: 0;
 		background: none;
 		border: none;
-		filter: none;
+		box-shadow: none;
 
 		&:hover,
 		&:focus {

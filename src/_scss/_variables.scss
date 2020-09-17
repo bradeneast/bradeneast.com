@@ -14,7 +14,6 @@ $flow1: 1rem;
 $flow2: 2rem;
 $flow3: 3rem;
 $flow4: 4rem;
-$flow6: 6rem;
 $fontWeightRegular: 360;
 $fontWeightMedium: 480;
 $fontWeightHeavy: 820;
@@ -43,10 +42,11 @@ $fontVariations: (("CASL" 0, "slnt" 0), ("CASL" 1, "slnt" -13), ("CASL" 1, "slnt
 	--fontWeightRegular: #{$fontWeightRegular};
 	--fontWeightMedium: #{$fontWeightMedium};
 	--fontWeightHeavy: #{$fontWeightHeavy};
-	--shadowColor: rgba(0, 10, 50, 0.1);
-	--shadow: 0 0.6rem 0.8rem -0.2rem var(--shadowColor), 0 0.4rem 0.5rem -0.1rem var(--shadowColor);
-	--shadowLarge: 0 0.6rem 1.2rem -0.2rem var(--shadowColor), 0 0.4rem 0.7rem -0.1rem var(--shadowColor);
-	--darkMode: 0;
+	--shadowColor: rgba(0, 0, 0, 0.37);
+	--shadow: 0.2rem 0.37rem 0.63rem -0.2rem var(--shadowColor);
+	--largeShadow: 0.37rem 0.63rem 1rem -0.2rem var(--shadowColor);
+	--blockShadowColor: var(--g6);
+	--blockShadow: 0.37rem 0.37rem 0 var(--blockShadowColor);
 }
 
 html {
@@ -62,9 +62,8 @@ html {
 		--g8: #{$g0};
 		--primary: #{$secondary};
 		--secondary: #{$primary};
-		--shadowColor: rgba(200, 210, 255, 0.1);
-		--shadowColor: rgba(0, 0, 0, 0.4);
 		--fontWeightRegular: 300;
+		--shadowColor: rgba(0, 0, 0, 0.85);
 
 		body {
 			color: var(--g1);

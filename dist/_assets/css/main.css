@@ -14,10 +14,11 @@
   --fontWeightRegular: 360;
   --fontWeightMedium: 480;
   --fontWeightHeavy: 820;
-  --shadowColor: rgba(0, 10, 50, 0.1);
-  --shadow: 0 0.6rem 0.8rem -0.2rem var(--shadowColor), 0 0.4rem 0.5rem -0.1rem var(--shadowColor);
-  --shadowLarge: 0 0.6rem 1.2rem -0.2rem var(--shadowColor), 0 0.4rem 0.7rem -0.1rem var(--shadowColor);
-  --darkMode: 0;
+  --shadowColor: rgba(0, 0, 0, 0.37);
+  --shadow: 0.2rem 0.37rem 0.63rem -0.2rem var(--shadowColor);
+  --largeShadow: 0.37rem 0.63rem 1rem -0.2rem var(--shadowColor);
+  --blockShadowColor: var(--g6);
+  --blockShadow: 0.37rem 0.37rem 0 var(--blockShadowColor);
 }
 
 html.dark_mode {
@@ -32,9 +33,8 @@ html.dark_mode {
   --g8: #121518;
   --primary: #ff3848;
   --secondary: #ff3848;
-  --shadowColor: rgba(200, 210, 255, 0.1);
-  --shadowColor: rgba(0, 0, 0, 0.4);
   --fontWeightRegular: 300;
+  --shadowColor: rgba(0, 0, 0, 0.85);
 }
 
 html.dark_mode body {
@@ -220,6 +220,13 @@ blockquote p {
 
 blockquote {
   border-left: 0.2rem solid var(--primary);
+}
+
+br {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 hr {
@@ -488,8 +495,8 @@ button,
   background: var(--primary);
   text-decoration: none;
   font-weight: 820;
-  -webkit-filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
-          filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
+  -webkit-box-shadow: var(--blockShadow);
+          box-shadow: var(--blockShadow);
 }
 
 button:hover, button:focus,
@@ -497,6 +504,9 @@ button:hover, button:focus,
 .button:focus {
   color: white;
   background-color: var(--accent);
+  border-color: var(--g0);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 button.toggle,
@@ -511,8 +521,8 @@ button.toggle,
   padding: 0;
   background: none;
   border: none;
-  -webkit-filter: none;
-          filter: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 button.toggle:hover, button.toggle:focus,
@@ -1203,8 +1213,8 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   -webkit-transform: translateX(-1rem);
           transform: translateX(-1rem);
   background: var(--g8);
-  -webkit-box-shadow: var(--shadow);
-          box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--blockShadow);
+          box-shadow: var(--blockShadow);
   -webkit-transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
   transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
 }
@@ -1293,6 +1303,10 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           flex: 1;
 }
 
+.feed li .post--info__excerpt {
+  margin-bottom: 0;
+}
+
 .feed li a {
   color: inherit;
 }
@@ -1304,18 +1318,14 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           text-decoration-color: var(--primary);
 }
 
-.feed .post--info__excerpt {
-  margin-bottom: 0;
-}
-
 .feed li:hover.post--info,
 .feed li:hover .post--info,
 .feed li:focus-within.post--info,
 .feed li:focus-within .post--info {
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
-  -webkit-box-shadow: var(--shadowLarge);
-          box-shadow: var(--shadowLarge);
+  -webkit-box-shadow: var(--blockShadow);
+          box-shadow: var(--blockShadow);
 }
 
 .feed.design .post--info {
@@ -1422,9 +1432,8 @@ table * {
   left: 0;
   text-align: center;
   padding: 1rem;
+  border: 0.2rem solid var(--g5);
   background: radial-gradient(var(--g8), transparent);
-  -webkit-box-shadow: inset 0 0 0 0.2rem var(--g4);
-          box-shadow: inset 0 0 0 0.2rem var(--g4);
   -webkit-transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
   transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
 }
@@ -1629,8 +1638,8 @@ pre span {
 
 @media screen and (min-width: 54em) {
   #homepageHero {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 

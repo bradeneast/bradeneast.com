@@ -15,8 +15,16 @@
 		flex-direction: column;
 		list-style-type: none;
 
-		.post--image {
-			flex: 1;
+		.post {
+			&--image {
+				flex: 1;
+			}
+
+			&--info {
+				&__excerpt {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		a {
@@ -33,18 +41,12 @@
 		}
 	}
 
-	.post--info {
-		&__excerpt {
-			margin-bottom: 0;
-		}
-	}
-
 	li:hover,
 	li:focus-within {
 		&.post--info,
 		.post--info {
 			transform: scale(1.04);
-			box-shadow: var(--shadowLarge);
+			box-shadow: var(--blockShadow);
 		}
 	}
 

@@ -78,7 +78,7 @@
 		padding: $flow1;
 		transform: translateX(#{-$flow1});
 		background: var(--g8);
-		box-shadow: var(--shadow);
+		box-shadow: var(--blockShadow);
 		transition: $motionTransition;
 
 		&__title {
