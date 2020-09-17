@@ -62,11 +62,3 @@
 		}
 	}
 }
-
-@media screen and (max-width: #{$mobile}) {
-	.embedded_project {
-		&::before {
-			opacity: 0.37;
-		}
-	}
-}

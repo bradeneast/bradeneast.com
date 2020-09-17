@@ -1446,12 +1446,6 @@ table * {
           animation: showFallback 5s forwards;
 }
 
-@media screen and (max-width: 54em) {
-  .embedded_project::before {
-    opacity: 0.37;
-  }
-}
-
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
