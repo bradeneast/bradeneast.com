@@ -109,6 +109,13 @@ video {
 @import "./prism";
 @import "./retro";
 
+@media screen and (min-width: $mobile) {
+	#homepageHero {
+		padding-top: $flow6;
+		padding-bottom: $flow6;
+	}
+}
+
 @media screen and (max-width: $mobile) {
 	body {
 		padding-top: $flow1;

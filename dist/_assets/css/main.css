@@ -1633,6 +1633,13 @@ pre span {
   }
 }
 
+@media screen and (min-width: 54em) {
+  #homepageHero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
 @media screen and (max-width: 54em) {
   body {
     padding-top: 1rem;
