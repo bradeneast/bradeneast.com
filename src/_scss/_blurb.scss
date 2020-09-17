@@ -12,6 +12,7 @@
 
 .technologies {
 	align-items: start;
+	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 
 	img {
 		height: 5em;

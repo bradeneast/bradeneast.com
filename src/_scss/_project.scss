@@ -22,12 +22,16 @@
 		}
 	}
 
-	button {
+	&--content {
 		position: absolute;
-		padding: 0.63em 1em;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	button {
+		padding: 0.63em 1em;
 		border: $borderWidth $borderStyle transparent;
 		color: $g8;
 		background: var(--primary);
@@ -47,19 +51,18 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		opacity: 0.37;
 		text-align: center;
 		padding: $flow1;
-		background: var(--g8);
+		background: radial-gradient(var(--g8), transparent);
+		box-shadow: inset 0 0 0 $borderWidth var(--g4);
 		transition: $colorTransition;
-		backdrop-filter: blur(2px);
 	}
 
 	&.loaded {
 		border-radius: 0;
 		resize: both;
 
-		button {
+		.embedded_project--content {
 			opacity: 0;
 			pointer-events: none;
 		}

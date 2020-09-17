@@ -2,16 +2,20 @@
 	display: flex;
 }
 
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+	gap: $flow2;
+	margin-bottom: $flow2;
+}
+
+.limited-width {
+	max-width: 42rem;
+}
+
 .hidden {
 	opacity: 0;
 	pointer-events: none;
-}
-
-.grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-	gap: $flow2;
-	margin-bottom: $flow2;
 }
 
 [class*="border-"] {

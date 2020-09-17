@@ -70,7 +70,7 @@ img,
 video,
 iframe,
 svg {
-	min-width: 100%;
+	width: 100%;
 	max-height: 100%;
 	user-select: none;
 }
@@ -129,6 +129,11 @@ video {
 			margin-right: $flow1 / 2;
 			margin-left: $flow1;
 		}
+	}
+
+	.feed {
+		padding-left: $flow1;
+		padding-right: $flow1;
 	}
 
 	.feed h2 a {

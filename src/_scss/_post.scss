@@ -1,20 +1,13 @@
-article {
-	.post--image {
-		height: 24rem;
-	}
-}
-
 .post {
+	&--header__image,
 	&--image {
 		overflow: hidden;
 		margin-bottom: -$flow3;
-		display: grid;
-		place-items: center;
+		height: 24rem;
 	}
 
-	&--info,
-	&--body {
-		max-width: 42rem;
+	&--header__image {
+		min-width: 100%;
 	}
 
 	&--body {
@@ -23,12 +16,6 @@ article {
 
 		.has-img {
 			overflow: hidden;
-
-			img {
-				height: auto;
-				width: 100%;
-				object-fit: contain;
-			}
 
 			& + .has-img {
 				margin-top: 0;

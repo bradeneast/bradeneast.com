@@ -1,9 +1,10 @@
 footer {
 	display: flex;
-	flex-flow: row wrap;
 	align-items: center;
 	justify-items: flex-end;
 	width: 100%;
+	padding-left: $flow1;
+	padding-right: $flow1;
 
 	* {
 		margin-left: auto;
@@ -14,4 +15,5 @@ footer {
 	flex: 1;
 	min-width: 9em;
 	justify-self: flex-start;
+	line-height: 1.2;
 }

@@ -70,25 +70,27 @@
 	<main class="border-left">
 		<article>
 
-			<div class="post--image">
-				<img width="540" height="360" src="/_assets/images/hebrew-text.jpg" />
+			<div class="post--header">
+				<div class="post--header__image">
+					<img width="540" height="360" src="/_assets/images/hebrew-text.jpg" />
+				</div>
+
+				<div class="post--info">
+					<h1>
+						Two retired writing styles and why we should be thankful for CSS logical properties
+					</h1>
+					<div class="post--info__tags">
+						Design, Typography
+					</div>
+					<div class="post--info__length">
+						
+							6-minute read
+						
+					</div>
+				</div>
 			</div>
 
-			<div class="post--info">
-				<h1>
-					Two retired writing styles and why we should be thankful for CSS logical properties
-				</h1>
-				<div class="post--info__tags">
-					Design, Typography
-				</div>
-				<div class="post--info__length">
-					
-						6-minute read
-					
-				</div>
-			</div>
-
-			<div class="post--body">
+			<div class="post--body limited-width">
 				<p>With the advent of CSS <a href="https://css-tricks.com/css-logical-properties/">logical properties</a>, I think it’s important for us to look more closely at why and how we make decisions like layout, text-alignment, and overall flow decisions for our little corners of the web.</p>
 <p>This isn’t just a history lesson, though. I want to help myself break out of the left-to-right-always-and-forever mindset that limits the creative ways I might otherwise solve layout and design problems. If you’re down for that, keep reading.</p>
 <h2 id="retired-writing-styles">Retired writing styles</h2>
@@ -135,6 +137,7 @@
 	</div>
 
 	<div class="flex">
+		<div class="flex">
 	<a class="highlight" href="https://codepen.io/bradeneast" title="Braden East on CodePen">
 		<svg aria-hidden="true" focusable="false" data-icon="codepen" role="img" viewBox="0 0 512 512">
 			Codepen
@@ -155,7 +158,7 @@
 		</svg>
 	</a>
 </div>
-	<div class="flex">
+		<div class="flex">
 	<!-- <button class="toggle highlight" id="muted_toggle" title="Toggle sound effects">
 		<svg title="sound" width="0" height="0" class="on" aria-hidden="true" viewBox="0 0 72 72">
 			<path fill="currentColor" d="M65.87,15.76a5.63,5.63,0,1,1-5.65-5.63,5.63,5.63,0,0,1,5.65,5.63Zm-2.2,14.65A5.63,5.63,0,1,0,69.31,36a5.64,5.64,0,0,0-5.64-5.63ZM60.22,50.69a5.63,5.63,0,1,0,5.61,5.64h0A5.62,5.62,0,0,0,60.22,50.69ZM36.38,6.45,15,22.31a4.27,4.27,0,0,1-2,.77l-3,.63C8.14,24,6.76,25.29,6.8,26.83V45.36A3.39,3.39,0,0,0,10,48.42l3,.64a4.17,4.17,0,0,1,2,.77l21.43,15.8a4.49,4.49,0,0,0,5.42-.2,3.13,3.13,0,0,0,.66-.81h0a57.65,57.65,0,0,0,0-57.16h0a4.25,4.25,0,0,0-5.08-1.55A4,4,0,0,0,36.38,6.45Z" />
@@ -174,6 +177,7 @@
 		</svg>
 	</button>
 </div>
+	</div>
 </footer>
 
 </body>
