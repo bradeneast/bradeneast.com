@@ -54,12 +54,20 @@ blockquote {
 hr {
 	border: none;
 	border-top: $borderWidth $borderStyle var(--g7);
+	height: 0;
+	margin-top: $flow4;
+	padding-bottom: $flow4;
 }
 
 em {
 	font-style: normal;
 	color: var(--primary);
 	font-variation-settings: nth($fontVariations, 2);
+	transition: $colorTransition;
+
+	&:hover {
+		color: var(--accent);
+	}
 }
 
 del {
@@ -84,7 +92,14 @@ a {
 	&:focus {
 		color: inherit;
 		font-weight: var(--fontWeightHeavy);
+	}
+
+	&:hover {
 		text-decoration-color: var(--primary);
+	}
+
+	&:focus {
+		text-decoration-color: var(--accent);
 	}
 }
 

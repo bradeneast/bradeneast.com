@@ -30,18 +30,6 @@
 		text-align: center;
 	}
 
-	button {
-		padding: 0.63em 1em;
-		border: $borderWidth $borderStyle transparent;
-		color: $g8;
-		background: var(--primary);
-
-		&:hover,
-		&:focus {
-			background-color: var(--accent);
-		}
-	}
-
 	&::before {
 		content: "";
 		position: absolute;

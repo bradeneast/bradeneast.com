@@ -220,12 +220,21 @@ blockquote {
 hr {
   border: none;
   border-top: 0.2rem solid var(--g7);
+  height: 0;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 em {
   font-style: normal;
   color: var(--primary);
   font-variation-settings: "CASL" 1, "slnt" -13;
+  -webkit-transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
+  transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
+}
+
+em:hover {
+  color: var(--accent);
 }
 
 del {
@@ -258,8 +267,16 @@ a {
 a:hover, a:focus {
   color: inherit;
   font-weight: var(--fontWeightHeavy);
+}
+
+a:hover {
   -webkit-text-decoration-color: var(--primary);
           text-decoration-color: var(--primary);
+}
+
+a:focus {
+  -webkit-text-decoration-color: var(--accent);
+          text-decoration-color: var(--accent);
 }
 
 h1,
@@ -454,20 +471,29 @@ nav a {
   }
 }
 
-button {
+button,
+.button {
   font-size: inherit;
-  background: none;
-  border: none;
   cursor: pointer;
   -webkit-transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
   transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
+  color: white;
+  padding: 0.63em 1em;
+  border: 0.2rem solid transparent;
+  background: var(--primary);
+  text-decoration: none;
+  font-weight: 820;
 }
 
-button:hover, button:focus {
-  background-color: var(--g7);
+button:hover, button:focus,
+.button:hover,
+.button:focus {
+  color: white;
+  background-color: var(--accent);
 }
 
-button.toggle {
+button.toggle,
+.button.toggle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -475,6 +501,15 @@ button.toggle {
       -ms-flex-align: center;
           align-items: center;
   width: 3em;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+button.toggle:hover, button.toggle:focus,
+.button.toggle:hover,
+.button.toggle:focus {
+  background-color: var(--g7);
 }
 
 .highlight {
@@ -1367,17 +1402,6 @@ table * {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
-}
-
-.embedded_project button {
-  padding: 0.63em 1em;
-  border: 0.2rem solid transparent;
-  color: white;
-  background: var(--primary);
-}
-
-.embedded_project button:hover, .embedded_project button:focus {
-  background-color: var(--accent);
 }
 
 .embedded_project::before {

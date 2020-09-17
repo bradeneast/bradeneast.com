@@ -1,19 +1,33 @@
-button {
+button,
+.button {
 	font-size: inherit;
-	background: none;
-	border: none;
 	cursor: pointer;
 	transition: $colorTransition;
+	color: $g8;
+	padding: 0.63em 1em;
+	border: $borderWidth $borderStyle transparent;
+	background: var(--primary);
+	text-decoration: none;
+	font-weight: $fontWeightHeavy;
 
 	&:hover,
 	&:focus {
-		background-color: var(--g7);
+		color: $g8;
+		background-color: var(--accent);
 	}
 
 	&.toggle {
 		display: flex;
 		align-items: center;
 		width: 3em;
+		padding: 0;
+		background: none;
+		border: none;
+
+		&:hover,
+		&:focus {
+			background-color: var(--g7);
+		}
 	}
 }
 
