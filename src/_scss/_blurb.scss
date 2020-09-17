@@ -13,9 +13,12 @@
 	align-items: start;
 	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 
+	.technology--image {
+		filter: drop-shadow(#{$borderWidth} #{$borderWidth} 0 var(--g6));
+	}
+
 	img {
 		height: 5em;
 		width: auto;
-		filter: drop-shadow(0 0.2em 0.4em var(--g7));
 	}
 }

@@ -41,6 +41,11 @@ html.dark_mode body {
   color: var(--g1);
 }
 
+html.dark_mode .technology img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 html.dark_mode h1,
 html.dark_mode h2,
 html.dark_mode h3,
@@ -483,6 +488,8 @@ button,
   background: var(--primary);
   text-decoration: none;
   font-weight: 820;
+  -webkit-filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
+          filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
 }
 
 button:hover, button:focus,
@@ -504,6 +511,8 @@ button.toggle,
   padding: 0;
   background: none;
   border: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 button.toggle:hover, button.toggle:focus,
@@ -1246,11 +1255,14 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
       grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
 
+.technologies .technology--image {
+  -webkit-filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
+          filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
+}
+
 .technologies img {
   height: 5em;
   width: auto;
-  -webkit-filter: drop-shadow(0 0.2em 0.4em var(--g7));
-          filter: drop-shadow(0 0.2em 0.4em var(--g7));
 }
 
 .feed:not(.grid) li:not(:last-child) {

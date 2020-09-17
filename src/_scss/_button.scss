@@ -9,6 +9,7 @@ button,
 	background: var(--primary);
 	text-decoration: none;
 	font-weight: $fontWeightHeavy;
+	filter: drop-shadow(#{$borderWidth} #{$borderWidth} 0 var(--g6));
 
 	&:hover,
 	&:focus {
@@ -23,6 +24,7 @@ button,
 		padding: 0;
 		background: none;
 		border: none;
+		filter: none;
 
 		&:hover,
 		&:focus {
