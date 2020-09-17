@@ -122,17 +122,12 @@ video {
 
 		main,
 		aside {
-			padding-top: $flow2;
+			padding-top: $flow4;
 		}
 
 		main > * {
 			margin-right: $flow1 / 2;
 			margin-left: $flow1;
-		}
-
-		.blurb,
-		.grid {
-			grid-template-columns: 1fr;
 		}
 
 		footer {
@@ -144,18 +139,31 @@ video {
 		}
 	}
 
+	.post--image {
+		img {
+			height: 100%;
+		}
+	}
+
 	.animation {
 		width: 100%;
+	}
+
+	.blurb,
+	.grid,
+	.feed,
+	.feed li {
+		grid-template-columns: 1fr;
 	}
 
 	.feed {
 		padding-left: $flow1;
 		padding-right: $flow1;
-	}
 
-	.feed h2 a {
-		color: inherit;
-		font-weight: $fontWeightHeavy;
-		text-decoration-color: var(--primary);
+		h2 a {
+			color: inherit;
+			font-weight: $fontWeightHeavy;
+			text-decoration-color: var(--primary);
+		}
 	}
 }

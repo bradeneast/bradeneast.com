@@ -1225,12 +1225,6 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   margin-top: 0.63rem;
 }
 
-@media screen and (max-width: 54em) {
-  .post--image {
-    height: auto;
-  }
-}
-
 .blurb {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1282,9 +1276,9 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .feed li .post--image {
-  -webkit-box-flex: 9;
-      -ms-flex-positive: 9;
-          flex-grow: 9;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .feed li a {
@@ -1642,16 +1636,11 @@ pre span {
   }
   body main,
   body aside {
-    padding-top: 2rem;
+    padding-top: 4rem;
   }
   body main > * {
     margin-right: 0.5rem;
     margin-left: 1rem;
-  }
-  body .blurb,
-  body .grid {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
   }
   body footer {
     -webkit-box-orient: horizontal;
@@ -1662,8 +1651,18 @@ pre span {
   body footer * {
     margin-left: auto;
   }
+  .post--image img {
+    height: 100%;
+  }
   .animation {
     width: 100%;
+  }
+  .blurb,
+  .grid,
+  .feed,
+  .feed li {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .feed {
     padding-left: 1rem;
