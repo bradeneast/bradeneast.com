@@ -1165,9 +1165,9 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
 }
 
-.post--info h1,
-.post--info h2 {
+.post--info__title {
   text-transform: capitalize;
+  margin-bottom: 0.63em;
 }
 
 .post--info__date, .post--info__tags, .post--info__length {
@@ -1229,14 +1229,13 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .feed {
-  padding: 4rem;
   gap: 4rem;
+  padding: 4rem;
   grid-auto-rows: 32rem;
   margin-top: 4rem;
 }
 
 .feed li {
-  list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1244,6 +1243,7 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  list-style-type: none;
 }
 
 .feed li .post--image {

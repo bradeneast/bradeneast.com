@@ -5,15 +5,15 @@
 }
 
 .feed {
-	padding: $flow4;
 	gap: $flow4;
+	padding: $flow4;
 	grid-auto-rows: 32rem;
 	margin-top: $flow4;
 
 	li {
-		list-style-type: none;
 		display: flex;
 		flex-direction: column;
+		list-style-type: none;
 
 		.post--image {
 			flex-grow: 9;

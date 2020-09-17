@@ -81,9 +81,9 @@
 		box-shadow: var(--shadow);
 		transition: $motionTransition;
 
-		h1,
-		h2 {
+		&__title {
 			text-transform: capitalize;
+			margin-bottom: 0.63em;
 		}
 
 		&__date,
