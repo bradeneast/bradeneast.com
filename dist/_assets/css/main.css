@@ -941,6 +941,7 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   display: grid;
   place-items: center;
   max-width: 24rem;
+  height: auto;
 }
 
 .technologies {
@@ -1268,6 +1269,7 @@ pre span {
   html .feed,
   html .post--info,
   html .blurb,
+  html .technologies,
   html li {
     display: block !important;
   }
@@ -1275,21 +1277,62 @@ pre span {
     -webkit-transition: none !important;
     transition: none !important;
   }
+  html main {
+    max-width: 42rem;
+  }
   html .feed,
   html blockquote {
     border-left: 0.2rem solid #ff3848;
+  }
+  html img,
+  html video,
+  html iframe {
+    max-height: 24rem;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+  }
+  html button,
+  html .button {
+    background: #ff3848;
+  }
+  html button:hover, html button:focus,
+  html .button:hover,
+  html .button:focus {
+    background: #ff48e0;
+  }
+  html footer .highlight {
+    margin-left: 1rem;
   }
   html pre,
   html code {
     font-family: "Consolas", monospace;
     color: #5a6677;
   }
-  html a:hover,
-  html a:focus {
+  html a {
+    color: #5a6677;
+    font-weight: bold;
+  }
+  html a:hover, html a:focus {
     color: #ff3848;
+  }
+  html del {
+    color: #9faabd;
+  }
+  html em {
+    font-style: italic;
+    color: #ff3848;
+  }
+  html .post--image, html .post--header__image {
+    margin: 0;
   }
   html .post--info {
     padding: 1rem 0;
+    -webkit-transform: none;
+            transform: none;
+  }
+  html .post--info > * {
+    display: block;
   }
   html footer {
     display: -webkit-box;
@@ -1300,6 +1343,9 @@ pre span {
   html code,
   html pre {
     background: #eff0f1;
+  }
+  html .technology {
+    margin-bottom: 3rem;
   }
   html nav {
     margin-bottom: 2rem;
@@ -1319,6 +1365,31 @@ pre span {
   html .border-bottom::before,
   html .border-left::before {
     display: none;
+  }
+}
+
+@media print {
+  aside,
+  nav,
+  footer,
+  [data-icon] {
+    display: none;
+  }
+  main {
+    padding: 0;
+  }
+  button,
+  .button {
+    padding: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  a::after {
+    content: ": " attr(href);
+    color: var(--g4);
+  }
+  body {
+    display: block;
   }
 }
 
