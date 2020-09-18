@@ -4,7 +4,7 @@
 	--planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
 	width: var(--animationSize);
 	height: var(--animationSize);
-	transform: translateY(-1em) rotate(-4deg);
+	transform: scale(0.72) translateY(-1em) rotate(-4deg);
 
 	&::after {
 		content: "";
@@ -21,8 +21,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 90%;
-		height: 90%;
+		width: 100%;
+		height: 100%;
 		border-radius: 40% 45% 50% 45% / 45% 40% 45% 50%;
 		background-image: linear-gradient(var(--lightAngle), var(--accent), var(--primary), var(--primary));
 		background-color: var(--primary);
