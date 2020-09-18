@@ -100,44 +100,21 @@
 		</p>
 	</div>
 	<div class="blurb--image">
-		<style>
-	#worlds .animation {
-		--easingX: ease-in-out;
-		--easingY: ease-in-out;
-		--durationX: 5s;
-		--durationY: 7s;
-		--directionR: -1;
-	}
-</style>
-<div id="worlds">
-	<div class="animation">
-	<div class="line">
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
+		<link rel="stylesheet" href="/_assets/css/planet.css">
+
+<div id="planet" class="animation">
+	<div class="orbit--front"></div>
+	<div class="orbit--back"></div>
+	<div class="moon--wrapper">
+		<div class="moon"></div>
 	</div>
-</div>
+	<div class="planet">
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+		<div class="pockmark"></div>
+	</div>
 </div>
 	</div>
 </div>
@@ -152,35 +129,30 @@
 		</p>
 	</div>
 	<div class="blurb--image">
-		<div id="heartbeat">
-	<div class="animation">
-	<div class="line">
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
+		<link rel="stylesheet" href="/_assets/css/rocket.css">
+
+<div id="rocket">
+	<div class="stars">
+		<div class="star" style="top: 70%; left: 15%; --amt: .8em;"></div>
+		<div class="star" style="top: 90%; left: 35%;"></div>
+		<div class="star" style="top: 105%; left: 90%;"></div>
+		<div class="star" style="top: -10%; left: 50%; --amt: 1.2em;"></div>
+		<div class="star" style="--amt: 1.4em;"></div>
+		<div class="star" style="top: -10%; left: 100%; --amt: 1.4em;"></div>
+		<div class="star" style="top: 20%; left: 30%; --amt: 2em;"></div>
+		<div class="star" style="top: 70%; left: 125%; --amt: 2em;"></div>
 	</div>
-</div>
+	<div class="rocket--wrapper">
+		<div class="rocket">
+			<div class="fin"></div>
+			<div class="fin"></div>
+			<div class="fin"></div>
+			<div class="flame"></div>
+			<div class="body">
+				<div class="window"></div>
+			</div>
+		</div>
+	</div>
 </div>
 	</div>
 </div>
@@ -198,122 +170,7 @@
 		</p>
 	</div>
 	<div class="blurb--image">
-		<style>
-	@keyframes yangX {
-
-		0% {
-			transform: translateX(0)
-		}
-
-		12% {
-			transform: translateX(10em)
-		}
-
-		25% {
-			transform: translateX(2em)
-		}
-
-		37% {
-			transform: translateX(6em)
-		}
-
-		50% {
-			transform: translateX(10em)
-		}
-
-		63% {
-			transform: translateX(0em)
-		}
-
-		75% {
-			transform: translateX(10em)
-		}
-
-		87% {
-			transform: translateX(6em)
-		}
-
-		100% {
-			transform: translateX(0)
-		}
-	}
-
-	@keyframes yangY {
-		0% {
-			transform: translateY(6em)
-		}
-
-		12% {
-			transform: translateY(2em)
-		}
-
-		25% {
-			transform: translateY(0em)
-		}
-
-		37% {
-			transform: translateY(10em)
-		}
-
-		50% {
-			transform: translateY(6em)
-		}
-
-		63% {
-			transform: translateY(2em)
-		}
-
-		75% {
-			transform: translateY(0)
-		}
-
-		87% {
-			transform: translateY(10em)
-		}
-
-		100% {
-			transform: translateY(6em)
-		}
-	}
-
-	#yang .animation {
-		--animationX: yangX;
-		--animationY: yangY;
-		--animationR: none;
-		--easingX: ease;
-		--easingY: ease-in-out;
-	}
-</style>
-<div id="yang">
-	<div class="animation">
-	<div class="line">
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-		<div class="segment"></div>
-	</div>
-</div>
-</div>
+		
 	</div>
 </div>
 	</main>

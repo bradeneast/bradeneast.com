@@ -1,0 +1,198 @@
+#planet {
+	--lightAngle: -37deg;
+	--contrast: rgba(0, 0, 0, 0.3);
+	--planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
+	width: var(--animationSize);
+	height: var(--animationSize);
+	transform: translateY(-1em) rotate(-4deg);
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2em;
+		background: var(--contrast);
+		border-radius: 50%;
+		top: calc(100% + 1em);
+		animation: planetShadow 7s ease-in-out infinite reverse;
+	}
+
+	.planet {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 90%;
+		height: 90%;
+		border-radius: 40% 45% 50% 45% / 45% 40% 45% 50%;
+		background-image: linear-gradient(var(--lightAngle), var(--accent), var(--primary), var(--primary));
+		background-color: var(--primary);
+		overflow: hidden;
+		will-change: transform;
+		animation: planetFloat 7s ease-in-out infinite reverse;
+	}
+
+	.moon--wrapper {
+		--y: 0;
+		position: absolute;
+		width: 175%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		will-change: transform;
+		animation: orbitY 5s linear infinite;
+	}
+
+	.moon {
+		top: 50%;
+		left: 0;
+		width: 2.5em;
+		height: 2.5em;
+		transform: translate(-50%, -50%);
+		background: linear-gradient(var(--lightAngle), var(--g4), var(--g6));
+		border-radius: 50%;
+		will-change: transform;
+		animation: orbitX 5s ease-in-out infinite;
+	}
+
+	.orbit {
+		&--front,
+		&--back {
+			width: 175%;
+			height: 4em;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			border: 0.63em solid var(--g7);
+		}
+
+		&--front {
+			clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%);
+			z-index: 1;
+		}
+
+		&--back {
+			clip-path: polygon(0 0, 0 50%, 100% 50%, 100% 0%);
+		}
+	}
+
+	.pockmark {
+		--size: 3em;
+		--x: 0;
+		--y: 0;
+		position: absolute;
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		opacity: 0.37;
+		top: var(--y);
+		left: var(--x);
+		transform: translate(-50%, -50%);
+		background: linear-gradient(to right, transparent, black);
+
+		&:nth-of-type(1) {
+			--size: 1.4em;
+			--x: 55%;
+			--y: 15%;
+		}
+
+		&:nth-of-type(2) {
+			--size: 4.4em;
+			--x: 70%;
+			--y: 55%;
+		}
+
+		&:nth-of-type(3) {
+			--size: 3em;
+			--x: 40%;
+			--y: 95%;
+		}
+
+		&:nth-of-type(4) {
+			--size: 3.3em;
+			--x: 18%;
+			--y: 30%;
+		}
+
+		&:nth-of-type(5) {
+			--size: 2em;
+			--x: 5%;
+			--y: 65%;
+		}
+	}
+}
+
+@keyframes planetShadow {
+	0% {
+		transform: scaleX(1);
+		opacity: 0.63;
+		filter: blur(0.5em);
+	}
+
+	50% {
+		transform: scaleX(0.85);
+		opacity: 1;
+		filter: blur(0.3em);
+	}
+
+	100% {
+		transform: scaleX(1);
+		opacity: 0.63;
+		filter: blur(0.5em);
+	}
+}
+
+@keyframes orbitX {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: 100%;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes orbitY {
+	0% {
+		top: 0;
+		z-index: 1;
+	}
+
+	25% {
+		top: -2.2em;
+		z-index: 0;
+	}
+
+	50% {
+		top: 0;
+		z-index: 1;
+	}
+
+	75% {
+		top: 2.2em;
+	}
+
+	100% {
+		top: 0;
+		z-index: 1;
+	}
+}
+
+@keyframes planetFloat {
+	0% {
+		top: -0.2em;
+	}
+
+	50% {
+		top: 0.6em;
+	}
+
+	100% {
+		top: -0.2em;
+	}
+}

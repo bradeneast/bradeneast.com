@@ -1,3 +1,8 @@
+.blurb,
+.technologies {
+	display: grid;
+}
+
 .blurb {
 	align-items: center;
 	padding: $flow2 0;
@@ -5,6 +10,8 @@
 	margin-bottom: $flow2;
 
 	&--image {
+		display: grid;
+		place-items: center;
 		max-width: 24rem;
 	}
 }
