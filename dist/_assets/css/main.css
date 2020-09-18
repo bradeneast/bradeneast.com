@@ -944,6 +944,10 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   height: auto;
 }
 
+.blurb--image img {
+  height: auto;
+}
+
 .technologies {
   -webkit-box-align: start;
       -ms-flex-align: start;
