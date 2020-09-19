@@ -957,8 +957,8 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .technologies .technology--image {
-  -webkit-filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
-          filter: drop-shadow(0.2rem 0.2rem 0 var(--g6));
+  -webkit-filter: drop-shadow(0.2rem 0.2rem var(--g6));
+          filter: drop-shadow(0.2rem 0.2rem var(--g6));
 }
 
 .technologies img {
