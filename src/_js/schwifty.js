@@ -1,20 +1,30 @@
-/**
- * Schwfity preloads and caches same-origin html documents for a native-app feeling on static sites.
- * @param {any} options
-*/
+/**Schwfity preloads and caches same-origin html documents for a native-app feeling on static sites.*/
 export default class Schwifty {
 
+	/**@constructor
+	 * @param {Object} options
+	 * @param {function} [options.onload = null] - the callback(s) that run when a new page is rendered
+	 * @param {string} [options.selector = `a[href^='${window.location.origin}']:not([data-no-schwifty]), a[href^='/']:not([data-no-schwifty])`] - the DOM selector used to find preloadable links
+	 * @param {Number} [options.cacheLimit = 85] - the maximum number of pages allowed to be preloaded in the cache
+	 * @param {string} [options.transitioningAttribute = 'data-schwifty'] - attribute updated on the `documentElement` during a page transition
+	 * @param {boolean} [options.preserveScroll = false] - preserve scroll position on page load
+	 * @param {(boolean|Object)} [options.preserveAttributes = false] - preserve attributes on top-level DOM elements (`documentElement`, `head`, and `body`)
+	 */
 	constructor({
-		onload, // the callback(s) that run when a new page is rendered
-		selector = `a[href^='${window.location.origin}']:not([data-no-schwifty]), a[href^='/']:not([data-no-schwifty])`, // the DOM selector used to find preloadable links
-		cacheLimit = 85, // the maximum number of pages allowed to be preloaded in the cache
-		preserveScroll = false, // preserve scroll position on page load
-		transitioningAttribute = 'data-schwifty', // attribute updated on the `documentElement` during a page transition
-		preserveAttributes, // preserve attributes on top-level DOM elements (`documentElement`, `head`, and `body`)
+		onload = null,
+		selector,
+		cacheLimit,
+		transitioningAttribute,
+		preserveScroll = false,
+		preserveAttributes = false,
 	} = {}) {
 
 
 		// Global variables
+		selector = selector || `a[href^='${window.location.origin}']:not([data-no-schwifty]), a[href^='/']:not([data-no-schwifty])`;
+		cacheLimit = cacheLimit || 85;
+		transitioningAttribute = transitioningAttribute || 'data-schwifty';
+
 		let preserveAll = preserveAttributes === true;
 		if (typeof preserveAttributes != 'object')
 			preserveAttributes = {
@@ -22,6 +32,7 @@ export default class Schwifty {
 				head: preserveAll,
 				body: preserveAll,
 			};
+
 		let preloadedClass = 'schwifty-preload';
 		let linkRelStylesheet = 'link[rel="stylesheet"]';
 		let doc = document;
@@ -177,9 +188,7 @@ export default class Schwifty {
 
 		// Listen + Observe
 		observeTargets();
-		addEventListener('popstate', event => {
-			load(location.href)
-		});
+		addEventListener('popstate', () => load(location.href));
 		addEventListener('click', event => {
 			let href = anchor(event).href;
 			if (href) {
