@@ -29,14 +29,10 @@
 				<Slot name="Body">
 					This post doesn't have a body.
 				</Slot>
-				<Brick use="_bricks/molecules/projectEmbed.html">
-					<Href>
-						<Slot name="Embed"></Slot>
-					</Href>
-					<Screenshot>
-						<Slot name="Screenshot"></Slot>
-					</Screenshot>
-				</Brick>
+				<br />
+				<a class="button" target="_blank" href="{{Github}}">
+					View <Slot name="Title"></Slot> on Github
+				</a>
 			</div>
 
 		</article>
