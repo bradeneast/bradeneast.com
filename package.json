@@ -8,7 +8,7 @@
     "ritz-build": "node ./ritz/index.js",
     "ritz-dev": "node ./ritz/index.js -dev"
   },
-  "author": "",
+  "author": "Braden East",
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^9.0.1",
