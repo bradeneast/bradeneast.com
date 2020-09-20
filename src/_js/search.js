@@ -16,7 +16,7 @@ function searchSite(query) {
 	let results = [];
 	let queryRegExp = new RegExp(query, 'i');
 
-	return getSitemap().then(sitemap => {
+	return getSitemap(sitemap => {
 
 		for (let loc of $$('loc', sitemap)) {
 			let url = loc.textContent.trim();

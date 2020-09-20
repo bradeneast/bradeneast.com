@@ -25,8 +25,37 @@ export function altFromSrc(src = '') {
 	return result || '';
 }
 
-export function getSitemap() {
-	return fetch('/sitemap.xml')
-		.then(response => response.text())
-		.then(text => new DOMParser().parseFromString(text, 'text/xml'))
+export function getSitemap(callback) {
+	let xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function () {
+		if (this.status == 200 && xhttp.responseXML)
+			return callback(xhttp.responseXML);
+	}
+	xhttp.responseType = 'document';
+	xhttp.open('GET', '/sitemap.xml', true);
+	xhttp.send();
+}
+
+
+
+// Random links
+export function random(fromPagesMatching) {
+	return getSitemap(sitemap => {
+
+		if (sitemap.querySelector('parsererror')) {
+			window.location = '/random';
+			return;
+		}
+
+		let hrefs = [];
+		for (let loc of $$('loc', sitemap))
+			hrefs.push(loc.textContent.trim());
+
+		let filtered = hrefs.filter(href => fromPagesMatching.test(href));
+		let index = Math.round((filtered.length - 1) * Math.random());
+
+		if (filtered[index])
+			window.location = filtered[index];
+		else return false;
+	})
 }
