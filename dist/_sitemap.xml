@@ -1,12 +1,12 @@
 <urlset>
 <url>
-<loc>http://127.0.0.1:5501/</loc>
+<loc>/</loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>http://127.0.0.1:5501/blog</loc>
+<loc>/blog</loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
@@ -19,14 +19,14 @@
 <priority>0.8</priority>
 </url>
 <url>
-<loc>http://127.0.0.1:5501/random</loc>
+<loc>/random</loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/blog/change-the-color-of-list-markers-with-just-css
+/blog/change-the-color-of-list-markers-with-just-css
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -34,7 +34,7 @@ http://127.0.0.1:5501/blog/change-the-color-of-list-markers-with-just-css
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/blog/resize-vs-compression-on-100-high-res-jpgs
+/blog/resize-vs-compression-on-100-high-res-jpgs
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -42,7 +42,7 @@ http://127.0.0.1:5501/blog/resize-vs-compression-on-100-high-res-jpgs
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/blog/stop-using-gifs
+/blog/stop-using-gifs
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -50,7 +50,7 @@ http://127.0.0.1:5501/blog/stop-using-gifs
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/blog/two-retired-writing-styles
+/blog/two-retired-writing-styles
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -58,7 +58,7 @@ http://127.0.0.1:5501/blog/two-retired-writing-styles
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/blog/using-noscript
+/blog/using-noscript
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -66,7 +66,7 @@ http://127.0.0.1:5501/blog/using-noscript
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/blog/when-is-it-better-to-use-png
+/blog/when-is-it-better-to-use-png
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -74,7 +74,7 @@ http://127.0.0.1:5501/blog/when-is-it-better-to-use-png
 </url>
 <url>
 <loc>
-http://127.0.0.1:5501/projects/1kb-libs
+/projects/1kb-libs
 </loc>
 <lastmod>2020-08-24T14:47:37Z</lastmod>
 <changefreq>weekly</changefreq>
