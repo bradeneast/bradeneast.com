@@ -1,19 +1,14 @@
-.blurb,
-.technologies {
-	display: grid;
-}
-
 .blurb {
-	align-items: center;
-	padding: $flow2 0;
+	display: grid;
+	align-items: end;
 	margin-top: $flow2;
 	margin-bottom: $flow2;
 	gap: $flow4;
 
 	&--image {
+		max-width: 24rem;
 		display: grid;
 		place-items: center;
-		max-width: 24rem;
 		height: auto;
 
 		img {
@@ -23,6 +18,7 @@
 }
 
 .technologies {
+	display: grid;
 	align-items: start;
 	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 

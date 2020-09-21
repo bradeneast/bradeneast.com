@@ -1,5 +1,28 @@
 @import "./variables";
 
+:root {
+	--g0: #{$g0};
+	--g1: #{$g1};
+	--g2: #{$g2};
+	--g3: #{$g3};
+	--g4: #{$g4};
+	--g5: #{$g5};
+	--g6: #{$g6};
+	--g7: #{$g7};
+	--g8: #{$g8};
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+	--accent: #{$accent};
+	--fontWeightRegular: #{$fontWeightRegular};
+	--fontWeightMedium: #{$fontWeightMedium};
+	--fontWeightHeavy: #{$fontWeightHeavy};
+	--shadowColor: rgba(0, 0, 0, 0.37);
+	--shadow: 0.2rem 0.37rem 0.63rem -0.2rem var(--shadowColor);
+	--largeShadow: 0.37rem 0.63rem 1rem -0.2rem var(--shadowColor);
+	--blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
+	--animationSize: 16rem;
+}
+
 *,
 *::before,
 *::after {
@@ -17,6 +40,11 @@
 *:focus {
 	outline: $borderWidth $borderStyle var(--g6);
 	outline-offset: $borderWidth;
+}
+
+html,
+body {
+	overflow-x: hidden;
 }
 
 html {
@@ -40,7 +68,6 @@ body {
 	padding: 4vh 2vw 1vh 2vw;
 	background: var(--g8);
 	transition: $colorTransition;
-	overflow-x: hidden;
 
 	& > * {
 		padding-top: inherit;
@@ -94,6 +121,7 @@ video {
 	background: var(--g5);
 }
 
+@import "./darkMode";
 @import "./typography";
 @import "./util";
 @import "./nav";
@@ -110,13 +138,6 @@ video {
 @import "./retro";
 @import "./print";
 
-@media screen and (min-width: $mobile) {
-	#homepageHero {
-		padding-top: $flow4;
-		padding-bottom: $flow4;
-	}
-}
-
 @media screen and (max-width: $mobile) {
 	body {
 		padding-top: $flow1;
@@ -124,13 +145,13 @@ video {
 		grid-template-rows: initial;
 		align-content: start;
 
-		aside {
-			padding: 0;
-		}
-
 		main,
 		aside {
 			padding-top: $flow4;
+		}
+
+		aside {
+			padding: 0;
 		}
 
 		main > * {
@@ -162,6 +183,11 @@ video {
 	.feed,
 	.feed li {
 		grid-template-columns: 1fr;
+	}
+
+	.blurb {
+		justify-content: center;
+		justify-items: center;
 	}
 
 	.feed {

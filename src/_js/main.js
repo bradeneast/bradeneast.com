@@ -27,6 +27,19 @@ function init() {
 		animationHandler.observe(animation);
 	}
 
+	// Character-split animations
+	let splits = document.querySelectorAll('.split');
+	for (let split of splits) {
+		let chars = split.textContent
+			.split('')
+			.map((char, i) =>
+				`<span class="character" style="--index:${i}">
+							${char == ' ' ? '&nbsp;' : char}
+						</span>`
+			);
+		split.innerHTML = chars.join('');
+	}
+
 
 	// Image alts
 	for (let img of $$('img')) {

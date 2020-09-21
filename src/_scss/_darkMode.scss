@@ -1,0 +1,42 @@
+html {
+	&.dark_mode {
+		--g0: #{$g8};
+		--g1: #{$g7};
+		--g2: #{$g6};
+		--g3: #{$g5};
+		--g4: #{$g4};
+		--g5: #{$g3};
+		--g6: #{$g2};
+		--g7: #{$g1};
+		--g8: #{$g0};
+		--primary: #{$secondary};
+		--secondary: #{$primary};
+		--fontWeightRegular: 300;
+		--shadowColor: rgba(0, 0, 0, 0.85);
+
+		body {
+			color: var(--g1);
+		}
+
+		.technology img {
+			filter: invert(1);
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: var(--g0);
+		}
+
+		#dark_mode_toggle {
+			--on: 0;
+		}
+	}
+
+	&.muted #muted_toggle {
+		--on: 0;
+	}
+}

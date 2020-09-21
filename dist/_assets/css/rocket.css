@@ -1,7 +1,7 @@
 #rocket {
   --angle: -37deg;
   --tint: rgba(0, 0, 0, 0.37);
-  width: 100%;
+  width: var(--animationSize);
   height: var(--animationSize);
   overflow: hidden;
 }
@@ -40,8 +40,8 @@
 }
 
 #rocket .flame {
-  width: 3.7em;
-  height: 3.7em;
+  width: calc(var(--animationSize) / 3);
+  height: calc(var(--animationSize) / 3);
   top: 50%;
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           transform: translate(-50%, -50%) rotate(-45deg);
@@ -52,8 +52,8 @@
 
 #rocket .window {
   border-radius: 50%;
-  width: 5em;
-  height: 5em;
+  width: calc(var(--animationSize) * 0.37);
+  height: calc(var(--animationSize) * 0.37);
   left: 37%;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -69,8 +69,8 @@
   border-radius: 50%;
   left: 50%;
   top: 10%;
-  width: 2em;
-  height: 0.63em;
+  width: 50%;
+  height: 20%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -84,7 +84,7 @@
   top: 100%;
   height: 50%;
   width: 85%;
-  left: -2em;
+  left: -12%;
   -webkit-transform: translateY(var(--y));
           transform: translateY(var(--y));
   border-radius: 100% 0 0 0 / 100% 0 0 0;
@@ -106,7 +106,7 @@
   width: 50%;
   top: 50%;
   z-index: 2;
-  height: 0.5em;
+  height: 10%;
   -webkit-clip-path: polygon(0 50%, 10% 0, 100% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
           clip-path: polygon(0 50%, 10% 0, 100% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
   background: var(--g5);

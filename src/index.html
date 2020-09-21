@@ -4,56 +4,52 @@
 
 	<Content>
 
-		<div class="limited-width" id="homepageHero">
-			<h1>I'm Braden, a <del>graphic designer</del> front-end developer.</h1>
-			<blockquote>
-				All the paths we <em>might have</em> taken factor somehow into the math of our identity.
-				<div class="post--info__tags">
-					― Blake Crouch, Dark Matter
-				</div>
-			</blockquote>
+		<Brick use="_bricks/atoms/animations/homeHero.html"></Brick>
+
+
+		<div class="grid" style="gap: 4rem">
+
+			<Brick use="_bricks/atoms/blurb.html">
+				<BlurbTitle>How I started</BlurbTitle>
+				<BlurbDescription>
+					About 5 years ago, my design projects became full-fledged brand identities for local Oklahoma businesses. As I learned about design systems and patterns, I was thrilled about how they be represented and leveraged on the web.
+				</BlurbDescription>
+			</Brick>
+
+			<Brick use="_bricks/atoms/blurb.html">
+				<BlurbTitle>What I'm working on</BlurbTitle>
+				<BlurbDescription>
+					My best work revolves around static sites, CSS animation, and front-end performance 🏆. That's what you can expect to find in my <a href="/code">projects</a>.
+				</BlurbDescription>
+				<BlurbImage>
+					<Brick use="_bricks/atoms/animations/planet.html"></Brick>
+				</BlurbImage>
+			</Brick>
+
+			<Brick use="_bricks/atoms/blurb.html">
+				<BlurbTitle>What I'm doing now</BlurbTitle>
+				<BlurbDescription>
+					I currently live in Oklahoma City, working as part of the creative group for <a href="https://www.oklahomabaptists.org">Oklahoma Baptists</a> ⛪. When I get a chance, I code, play drums, go hiking, and ride BMX.
+				</BlurbDescription>
+				<BlurbImage>
+					<Brick use="_bricks/atoms/animations/rocket.html"></Brick>
+				</BlurbImage>
+			</Brick>
+
+			<Brick use="_bricks/atoms/blurb.html">
+				<BlurbTitle>Is there something I could help with?</BlurbTitle>
+				<BlurbDescription>
+					DM or email me and I'll make myself available for a call.
+					<br />
+					<br />
+					<a class="button" href="mailto:braden.east.design@gmail.com">braden.east.design@gmail.com</a>
+				</BlurbDescription>
+				<BlurbImage>
+					<img width="240" height="240" style="box-shadow: var(--blockShadow);" src="_assets/images/about/me.jpg" />
+				</BlurbImage>
+			</Brick>
+
 		</div>
-
-
-		<Brick use="_bricks/atoms/blurb.html">
-			<BlurbTitle>How I started</BlurbTitle>
-			<BlurbDescription>
-				About 5 years ago, my design projects became full-fledged brand identities for local Oklahoma businesses. As I learned about design systems and patterns, I was thrilled about how powerfully they be represented and leveraged on the web.
-			</BlurbDescription>
-			<BlurbImage>
-				<img width="240" height="240" style="box-shadow: var(--blockShadow);" src="_assets/images/about/me.jpg" />
-			</BlurbImage>
-		</Brick>
-
-		<Brick use="_bricks/atoms/blurb.html">
-			<BlurbTitle>What I'm working on</BlurbTitle>
-			<BlurbDescription>
-				My best work revolves around static sites, CSS animation, and front-end performance 🏆. That's what you can expect to find in my <a href="/code">projects</a>.
-			</BlurbDescription>
-			<BlurbImage>
-				<Brick use="_bricks/atoms/animations/planet.html"></Brick>
-			</BlurbImage>
-		</Brick>
-
-		<Brick use="_bricks/atoms/blurb.html">
-			<BlurbTitle>What I'm doing now</BlurbTitle>
-			<BlurbDescription>
-				I currently live in Oklahoma City, working as part of the creative group for <a href="https://www.oklahomabaptists.org">Oklahoma Baptists</a> ⛪. When I get a chance, I code, play drums, go hiking, and ride BMX.
-			</BlurbDescription>
-			<BlurbImage>
-				<Brick use="_bricks/atoms/animations/rocket.html"></Brick>
-			</BlurbImage>
-		</Brick>
-
-		<Brick use="_bricks/atoms/blurb.html">
-			<BlurbTitle>Is there something I could help with?</BlurbTitle>
-			<BlurbDescription>
-				DM or email me and I'll make myself available for a call.
-				<br />
-				<br />
-				<a class="button" href="mailto:braden.east.design@gmail.com">braden.east.design@gmail.com</a>
-			</BlurbDescription>
-		</Brick>
 
 	</Content>
 </Brick>

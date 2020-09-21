@@ -1,0 +1,67 @@
+.hero {
+	--charDelay: 0s;
+	padding: 8vw 0;
+	margin: 4vw;
+}
+
+.character,
+.designer,
+.developer,
+.tagline {
+	display: inline-block;
+	opacity: 0;
+	transform: translateY(1rem);
+	animation-duration: 0.63s;
+	animation-timing-function: cubic-bezier(0.3, 0.6, 0.1, 1);
+	animation-fill-mode: forwards;
+	animation-name: fadeIn;
+}
+
+@media screen and (max-width: 32rem) {
+	.character {
+		white-space: nowrap;
+	}
+}
+
+.character {
+	animation-delay: calc(var(--charDelay) + 0.03s * var(--index));
+}
+
+.designer {
+	--charDelay: 0.5s;
+	background-image: linear-gradient(transparent 50%, var(--g5) 50%, var(--g5) 60%, transparent 0);
+	background-position-x: 20em;
+	background-repeat: no-repeat;
+	animation-name: fadeIn, delete;
+	animation-delay: var(--charDelay), 2s;
+}
+
+.developer {
+	--charDelay: 2.8s;
+	animation-delay: var(--charDelay);
+}
+
+.developer .character {
+	transform: translate(3rem, 0) scale(2);
+	animation-timing-function: cubic-bezier(0.8, 0.1, 0.1, 1.3);
+}
+
+.tagline {
+	transform: none;
+	animation-duration: 2s;
+	animation-delay: 5s;
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+		transform: translate(0, 0) scale(1);
+	}
+}
+
+@keyframes delete {
+	to {
+		color: var(--g5);
+		background-position-x: 0rem;
+	}
+}
