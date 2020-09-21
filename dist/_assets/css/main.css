@@ -895,9 +895,6 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   background: var(--g8);
   -webkit-box-shadow: var(--blockShadow);
           box-shadow: var(--blockShadow);
-  --clipOffset: calc(100% + 0.8rem);
-  -webkit-clip-path: polygon(0 0, var(--clipOffset) 0, var(--clipOffset) var(--clipOffset), 0 100%);
-          clip-path: polygon(0 0, var(--clipOffset) 0, var(--clipOffset) var(--clipOffset), 0 100%);
   -webkit-transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
   transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
 }
@@ -1358,6 +1355,7 @@ pre span {
   .post--image img {
     height: 100%;
   }
+  .feed li .post--info,
   .animation {
     width: 100%;
   }

@@ -79,8 +79,6 @@
 		transform: translateX(#{-$flow1});
 		background: var(--g8);
 		box-shadow: var(--blockShadow);
-		--clipOffset: calc(100% + 0.8rem);
-		clip-path: polygon(0 0, var(--clipOffset) 0, var(--clipOffset) var(--clipOffset), 0 100%);
 		transition: $motionTransition;
 
 		&__title {
