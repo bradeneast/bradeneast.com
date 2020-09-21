@@ -21,6 +21,8 @@
 			}
 
 			&--info {
+				width: 85%;
+
 				&__excerpt {
 					margin-bottom: 0;
 				}
@@ -38,15 +40,6 @@
 					text-decoration-color: var(--primary);
 				}
 			}
-		}
-	}
-
-	li:hover,
-	li:focus-within {
-		&.post--info,
-		.post--info {
-			transform: scale(1.04);
-			box-shadow: var(--blockShadow);
 		}
 	}
 

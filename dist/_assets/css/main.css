@@ -891,6 +891,9 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   background: var(--g8);
   -webkit-box-shadow: var(--blockShadow);
           box-shadow: var(--blockShadow);
+  --clipOffset: calc(100% + 0.8rem);
+  -webkit-clip-path: polygon(0 0, var(--clipOffset) 0, var(--clipOffset) var(--clipOffset), 0 100%);
+          clip-path: polygon(0 0, var(--clipOffset) 0, var(--clipOffset) var(--clipOffset), 0 100%);
   -webkit-transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
   transition: 0.28s cubic-bezier(0.3, 0.3, 0.1, 1.3);
 }
@@ -994,6 +997,10 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           flex: 1;
 }
 
+.feed li .post--info {
+  width: 85%;
+}
+
 .feed li .post--info__excerpt {
   margin-bottom: 0;
 }
@@ -1007,16 +1014,6 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
   color: inherit;
   -webkit-text-decoration-color: var(--primary);
           text-decoration-color: var(--primary);
-}
-
-.feed li:hover.post--info,
-.feed li:hover .post--info,
-.feed li:focus-within.post--info,
-.feed li:focus-within .post--info {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
-  -webkit-box-shadow: var(--blockShadow);
-          box-shadow: var(--blockShadow);
 }
 
 .feed.design .post--info {
