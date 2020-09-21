@@ -3,6 +3,7 @@ import { $, $$, getSitemap, altFromSrc, elem } from "./utils";
 
 let resultContainer = $('.results');
 let inputThrottle;
+let sitemap;
 
 $('input[type="search"]')
 	.addEventListener('input', event => {
@@ -12,27 +13,34 @@ $('input[type="search"]')
 
 
 /**Takes a query and returns a list of pages  */
-function searchSite(query) {
-	let results = [];
-	let queryRegExp = new RegExp(query, 'i');
+function searchSite(query, callback) {
 
-	return getSitemap(sitemap => {
-
-		for (let loc of $$('loc', sitemap)) {
+	function processSitemap(sitemap) {
+		let locs = Array.from($$('loc', sitemap));
+		let results = locs.map(loc => {
 			let url = loc.textContent.trim();
-			results.push({
+			return {
 				absolute: url,
 				relative: url.split('/').pop()
-			});
-		}
-
-		results = results.filter(url =>
-			queryRegExp.test(altFromSrc(url.relative))
+			}
+		});
+		let filteredResults = results.filter(url =>
+			new RegExp(query, 'i')
+				.test(
+					altFromSrc(url.relative)
+				)
 			&& url.relative.length > 1
 		);
 
-		return [...new Set(results)];
-	})
+		callback([...new Set(filteredResults)]);
+	}
+
+	sitemap
+		? processSitemap(sitemap)
+		: getSitemap(xmlDoc => {
+			sitemap = xmlDoc;
+			processSitemap(sitemap);
+		})
 }
 
 
@@ -41,24 +49,22 @@ function handleSearch(event) {
 
 	let value = event.target.value;
 
-	searchSite(value)
-		.then(results => {
+	searchSite(value, results => {
+		resultContainer.innerHTML = '';
+		if (!value.trim().length) return;
 
-			resultContainer.innerHTML = '';
-			if (!value.trim().length) return;
+		for (let result of results) {
+			let a = elem('a');
+			let h2 = elem('h2');
+			let li = elem('li');
 
-			for (let result of results) {
-				let a = elem('a');
-				let h2 = elem('h2');
-				let li = elem('li');
+			a.innerText = altFromSrc(result.relative);
+			a.href = result.absolute;
+			a.setAttribute('data-no-schwifty', 1);
+			h2.append(a);
 
-				a.innerText = altFromSrc(result.relative);
-				a.href = result.absolute;
-				a.setAttribute('data-no-schwifty', 1);
-				h2.append(a);
-
-				li.append(h2);
-				resultContainer.append(li);
-			}
-		})
+			li.append(h2);
+			resultContainer.append(li);
+		}
+	})
 }

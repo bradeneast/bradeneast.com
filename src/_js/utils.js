@@ -43,7 +43,7 @@ export function getSitemap(callback) {
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (this.status == 200 && xhttp.responseXML)
-			return callback(xhttp.responseXML);
+			callback(xhttp.responseXML);
 	}
 	xhttp.responseType = 'document';
 	xhttp.open('GET', '/sitemap.xml', true);
@@ -55,7 +55,7 @@ export function getSitemap(callback) {
  */
 export function random(matcher) {
 	return getSitemap(sitemap => {
-		if (sitemap.querySelector('parsererror'))
+		if (!sitemap)
 			window.location = '/random';
 
 		let locs = Array.from($$('loc', sitemap));
