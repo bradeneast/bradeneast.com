@@ -5,7 +5,7 @@
   "main": "./ritz/index.js",
   "type": "module",
   "scripts": {
-    "ritz-build": "node ./ritz/index.js",
+    "ritz": "node ./ritz/index.js",
     "ritz-dev": "node ./ritz/index.js -dev"
   },
   "author": "Braden East",
