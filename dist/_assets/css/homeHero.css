@@ -54,8 +54,6 @@
 .developer .character {
   -webkit-transform: translate(3rem, 0) scale(2);
           transform: translate(3rem, 0) scale(2);
-  -webkit-animation-timing-function: cubic-bezier(0.8, 0.1, 0.1, 1.3);
-          animation-timing-function: cubic-bezier(0.8, 0.1, 0.1, 1.3);
 }
 
 .tagline {
