@@ -5,7 +5,7 @@ WRDS is a super-lightweight web app for fast, templated document creation. It le
 ## Why another word processor?
 WRDS was built to solve the problems I encountered designing copy-centered PDFs like press-releases and guides. For me, programs like Microsoft Word and Adobe InDesign weren't quite right for quickly creating and modifying these types of documents. I felt like I was using a table saw where I really just needed a pocket-knife.
 
-![A button highlighted from the content-editor interface](/_assets/images/wrds/content-editor.png)
+![The template-editor dialogue open](/_assets/images/wrds/dialogue.png)
 
 I started coding WRDS to take advantage of the responsive nature of the web, the flexibility of Markdown syntax, and the power of CSS.
 
@@ -13,7 +13,8 @@ I started coding WRDS to take advantage of the responsive nature of the web, the
 
 My objective with this project was to make something that was easy to scale as I continue to add new features. Finally, WRDS is also privacy-first, meaning your data is never shared with a server. Everything is stored locally on your machine, giving you total control and privacy.
 
-![The template-editor dialogue open](/_assets/images/wrds/dialogue.png)
+![A button highlighted from the content-editor interface](/_assets/images/wrds/content-editor.png)
+
 
 ## Technologies
 
