@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import marked from 'marked';
 import prism from 'prismjs';
-import config from '../config.js';
+import config from '../ritz.config.js';
 
 /**Joins parts of a URL with a forward slash */
 export let slash = (...parts) => parts
@@ -52,11 +52,10 @@ export function getAttributes(string) {
 /**Takes a relative path and converts it to an absolute path in the src folder */
 export function getAbsolutePath(path, currentDir) {
 	path = path.trim();
-	let isRelative = path[0] == '.';
 	return slash(
 		config.paths.src,
-		isRelative ? currentDir : '',
-		isRelative ? path.slice(1) : path
+		path[0] != '/' ? currentDir : '',
+		path
 	)
 }
 

@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '../ritz.config.js';
 import { walkDirSync, matchTag } from './utils.js';
 import { parseBrick } from './parse.js';
 

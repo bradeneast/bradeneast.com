@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import config from '../config.js';
+import config from '../ritz.config.js';
 import { getSortParameter, dynamicSort, matchTag, slash, getAttributes, readLocal } from './utils.js';
 import tree from './tree.js';
 import { addGarnish, hydrate } from './parse.js';

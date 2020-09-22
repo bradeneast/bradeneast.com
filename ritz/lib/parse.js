@@ -1,6 +1,6 @@
 import safeEval from 'safe-eval';
 import { matchTag, getAttributes, getInner, accessProp, readLocal, getAbsolutePath, isValidDate, getElementProps } from './utils.js';
-import config from '../config.js';
+import config from '../ritz.config.js';
 
 
 export function parseBrick(string, pageProps) {
