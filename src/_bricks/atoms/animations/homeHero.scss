@@ -9,11 +9,15 @@
 .developer,
 .tagline {
 	display: inline-block;
-	opacity: 0;
-	transform: translateY(1rem);
 	animation-duration: 0.63s;
 	animation-timing-function: cubic-bezier(0.3, 0.6, 0.1, 1);
 	animation-fill-mode: forwards;
+}
+
+.character,
+.tagline {
+	opacity: 0;
+	transform: translateY(1rem);
 	animation-name: fadeIn;
 }
 

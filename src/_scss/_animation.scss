@@ -1,44 +1,44 @@
-@keyframes showFallback {
-	0% {
-		content: "Loading";
-	}
-	10% {
-		content: "Loading.";
-	}
-	20% {
-		content: "Loading..";
-	}
-	30% {
-		content: "Loading...";
-	}
-	40% {
-		content: "Loading.";
-	}
-	50% {
-		content: "Loading..";
-	}
-	60% {
-		content: "Loading...";
-	}
-	100% {
-		content: "\1F62C Yikes... this external resource isn't available right now.";
-	}
-}
-
-.paused,
-.reduced-motion {
-	animation-play-state: paused !important;
-	transition: none !important;
-
-	*,
-	*::after,
-	*::before {
-		animation-play-state: paused !important;
-		transition: none !important;
-	}
-}
+// @keyframes showFallback {
+// 	0% {
+// 		content: "Loading";
+// 	}
+// 	10% {
+// 		content: "Loading.";
+// 	}
+// 	20% {
+// 		content: "Loading..";
+// 	}
+// 	30% {
+// 		content: "Loading...";
+// 	}
+// 	40% {
+// 		content: "Loading.";
+// 	}
+// 	50% {
+// 		content: "Loading..";
+// 	}
+// 	60% {
+// 		content: "Loading...";
+// 	}
+// 	100% {
+// 		content: "\1F62C Yikes... this external resource isn't available right now.";
+// 	}
+// }
 
 html {
+	.paused,
+	.reduced-motion {
+		animation-play-state: paused;
+		transition: none;
+
+		*,
+		*::after,
+		*::before {
+			animation-play-state: paused;
+			transition: none;
+		}
+	}
+
 	main {
 		transition: $smoothTransition;
 	}

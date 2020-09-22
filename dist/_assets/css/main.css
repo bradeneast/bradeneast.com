@@ -577,78 +577,24 @@ button.toggle:hover, button.toggle:focus,
           transform: scale(calc(var(--iconSize) * (1 - var(--on)))) translate3d(1px, 1px, 1px);
 }
 
-@-webkit-keyframes showFallback {
-  0% {
-    content: "Loading";
-  }
-  10% {
-    content: "Loading.";
-  }
-  20% {
-    content: "Loading..";
-  }
-  30% {
-    content: "Loading...";
-  }
-  40% {
-    content: "Loading.";
-  }
-  50% {
-    content: "Loading..";
-  }
-  60% {
-    content: "Loading...";
-  }
-  100% {
-    content: "\1F62C Yikes... this external resource isn't available right now.";
-  }
+html .paused,
+html .reduced-motion {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-transition: none;
+  transition: none;
 }
 
-@keyframes showFallback {
-  0% {
-    content: "Loading";
-  }
-  10% {
-    content: "Loading.";
-  }
-  20% {
-    content: "Loading..";
-  }
-  30% {
-    content: "Loading...";
-  }
-  40% {
-    content: "Loading.";
-  }
-  50% {
-    content: "Loading..";
-  }
-  60% {
-    content: "Loading...";
-  }
-  100% {
-    content: "\1F62C Yikes... this external resource isn't available right now.";
-  }
-}
-
-.paused,
-.reduced-motion {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
-  -webkit-transition: none !important;
-  transition: none !important;
-}
-
-.paused *,
-.paused *::after,
-.paused *::before,
-.reduced-motion *,
-.reduced-motion *::after,
-.reduced-motion *::before {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
-  -webkit-transition: none !important;
-  transition: none !important;
+html .paused *,
+html .paused *::after,
+html .paused *::before,
+html .reduced-motion *,
+html .reduced-motion *::after,
+html .reduced-motion *::before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-transition: none;
+  transition: none;
 }
 
 html main {
