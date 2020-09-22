@@ -25,7 +25,7 @@
 				"silent": true,
 			},
 			{
-				"cmd": "esbuild --target=es6 --bundle ./src/_js/search.js --outfile=./dist/_assets/js/search.js",
+				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/search.js --outfile=./dist/_assets/js/search.js",
 				"match": ".*src.*js",
 				"silent": true,
 			},
