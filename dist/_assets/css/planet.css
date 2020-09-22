@@ -1,23 +1,24 @@
 #planet {
   --lightAngle: -37deg;
   --contrast: rgba(0, 0, 0, 0.3);
+  --duration: 5s;
   --planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
   font-size: var(--animationSize);
   width: 1em;
   height: 1em;
-  -webkit-transform: scale(0.72) translateY(-0.1em) rotate(-4deg);
-          transform: scale(0.72) translateY(-0.1em) rotate(-4deg);
+  -webkit-transform: scale(0.72) translateY(-0.1em);
+          transform: scale(0.72) translateY(-0.1em);
 }
 
 #planet::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: calc(var(--animationSize) * 0.12);
+  height: 0.2em;
   background: var(--contrast);
   border-radius: 50%;
   top: calc(100% + 0.1em);
-  animation: planetShadow 7s ease-in-out infinite reverse;
+  animation: planetShadow var(--duration) ease-in-out infinite reverse;
 }
 
 #planet .planet {
@@ -32,7 +33,7 @@
   background-color: var(--primary);
   overflow: hidden;
   will-change: transform;
-  animation: planetFloat 5s ease-in-out infinite reverse;
+  animation: planetFloat var(--duration) ease-in-out infinite reverse;
 }
 
 #planet .moon--wrapper {
@@ -41,11 +42,11 @@
   width: 175%;
   height: 100%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-50%) rotate(-4deg);
+          transform: translateX(-50%) rotate(-4deg);
   will-change: transform;
-  -webkit-animation: orbitY 5s linear infinite;
-          animation: orbitY 5s linear infinite;
+  -webkit-animation: orbitY var(--duration) linear infinite;
+          animation: orbitY var(--duration) linear infinite;
 }
 
 #planet .moon {
@@ -59,8 +60,8 @@
   background: linear-gradient(var(--lightAngle), var(--g4), var(--g6));
   border-radius: 50%;
   will-change: transform;
-  -webkit-animation: orbitX 5s ease-in-out infinite;
-          animation: orbitX 5s ease-in-out infinite;
+  -webkit-animation: orbitX var(--duration) ease-in-out infinite;
+          animation: orbitX var(--duration) ease-in-out infinite;
 }
 
 #planet .orbit--front, #planet .orbit--back {
@@ -69,8 +70,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) rotate(-4deg);
+          transform: translate(-50%, -50%) rotate(-4deg);
   border-radius: 50%;
   border: 0.1em solid var(--g7);
 }
@@ -211,7 +212,7 @@
     z-index: 1;
   }
   25% {
-    top: -0.2em;
+    top: -0.17em;
     z-index: 0;
   }
   50% {
@@ -219,7 +220,7 @@
     z-index: 1;
   }
   75% {
-    top: 0.2em;
+    top: 0.17em;
   }
   100% {
     top: 0;
@@ -233,7 +234,7 @@
     z-index: 1;
   }
   25% {
-    top: -0.2em;
+    top: -0.17em;
     z-index: 0;
   }
   50% {
@@ -241,7 +242,7 @@
     z-index: 1;
   }
   75% {
-    top: 0.2em;
+    top: 0.17em;
   }
   100% {
     top: 0;
@@ -254,7 +255,7 @@
     top: -0.03em;
   }
   50% {
-    top: 0.06em;
+    top: 0.07em;
   }
   100% {
     top: -0.03em;
@@ -266,7 +267,7 @@
     top: -0.03em;
   }
   50% {
-    top: 0.06em;
+    top: 0.07em;
   }
   100% {
     top: -0.03em;

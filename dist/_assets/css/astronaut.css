@@ -1,0 +1,36 @@
+#astronaut {
+  font-size: var(--animationSize);
+  display: none;
+}
+
+#astronaut *,
+#astronaut *::before,
+#astronaut *::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#astronaut .helmet {
+  width: 0.3em;
+  height: 0.3em;
+  background: var(--primary);
+  border-radius: 50%;
+  -webkit-transform: rotate(-37deg);
+          transform: rotate(-37deg);
+  border: 0.02em solid var(--g6);
+}
+
+#astronaut .helmet::after {
+  width: 37%;
+  height: 20%;
+  background: var(--g8);
+  border-radius: 50%;
+  left: 50%;
+  top: 10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
