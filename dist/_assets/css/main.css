@@ -1017,6 +1017,74 @@ table * {
   text-align: inherit;
 }
 
+label {
+  margin-left: 0.2em;
+  margin-right: 1rem;
+}
+
+label::after {
+  content: attr(for);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  --scale: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1em;
+  height: 1em;
+  -webkit-transform: translateY(0.12em);
+          transform: translateY(0.12em);
+  background: var(--g7);
+}
+
+input[type="checkbox"]::before, input[type="checkbox"]::after,
+input[type="radio"]::before,
+input[type="radio"]::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(var(--scale));
+          transform: scale(var(--scale));
+  background: var(--primary);
+}
+
+input[type="checkbox"] {
+  border-radius: 0;
+}
+
+input[type="checkbox"]:checked {
+  --scale: 1;
+}
+
+input[type="checkbox"]::before, input[type="checkbox"]::after {
+  height: 0.2em;
+}
+
+input[type="checkbox"]::before {
+  -webkit-transform: translate(0.2em, 0.2em) rotate(-60deg) scale(var(--scale));
+          transform: translate(0.2em, 0.2em) rotate(-60deg) scale(var(--scale));
+}
+
+input[type="checkbox"]::after {
+  width: 50%;
+  -webkit-transform: translate(0.1em, 0.5em) rotate(37deg) scale(var(--scale));
+          transform: translate(0.1em, 0.5em) rotate(37deg) scale(var(--scale));
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+  --scale: 0.63;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1044,7 +1112,8 @@ footer * {
 }
 
 code,
-pre {
+pre,
+textarea {
   background: var(--g7);
   text-align: left;
   white-space: pre;
@@ -1063,12 +1132,14 @@ pre {
 }
 
 code::-webkit-scrollbar,
-pre::-webkit-scrollbar {
+pre::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
   display: none;
 }
 
 code span,
-pre span {
+pre span,
+textarea span {
   font-family: inherit;
 }
 

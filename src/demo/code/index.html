@@ -1,0 +1,27 @@
+<Brick use="/_bricks/organisms/main.html">
+	<Title>Code Demo Builder</Title>
+	<Content>
+
+		<script>
+			window.Prism = window.Prism || {};
+			Prism.manual = true;
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js" integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ==" crossorigin="anonymous"></script>
+		<script defer src="/_assets/js/codeDemo.js"></script>
+
+		<link rel="stylesheet" href="/_assets/css/codeDemo.css">
+
+		<section>
+			<pre class="limited-width language-html" contenteditable="true"></pre>
+		</section>
+
+		<div class="options">
+			<input type="radio" name="lang" id="javascript"><label for="javascript"></label>
+			<input type="radio" name="lang" id="html"><label for="html"></label>
+			<input type="radio" name="lang" id="css"><label for="css"></label>
+		</div>
+		<br />
+		<button id="formatCode">Format</button>
+
+	</Content>
+</Brick>

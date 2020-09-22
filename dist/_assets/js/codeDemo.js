@@ -1,0 +1,1 @@
+(()=>{let c=(a,d=document)=>d.querySelector(a),e=(a,d="")=>{let f=document.createElement(a);return f.innerHTML=d,f};let b=c("pre");c("#formatCode").addEventListener("click",()=>Prism.highlightElement(b,!1,()=>b.children=[e("code",b.innerHTML)]));addEventListener("input",a=>{a.target.name=="lang"&&b.setAttribute("class",`language-${a.target.id}`)});})();

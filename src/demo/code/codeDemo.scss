@@ -1,0 +1,45 @@
+@import "../../_scss/variables";
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+html {
+	scrollbar-width: none;
+}
+
+body {
+	padding: 0;
+	grid-template-columns: 1fr;
+
+	main {
+		display: grid;
+		padding-top: 0;
+	}
+
+	section {
+		display: grid;
+		align-items: center;
+		height: 100vh;
+		padding: $flow4;
+		margin: 0;
+	}
+}
+
+aside,
+footer,
+[class*="border-"]::before {
+	display: none;
+}
+
+pre {
+	font-size: 2em;
+	min-height: 3em;
+	width: 85%;
+	margin: 0 auto;
+	box-shadow: var(--blockShadow);
+}
+
+#formatCode {
+	justify-self: start;
+}

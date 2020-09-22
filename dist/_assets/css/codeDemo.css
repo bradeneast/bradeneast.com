@@ -1,0 +1,50 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  padding: 0;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+body main {
+  display: -ms-grid;
+  display: grid;
+  padding-top: 0;
+}
+
+body section {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  padding: 4rem;
+  margin: 0;
+}
+
+aside,
+footer,
+[class*="border-"]::before {
+  display: none;
+}
+
+pre {
+  font-size: 2em;
+  min-height: 3em;
+  width: 85%;
+  margin: 0 auto;
+  -webkit-box-shadow: var(--blockShadow);
+          box-shadow: var(--blockShadow);
+}
+
+#formatCode {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
