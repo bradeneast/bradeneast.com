@@ -2,7 +2,7 @@
 
 <div class="technologies grid">
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>React</TechName>
 	<TechUse>
 		I used React to render Ingrid's user interface.
@@ -12,7 +12,7 @@
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>MongoDB</TechName>
 	<TechUse>
 		I used MongoDB to securely store user data.
@@ -22,7 +22,7 @@
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>Passport.js</TechName>
 	<TechUse>
 		I used this library to handle authentication for users who opted to save their work.
@@ -32,7 +32,7 @@
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>Netlify</TechName>
 	<TechUse>
 		I hosted this app on Netlify for fast load times and easy deployment.

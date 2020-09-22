@@ -19,7 +19,7 @@ My objective with this project was to make something that was easy to scale as I
 
 <div class="technologies grid">
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>Typescript</TechName>
 	<TechUse>
 		I used Typescript's compiler to generate an accessible bundle from source code written in ES6+ syntax.
@@ -29,7 +29,7 @@ My objective with this project was to make something that was easy to scale as I
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>lit-html</TechName>
 	<TechUse>
 		I used this templating library from Google's <a href="https://www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
@@ -39,14 +39,14 @@ My objective with this project was to make something that was easy to scale as I
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>esbuild</TechName>
 	<TechUse>
 		Since the source code was split up into components and templates, I used <a href="https://github.com/evanw/esbuild">esbuild</a> to bundle and minify the application.
 	</TechUse>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>Netlify</TechName>
 	<TechUse>
 		I'm hosting WRDS on Netlify and deploying from its GitHub repository.

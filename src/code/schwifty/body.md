@@ -25,7 +25,7 @@ When a link is clicked, the content is swapped out and navigation happens. Then 
 
 <div class="technologies grid">
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>Git & Github</TechName>
 	<TechUse>
 		I used git branches to add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
@@ -35,7 +35,7 @@ When a link is clicked, the content is swapped out and navigation happens. Then 
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>Javascript ES6</TechName>
 	<TechUse>
 		I leveraged several features of modern Javascript, including Classes, new Array methods, and the Intersection Observer API.
@@ -45,7 +45,7 @@ When a link is clicked, the content is swapped out and navigation happens. Then 
 	</TechLogo>
 </Brick>
 
-<Brick use="_bricks/atoms/tech.html">
+<Brick use="/_bricks/atoms/tech.html">
 	<TechName>esbuild</TechName>
 	<TechUse>
 		I used the <a target="_blank" href="https://github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
