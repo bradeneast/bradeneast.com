@@ -25,23 +25,50 @@ let handleKeydown = event => {
 	if (keycode == 9 && val.length) {
 		event.preventDefault();
 
-		let start = target.selectionStart;
-		let end = target.selectionEnd;
-		let preceding = val.slice(0, start);
-		let following = val.slice(end);
+		let tabMatcher = /^/gm;
+		let tabReplacer = '\t';
+		let moveSelectionRange = 1;
 
 		if (shiftPressed) {
-			// Unindent current line by 1 tab
-			let precedingLines = preceding.split(/\n/);
-			let currentLine = precedingLines.pop().replace(/^\t/, '\n');
-			target.value = precedingLines.join('\n') + currentLine + following;
-			target.selectionStart = target.selectionEnd = start - 1;
-
-		} else {
-			// Indent current line by 1 tab
-			target.value = preceding + '\t' + following;
-			target.selectionStart = target.selectionEnd = start + 1;
+			tabMatcher = /^\t/gm;
+			tabReplacer = '';
+			moveSelectionRange = -1;
 		}
+
+		let start = target.selectionStart;
+		let end = target.selectionEnd;
+		let selection = val.slice(start, end);
+
+		let allLines = val.split(/\n/);
+		let precedingLines = val.slice(0, start).split(/\n/).slice(0, -1);
+		let selectionStartLine = precedingLines.length;
+		let selectionEndLine = selectionStartLine + selection.split(/\n/).length;
+		let selectedLines = allLines.slice(selectionStartLine, selectionEndLine);
+		let subsequentLines = allLines.slice(selectionEndLine);
+
+		let precedingLinesString = precedingLines.join('\n');
+		let selectedLinesString = selectedLines.join('\n').replace(tabMatcher, tabReplacer);
+		let subsequentLinesString = subsequentLines.join('\n');
+
+
+		if (!precedingLines.length)
+			target.value = [
+				selectedLinesString,
+				subsequentLinesString
+			].join('\n');
+		else if (!subsequentLines.length)
+			target.value = [
+				precedingLinesString,
+				selectedLinesString
+			].join('\n');
+		else
+			target.value = [
+				precedingLinesString,
+				selectedLinesString,
+				subsequentLinesString
+			].join('\n');
+
+		target.setSelectionRange(start + moveSelectionRange, end + moveSelectionRange);
 	}
 }
 
