@@ -2,6 +2,9 @@
   --charDelay: 0s;
   padding: 8vw 0;
   margin: 4vw;
+  opacity: 0;
+  -webkit-animation: fadeIn 0.5s ease forwards;
+          animation: fadeIn 0.5s ease forwards;
 }
 
 .character,
