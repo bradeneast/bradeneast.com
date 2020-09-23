@@ -1,14 +1,15 @@
-import { $, elem } from './parts/utils';
+import { $ } from './parts/utils';
+import Prism, { languages } from './libs/prism';
 
-let pre = $('pre');
+let output = $('#output');
+let input = $('#input');
+let lang = 'javascript';
 
-$('#formatCode').addEventListener('click', () =>
-	Prism.highlightElement(pre, false, () =>
-		pre.children = [elem('code', pre.innerHTML)]
-	)
-);
+$('#formatCode').addEventListener('click', () => {
+	output.innerHTML = Prism.highlight(input.value, languages[lang], lang);
+});
 
 addEventListener('input', event => {
 	if (event.target.name == 'lang')
-		pre.setAttribute('class', `language-${event.target.id}`);
+		lang = event.target.id;
 })

@@ -18,7 +18,7 @@
 	--fontWeightHeavy: #{$fontWeightHeavy};
 	--shadowColor: rgba(0, 0, 0, 0.37);
 	--shadow: 0.2rem 0.37rem 0.63rem -0.2rem var(--shadowColor);
-	--largeShadow: 0.37rem 0.63rem 1rem -0.2rem var(--shadowColor);
+	--largeShadow: 0.63rem 2rem 4rem -1rem var(--shadowColor);
 	--blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
 	--animationSize: 16rem;
 }

@@ -10,6 +10,7 @@ body {
   padding: 0;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  background: linear-gradient(-37deg, var(--accent), var(--primary));
 }
 
 body main {
@@ -24,7 +25,7 @@ body section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4rem;
   margin: 0;
 }
@@ -36,10 +37,11 @@ footer,
 }
 
 pre {
-  font-size: 2em;
+  font-size: 1.37em;
   min-height: 3em;
   width: 85%;
   margin: 0 auto;
+  padding: 2em;
   -webkit-box-shadow: var(--blockShadow);
           box-shadow: var(--blockShadow);
 }
@@ -47,4 +49,8 @@ pre {
 #formatCode {
   -ms-grid-column-align: start;
       justify-self: start;
+}
+
+#input {
+  height: 24rem;
 }
