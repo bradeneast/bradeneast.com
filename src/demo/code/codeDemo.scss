@@ -16,15 +16,21 @@ body {
 	main {
 		display: grid;
 		padding-top: 0;
-	}
+		padding-left: $flow2;
+		padding-right: $flow2;
 
-	section {
-		display: grid;
-		align-items: center;
-		min-height: 100vh;
-		padding: $flow4;
-		margin: 0;
+		& > * {
+			margin: 0;
+		}
 	}
+}
+
+section {
+	display: grid;
+	align-items: center;
+	min-height: 100vh;
+	padding: $flow4;
+	margin: 0;
 }
 
 aside,
@@ -36,6 +42,13 @@ footer {
 	padding-top: $flow1;
 	padding-bottom: $flow1;
 	background: var(--g8);
+	border-top: $borderWidth $borderStyle var(--g6);
+	box-shadow: var(--largeShadow), var(--largeShadow);
+}
+
+.picker {
+	display: flex;
+	flex-flow: row wrap;
 }
 
 pre {
@@ -56,6 +69,9 @@ pre {
 }
 
 @media screen and (max-width: $mobile) {
+	section {
+		padding: 0;
+	}
 	pre {
 		font-size: 1em;
 	}

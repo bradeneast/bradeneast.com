@@ -16,9 +16,15 @@ body main {
   display: -ms-grid;
   display: grid;
   padding-top: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-body section {
+body main > * {
+  margin: 0;
+}
+
+section {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -38,6 +44,19 @@ footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background: var(--g8);
+  border-top: 0.2rem solid var(--g6);
+  -webkit-box-shadow: var(--largeShadow), var(--largeShadow);
+          box-shadow: var(--largeShadow), var(--largeShadow);
+}
+
+.picker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 pre {
@@ -60,6 +79,9 @@ pre {
 }
 
 @media screen and (max-width: 54em) {
+  section {
+    padding: 0;
+  }
   pre {
     font-size: 1em;
   }

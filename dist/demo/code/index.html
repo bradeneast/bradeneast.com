@@ -80,19 +80,27 @@
 			<pre><code id="output"></code></pre>
 		</section>
 
-		<form class="grid">
+		<div class="grid">
 
 			<textarea id="input"></textarea>
 
 			<div class="controls">
-				<input type="radio" name="lang" id="javascript" checked><label for="javascript"></label>
-				<input type="radio" name="lang" id="html"><label for="html"></label>
-				<input type="radio" name="lang" id="css"><label for="css"></label>
+				<div class="picker">
+					<span>
+						<input type="radio" name="lang" id="javascript" checked><label for="javascript"></label>
+					</span>
+					<span>
+						<input type="radio" name="lang" id="html"><label for="html"></label>
+					</span>
+					<span>
+						<input type="radio" name="lang" id="css"><label for="css"></label>
+					</span>
+				</div>
 				<br />
-				<button id="formatCode">Highlight</button>
+				<button id="highlightButton">Highlight</button>
 			</div>
 
-		</form>
+		</div>
 	</main>
 
 	<footer class="border-top">
