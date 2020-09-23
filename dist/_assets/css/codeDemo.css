@@ -15,9 +15,7 @@ body {
 body main {
   display: -ms-grid;
   display: grid;
-  padding-top: 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0;
 }
 
 body main > * {
@@ -33,6 +31,8 @@ section {
   min-height: 100vh;
   padding: 4rem;
   margin: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 aside,

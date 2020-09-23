@@ -15,9 +15,7 @@ body {
 
 	main {
 		display: grid;
-		padding-top: 0;
-		padding-left: $flow2;
-		padding-right: $flow2;
+		padding: 0;
 
 		& > * {
 			margin: 0;
@@ -31,6 +29,8 @@ section {
 	min-height: 100vh;
 	padding: $flow4;
 	margin: 0;
+	padding-left: $flow2;
+	padding-right: $flow2;
 }
 
 aside,
@@ -72,6 +72,7 @@ pre {
 	section {
 		padding: 0;
 	}
+
 	pre {
 		font-size: 1em;
 	}

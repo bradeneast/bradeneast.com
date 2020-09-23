@@ -33,7 +33,7 @@ textarea {
 	color: inherit;
 	$d: #e2647f;
 	$a: #ff5448;
-	$c: #bbac81;
+	$c: #dbab6d;
 	$b: #965385;
 	$e: #af8650;
 	$punctuation: rgba(120, 120, 155, 0.72);
@@ -64,6 +64,7 @@ textarea {
 		color: $b;
 	}
 
+	.rule,
 	&.function {
 		font-weight: 700;
 		font-variation-settings: nth($fontVariations, 2);
@@ -75,7 +76,6 @@ textarea {
 	&.constant,
 	&.symbol {
 		color: $c;
-		font-weight: 700;
 	}
 
 	&.selector,
@@ -92,6 +92,10 @@ textarea {
 	&.regex,
 	&.variable {
 		color: $e;
+
+		.rule {
+			color: var(--g2);
+		}
 	}
 
 	&.operator,

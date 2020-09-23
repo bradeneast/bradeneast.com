@@ -1183,14 +1183,13 @@ textarea span {
   color: #965385;
 }
 
-.token.function {
+.token .rule, .token.function {
   font-weight: 700;
   font-variation-settings: "CASL" 1, "slnt" -13;
 }
 
 .token.attr-name, .token.property, .token.class-name, .token.constant, .token.symbol {
-  color: #bbac81;
-  font-weight: 700;
+  color: #dbab6d;
 }
 
 .token.selector, .token.important, .token.keyword, .token.builtin {
@@ -1199,6 +1198,10 @@ textarea span {
 
 .token.string, .token.char, .token.attr-value, .token.atrule, .token.regex, .token.variable {
   color: #af8650;
+}
+
+.token.string .rule, .token.char .rule, .token.attr-value .rule, .token.atrule .rule, .token.regex .rule, .token.variable .rule {
+  color: var(--g2);
 }
 
 .token.operator, .token.entity, .token.url {
