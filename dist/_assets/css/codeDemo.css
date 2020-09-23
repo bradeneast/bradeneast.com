@@ -8,8 +8,7 @@ html {
 
 body {
   padding: 0;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  display: block;
   background: linear-gradient(-37deg, var(--accent), var(--primary));
 }
 
@@ -31,9 +30,14 @@ body section {
 }
 
 aside,
-footer,
 [class*="border-"]::before {
   display: none;
+}
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: var(--g8);
 }
 
 pre {
@@ -53,4 +57,10 @@ pre {
 
 #input {
   height: 24rem;
+}
+
+@media screen and (max-width: 54em) {
+  pre {
+    font-size: 1em;
+  }
 }

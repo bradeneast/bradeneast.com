@@ -10,7 +10,7 @@ html {
 
 body {
 	padding: 0;
-	grid-template-columns: 1fr;
+	display: block;
 	background: linear-gradient(-37deg, var(--accent), var(--primary));
 
 	main {
@@ -28,9 +28,14 @@ body {
 }
 
 aside,
-footer,
 [class*="border-"]::before {
 	display: none;
+}
+
+footer {
+	padding-top: $flow1;
+	padding-bottom: $flow1;
+	background: var(--g8);
 }
 
 pre {
@@ -48,4 +53,10 @@ pre {
 
 #input {
 	height: 24rem;
+}
+
+@media screen and (max-width: $mobile) {
+	pre {
+		font-size: 1em;
+	}
 }

@@ -6,7 +6,6 @@
 			"savePath": "/dist/_assets/css"
 		}
 	],
-	"liveServer.settings.port": 5502,
 	"liveServer.settings.root": "/dist",
 	"liveServer.settings.file": "/404.html",
 	"liveServer.settings.ignoreFiles": [
