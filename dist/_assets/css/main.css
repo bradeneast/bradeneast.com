@@ -1189,7 +1189,7 @@ textarea span {
 }
 
 .token.attr-name, .token.property, .token.class-name, .token.constant, .token.symbol {
-  color: #f1ad2f;
+  color: #bbac81;
   font-weight: 700;
 }
 
