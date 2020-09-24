@@ -30,7 +30,7 @@
 				"silent": true,
 			},
 			{
-				"cmd": "esbuild --target=es6 --bundle ./src/_js/codeDemo.js --outfile=./dist/_assets/js/codeDemo.js",
+				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/codeDemo.js --outfile=./dist/_assets/js/codeDemo.js",
 				"match": ".*src.*js",
 				"silent": true,
 			},

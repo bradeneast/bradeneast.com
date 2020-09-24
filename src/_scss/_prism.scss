@@ -130,7 +130,7 @@ textarea {
 
 pre.line-numbers {
 	counter-reset: linenumber;
-	padding-left: 4em;
+	padding-left: 3em;
 
 	.line-numbers-rows {
 		position: absolute;
@@ -139,7 +139,7 @@ pre.line-numbers {
 		top: 0;
 		padding-top: inherit;
 		padding-bottom: inherit;
-		width: 3.8em;
+		width: 3em;
 		user-select: none;
 
 		& > span {

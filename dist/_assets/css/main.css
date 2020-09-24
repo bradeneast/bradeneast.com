@@ -1226,7 +1226,7 @@ textarea span {
 
 pre.line-numbers {
   counter-reset: linenumber;
-  padding-left: 4em;
+  padding-left: 3em;
 }
 
 pre.line-numbers .line-numbers-rows {
@@ -1236,7 +1236,7 @@ pre.line-numbers .line-numbers-rows {
   top: 0;
   padding-top: inherit;
   padding-bottom: inherit;
-  width: 3.8em;
+  width: 3em;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
