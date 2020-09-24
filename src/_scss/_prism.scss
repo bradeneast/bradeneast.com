@@ -127,3 +127,32 @@ textarea {
 		color: var(--g5);
 	}
 }
+
+pre.line-numbers {
+	counter-reset: linenumber;
+	padding-left: 4em;
+
+	.line-numbers-rows {
+		position: absolute;
+		pointer-events: none;
+		left: 0;
+		top: 0;
+		padding-top: inherit;
+		padding-bottom: inherit;
+		width: 3.8em;
+		user-select: none;
+
+		& > span {
+			display: block;
+			counter-increment: linenumber;
+			padding-right: 1.2em;
+
+			&::before {
+				content: counter(linenumber);
+				color: var(--g6);
+				display: block;
+				text-align: right;
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-import { $, ls } from './parts/utils';
+import { $, elem, ls } from './parts/utils';
 import Prism, { languages } from './libs/prism';
 
 let output = $('#output');
@@ -68,15 +68,30 @@ let handleKeydown = event => {
 				subsequentLinesString
 			].join('\n');
 
-		target.setSelectionRange(start + moveSelectionRange, end + moveSelectionRange);
+		target.setSelectionRange(
+			start + moveSelectionRange,
+			end + moveSelectionRange
+		);
 	}
 }
 
 
 let highlightInput = () => {
+
+	let lineNumbers = elem('span');
+	let lineCount = value.split(/\n/).length;
+
+	lineNumbers.classList.add('line-numbers-rows');
+	lineNumbers.setAttribute('aria-hidden', true);
+	for (let i = 0; i < lineCount; i++)
+		lineNumbers.append(elem('span'));
+
 	value = Prism.highlight(input.value, languages[lang], lang);
+	output.innerHTML = '';
+	output.append(elem('code', value));
+	output.append(lineNumbers);
+
 	ls('codeDemo', { value: input.value, lang: lang });
-	output.innerHTML = value;
 }
 
 

@@ -1224,6 +1224,38 @@ textarea span {
   color: var(--g5);
 }
 
+pre.line-numbers {
+  counter-reset: linenumber;
+  padding-left: 4em;
+}
+
+pre.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  padding-top: inherit;
+  padding-bottom: inherit;
+  width: 3.8em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+pre.line-numbers .line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+  padding-right: 1.2em;
+}
+
+pre.line-numbers .line-numbers-rows > span::before {
+  content: counter(linenumber);
+  color: var(--g6);
+  display: block;
+  text-align: right;
+}
+
 @media screen and (min-width: 0\0) and (-webkit-min-device-pixel-ratio: 0.75), screen and (min-width: 0\0) and (min-resolution: 72dpi) {
   html body,
   html main,
