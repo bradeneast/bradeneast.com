@@ -1,14 +1,17 @@
 #astronaut {
-	font-size: var(--animationSize);
 	display: none;
+	--angle: 45deg;
+	--shader: linear-gradient(calc(var(--angle) + 90deg), transparent, rgba(0, 0, 0, 0.37));
+	--colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--primary), var(--accent));
+	transform: rotate(var(--angle));
+	font-size: var(--animationSize);
 
 	*,
 	*::before,
 	*::after {
-		content: "";
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: 50%;
+		left: 50%;
 		width: 100%;
 		height: 100%;
 	}
@@ -16,19 +19,119 @@
 	.helmet {
 		width: 0.3em;
 		height: 0.3em;
-		background: var(--primary);
+		background-color: var(--g7);
+		background-image: var(--shader);
 		border-radius: 50%;
-		transform: rotate(-37deg);
+		top: 0;
+		transform: translateX(-65%);
 		border: 0.02em solid var(--g6);
 
 		&::after {
-			width: 37%;
-			height: 20%;
-			background: var(--g8);
+			content: "";
+			width: 20%;
+			height: 37%;
+			background: white;
 			border-radius: 50%;
-			left: 50%;
-			top: 10%;
-			transform: translateX(-50%);
+			left: 10%;
+			top: 48%;
+			transform: translateY(-50%);
+		}
+	}
+
+	.torso {
+		width: 0.25em;
+		height: 0.5em;
+		top: 0.25em;
+		transform: translateX(-50%);
+
+		&::before {
+			content: "";
+			top: 0;
+			left: 0;
+			border-radius: 0.3em 0.1em / 0.3em 0.1em;
+			background-image: var(--colorizer);
+		}
+
+		* {
+			background-color: var(--g7);
+			background-image: var(--shader);
+			transform: rotate(var(--angle));
+			border-radius: 0.05em;
+		}
+	}
+
+	.arm,
+	.leg {
+		left: auto;
+		right: auto;
+		width: 0.25em;
+		height: 0.14em;
+	}
+
+	.arm {
+		top: 0;
+	}
+
+	.leg {
+		top: 80%;
+	}
+
+	.lower {
+		left: auto;
+		top: auto;
+		transform-origin: inherit;
+	}
+
+	.left {
+		right: 80%;
+		left: auto;
+		transform-origin: right;
+
+		.lower {
+			right: 80%;
+		}
+
+		&.arm {
+			z-index: -1;
+			--angle: -50deg;
+
+			.lower {
+				--angle: 20deg;
+			}
+		}
+
+		&.leg {
+			z-index: -1;
+			--angle: -65deg;
+
+			.lower {
+				--angle: -20deg;
+			}
+		}
+	}
+
+	.right {
+		left: 80%;
+		transform-origin: left;
+
+		.lower {
+			left: 80%;
+		}
+
+		&.arm {
+			--angle: 50deg;
+
+			.lower {
+				--angle: 20deg;
+			}
+		}
+
+		&.leg {
+			--angle: 105deg;
+
+			.lower {
+				--angle: -40deg;
+			}
 		}
 	}
 }

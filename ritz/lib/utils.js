@@ -156,13 +156,3 @@ export function* walkDirSync(dirname, ignorePattern) {
 		}
 	}
 }
-
-/**Clears the dist directory */
-export async function clearDist() {
-	// Clear Dist Directory
-	for (let filename of fs.readdirSync(config.paths.dist)) {
-		if (config.ignorePattern.test(filename)) continue;
-		fs.removeSync(slash(config.paths.dist, filename));
-	}
-	return 'Done!';
-}

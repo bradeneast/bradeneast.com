@@ -1,15 +1,19 @@
 #astronaut {
-  font-size: var(--animationSize);
   display: none;
+  --angle: 45deg;
+  --shader: linear-gradient(calc(var(--angle) + 90deg), transparent, rgba(0, 0, 0, 0.37));
+  --colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--primary), var(--accent));
+  -webkit-transform: rotate(var(--angle));
+          transform: rotate(var(--angle));
+  font-size: var(--animationSize);
 }
 
 #astronaut *,
 #astronaut *::before,
 #astronaut *::after {
-  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
 }
@@ -17,20 +21,125 @@
 #astronaut .helmet {
   width: 0.3em;
   height: 0.3em;
-  background: var(--primary);
+  background-color: var(--g7);
+  background-image: var(--shader);
   border-radius: 50%;
-  -webkit-transform: rotate(-37deg);
-          transform: rotate(-37deg);
+  top: 0;
+  -webkit-transform: translateX(-65%);
+          transform: translateX(-65%);
   border: 0.02em solid var(--g6);
 }
 
 #astronaut .helmet::after {
-  width: 37%;
-  height: 20%;
-  background: var(--g8);
+  content: "";
+  width: 20%;
+  height: 37%;
+  background: white;
   border-radius: 50%;
-  left: 50%;
-  top: 10%;
+  left: 10%;
+  top: 48%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#astronaut .torso {
+  width: 0.25em;
+  height: 0.5em;
+  top: 0.25em;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+#astronaut .torso::before {
+  content: "";
+  top: 0;
+  left: 0;
+  border-radius: 0.3em 0.1em / 0.3em 0.1em;
+  background-image: var(--colorizer);
+}
+
+#astronaut .torso * {
+  background-color: var(--g7);
+  background-image: var(--shader);
+  -webkit-transform: rotate(var(--angle));
+          transform: rotate(var(--angle));
+  border-radius: 0.05em;
+}
+
+#astronaut .arm,
+#astronaut .leg {
+  left: auto;
+  right: auto;
+  width: 0.25em;
+  height: 0.14em;
+}
+
+#astronaut .arm {
+  top: 0;
+}
+
+#astronaut .leg {
+  top: 80%;
+}
+
+#astronaut .lower {
+  left: auto;
+  top: auto;
+  -webkit-transform-origin: inherit;
+          transform-origin: inherit;
+}
+
+#astronaut .left {
+  right: 80%;
+  left: auto;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+#astronaut .left .lower {
+  right: 80%;
+}
+
+#astronaut .left.arm {
+  z-index: -1;
+  --angle: -50deg;
+}
+
+#astronaut .left.arm .lower {
+  --angle: 20deg;
+}
+
+#astronaut .left.leg {
+  z-index: -1;
+  --angle: -65deg;
+}
+
+#astronaut .left.leg .lower {
+  --angle: -20deg;
+}
+
+#astronaut .right {
+  left: 80%;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+#astronaut .right .lower {
+  left: 80%;
+}
+
+#astronaut .right.arm {
+  --angle: 50deg;
+}
+
+#astronaut .right.arm .lower {
+  --angle: 20deg;
+}
+
+#astronaut .right.leg {
+  --angle: 105deg;
+}
+
+#astronaut .right.leg .lower {
+  --angle: -40deg;
 }
