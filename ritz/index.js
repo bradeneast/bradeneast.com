@@ -21,7 +21,7 @@ if (!cache || !useCache) {
 	// Clear the dist directory
 	for (let filename of fs.readdirSync(config.paths.dist))
 		if (!config.ignorePattern.test(filename))
-			fs.remove(slash(
+			fs.removeSync(slash(
 				config.paths.dist,
 				filename
 			));
