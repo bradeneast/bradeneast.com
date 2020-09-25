@@ -51,8 +51,8 @@
 		left: 37%;
 		top: 50%;
 		transform: translateY(-50%);
-		background-color: var(--g7);
-		background-image: linear-gradient(transparent, transparent, var(--tint));
+		background-color: var(--primary);
+		background-image: linear-gradient(var(--accent), var(--primary));
 		border: 0.37em solid var(--g6);
 
 		&::after {
