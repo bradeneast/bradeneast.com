@@ -878,7 +878,7 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           align-items: end;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .blurb--image {
@@ -1420,8 +1420,7 @@ pre.line-numbers .line-numbers-rows > span::before {
   .post--image img {
     height: 100%;
   }
-  .feed li .post--info,
-  .animation {
+  .feed li .post--info {
     width: 100%;
   }
   .blurb,

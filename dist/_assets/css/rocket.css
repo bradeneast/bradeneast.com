@@ -58,7 +58,7 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: var(--primary);
+  background-color: var(--g7);
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(transparent), to(var(--tint)));
   background-image: linear-gradient(transparent, transparent, var(--tint));
   border: 0.37em solid var(--g6);

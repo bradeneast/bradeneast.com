@@ -1,10 +1,12 @@
 #astronaut {
-	display: none;
+	$duration: 3.6s;
 	--angle: 45deg;
 	--shader: linear-gradient(calc(var(--angle) + 90deg), transparent, rgba(0, 0, 0, 0.37));
-	--colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--primary), var(--accent));
+	--colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--accent), var(--primary));
 	transform: rotate(var(--angle));
 	font-size: var(--animationSize);
+	animation: astronautFloat $duration ease-in-out infinite alternate forwards;
+	animation-delay: $duration * 0.3;
 
 	*,
 	*::before,
@@ -14,6 +16,24 @@
 		left: 50%;
 		width: 100%;
 		height: 100%;
+	}
+
+	.pack {
+		background-image: var(--colorizer);
+		border-radius: 0.1em;
+		top: 40%;
+		transform: translate(-50%, -50%);
+		width: 0.4em;
+		height: 0.6em;
+	}
+
+	.cord {
+		background: var(--colorizer);
+		transform-origin: top left;
+		top: 42%;
+		left: 48%;
+		transform: rotate(156deg);
+		clip-path: url(#cord);
 	}
 
 	.helmet {
@@ -39,24 +59,42 @@
 	}
 
 	.torso {
-		width: 0.25em;
+		width: 0.28em;
 		height: 0.5em;
-		top: 0.25em;
+		top: 0.22em;
 		transform: translateX(-50%);
+
+		&::after {
+			content: "";
+			top: 37%;
+			left: 37%;
+			transform: translate(-50%, -50%);
+			background-color: var(--g5);
+			background-image: var(--shader);
+			width: 0.15em;
+			height: 0.15em;
+			border-radius: 0.05em;
+		}
 
 		&::before {
 			content: "";
 			top: 0;
 			left: 0;
 			border-radius: 0.3em 0.1em / 0.3em 0.1em;
-			background-image: var(--colorizer);
+			background-color: var(--g6);
+			background-image: var(--shader);
 		}
 
 		* {
 			background-color: var(--g7);
-			background-image: var(--shader);
 			transform: rotate(var(--angle));
 			border-radius: 0.05em;
+			animation-duration: $duration;
+			animation-timing-function: cubic-bezier(0.6, 0.3, 0.5, 1);
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-fill-mode: forwards;
+			will-change: transform;
 		}
 	}
 
@@ -73,7 +111,7 @@
 	}
 
 	.leg {
-		top: 80%;
+		top: 70%;
 	}
 
 	.lower {
@@ -93,19 +131,24 @@
 
 		&.arm {
 			z-index: -1;
-			--angle: -50deg;
+			--angle: -60deg;
+			animation-name: leftArm;
 
 			.lower {
 				--angle: 20deg;
+				animation-name: leftArmLower;
 			}
 		}
 
 		&.leg {
 			z-index: -1;
-			--angle: -65deg;
+			--angle: -75deg;
+			animation-name: leftLeg;
+			animation-delay: 0.2s;
 
 			.lower {
 				--angle: -20deg;
+				animation-name: leftLegLower;
 			}
 		}
 	}
@@ -120,18 +163,80 @@
 
 		&.arm {
 			--angle: 50deg;
+			animation-name: rightArm;
+			animation-delay: 0.2s;
 
 			.lower {
-				--angle: 20deg;
+				--angle: 10deg;
+				animation-name: rightArmLower;
 			}
 		}
 
 		&.leg {
-			--angle: 105deg;
+			--angle: 95deg;
+			animation-name: rightLeg;
 
 			.lower {
 				--angle: -40deg;
+				animation-name: rightLegLower;
 			}
 		}
+	}
+}
+
+@keyframes astronautFloat {
+	from {
+		transform: translateY(0) rotate(var(--angle));
+	}
+	to {
+		transform: translateY(0.1em) rotate(var(--angle));
+	}
+}
+
+@keyframes leftArm {
+	to {
+		transform: rotate(-50deg);
+	}
+}
+
+@keyframes leftArmLower {
+	to {
+		transform: rotate(30deg);
+	}
+}
+
+@keyframes leftLeg {
+	to {
+		transform: rotate(-65deg);
+	}
+}
+
+@keyframes leftLegLower {
+	to {
+		transform: rotate(-10deg);
+	}
+}
+
+@keyframes rightArm {
+	to {
+		transform: rotate(60deg);
+	}
+}
+
+@keyframes rightArmLower {
+	to {
+		transform: rotate(20deg);
+	}
+}
+
+@keyframes rightLeg {
+	to {
+		transform: rotate(110deg);
+	}
+}
+
+@keyframes rightLegLower {
+	to {
+		transform: rotate(-30deg);
 	}
 }

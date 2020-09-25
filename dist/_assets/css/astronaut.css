@@ -1,11 +1,14 @@
 #astronaut {
-  display: none;
   --angle: 45deg;
   --shader: linear-gradient(calc(var(--angle) + 90deg), transparent, rgba(0, 0, 0, 0.37));
-  --colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--primary), var(--accent));
+  --colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--accent), var(--primary));
   -webkit-transform: rotate(var(--angle));
           transform: rotate(var(--angle));
   font-size: var(--animationSize);
+  -webkit-animation: astronautFloat 3.6s ease-in-out infinite alternate forwards;
+          animation: astronautFloat 3.6s ease-in-out infinite alternate forwards;
+  -webkit-animation-delay: 1.08s;
+          animation-delay: 1.08s;
 }
 
 #astronaut *,
@@ -16,6 +19,28 @@
   left: 50%;
   width: 100%;
   height: 100%;
+}
+
+#astronaut .pack {
+  background-image: var(--colorizer);
+  border-radius: 0.1em;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0.4em;
+  height: 0.6em;
+}
+
+#astronaut .cord {
+  background: var(--colorizer);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  top: 42%;
+  left: 48%;
+  -webkit-transform: rotate(156deg);
+          transform: rotate(156deg);
+  -webkit-clip-path: url(#cord);
+          clip-path: url(#cord);
 }
 
 #astronaut .helmet {
@@ -43,11 +68,24 @@
 }
 
 #astronaut .torso {
-  width: 0.25em;
+  width: 0.28em;
   height: 0.5em;
-  top: 0.25em;
+  top: 0.22em;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+#astronaut .torso::after {
+  content: "";
+  top: 37%;
+  left: 37%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: var(--g5);
+  background-image: var(--shader);
+  width: 0.15em;
+  height: 0.15em;
+  border-radius: 0.05em;
 }
 
 #astronaut .torso::before {
@@ -55,15 +93,26 @@
   top: 0;
   left: 0;
   border-radius: 0.3em 0.1em / 0.3em 0.1em;
-  background-image: var(--colorizer);
+  background-color: var(--g6);
+  background-image: var(--shader);
 }
 
 #astronaut .torso * {
   background-color: var(--g7);
-  background-image: var(--shader);
   -webkit-transform: rotate(var(--angle));
           transform: rotate(var(--angle));
   border-radius: 0.05em;
+  -webkit-animation-duration: 3.6s;
+          animation-duration: 3.6s;
+  -webkit-animation-timing-function: cubic-bezier(0.6, 0.3, 0.5, 1);
+          animation-timing-function: cubic-bezier(0.6, 0.3, 0.5, 1);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  will-change: transform;
 }
 
 #astronaut .arm,
@@ -79,7 +128,7 @@
 }
 
 #astronaut .leg {
-  top: 80%;
+  top: 70%;
 }
 
 #astronaut .lower {
@@ -102,20 +151,30 @@
 
 #astronaut .left.arm {
   z-index: -1;
-  --angle: -50deg;
+  --angle: -60deg;
+  -webkit-animation-name: leftArm;
+          animation-name: leftArm;
 }
 
 #astronaut .left.arm .lower {
   --angle: 20deg;
+  -webkit-animation-name: leftArmLower;
+          animation-name: leftArmLower;
 }
 
 #astronaut .left.leg {
   z-index: -1;
-  --angle: -65deg;
+  --angle: -75deg;
+  -webkit-animation-name: leftLeg;
+          animation-name: leftLeg;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 #astronaut .left.leg .lower {
   --angle: -20deg;
+  -webkit-animation-name: leftLegLower;
+          animation-name: leftLegLower;
 }
 
 #astronaut .right {
@@ -130,16 +189,160 @@
 
 #astronaut .right.arm {
   --angle: 50deg;
+  -webkit-animation-name: rightArm;
+          animation-name: rightArm;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 #astronaut .right.arm .lower {
-  --angle: 20deg;
+  --angle: 10deg;
+  -webkit-animation-name: rightArmLower;
+          animation-name: rightArmLower;
 }
 
 #astronaut .right.leg {
-  --angle: 105deg;
+  --angle: 95deg;
+  -webkit-animation-name: rightLeg;
+          animation-name: rightLeg;
 }
 
 #astronaut .right.leg .lower {
   --angle: -40deg;
+  -webkit-animation-name: rightLegLower;
+          animation-name: rightLegLower;
+}
+
+@-webkit-keyframes astronautFloat {
+  from {
+    -webkit-transform: translateY(0) rotate(var(--angle));
+            transform: translateY(0) rotate(var(--angle));
+  }
+  to {
+    -webkit-transform: translateY(0.1em) rotate(var(--angle));
+            transform: translateY(0.1em) rotate(var(--angle));
+  }
+}
+
+@keyframes astronautFloat {
+  from {
+    -webkit-transform: translateY(0) rotate(var(--angle));
+            transform: translateY(0) rotate(var(--angle));
+  }
+  to {
+    -webkit-transform: translateY(0.1em) rotate(var(--angle));
+            transform: translateY(0.1em) rotate(var(--angle));
+  }
+}
+
+@-webkit-keyframes leftArm {
+  to {
+    -webkit-transform: rotate(-50deg);
+            transform: rotate(-50deg);
+  }
+}
+
+@keyframes leftArm {
+  to {
+    -webkit-transform: rotate(-50deg);
+            transform: rotate(-50deg);
+  }
+}
+
+@-webkit-keyframes leftArmLower {
+  to {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+}
+
+@keyframes leftArmLower {
+  to {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+}
+
+@-webkit-keyframes leftLeg {
+  to {
+    -webkit-transform: rotate(-65deg);
+            transform: rotate(-65deg);
+  }
+}
+
+@keyframes leftLeg {
+  to {
+    -webkit-transform: rotate(-65deg);
+            transform: rotate(-65deg);
+  }
+}
+
+@-webkit-keyframes leftLegLower {
+  to {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+
+@keyframes leftLegLower {
+  to {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+
+@-webkit-keyframes rightArm {
+  to {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+}
+
+@keyframes rightArm {
+  to {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+}
+
+@-webkit-keyframes rightArmLower {
+  to {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
+@keyframes rightArmLower {
+  to {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
+@-webkit-keyframes rightLeg {
+  to {
+    -webkit-transform: rotate(110deg);
+            transform: rotate(110deg);
+  }
+}
+
+@keyframes rightLeg {
+  to {
+    -webkit-transform: rotate(110deg);
+            transform: rotate(110deg);
+  }
+}
+
+@-webkit-keyframes rightLegLower {
+  to {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@keyframes rightLegLower {
+  to {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
 }
