@@ -249,10 +249,6 @@ em {
   transition: 0.2s cubic-bezier(0.3, 0.3, 0.1, 1);
 }
 
-em:hover {
-  color: var(--accent);
-}
-
 del {
   color: var(--g5);
   display: inline;
@@ -727,14 +723,13 @@ html[data-schwifty] .border-bottom::before {
 
 [data-tooltip]:hover::before, [data-tooltip]:focus::before {
   opacity: 1;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
 }
 
 [data-tooltip]::before, [data-tooltip]::after {
   text-align: center;
   line-height: 1.2;
-  font-size: 0.85rem;
   font-variation-settings: "CASL" 0, "slnt" 0;
   color: var(--g4);
 }
@@ -746,15 +741,16 @@ html[data-schwifty] .border-bottom::before {
 [data-tooltip]::before {
   position: absolute;
   content: attr(data-tooltip);
-  left: calc(100% - 0.3em);
+  font-size: 0.85rem;
+  right: 0;
   bottom: 100%;
   padding: 0.2em 0.4em;
-  padding-bottom: 0.8em;
+  padding-bottom: 0.6em;
   background: var(--g7);
   pointer-events: none;
   opacity: 0;
-  -webkit-transform: translate(-50%, 1em);
-          transform: translate(-50%, 1em);
+  -webkit-transform: translate(50%, 1em);
+          transform: translate(50%, 1em);
   -webkit-transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
   transition: 0.63s cubic-bezier(0.4, 0.3, 0.1, 1);
   --pt: calc(100% - 0.4em);

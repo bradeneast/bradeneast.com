@@ -143,7 +143,7 @@ html {
 	&:focus {
 		&::before {
 			opacity: 1;
-			transform: translate(-50%, 0);
+			transform: translate(50%, 0);
 		}
 	}
 
@@ -151,7 +151,6 @@ html {
 	&::after {
 		text-align: center;
 		line-height: 1.2;
-		font-size: 0.85rem;
 		font-variation-settings: nth($fontVariations, 1);
 		color: var(--g4);
 	}
@@ -163,14 +162,15 @@ html {
 	&::before {
 		position: absolute;
 		content: attr(data-tooltip);
-		left: calc(100% - 0.3em);
+		font-size: 0.85rem;
+		right: 0;
 		bottom: 100%;
 		padding: $space / 2 $space;
-		padding-bottom: $space * 2;
+		padding-bottom: $space + $space * 0.5;
 		background: var(--g7);
 		pointer-events: none;
 		opacity: 0;
-		transform: translate(-50%, 1em);
+		transform: translate(50%, 1em);
 		transition: $smoothTransition;
 		--pt: calc(100% - #{$space});
 		clip-path: polygon(

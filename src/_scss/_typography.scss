@@ -71,10 +71,6 @@ em {
 	color: var(--primary);
 	font-variation-settings: nth($fontVariations, 2);
 	transition: $colorTransition;
-
-	&:hover {
-		color: var(--accent);
-	}
 }
 
 del {
