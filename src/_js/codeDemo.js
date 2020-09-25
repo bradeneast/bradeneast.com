@@ -3,9 +3,16 @@ import Prism, { languages } from './libs/prism';
 
 let output = $('#output');
 let input = $('#input');
-let retrieved = ls('codeDemo');
-let lang = retrieved?.lang || 'javascript';
-let value = retrieved?.value || '';
+
+let queryParameters = new URLSearchParams(location.search);
+let retrievedFromLocalStorage = ls('codeDemo');
+let value = queryParameters.get('value');
+let lang = queryParameters.get('lang');
+
+console.log(value, lang);
+
+let codeExampleLanguage = lang || retrievedFromLocalStorage?.lang || 'javascript';
+let codeExampleValue = value || retrievedFromLocalStorage?.value || '';
 let shiftPressed = false;
 let waiter;
 
@@ -79,19 +86,26 @@ let handleKeydown = event => {
 let highlightInput = () => {
 
 	let lineNumbers = elem('span');
-	let lineCount = value.split(/\n/).length;
+	let lineCount = codeExampleValue.split(/\n/).length;
 
 	lineNumbers.classList.add('line-numbers-rows');
 	lineNumbers.setAttribute('aria-hidden', true);
 	for (let i = 0; i < lineCount; i++)
 		lineNumbers.append(elem('span'));
 
-	value = Prism.highlight(input.value, languages[lang], lang);
+	codeExampleValue = Prism.highlight(
+		input.value,
+		languages[codeExampleLanguage],
+		codeExampleLanguage
+	);
 	output.innerHTML = '';
-	output.append(elem('code', value));
+	output.append(elem('code', codeExampleValue));
 	output.append(lineNumbers);
 
-	ls('codeDemo', { value: input.value, lang: lang });
+	ls('codeDemo', { value: input.value, lang: codeExampleLanguage });
+	queryParameters.set('value', input.value);
+	queryParameters.set('lang', codeExampleLanguage);
+	history.pushState(null, null, location.pathname + '?' + queryParameters.toString())
 }
 
 
@@ -105,13 +119,13 @@ let handleKeyup = event => {
 
 addEventListener('input', event => {
 	if (event.target.name == 'lang') {
-		lang = event.target.id;
+		codeExampleLanguage = event.target.id;
 		highlightInput();
 	}
 })
 input.addEventListener('keydown', handleKeydown);
 input.addEventListener('keyup', handleKeyup);
 
-input.value = value;
-$(`#${lang}`).checked = true;
+input.value = codeExampleValue;
+$(`#${codeExampleLanguage}`).checked = true;
 highlightInput();
