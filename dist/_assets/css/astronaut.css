@@ -112,7 +112,6 @@
           animation-direction: alternate;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  will-change: transform;
 }
 
 #astronaut .arm,
@@ -158,8 +157,6 @@
 
 #astronaut .left.arm .lower {
   --angle: 20deg;
-  -webkit-animation-name: leftArmLower;
-          animation-name: leftArmLower;
 }
 
 #astronaut .left.leg {
@@ -173,8 +170,6 @@
 
 #astronaut .left.leg .lower {
   --angle: -20deg;
-  -webkit-animation-name: leftLegLower;
-          animation-name: leftLegLower;
 }
 
 #astronaut .right {
@@ -249,20 +244,6 @@
   }
 }
 
-@-webkit-keyframes leftArmLower {
-  to {
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
-  }
-}
-
-@keyframes leftArmLower {
-  to {
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
-  }
-}
-
 @-webkit-keyframes leftLeg {
   to {
     -webkit-transform: rotate(-65deg);
@@ -274,20 +255,6 @@
   to {
     -webkit-transform: rotate(-65deg);
             transform: rotate(-65deg);
-  }
-}
-
-@-webkit-keyframes leftLegLower {
-  to {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-}
-
-@keyframes leftLegLower {
-  to {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
   }
 }
 

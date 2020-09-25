@@ -94,7 +94,6 @@
 			animation-iteration-count: infinite;
 			animation-direction: alternate;
 			animation-fill-mode: forwards;
-			will-change: transform;
 		}
 	}
 
@@ -136,7 +135,6 @@
 
 			.lower {
 				--angle: 20deg;
-				animation-name: leftArmLower;
 			}
 		}
 
@@ -148,7 +146,6 @@
 
 			.lower {
 				--angle: -20deg;
-				animation-name: leftLegLower;
 			}
 		}
 	}
@@ -199,21 +196,9 @@
 	}
 }
 
-@keyframes leftArmLower {
-	to {
-		transform: rotate(30deg);
-	}
-}
-
 @keyframes leftLeg {
 	to {
 		transform: rotate(-65deg);
-	}
-}
-
-@keyframes leftLegLower {
-	to {
-		transform: rotate(-10deg);
 	}
 }
 
