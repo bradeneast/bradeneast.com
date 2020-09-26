@@ -7,7 +7,7 @@
 		<Brick use="/_bricks/atoms/animations/homeHero.html"></Brick>
 
 
-		<div class="alternate-sides" style="max-width: 54rem">
+		<div class="alternate-sides">
 
 			<Brick use="/_bricks/atoms/blurb.html">
 				<BlurbTitle>How I started</BlurbTitle>
@@ -43,18 +43,18 @@
 
 		<hr />
 
-		<div class="flex" style="flex-flow: row wrap;">
-			<img width="240" height="240" style="max-width: 24rem; margin-right: 4rem; margin-bottom: 4rem; box-shadow: var(--blockShadow);" src="_assets/images/about/me.jpg" />
-			<div class="flex" style="flex-flow: column; justify-content: center;">
-				<h2>Is there something I could help you with?</h2>
-				<p>
-					DM or email me and I'll make myself available for a call.
-					<br />
-					<br />
-					<a class="button" href="mailto:braden.east.design@gmail.com">braden.east.design@gmail.com</a>
-				</p>
-			</div>
-		</div>
+		<Brick use="/_bricks/atoms/blurb.html">
+			<BlurbTitle>Is there something I could help you with?</BlurbTitle>
+			<BlurbDescription>
+				DM or email me and I'll make myself available for a call.
+				<br />
+				<br />
+				<a class="button" href="mailto:braden.east.design@gmail.com">braden.east.design@gmail.com</a>
+			</BlurbDescription>
+			<BlurbImage>
+				<img width="240" height="240" style="box-shadow: var(--blockShadow);" src="_assets/images/about/me.jpg" />
+			</BlurbImage>
+		</Brick>
 
 	</Content>
 </Brick>

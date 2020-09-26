@@ -1,17 +1,19 @@
 .blurb {
+	--columns: 25rem;
+	justify-content: center;
+	justify-items: center;
 	margin-top: $flow4;
 	padding-bottom: $flow4;
-	align-content: center;
-	align-items: center;
 
-	& > * {
-		display: inline-grid;
-		width: 49%;
-		min-width: 20rem;
+	&--content {
+		display: flex;
+		max-width: 27rem;
+		flex-flow: column;
+		justify-content: center;
+	}
 
-		&:last-child {
-			margin-right: 0;
-		}
+	&--image {
+		max-width: 24rem;
 	}
 
 	&--image,

@@ -18,7 +18,7 @@
   --shadow: 0.1rem 0.1rem var(--shadowColor);
   --largeShadow: 0.63rem 2rem 4rem -1rem var(--shadowColor);
   --blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
-  --animationSize: 22rem;
+  --animationSize: 24rem;
 }
 
 *,
@@ -87,7 +87,7 @@ body main {
   padding-bottom: 2rem;
 }
 
-body main > * {
+body main > *:not(hr) {
   margin-left: 2rem;
 }
 
@@ -345,15 +345,8 @@ h6 {
       grid-template-columns: repeat(auto-fill, minmax(var(--columns), 1fr));
 }
 
-.alternate-sides > :nth-child(2n) {
-  margin-left: auto;
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
-}
-
 .limited-width {
-  max-width: 44rem;
+  max-width: 42rem;
 }
 
 .hidden {
@@ -917,24 +910,31 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .blurb {
+  --columns: 25rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
   margin-top: 4rem;
   padding-bottom: 4rem;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.blurb > * {
-  display: -ms-inline-grid;
-  display: inline-grid;
-  width: 49%;
-  min-width: 20rem;
+.blurb--content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 27rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.blurb > *:last-child {
-  margin-right: 0;
+.blurb--image {
+  max-width: 24rem;
 }
 
 .blurb--image,
