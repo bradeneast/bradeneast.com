@@ -340,14 +340,18 @@ h6 {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(24rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-  gap: 2rem;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 4rem;
   margin-bottom: 2rem;
 }
 
+.alternate-sides :nth-child(2n) {
+  margin-left: auto;
+}
+
 .limited-width {
-  max-width: 42rem;
+  max-width: 44rem;
 }
 
 .hidden {
@@ -910,18 +914,17 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .blurb {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  gap: 2rem;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .blurb--image {
-  max-width: 24rem;
+  max-width: 22rem;
   display: -ms-grid;
   display: grid;
   place-items: center;

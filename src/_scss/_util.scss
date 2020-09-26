@@ -4,13 +4,19 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-	gap: $flow2;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	gap: $flow4;
 	margin-bottom: $flow2;
 }
 
+.alternate-sides {
+	:nth-child(2n) {
+		margin-left: auto;
+	}
+}
+
 .limited-width {
-	max-width: 42rem;
+	max-width: 44rem;
 }
 
 .hidden {

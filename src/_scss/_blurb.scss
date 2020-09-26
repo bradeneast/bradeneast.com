@@ -1,12 +1,11 @@
 .blurb {
-	display: grid;
-	align-items: end;
-	margin-top: $flow2;
-	margin-bottom: $flow2;
-	gap: $flow2;
+	margin-top: $flow4;
+	padding-bottom: $flow4;
+	align-content: center;
+	align-items: center;
 
 	&--image {
-		max-width: 24rem;
+		max-width: 22rem;
 		display: grid;
 		place-items: center;
 		height: auto;
