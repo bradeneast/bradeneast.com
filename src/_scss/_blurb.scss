@@ -4,22 +4,14 @@
 	align-content: center;
 	align-items: center;
 
-	&--image {
-		max-width: 22rem;
-		display: grid;
-		place-items: center;
+	&--image,
+	img {
 		height: auto;
-
-		img {
-			height: auto;
-		}
 	}
 }
 
 .technologies {
-	display: grid;
 	align-items: start;
-	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 
 	.technology--image {
 		filter: drop-shadow(0.2rem 0.2rem var(--g6));

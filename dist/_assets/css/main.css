@@ -18,7 +18,7 @@
   --shadow: 0.1rem 0.1rem var(--shadowColor);
   --largeShadow: 0.63rem 2rem 4rem -1rem var(--shadowColor);
   --blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
-  --animationSize: 16rem;
+  --animationSize: 22rem;
 }
 
 *,
@@ -340,8 +340,8 @@ h6 {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: 4rem;
   margin-bottom: 2rem;
 }
@@ -923,26 +923,15 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           align-items: center;
 }
 
-.blurb--image {
-  max-width: 22rem;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  height: auto;
-}
-
-.blurb--image img {
+.blurb--image,
+.blurb img {
   height: auto;
 }
 
 .technologies {
-  display: -ms-grid;
-  display: grid;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
 
 .technologies .technology--image {
@@ -985,6 +974,7 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 
 .feed li .post--info {
   width: 85%;
+  min-width: 17rem;
 }
 
 .feed li .post--info__excerpt {
