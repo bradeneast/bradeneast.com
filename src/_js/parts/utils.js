@@ -2,6 +2,8 @@
 export let $ = (selector, context = document) => context.querySelector(selector);
 /**A shorthand for `querySelectorAll`*/
 export let $$ = (selector, context = document) => context.querySelectorAll(selector);
+/**Joins all arguments with a newline*/
+export let reformLines = (...args) => args.join('\n');
 
 export let elem = (tagName, content = '') => {
 	let tag = document.createElement(tagName);

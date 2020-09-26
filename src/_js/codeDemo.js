@@ -1,4 +1,4 @@
-import { $, elem, ls } from './parts/utils';
+import { $, elem, ls, reformLines } from './parts/utils';
 import Prism, { languages } from './libs/prism';
 
 let output = $('#output');
@@ -8,8 +8,6 @@ let queryParameters = new URLSearchParams(location.search);
 let retrievedFromLocalStorage = ls('codeDemo');
 let value = queryParameters.get('value');
 let lang = queryParameters.get('lang');
-
-console.log(value, lang);
 
 let codeExampleLanguage = lang || retrievedFromLocalStorage?.lang || 'javascript';
 let codeExampleValue = value || retrievedFromLocalStorage?.value || '';
@@ -59,21 +57,21 @@ let handleKeydown = event => {
 
 
 		if (!precedingLines.length)
-			target.value = [
+			target.value = reformLines(
 				selectedLinesString,
 				subsequentLinesString
-			].join('\n');
+			);
 		else if (!subsequentLines.length)
-			target.value = [
+			target.value = reformLines(
 				precedingLinesString,
 				selectedLinesString
-			].join('\n');
+			);
 		else
-			target.value = [
+			target.value = reformLines(
 				precedingLinesString,
 				selectedLinesString,
 				subsequentLinesString
-			].join('\n');
+			);
 
 		target.setSelectionRange(
 			start + moveSelectionRange,
