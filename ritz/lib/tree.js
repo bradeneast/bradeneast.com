@@ -12,7 +12,6 @@ for (let { filename, content } of walkDirSync(config.paths.src, config.ignorePat
   let pageProps = {
     sys: {
       content: content,
-      filename: filename,
       href: filename
         .replace(config.paths.src, '')
         .replace('index.html', ''),
