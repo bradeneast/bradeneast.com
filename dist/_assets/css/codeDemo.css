@@ -79,10 +79,8 @@ pre {
 }
 
 @media screen and (max-width: 54em) {
-  section {
-    padding: 0;
-  }
   pre {
+    width: 100%;
     font-size: 1em;
   }
 }

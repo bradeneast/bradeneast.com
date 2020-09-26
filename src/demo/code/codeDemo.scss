@@ -69,11 +69,8 @@ pre {
 }
 
 @media screen and (max-width: $mobile) {
-	section {
-		padding: 0;
-	}
-
 	pre {
+		width: 100%;
 		font-size: 1em;
 	}
 }
