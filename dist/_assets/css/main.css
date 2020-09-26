@@ -340,14 +340,14 @@ h6 {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: 4rem;
-  margin-bottom: 2rem;
 }
 
-.alternate-sides :nth-child(2n) {
+.alternate-sides > :nth-child(2n) {
   margin-left: auto;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
 }
 
 .limited-width {
@@ -923,6 +923,17 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
           align-items: center;
 }
 
+.blurb > * {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  width: 49%;
+  min-width: 20rem;
+}
+
+.blurb > *:last-child {
+  margin-right: 0;
+}
+
 .blurb--image,
 .blurb img {
   height: auto;
@@ -949,9 +960,14 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 }
 
 .feed {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 4rem;
   padding: 4rem;
   grid-auto-rows: 32rem;
+  margin-bottom: 2rem;
   margin-top: 4rem;
 }
 
@@ -974,7 +990,7 @@ input[type="search"]:not(:placeholder-shown), input[type="text"]:not(:placeholde
 
 .feed li .post--info {
   width: 85%;
-  min-width: 17rem;
+  min-width: 20rem;
 }
 
 .feed li .post--info__excerpt {
@@ -1421,6 +1437,7 @@ pre.line-numbers .line-numbers-rows > span::before {
 
 @media screen and (max-width: 54em) {
   body {
+    --animationSize: 15rem;
     padding-top: 1rem;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1467,6 +1484,11 @@ pre.line-numbers .line-numbers-rows > span::before {
         -ms-flex-pack: center;
             justify-content: center;
     justify-items: center;
+    padding: 1rem;
+  }
+  .blurb > * {
+    width: 100%;
+    min-width: 0;
   }
   .feed {
     padding-left: 1rem;

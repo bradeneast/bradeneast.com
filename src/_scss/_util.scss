@@ -4,14 +4,13 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 	gap: $flow4;
-	margin-bottom: $flow2;
 }
 
 .alternate-sides {
-	:nth-child(2n) {
+	& > :nth-child(2n) {
 		margin-left: auto;
+		order: -1;
 	}
 }
 

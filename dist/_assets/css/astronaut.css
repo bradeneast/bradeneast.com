@@ -43,6 +43,11 @@
           clip-path: url(#cord);
 }
 
+#astronaut .cord svg {
+  width: 0;
+  height: 0;
+}
+
 #astronaut .helmet {
   width: 0.3em;
   height: 0.3em;

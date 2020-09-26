@@ -4,6 +4,16 @@
 	align-content: center;
 	align-items: center;
 
+	& > * {
+		display: inline-grid;
+		width: 49%;
+		min-width: 20rem;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
 	&--image,
 	img {
 		height: auto;

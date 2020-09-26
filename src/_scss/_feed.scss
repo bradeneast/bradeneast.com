@@ -5,9 +5,12 @@
 }
 
 .feed {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	gap: $flow4;
 	padding: $flow4;
 	grid-auto-rows: 32rem;
+	margin-bottom: $flow2;
 	margin-top: $flow4;
 
 	li {
@@ -22,7 +25,7 @@
 
 			&--info {
 				width: 85%;
-				min-width: 17rem;
+				min-width: 20rem;
 
 				&__excerpt {
 					margin-bottom: 0;

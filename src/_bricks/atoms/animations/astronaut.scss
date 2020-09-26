@@ -34,6 +34,11 @@
 		left: 48%;
 		transform: rotate(156deg);
 		clip-path: url(#cord);
+
+		svg {
+			width: 0;
+			height: 0;
+		}
 	}
 
 	.helmet {

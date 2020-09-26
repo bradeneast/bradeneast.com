@@ -141,6 +141,7 @@ video {
 
 @media screen and (max-width: $mobile) {
 	body {
+		--animationSize: 15rem;
 		padding-top: $flow1;
 		grid-template-columns: 1fr;
 		grid-template-rows: initial;
@@ -189,6 +190,12 @@ video {
 	.blurb {
 		justify-content: center;
 		justify-items: center;
+		padding: $flow1;
+
+		& > * {
+			width: 100%;
+			min-width: 0;
+		}
 	}
 
 	.feed {
