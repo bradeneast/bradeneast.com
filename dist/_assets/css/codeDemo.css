@@ -6,19 +6,19 @@ html {
   scrollbar-width: none;
 }
 
-body {
+html body {
   padding: 0;
   display: block;
   background: linear-gradient(-37deg, var(--accent), var(--primary));
 }
 
-body main {
+html body main {
   display: -ms-grid;
   display: grid;
   padding: 0;
 }
 
-body main > * {
+html body main > * {
   margin: 0;
 }
 

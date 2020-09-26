@@ -37,8 +37,8 @@
           transform-origin: top left;
   top: 42%;
   left: 48%;
-  -webkit-transform: rotate(156deg);
-          transform: rotate(156deg);
+  -webkit-transform: scale(0.85) rotate(156deg);
+          transform: scale(0.85) rotate(156deg);
   -webkit-clip-path: url(#cord);
           clip-path: url(#cord);
 }
