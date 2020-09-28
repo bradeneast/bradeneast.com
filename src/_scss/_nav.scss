@@ -8,10 +8,10 @@ nav a {
 		display: grid;
 		position: sticky;
 		top: $flow2;
-		text-align: right;
+		text-align: center;
 
 		a {
-			padding: $flow1 / 2 0;
+			padding: 0.2em 0;
 			padding-right: $flow3;
 
 			&[class*="border-"]::before {

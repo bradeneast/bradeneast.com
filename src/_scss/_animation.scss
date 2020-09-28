@@ -49,7 +49,6 @@ html {
 
 	[class*="border-"] {
 		&::before {
-			transition: $smoothTransition;
 			transform-origin: top left;
 		}
 
@@ -102,9 +101,8 @@ html {
 
 	&[data-schwifty] {
 		.feed > *,
-		.post--body > *,
-		.blurb {
-			transform: translateY(1em);
+		.post--body > * {
+			transform: translate3d(0, 1em, 0);
 			opacity: 0;
 		}
 
@@ -118,12 +116,12 @@ html {
 
 		.border-left::before,
 		.border-right::before {
-			transform: scaleY(0);
+			--scaleY: 0;
 		}
 
 		.border-top::before,
 		.border-bottom::before {
-			transform: scaleX(0);
+			--scaleX: 0;
 		}
 	}
 }

@@ -39,7 +39,7 @@
 		width: 0.2em;
 		height: 0.2em;
 		transform: translate(-50%, -50%);
-		background: linear-gradient(var(--lightAngle), var(--g4), var(--g6));
+		background: linear-gradient(var(--lightAngle), var(--g6), var(--g5));
 		border-radius: 50%;
 		will-change: transform;
 		animation: orbitX var(--duration) ease-in-out infinite;

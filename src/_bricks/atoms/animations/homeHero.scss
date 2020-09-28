@@ -14,12 +14,17 @@
 	animation-duration: 0.63s;
 	animation-timing-function: cubic-bezier(0.3, 0.6, 0.1, 1);
 	animation-fill-mode: forwards;
+	--x: 0;
+	--y: 0;
+	--z: 0;
+	--scale: 1;
+	transform: translate3d(var(--x), var(--y), var(--z)) scale(var(--scale));
 }
 
 .character,
 .tagline {
+	--y: 1em;
 	opacity: 0;
-	transform: translateY(1rem);
 	animation-name: fadeIn;
 }
 
@@ -48,7 +53,9 @@
 }
 
 .developer .character {
-	transform: translate(3rem, 0) scale(2);
+	--scale: 2;
+	--x: 3rem;
+	--y: 0;
 }
 
 .tagline {
@@ -60,7 +67,7 @@
 @keyframes fadeIn {
 	to {
 		opacity: 1;
-		transform: translate(0, 0) scale(1);
+		transform: translate3d(0, 0, 0) scale(1);
 	}
 }
 

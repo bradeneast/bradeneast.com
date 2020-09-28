@@ -2,7 +2,6 @@
 	$duration: 3.6s;
 	--angle: 45deg;
 	--shader: linear-gradient(calc(var(--angle) + 90deg), transparent, rgba(0, 0, 0, 0.37));
-	--colorizer: linear-gradient(calc(var(--angle) + 90deg), var(--accent), var(--primary));
 	transform: rotate(var(--angle));
 	font-size: var(--animationSize);
 	animation: astronautFloat $duration ease-in-out infinite alternate forwards;
@@ -19,7 +18,7 @@
 	}
 
 	.pack {
-		background-image: var(--colorizer);
+		background-image: linear-gradient(135deg, var(--accent), var(--primary) 70%);
 		border-radius: 0.1em;
 		top: 40%;
 		transform: translate(-50%, -50%);
@@ -28,7 +27,7 @@
 	}
 
 	.cord {
-		background: var(--colorizer);
+		background-image: linear-gradient(to right, var(--accent), var(--primary));
 		transform-origin: top left;
 		top: 42%;
 		left: 48%;

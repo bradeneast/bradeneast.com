@@ -26,6 +26,10 @@
 		left: 0;
 		color: var(--g7);
 		background: currentColor;
+		--scaleX: 1;
+		--scaleY: 1;
+		transform: translate3d(0, 0, 0) scale(var(--scaleX), var(--scaleY));
+		transition: $smoothTransition;
 	}
 }
 

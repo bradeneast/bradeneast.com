@@ -10,10 +10,11 @@
 	font-family: "Recursive", "Helvetica", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
 	font-variation-settings: nth($fontVariations, 1);
 	line-height: 1.63;
-	color: var(--g0);
+	color: var(--g1);
 }
 
 body {
+	font-weight: $fontWeightRegular;
 	text-rendering: optimizeSpeed;
 	-webkit-font-smooth: subpixel-antialiased;
 }
@@ -112,6 +113,7 @@ h3,
 h4,
 h5,
 h6 {
+	color: var(--g0);
 	line-height: 1.2;
 	letter-spacing: -0.01em;
 	margin-bottom: 0.37em;

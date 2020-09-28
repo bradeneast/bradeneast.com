@@ -2,13 +2,6 @@ import { $$, elem } from "./utils";
 
 export default function prepAnimations() {
 
-
-	// Default state is reduced motion - all animations paused
-	document.body.classList.remove('reduced-motion');
-	for (let pausedAnimation of $$('.paused'))
-		pausedAnimation.classList.remove('paused');
-
-
 	// Pause animations outside the viewport
 	let handleIntersection = entries => {
 		entries.map(entry =>
@@ -34,4 +27,9 @@ export default function prepAnimations() {
 			});
 		splitElem.innerHTML = chars.join('');
 	}
+
+	// Unpause animations
+	document.body.classList.remove('reduced-motion');
+	for (let pausedAnimation of $$('.paused'))
+		pausedAnimation.classList.remove('paused');
 }
