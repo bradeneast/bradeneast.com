@@ -64,9 +64,9 @@ textarea {
 		color: $b;
 	}
 
-	.rule,
+	&.rule,
 	&.function {
-		font-weight: 700;
+		font-weight: $fontWeightHeavy;
 		font-variation-settings: nth($fontVariations, 2);
 	}
 
@@ -76,6 +76,7 @@ textarea {
 	&.constant,
 	&.symbol {
 		color: $c;
+		font-weight: $fontWeightMedium;
 	}
 
 	&.selector,
@@ -106,7 +107,7 @@ textarea {
 
 	&.important,
 	&.bold {
-		font-weight: 700;
+		font-weight: $fontWeightHeavy;
 	}
 
 	&.italic {

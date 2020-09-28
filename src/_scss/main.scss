@@ -16,9 +16,9 @@
 	--fontWeightRegular: #{$fontWeightRegular};
 	--fontWeightMedium: #{$fontWeightMedium};
 	--fontWeightHeavy: #{$fontWeightHeavy};
-	--shadowColor: rgba(0, 0, 0, 0.37);
+	--shadowColor: rgba(0, 0, 0, 0.3);
 	--shadow: 0.1rem 0.1rem var(--shadowColor);
-	--largeShadow: 0.63rem 2rem 4rem -1rem var(--shadowColor);
+	--largeShadow: 0.3rem 2rem 3rem -0.6rem var(--shadowColor);
 	--blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
 	--animationSize: 24rem;
 }
@@ -63,7 +63,7 @@ html {
 body {
 	min-height: 100vh;
 	display: grid;
-	grid-template-columns: 15% 1fr;
+	grid-template-columns: auto 1fr;
 	grid-template-rows: 1fr auto;
 	padding: 4vh 2vw 1vh 2vw;
 	background: var(--g8);
@@ -156,7 +156,7 @@ video {
 			padding: 0;
 		}
 
-		main > * {
+		main > *:not(hr) {
 			margin-right: $flow1 / 2;
 			margin-left: $flow1;
 		}
@@ -173,6 +173,15 @@ video {
 	.post--image {
 		img {
 			height: 100%;
+		}
+	}
+
+	article {
+		.post {
+			&--info,
+			&--body {
+				margin-left: 0;
+			}
 		}
 	}
 

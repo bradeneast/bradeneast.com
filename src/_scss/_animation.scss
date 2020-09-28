@@ -149,6 +149,7 @@ html {
 
 	&::before,
 	&::after {
+		letter-spacing: 0;
 		text-align: center;
 		line-height: 1.2;
 		font-variation-settings: nth($fontVariations, 1);
@@ -161,10 +162,10 @@ html {
 
 	&::before {
 		min-width: 8em;
+		font-size: 0.85rem;
 		position: absolute;
 		content: attr(data-tooltip);
-		font-size: 0.85rem;
-		right: 0;
+		right: $space;
 		bottom: 100%;
 		padding: $space / 2 $space;
 		padding-bottom: $space + $space * 0.5;

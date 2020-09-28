@@ -32,9 +32,10 @@
 		transform-origin: top left;
 		top: 42%;
 		left: 48%;
-		transform: scale(0.85) rotate(156deg) perspective(1px);
+		transform: scale(0.85) rotate(156deg);
 		backface-visibility: hidden;
 		clip-path: url(#cord);
+		filter: blur(1px);
 
 		svg {
 			width: 0;

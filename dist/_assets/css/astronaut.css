@@ -37,12 +37,14 @@
           transform-origin: top left;
   top: 42%;
   left: 48%;
-  -webkit-transform: scale(0.85) rotate(156deg) perspective(1px);
-          transform: scale(0.85) rotate(156deg) perspective(1px);
+  -webkit-transform: scale(0.85) rotate(156deg);
+          transform: scale(0.85) rotate(156deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-clip-path: url(#cord);
           clip-path: url(#cord);
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 }
 
 #astronaut .cord svg {

@@ -8,28 +8,39 @@ nav a {
 		display: grid;
 		position: sticky;
 		top: $flow2;
+		text-align: right;
 
 		a {
+			padding: $flow1 / 2 0;
+			padding-right: $flow3;
+
+			&[class*="border-"]::before {
+				top: auto;
+				left: auto;
+				bottom: calc(50% - #{$borderWidth});
+				right: 0;
+				height: $borderWidth;
+				width: calc(#{$flow3} - 0.37em);
+				color: transparent;
+				transform-origin: right;
+			}
+
 			&[aria-current] {
 				color: inherit;
 				font-weight: var(--fontWeightHeavy);
 
-				&.border-bottom::before {
+				&[class*="border-"]::before {
 					color: var(--g7);
 				}
 			}
 
-			&.border-bottom::before {
+			&::before {
 				color: transparent;
 			}
 
 			&:hover,
 			&:focus {
 				color: var(--primary);
-			}
-
-			&:not(:first-child) {
-				padding-top: $flow1;
 			}
 		}
 	}
@@ -68,8 +79,8 @@ nav a {
 				padding-top: 0;
 			}
 
-			&.border-bottom::before {
-				color: var(--g7);
+			&::before {
+				background: var(--g7) !important;
 			}
 
 			&::after {
