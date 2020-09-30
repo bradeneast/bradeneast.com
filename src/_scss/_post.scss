@@ -132,9 +132,14 @@ article {
 				width: calc(100% + #{$flow4});
 				box-shadow: none;
 			}
+
 			&--wrapper {
 				padding: $flow1;
 				margin-left: 0;
+			}
+
+			&--info {
+				width: 100%;
 			}
 		}
 	}
