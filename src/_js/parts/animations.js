@@ -2,17 +2,29 @@ import { $$, elem } from "./utils";
 
 export default function prepAnimations() {
 
-	// Pause animations outside the viewport
-	let handleIntersection = entries => {
-		entries.map(entry =>
-			entry.target.classList.toggle('paused', !entry.isIntersecting)
-		)
-	};
-	let observerOptions = { threshold: .63 };
+	let observerTargets = $$('[class*="animate-"]');
+	let observerOptions = { threshold: 0.1 };
 	let observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-	for (let animation of $$('.animation'))
-		observer.observe(animation);
+	observerTargets.forEach(target => observer.observe(target));
+
+	// Pause animations outside the viewport
+	function handleIntersection(entries) {
+		entries.map(entry => {
+
+			let target = entry.target;
+			let isIntersecting = entry.isIntersecting;
+			let r = target.getBoundingClientRect();
+			let targetCenter = r.bottom - r.height / 2;
+			let viewportCenter = innerHeight / 2;
+			let scrollDirection = targetCenter > viewportCenter ? 1 : -1;
+
+			if (!isIntersecting) scrollDirection = 0;
+
+			target.classList.toggle('intersecting', isIntersecting);
+			target.style.setProperty('--animateFrom', scrollDirection);
+		})
+	}
 
 
 	// Character-split animations
@@ -30,6 +42,4 @@ export default function prepAnimations() {
 
 	// Unpause animations
 	document.body.classList.remove('reduced-motion');
-	for (let pausedAnimation of $$('.paused'))
-		pausedAnimation.classList.remove('paused');
 }

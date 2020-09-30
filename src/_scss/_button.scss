@@ -6,6 +6,7 @@ button,
 	color: $g8;
 	padding: 0.63em 1em;
 	border: $borderWidth $borderStyle transparent;
+	border-radius: 0.37em;
 	background: var(--primary);
 	text-decoration: none;
 	font-weight: $fontWeightHeavy;

@@ -1,32 +1,31 @@
-.feed:not(.grid) {
-	li:not(:last-child) {
-		margin-bottom: $flow3;
-	}
-}
-
 .feed {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
 	gap: $flow4;
 	padding: $flow4;
 	grid-auto-rows: 36rem;
-	margin-bottom: $flow2;
 	margin-top: $flow4;
 
 	li {
 		display: flex;
 		flex-direction: column;
 		list-style-type: none;
+		margin-bottom: $flow1;
 
 		.post {
 			&--image {
 				flex: 1;
+				transform: translateX($flow1);
+			}
+
+			&--wrapper {
+				width: 85%;
+				min-width: 20rem;
+				transform: translateX(-$flow1);
+				box-shadow: var(--largeShadow);
 			}
 
 			&--info {
-				width: 85%;
-				min-width: 20rem;
-
 				&__excerpt {
 					margin-bottom: 0;
 				}
@@ -47,16 +46,29 @@
 		}
 	}
 
-	&.design {
-		.post--info {
-			max-width: 30rem;
-			display: inline-grid;
-		}
-	}
-
 	&.results li {
 		list-style-type: initial;
 		margin-left: $flow1;
 		margin-bottom: $flow1;
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	ul.feed {
+		padding: $flow2;
+		grid-template-columns: 1fr;
+		grid-auto-rows: initial;
+
+		li .post {
+			&--image,
+			&--wrapper {
+				padding: $flow1;
+				transform: translateX(0);
+			}
+		}
+
+		.post--image img {
+			height: 20rem;
+		}
 	}
 }

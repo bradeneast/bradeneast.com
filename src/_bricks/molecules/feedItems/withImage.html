@@ -1,30 +1,32 @@
-<li>
+<li class="animate-in">
 
 	<a class="post--image" href="{{sys.href}}">
 		<img width="360" height="240" src={{Image}}>
 	</a>
 
-	<div class="post--info">
+	<div class="post--wrapper">
+		<div class="post--info">
 
-		<h2 class="post--info__title">
-			<a href="{{sys.href}}">
-				<Slot name="Title"></Slot>
-			</a>
-		</h2>
+			<h2 class="post--info__title">
+				<a href="{{sys.href}}">
+					<Slot name="Title"></Slot>
+				</a>
+			</h2>
 
-		<div class="post--info__tags">
-			<Slot name="Tags"></Slot>
+			<div class="post--info__tags">
+				<Slot name="Tags"></Slot>
+			</div>
+
+			<div class="post--info__length">
+				<Slot name="Type">
+					@{{Math.round(Body.split(' ').length * .01)}}-minute read
+				</Slot>
+			</div>
+
+			<div class="post--info__excerpt">
+				@{{Body.split(/\n/).shift()}}
+			</div>
+
 		</div>
-
-		<div class="post--info__length">
-			<Slot name="Type">
-				@{{Math.round(Body.split(' ').length * .01)}}-minute read
-			</Slot>
-		</div>
-
-		<div class="post--info__excerpt">
-			@{{Body.split(/\n/).shift()}}
-		</div>
-
 	</div>
 </li>

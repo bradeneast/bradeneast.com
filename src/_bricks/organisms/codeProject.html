@@ -7,12 +7,13 @@
 	<Content>
 		<article>
 
-			<div class="post--header">
-				<div class="post--header__image">
-					<img width="540" height="360" src="{{Image}}" />
-				</div>
+			<div class="post--header__image">
+				<img width="540" height="360" src="{{Image}}" />
+			</div>
 
-				<div class="post--info limited-width">
+			<div class="post--wrapper limited-width">
+
+				<div class="post--info">
 					<h1 class="post--info__title">
 						<Slot name="Title"></Slot>
 					</h1>
@@ -23,16 +24,17 @@
 						<Slot name="Type"></Slot>
 					</div>
 				</div>
-			</div>
 
-			<div class="post--body limited-width">
-				<Slot name="Body">
-					This post doesn't have a body.
-				</Slot>
-				<br />
-				<a class="button" target="_blank" href="{{Github}}">
-					View <Slot name="Title"></Slot> on Github
-				</a>
+				<div class="post--body">
+					<Slot name="Body">
+						This post doesn't have a body.
+					</Slot>
+					<br />
+					<a class="button" target="_blank" href="{{Github}}">
+						View <Slot name="Title"></Slot> on Github
+					</a>
+				</div>
+
 			</div>
 
 		</article>

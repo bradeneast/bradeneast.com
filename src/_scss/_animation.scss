@@ -25,8 +25,14 @@
 // 	}
 // }
 
+@keyframes animateIn {
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
 html {
-	.paused,
 	.reduced-motion {
 		animation-play-state: paused;
 		transition: none;
@@ -65,47 +71,11 @@ html {
 		}
 	}
 
-	.feed > *,
-	.post--body > *,
-	.blurb {
-		transition: transform $smoothTransition, opacity $smoothTransition;
-
-		&:nth-child(2) {
-			transition-delay: 0.1s;
-		}
-
-		&:nth-child(3) {
-			transition-delay: 0.2s;
-		}
-
-		&:nth-child(4) {
-			transition-delay: 0.3s;
-		}
-
-		&:nth-child(5) {
-			transition-delay: 0.4s;
-		}
-
-		&:nth-child(6) {
-			transition-delay: 0.5s;
-		}
-
-		&:nth-child(7) {
-			transition-delay: 0.6s;
-		}
-	}
-
 	&[data-schwifty="in"] {
 		transition-duration: 0.1s;
 	}
 
 	&[data-schwifty] {
-		.feed > *,
-		.post--body > * {
-			transform: translate3d(0, 1em, 0);
-			opacity: 0;
-		}
-
 		main {
 			opacity: 0;
 		}
@@ -123,6 +93,17 @@ html {
 		.border-bottom::before {
 			--scaleX: 0;
 		}
+	}
+}
+
+.animate-in {
+	--animateFrom: 0;
+	opacity: 0;
+	transform: translate3d(0, calc(1em * var(--animateFrom)), 0);
+	animation: animateIn $smoothTransition paused forwards;
+
+	&.intersecting {
+		animation-play-state: running;
 	}
 }
 
