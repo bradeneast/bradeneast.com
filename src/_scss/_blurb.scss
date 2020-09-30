@@ -39,5 +39,9 @@
 @media screen and (max-width: $mobile) {
 	.blurb {
 		grid-template-columns: 1fr;
+
+		&--content {
+			padding: 0 $flow1;
+		}
 	}
 }
