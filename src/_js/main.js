@@ -9,7 +9,6 @@ function init() {
 	prepAnimations();
 	prepCodeBlocks();
 	startListeners();
-	console.log(`Built with my custom static-site site generator, affectionately called Ingrid :)`);
 }
 
 init();
@@ -22,3 +21,5 @@ try {
 } catch (err) {
 	console.log(err);
 }
+
+console.log(`Built with my custom static-site site generator, affectionately called Ingrid :)`);
