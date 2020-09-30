@@ -1,10 +1,17 @@
 <Brick use="/_bricks/organisms/main.html">
 	<Title>Design Consulting</Title>
 	<Content>
-		<h1>A <em>small showcase</em> of the work I'm writing about (more to come soon)</h1>
-		<p>
-			This collection is growing (albeit slowly). I'll be posting new projects on <a href="https://twitter.com/bradenthehair">my twitter</a>.
-		</p>
+		<h1>A <em>small</em> showcase</h1>
+
+		<div class="limited-width">
+			<p>
+				There are several of these in the shop. I just want to put some tender love and care into documenting each piece properly.
+			</p>
+			<blockquote>
+				P.S. to make sure you don't miss a new one, you can <a href="https://twitter.com/bradenthehair">follow me on Twitter</a>
+			</blockquote>
+		</div>
+
 		<ul class="feed grid border-top">
 			<Each sort="-Title" from="design/.+?/" use="/_bricks/molecules/feedItems/withImage.html"></Each>
 		</ul>

@@ -1,4 +1,4 @@
-WRDS is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, and export your data for portability.
+[WRDS](https://wrds.netlify.app) is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, and export your data for portability.
 
 <video loop autoplay muted playsinline src="/_assets/images/wrds/tooltip.mp4"></video>
 

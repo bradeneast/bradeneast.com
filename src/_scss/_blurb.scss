@@ -35,3 +35,9 @@
 		width: auto;
 	}
 }
+
+@media screen and (max-width: $mobile) {
+	.blurb {
+		grid-template-columns: 1fr;
+	}
+}

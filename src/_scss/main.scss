@@ -119,7 +119,6 @@ img:not([src*="png"]):not([src*="svg"]),
 iframe,
 video {
 	background: var(--g5);
-	border-radius: $flow1;
 }
 
 @import "./darkMode";
@@ -147,6 +146,7 @@ video {
 		grid-template-columns: 1fr;
 		grid-template-rows: initial;
 		align-content: start;
+		padding-bottom: 0;
 
 		main,
 		aside {
@@ -163,10 +163,18 @@ video {
 		}
 
 		footer {
+			padding: $flow2 $flow1 $flow1 $flow1;
 			flex-flow: row wrap;
+			justify-items: center;
+			justify-content: center;
+			text-align: center;
 
-			* {
-				margin-left: auto;
+			& > * {
+				margin: 0 auto;
+			}
+
+			.copyright {
+				margin-bottom: $flow1;
 			}
 		}
 	}

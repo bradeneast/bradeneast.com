@@ -55,6 +55,10 @@ button,
 		}
 	}
 
+	&:focus svg {
+		color: var(--accent);
+	}
+
 	svg {
 		height: 100%;
 		transition: $motionTransition;

@@ -2,7 +2,6 @@
 	--lightAngle: -37deg;
 	--contrast: rgba(0, 0, 0, 0.3);
 	--duration: 7s;
-	--planetColor: linear-gradient(var(--lightAngle), var(--contrast), transparent);
 	font-size: var(--animationSize);
 	width: 1em;
 	height: 1em;
@@ -15,8 +14,7 @@
 		width: 0.9em;
 		height: 0.9em;
 		border-radius: 40% 45% 50% 45% / 45% 40% 45% 50%;
-		background-image: linear-gradient(var(--lightAngle), var(--accent), var(--primary) 70%);
-		background-color: var(--primary);
+		background: linear-gradient(var(--lightAngle), var(--g5), var(--g6));
 		overflow: hidden;
 		will-change: transform;
 		animation: planetFloat var(--duration) ease-in-out infinite reverse;
@@ -39,7 +37,7 @@
 		width: 0.2em;
 		height: 0.2em;
 		transform: translate(-50%, -50%);
-		background: linear-gradient(var(--lightAngle), var(--g6), var(--g5));
+		background: linear-gradient(var(--lightAngle), var(--primary), var(--accent));
 		border-radius: 50%;
 		will-change: transform;
 		animation: orbitX var(--duration) ease-in-out infinite;

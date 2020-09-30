@@ -1,6 +1,6 @@
 .feed {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
 	gap: $flow4;
 	padding: $flow4;
 	grid-auto-rows: 36rem;
@@ -12,22 +12,45 @@
 		list-style-type: none;
 		margin-bottom: $flow1;
 
+		img {
+			border-radius: $flow1;
+		}
+
 		.post {
+			&--image,
+			&--wrapper {
+				backface-visibility: hidden;
+				transition: $smoothTransition;
+			}
+
 			&--image {
 				flex: 1;
 				transform: translateX($flow1);
+				margin-bottom: -$flow3;
 			}
 
 			&--wrapper {
-				width: 85%;
-				min-width: 20rem;
 				transform: translateX(-$flow1);
-				box-shadow: var(--largeShadow);
 			}
 
 			&--info {
 				&__excerpt {
 					margin-bottom: 0;
+				}
+			}
+		}
+
+		&:hover,
+		&:focus-within {
+			.post {
+				&--image,
+				&--wrapper {
+					transform: scale(1.04) translate3d(0, 0, 0);
+					box-shadow: var(--largeShadow);
+				}
+
+				&--image {
+					padding: $flow2;
 				}
 			}
 		}
@@ -55,7 +78,7 @@
 
 @media screen and (max-width: $mobile) {
 	ul.feed {
-		padding: $flow2;
+		padding: $flow3 $flow1;
 		grid-template-columns: 1fr;
 		grid-auto-rows: initial;
 
@@ -64,11 +87,13 @@
 			&--wrapper {
 				padding: $flow1;
 				transform: translateX(0);
+				width: 100%;
+				min-width: 0;
 			}
-		}
 
-		.post--image img {
-			height: 20rem;
+			&--image img {
+				height: 16rem;
+			}
 		}
 	}
 }

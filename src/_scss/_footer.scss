@@ -9,11 +9,17 @@ footer {
 	* {
 		margin-left: auto;
 	}
-}
 
-.copyright {
-	flex: 1;
-	min-width: 9em;
-	justify-self: flex-start;
-	line-height: 1.2;
+	.icons > :not(:last-child) {
+		padding-right: 0.37em;
+		margin-right: 0.37em;
+		border-right: $borderWidth $borderStyle var(--g7);
+	}
+
+	.copyright {
+		flex: 1;
+		min-width: 9em;
+		justify-self: flex-start;
+		line-height: 1.2;
+	}
 }
