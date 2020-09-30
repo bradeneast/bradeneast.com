@@ -9,6 +9,7 @@ function init() {
 	prepAnimations();
 	prepCodeBlocks();
 	startListeners();
+	console.log(`Built with my custom static-site site generator, affectionately called Ingrid :)`);
 }
 
 init();
