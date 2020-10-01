@@ -18,7 +18,7 @@ if (!cache || !useCache) {
 
 	// Clear the dist directory
 	for (let filename of fs.readdirSync(options.paths.dist))
-		if (!options.paths.dist.test(filename))
+		if (!options.ignorePattern.test(filename))
 			fs.removeSync(slash(options.paths.dist, filename));
 
 	tree.map(render);

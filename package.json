@@ -2,11 +2,10 @@
   "name": "bradeneast.com",
   "version": "1.0.0",
   "description": "My personal website",
-  "main": "./ritz/index.js",
   "type": "module",
   "scripts": {
-    "ritz": "node ./ritz/index.js",
-    "ritz-dev": "node ./ritz/index.js -dev"
+    "ingrid": "node ./ingrid/index.js",
+    "ingrid-dev": "node ./ingrid/index.js -dev"
   },
   "author": "Braden East",
   "license": "ISC",
