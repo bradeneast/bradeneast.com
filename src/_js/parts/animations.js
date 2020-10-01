@@ -3,7 +3,7 @@ import { $$, elem } from "./utils";
 export default function prepAnimations() {
 
 	let observerTargets = $$('[class*="animate-"]');
-	let observerOptions = { threshold: 0.1 };
+	let observerOptions = { threshold: 0.2 };
 	let observer = new IntersectionObserver(handleIntersection, observerOptions);
 
 	observerTargets.forEach(target => observer.observe(target));

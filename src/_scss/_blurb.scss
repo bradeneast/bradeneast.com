@@ -24,7 +24,9 @@
 
 .technologies {
 	--columns: 16rem;
+	gap: $flow2;
 	align-items: start;
+	margin-bottom: $flow4;
 
 	.technology--image {
 		filter: drop-shadow(0.2rem 0.2rem var(--g6));
