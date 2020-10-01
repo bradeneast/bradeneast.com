@@ -9,12 +9,12 @@
 	"liveServer.settings.root": "/dist",
 	"liveServer.settings.file": "/404.html",
 	"liveServer.settings.ignoreFiles": [
-		"ritz/**",
+		"ingrid/**",
 	],
 	"saveAndRun": {
 		"commands": [
 			{
-				"cmd": "node ./ritz/index.js -dev",
+				"cmd": "node ./ingrid/index.js -dev",
 				"match": ".*(html|md)",
 				"isAsync": true,
 				"silent": true,

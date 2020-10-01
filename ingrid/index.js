@@ -1,16 +1,14 @@
 import { readLocal, slash } from './lib/utils.js';
 import tree from './lib/tree.js';
 import render from './lib/render.js';
+import options from './lib/options.js';
 import fs from 'fs-extra';
-import config from './ritz.config.js';
 
 
 console.time('Built in');
 
-// Determines if 
+// Determines whether or not to use the cache
 let useCache = /-dev/i.test(process.argv.toString());
-
-// Store current cache and start overwriting asynchronously
 let cache = readLocal('./cache');
 fs.writeFile('./cache', JSON.stringify(tree));
 
@@ -19,12 +17,9 @@ fs.writeFile('./cache', JSON.stringify(tree));
 if (!cache || !useCache) {
 
 	// Clear the dist directory
-	for (let filename of fs.readdirSync(config.paths.dist))
-		if (!config.ignorePattern.test(filename))
-			fs.removeSync(slash(
-				config.paths.dist,
-				filename
-			));
+	for (let filename of fs.readdirSync(options.paths.dist))
+		if (!options.paths.dist.test(filename))
+			fs.removeSync(slash(options.paths.dist, filename));
 
 	tree.map(render);
 }
