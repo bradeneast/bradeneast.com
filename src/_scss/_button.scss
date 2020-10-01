@@ -3,6 +3,8 @@ button,
 	font-size: inherit;
 	cursor: pointer;
 	transition: $colorTransition;
+	word-wrap: break-word;
+	word-break: break-all;
 	color: $g8;
 	padding: 0.63em 1em;
 	border: $borderWidth $borderStyle transparent;
