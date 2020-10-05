@@ -1,18 +1,18 @@
 {
   "name": "bradeneast.com",
   "version": "1.0.0",
-  "description": "My personal website",
-  "type": "module",
-  "scripts": {
-    "ingrid": "node ./ingrid/index.js",
-    "ingrid-dev": "node ./ingrid/index.js -dev"
+  "description": "My personal website :)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradeneast/bradeneast.com.git"
   },
   "author": "Braden East",
   "license": "ISC",
-  "dependencies": {
-    "fs-extra": "^9.0.1",
-    "marked": "1.1.1",
-    "prismjs": "^1.21.0",
-    "safe-eval": "^0.4.1"
+  "bugs": {
+    "url": "https://github.com/bradeneast/bradeneast.com/issues"
+  },
+  "homepage": "https://github.com/bradeneast/bradeneast.com#readme",
+  "devDependencies": {
+    "ingrid-ssg": "^0.1.3"
   }
 }

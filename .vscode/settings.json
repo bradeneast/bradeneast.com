@@ -14,12 +14,6 @@
 	"saveAndRun": {
 		"commands": [
 			{
-				"cmd": "node ./ingrid/index.js -dev",
-				"match": ".*(html|md)",
-				"isAsync": true,
-				"silent": true,
-			},
-			{
 				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/main.js --outfile=./dist/_assets/js/main.js",
 				"match": ".*src.*js",
 				"silent": true,
