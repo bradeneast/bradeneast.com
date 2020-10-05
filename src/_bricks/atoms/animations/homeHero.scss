@@ -44,11 +44,11 @@
 	background-position-x: 20em;
 	background-repeat: no-repeat;
 	animation-name: fadeIn, delete;
-	animation-delay: var(--charDelay), 2s;
+	animation-delay: var(--charDelay), 1.8s;
 }
 
 .developer {
-	--charDelay: 2.8s;
+	--charDelay: 2.6s;
 	animation-delay: var(--charDelay);
 }
 
@@ -61,7 +61,7 @@
 .tagline {
 	transform: none;
 	animation-duration: 2s;
-	animation-delay: 4.5s;
+	animation-delay: 4.3s;
 }
 
 @keyframes fadeIn {

@@ -17,10 +17,10 @@
 					<h1 class="post--info__title">
 						<Slot name="Title"></Slot>
 					</h1>
-					<div class="post--info__tags">
+					<div class="post--info__meta">
 						<Slot name="Tags"></Slot>
 					</div>
-					<div class="post--info__length">
+					<div class="post--info__meta">
 						<Slot name="Type">
 							@{{Math.round(Body.split(' ').length * .01)}}-minute read
 						</Slot>

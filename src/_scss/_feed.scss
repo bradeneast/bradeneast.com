@@ -49,6 +49,11 @@
 					box-shadow: var(--largeShadow);
 				}
 
+				&--info__meta {
+					color: var(--g8);
+					background-position: right;
+				}
+
 				&--image {
 					padding: $flow2;
 				}

@@ -18,22 +18,27 @@
 	}
 
 	&--info {
-		&__date,
-		&__tags,
-		&__length {
+		display: flex;
+		flex-direction: column;
+
+		&__meta {
+			display: inline-block;
 			line-height: 1.1;
 			font-size: 0.85em;
 			text-transform: uppercase;
 			letter-spacing: 0.1em;
-			display: inline-block;
 			margin-right: auto;
 			padding: 0.2em;
 			color: var(--g3);
-			background: var(--g7);
-		}
+			background-image: linear-gradient(to right, var(--g7) 50%, var(--primary) 0, var(--accent));
+			background-repeat: no-repeat;
+			background-size: 210%;
+			background-position: left;
+			transition: $smoothTransition;
 
-		&__tags {
-			font-weight: bold;
+			&:first-of-type {
+				font-weight: bold;
+			}
 		}
 
 		&__excerpt {
