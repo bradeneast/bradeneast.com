@@ -1,6 +1,6 @@
 module.exports = {
 	src: "./src",
 	dist: "./dist",
-	ignorePattern: /^_/m,
+	ignorePattern: /^_/,
 	global: {},
 }

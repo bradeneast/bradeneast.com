@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { dist, ignorePattern } = require('./lib/options.js');
+const { dist, src, ignorePattern } = require('./lib/options.js');
 const makeTree = require('./lib/makeTree.js');
 const render = require('./lib/render.js');
 const runDev = require('./lib/runDev.js');
@@ -10,6 +10,8 @@ const path = require('path');
 
 console.time('Built in');
 
+fs.ensureDirSync(dist);
+fs.ensureDirSync(src);
 
 let dev = /-dev/i.test(process.argv.toString());
 
@@ -24,12 +26,9 @@ if (dev) {
 
 if (!dev) {
 	// Clear the dist directory
-	fs.ensureDirSync(dist);
-
 	for (let filename of fs.readdirSync(dist))
 		if (!ignorePattern.test(filename))
 			fs.removeSync(path.join(dist, filename));
-
 
 	// Render tree
 	let tree = makeTree();

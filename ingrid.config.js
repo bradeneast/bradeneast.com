@@ -1,7 +1,7 @@
 module.exports = {
 	src: "./src",
 	dist: "./dist",
-	ignorePattern: /^_/m,
+	ignorePattern: /^_/,
 	global: {
 		siteName: 'Braden East',
 		siteRoot: 'https://www.bradeneast.com'

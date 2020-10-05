@@ -1,7 +1,17 @@
+const {
+	matchTag,
+	getAttributes,
+	getInner,
+	accessProp,
+	readLocal,
+	getAbsolutePath,
+	getElementProps
+} = require('./utils.js');
+const { global } = require('./options.js');
 const safeEval = require('safe-eval');
-const { matchTag, getAttributes, getInner, accessProp, readLocal, getAbsolutePath, isValidDate, getElementProps } = require('./utils.js');
-const options = require('./options.js');
 
+
+/**Parses a stringified Brick HTML element */
 function parseBrick(string, pageProps) {
 
 	let { attrs, inner } = getElementProps(string);
@@ -9,7 +19,6 @@ function parseBrick(string, pageProps) {
 	let brickElementChildren = inner.match(matchTag());
 	let brickContent = readLocal(getAbsolutePath(attrs.use, location));
 	let brickProps = {};
-
 	let setProps = (name, value) => {
 		brickProps[name] = value;
 		pageProps[name] = value;
@@ -26,6 +35,7 @@ function parseBrick(string, pageProps) {
 }
 
 
+/**Fills slots in a Brick source file */
 function fillSlots(string = '', props = {}) {
 	return string.replace(
 		matchTag('Slot'),
@@ -34,6 +44,7 @@ function fillSlots(string = '', props = {}) {
 }
 
 
+/**Interpolates variables where it finds double curly braces */
 function addGarnish(string = '', props = {}) {
 	return string.replace(
 		/@?\{\{(.|\n|\r)+?\}\}/g,
@@ -44,7 +55,7 @@ function addGarnish(string = '', props = {}) {
 			try {
 				return isExpression
 					? safeEval(tokens, props)
-					: accessProp(tokens, props) || accessProp(tokens, options?.global)
+					: accessProp(tokens, props) || accessProp(tokens, global)
 			} catch (err) {
 				console.log(err);
 				return '';
@@ -54,6 +65,7 @@ function addGarnish(string = '', props = {}) {
 }
 
 
+/**Fills slots and adds garnish */
 function hydrate(string = '', props = {}) {
 	return addGarnish(
 		fillSlots(string, props),

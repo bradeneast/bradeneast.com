@@ -1,40 +1,38 @@
 const { walkDirSync, matchTag } = require('./utils.js');
-const options = require('./options.js');
+const { src, ignorePattern } = require('./options.js');
 const { parseBrick } = require('./parse.js');
-const fs = require('fs-extra');
+const { extname, dirname, basename } = require('path');
+
 
 function makeTree() {
 
   let tree = [];
-  let src = options.src;
-  fs.ensureDirSync(src);
+  let matchBrick = matchTag('Brick');
 
-  for (let { filename, content } of walkDirSync(src, options.ignorePattern)) {
-    // Ignore non-html files
-    if (!/\.html$/i.test(filename)) continue;
+  for (let { filename, content } of walkDirSync(src, ignorePattern)) {
 
-    let matchBrick = matchTag('Brick');
-    let pageProps = {
+    if (extname(filename) != '.html')
+      continue; // Skip non-html files
+
+    let props = {
       sys: {
-        href: filename.replace(src, '').replace('index.html', ''),
+        href: dirname(filename.replace(basename(src), '')),
         content: content
       }
     };
-    let sys = pageProps.sys;
 
     // Match and parse all Bricks in the page
-    while (matchBrick.test(sys.content))
-      sys.content = sys.content
-        .replace(matchBrick, string =>
-          parseBrick(string, pageProps)
-        )
+    while (matchBrick.test(props.sys.content))
+      props.sys.content = props.sys.content
+        .replace(matchBrick, string => parseBrick(string, props))
 
     // Add page to the tree
     tree.push({
       filename: filename,
-      props: pageProps
+      props: props
     })
   }
+
   return tree;
 }
 

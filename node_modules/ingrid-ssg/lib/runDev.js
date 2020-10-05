@@ -1,47 +1,35 @@
-const options = require('./options.js');
+const { dist } = require('./options.js');
 const render = require('./render.js');
 const makeTree = require('./makeTree.js');
+const mime = require('./mimeTypes.js');
 const fs = require('fs-extra');
 const http = require('http');
-const path = require('path');
-const { cwd } = require('process');
-const { slash } = require('./utils.js');
+const { join, extname, resolve } = require('path');
+
 
 function runDev({ port, hostname }) {
 
-	let mime = {
-		html: 'text/html',
-		txt: 'text/plain',
-		css: 'text/css',
-		gif: 'image/gif',
-		jpg: 'image/jpeg',
-		png: 'image/png',
-		svg: 'image/svg+xml',
-		woff2: 'font/woff2',
-		woff: 'font/woff',
-		eot: 'font/eot',
-		js: 'application/javascript'
-	};
-	let root = path.join(cwd(), options.dist);
+	let root = resolve(dist);
 	let server = http.createServer(handleRequest);
 
 	server.listen(port, hostname, () =>
 		console.log(`Server running at http://${hostname}:${port}/`)
 	);
 
+
 	function handleRequest(request, response) {
 
 		let currentHref = request.url.toString().split('?')[0];
-		let absolutePath = path.join(root, currentHref);
-		let type = mime[path.extname(currentHref).slice(1)];
-
+		let absolutePath = join(root, currentHref);
+		let type = mime[extname(currentHref).slice(1)];
 		let setType = type => response.setHeader('Content-Type', type);
 
 		function renderCurrentPage() {
 			let tree = makeTree();
 			for (let page of tree)
-				if (slash(page.props.sys.href) == slash(currentHref))
+				if (page.props.sys.href == currentHref)
 					return render(page, tree).content;
+			send404();
 		}
 
 		function send404() {
@@ -50,7 +38,15 @@ function runDev({ port, hostname }) {
 			response.end('Not found');
 		}
 
-		if (!type) {
+		if (type) {
+			let stream = fs.createReadStream(absolutePath);
+			stream.on('open', () => {
+				setType(type);
+				stream.pipe(response);
+			})
+			stream.on('error', send404);
+		}
+		else {
 			try {
 				setType('text/html');
 				response.end(renderCurrentPage());
@@ -61,16 +57,8 @@ function runDev({ port, hostname }) {
 			}
 		}
 
-		if (type) {
-			let stream = fs.createReadStream(absolutePath);
-
-			stream.on('open', () => {
-				setType(type);
-				stream.pipe(response);
-			})
-			stream.on('error', send404);
-		}
 	}
 }
+
 
 module.exports = runDev;

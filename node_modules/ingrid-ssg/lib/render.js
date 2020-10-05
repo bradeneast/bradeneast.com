@@ -1,11 +1,19 @@
 const options = require('./options.js');
 const { addGarnish, hydrate } = require('./parse.js');
-const { getSortParameter, dynamicSort, matchTag, slash, getAttributes, readLocal } = require('./utils.js');
+const { join, basename } = require('path');
+const {
+  getSortParameter,
+  dynamicSort,
+  matchTag,
+  getAttributes,
+  readLocal,
+  slash
+} = require('./utils.js');
 
 function render({ filename, props }, tree) {
 
   let { src, dist } = options;
-  let content = props.sys.content;
+  let { content, href } = props.sys;
   let matchEach = matchTag('Each');
 
   // Parse <Each> Elements
@@ -14,11 +22,11 @@ function render({ filename, props }, tree) {
 
       let attrs = getAttributes(string);
       let path = attrs.use.trim();
-      let pathPrefix = /^\./.test(path) ? props.sys.href : '';
-      let brickContent = readLocal(slash(src, pathPrefix, path));
+      let pathPrefix = /^\./.test(path) ? href : '';
+      let brickContent = readLocal(join(src, path, pathPrefix));
 
       let matchPattern = new RegExp(attrs.from.trim());
-      let matchingPages = tree.filter(p => matchPattern.test(p.filename)) || [];
+      let matchingPages = tree.filter(p => matchPattern.test(slash(p.filename))) || [];
       let sortParam = getSortParameter(attrs.sort);
 
       return matchingPages
@@ -29,7 +37,7 @@ function render({ filename, props }, tree) {
   }
 
   return {
-    destination: filename.replace(src, dist),
+    destination: filename.replace(basename(src), basename(dist)),
     content: addGarnish(content, props).trim(),
   }
 }

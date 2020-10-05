@@ -13,12 +13,13 @@ if (!fs.existsSync(userConfig)) {
 	console.info('using default options');
 }
 
-const config = require(userConfig);
+// const defaults = require(defaultConfig);
+const { src, dist, ignorePattern, global } = require(userConfig);
 
 // Set default options
 module.exports = {
-	src: config?.src || defaults.src,
-	dist: config?.dist || defaults.dist,
-	ignorePattern: config?.ignorePattern || defaults.ignorePattern,
-	global: config?.global || defaults.global
+	src: src || defaults.src,
+	dist: dist || defaults.dist,
+	ignorePattern: ignorePattern || defaults.ignorePattern,
+	global: global || defaults.global
 }

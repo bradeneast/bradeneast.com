@@ -1,22 +1,14 @@
 const fs = require('fs-extra');
 const marked = require('marked');
 const prism = require('prismjs');
-const options = require('./options.js');
+const { src } = require('./options.js');
+const { join } = require('path');
 
-/**Joins parts of a URL with a forward slash */
-let slash = (...parts) => {
-	return parts
-		.map(part =>
-			part
-				.trim()
-				.replace(/^\/+|\/+$/, '')
-		)
-		.join('/')
-		.replace(/\/$/g, '');
-}
+let slash = string => string.replace(/\\/g, '/');
 
 /**Gets the tag name of the first HTML element in a string */
 let getTagName = string => string.match(/(?<=<).+?(?=[ >])/)?.[0];
+
 
 /**Matches the outer HTML of the first tag with that name */
 let matchTag = tagName => tagName
@@ -24,6 +16,7 @@ let matchTag = tagName => tagName
 	: /<(\w*)\b.*?>((.|\n|\r)(?!<\1))*?<\/\1>/g;
 
 
+/**Gets all basic properties of a stringified HTML element */
 function getElementProps(string) {
 	return {
 		inner: getInner(string),
@@ -39,6 +32,7 @@ function getInner(string) {
 	let matcher = new RegExp(`(?<=<${tagName}.*?>)((.|\n|\r)(?!<${tagName}))+?(?=<\/${tagName}>)`);
 	return string.match(matcher)?.[0] || '';
 }
+
 
 /**Takes a stringified HTML element and returns a map of its attributes */
 function getAttributes(string) {
@@ -59,8 +53,8 @@ function getAttributes(string) {
 /**Takes a relative path and converts it to an absolute path in the src folder */
 function getAbsolutePath(path, currentDir) {
 	path = path.trim();
-	return slash(
-		options.src,
+	return join(
+		src,
 		path[0] == '/' ? '' : currentDir,
 		path
 	)
@@ -142,17 +136,18 @@ function dynamicSort(property) {
 	}
 }
 
+
 /**Returns a deep iterable of files from the given directory */
 function* walkDirSync(dirname, ignorePattern) {
 	for (let filename of fs.readdirSync(dirname)) {
 		if (ignorePattern.test(filename)) continue;
 
-		let newPath = slash(dirname, filename);
+		let newPath = join(dirname, filename);
 		let isDirectory = fs.lstatSync(newPath).isDirectory();
 
 		if (isDirectory) yield* walkDirSync(newPath, ignorePattern);
 		if (!isDirectory) yield {
-			filename: newPath,
+			filename: slash(newPath),
 			content: fs.readFileSync(newPath, 'utf-8')
 		}
 	}
@@ -160,7 +155,6 @@ function* walkDirSync(dirname, ignorePattern) {
 
 
 module.exports = {
-	slash,
 	getTagName,
 	matchTag,
 	getAbsolutePath,
@@ -172,4 +166,5 @@ module.exports = {
 	getSortParameter,
 	dynamicSort,
 	walkDirSync,
+	slash
 }
