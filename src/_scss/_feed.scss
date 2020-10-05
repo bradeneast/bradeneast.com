@@ -69,10 +69,15 @@
 		}
 	}
 
-	&.results li {
-		list-style-type: initial;
-		margin-left: $flow1;
-		margin-bottom: $flow1;
+	&.results {
+		margin-top: $flow1;
+		display: block;
+
+		li {
+			list-style-type: initial;
+			margin-left: $flow1;
+			margin-bottom: $flow1;
+		}
 	}
 }
 
