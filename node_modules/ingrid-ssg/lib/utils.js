@@ -98,17 +98,6 @@ function accessProp(string = '', obj = {}) {
 }
 
 
-/**Hard to explain */
-function getSortParameter(string = '') {
-	let reverse = '';
-	if (string[0] == '-') {
-		reverse = '-';
-		string = string.slice(1);
-	}
-	return reverse + 'props.' + string;
-}
-
-
 /** Sorts an array of objects by comparing the values of a property those objects have in common
  * (For use inside the Array.sort() method)
  * @param {string} property The property whose value will be compared in the sort
@@ -127,7 +116,7 @@ function dynamicSort(property) {
 		let result = 0;
 		let [aVal, bVal] = [a, b].map(obj => {
 			let prop = accessProp(property, obj);
-			return parseFloat(prop) || prop;
+			return parseFloat(prop) || new Date(prop).getTime() || prop;
 		});
 
 		if (aVal < bVal) result = -1;
@@ -163,7 +152,6 @@ module.exports = {
 	getAttributes,
 	accessProp,
 	readLocal,
-	getSortParameter,
 	dynamicSort,
 	walkDirSync,
 	slash

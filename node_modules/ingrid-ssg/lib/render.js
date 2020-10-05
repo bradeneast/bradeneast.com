@@ -2,7 +2,6 @@ const options = require('./options.js');
 const { addGarnish, hydrate } = require('./parse.js');
 const { join, basename } = require('path');
 const {
-  getSortParameter,
   dynamicSort,
   matchTag,
   getAttributes,
@@ -15,6 +14,15 @@ function render({ filename, props }, tree) {
   let { src, dist } = options;
   let { content, href } = props.sys;
   let matchEach = matchTag('Each');
+
+  function getSortParameter(string = 'sys.href') {
+    let reverse = '';
+    if (string[0] == '-') {
+      reverse = '-';
+      string = string.slice(1);
+    }
+    return reverse + 'props.' + string;
+  }
 
   // Parse <Each> Elements
   while (matchEach.test(content)) {
