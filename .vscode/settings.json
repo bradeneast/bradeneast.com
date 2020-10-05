@@ -7,10 +7,7 @@
 		}
 	],
 	"liveServer.settings.root": "/dist",
-	"liveServer.settings.file": "/404.html",
-	"liveServer.settings.ignoreFiles": [
-		"ingrid/**",
-	],
+	"liveServer.settings.file": "/404/index.html",
 	"saveAndRun": {
 		"commands": [
 			{
