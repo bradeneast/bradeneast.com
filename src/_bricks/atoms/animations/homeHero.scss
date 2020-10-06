@@ -1,3 +1,5 @@
+@import "../../../_scss/variables";
+
 .hero {
 	--charDelay: 0s;
 	padding: 8vw 0;
@@ -12,7 +14,7 @@
 .tagline {
 	display: inline-block;
 	animation-duration: 0.63s;
-	animation-timing-function: cubic-bezier(0.3, 0.6, 0.1, 1);
+	animation-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1), ease-out;
 	animation-fill-mode: forwards;
 	--x: 0;
 	--y: 0;
@@ -25,7 +27,6 @@
 .tagline {
 	--y: 1em;
 	opacity: 0;
-	animation-name: fadeIn;
 }
 
 @media screen and (max-width: 32rem) {
@@ -35,6 +36,8 @@
 }
 
 .character {
+	font-weight: 10;
+	animation-name: fadeIn, bulgeIn;
 	animation-delay: calc(var(--charDelay) + 0.03s * var(--index));
 }
 
@@ -44,11 +47,11 @@
 	background-position-x: 20em;
 	background-repeat: no-repeat;
 	animation-name: fadeIn, delete;
-	animation-delay: var(--charDelay), 1.8s;
+	animation-delay: var(--charDelay), 2s;
 }
 
 .developer {
-	--charDelay: 2.6s;
+	--charDelay: 3s;
 	animation-delay: var(--charDelay);
 }
 
@@ -61,13 +64,20 @@
 .tagline {
 	transform: none;
 	animation-duration: 2s;
-	animation-delay: 4.3s;
+	animation-delay: 4.5s;
+	animation-name: fadeIn;
 }
 
 @keyframes fadeIn {
 	to {
 		opacity: 1;
 		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+@keyframes bulgeIn {
+	to {
+		font-weight: $fontWeightHeavy;
 	}
 }
 
