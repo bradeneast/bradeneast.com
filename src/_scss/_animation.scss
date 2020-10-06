@@ -116,7 +116,7 @@ html {
 	position: relative;
 	color: var(--primary);
 	font-weight: $fontWeightHeavy;
-	$space: 0.4em;
+	$space: 0.63em;
 
 	&:hover,
 	&:focus {
@@ -132,23 +132,26 @@ html {
 		text-align: center;
 		line-height: 1.2;
 		font-variation-settings: nth($fontVariations, 1);
-		color: var(--g4);
 	}
 
 	&::after {
+		color: var(--g4);
 		content: "*";
 	}
 
 	&::before {
-		min-width: 8em;
+		color: var(--g0);
+		background: var(--g7);
+		border-top: $borderWidth $borderStyle;
+		border-image: linear-gradient(to right, var(--primary), var(--accent)) 30;
 		font-size: 0.85rem;
 		position: absolute;
 		content: attr(data-tooltip);
-		right: $space;
+		min-width: 8em;
+		right: 0.4em;
 		bottom: 100%;
 		padding: $space / 2 $space;
 		padding-bottom: $space + $space * 0.5;
-		background: var(--g7);
 		pointer-events: none;
 		opacity: 0;
 		transform: translate(50%, 1em);
