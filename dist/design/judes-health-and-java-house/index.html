@@ -50,18 +50,15 @@
 	</noscript>
 
 	<script>
-		var preferences = ['dark_mode'];
+		window.__preferences = ['dark_mode', 'reduce_motion'];
+		var doc = document.documentElement;
 
-		for (var i in preferences) {
-			var preference = preferences[i];
+		for (var i in window.__preferences) {
+			var preference = window.__preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
-			document
-				.documentElement
-				.classList
-				.toggle(preference, locallySaved);
-
+			doc.classList.toggle(preference, locallySaved);
 			localStorage.setItem(preference, locallySaved);
 		}
 	</script>
@@ -160,21 +157,22 @@
 	</a>
 </div>
 		<div class="flex">
-	<!-- <button class="toggle highlight" id="muted_toggle" title="Toggle sound effects">
-		<svg title="sound" width="0" height="0" class="on" aria-hidden="true" viewBox="0 0 72 72">
-			<path fill="currentColor" d="M65.87,15.76a5.63,5.63,0,1,1-5.65-5.63,5.63,5.63,0,0,1,5.65,5.63Zm-2.2,14.65A5.63,5.63,0,1,0,69.31,36a5.64,5.64,0,0,0-5.64-5.63ZM60.22,50.69a5.63,5.63,0,1,0,5.61,5.64h0A5.62,5.62,0,0,0,60.22,50.69ZM36.38,6.45,15,22.31a4.27,4.27,0,0,1-2,.77l-3,.63C8.14,24,6.76,25.29,6.8,26.83V45.36A3.39,3.39,0,0,0,10,48.42l3,.64a4.17,4.17,0,0,1,2,.77l21.43,15.8a4.49,4.49,0,0,0,5.42-.2,3.13,3.13,0,0,0,.66-.81h0a57.65,57.65,0,0,0,0-57.16h0a4.25,4.25,0,0,0-5.08-1.55A4,4,0,0,0,36.38,6.45Z" />
-		</svg>
-		<svg title="muted" width="0" height="0" class="off" aria-hidden="true" viewBox="0 0 72 72">
-			<path fill="currentColor" d="M56,25.35a57.73,57.73,0,0,1-6.56,39.27,3.35,3.35,0,0,1-.66.81,4.5,4.5,0,0,1-5.43.2L27.85,54.23ZM62.69,7.71a3.38,3.38,0,0,0-4.78.07l-5.58,5.73a66,66,0,0,0-2.94-6,4.36,4.36,0,0,0-6.09-1L21.87,22.31a4.27,4.27,0,0,1-2,.77L17,23.71a3.39,3.39,0,0,0-3.23,3.12V45.36A3.4,3.4,0,0,0,17,48.42l1.17.25-6.86,7.06a3.38,3.38,0,0,0,4.84,4.71l46.65-48A3.38,3.38,0,0,0,62.69,7.71Z" />
-		</svg>
-	</button> -->
 
 	<button class="toggle highlight" id="dark_mode_toggle" title="Toggle dark mode">
-		<svg title="sun" width="0" height="0" class="on" aria-hidden="true" viewBox="0 0 72 72">
-			<path fill="currentColor" d="M63.39,37.15A27.4,27.4,0,0,1,36,64.55C-.39,63.07-.28,11.23,36,9.75A27.4,27.4,0,0,1,63.39,37.15ZM36,.31c-4.81.11-4.81,7.17,0,7.37C40.81,7.48,40.81.42,36,.31ZM7.15,14.23a3.67,3.67,0,1,0,5.16-.56A3.67,3.67,0,0,0,7.15,14.23ZM.08,45.34C1.31,50,8.17,48.41,7.25,43.7,6,39-.84,40.63.08,45.34Zm20,25c4.4,2,7.47-4.4,3.17-6.55S15.74,68.05,20,70.3ZM52,70.3c4.3-2.25,1.23-8.59-3.17-6.55S47.56,72.25,52,70.3Zm20-25C72.84,40.63,66,39,64.75,43.7,63.83,48.41,70.69,50,71.92,45.34ZM64.85,14.23c-3.06-3.68-8.69.61-5.73,4.5C62.09,22.42,67.72,18,64.85,14.23Z" />
+		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+			<path d="M8 2V0H7v2h1zm-4.793.498L1.5.792.793 1.5 2.5 3.206l.707-.708zm9.293.708L14.207 1.5 13.5.792l-1.707 1.706.707.708zm-5 .791a3.499 3.499 0 100 6.996 3.499 3.499 0 100-6.996zM2 6.995H0v1h2v-1zm13 0h-2v1h2v-1zM1.5 14.199l1.707-1.707-.707-.707-1.707 1.706.707.708zm12.707-.708L12.5 11.785l-.707.707L13.5 14.2l.707-.708zM8 14.99v-1.998H7v1.999h1z" fill="currentColor"></path>
 		</svg>
-		<svg title="moon" width="0" height="0" class="off" aria-hidden="true" viewBox="0 0 72 72">
-			<path fill="currentColor" d="M59,35.79C59.06,65,23.32,79.87,2.65,59.32c31.4,4.57,50.7-33.92,28.09-56.19A33.05,33.05,0,0,1,59,35.79Zm2.28-21.12a4.45,4.45,0,0,0,6.51-4.91,4.38,4.38,0,1,0-6.51,4.91Z" />
+		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+			<path d="M7.707.003a.5.5 0 00-.375.846 6 6 0 01-5.569 10.024.5.5 0 00-.519.765A7.5 7.5 0 107.707.003z" fill="currentColor"></path>
+		</svg>
+	</button>
+
+	<button class="toggle highlight" id="reduce_motion_toggle" title="Toggle reduced motion">
+		<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+			<path aria-hidden="true" fill-rule="evenodd" clip-rule="evenodd" d="M5.06 2.334c-1.077.463-2.426 1.515-3.113 2.89l-.894-.448c.813-1.625 2.364-2.823 3.612-3.36.316-.136.626-.236.912-.287.278-.05.571-.061.833.017a.923.923 0 01.645.619c.091.3.028.623-.09.92-.284.708-.897 1.514-1.538 2.302-.196.241-.396.482-.596.723a35.682 35.682 0 00-1.365 1.71c-.593.811-.972 1.501-1.04 2.034-.032.247.007.434.103.588.1.16.293.338.668.498 1.104.474 2.543.426 3.98.028a9.65 9.65 0 01.342-1.705c.536-1.876 1.757-3.141 2.93-3.581.583-.219 1.223-.254 1.743.053.542.32.808.924.808 1.665 0 .48-.196.947-.483 1.367-.29.424-.692.834-1.164 1.213-.86.69-1.99 1.308-3.195 1.73.02.326.086.581.186.77.123.234.31.394.603.476.313.088.77.092 1.418-.062.643-.154 1.44-.456 2.411-.941l.448.894c-1.013.507-1.885.842-2.627 1.02-.738.175-1.382.202-1.92.052a1.917 1.917 0 01-1.218-.972 2.711 2.711 0 01-.279-.946c-1.483.37-3.064.421-4.377-.142-.5-.214-.885-.505-1.123-.888-.242-.389-.3-.819-.246-1.244.103-.81.63-1.683 1.225-2.497.43-.59.939-1.201 1.425-1.786.195-.235.386-.465.567-.688.656-.805 1.168-1.499 1.385-2.042a.832.832 0 00.06-.216 1.008 1.008 0 00-.343.015 3.27 3.27 0 00-.693.221zm3.172 7.88c.952-.375 1.825-.876 2.495-1.414.419-.336.745-.676.964-.996C11.91 7.48 12 7.209 12 7c0-.509-.171-.718-.317-.804-.168-.099-.465-.134-.882.022-.827.31-1.856 1.295-2.32 2.92a9.81 9.81 0 00-.249 1.077z" fill="currentColor"></path>
+		</svg>
+		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M2 2H1V1h1v1zm3 0H4V1h1v1zm3 0H7V1h1v1zm3 0h-1V1h1v1zm3 0h-1V1h1v1zM2 5H1V4h1v1zm6 0H7V4h1v1zm6 0h-1V4h1v1zM2 8H1V7h1v1zm3 0H4V7h1v1zm3 0H7V7h1v1zm3 0h-1V7h1v1zm3 0h-1V7h1v1zM2 11H1v-1h1v1zm6 0H7v-1h1v1zm6 0h-1v-1h1v1zM2 14H1v-1h1v1zm3 0H4v-1h1v1zm3 0H7v-1h1v1zm3 0h-1v-1h1v1zm3 0h-1v-1h1v1z" fill="currentColor"></path>
 		</svg>
 	</button>
 </div>

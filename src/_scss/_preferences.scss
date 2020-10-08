@@ -36,6 +36,18 @@ html {
 		}
 	}
 
+	&.reduce_motion {
+		* {
+			animation-play-state: paused !important;
+			animation-delay: -10s !important;
+			transition: none !important;
+		}
+
+		#reduce_motion_toggle {
+			--on: 0;
+		}
+	}
+
 	&.muted #muted_toggle {
 		--on: 0;
 	}

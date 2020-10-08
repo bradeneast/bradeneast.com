@@ -35,13 +35,20 @@
 		border-radius: 0 50% 50% 0;
 	}
 
+	.flame,
+	.window {
+		background-size: 200%;
+		background-repeat: no-repeat;
+		animation: bgPos 1s ease-in-out infinite alternate;
+	}
+
 	.flame {
 		width: calc(var(--animationSize) / 3);
 		height: calc(var(--animationSize) / 3);
 		top: 50%;
 		transform: translate(-50%, -50%) rotate(-45deg);
 		border-radius: 0% 50% 50% 50%;
-		background: linear-gradient(to top left, var(--accent), var(--primary));
+		background-image: linear-gradient(to top left, var(--accent), var(--primary));
 	}
 
 	.window {

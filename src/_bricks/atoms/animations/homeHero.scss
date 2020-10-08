@@ -14,18 +14,21 @@
 .tagline {
 	display: inline-block;
 	animation-duration: 0.63s;
-	animation-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1), ease-out;
+	animation-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1);
 	animation-fill-mode: forwards;
 	--x: 0;
 	--y: 0;
 	--z: 0;
+	--rx: 0deg;
+	--ry: 0deg;
 	--scale: 1;
-	transform: translate3d(var(--x), var(--y), var(--z)) scale(var(--scale));
+	transform: translate3d(var(--x), var(--y), var(--z)) rotateX(var(--rx)) rotateY((var(--ry))) scale(var(--scale));
 }
 
 .character,
 .tagline {
 	--y: 1em;
+	--ry: 100deg;
 	opacity: 0;
 }
 
@@ -36,8 +39,7 @@
 }
 
 .character {
-	font-weight: 10;
-	animation-name: fadeIn, bulgeIn;
+	animation-name: fadeIn;
 	animation-delay: calc(var(--charDelay) + 0.03s * var(--index));
 }
 
@@ -71,13 +73,7 @@
 @keyframes fadeIn {
 	to {
 		opacity: 1;
-		transform: translate3d(0, 0, 0) scale(1);
-	}
-}
-
-@keyframes bulgeIn {
-	to {
-		font-weight: $fontWeightHeavy;
+		transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
 	}
 }
 

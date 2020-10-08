@@ -47,18 +47,15 @@
 	</noscript>
 
 	<script>
-		var preferences = ['dark_mode'];
+		window.__preferences = ['dark_mode', 'reduce_motion'];
+		var doc = document.documentElement;
 
-		for (var i in preferences) {
-			var preference = preferences[i];
+		for (var i in window.__preferences) {
+			var preference = window.__preferences[i];
 			var locallySaved = JSON.parse(localStorage.getItem(preference));
 			if (locallySaved == undefined) locallySaved = false;
 
-			document
-				.documentElement
-				.classList
-				.toggle(preference, locallySaved);
-
+			doc.classList.toggle(preference, locallySaved);
 			localStorage.setItem(preference, locallySaved);
 		}
 	</script>

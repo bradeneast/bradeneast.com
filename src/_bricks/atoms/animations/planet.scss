@@ -1,7 +1,7 @@
 #planet {
+	$duration: 7s;
 	--lightAngle: -37deg;
 	--contrast: rgba(0, 0, 0, 0.3);
-	--duration: 7s;
 	font-size: var(--animationSize);
 	width: 1em;
 	height: 1em;
@@ -17,7 +17,7 @@
 		background: linear-gradient(var(--lightAngle), var(--g5), var(--g6));
 		overflow: hidden;
 		will-change: transform;
-		animation: planetFloat var(--duration) ease-in-out infinite reverse;
+		animation: planetFloat $duration ease-in-out infinite reverse;
 	}
 
 	.moon--wrapper {
@@ -28,7 +28,7 @@
 		left: 50%;
 		transform: translateX(-50%) rotate(-4deg);
 		will-change: transform;
-		animation: orbitY var(--duration) linear infinite;
+		animation: orbitY $duration linear infinite;
 	}
 
 	.moon {
@@ -36,11 +36,12 @@
 		left: 0;
 		width: 0.2em;
 		height: 0.2em;
-		transform: translate(-50%, -50%);
-		background: linear-gradient(var(--lightAngle), var(--primary), var(--accent));
+		transform: translate3d(-50%, -50%, 0);
 		border-radius: 50%;
-		will-change: transform;
-		animation: orbitX var(--duration) ease-in-out infinite;
+		background: linear-gradient(var(--lightAngle), var(--primary), var(--accent));
+		background-size: 200%;
+		background-repeat: no-repeat;
+		animation: orbitX $duration ease-in-out infinite, bgPos ($duration / 2) ease-in-out infinite alternate;
 	}
 
 	.orbit {

@@ -27,7 +27,7 @@ export let ls = (key, value) => value == undefined
 /**Toggle a user preference saved in `localStorage` as a class on the `documentElement`
  * @param {string} className
 */
-export let togglePreference = (className) => {
+export function togglePref(className) {
 	let locallySaved = ls(className);
 	document.documentElement.classList.toggle(className, !locallySaved);
 	ls(className, !locallySaved);
@@ -63,7 +63,7 @@ export function getSitemap(callback) {
 /**Fetches the sitemap and picks a random loc to navigate to
  * @param {RegExp} matcher
  */
-export function random(matcher) {
+export function getRandomPage(matcher) {
 	return getSitemap(sitemap => {
 		if (!sitemap)
 			window.location = '/random';

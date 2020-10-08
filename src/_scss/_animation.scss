@@ -25,9 +25,18 @@
 // 	}
 // }
 
+@keyframes bgPos {
+	from {
+		background-position: right;
+	}
+	to {
+		background-position: left;
+	}
+}
+
 @keyframes animateIn {
 	to {
-		transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
 		opacity: 1;
 	}
 }
@@ -99,7 +108,7 @@ html {
 .animate-in {
 	--animateFrom: 0;
 	opacity: 0;
-	transform: translate3d(0, calc(1em * var(--animateFrom)), 0);
+	transform: translate3d(0, calc(1em * var(--animateFrom)), 0) rotateX(10deg) scale(0.95);
 	animation: animateIn $smoothTransition paused forwards;
 
 	&.intersecting {

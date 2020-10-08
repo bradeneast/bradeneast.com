@@ -35,6 +35,17 @@ button,
 		&:focus {
 			background-color: var(--g7);
 		}
+
+		svg {
+			&:first-child {
+				transform: scale(calc(var(--iconSize) * var(--on))) translate3d(1px, 1px, 1px);
+			}
+
+			&:last-child {
+				position: absolute;
+				transform: scale(calc(var(--iconSize) * (1 - var(--on)))) translate3d(1px, 1px, 1px);
+			}
+		}
 	}
 }
 
@@ -64,17 +75,7 @@ button,
 	svg {
 		height: 100%;
 		transition: $motionTransition;
-		will-change: transform;
 		backface-visibility: hidden;
 		transform: scale(var(--iconSize)) translate3d(1px, 1px, 1px);
-
-		&.on {
-			transform: scale(calc(var(--iconSize) * var(--on))) translate3d(1px, 1px, 1px);
-		}
-
-		&.off {
-			position: absolute;
-			transform: scale(calc(var(--iconSize) * (1 - var(--on)))) translate3d(1px, 1px, 1px);
-		}
 	}
 }
