@@ -42,18 +42,6 @@
 }
 
 html {
-	.reduced-motion {
-		animation-play-state: paused;
-		transition: none;
-
-		*,
-		*::after,
-		*::before {
-			animation-play-state: paused;
-			transition: none;
-		}
-	}
-
 	main {
 		transition: $smoothTransition;
 	}
@@ -108,7 +96,7 @@ html {
 .animate-in {
 	--animateFrom: 0;
 	opacity: 0;
-	transform: translate3d(0, calc(1em * var(--animateFrom)), 0) rotateX(10deg) scale(0.95);
+	transform: translate3d(0, calc(1em * var(--animateFrom)), 0) scale(0.96);
 	animation: animateIn $smoothTransition paused forwards;
 
 	&.intersecting {

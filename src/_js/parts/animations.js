@@ -2,7 +2,8 @@ import { $$, elem } from "./utils";
 
 export default function prepAnimations() {
 
-	let observerTargets = $$('[class*="animate-"]');
+	let animationClass = 'animate-in';
+	let observerTargets = $$(`.${animationClass}`);
 	let observerOptions = { threshold: 0.2 };
 	let observer = new IntersectionObserver(handleIntersection, observerOptions);
 
@@ -18,11 +19,13 @@ export default function prepAnimations() {
 			let targetCenter = r.bottom - r.height / 2;
 			let viewportCenter = innerHeight / 2;
 			let scrollDirection = targetCenter > viewportCenter ? 1 : -1;
-
 			if (!isIntersecting) scrollDirection = 0;
 
-			target.classList.toggle('intersecting', isIntersecting);
 			target.style.setProperty('--animateFrom', scrollDirection);
+			target.classList.toggle('intersecting', isIntersecting);
+
+			if (isIntersecting)
+				setTimeout(() => target.classList.remove(animationClass), 1000);
 		})
 	}
 
@@ -39,7 +42,4 @@ export default function prepAnimations() {
 			});
 		splitElem.innerHTML = chars.join('');
 	}
-
-	// Unpause animations
-	document.body.classList.remove('reduced-motion');
 }

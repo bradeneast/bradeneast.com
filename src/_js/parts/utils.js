@@ -27,10 +27,28 @@ export let ls = (key, value) => value == undefined
 /**Toggle a user preference saved in `localStorage` as a class on the `documentElement`
  * @param {string} className
 */
-export function togglePref(className) {
-	let locallySaved = ls(className);
-	document.documentElement.classList.toggle(className, !locallySaved);
-	ls(className, !locallySaved);
+export function togglePref(prefName) {
+
+	let msgElem = $('#message');
+	let locallySaved = ls(prefName);
+	let newValue = !locallySaved;
+
+	document.documentElement.classList.toggle(prefName, newValue);
+	ls(prefName, newValue);
+
+	if (msgElem) {
+
+		let readable = prefName.replace(/[-_]/g, ' ');
+		let abled = newValue ? 'enabled' : 'disabled';
+		msgElem.innerHTML = readable + ' ' + abled;
+
+		let waiter;
+		waiter = setTimeout(() => {
+			clearTimeout(waiter);
+			msgElem.classList.remove('visible')
+		}, 2000);
+		msgElem.classList.add('visible');
+	}
 }
 
 

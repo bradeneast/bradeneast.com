@@ -52,3 +52,29 @@ html {
 		--on: 0;
 	}
 }
+
+#message {
+	font-size: 0.85rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+	transform: translate3d(0, -110%, 0);
+	border-bottom: $borderWidth $borderStyle;
+	border-image: linear-gradient(to right, var(--primary), var(--accent)) 30;
+	border-radius: $borderWidth $borderWidth 0 0;
+	box-shadow: var(--shadow);
+	background: var(--g8);
+	text-align: center;
+	padding: $flow1;
+	transition: $smoothTransition;
+
+	&::first-letter {
+		text-transform: capitalize;
+	}
+
+	&.visible {
+		transform: translate3d(0, 0, 0);
+	}
+}
