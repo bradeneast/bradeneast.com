@@ -2,7 +2,7 @@ import prepAnimations from './parts/animations';
 import prepCodeBlocks from './parts/codeBlocks';
 import startListeners from './parts/listeners';
 import prepMedia from './parts/media';
-import Schwifty from './parts/schwifty';
+import Schwifty from './libs/schwifty';
 
 function init() {
 	prepMedia();

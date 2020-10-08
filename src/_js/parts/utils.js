@@ -29,25 +29,26 @@ export let ls = (key, value) => value == undefined
 */
 export function togglePref(prefName) {
 
-	let msgElem = $('#message');
+	let modal = $('.modal');
 	let locallySaved = ls(prefName);
 	let newValue = !locallySaved;
 
 	document.documentElement.classList.toggle(prefName, newValue);
 	ls(prefName, newValue);
 
-	if (msgElem) {
+	if (modal) {
 
 		let readable = prefName.replace(/[-_]/g, ' ');
 		let abled = newValue ? 'enabled' : 'disabled';
-		msgElem.innerHTML = readable + ' ' + abled;
+
+		$('.modal__message', modal).innerHTML = readable + ' ' + abled;
+		modal.classList.add('visible');
 
 		let waiter;
 		waiter = setTimeout(() => {
 			clearTimeout(waiter);
-			msgElem.classList.remove('visible')
+			modal.classList.remove('visible')
 		}, 2000);
-		msgElem.classList.add('visible');
 	}
 }
 
