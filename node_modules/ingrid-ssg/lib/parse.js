@@ -8,14 +8,20 @@ const {
 	getElementProps
 } = require('./utils.js');
 const { global } = require('./options.js');
+const { warning } = require('./logger.js');
 const safeEval = require('safe-eval');
-const { error, log } = require('console');
 
 
 /**Parses a stringified Brick HTML element */
 function parseBrick(string, pageProps) {
 
 	let { attrs, inner } = getElementProps(string);
+
+	if (!attrs.use) {
+		warning(pageProps.sys.href, '<Brick> elements require a `use` attribute whose value is a path to the file being imported in its place.');
+		return inner;
+	}
+
 	let location = pageProps.sys.href;
 	let brickElementChildren = inner.match(matchTag());
 	let brickContent = readLocal(getAbsolutePath(attrs.use, location));
@@ -23,6 +29,10 @@ function parseBrick(string, pageProps) {
 	let setProps = (name, value) => {
 		brickProps[name] = value;
 		pageProps[name] = value;
+	}
+
+	if (brickContent.includes('{{}}')) {
+		warning(pageProps.sys.href, `Empty handlebars`);
 	}
 
 	for (let elem of brickElementChildren || []) {
@@ -53,12 +63,13 @@ function addGarnish(string = '', props = {}) {
 			let isExpression = garnish.charAt(0) == '@';
 			let tokenStart = isExpression ? 3 : 2;
 			let tokens = garnish.slice(tokenStart, -2);
+
 			try {
 				return isExpression
 					? safeEval(tokens, props)
 					: accessProp(tokens, props) || accessProp(tokens, global);
 			} catch (err) {
-				error(err);
+				console.error(err);
 				return '';
 			}
 		}

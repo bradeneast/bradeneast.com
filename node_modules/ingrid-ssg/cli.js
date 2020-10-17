@@ -9,6 +9,7 @@ const path = require('path');
 
 
 console.time('Built in');
+console.log('\nStarting...\n');
 
 fs.ensureDirSync(dist);
 fs.ensureDirSync(src);
@@ -43,3 +44,4 @@ if (!dev) {
 
 
 console.timeEnd('Built in');
+console.log('\n\n');

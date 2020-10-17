@@ -13,6 +13,12 @@
 	color: var(--g1);
 }
 
+@media screen and (max-width: $mobile) {
+	:root {
+		font-size: 14px;
+	}
+}
+
 body {
 	font-weight: $fontWeightRegular;
 	text-rendering: optimizeSpeed;
@@ -53,6 +59,7 @@ blockquote {
 }
 
 br {
+	appearance: none;
 	display: block;
 	width: 100%;
 	margin-top: $flow1;

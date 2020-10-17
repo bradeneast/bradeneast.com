@@ -1,12 +1,12 @@
 const options = require('./options.js');
 const { addGarnish, hydrate } = require('./parse.js');
 const { join, basename } = require('path');
+const { warning, notify } = require('./logger.js');
 const {
   dynamicSort,
   matchTag,
   getAttributes,
-  readLocal,
-  slash
+  readLocal
 } = require('./utils.js');
 
 function render({ filename, props }, tree) {
@@ -34,9 +34,25 @@ function render({ filename, props }, tree) {
     content = content.replace(matchEach, string => {
 
       let attrs = getAttributes(string);
+      let warningThrown = false;
+
+      if (!attrs.from) {
+        warning(props.sys.href, '<Each> elements require a `from` attribute whose value is a Regular Expression to match page paths.');
+        warningThrown = true;
+      }
+      if (!attrs.use) {
+        warning(props.sys.href, '<Each> elements require a `use` attribute whose value is a path to a file. The file is hydrated and appended for every page that matches the `from` attribute.');
+        warningThrown = true;
+      }
+      if (warningThrown) return '';
+
       let path = attrs.use.trim();
       let pathPrefix = /^\./.test(path) ? href : '';
       let brickContent = readLocal(join(src, path, pathPrefix));
+
+      if (brickContent.includes('{{}}')) {
+        notify(path, `Empty handlebars`);
+      }
 
       let matchPattern = new RegExp(attrs.from.trim());
       let matchingPages = tree.filter(p => matchPattern.test(p.props.sys.href)) || [];
