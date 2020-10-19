@@ -16,16 +16,6 @@ let matchTag = tagName => tagName
 	: /<(\w*)\b.*?>((.|\n|\r)(?!<\1))*?<\/\1>/g;
 
 
-/**Gets all basic properties of a stringified HTML element */
-function getElementProps(string) {
-	return {
-		inner: getInner(string),
-		attrs: getAttributes(string),
-		name: getTagName(string)
-	}
-}
-
-
 /**Gets the inner HTML of a tag */
 function getInner(string) {
 	let tagName = getTagName(string);
@@ -38,16 +28,26 @@ function getInner(string) {
 /**Takes a stringified HTML element and returns a map of its attributes */
 function getAttributes(string) {
 	let firstLine = string.split(/[\n\r]/)[0];
-	let attributeChunks = firstLine.match(/(?<= +).+?=["'].+?(?=["'])/g);
+	let attributeChunks = firstLine.match(/(?<= +).+?=([`'"].+?(?=[`'"])|.+?(?=[ >]))/g);
 	let attributes = {};
 
 	if (attributeChunks)
 		attributeChunks.map(chunk => {
-			let [key, value] = chunk.split('="');
+			let [key, value] = chunk.replace(/\=[`'"]?/, '=').split(/\=/);
 			attributes[key] = value;
 		});
 
 	return attributes;
+}
+
+
+/**Gets all basic properties of a stringified HTML element */
+function getElementProps(string) {
+	return {
+		inner: getInner(string),
+		attrs: getAttributes(string),
+		name: getTagName(string)
+	}
 }
 
 
