@@ -14,8 +14,24 @@
 	}
 }
 
-.limited-width {
-	max-width: 48rem;
+.limited-width,
+main > *:not(.has-img) {
+	max-width: 42rem;
+}
+
+.float-children {
+	& > :first-child {
+		margin-right: $flow4;
+	}
+
+	& > :last-child {
+		text-align: right;
+		margin-left: auto;
+	}
+}
+
+.pad-horizontal {
+	padding: $flow4 0;
 }
 
 .hidden {

@@ -1,3 +1,31 @@
+.toggle {
+	display: grid;
+	place-items: center;
+	height: 1.8em;
+	width: 1.8em;
+	padding: 0.2em;
+	margin-right: $flow1 / 2;
+	overflow: hidden;
+	background: none;
+	--on: 1;
+
+	svg {
+		--translate: 0, 0, 0;
+		transition: transform $motionTransition, opacity $smoothTransition;
+		transform: translate3d(var(--translate));
+	}
+
+	svg:last-child {
+		opacity: var(--on);
+		--translate: 0, calc(-100% * (1 - var(--on))), 0;
+	}
+
+	svg:first-child {
+		opacity: calc(1 - var(--on));
+		--translate: 0, calc(100% * var(--on)), 0;
+	}
+}
+
 html {
 	&.dark_mode {
 		--g0: #{$g8};
@@ -22,74 +50,29 @@ html {
 			filter: invert(1);
 		}
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: var(--g0);
-		}
-
 		#dark_mode_toggle {
 			--on: 0;
 		}
 	}
 
-	&.reduce_motion {
-		* {
-			animation-play-state: paused !important;
-			animation-delay: -10s !important;
-			transition: none !important;
+	&.reduced_motion {
+		aside,
+		main {
+			*,
+			*::before,
+			*::after {
+				animation-play-state: paused !important;
+				animation-delay: -10s !important;
+				transition: none !important;
+			}
 		}
 
-		#reduce_motion_toggle {
+		#reduced_motion_toggle {
 			--on: 0;
 		}
 	}
 
 	&.muted #muted_toggle {
 		--on: 0;
-	}
-}
-
-body .modal {
-	position: fixed;
-	display: grid;
-	place-items: center;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 9;
-	padding: 0;
-	pointer-events: none;
-	background: var(--shadowColor);
-	transform: translate3d(0, 0, 0);
-	transition: $smoothTransition;
-	filter: blur($flow1);
-	opacity: 0;
-
-	&.visible {
-		opacity: 1;
-		filter: blur(0);
-	}
-
-	&__message {
-		content: attr(data-message);
-		text-align: center;
-		padding: $flow1;
-		background: var(--g8);
-		box-shadow: var(--shadow);
-		border-radius: $borderWidth;
-		overflow: hidden;
-
-		&::first-letter {
-			text-transform: capitalize;
-		}
-
-		&::before {
-			background-image: linear-gradient(to right, var(--primary), var(--accent));
-		}
 	}
 }

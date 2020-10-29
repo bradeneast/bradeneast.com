@@ -1,123 +1,89 @@
-nav a {
-	color: var(--g3);
-	text-decoration: none;
+.select {
+  &-wrapper {
+    margin-bottom: $flow2;
+
+    label {
+      display: inline-block;
+      padding: 0 $flow4 0.37em 0;
+      border-bottom: $borderStyle $borderWidth var(--g7);
+      color: var(--g4);
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        width: 0.63em;
+        height: 0.63em;
+        position: absolute;
+        top: 0.28em;
+        right: 0;
+        border-right: $borderWidth $borderStyle;
+        border-bottom: $borderWidth $borderStyle;
+        border-color: currentColor;
+        transform: rotate(45deg);
+      }
+    }
+
+    .select:focus-within,
+    input[type="checkbox"]:checked ~ .select {
+      .select__options {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .option {
+        transform: scaleY(1) translate3d(0, 0, 0);
+      }
+    }
+
+    input[type="checkbox"] {
+      opacity: 0.001;
+      position: absolute;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    background: var(--g8);
+    z-index: 9;
+    top: 100%;
+    left: 0;
+    display: grid;
+    max-height: 50vh;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: $colorTransition;
+
+    &:hover .option {
+      opacity: 0.63;
+    }
+  }
+
+  * {
+    font-weight: inherit;
+    margin: 0;
+  }
+
+  .option {
+    transform: scaleY(0) translate3d(0, 0, 0);
+    transform-origin: top;
+    transition: $smoothTransition;
+    padding: $flow1;
+    border: $borderWidth $borderStyle var(--g7);
+
+    &:hover,
+    &:focus-within {
+      opacity: 1;
+      background: var(--g7);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
-@media screen and (min-width: #{$mobile}) {
-	nav {
-		display: grid;
-		position: sticky;
-		top: $flow2;
-		text-align: center;
-
-		a {
-			padding: 0.2em 0;
-			padding-right: $flow3;
-
-			&[class*="border-"]::before {
-				top: auto;
-				left: auto;
-				bottom: calc(50% - #{$borderWidth});
-				right: 0;
-				height: $borderWidth;
-				width: calc(#{$flow3} - 0.37em);
-				color: transparent;
-				transform-origin: right;
-			}
-
-			&[aria-current] {
-				color: inherit;
-				font-weight: var(--fontWeightHeavy);
-
-				&[class*="border-"]::before {
-					color: var(--g7);
-				}
-			}
-
-			&::before {
-				color: transparent;
-			}
-
-			&:hover,
-			&:focus {
-				color: var(--primary);
-			}
-		}
-	}
-}
-
-@media screen and (max-width: #{$mobile}) {
-	nav {
-		display: flex;
-		overflow: hidden;
-		position: relative;
-		top: 0;
-
-		:not([aria-current]) {
-			border-color: var(--g7);
-
-			&::after {
-				color: transparent;
-			}
-		}
-
-		[aria-current] {
-			color: inherit;
-			font-weight: var(--fontWeightHeavy);
-		}
-
-		a {
-			padding-left: $flow1;
-			padding-bottom: $flow1;
-
-			&:hover,
-			&:focus {
-				outline: none;
-			}
-
-			&:not(:first-child) {
-				padding-top: 0;
-			}
-
-			&::before {
-				background: var(--g7) !important;
-			}
-
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: calc(50% + #{$flow1} / 2);
-				height: 1em;
-				width: $borderWidth;
-				color: var(--g7);
-				background: currentColor;
-				transform-origin: bottom;
-				transition: $smoothTransition;
-			}
-
-			&:nth-child(2)::after {
-				transition-delay: 0.1s;
-			}
-
-			&:nth-child(3)::after {
-				transition-delay: 0.2s;
-			}
-
-			&:nth-child(4)::after {
-				transition-delay: 0.3s;
-			}
-
-			&:nth-child(5)::after {
-				transition-delay: 0.4s;
-			}
-
-			&[aria-current] ~ a {
-				&::after,
-				&::before {
-					color: transparent;
-				}
-			}
-		}
-	}
+[aria-current] {
+  color: inherit;
+  font-weight: $fontWeightHeavy;
 }

@@ -5,8 +5,8 @@ import prepMedia from './parts/media';
 import Schwifty from './libs/schwifty';
 
 function init() {
-	prepMedia();
 	prepAnimations();
+	prepMedia();
 	prepCodeBlocks();
 	startListeners();
 }
@@ -22,4 +22,9 @@ try {
 	console.log(err);
 }
 
-console.log(`Built with my custom static-site site generator, affectionately called Ingrid :)`);
+console.log(`%cAffectionately built with Ingrid :)`, `
+		font-family: "Recursive", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Nueue", "Roboto",
+		sans-serif;
+		font-size: 16px;
+		font-weight: bold`);
+console.log(`%chttps://github.com/bradeneast/ingrid`, "color: orangered");

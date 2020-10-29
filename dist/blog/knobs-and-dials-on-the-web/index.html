@@ -50,7 +50,7 @@
 	</noscript>
 
 	<script>
-		window.__preferences = ['dark_mode', 'reduce_motion'];
+		window.__preferences = ['dark_mode', 'reduced_motion'];
 		var doc = document.documentElement;
 
 		for (var i in window.__preferences) {
@@ -69,38 +69,75 @@
 <body>
 
 	<aside>
-		<nav>
-	<a class="border-bottom"  href="/">About</a>
-	<a class="border-bottom" aria-current href="/blog">Blog</a>
-	<a class="border-bottom"  href="/code">Code</a>
-</nav>
+
+		<section>
+			<div class="select-wrapper">
+
+  
+      <input type="checkbox" id="1020195374192__toggle">
+      <label for="1020195374192__toggle">
+        Select a page
+      </label>
+      
+
+  <div class="select">
+    <div class="select__options">
+      <a class="option" href="/">
+  <h2>
+    About
+  </h2>
+  <div class="light-text">
+    
+  </div>
+</a><a class="option" href="/blog">
+  <h2>
+    Blog
+  </h2>
+  <div class="light-text">
+    
+  </div>
+</a><a class="option" href="/code">
+  <h2>
+    Code
+  </h2>
+  <div class="light-text">
+    
+  </div>
+</a>
+    </div>
+  </div>
+
+</div>
+		</section>
+
+		<section>
+			
+				<h1>Knobs and dials on the web</h1>
+			
+		</section>
+
 	</aside>
 
-	<main class="border-left">
-		<article>
+	<main>
+		<div>
+			<img width="540" height="360" src="/_assets/images/sound-board.jpg" />
+		</div>
 
-			<div class="post--header__image">
-				<img width="540" height="360" src="/_assets/images/sound-board.jpg" />
+		<div>
+
+			<div class="pad-horizontal">
+				<div>
+					UI, CSS, HTML
+				</div>
+				<div class="light-text">
+					
+						11-minute read
+					
+				</div>
 			</div>
 
-			<div class="post--wrapper limited-width">
-
-				<div class="post--info">
-					<h1 class="post--info__title">
-						Knobs and dials on the web
-					</h1>
-					<div class="post--info__meta">
-						UI, CSS, HTML
-					</div>
-					<div class="post--info__meta">
-						
-							11-minute read
-						
-					</div>
-				</div>
-
-				<div class="post--body">
-					<p>In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</p>
+			<div>
+				<p>In this article, we’ll look at how to make a rotating knob input with HTML, CSS, and just a smidge of Javascript.</p>
 <blockquote>
 <p><em>Stairway to Heaven</em> (composed by Jimmy Page and performed by Led Zeppelin) is known by guitarists as the ‘forbidden riff.’</p>
 </blockquote>
@@ -173,71 +210,68 @@ adjustmentWrapper<span class="token punctuation">.</span><span class="token func
 <span class="token punctuation">}</span></code></pre>
 <p>If you’re feeling especially adventurous, you can add a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">CSS counter</a> to display the numeric value of the knob using a CSS variable hack by <a href="https://twitter.com/cassiecodes">Cassie Evans</a>. Here’s the demo where I’ve pieced it all together.</p>
 <p class="codepen" data-slug-hash="qBWxKro"></p>
-					<hr />
-					<p>
-						<a class="button" href="https://twitter.com/intent/tweet?text=Knobs and dials on the web&amp;url=https://www.bradeneast.com/blog/knobs-and-dials-on-the-web&amp;via=bradenthehair">Share this on Twitter</a>
-					</p>
+
+				<p>
+					<a class="button" href="https://twitter.com/intent/tweet?text=Knobs and dials on the web&amp;url=https://www.bradeneast.com/blog/knobs-and-dials-on-the-web&amp;via=bradenthehair">Share this on Twitter</a>
+				</p>
+
+				<hr />
+
+				<div class="flex float-children">
+
+					<a style="text-decoration: none;" href="/blog/staggered-animations">
+						<div class="light-text">previous</div>
+						<strong>Staggered Animations</strong>
+					</a>
+
+					<a style="text-decoration: none;" href="undefined">
+						<div class="light-text">next</div>
+						<strong>undefined</strong>
+					</a>
+
 				</div>
 
 			</div>
 
-		</article>
+		</div>
 	</main>
 
-	<footer class="border-top">
+	<footer>
 
 	<div class="copyright">
 		&copy; 2019-2020 Braden East
 	</div>
 
-	<div class="flex icons">
-		<div class="flex">
-	<a class="highlight" href="https://codepen.io/bradeneast" title="Braden East on CodePen">
-		<svg aria-hidden="true" focusable="false" data-icon="codepen" role="img" viewBox="0 0 512 512">
-			Codepen
-			<path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z">
-			</path>
-		</svg>
-	</a>
-	<a class="highlight" href="https://github.com/bradeneast" title="Braden East on Github">
-		<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
-			Github
-			<path fill="currentColor" d="M165.9,389.4c0,2-2.3,3.6-5.2,3.6-3.3.3-5.6-1.3-5.6-3.6,0-2,2.3-3.6,5.2-3.6C163.3,385.5,165.9,387.1,165.9,389.4Zm-31.1-4.5c-.7,2,1.3,4.3,4.3,4.9,2.6,1,5.6,0,6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2,2.3Zm44.2-1.7c-2.9.7-4.9,2.6-4.6,4.9.3,2,2.9,3.3,5.9,2.6s4.9-2.6,4.6-4.6S181.9,382.9,179,383.2ZM244.8,0C106.1,0,0,105.3,0,244,0,354.9,69.8,449.8,169.5,483.2c12.8,2.3,17.3-5.6,17.3-12.1,0-6.2-.3-40.4-.3-61.4,0,0-70,15-84.7-29.8,0,0-11.4-29.1-27.8-36.6,0,0-22.9-15.7,1.6-15.4,0,0,24.9,2,38.6,25.8,21.9,38.6,58.6,27.5,72.9,20.9,2.3-16,8.8-27.1,16-33.7-55.9-6.2-112.3-14.3-112.3-110.5,0-27.5,7.6-41.3,23.6-58.9-2.6-6.5-11.1-33.3,2.6-67.9,20.9-6.5,69,27,69,27a236.24,236.24,0,0,1,125.6,0s48.1-33.6,69-27c13.7,34.7,5.2,61.4,2.6,67.9,16,17.7,25.8,31.5,25.8,58.9,0,96.5-58.9,104.2-114.8,110.5,9.2,7.9,17,22.9,17,46.4,0,33.7-.3,75.4-.3,83.6,0,6.5,4.6,14.4,17.3,12.1C428.2,449.8,496,354.9,496,244,496,105.3,383.5,0,244.8,0ZM97.2,344.9c-1.3,1-1,3.3.7,5.2,1.6,1.6,3.9,2.3,5.2,1,1.3-1,1-3.3-.7-5.2C100.8,344.3,98.5,343.6,97.2,344.9Zm-10.8-8.1c-.7,1.3.3,2.9,2.3,3.9,1.6,1,3.6.7,4.3-.7s-.3-2.9-2.3-3.9C88.7,335.5,87.1,335.8,86.4,336.8Zm32.4,35.6c-1.6,1.3-1,4.3,1.3,6.2,2.3,2.3,5.2,2.6,6.5,1,1.3-1.3.7-4.3-1.3-6.2C123.1,371.1,120.1,370.8,118.8,372.4Zm-11.4-14.7c-1.6,1-1.6,3.6,0,5.9s4.3,3.3,5.6,2.3c1.6-1.3,1.6-3.9,0-6.2-1.4-2.3-4-3.3-5.6-2Z"></path>
-		</svg>
-	</a>
-	<a class="highlight" href="https://www.twitter.com/bradenthehair/" title="Braden East on Twitter">
-		<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 504">
-			Twitter
-			<path fill="currentColor" d="M459.37,150.72c.33,4.54.33,9.09.33,13.64,0,138.72-105.59,298.56-298.56,298.56A296.51,296.51,0,0,1,0,415.81a215.83,215.83,0,0,0,25.34,1.3,210.15,210.15,0,0,0,130.27-44.83A105.12,105.12,0,0,1,57.5,299.51a132.94,132.94,0,0,0,19.82,1.62,111.09,111.09,0,0,0,27.61-3.57,105,105,0,0,1-84.14-103v-1.29a105.67,105.67,0,0,0,47.43,13.31A105.07,105.07,0,0,1,35.74,66.25,298.28,298.28,0,0,0,252.1,176.06a118.78,118.78,0,0,1-2.6-24,105,105,0,0,1,181.6-71.8,206.58,206.58,0,0,0,66.6-25.34,104.61,104.61,0,0,1-46.13,57.83A210.61,210.61,0,0,0,512,96.46a225.62,225.62,0,0,1-52.63,54.26Z"></path>
-		</svg>
-	</a>
+	<div class="flex">
+		<div class="modal">&nbsp;</div>
+		<div class="flex socials">
+	<a href="https://codepen.io/bradeneast" title="Braden East on CodePen">Codepen</a>
+	<a href="https://github.com/bradeneast" title="Braden East on Github">Github</a>
+	<a href="https://www.twitter.com/bradenthehair/" title="Braden East on Twitter">Twitter</a>
 </div>
-		<div class="flex">
+		<div class="flex toggles">
 
-	<button class="toggle highlight" id="dark_mode_toggle" title="Toggle dark mode">
-		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
-			<path d="M8 2V0H7v2h1zm-4.793.498L1.5.792.793 1.5 2.5 3.206l.707-.708zm9.293.708L14.207 1.5 13.5.792l-1.707 1.706.707.708zm-5 .791a3.499 3.499 0 100 6.996 3.499 3.499 0 100-6.996zM2 6.995H0v1h2v-1zm13 0h-2v1h2v-1zM1.5 14.199l1.707-1.707-.707-.707-1.707 1.706.707.708zm12.707-.708L12.5 11.785l-.707.707L13.5 14.2l.707-.708zM8 14.99v-1.998H7v1.999h1z" fill="currentColor"></path>
-		</svg>
+	<button class="toggle" id="dark_mode_toggle" title="Toggle dark mode">
 		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
 			<path d="M7.707.003a.5.5 0 00-.375.846 6 6 0 01-5.569 10.024.5.5 0 00-.519.765A7.5 7.5 0 107.707.003z" fill="currentColor"></path>
 		</svg>
+		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+			<path d="M8 2V0H7v2h1zm-4.793.498L1.5.792.793 1.5 2.5 3.206l.707-.708zm9.293.708L14.207 1.5 13.5.792l-1.707 1.706.707.708zm-5 .791a3.499 3.499 0 100 6.996 3.499 3.499 0 100-6.996zM2 6.995H0v1h2v-1zm13 0h-2v1h2v-1zM1.5 14.199l1.707-1.707-.707-.707-1.707 1.706.707.708zm12.707-.708L12.5 11.785l-.707.707L13.5 14.2l.707-.708zM8 14.99v-1.998H7v1.999h1z" fill="currentColor"></path>
+		</svg>
 	</button>
 
-	<button class="toggle highlight" id="reduce_motion_toggle" title="Toggle reduced motion">
+	<button class="toggle" id="reduced_motion_toggle" title="Toggle reduced motion">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+			<polygon fill="currentColor" points="33.39 72 33.39 62.03 27.45 67.97 23.77 64.29 33.41 54.48 33.41 41.66 32.52 41 21.32 47.47 17.64 60.72 12.58 59.37 14.75 51.28 6.13 56.26 3.52 51.74 12.15 46.76 4.04 44.58 5.38 39.55 18.7 42.99 29.8 36.59 29.93 35.49 18.72 29.02 5.41 32.46 4.05 27.4 12.14 25.24 3.52 20.26 6.13 15.74 14.76 20.72 12.59 12.61 17.62 11.26 21.29 24.51 32.39 30.92 33.41 30.49 33.41 17.55 23.77 7.74 27.47 4.04 33.39 9.96 33.39 0 38.61 0 38.61 9.97 44.55 4.03 48.23 7.71 38.59 17.52 38.59 30.34 39.48 31 50.69 24.53 54.36 11.28 59.42 12.63 57.25 20.72 65.87 15.74 68.48 20.26 59.85 25.24 67.97 27.42 66.62 32.45 53.3 29 42.2 35.41 42.07 36.51 53.28 42.98 66.59 39.54 67.95 44.6 59.86 46.77 68.48 51.74 65.87 56.26 57.24 51.27 59.42 59.39 54.38 60.74 50.71 47.49 39.61 41.08 38.59 41.51 38.59 54.45 48.23 64.26 44.53 67.96 38.61 62.04 38.61 72 33.39 72" />
+		</svg>
 		<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
 			<path aria-hidden="true" fill-rule="evenodd" clip-rule="evenodd" d="M5.06 2.334c-1.077.463-2.426 1.515-3.113 2.89l-.894-.448c.813-1.625 2.364-2.823 3.612-3.36.316-.136.626-.236.912-.287.278-.05.571-.061.833.017a.923.923 0 01.645.619c.091.3.028.623-.09.92-.284.708-.897 1.514-1.538 2.302-.196.241-.396.482-.596.723a35.682 35.682 0 00-1.365 1.71c-.593.811-.972 1.501-1.04 2.034-.032.247.007.434.103.588.1.16.293.338.668.498 1.104.474 2.543.426 3.98.028a9.65 9.65 0 01.342-1.705c.536-1.876 1.757-3.141 2.93-3.581.583-.219 1.223-.254 1.743.053.542.32.808.924.808 1.665 0 .48-.196.947-.483 1.367-.29.424-.692.834-1.164 1.213-.86.69-1.99 1.308-3.195 1.73.02.326.086.581.186.77.123.234.31.394.603.476.313.088.77.092 1.418-.062.643-.154 1.44-.456 2.411-.941l.448.894c-1.013.507-1.885.842-2.627 1.02-.738.175-1.382.202-1.92.052a1.917 1.917 0 01-1.218-.972 2.711 2.711 0 01-.279-.946c-1.483.37-3.064.421-4.377-.142-.5-.214-.885-.505-1.123-.888-.242-.389-.3-.819-.246-1.244.103-.81.63-1.683 1.225-2.497.43-.59.939-1.201 1.425-1.786.195-.235.386-.465.567-.688.656-.805 1.168-1.499 1.385-2.042a.832.832 0 00.06-.216 1.008 1.008 0 00-.343.015 3.27 3.27 0 00-.693.221zm3.172 7.88c.952-.375 1.825-.876 2.495-1.414.419-.336.745-.676.964-.996C11.91 7.48 12 7.209 12 7c0-.509-.171-.718-.317-.804-.168-.099-.465-.134-.882.022-.827.31-1.856 1.295-2.32 2.92a9.81 9.81 0 00-.249 1.077z" fill="currentColor"></path>
-		</svg>
-		<svg aria-hidden="true" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M2 2H1V1h1v1zm3 0H4V1h1v1zm3 0H7V1h1v1zm3 0h-1V1h1v1zm3 0h-1V1h1v1zM2 5H1V4h1v1zm6 0H7V4h1v1zm6 0h-1V4h1v1zM2 8H1V7h1v1zm3 0H4V7h1v1zm3 0H7V7h1v1zm3 0h-1V7h1v1zm3 0h-1V7h1v1zM2 11H1v-1h1v1zm6 0H7v-1h1v1zm6 0h-1v-1h1v1zM2 14H1v-1h1v1zm3 0H4v-1h1v1zm3 0H7v-1h1v1zm3 0h-1v-1h1v1zm3 0h-1v-1h1v1z" fill="currentColor"></path>
 		</svg>
 	</button>
 </div>
 	</div>
-</footer>
 
-<div class="modal">
-	<div class="modal__message limited-width border-top"></div>
-</div>
+</footer>
 
 </body>
 

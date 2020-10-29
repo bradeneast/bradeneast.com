@@ -5,41 +5,53 @@
 	</Title>
 
 	<Content>
-		<article>
 
-			<div class="post--header__image">
-				<img width="540" height="360" src="{{Image}}" />
-			</div>
+		<div>
+			<img width="540" height="360" src="{{Image}}" />
+		</div>
 
-			<div class="post--wrapper limited-width">
+		<div>
 
-				<div class="post--info">
-					<h1 class="post--info__title">
-						<Slot name="Title"></Slot>
-					</h1>
-					<div class="post--info__meta">
-						<Slot name="Tags"></Slot>
-					</div>
-					<div class="post--info__meta">
-						<Slot name="Type">
-							@{{Math.round(Body.split(' ').length * .01)}}-minute read
-						</Slot>
-					</div>
+			<div class="pad-horizontal">
+				<div>
+					<Slot name="Tags"></Slot>
 				</div>
-
-				<div class="post--body">
-					<Slot name="Body">
-						This post doesn't have a body.
+				<div class="light-text">
+					<Slot name="Type">
+						@{{Math.round(Body.split(' ').length * .01)}}-minute read
 					</Slot>
-					<hr />
-					<p>
-						<a class="button" href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
-					</p>
+				</div>
+			</div>
+
+			<div>
+				<Slot name="Body">
+					This post doesn't have a body.
+				</Slot>
+
+				<p>
+					<a class="button" href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
+				</p>
+
+				<hr />
+
+				<div class="flex float-children">
+
+					<a style="text-decoration: none;" href="{{sys.previous.sys.href}}">
+						<div class="light-text">previous</div>
+						<strong>{{sys.previous.Title}}</strong>
+					</a>
+
+					<a style="text-decoration: none;" href="{{sys.next.sys.href}}">
+						<div class="light-text">next</div>
+						<strong>{{sys.next.Title}}</strong>
+					</a>
+
 				</div>
 
 			</div>
 
-		</article>
+		</div>
+
 	</Content>
 
 </Brick>

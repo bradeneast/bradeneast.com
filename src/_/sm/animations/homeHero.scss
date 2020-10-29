@@ -2,54 +2,44 @@
 
 .hero {
 	--charDelay: 0s;
-	padding: 8vw 0;
-	margin: 4vw;
-	opacity: 0;
-	animation: fadeIn 0.5s ease forwards;
+	margin-bottom: $flow4;
+
+	&.paused {
+		*,
+		*::before,
+		*::after {
+			animation-play-state: paused !important;
+		}
+	}
 }
 
 .character,
 .designer,
-.developer,
-.tagline {
+.developer {
 	display: inline-block;
-	animation-duration: 0.63s;
-	animation-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1);
-	animation-fill-mode: forwards;
-	--x: 0;
-	--y: 0;
-	--z: 0;
-	--rx: 0deg;
-	--ry: 0deg;
-	--scale: 1;
-	transform: translate3d(var(--x), var(--y), var(--z)) rotateX(var(--rx)) rotateY((var(--ry))) scale(var(--scale));
-}
-
-.character,
-.tagline {
-	--y: 1em;
-	--ry: 100deg;
-	opacity: 0;
-}
-
-@media screen and (max-width: 32rem) {
-	.character {
-		white-space: nowrap;
-	}
-}
-
-.character {
-	animation-name: fadeIn;
-	animation-delay: calc(var(--charDelay) + 0.03s * var(--index));
 }
 
 .designer {
+	--deleted: 0;
 	--charDelay: 0.5s;
-	background-image: linear-gradient(transparent 50%, var(--g5) 50%, var(--g5) 60%, transparent 0);
-	background-position-x: 20em;
-	background-repeat: no-repeat;
-	animation-name: fadeIn, delete;
-	animation-delay: var(--charDelay), 2s;
+	animation: delete 0.5s ease 2s forwards;
+
+	.split {
+		animation: inherit;
+	}
+
+	.split::after {
+		content: "";
+		position: absolute;
+		top: 0.55em;
+		left: 0;
+		width: 100%;
+		height: $borderWidth;
+		background: var(--g5);
+		transform-origin: right;
+		transform: scaleX(0);
+		animation: inherit;
+	}
 }
 
 .developer {
@@ -57,29 +47,24 @@
 	animation-delay: var(--charDelay);
 }
 
-.developer .character {
-	--scale: 2;
-	--x: 3rem;
-	--y: 0;
-}
-
-.tagline {
-	transform: none;
-	animation-duration: 2s;
-	animation-delay: 4.5s;
+.character {
+	transform: rotateY(90deg) translate3d(0, 1em, 0);
+	animation-duration: 0.63s;
+	animation-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1);
+	animation-fill-mode: forwards;
 	animation-name: fadeIn;
+	animation-delay: calc(var(--charDelay) + 0.03s * var(--index));
 }
 
 @keyframes fadeIn {
 	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+		transform: rotateY(0) translate3d(0, 0, 0);
 	}
 }
 
 @keyframes delete {
 	to {
 		color: var(--g5);
-		background-position-x: 0rem;
+		transform: scaleX(1);
 	}
 }

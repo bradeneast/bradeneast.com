@@ -31,17 +31,14 @@ export function togglePref(prefName) {
 
 	let modal = $('.modal');
 	let locallySaved = ls(prefName);
-	let newValue = !locallySaved;
+	let state = !locallySaved;
 
-	document.documentElement.classList.toggle(prefName, newValue);
-	ls(prefName, newValue);
+	document.documentElement.classList.toggle(prefName, state);
+	ls(prefName, state);
 
 	if (modal) {
 
-		let readable = prefName.replace(/[-_]/g, ' ');
-		let abled = newValue ? 'enabled' : 'disabled';
-
-		$('.modal__message', modal).innerHTML = readable + ' ' + abled;
+		modal.innerHTML = `${prefName.replace(/[-_]/g, ' ')} ${state ? 'on' : 'off'}`;
 		modal.classList.add('visible');
 
 		let waiter;

@@ -10,10 +10,26 @@
 <body>
 
 	<aside>
-		<Brick use="/_/md/nav.html"></Brick>
+
+		<section>
+			<Brick use="/_/md/selectDropdown.html">
+				<Name>Primary navigation</Name>
+				<Placeholder>Select a page</Placeholder>
+				<Scope>
+					<Each from="(?<!.)/(blog|code)?(?!.)" use="/_/md/selectOption.html"></Each>
+				</Scope>
+			</Brick>
+		</section>
+
+		<section>
+			<Slot name="Aside">
+				<h1>{{Title}}</h1>
+			</Slot>
+		</section>
+
 	</aside>
 
-	<main class="border-left">
+	<main>
 		<Slot name="Content"></Slot>
 	</main>
 

@@ -11,9 +11,15 @@
 				P.S. to make sure you don't miss a new one, you can <a href="https://twitter.com/bradenthehair">follow me on Twitter</a>
 			</blockquote>
 		</div>
-
-		<ul class="feed grid border-top">
-			<Each from="design/." sort="-Title" use="/_/md/feedItems/withImage.html"></Each>
-		</ul>
 	</Content>
+
+	<Aside>
+		<Brick use="/_/md/selectDropdown.html">
+			<Name>Post navigation</Name>
+			<Scope>
+				<Each from="design/." sort="-Title" use="/_/md/selectOption.html"></Each>
+			</Scope>
+			<Placeholder>Select a brand</Placeholder>
+		</Brick>
+	</Aside>
 </Brick>

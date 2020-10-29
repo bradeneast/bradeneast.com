@@ -1,0 +1,128 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scrollbar-width: initial;
+  background: var(--g8);
+}
+
+body {
+  padding-top: 40vh;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+main {
+  flex: 3;
+  padding-bottom: $flow4;
+  padding-left: $flow2;
+  padding-right: $flow2;
+  min-width: 20rem;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  gap: 0 $flow1;
+  place-items: start;
+  align-content: start;
+  flex: 2;
+
+  section {
+    width: 100%;
+    padding: 0 2vw;
+
+    a {
+      display: block;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  align-self: end;
+  width: 100%;
+  padding: $flow1;
+
+  & > * > *:not(:last-child) {
+    padding-right: $flow1;
+    margin-right: $flow1;
+    border-right: $borderWidth $borderStyle var(--g7);
+  }
+
+  & > :last-child {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .modal {
+    transition: $smoothTransition;
+    pointer-events: none;
+    opacity: 0;
+
+    &.visible {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+
+  .socials > a {
+    margin-left: $flow1 / 2;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  body {
+    padding: $flow2;
+  }
+
+  aside section {
+    padding: 0;
+    margin-bottom: $flow4;
+  }
+
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer {
+    display: block;
+    text-align: right;
+    padding: 0;
+
+    & > .flex,
+    .socials,
+    .copyright {
+      flex-flow: column;
+    }
+
+    .copyright,
+    .modal,
+    .socials {
+      margin: 0;
+      margin-bottom: $flow1;
+    }
+
+    .modal {
+      order: 9;
+      margin-bottom: 0;
+    }
+
+    .toggles {
+      margin-top: 0.5em;
+      margin-bottom: $flow1;
+      justify-content: flex-end;
+    }
+
+    .socials,
+    .modal {
+      display: block;
+      padding: 0;
+      border: none;
+    }
+  }
+}

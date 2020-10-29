@@ -1,0 +1,21 @@
+<div class="select-wrapper">
+
+  @{{
+    (() => {
+      let id = Math.round(new Date().getTime() * Math.random());
+      return `
+      <input type="checkbox" id="${id}__toggle">
+      <label for="${id}__toggle">
+        <Slot name="Placeholder">Select</Slot>
+      </label>
+      `
+    })();
+  }}
+
+  <div class="select">
+    <div class="select__options">
+      <Slot name="Scope"></Slot>
+    </div>
+  </div>
+
+</div>

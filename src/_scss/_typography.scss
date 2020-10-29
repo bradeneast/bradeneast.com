@@ -1,22 +1,8 @@
-@font-face {
-	font-family: "Recursive";
-	src: url("/_assets/fonts/Recursive.woff2") format("woff2-variations");
-	font-weight: 300 1000;
-	font-display: swap;
-}
-
 :root {
-	font-size: calc(12px + 0.85vmin);
-	font-family: "Recursive", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Nueue", "Roboto", sans-serif;
-	font-variation-settings: nth($fontVariations, 1);
-	line-height: 1.63;
+	font-size: calc(12px + 0.63vmin);
+	font-family: $fontFamily;
+	line-height: 1.5;
 	color: var(--g1);
-}
-
-@media screen and (max-width: $mobile) {
-	:root {
-		font-size: 14px;
-	}
 }
 
 body {
@@ -30,16 +16,14 @@ blockquote,
 pre,
 ul,
 ol {
-	margin-bottom: $flow1;
+	margin-bottom: $flow2;
 }
 
-ul,
-ol {
+li {
 	padding-left: $flow1;
 
-	li::marker {
+	&::marker {
 		color: var(--g4);
-		font-weight: $fontWeightHeavy;
 	}
 }
 
@@ -52,10 +36,6 @@ blockquote {
 	p {
 		margin: 0;
 	}
-}
-
-blockquote {
-	border-left: $borderWidth $borderStyle var(--primary);
 }
 
 br {
@@ -74,10 +54,15 @@ hr {
 	padding-bottom: $flow4;
 }
 
+strong {
+	font-weight: $fontWeightHeavy;
+}
+
 em {
+	font-family: $altFontFamily;
+	font-weight: $fontWeightRegular;
 	font-style: normal;
-	color: var(--primary);
-	font-variation-settings: nth($fontVariations, 2);
+	font-variation-settings: "slnt" -13, "CRSV" 1, "CASL" 1;
 	transition: $colorTransition;
 }
 
@@ -85,6 +70,10 @@ del {
 	color: var(--g5);
 	display: inline;
 	overflow-wrap: break-word;
+}
+
+.light-text {
+	color: var(--g4);
 }
 
 ::selection,
@@ -99,10 +88,13 @@ a {
 	text-decoration-thickness: 0.1em;
 	transition: $colorTransition;
 
+	&[href="undefined"] {
+		display: none;
+	}
+
 	&:hover,
 	&:focus {
-		color: inherit;
-		font-weight: var(--fontWeightHeavy);
+		color: var(--g0);
 	}
 
 	&:hover {
@@ -120,32 +112,76 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--g0);
-	line-height: 1.2;
-	letter-spacing: -0.01em;
+	color: var(--g1);
 	margin-bottom: 0.37em;
-	font-weight: var(--fontWeightHeavy);
-	font-variation-settings: nth($fontVariations, 3);
+	line-height: 1.2;
+	padding-top: 0.1em;
+	font-weight: $fontWeightHeavy;
+}
 
-	a {
-		font-weight: var(--fontWeightMedium);
-		text-decoration-color: transparent;
+main {
+	h1 {
+		font-size: 4rem;
+		line-height: 0.95;
+		letter-spacing: -0.037em;
+		padding-top: 0;
+
+		em {
+			letter-spacing: -0.063em;
+		}
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: calc(100% + #{$flow1});
+			height: $borderWidth;
+			background: currentColor;
+		}
+	}
+
+	h2::before {
+		width: 4em;
+	}
+
+	h3::before {
+		width: 3em;
+	}
+
+	h4::before {
+		width: 2em;
+	}
+
+	h5::before {
+		width: 1em;
 	}
 }
 
-h1 {
-	font-size: calc(1.85em + 1.85vmin);
-	letter-spacing: -0.04em;
-	line-height: 1;
+h2:not(:first-child) {
+	margin-top: $flow3;
+	margin-bottom: $flow2;
 }
 
-h2,
-h3 {
-	color: var(--g1);
+h3:not(:first-child) {
+	margin-top: $flow2;
+	margin-bottom: $flow1;
 }
 
-h4,
-h5,
-h6 {
-	color: var(--g2);
+@media screen and (max-width: $mobile) {
+	:root {
+		font-size: 15px;
+	}
+
+	main {
+		h1 {
+			margin-top: $flow4;
+			font-size: 3.7rem;
+		}
+	}
 }

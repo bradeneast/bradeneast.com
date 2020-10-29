@@ -2,7 +2,17 @@ table {
 	width: 100%;
 	text-align: left;
 	margin-bottom: $flow1;
-	font-variation-settings: "MONO" 1, "CASL" 1;
+	border-collapse: collapse;
+
+	td:first-of-type,
+	thead {
+		color: var(--g2);
+	}
+
+	thead {
+		padding: $flow1 0;
+		border-bottom: $borderWidth $borderStyle var(--g6);
+	}
 
 	td,
 	th {
@@ -10,34 +20,19 @@ table {
 		word-break: break-all;
 		padding: 0.37em;
 		line-height: 1.2;
-		border-right: $borderWidth $borderStyle var(--g7);
-		border-bottom: $borderWidth $borderStyle var(--g7);
-
-		&:last-of-type {
-			border-right: none;
-		}
 	}
 
-	td:first-of-type {
-		font-variation-settings: nth($fontVariations, 2);
+	tr:nth-of-type(2n) {
+		background: var(--g7);
 	}
 
 	td strong::after {
-		content: "";
+		content: "★";
+		color: var(--primary);
 		position: absolute;
-		top: 0;
+		bottom: 50%;
 		left: 100%;
-		width: 0.5em;
-		height: 0.5em;
-		background: var(--primary);
-		border-radius: 50%;
-	}
-
-	tr:last-of-type td {
-		border-bottom: none;
-	}
-
-	* {
-		text-align: inherit;
+		font-size: 0.63em;
+		transform: rotate(12deg);
 	}
 }

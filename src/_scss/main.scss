@@ -30,6 +30,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: inherit;
+	font-size: inherit;
 	line-height: inherit;
 	color: inherit;
 	position: relative;
@@ -42,16 +43,6 @@
 	outline-offset: $borderWidth;
 }
 
-html,
-body {
-	overflow-x: hidden;
-}
-
-html {
-	scrollbar-width: initial;
-	background: var(--g8);
-}
-
 ::-webkit-scrollbar {
 	background: transparent;
 
@@ -61,36 +52,8 @@ html {
 }
 
 body {
-	min-height: 100vh;
-	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-template-rows: 1fr auto;
-	padding: 4vh 2vw 1vh 2vw;
 	background: var(--g8);
 	transition: $colorTransition;
-
-	& > * {
-		padding-top: inherit;
-		padding-bottom: inherit;
-	}
-}
-
-footer {
-	grid-column: 1 / -1;
-}
-
-main {
-	padding-top: $flow4;
-	padding-bottom: $flow2;
-
-	& > *:not(hr) {
-		margin-left: $flow2;
-	}
-
-	[class*="border-"] {
-		margin-left: 0;
-		padding-left: $flow2;
-	}
 }
 
 img,
@@ -121,61 +84,15 @@ video {
 	background: var(--g5);
 }
 
+@import "./util";
+@import "./layout";
+@import "./nav";
 @import "./preferences";
 @import "./typography";
-@import "./util";
-@import "./nav";
-@import "./button";
 @import "./animation";
-@import "./input";
-@import "./post";
 @import "./blurb";
-@import "./feed";
 @import "./table";
 @import "./form";
-// @import "./project";
-@import "./footer";
 @import "./prism";
 @import "./retro";
 @import "./print";
-
-@media screen and (max-width: $mobile) {
-	body {
-		--animationSize: 15rem;
-		padding-top: $flow1;
-		grid-template-columns: 1fr;
-		grid-template-rows: initial;
-		align-content: start;
-		padding-bottom: 0;
-
-		main,
-		aside {
-			padding-top: $flow4;
-		}
-
-		aside {
-			padding: 0;
-		}
-
-		main > :not(hr) {
-			margin-right: $flow1 / 2;
-			margin-left: $flow1 / 2;
-		}
-
-		footer {
-			padding: $flow2 $flow1 $flow1 $flow1;
-			flex-flow: row wrap;
-			justify-items: center;
-			justify-content: center;
-			text-align: center;
-
-			& > * {
-				margin: 0 auto;
-			}
-
-			.copyright {
-				margin-bottom: $flow1;
-			}
-		}
-	}
-}

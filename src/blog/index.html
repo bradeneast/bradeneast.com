@@ -1,14 +1,21 @@
 <Brick use="/_/lg/main.html">
-	<Title>The blog for dev-signers</Title>
+	<Title>Blog</Title>
 
 	<Content>
 		<h1>The blog for <em>dev-signers</em></h1>
-		<p>
+		<p class="light-text">
 			For moments of spontaneity, <a href="/random" data-no-schwifty>here's a random post</a>.
 		</p>
-		<ul class="feed border-top">
-			<Each from="blog/." sort="-Published" use="/_/md/feedItems/withImage.html"></Each>
-		</ul>
 	</Content>
+
+	<Aside>
+		<Brick use="/_/md/selectDropdown.html">
+			<Name>Post navigation</Name>
+			<Scope>
+				<Each from="blog/." sort="-Published" use="/_/md/selectOption.html"></Each>
+			</Scope>
+			<Placeholder>Select a post</Placeholder>
+		</Brick>
+	</Aside>
 
 </Brick>

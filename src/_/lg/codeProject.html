@@ -5,39 +5,54 @@
 	</Title>
 
 	<Content>
-		<article>
 
-			<div class="post--header__image">
-				<img width="540" height="360" src="{{Image}}" />
+		<div>
+			<img width="540" height="360" src="{{Image}}" />
+		</div>
+
+		<div>
+
+			<div class="pad-horizontal">
+				<div>
+					<Slot name="Tags"></Slot>
+				</div>
+				<div class="light-text">
+					<Slot name="Type">
+						@{{Math.round(Body.split(' ').length * .01)}}-minute read
+					</Slot>
+				</div>
 			</div>
 
-			<div class="post--wrapper limited-width">
+			<div>
+				<Slot name="Body">
+					This post doesn't have a body.
+				</Slot>
 
-				<div class="post--info">
-					<h1 class="post--info__title">
-						<Slot name="Title"></Slot>
-					</h1>
-					<div class="post--info__meta">
-						<Slot name="Tags"></Slot>
-					</div>
-					<div class="post--info__meta">
-						<Slot name="Type"></Slot>
-					</div>
-				</div>
-
-				<div class="post--body">
-					<Slot name="Body">
-						This post doesn't have a body.
-					</Slot>
-
-					<a class="button" target="_blank" href="{{Github}}">
+				<p>
+					<a target="_blank" href="{{Github}}">
 						Peruse <Slot name="Title"></Slot> on Github
 					</a>
-				</div>
+				</p>
 
+				<hr />
+
+				<div class="flex float-children">
+
+					<a style="text-decoration: none;" href="{{sys.previous.sys.href}}">
+						<div class="light-text">previous</div>
+						<strong>{{sys.previous.Title}}</strong>
+					</a>
+
+					<a style="text-decoration: none;" href="{{sys.next.sys.href}}">
+						<div class="light-text">next</div>
+						<strong>{{sys.next.Title}}</strong>
+					</a>
+
+				</div>
 			</div>
 
-		</article>
+		</div>
+
 	</Content>
 
 </Brick>
