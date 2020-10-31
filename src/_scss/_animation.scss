@@ -70,16 +70,16 @@ html {
 	}
 
 	&::before {
-		color: var(--g0);
-		background: var(--g7);
-		font-size: 0.85rem;
-		position: absolute;
 		content: attr(data-tooltip);
-		min-width: 8em;
+		position: absolute;
+		color: var(--g0);
+		background: var(--g6);
+		font-size: 0.85rem;
+		max-width: 10em;
 		right: 0.4em;
 		bottom: 100%;
-		padding: $space / 2 $space;
-		padding-bottom: $space + $space * 0.5;
+		padding: $space;
+		padding-bottom: $space * 2;
 		pointer-events: none;
 		opacity: 0;
 		transform: translate(50%, 1em);

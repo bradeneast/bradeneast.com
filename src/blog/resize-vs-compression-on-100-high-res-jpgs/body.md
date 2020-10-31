@@ -1,8 +1,6 @@
 What is the best way, objectively, to reduce the file size of a JPG image for the web? Let's get scientific today, and do some quantitative testing.
 
-For the last decade or so, the standard for large images has been 1920px wide with medium lossy compression, usually weighing in at 300kb-400kb. That's changing quickly. In a few years, everything will have a 4k or 8k display. When I switched to a 4k monitor, I immediately noticed that most images on the web are too small for these displays. In fact, finding a "sharp at 4k" image online is rare.*
-
-> *Don't forget the occasional 6mb image that nobody bothered to optimize.
+For the last decade or so, the standard for large images has been 1920px wide with medium lossy compression, usually weighing in at 300kb-400kb. That's changing quickly. In a few years, everything will have a 4k or 8k display. When I switched to a 4k monitor, I immediately noticed that most images on the web are too small for these displays. In fact, finding a "sharp at 4k" image online <span data-tooltip="Don't forget the occasional 6mb image that nobody bothered to optimize.">is rare.</span>
 
 That said, is there a way to squeeze more mileage out of high-res images for the web? That's what I wanted to find out, so I tested the two most common optimizations: Compression and Resizing.
 

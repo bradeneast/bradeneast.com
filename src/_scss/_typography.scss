@@ -54,7 +54,8 @@ hr {
 	padding-bottom: $flow4;
 }
 
-strong {
+strong,
+.strong {
 	font-weight: $fontWeightHeavy;
 }
 
@@ -128,6 +129,7 @@ main {
 
 		em {
 			letter-spacing: -0.063em;
+			font-weight: $fontWeightMedium;
 		}
 	}
 

@@ -4,11 +4,11 @@ import { $, $$, altFromSrc, elem } from "./utils";
 export default function prepMedia() {
 
 	// Image alts
-	for (let img of $$('img')) {
-		if (!img.alt?.length)
-			img.alt = img.alt || altFromSrc(img.src);
-		img.parentElement.classList.add('has-img');
-		img.parentElement.title = img.title;
+	for (let media of $$('img, video')) {
+		if (!media.alt?.length)
+			media.alt = media.alt || altFromSrc(media.src);
+		media.parentElement.classList.add('has-media');
+		media.parentElement.title = media.title;
 	}
 
 

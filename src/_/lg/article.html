@@ -4,53 +4,42 @@
 		<Slot name="Title"></Slot>
 	</Title>
 
+	<Aside>
+		<Brick use="/_/md/selectDropdown.html">
+			<Placeholder>
+				<Slot name="Title"></Slot>
+			</Placeholder>
+			<Scope>
+				<Each sort="-Published" from="(?<!.)/blog/." use="/_/md/selectOption.html"></Each>
+			</Scope>
+		</Brick>
+	</Aside>
+
 	<Content>
 
-		<div>
-			<img width="540" height="360" src="{{Image}}" />
-		</div>
+		<Brick use="/_/md/postContent.html">
+			<Image>
+				<Slot name="Image"></Slot>
+			</Image>
+			<Tags>
+				<Slot name="Tags"></Slot>
+			</Tags>
+			<Type>
+				<Slot name="Type"></Slot>
+			</Type>
 
-		<div>
+			<Body>
+				<Slot name="Body"></Slot>
+			</Body>
+		</Brick>
 
-			<div class="pad-horizontal">
-				<div>
-					<Slot name="Tags"></Slot>
-				</div>
-				<div class="light-text">
-					<Slot name="Type">
-						@{{Math.round(Body.split(' ').length * .01)}}-minute read
-					</Slot>
-				</div>
-			</div>
+		<p>
+			<a class="button" href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
+		</p>
 
-			<div>
-				<Slot name="Body">
-					This post doesn't have a body.
-				</Slot>
+		<hr />
 
-				<p>
-					<a class="button" href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
-				</p>
-
-				<hr />
-
-				<div class="flex float-children">
-
-					<a style="text-decoration: none;" href="{{sys.previous.sys.href}}">
-						<div class="light-text">previous</div>
-						<strong>{{sys.previous.Title}}</strong>
-					</a>
-
-					<a style="text-decoration: none;" href="{{sys.next.sys.href}}">
-						<div class="light-text">next</div>
-						<strong>{{sys.next.Title}}</strong>
-					</a>
-
-				</div>
-
-			</div>
-
-		</div>
+		<Brick use="/_/md/horizontalNav.html"></Brick>
 
 	</Content>
 

@@ -8,18 +8,28 @@
 	grid-template-columns: repeat(auto-fill, minmax(var(--columns), 1fr));
 }
 
-@media screen and (min-width: $mobile) {
-	.alternate-sides > :nth-child(2n) > :last-child {
-		order: -1;
-	}
+.compress {
+	line-height: 1.2;
 }
 
 .limited-width,
-main > *:not(.has-img) {
+main > *:not(.has-media) {
 	max-width: 42rem;
 }
 
+.stagger-child-transitions {
+	@for $i from 2 through 12 {
+		& > :nth-child(#{$i}) {
+			transition-delay: #{($i - 1) * 0.05}s;
+		}
+	}
+}
+
 .float-children {
+	& > * {
+		min-width: 33%;
+	}
+
 	& > :first-child {
 		margin-right: $flow4;
 	}
@@ -30,47 +40,11 @@ main > *:not(.has-img) {
 	}
 }
 
-.pad-horizontal {
+.pad-vertical {
 	padding: $flow4 0;
 }
 
 .hidden {
 	opacity: 0;
 	pointer-events: none;
-}
-
-[class*="border-"] {
-	&::before {
-		content: "";
-		position: absolute;
-		pointer-events: none;
-		top: 0;
-		left: 0;
-		color: var(--g7);
-		background: currentColor;
-		--scaleX: 1;
-		--scaleY: 1;
-		transform: translate3d(0, 0, 0) scale(var(--scaleX), var(--scaleY));
-		transition: $smoothTransition;
-	}
-}
-
-.border-left::before,
-.border-right::before {
-	height: 100%;
-	width: $borderWidth;
-}
-
-.border-top::before,
-.border-bottom::before {
-	width: 100%;
-	height: $borderWidth;
-}
-
-.border-bottom::before,
-.border-right::before {
-	bottom: 0;
-	right: 0;
-	top: auto;
-	left: auto;
 }

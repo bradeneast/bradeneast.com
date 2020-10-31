@@ -3,11 +3,13 @@
     margin-bottom: $flow2;
 
     label {
-      display: inline-block;
-      padding: 0 $flow4 0.37em 0;
+      line-height: 1.2;
+      display: inline-flex;
+      padding: 0 $flow3 0.37em 0;
       border-bottom: $borderStyle $borderWidth var(--g7);
       color: var(--g4);
       cursor: pointer;
+      text-transform: capitalize;
 
       &::after {
         content: "";
@@ -45,6 +47,7 @@
     position: absolute;
     background: var(--g8);
     z-index: 9;
+    width: 100%;
     top: 100%;
     left: 0;
     display: grid;
@@ -65,7 +68,7 @@
   }
 
   .option {
-    transform: scaleY(0) translate3d(0, 0, 0);
+    transform: scaleY(0) translate3d(0, -0.1em, 0);
     transform-origin: top;
     transition: $smoothTransition;
     padding: $flow1;

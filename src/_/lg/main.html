@@ -14,17 +14,14 @@
 		<section>
 			<Brick use="/_/md/selectDropdown.html">
 				<Name>Primary navigation</Name>
-				<Placeholder>Select a page</Placeholder>
 				<Scope>
-					<Each from="(?<!.)/(blog|code)?(?!.)" use="/_/md/selectOption.html"></Each>
+					<Each from="(?<!.)/(blog|code|about)?(?!.)" use="/_/md/selectOption.html"></Each>
 				</Scope>
 			</Brick>
 		</section>
 
 		<section>
-			<Slot name="Aside">
-				<h1>{{Title}}</h1>
-			</Slot>
+			<Slot name="Aside"></Slot>
 		</section>
 
 	</aside>

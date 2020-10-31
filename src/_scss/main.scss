@@ -65,7 +65,7 @@ svg {
 	user-select: none;
 }
 
-.has-img::after {
+.has-media::after {
 	content: attr(title);
 	color: var(--g4);
 }
@@ -84,9 +84,9 @@ video {
 	background: var(--g5);
 }
 
-@import "./util";
 @import "./layout";
 @import "./nav";
+@import "./util";
 @import "./preferences";
 @import "./typography";
 @import "./animation";

@@ -1,0 +1,46 @@
+<Brick use="/_/lg/main.html">
+
+  <Title>
+    <Slot name="Title"></Slot>
+  </Title>
+
+  <Aside>
+    <Brick use="/_/md/selectDropdown.html">
+      <Placeholder>
+        <Slot name="Title"></Slot>
+      </Placeholder>
+      <Scope>
+        <Each sort="-Published" from="(?<!.)/design/." use="/_/md/selectOption.html"></Each>
+      </Scope>
+    </Brick>
+  </Aside>
+
+  <Content>
+
+    <Brick use="/_/md/postContent.html">
+      <Image>
+        <Slot name="Image"></Slot>
+      </Image>
+      <Tags>
+        <Slot name="Tags"></Slot>
+      </Tags>
+      <Type>
+        <Slot name="Type"></Slot>
+      </Type>
+
+      <Body>
+        <Slot name="Body"></Slot>
+      </Body>
+    </Brick>
+
+    <p>
+      <a class="button" href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
+    </p>
+
+    <hr />
+
+    <Brick use="/_/md/horizontalNav.html"></Brick>
+
+  </Content>
+
+</Brick>

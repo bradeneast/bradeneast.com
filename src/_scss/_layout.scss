@@ -21,11 +21,15 @@ main {
   padding-left: $flow2;
   padding-right: $flow2;
   min-width: 20rem;
+
+  iframe {
+    margin-bottom: $flow2;
+  }
 }
 
 aside {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
   gap: 0 $flow1;
   place-items: start;
   align-content: start;
