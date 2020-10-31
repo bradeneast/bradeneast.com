@@ -70,7 +70,7 @@
   .option {
     transform: scaleY(0) translate3d(0, -0.1em, 0);
     transform-origin: top;
-    transition: $smoothTransition;
+    transition: transform $motionTransition, opacity $colorTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);
 
