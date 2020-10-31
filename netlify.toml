@@ -8,11 +8,11 @@ exclude = [
 ]
 
 [[redirects]]
-from = "/*"
-status = 404
-to = "/404/"
-
-[[redirects]]
 from = "/"
 status = "301"
 to = "/about/"
+
+[[redirects]]
+from = "/*"
+status = 404
+to = "/404/"
