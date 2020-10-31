@@ -9,7 +9,7 @@ exclude = [
 
 [[redirects]]
 from = "/"
-status = "301"
+status = 301
 to = "/about/"
 
 [[redirects]]
