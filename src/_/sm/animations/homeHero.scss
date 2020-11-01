@@ -4,6 +4,10 @@
 	--charDelay: 0s;
 	margin-bottom: $flow4;
 
+	h1 {
+		line-height: 0.63;
+	}
+
 	&.paused {
 		*,
 		*::before,
@@ -16,12 +20,14 @@
 .character,
 .designer,
 .developer {
+	z-index: 1;
 	display: inline-block;
 }
 
 .designer {
 	--deleted: 0;
 	--charDelay: 0.5s;
+	z-index: 0;
 	animation: delete 0.5s ease 2s forwards;
 
 	.split {
@@ -31,11 +37,11 @@
 	.split::after {
 		content: "";
 		position: absolute;
-		top: 0.55em;
+		top: 0.4em;
 		left: 0;
 		width: 100%;
-		height: $borderWidth;
-		background: var(--g5);
+		height: $borderWidth + 1px;
+		background: var(--g6);
 		transform-origin: right;
 		transform: scaleX(0);
 		animation: inherit;
@@ -64,7 +70,7 @@
 
 @keyframes delete {
 	to {
-		color: var(--g5);
+		color: var(--g6);
 		transform: scaleX(1);
 	}
 }
