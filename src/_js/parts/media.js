@@ -11,6 +11,10 @@ export default function prepMedia() {
 		media.parentElement.title = media.title;
 	}
 
+	for (let table of $$('table')) {
+		table.outerHTML = `<div class="table-wrapper">${table.outerHTML}</div>`;
+	}
+
 
 	// Embedded Codepens
 	if ($('.codepen')) {
@@ -19,17 +23,4 @@ export default function prepMedia() {
 		script.async = true;
 		document.body.append(script);
 	}
-
-
-	// Embedded Projects
-	// for (let project of $$('.embedded_project')) {
-
-	// 	let button = $('button', project);
-	// 	let iframe = $('iframe', project);
-
-	// 	button.addEventListener('click', () => {
-	// 		iframe.src = iframe.getAttribute('data-src');
-	// 		project.classList.add('loaded');
-	// 	})
-	// }
 }

@@ -1,5 +1,8 @@
+.table-wrapper {
+	overflow-x: auto;
+}
+
 table {
-	width: 100%;
 	text-align: left;
 	margin-bottom: $flow1;
 	border-collapse: collapse;
@@ -16,8 +19,6 @@ table {
 
 	td,
 	th {
-		word-wrap: break-word;
-		word-break: break-all;
 		padding: 0.37em;
 		line-height: 1.2;
 	}
