@@ -4,10 +4,6 @@
 	--charDelay: 0s;
 	margin-bottom: $flow4;
 
-	h1 {
-		line-height: 0.63;
-	}
-
 	&.paused {
 		*,
 		*::before,
@@ -30,21 +26,17 @@
 	z-index: 0;
 	animation: delete 0.5s ease 2s forwards;
 
-	.split {
-		animation: inherit;
-	}
-
 	.split::after {
 		content: "";
 		position: absolute;
-		top: 0.4em;
+		top: 0.5em;
 		left: 0;
 		width: 100%;
-		height: $borderWidth + 1px;
-		background: var(--g6);
+		height: $borderWidth * 2;
+		background: currentColor;
 		transform-origin: right;
 		transform: scaleX(0);
-		animation: inherit;
+		animation: transformReset 0.5s ease 2s forwards;
 	}
 }
 
@@ -58,19 +50,18 @@
 	animation-duration: 0.63s;
 	animation-timing-function: cubic-bezier(0.3, 0.7, 0.1, 1);
 	animation-fill-mode: forwards;
-	animation-name: fadeIn;
+	animation-name: transformReset;
 	animation-delay: calc(var(--charDelay) + 0.03s * var(--index));
 }
 
-@keyframes fadeIn {
+@keyframes transformReset {
 	to {
-		transform: rotateY(0) translate3d(0, 0, 0);
+		transform: scale(1, 1) rotateY(0) rotateX(0) rotateZ(0) translate3d(0, 0, 0);
 	}
 }
 
 @keyframes delete {
 	to {
-		color: var(--g6);
-		transform: scaleX(1);
+		opacity: 0.07;
 	}
 }

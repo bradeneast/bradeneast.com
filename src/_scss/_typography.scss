@@ -113,7 +113,6 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--g1);
 	margin-bottom: 0.37em;
 	line-height: 1.2;
 	padding-top: 0.1em;
@@ -122,9 +121,9 @@ h6 {
 
 main {
 	h1 {
-		font-size: 4rem;
-		line-height: 0.95;
-		letter-spacing: -0.05em;
+		line-height: 0.8;
+		font-size: 6rem;
+		letter-spacing: -0.06em;
 		padding-top: 0;
 
 		em {
@@ -138,6 +137,8 @@ main {
 	h4,
 	h5,
 	h6 {
+		color: var(--g4);
+
 		&::before {
 			content: "";
 			position: absolute;
