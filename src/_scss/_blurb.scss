@@ -1,7 +1,41 @@
 .blurb,
 .technologies {
   padding-top: $flow4;
-  margin-bottom: $flow4;
+}
+
+.blurb {
+  &__text {
+    padding: $flow1;
+    border: $borderWidth $borderStyle var(--g6);
+    transition: $colorTransition;
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--primary);
+
+      h2 {
+        transition: $colorTransition;
+        color: inherit;
+      }
+    }
+
+    * {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    position: absolute;
+    top: -0.63em;
+    left: $flow1 / 2;
+    padding: 0 $flow1 / 2;
+    background: var(--g8);
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .technologies {
