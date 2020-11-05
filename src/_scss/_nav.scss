@@ -26,7 +26,7 @@
     }
 
     .select:focus-within,
-    input[type="checkbox"]:checked ~ .select {
+    input:checked ~ .select {
       .select__options {
         opacity: 1;
         pointer-events: all;
@@ -37,7 +37,7 @@
       }
     }
 
-    input[type="checkbox"] {
+    input {
       opacity: 0.001;
       position: absolute;
     }
@@ -56,10 +56,6 @@
     opacity: 0;
     pointer-events: none;
     transition: $colorTransition;
-
-    &:hover .option {
-      opacity: 0.63;
-    }
   }
 
   * {
@@ -70,13 +66,16 @@
   .option {
     transform: scaleY(0) translate3d(0, -0.1em, 0);
     transform-origin: top;
-    transition: transform $motionTransition, opacity $colorTransition;
+    transition: all $colorTransition, transform $motionTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);
 
+    &[aria-current] {
+      border-left-color: var(--primary);
+    }
+
     &:hover,
     &:focus-within {
-      opacity: 1;
       background: var(--g7);
     }
   }

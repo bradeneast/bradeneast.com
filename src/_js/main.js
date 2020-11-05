@@ -3,8 +3,13 @@ import prepCodeBlocks from './parts/codeBlocks';
 import startListeners from './parts/listeners';
 import prepMedia from './parts/media';
 import Schwifty from './libs/schwifty';
+import { $$ } from './parts/utils';
 
 function init() {
+
+	$$(`a[href="${location.pathname}"]`)
+		.forEach(a => a.setAttribute('aria-current', true));
+
 	prepAnimations();
 	prepMedia();
 	prepCodeBlocks();

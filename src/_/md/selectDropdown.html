@@ -4,8 +4,12 @@
     (() => {
       let id = Math.round(new Date().getTime() * Math.random());
       return `
-      <input type="checkbox" id="${id}__toggle">
-      <label class="compress" for="${id}__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="${id}" />
+      <label class="compress" for="${id}">
         <Slot name="Placeholder">${sys.href.split('/')[1]}</Slot>
       </label>
       `
