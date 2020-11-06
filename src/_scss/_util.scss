@@ -13,14 +13,14 @@
 }
 
 .limited-width,
-main > *:not(.has-media) {
+main > *:not(.has-media):not(.cp_embed_wrapper) {
 	max-width: 44rem;
 }
 
 .stagger-child-transitions {
 	@for $i from 2 through 12 {
 		& > :nth-child(#{$i}) {
-			transition-delay: #{($i - 1) * 0.05}s, 0s;
+			transition-delay: #{($i - 1) * 0.05}s, 0s, 0s;
 		}
 	}
 }
@@ -41,7 +41,7 @@ main > *:not(.has-media) {
 }
 
 .pad-vertical {
-	padding: $flow4 0;
+	padding: $flow6 0;
 }
 
 .hidden {

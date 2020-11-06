@@ -6,6 +6,7 @@ table {
 	text-align: left;
 	margin-bottom: $flow1;
 	border-collapse: collapse;
+	min-width: 100%;
 
 	td:first-of-type,
 	thead {

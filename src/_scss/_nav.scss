@@ -1,5 +1,6 @@
 .select {
   &-wrapper {
+    margin-right: $flow1;
     margin-bottom: $flow2;
 
     label {
@@ -16,7 +17,7 @@
         width: 0.63em;
         height: 0.63em;
         position: absolute;
-        top: 0.28em;
+        top: 0.15em;
         right: 0;
         border-right: $borderWidth $borderStyle;
         border-bottom: $borderWidth $borderStyle;
@@ -66,7 +67,7 @@
   .option {
     transform: scaleY(0) translate3d(0, -0.1em, 0);
     transform-origin: top;
-    transition: all $colorTransition, transform $motionTransition;
+    transition: transform $motionTransition, background $colorTransition, color $colorTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);
 

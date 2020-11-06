@@ -23,21 +23,30 @@ main {
   min-width: 20rem;
 
   iframe {
+    height: 24rem;
     margin-bottom: $flow2;
   }
 }
 
 aside {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-  gap: 0 $flow1;
-  place-items: start;
-  align-content: start;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
   flex: 2;
 
   section {
     width: 100%;
     padding: 0 2vw;
+
+    &:first-child {
+      width: 37%;
+      min-width: 10em;
+    }
+
+    &:last-child {
+      width: 63%;
+      min-width: 20em;
+    }
 
     a {
       display: block;
