@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="1496863721549__toggle">
-      <label class="compress" for="1496863721549__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="1504618969271" />
+      <label class="compress" for="1504618969271">
         blog
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="211205772188__toggle">
-      <label class="compress" for="211205772188__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="1254861342871" />
+      <label class="compress" for="1254861342871">
         Resize vs compression on 100 high-res JPGs
       </label>
       
@@ -198,7 +206,7 @@
   <img width="540" height="360" src="/_assets/images/black-pentax-digital-camera.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Accessibility, Performance
   </div>

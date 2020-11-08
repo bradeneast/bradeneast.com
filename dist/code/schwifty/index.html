@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="584569251051__toggle">
-      <label class="compress" for="584569251051__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="1191987285662" />
+      <label class="compress" for="1191987285662">
         code
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="794167993457__toggle">
-      <label class="compress" for="794167993457__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="1509062400826" />
+      <label class="compress" for="1509062400826">
         Schwifty.js
       </label>
       
@@ -149,7 +157,7 @@
   <img width="540" height="360" src="/_assets/images/schwifty/logo.svg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Javascript, Performance, Static-Sites
   </div>

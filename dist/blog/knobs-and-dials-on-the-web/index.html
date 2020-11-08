@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="46236977573__toggle">
-      <label class="compress" for="46236977573__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="32551912797" />
+      <label class="compress" for="32551912797">
         blog
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="1334002619057__toggle">
-      <label class="compress" for="1334002619057__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="280202938293" />
+      <label class="compress" for="280202938293">
         Knobs and dials on the web
       </label>
       
@@ -198,7 +206,7 @@
   <img width="540" height="360" src="/_assets/images/sound-board.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     UI, CSS, HTML
   </div>

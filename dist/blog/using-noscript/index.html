@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="544791756423__toggle">
-      <label class="compress" for="544791756423__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="637638092339" />
+      <label class="compress" for="637638092339">
         blog
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="533871967130__toggle">
-      <label class="compress" for="533871967130__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="445074810822" />
+      <label class="compress" for="445074810822">
         Using Noscript
       </label>
       
@@ -198,7 +206,7 @@
   <img width="540" height="360" src="/_assets/images/staring-at-a-blank-screen.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Javascript, HTML, Accessibility
   </div>

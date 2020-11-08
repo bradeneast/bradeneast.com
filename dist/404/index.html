@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="1189322323420__toggle">
-      <label class="compress" for="1189322323420__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="153966439976" />
+      <label class="compress" for="153966439976">
         404
       </label>
       

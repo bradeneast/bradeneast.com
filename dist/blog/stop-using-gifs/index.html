@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="681953476984__toggle">
-      <label class="compress" for="681953476984__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="187494390947" />
+      <label class="compress" for="187494390947">
         blog
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="872152667628__toggle">
-      <label class="compress" for="872152667628__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="233997884501" />
+      <label class="compress" for="233997884501">
         Stop Using Gifs
       </label>
       
@@ -198,7 +206,7 @@
   <img width="540" height="360" src="/_assets/images/storm-troopers-lined-up-in-formation.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Accessibility, Performance, HTML
   </div>

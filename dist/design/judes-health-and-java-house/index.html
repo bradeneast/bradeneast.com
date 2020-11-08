@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="232111658250__toggle">
-      <label class="compress" for="232111658250__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="73401060720" />
+      <label class="compress" for="73401060720">
         design
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="1493029771260__toggle">
-      <label class="compress" for="1493029771260__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="669670983666" />
+      <label class="compress" for="669670983666">
         Jude's Health & Java House
       </label>
       
@@ -156,7 +164,7 @@
   <img width="540" height="360" src="/_assets/images/judes/judes-hero.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Logo Identity
   </div>

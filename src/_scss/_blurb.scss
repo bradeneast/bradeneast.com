@@ -10,7 +10,8 @@
     transition: $colorTransition;
 
     &:hover,
-    &:focus-within {
+    &:focus-within,
+    &.intersecting {
       border-color: var(--primary);
 
       h2 {

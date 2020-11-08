@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="1251100914523__toggle">
-      <label class="compress" for="1251100914523__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="356867732302" />
+      <label class="compress" for="356867732302">
         blog
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="288759140857__toggle">
-      <label class="compress" for="288759140857__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="886888322101" />
+      <label class="compress" for="886888322101">
         Change the color of list markers with just CSS
       </label>
       
@@ -198,7 +206,7 @@
   <img width="540" height="360" src="/_assets/images/rows-of-dark-glass-bottles.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     CSS, HTML, Typography
   </div>

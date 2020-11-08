@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="573380516781__toggle">
-      <label class="compress" for="573380516781__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="960586733982" />
+      <label class="compress" for="960586733982">
         design
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="267877922414__toggle">
-      <label class="compress" for="267877922414__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="93055744672" />
+      <label class="compress" for="93055744672">
         360 Farms
       </label>
       
@@ -156,7 +164,7 @@
   <img width="540" height="360" src="/_assets/images/360/360-hero.jpg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Branding, Logo Identity
   </div>

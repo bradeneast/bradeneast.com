@@ -73,8 +73,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="574492835424__toggle">
-      <label class="compress" for="574492835424__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="90835406148" />
+      <label class="compress" for="90835406148">
         code
       </label>
       
@@ -113,8 +117,12 @@
 			<div class="select-wrapper">
 
   
-      <input type="checkbox" id="1570511129972__toggle">
-      <label class="compress" for="1570511129972__toggle">
+    <input 
+    type="checkbox" 
+    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
+    name="dropdown" 
+    id="492965688950" />
+      <label class="compress" for="492965688950">
         WRDS
       </label>
       
@@ -149,7 +157,7 @@
   <img width="540" height="360" src="/_assets/images/wrds/logo.svg" />
 </div>
 
-<div class="pad-vertical">
+<div style="margin: 0;" class="pad-vertical">
   <div>
     Typescript, lit-html, Netlify
   </div>
