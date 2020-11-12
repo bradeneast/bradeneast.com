@@ -6,17 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>
-		Schwifty.js
+		Code Demo Builder
 	</title>
-	<meta name="description" content="Braden East | Schwifty.js" />
+	<meta name="description" content="Braden East | Code Demo Builder" />
 
-	<meta property="og:title" content="Schwifty.js" />
-	<meta property="og:description" content="Braden East | Schwifty.js" />
+	<meta property="og:title" content="Code Demo Builder" />
+	<meta property="og:description" content="Braden East | Code Demo Builder" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="https://www.bradeneast.com/code/schwifty" />
+	<meta property="og:url" content="https://www.bradeneast.com/admin/code" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Braden East" />
-	<meta property="og:image" content="https://www.bradeneast.com/_assets/images/schwifty/logo.svg" />
+	<meta property="og:image" content="https://www.bradeneast.comundefined" />
 	<meta property="og:image:width" content="1620" />
 	<meta property="og:image:height" content="1080" />
 	<meta name="twitter:card" content="summary" />
@@ -27,7 +27,7 @@
 	<meta name="msapplication-TileImage" content="https://www.bradeneast.com/_assets/favicon_padded.png" />
 
 	<base href="/" />
-	<link rel="canonical" href="https://www.bradeneast.com/code/schwifty">
+	<link rel="canonical" href="https://www.bradeneast.com/admin/code">
 	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
 	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
 
@@ -77,9 +77,9 @@
     type="checkbox" 
     oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
     name="dropdown" 
-    id="295903643789" />
-      <label class="compress" for="295903643789">
-        code
+    id="498699217245" />
+      <label class="compress" for="498699217245">
+        admin
       </label>
       
 
@@ -114,150 +114,48 @@
 		</section>
 
 		<section>
-			<div class="select-wrapper">
-
-  
-    <input 
-    type="checkbox" 
-    oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
-    name="dropdown" 
-    id="1050611722549" />
-      <label class="compress" for="1050611722549">
-        Schwifty.js
-      </label>
-      
-
-  <div class="select">
-    <div class="select__options stagger-child-transitions">
-      <a class="option" href="/code/WRDS">
-  <h2>
-    WRDS
-  </h2>
-  <div class="light-text">
-    Typescript, lit-html, Netlify
-  </div>
-</a><a class="option" href="/code/schwifty">
-  <h2>
-    Schwifty.js
-  </h2>
-  <div class="light-text">
-    Javascript, Performance, Static-Sites
-  </div>
-</a>
-    </div>
-  </div>
-
-</div>
+			
 		</section>
 
 	</aside>
 
 	<main>
-		<div>
-  <img width="540" height="360" src="/_assets/images/schwifty/logo.svg" />
-</div>
+		<script>
+			window.Prism = window.Prism || {};
+			Prism.manual = true;
+		</script>
+		<script defer src="/_assets/js/codeDemo.js"></script>
 
-<div style="margin: 0;" class="pad-vertical">
-  <div>
-    Javascript, Performance, Static-Sites
-  </div>
-  <div class="light-text">
-    Library
-  </div>
-</div>
+		<link rel="stylesheet" href="/_assets/css/codeDemo.css">
 
-<p>Schwfity is my first published Javascript library. It aims to help static sites join the instant-load party 🥳 with native and progressive apps.</p>
-<h2 id="arent-static-sites-already-fast">Aren’t static sites already fast?</h2>
-<p><em>Yes!</em> Static sites can have serious performance advantages. However, there are several “gotchas” where they can be slowed down <strong><em>dramatically</em></strong>.</p>
-<ol>
-<li>Slow DNS lookup</li>
-<li>Slow server response</li>
-<li>Slow SSL negotiation</li>
-<li>No asset compression (GZIP, Brotli, etc.)</li>
-<li>No server-side caching</li>
-<li>Resources spread out over lots of domains (CDNs, third-party scripts, Google fonts, etc.)</li>
-</ol>
-<p>It’s possible to have these all dialed in, but even a highly-optimized server is sometimes not able to deliver smooth, instantaneous navigation.</p>
-<blockquote>
-<p>Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections can wait at least 300ms for page loads.</p>
-</blockquote>
-<p><video autoplay playsinline loop muted src="/_assets/images/schwifty/speedDemo.mp4"></video></p>
-<h2 id="how-does-schwifty-solve-this-problem">How does Schwifty solve this problem?</h2>
-<p>Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It essentially <del>lazy-loads</del> <em>lazy-preloads</em> links as they scroll into view. When a link is clicked, the content is swapped out and navigation happens.</p>
-<p>Finally, Schwifty is built for the lightest possible client-side load. That’s why <em data-tooltip="Minified and gzipped, of course"><strong>it’s only 1.1kb</strong></em>.</p>
-<h2 id="technologies">Technologies</h2>
-<div class="technologies grid">
+		<section>
+			<pre id="output" class="line-numbers"></pre>
+			<div class="flex" style="position: absolute; top: auto; bottom: 0; width: 100%; padding: 2em">
+				<strong class="copyright">&copy; Braden East</strong>
+				<a href="https://bradeneast.com/" style="margin-left: auto; color: inherit;">bradeneast.com</a>
+			</div>
+		</section>
 
-<div class="technology">
+		<section class="grid">
 
-	<div>
-		<img src="/_assets/images/technologies/github.svg" />
-	</div>
+			<textarea placeholder="Write your code here..." id="input"></textarea>
 
-	<h3>
-		Git & Github
-	</h3>
-	<p>
-		I used git branches to add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
-	</p>
+			<div>
+				<div>
+					<input type="radio" name="lang" id="javascript" checked>
+					<label for="javascript"></label>
+				</div>
+				<div>
+					<input type="radio" name="lang" id="html">
+					<label for="html"></label>
+				</div>
+				<div>
+					<input type="radio" name="lang" id="css">
+					<label for="css"></label>
+				</div>
+			</div>
 
-</div>
-
-<div class="technology">
-
-	<div>
-		<img src="/_assets/images/technologies/javascript.svg" />
-	</div>
-
-	<h3>
-		Javascript ES6
-	</h3>
-	<p>
-		I leveraged several features of modern Javascript, including Classes, new Array methods, and the Intersection Observer API.
-	</p>
-
-</div>
-
-<div class="technology">
-
-	<div>
-		
-			<img src="/_assets/images/technologies/default-tech.svg" />
-		
-	</div>
-
-	<h3>
-		esbuild
-	</h3>
-	<p>
-		I used the <a target="_blank" href="https://github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
-	</p>
-
-</div>
-
-</div>
-
-		<p>
-			<a target="_blank" href="https://github.com/bradeneast/schwifty">
-				Peruse Schwifty.js on Github
-			</a>
-		</p>
-
-		<hr />
-
-		<div class="flex float-children">
-
-  <a style="text-decoration: none;" href="/code/WRDS">
-    <div class="light-text">previous</div>
-    <div class="strong compress">WRDS</div>
-  </a>
-
-  <a style="text-decoration: none;" href="undefined">
-    <div class="light-text">next</div>
-    <div class="strong compress">undefined</div>
-  </a>
-
-</div>
+		</section>
 	</main>
 
 	<footer>
