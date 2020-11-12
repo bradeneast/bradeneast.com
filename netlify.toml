@@ -22,7 +22,7 @@ status = 200
 force = true
 from = "/admin/*"
 status = 401
-to = "/login"
+to = "/admin/login"
 
 [[redirects]]
 from = "/*"
