@@ -10,6 +10,7 @@
       border-bottom: $borderStyle $borderWidth var(--g7);
       color: var(--g4);
       cursor: pointer;
+      user-select: none;
       text-transform: capitalize;
 
       &::after {

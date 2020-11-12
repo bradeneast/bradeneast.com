@@ -21,7 +21,7 @@ export default function prepAnimations() {
 
 	let animationClass = 'animate-in';
 	let observerTargets = $$(`.${animationClass}`);
-	let observer = new IntersectionObserver(handleIntersection, { threshold: 1, rootMargin: '-100px' });
+	let observer = new IntersectionObserver(handleIntersection, { threshold: 1 });
 
 	observerTargets.forEach(target => observer.observe(target));
 
