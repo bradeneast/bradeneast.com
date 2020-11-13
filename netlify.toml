@@ -7,6 +7,10 @@ exclude = [
   '**/random/*',
 ]
 
+#############
+# REDIRECTS #
+#############
+
 [[redirects]]
 from = "/"
 status = 301
@@ -20,7 +24,7 @@ status = 200
 
 [[redirects]]
 force = true
-from = "/admin"
+from = "/admin/*"
 status = 401
 to = "/admin/login"
 
