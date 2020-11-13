@@ -1,14 +1,19 @@
-<Brick use="/_/lg/main.html">
-	<Title>Create a Code Demo</Title>
-	<Content>
+<Brick use="/_/lg/adminPage.html">
 
+	<Title>
+		Create a Code Demo
+	</Title>
+
+	<Aside>
 		<script>
 			window.Prism = window.Prism || {};
 			Prism.manual = true;
 		</script>
 		<script defer src="/_assets/js/codeDemo.js"></script>
-
 		<link rel="stylesheet" href="/_assets/css/codeDemo.css">
+	</Aside>
+
+	<Content>
 
 		<section>
 			<pre id="output" class="line-numbers"></pre>
