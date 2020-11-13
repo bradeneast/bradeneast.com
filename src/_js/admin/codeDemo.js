@@ -1,4 +1,4 @@
-import { $, elem, ls, reformLines } from './parts/utils';
+import { $, elem, ls, reformLines } from './utils';
 import Prism, { languages } from './libs/prism';
 
 let output = $('#output');

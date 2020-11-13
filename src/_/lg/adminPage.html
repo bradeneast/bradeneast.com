@@ -1,0 +1,15 @@
+<Brick use="/_/lg/main.html">
+  <Title>
+    <Slot name="Title"></Slot>
+  </Title>
+  <Content>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer src="/_assets/js/admin.js"></script>
+    <!-- Add a menu:
+    Log in / Sign up - when the user is not logged in
+    Username / Log out - when the user is logged in
+    -->
+    <div data-netlify-identity-menu></div>
+    <Slot name="Content"></Slot>
+  </Content>
+</Brick>

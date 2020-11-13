@@ -1,4 +1,4 @@
-import { $, $$, getRandomPage, togglePref } from "./utils";
+import { $, $$, getRandomPage, togglePref } from "../../utils";
 
 export default function startListeners() {
 

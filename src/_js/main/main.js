@@ -2,8 +2,8 @@ import prepAnimations from './parts/animations';
 import prepCodeBlocks from './parts/codeBlocks';
 import startListeners from './parts/listeners';
 import prepMedia from './parts/media';
-import Schwifty from './libs/schwifty';
-import { $$ } from './parts/utils';
+import Schwifty from '../libs/schwifty';
+import { $$ } from '../utils';
 
 function init() {
 

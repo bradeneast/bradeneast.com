@@ -37,6 +37,21 @@ input {
 			background: var(--g8);
 			border-color: var(--primary);
 		}
+
+		&:hover {
+			background: var(--g7);
+		}
+	}
+
+	&[type="number"] {
+		-webkit-appearance: textfield;
+		-moz-appearance: textfield;
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button {
+			margin: 0;
+			appearance: none;
+		}
 	}
 
 	&[type="checkbox"],
@@ -100,6 +115,7 @@ button {
 	display: block;
 	color: var(--g2);
 	background: none;
+	padding: 0.37em 0.63em;
 	border: $borderWidth $borderStyle var(--g6);
 	cursor: pointer;
 

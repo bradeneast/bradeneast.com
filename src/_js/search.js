@@ -1,4 +1,4 @@
-import { $, $$, getSitemap, altFromSrc, elem } from "./parts/utils";
+import { $, $$, getSitemap, altFromSrc, elem } from "./utils";
 
 
 let resultContainer = $('.results');

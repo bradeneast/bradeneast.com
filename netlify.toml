@@ -13,14 +13,14 @@ status = 301
 to = "/about/"
 
 [[redirects]]
-conditions = {Role = ["admin"]}
+Role = ["admin"]
 force = true
 from = "/admin/*"
 status = 200
 
 [[redirects]]
 force = true
-from = "/admin/*"
+from = "/admin"
 status = 401
 to = "/admin/login"
 

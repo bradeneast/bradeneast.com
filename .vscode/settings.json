@@ -11,7 +11,7 @@
 	"saveAndRun": {
 		"commands": [
 			{
-				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/main.js --outfile=./dist/_assets/js/main.js",
+				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/main/main.js --outfile=./dist/_assets/js/main.js",
 				"match": ".*src.*js",
 				"silent": true,
 			},
@@ -21,7 +21,7 @@
 				"silent": true,
 			},
 			{
-				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/codeDemo.js --outfile=./dist/_assets/js/codeDemo.js",
+				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/admin/admin.js --outfile=./dist/_assets/js/admin.js",
 				"match": ".*src.*js",
 				"silent": true,
 			},

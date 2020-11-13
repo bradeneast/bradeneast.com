@@ -1,4 +1,4 @@
-import { $$, elem } from "./utils";
+import { $$, elem } from "../../utils";
 
 export default function prepAnimations() {
 

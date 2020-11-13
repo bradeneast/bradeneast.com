@@ -1,4 +1,4 @@
-import { $, $$, altFromSrc, elem } from "./utils";
+import { $, $$, altFromSrc, elem } from "../../utils";
 
 
 export default function prepMedia() {

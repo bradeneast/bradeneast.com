@@ -7,6 +7,15 @@ export let $$ = (selector, context = document) => context.querySelectorAll(selec
 /**Joins all arguments with a newline*/
 export let reformLines = (...args) => args.join('\n');
 
+/**Generates a random integer between 0 and the ceiling */
+export let randomInt = (max = 10) => Math.round(Math.random() * max);
+
+/**Replaces backslashes with forward slashes and removes trailing and double slashes from a path */
+export let normalize = (path) => path.replace(/\/$/, '').replace(/[/\\]+/g, '/');
+
+
+/**Refreshes the page */
+export let redirect = (target = location.href) => location = target;
 
 export let elem = (tagName, content = '') => {
 	let tag = document.createElement(tagName);
