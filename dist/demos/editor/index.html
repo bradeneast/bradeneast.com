@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>
-		Admin
+		Create some code
 	</title>
-	<meta name="description" content="Braden East | Admin" />
+	<meta name="description" content="Braden East | Create some code" />
 
-	<meta property="og:title" content="Admin" />
-	<meta property="og:description" content="Braden East | Admin" />
+	<meta property="og:title" content="Create some code" />
+	<meta property="og:description" content="Braden East | Create some code" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="https://www.bradeneast.com/admin" />
+	<meta property="og:url" content="https://www.bradeneast.com/demos/editor" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Braden East" />
 	<meta property="og:image" content="https://www.bradeneast.comundefined" />
@@ -27,7 +27,7 @@
 	<meta name="msapplication-TileImage" content="https://www.bradeneast.com/_assets/favicon_padded.png" />
 
 	<base href="/" />
-	<link rel="canonical" href="https://www.bradeneast.com/admin">
+	<link rel="canonical" href="https://www.bradeneast.com/demos/editor">
 	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
 	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
 
@@ -77,9 +77,9 @@
     type="checkbox" 
     oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" 
     name="dropdown" 
-    id="1370973091946" />
-      <label class="compress" for="1370973091946">
-        admin
+    id="821846736725" />
+      <label class="compress" for="821846736725">
+        demos
       </label>
       
 
@@ -87,21 +87,21 @@
     <div class="select__options stagger-child-transitions">
       <a class="option" href="/about">
   <h2>
-    About
+    Learn about me
   </h2>
   <div class="light-text">
     
   </div>
 </a><a class="option" href="/blog">
   <h2>
-    Blog
+    Read my blog
   </h2>
   <div class="light-text">
     
   </div>
 </a><a class="option" href="/code">
   <h2>
-    Code
+    See what I'm coding
   </h2>
   <div class="light-text">
     
@@ -120,7 +120,41 @@
 	</aside>
 
 	<main>
-		<h1>You made it to the admin dashboard :)</h1>
+		<script>
+			window.Prism = window.Prism || {};
+			Prism.manual = true;
+		</script>
+		<script defer src="/_assets/js/codeDemo.js"></script>
+		<link rel="stylesheet" href="/_assets/css/codeDemo.css">
+
+		<section>
+			<pre id="output" class="line-numbers"></pre>
+			<div class="flex" style="position: absolute; top: auto; bottom: 0; width: 100%; padding: 2em">
+				<strong class="copyright">&copy; Braden East</strong>
+				<a href="https://bradeneast.com/" style="margin-left: auto; color: inherit;">bradeneast.com</a>
+			</div>
+		</section>
+
+		<section class="grid">
+
+			<textarea placeholder="Write your code here..." id="input"></textarea>
+
+			<div>
+				<div>
+					<input type="radio" name="lang" id="javascript" checked>
+					<label for="javascript"></label>
+				</div>
+				<div>
+					<input type="radio" name="lang" id="html">
+					<label for="html"></label>
+				</div>
+				<div>
+					<input type="radio" name="lang" id="css">
+					<label for="css"></label>
+				</div>
+			</div>
+
+		</section>
 	</main>
 
 	<footer>

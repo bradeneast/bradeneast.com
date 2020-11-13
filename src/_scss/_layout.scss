@@ -35,20 +35,12 @@ aside {
   flex: 2;
 
   section {
-    width: 100%;
+    width: 50%;
     padding: 0 2vw;
-
-    &:first-child {
-      width: 37%;
-      min-width: 10em;
-    }
-
-    &:last-child {
-      width: 63%;
-      min-width: 20em;
-    }
+    min-width: 17em;
 
     a {
+      line-height: 1.2;
       display: block;
     }
   }
