@@ -24,7 +24,7 @@ status = 200
 
 [[redirects]]
 force = true
-from = "/admin/*"
+from = "/admin/"
 status = 401
 to = "/admin/login"
 
