@@ -13,6 +13,6 @@
   },
   "homepage": "https://github.com/bradeneast/bradeneast.com#readme",
   "dependencies": {
-    "ingrid-ssg": "^2.0.4"
+    "ingrid-ssg": "^2.2.1"
   }
 }
