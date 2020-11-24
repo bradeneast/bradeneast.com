@@ -25,7 +25,7 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 
 <div class="technologies grid">
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>Git & Github</TechName>
 	<TechUse>
 		I used git branches to add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
@@ -33,9 +33,9 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 	<TechLogo>
 		<img src="/_assets/images/technologies/github.svg" />
 	</TechLogo>
-</Brick>
+</Import>
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>Javascript ES6</TechName>
 	<TechUse>
 		I leveraged several features of modern Javascript, including Classes, new Array methods, and the Intersection Observer API.
@@ -43,13 +43,13 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 	<TechLogo>
 		<img src="/_assets/images/technologies/javascript.svg" />
 	</TechLogo>
-</Brick>
+</Import>
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>esbuild</TechName>
 	<TechUse>
 		I used the <a target="_blank" href="https://github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
 	</TechUse>
-</Brick>
+</Import>
 
 </div>

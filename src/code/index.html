@@ -1,4 +1,4 @@
-<Brick use="/_/lg/main.html">
+<Import from="/_/lg/main.html">
 	<Title>See what I'm coding</Title>
 
 	<Content>
@@ -9,12 +9,12 @@
 	</Content>
 
 	<Aside>
-		<Brick use="/_/md/selectDropdown.html">
+		<Import from="/_/md/selectDropdown.html">
 			<Scope>
-				<Each from="code/." use="/_/md/selectOption.html"></Each>
+				<Each match="code/." from="/_/md/selectOption.html"></Each>
 			</Scope>
 			<Placeholder>Select a project</Placeholder>
-		</Brick>
+		</Import>
 	</Aside>
 
-</Brick>
+</Import>

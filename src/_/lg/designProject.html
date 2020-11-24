@@ -1,23 +1,23 @@
-<Brick use="/_/lg/main.html">
+<Import from="/_/lg/main.html">
 
   <Title>
     <Slot name="Title"></Slot>
   </Title>
 
   <Aside>
-    <Brick use="/_/md/selectDropdown.html">
+    <Import from="/_/md/selectDropdown.html">
       <Placeholder>
         <Slot name="Title"></Slot>
       </Placeholder>
       <Scope>
-        <Each sort="-Published" from="(?<!.)/design/." use="/_/md/selectOption.html"></Each>
+        <Each sort="-Published" match="(?<!.)/design/." from="/_/md/selectOption.html"></Each>
       </Scope>
-    </Brick>
+    </Import>
   </Aside>
 
   <Content>
 
-    <Brick use="/_/md/postContent.html">
+    <Import from="/_/md/postContent.html">
       <Image>
         <Slot name="Image"></Slot>
       </Image>
@@ -31,16 +31,16 @@
       <Body>
         <Slot name="Body"></Slot>
       </Body>
-    </Brick>
+    </Import>
 
     <p>
-      <a href="https://twitter.com/intent/tweet?text={{Title}}&amp;url={{siteRoot}}{{sys.href}}&amp;via=bradenthehair">Share this on Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text={* Title *}&amp;url={* SiteRoot *}{* sys.href *}&amp;via=bradenthehair">Share this on Twitter</a>
     </p>
 
     <hr />
 
-    <Brick use="/_/md/horizontalNav.html"></Brick>
+    <Import from="/_/md/horizontalNav.html"></Import>
 
   </Content>
 
-</Brick>
+</Import>

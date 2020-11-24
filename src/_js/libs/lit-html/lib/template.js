@@ -15,7 +15,7 @@
  * An expression marker with embedded unique key to avoid collision with
  * possible text in templates.
  */
-export const marker = `{{lit-${String(Math.random()).slice(2)}}}`;
+export const marker = `{* lit-${String(Math.random()).slice(2) *}}`;
 /**
  * An expression marker used text-positions, multi-binding attributes, and
  * attributes with markup-like text values.

@@ -1,6 +1,6 @@
 <div class="select-wrapper">
 
-  @{{
+  {% 
     (() => {
       let id = Math.round(new Date().getTime() * Math.random());
       return `
@@ -14,7 +14,7 @@
       </label>
       `
     })();
-  }}
+   %}
 
   <div class="select">
     <div class="select__options stagger-child-transitions">

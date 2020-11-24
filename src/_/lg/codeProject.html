@@ -1,23 +1,23 @@
-<Brick use="/_/lg/main.html">
+<Import from="/_/lg/main.html">
 
 	<Title>
 		<Slot name="Title"></Slot>
 	</Title>
 
 	<Aside>
-		<Brick use="/_/md/selectDropdown.html">
+		<Import from="/_/md/selectDropdown.html">
 			<Placeholder>
 				<Slot name="Title"></Slot>
 			</Placeholder>
 			<Scope>
-				<Each from="(?<!.)/code/." use="/_/md/selectOption.html"></Each>
+				<Each match="(?<!.)/code/." from="/_/md/selectOption.html"></Each>
 			</Scope>
-		</Brick>
+		</Import>
 	</Aside>
 
 	<Content>
 
-		<Brick use="/_/md/postContent.html">
+		<Import from="/_/md/postContent.html">
 			<Image>
 				<Slot name="Image"></Slot>
 			</Image>
@@ -31,18 +31,18 @@
 			<Body>
 				<Slot name="Body"></Slot>
 			</Body>
-		</Brick>
+		</Import>
 
 		<p>
-			<a target="_blank" href="{{Github}}">
+			<a target="_blank" href="{* Github *}">
 				Peruse <Slot name="Title"></Slot> on Github
 			</a>
 		</p>
 
 		<hr />
 
-		<Brick use="/_/md/horizontalNav.html"></Brick>
+		<Import from="/_/md/horizontalNav.html"></Import>
 
 	</Content>
 
-</Brick>
+</Import>

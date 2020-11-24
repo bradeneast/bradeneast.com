@@ -42,7 +42,7 @@ export class TemplateResult {
             // parser. The marker type is based on whether the expression is in an
             // attribute, text, or comment position.
             //   * For node-position bindings we insert a comment with the marker
-            //     sentinel as its text content, like <!--{{lit-guid}}-->.
+            //     sentinel as its text content, like <!--{* lit-guid *}-->.
             //   * For attribute bindings we insert just the marker sentinel for the
             //     first binding, so that we support unquoted attribute bindings.
             //     Subsequent bindings can use a comment marker because multi-binding

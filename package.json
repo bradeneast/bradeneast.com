@@ -1,6 +1,6 @@
 {
   "name": "bradeneast.com",
-  "version": "2.0",
+  "version": "2.0.2",
   "description": "My personal website :)",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "url": "https://github.com/bradeneast/bradeneast.com/issues"
   },
   "homepage": "https://github.com/bradeneast/bradeneast.com#readme",
-  "devDependencies": {
-    "ingrid-ssg": "^0.3.5"
+  "dependencies": {
+    "ingrid-ssg": "^2.0.4"
   }
 }

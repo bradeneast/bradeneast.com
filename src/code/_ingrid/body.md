@@ -2,7 +2,7 @@
 
 <div class="technologies grid">
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>React</TechName>
 	<TechUse>
 		I used React to render Ingrid's user interface.
@@ -10,9 +10,9 @@
 	<TechLogo>
 		<img src="/_assets/images/technologies/react.svg" />
 	</TechLogo>
-</Brick>
+</Import>
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>MongoDB</TechName>
 	<TechUse>
 		I used MongoDB to securely store user data.
@@ -20,9 +20,9 @@
 	<TechLogo>
 		<img src="/_assets/images/technologies/mongodb.svg" />
 	</TechLogo>
-</Brick>
+</Import>
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>Passport.js</TechName>
 	<TechUse>
 		I used this library to handle authentication for users who opted to save their work.
@@ -30,9 +30,9 @@
 	<TechLogo>
 		<img src="/_assets/images/technologies/passport.svg" />
 	</TechLogo>
-</Brick>
+</Import>
 
-<Brick use="/_/sm/tech.html">
+<Import from="/_/sm/tech.html">
 	<TechName>Netlify</TechName>
 	<TechUse>
 		I hosted this app on Netlify for fast load times and easy deployment.
@@ -40,6 +40,6 @@
 	<TechLogo>
 		<img src="/_assets/images/technologies/netlify.svg" />
 	</TechLogo>
-</Brick>
+</Import>
 
 </div>

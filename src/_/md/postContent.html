@@ -1,5 +1,5 @@
 <div>
-  <img width="540" height="360" src="{{Image}}" />
+  <img width="540" height="360" src="{* Image *}" />
 </div>
 
 <div style="margin: 0;" class="pad-vertical">
@@ -8,7 +8,7 @@
   </div>
   <div class="light-text">
     <Slot name="Type">
-      @{{Math.round(Body.split(' ').length * .01)}}-minute read
+      {% Math.round(Body.split(' ').length * .01) %}-minute read
     </Slot>
   </div>
 </div>

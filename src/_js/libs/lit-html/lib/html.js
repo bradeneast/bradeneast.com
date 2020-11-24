@@ -1,5 +1,5 @@
 import { createMarker } from "./template";
-const markerRegex = /{{(.*?)}}/;
+const markerRegex = /{* (.*?) *}/;
 export class HTMLTemplate {
     constructor(element) {
         this.parts = [];

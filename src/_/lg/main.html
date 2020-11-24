@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<Brick use="/_/md/head.html">
+<Import from="/_/md/head.html">
 	<Title>
 		<Slot name="Title"></Slot>
 	</Title>
-</Brick>
+</Import>
 
 <body>
 
 	<aside>
 
 		<section>
-			<Brick use="/_/md/selectDropdown.html">
+			<Import from="/_/md/selectDropdown.html">
 				<Name>Primary navigation</Name>
 				<Scope>
-					<Each from="(?<!.)/(blog|code|about)?(?!.)" use="/_/md/selectOption.html"></Each>
+					<Each match="(?<!.)/(blog|code|about)?(?!.)" from="/_/md/selectOption.html"></Each>
 				</Scope>
-			</Brick>
+			</Import>
 		</section>
 
 		<section>
@@ -30,7 +30,7 @@
 		<Slot name="Content"></Slot>
 	</main>
 
-	<Brick use="/_/md/footer.html"></Brick>
+	<Import from="/_/md/footer.html"></Import>
 
 </body>
 

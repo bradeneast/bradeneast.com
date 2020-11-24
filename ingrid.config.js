@@ -3,7 +3,7 @@ module.exports = {
 	dist: "./dist",
 	ignorePattern: /^_/,
 	global: {
-		siteName: 'Braden East',
-		siteRoot: 'https://www.bradeneast.com'
+		SiteName: 'Braden East',
+		SiteRoot: 'https://www.bradeneast.com'
 	},
 }

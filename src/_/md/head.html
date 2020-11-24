@@ -5,15 +5,15 @@
 	<title>
 		<Slot name="Title">Braden East</Slot>
 	</title>
-	<meta name="description" content="{{siteName}} | {{Title}}" />
+	<meta name="description" content="{* SiteName *} | {* Title *}" />
 
-	<meta property="og:title" content="{{Title}}" />
-	<meta property="og:description" content="{{siteName}} | {{Title}}" />
+	<meta property="og:title" content="{* Title *}" />
+	<meta property="og:description" content="{* SiteName *} | {* Title *}" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="{{siteRoot}}{{sys.href}}" />
+	<meta property="og:url" content="{* SiteRoot *}{* sys.href *}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="{{siteName}}" />
-	<meta property="og:image" content="{{siteRoot}}{{Image}}" />
+	<meta property="og:site_name" content="{* SiteName *}" />
+	<meta property="og:image" content="{* SiteRoot *}{* Image *}" />
 	<meta property="og:image:width" content="1620" />
 	<meta property="og:image:height" content="1080" />
 	<meta name="twitter:card" content="summary" />
@@ -21,10 +21,10 @@
 	<meta name="twitter:creator" content="@bradenthehair" />
 	<meta name="msapplication-TileColor" content="#FFFFFF" />
 	<meta name="supported-color-schemes" content="light dark" />
-	<meta name="msapplication-TileImage" content="{{siteRoot}}/_assets/favicon_padded.png" />
+	<meta name="msapplication-TileImage" content="{* SiteRoot *}/_assets/favicon_padded.png" />
 
 	<base href="/" />
-	<link rel="canonical" href="{{siteRoot}}{{sys.href}}">
+	<link rel="canonical" href="{* SiteRoot *}{* sys.href *}">
 	<link rel="shortcut icon" href="/_assets/favicon.png" type="image/png" />
 	<link rel="apple-touch-icon-precomposed" href="/_assets/favicon_padded.png" type="image/png" />
 
