@@ -7,12 +7,7 @@
     "url": "git+https://github.com/bradeneast/bradeneast.com.git"
   },
   "author": "Braden East",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bradeneast/bradeneast.com/issues"
-  },
-  "homepage": "https://github.com/bradeneast/bradeneast.com#readme",
   "dependencies": {
-    "ingrid-ssg": "^2.2.1"
+    "ingrid-ssg": "^2.3.0"
   }
 }
