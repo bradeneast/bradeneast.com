@@ -1,1 +1,7 @@
 node_modules
+# Everything that gets rebuilt in the published directory
+dist/[!_]*
+# Environment variables
+.env
+# Local Netlify folder
+.netlify
