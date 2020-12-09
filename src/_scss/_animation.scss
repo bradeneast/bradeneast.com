@@ -26,17 +26,6 @@ html {
 	padding-right: 0.2em;
 }
 
-.animate-in {
-	--animateFrom: 0;
-	opacity: 0;
-	transform: translate3d(0, calc(1em * var(--animateFrom)), 0) scale(0.96);
-	animation: animateIn $smoothTransition paused forwards;
-
-	&.intersecting {
-		animation-play-state: running;
-	}
-}
-
 .animation {
 	width: var(--animationSize);
 	height: var(--animationSize);
