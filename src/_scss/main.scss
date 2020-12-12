@@ -53,7 +53,7 @@
 
 body {
 	background: var(--g8);
-	transition: $colorTransition;
+	transition: background $colorTransition, color $colorTransition;
 }
 
 img,
@@ -91,6 +91,7 @@ video {
 @import "./typography";
 @import "./animation";
 @import "./blurb";
+@import "./feed";
 @import "./table";
 @import "./form";
 @import "./prism";

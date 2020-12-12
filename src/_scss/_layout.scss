@@ -64,7 +64,7 @@ footer {
   }
 
   .modal {
-    transition: $smoothTransition;
+    transition: opacity $smoothTransition;
     pointer-events: none;
     opacity: 0;
 

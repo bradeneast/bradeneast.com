@@ -7,7 +7,7 @@
 
 html {
 	main {
-		transition: $smoothTransition;
+		transition: opacity $smoothTransition;
 	}
 
 	&[data-schwifty="in"] {
@@ -72,7 +72,7 @@ html {
 		pointer-events: none;
 		opacity: 0;
 		transform: translate(50%, 1em);
-		transition: $smoothTransition;
+		transition: opacity $smoothTransition, transform $smoothTransition;
 		--pt: calc(100% - #{$space});
 		clip-path: polygon(
 			0 0,

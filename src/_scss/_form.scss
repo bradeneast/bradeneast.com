@@ -22,7 +22,7 @@ input {
 
 	&::before,
 	&::after {
-		transition: $motionTransition;
+		transition: transform $motionTransition;
 	}
 
 	&[type="search"],

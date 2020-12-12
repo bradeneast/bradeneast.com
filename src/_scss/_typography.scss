@@ -86,7 +86,7 @@ em {
 	font-weight: $fontWeightRegular;
 	font-style: normal;
 	font-variation-settings: "slnt" -13, "CRSV" 1, "CASL" 1;
-	transition: $colorTransition;
+	transition: color $colorTransition;
 }
 
 del {
@@ -109,7 +109,7 @@ a {
 	color: var(--g3);
 	touch-action: manipulation;
 	text-decoration-thickness: 0.1em;
-	transition: $colorTransition;
+	transition: color $colorTransition, text-decoration-color $colorTransition;
 
 	&[href="undefined"] {
 		display: none;

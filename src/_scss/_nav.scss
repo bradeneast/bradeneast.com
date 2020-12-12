@@ -57,7 +57,7 @@
     overflow-y: auto;
     opacity: 0;
     pointer-events: none;
-    transition: $colorTransition;
+    transition: opacity $colorTransition;
   }
 
   * {
@@ -68,7 +68,7 @@
   .option {
     transform: scaleY(0) translate3d(0, -0.1em, 0);
     transform-origin: top;
-    transition: transform $motionTransition, background $colorTransition, color $colorTransition;
+    transition: transform $smoothTransition, background $colorTransition, color $colorTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);
 

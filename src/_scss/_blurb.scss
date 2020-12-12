@@ -7,7 +7,7 @@
   &__text {
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g6);
-    transition: $colorTransition;
+    transition: border-color $colorTransition;
 
     &:hover,
     &:focus-within,
@@ -15,7 +15,7 @@
       border-color: var(--primary);
 
       h2 {
-        transition: $colorTransition;
+        transition: color $colorTransition;
         color: inherit;
       }
     }

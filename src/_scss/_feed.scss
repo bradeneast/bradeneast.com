@@ -1,0 +1,46 @@
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  grid-auto-rows: 20em;
+
+  &__item {
+    padding: $flow1;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      &::before {
+        opacity: 0.94;
+      }
+
+      .feed__item--text {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    &--text {
+      width: 100%;
+      opacity: 0;
+      transform: translate3d(0, 1em, 0);
+      transition: opacity $colorTransition, transform $smoothTransition;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--g8);
+      opacity: 0;
+      transition: opacity $smoothTransition;
+    }
+  }
+}
