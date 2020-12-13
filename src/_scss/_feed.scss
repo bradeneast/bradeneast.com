@@ -44,3 +44,24 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile) {
+  .feed {
+    gap: 1em;
+
+    &__item {
+      align-items: flex-end;
+
+      &--text {
+        padding: 1em;
+        background: var(--g8);
+        transform: none;
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+}
