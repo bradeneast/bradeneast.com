@@ -81,7 +81,7 @@ footer {
 
 @media screen and (max-width: $mobile) {
   body {
-    padding: $flow2;
+    padding: $flow2 $flow1;
   }
 
   aside section {
