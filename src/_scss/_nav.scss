@@ -33,10 +33,6 @@
         opacity: 1;
         pointer-events: all;
       }
-
-      .option {
-        transform: scaleY(1) translate3d(0, 0, 0);
-      }
     }
 
     input {
@@ -66,9 +62,7 @@
   }
 
   .option {
-    transform: scaleY(0) translate3d(0, -0.1em, 0);
-    transform-origin: top;
-    transition: transform $smoothTransition, background $colorTransition, color $colorTransition;
+    transition: background $colorTransition, color $colorTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);
 
