@@ -85,15 +85,12 @@ video {
 }
 
 @import "./layout";
-@import "./nav";
 @import "./util";
-@import "./preferences";
-@import "./typography";
-@import "./animation";
-@import "./blurb";
+@import "./typography/mod";
+@import "./interactivity/mod";
+@import "./technologies";
 @import "./feed";
 @import "./table";
 @import "./form";
 @import "./prism";
-@import "./retro";
 @import "./print";

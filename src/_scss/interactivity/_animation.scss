@@ -21,15 +21,16 @@ html {
 	}
 }
 
-.split {
-	float: left;
-	padding-right: 0.2em;
-}
-
-.animation {
-	width: var(--animationSize);
-	height: var(--animationSize);
-	display: none;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	[data-tooltip] {
+		display: inline-block;
+	}
 }
 
 [data-tooltip] {
@@ -64,7 +65,7 @@ html {
 		color: var(--g0);
 		background: var(--g6);
 		font-size: 0.85rem;
-		max-width: 10em;
+		width: 10em;
 		right: 0.4em;
 		bottom: 100%;
 		padding: $space;

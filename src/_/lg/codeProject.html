@@ -33,11 +33,14 @@
 			</Body>
 		</Import>
 
-		<p>
-			<a target="_blank" href="{* Github *}">
-				Peruse <Slot name="Title"></Slot> on Github
-			</a>
-		</p>
+		<ul>
+			<li>
+				{% Demo ? `<a href="${Demo}">Try the demo</a>` : '' %}
+			</li>
+			<li>
+				<a target="_blank" href="{* Github *}">Check the source code</a>
+			</li>
+		</ul>
 
 		<hr />
 

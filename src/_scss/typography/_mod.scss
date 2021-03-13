@@ -1,0 +1,93 @@
+:root {
+	font-size: calc(12px + 0.63vmin);
+	font-family: $fontFamily;
+	line-height: 1.5;
+	color: var(--g1);
+}
+
+body {
+	font-weight: $fontWeightRegular;
+	text-rendering: optimizeSpeed;
+	-webkit-font-smooth: subpixel-antialiased;
+	letter-spacing: 0.01em;
+}
+
+p,
+blockquote,
+pre,
+ul,
+ol {
+	margin-bottom: $flow2;
+
+	p:not(.has-media) {
+		margin-bottom: 0;
+	}
+}
+
+main {
+	:not(.has-media):not(.cp_embed_wrapper) {
+		& + .has-media,
+		& + .cp_embed_wrapper {
+			margin-top: $flow4;
+		}
+	}
+
+	.has-media,
+	.cp_embed_wrapper {
+		& + :not(.has-media),
+		& + :not(.cp_embed_wrapper) {
+			margin-top: $flow4;
+		}
+	}
+}
+
+li {
+	padding-left: $flow1;
+
+	&::marker {
+		color: var(--g4);
+	}
+}
+
+pre,
+blockquote {
+	padding: $flow1;
+	color: var(--g2);
+	background: var(--g7);
+
+	p {
+		margin: 0;
+	}
+}
+
+br {
+	appearance: none;
+	display: block;
+	width: 100%;
+	margin-top: $flow1;
+	padding-bottom: $flow1;
+}
+
+hr {
+	border: none;
+	border-top: $borderWidth $borderStyle var(--g7);
+	height: 0;
+	margin-top: $flow4;
+	padding-bottom: $flow4;
+}
+
+@import "./inline";
+@import "./headings";
+
+@media screen and (max-width: $mobile) {
+	:root {
+		font-size: 15px;
+	}
+
+	main {
+		h1 {
+			margin-top: $flow4;
+			font-size: 3.7rem;
+		}
+	}
+}

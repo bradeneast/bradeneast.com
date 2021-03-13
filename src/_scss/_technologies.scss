@@ -1,0 +1,26 @@
+.technologies {
+  padding-top: $flow1;
+}
+
+.technologies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  margin-bottom: $flow4;
+  gap: $flow4;
+
+  h2,
+  h3,
+  h4 {
+    margin: $flow1 0 !important;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  img {
+    height: 4em;
+    width: auto;
+    opacity: 0.85;
+  }
+}
