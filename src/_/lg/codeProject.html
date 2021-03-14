@@ -34,9 +34,7 @@
 		</Import>
 
 		<ul>
-			<li>
-				{% Demo ? `<a href="${Demo}">Try the demo</a>` : '' %}
-			</li>
+			{% Demo.length ? `<li><a href="${Demo}">Try the demo</a></li>` : '' %}
 			<li>
 				<a target="_blank" href="{* Github *}">Check the source code</a>
 			</li>

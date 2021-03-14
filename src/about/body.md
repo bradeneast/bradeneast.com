@@ -8,8 +8,6 @@ I currently live in Oklahoma City, working as part of the creative group for <a 
 
 In my current role I've contributed to many large projects, from designing [web experiences](https://oklahomabaptists.org/2020-vision) to nationwide marketing campaigns. My best work revolves around [designing identities](https://oklahomabaptists.org/styleguide), with a little [coding](/code) sprinkled in.
 
-## Is there anything I could help you with?
-
 Email me and I'll make myself available for a quick call or a coffee run. [braden.east.design@gmail.com](mailto:braden.east.design@gmail.com)
 
 ---
