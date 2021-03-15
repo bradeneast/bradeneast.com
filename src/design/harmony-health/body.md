@@ -1,4 +1,4 @@
-Harmony Health is a Direct Primary Care practice in Newcastle, Oklahoma. Their brand messaging is summed up in the tagline, &ldquo;Optimal health comes from harmony of body, mind, and spirit.&rdquo; 
+Harmony Health is a direct primary care practice in Newcastle, Oklahoma. Their brand messaging is summed up in the tagline, &ldquo;Optimal health comes from harmony of body, mind, and spirit.&rdquo; 
 
 By analyzing business goals and customer demographics, we were able to arrive at a logo identity which complements that message.
 
