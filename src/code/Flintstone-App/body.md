@@ -8,7 +8,7 @@ Flintstone handles secure individual user accounts through Netlify's GoTrue API.
 
 <video loop autoplay muted playsinline src="/_assets/images/flintstone/data-fields.mp4"></video>
 
-The interface is modeled after a text-editor, where the majority of real-estate is reserved for the long form text. Data auto-completion (sometimes called &ldquo;Intellisense&rdquo;) was one feature I was excited to integrate.
+The interface is modeled after a text-editor, where the majority of real-estate is reserved for the long form text. Data auto-completion (sometimes called &ldquo;intellisense&rdquo;) was one feature I was excited to integrate.
 
 <video loop autoplay muted playsinline src="/_assets/images/flintstone/document-editor.mp4"></video>
 
