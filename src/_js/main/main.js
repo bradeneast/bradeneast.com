@@ -32,4 +32,4 @@ console.log(`%cAffectionately built with Ingrid :)`, `
 		sans-serif;
 		font-size: 16px;
 		font-weight: bold`);
-console.log(`%chttps://github.com/bradeneast/ingrid`, "color: orangered");
+console.log(`%chttps://github.com/bradeneast/ingrid`, "color: dodgerblue");
