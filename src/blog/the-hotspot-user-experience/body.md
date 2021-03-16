@@ -6,13 +6,9 @@ My wife and I discovered this when we moved last year. We experienced frequent o
 
 ## What's different?
 
-The home internet was fast (in between outages).
+The home internet was fast (in between outages), while the hotspot is pretty slow by most of today's standards.
 
-The hotspot is pretty slow by most of today's standards.
-
-The home internet connects as soon as I turned my laptop on.
-
-The hotpsot takes a few seconds to enable.
+The home internet connects as soon as I turned my laptop on, while the hotpsot takes a few seconds to enable.
 
 ## Am I happy with the decision? Absolutely.
 
