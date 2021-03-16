@@ -6,8 +6,6 @@ Because Jude’s was an established local business that stood on consistency, fa
 
 ![Jude's logo in a stacked layout](/_assets/images/judes/judes-stacked.svg)
 
-![Jude's logo as a seal](/_assets/images/judes/judes-seal.svg)
-
 ![Jude's logo in an inline layout](/_assets/images/judes/judes-inline.svg)
 
 With the 15th anniversary of Jude's coming up, I suggested creating patterns for use on special edition merchandise. Each pattern was based on the logo in a unique way.
