@@ -8,8 +8,8 @@ Let's imagine we're coding an audio application that needs some knobs to simulat
 
 ```html
 <div class="adjustment">
-    <input type="range">
-    <div class="knob"></div>
+  <input type="range">
+  <div class="knob"></div>
 </div>
 ```
 
@@ -17,12 +17,12 @@ The basic idea is to give the `range` input an opacity of 0 and position it on t
 
 ```css
 input[type="range"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 ```
 
@@ -30,8 +30,8 @@ Now, let's make our knob rotate as we drag up and down.
 
 ```html
 <div class="adjustment">
-    <input type="range" oninput="this.parentElement.style.setProperty('--knobPosition', this.value)">
-    <div class="knob"></div>
+  <input type="range" oninput="this.parentElement.style.setProperty('--knobPosition', this.value)">
+  <div class="knob"></div>
 </div>
 ```
 
@@ -67,8 +67,8 @@ adjustmentWrapper.addEventListener('touchmove', event =>
 
     // Update the knob position
     adjustmentWrapper.style.setProperty(
-        '--knobPosition', 
-        clamp(touch.diff, 0, 100)
+      '--knobPosition', 
+      clamp(touch.diff, 0, 100)
     )
   })
 )
@@ -78,15 +78,15 @@ The only thing left is to set up the CSS that will rotate the knob accordingly. 
 
 ```css
 .adjustment {
-    --knobPosition: 100;
-    --knobRange: 280deg;
+  --knobPosition: 100;
+  --knobRange: 280deg;
 }
 
 .knob {
-    /* Get the knob position as a percentage of the range */
-    --knob-rotation: calc(var(--knobPosition) / 100 * var(--knobRange));
-    /* Center the knob range */
-    transform: rotate(calc(var(--knob-rotation) - (var(--knobRange) / 2)));
+  /* Get the knob position as a percentage of the range */
+  --knob-rotation: calc(var(--knobPosition) / 100 * var(--knobRange));
+  /* Center the knob range */
+  transform: rotate(calc(var(--knob-rotation) - (var(--knobRange) / 2)));
 }
 ```
 

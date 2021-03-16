@@ -13,7 +13,7 @@ The most common use for `<noscript>` is to suggest that the user turn on Javascr
 
 ```html
 <noscript>
-    Please enable Javascript for a better experience!
+  Please enable Javascript for a better experience!
 </noscript>
 ```
 
@@ -26,11 +26,11 @@ There are also cases where we might want to show large amounts of alternate cont
 
 ```html
 <div class="noscript" id="fact-of-the-day">
-    The tax on coffee is more than the cost of the coffee beans.
+  The tax on coffee is more than the cost of the coffee beans.
 </div>
 
 <script>
-    document.getElementById('fact-of-the-day').innerHTML = fetchedContentOrSomething;
+  document.getElementById('fact-of-the-day').innerHTML = fetchedContentOrSomething;
 </script>
 ```
 
@@ -47,21 +47,21 @@ In this example, a noscript situation will cause the `<style>` element to be unw
 
 ```html
 <style>
-.noscript {
+  .noscript {
     display: none;
-}
+  }
 </style>
 
 <noscript>
-    <style>
-        body .noscript {
-            display: block;
-        }
-    </style>
+  <style>
+    body .noscript {
+      display: block;
+    }
+  </style>
 </noscript>
 
 <div class="noscript">
-    The tax on coffee is more than the cost of the coffee beans.
+  The tax on coffee is more than the cost of the coffee beans.
 </div>
 ```
 

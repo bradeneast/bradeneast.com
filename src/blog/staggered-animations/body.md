@@ -7,34 +7,33 @@ It's pretty obious that movement happening in perfect sync seems unnatural to us
 Our brains like smooth, sequential motion that overlaps, speeds up, and slows down in a way that feels familiar to the real world. In animation and motion design, a quick way to acheive this effect is through *staggered* or overlapping movement.
 
 <style>
-
-@keyframes move {
+  @keyframes move {
     0% {
-        transform: translate(0);
+      transform: translate(0);
     }
     50% {
-        transform: translateX(10rem);
+      transform: translateX(10rem);
     }
-}
+  }
 
-@-webkit-keyframes move {
+  @-webkit-keyframes move {
     0% {
-        transform: translate(0);
+      transform: translate(0);
     }
     50% {
-        transform: translateX(10rem);
+      transform: translateX(10rem);
     }
-}
+  }
 
-.example-wrapper {
+  .example-wrapper {
     font-size: 1rem;
     position: relative;
     height: auto;
     width: 100%;
     margin-bottom: 2rem;
-}
+  }
 
-.example-wrapper .example-circle {
+  .example-wrapper .example-circle {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -42,38 +41,37 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
     background: var(--primary);
     -webkit-animation: move 4s ease-in-out alternate infinite running;
     animation: move 4s ease-in-out alternate infinite running;
-}
+  }
 
-.staggered>:nth-child(4),
-.staggered>:nth-child(2) {
+  .staggered>:nth-child(4),
+  .staggered>:nth-child(2) {
     animation-delay: .2s;
-}
+  }
 
-.staggered>:nth-child(5),
-.staggered>:nth-child(1) {
+  .staggered>:nth-child(5),
+  .staggered>:nth-child(1) {
     animation-delay: .4s;
-}
-
+  }
 </style>
 
 ### Simultaneous
 
 <div class="example-wrapper">
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
 </div>
 
 ### Staggered
 
 <div class="example-wrapper staggered">
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
-    <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
+  <div class="example-circle"></div>
 </div>
 
 Despite being almost in sync, the slight variation between each element in the second example makes their movement much more interesting and appealing.
@@ -105,9 +103,9 @@ The styles we wrote above can be cleaned up (sort of) with SCSS. Since SCSS is a
 
 ```css
 @for $i from 1 through 100 {
-    .stagger-child-transitions > :nth-child(#{$i}) {
-        transition-delay: ($i * .1)s;
-    }
+  .stagger-child-transitions > :nth-child(#{$i}) {
+    transition-delay: ($i * .1)s;
+  }
 }
 ```
 
@@ -122,9 +120,9 @@ That looks nice and clean!  The only drawback of this approach (and pure CSS) is
 let targets = document.querySelectorAll('.stagger-child-transitions');
 
 for (let element of targets) {
-    element.children.map((child, i) => {
-        child.style.transitionDelay = `${i * .1}s`;
-    })
+  element.children.map((child, i) => {
+    child.style.transitionDelay = `${i * .1}s`;
+  })
 }
 ```
 
