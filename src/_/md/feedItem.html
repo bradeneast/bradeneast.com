@@ -1,4 +1,5 @@
-<a href="{% sys.href %}" class="feed__item" style="background-image: url({%Image%});">
+<a href="{% sys.href %}" class="feed__item">
+  <img class="feed__item--image" aria-hidden="true" alt="" src="{% Image %}" />
   <div class="feed__item--text">
     <Slot name="Title"></Slot>
     <div class="light-text">

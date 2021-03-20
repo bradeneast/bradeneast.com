@@ -5,6 +5,15 @@
 	}
 }
 
+@keyframes bg-pulse {
+	from {
+		background-position-x: 30%;
+	}
+	to {
+		background-position-x: 70%;
+	}
+}
+
 html {
 	main {
 		transition: opacity $smoothTransition;
