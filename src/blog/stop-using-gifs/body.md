@@ -10,9 +10,9 @@ MP4, WebM, and WebP will almost always be 1/5 to 1/2 the file size of GIF, so th
 ```html
 <!-- The easy way, but with fallbacks -->
 <video autoplay muted loop playsinline>
-    <source src="animation.webm" type="video/webm">
-    <source src="animation.mp4" type="video/mp4">
-    Your browser doesn't support embedded videos.
+  <source src="animation.webm" type="video/webm">
+  <source src="animation.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos.
 </video>
 ```
 
