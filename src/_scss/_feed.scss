@@ -38,7 +38,6 @@
 
     &--image,
     &::before {
-      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -47,12 +46,13 @@
     }
 
     &--image {
-      background: none !important;
+      background-color: none !important;
       object-position: center;
       object-fit: cover;
     }
 
     &::before {
+      content: "";
       z-index: 1;
       background: var(--g8);
       opacity: 0;
