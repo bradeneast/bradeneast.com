@@ -1,4 +1,4 @@
-[Flintstone](https://flintstone.app) is a high-performance web app that refines the document editing process. I designed it with a clear, responsive interface for changing data, text, and styles in real-time.
+[Flintstone](//flintstone.app) is a high-performance web app that refines the document editing process. I designed it with a clear, responsive interface for changing data, text, and styles in real-time.
 
 Initial users have told me they felt more in control of their documents than ever with something so simple and powerful.
 
@@ -23,7 +23,7 @@ Rich text features have been shown to frustrate many users, so I opted for a ric
 <Import from="/_/sm/tech.html">
 	<TechName>GoTrue API</TechName>
 	<TechUse>
-		I used the <a href="https://github.com/netlify/gotrue">GoTrue API</a> to handle user signup, authentication and custom user data. GoTrue is based on OAuth2 and JWT.
+		I used the <a href="//github.com/netlify/gotrue">GoTrue API</a> to handle user signup, authentication and custom user data. GoTrue is based on OAuth2 and JWT.
 	</TechUse>
 	<TechLogo>
 		<img src="/_assets/images/technologies/auth.svg" />
@@ -33,7 +33,7 @@ Rich text features have been shown to frustrate many users, so I opted for a ric
 <Import from="/_/sm/tech.html">
 	<TechName>lit-html</TechName>
 	<TechUse>
-		I used this templating library from Google's <a href="https://www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
+		I used this templating library from Google's <a href="//www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
 	</TechUse>
 	<TechLogo>
 		<img src="/_assets/images/technologies/lit-html.svg" />
@@ -43,7 +43,7 @@ Rich text features have been shown to frustrate many users, so I opted for a ric
 <Import from="/_/sm/tech.html">
 	<TechName>esbuild</TechName>
 	<TechUse>
-	 The source code was split up into components and templates, so <a href="https://github.com/evanw/esbuild">esbuild</a> was the fastest way to bundle and minify the application.
+	 The source code was split up into components and templates, so <a href="//github.com/evanw/esbuild">esbuild</a> was the fastest way to bundle and minify the application.
 	</TechUse>
 </Import>
 

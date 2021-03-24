@@ -28,7 +28,7 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 <Import from="/_/sm/tech.html">
 	<TechName>Git & Github</TechName>
 	<TechUse>
-		I used git branches to add new features, and <a target="_blank" href="https://github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
+		I used git branches to add new features, and <a target="_blank" href="//github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
 	</TechUse>
 	<TechLogo>
 		<img src="/_assets/images/technologies/github.svg" />
@@ -48,7 +48,7 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 <Import from="/_/sm/tech.html">
 	<TechName>esbuild</TechName>
 	<TechUse>
-		I used the <a target="_blank" href="https://github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
+		I used the <a target="_blank" href="//github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
 	</TechUse>
 </Import>
 

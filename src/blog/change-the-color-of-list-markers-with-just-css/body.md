@@ -101,7 +101,7 @@ ul {
 We can do more fun things with this, but I'll leave discovering those up to you. Unfortunately, layering multiple gradients won't work. This approach limits you to a single gradient, within the size of the marker box.
 
 ## Option 3: The `::marker` pseudo element
-Both of the above approaches are a little bit hacky. That's okay, because we have a much more straightforward way coming soon.  By next year, we might be using [the ::marker pseudo element](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker) instead. At the time of writing, `::marker` is still a draft in the CSS spec.
+Both of the above approaches are a little bit hacky. That's okay, because we have a much more straightforward way coming soon.  By next year, we might be using [the ::marker pseudo element](//developer.mozilla.org/en-US/docs/Web/CSS/::marker) instead. At the time of writing, `::marker` is still a draft in the CSS spec.
 
 ```css
 ::marker {
@@ -109,7 +109,7 @@ Both of the above approaches are a little bit hacky. That's okay, because we hav
 }
 ```
 
-You can simulate this with the [partially supported](https://caniuse.com/?s=list-style-type[string]) method of passing a string to `list-style-type`.
+You can simulate this with the [partially supported](//caniuse.com/?s=list-style-type[string]) method of passing a string to `list-style-type`.
 
 ```css
 li {

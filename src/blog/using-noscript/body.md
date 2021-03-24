@@ -1,6 +1,6 @@
 The `noscript` element is really useful when we need to provide alternate/additional styles and content under circumstances where Javascript isn't available.
 
-> The fastest marathon in the world was run by Eliud Kipchoge ([watch here](https://www.youtube.com/watch?v=A73HQwEct-o))
+> The fastest marathon in the world was run by Eliud Kipchoge ([watch here](//www.youtube.com/watch?v=A73HQwEct-o))
 
 The first thing we should keep in mind is that `<noscript>` is only applicable when Javascript is blocked in the *browser's* settings. This is what I'm referring to as a 'noscript situation' in this article.  Firewalls and ad blockers will not trigger `<noscript>` content to be rendered on the page.
 
@@ -69,6 +69,6 @@ In this example, a noscript situation will cause the `<style>` element to be unw
 
 Let's look at the quirks and surprising behavior of `<noscript>`.
 
-1. [It seems as though](https://ohgm.co.uk/breaking-head-quietly/) different browsers treat `<noscript>` in the `<head>` differently. In Chrome, doing this will land your content right after the opening `<body>` tag. Knowing that, it’s probably best to place `<noscript>` content exactly where you need it to end up in the first place.
+1. [It seems as though](//ohgm.co.uk/breaking-head-quietly/) different browsers treat `<noscript>` in the `<head>` differently. In Chrome, doing this will land your content right after the opening `<body>` tag. Knowing that, it’s probably best to place `<noscript>` content exactly where you need it to end up in the first place.
 
-2. `<noscript>` elements are block-level, so [they can’t be used inline](https://htmlparser.info/parser/#noscript). If it’s really necessary, you could put a display of flex on the parent.
+2. `<noscript>` elements are block-level, so [they can’t be used inline](//htmlparser.info/parser/#noscript). If it’s really necessary, you could put a display of flex on the parent.

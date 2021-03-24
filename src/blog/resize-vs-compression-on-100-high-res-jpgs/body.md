@@ -6,7 +6,7 @@ That said, is there a way to squeeze more mileage out of high-res images for the
 
 
 ## Control group
-- 100 JPG images from the [Unsplash homepage](https://unsplash.com)
+- 100 JPG images from the [Unsplash homepage](//unsplash.com)
 - Landscape and portrait orientations
 - Wide variety of subjects, color ranges, noise levels, and dark/light areas
 - Minimum dimension: 4096 pixels (4k)

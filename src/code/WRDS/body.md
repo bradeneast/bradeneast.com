@@ -1,4 +1,4 @@
-[WRDS](https://wrds.netlify.app) is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, and export your data for portability.
+[WRDS](//wrds.netlify.app) is a super-lightweight web app for fast, templated document creation. It lets you create PDF documents in seconds, save templates, and export your data for portability.
 
 <video loop autoplay muted playsinline src="/_assets/images/wrds/tooltip.mp4"></video>
 
@@ -33,7 +33,7 @@ My objective with this project was to make something that was easy to scale as I
 <Import from="/_/sm/tech.html">
 	<TechName>lit-html</TechName>
 	<TechUse>
-		I used this templating library from Google's <a href="https://www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
+		I used this templating library from Google's <a href="//www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
 	</TechUse>
 	<TechLogo>
 		<img src="/_assets/images/technologies/lit-html.svg" />
@@ -43,7 +43,7 @@ My objective with this project was to make something that was easy to scale as I
 <Import from="/_/sm/tech.html">
 	<TechName>esbuild</TechName>
 	<TechUse>
-		Since the source code was split up into components and templates, I used <a href="https://github.com/evanw/esbuild">esbuild</a> to bundle and minify the application.
+		Since the source code was split up into components and templates, I used <a href="//github.com/evanw/esbuild">esbuild</a> to bundle and minify the application.
 	</TechUse>
 </Import>
 
