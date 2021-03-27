@@ -2,7 +2,7 @@ Today let's break down the browser events that are fired when we navigate from o
 
 Here's why I was interested, and why you might be too:
 
-Over the summer, I wrote a [performance-boosting Javascript library](https://github.com/bradeneast/schwifty) for sites that are static HTML or server-rendered. For the library to work, it needed to simulate a page navigation without actually refreshing. The goal was similar to what single-page apps use a router for, which normally requires a client-rendered, JS-heavy page.
+Over the summer, I wrote a [performance-boosting Javascript library](//github.com/bradeneast/schwifty) for sites that are static HTML or server-rendered. For the library to work, it needed to simulate a page navigation without actually refreshing. The goal was similar to what single-page apps use a router for, which normally requires a client-rendered, JS-heavy page.
 
 I wanted to bring that single-page app speed and smoothness to static sites (like this one). One of the problems I encountered was that many pages *wait to run scripts until after a particular event fires*. That meant I needed a way to "fake" navigation and emit the same DOM events in the same order as a normal page load.
 
@@ -58,8 +58,8 @@ This event fires when the `visibilityState` of the document changes. The visibil
 
 ## Helpful Resources
 
-- [W3.org Reference](https://www.w3.org/TR/page-visibility/#visibility-states-and-the-visibilitystate-enum)
-- [The Page Lifecycle API](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)
-- [MDN readyState reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/readyState)
+- [W3.org Reference](//www.w3.org/TR/page-visibility/#visibility-states-and-the-visibilitystate-enum)
+- [The Page Lifecycle API](//developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)
+- [MDN readyState reference](//developer.mozilla.org/en-US/docs/Web/API/Document/readyState)
 
 ![The page lifecycle API](/_assets/images/page-lifecycle-api-state-event-flow.png "Philip Walton, Google Developers Reference")

@@ -10,7 +10,7 @@ We explored several color palettes throughout the design process. Each color rep
 
 ![The signature colors of the Elderberry Wine Company](/_assets/images/wine/colors.png)
 
-The Elderberry Wine Company inherited the brand fonts of its parent company, [360 Farms](https://bradeneast.com/work/360-farms). Pairing [Bodoni* 11](https://indestructibletype.com/) with [Montserrat Semibold](https://fonts.google.com/specimen/Montserrat) offered a reliably elegant, modern way to communicate on wine labels, signage, and in digital environments.
+The Elderberry Wine Company inherited the brand fonts of its parent company, [360 Farms](//bradeneast.com/work/360-farms). Pairing [Bodoni* 11](//indestructibletype.com/) with [Montserrat Semibold](//fonts.google.com/specimen/Montserrat) offered a reliably elegant, modern way to communicate on wine labels, signage, and in digital environments.
 
 ![The signature typefaces of the Elderberry Wine Company](/_assets/images/wine/fonts.png)
 

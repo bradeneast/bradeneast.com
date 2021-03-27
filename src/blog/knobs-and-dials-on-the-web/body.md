@@ -90,6 +90,6 @@ The only thing left is to set up the CSS that will rotate the knob accordingly. 
 }
 ```
 
-If you're feeling especially adventurous, you can add a [CSS counter](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) to display the numeric value of the knob using a CSS variable hack by [Cassie Evans](https://twitter.com/cassiecodes). Here's the demo where I've pieced it all together.
+If you're feeling especially adventurous, you can add a [CSS counter](//developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) to display the numeric value of the knob using a CSS variable hack by [Cassie Evans](//twitter.com/cassiecodes). Here's the demo where I've pieced it all together.
 
 <p class="codepen" data-slug-hash="qBWxKro"></p>
