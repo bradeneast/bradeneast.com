@@ -13,7 +13,7 @@
 		</div>
 
 		<div class="feed">
-			<Each match="design/." sort="-Title" from="/_/md/feedItem.html"></Each>
+			<Each match="design/." sort="Order" from="/_/md/feedItem.html"></Each>
 		</div>
 
 	</Content>
@@ -22,7 +22,7 @@
 		<Import from="/_/md/selectDropdown.html">
 			<Name>Post navigation</Name>
 			<Scope>
-				<Each match="design/." sort="-Title" from="/_/md/selectOption.html"></Each>
+				<Each match="design/." sort="Order" from="/_/md/selectOption.html"></Each>
 			</Scope>
 			<Placeholder>Select a project</Placeholder>
 		</Import>
