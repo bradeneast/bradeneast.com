@@ -42,6 +42,7 @@ main {
 }
 
 li {
+	margin-left: -$flow1;
 	padding-left: $flow1;
 
 	&::marker {
