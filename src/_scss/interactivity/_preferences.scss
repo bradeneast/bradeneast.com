@@ -46,7 +46,7 @@ html {
 			color: var(--g1);
 		}
 
-		.technology img {
+		.blurb img[src*="svg"] {
 			filter: invert(1);
 		}
 

@@ -18,43 +18,46 @@ Rich text features have been shown to frustrate many users, so I opted for a ric
 
 ## Technologies
 
-<div class="technologies grid">
+<div class="post--grid">
 
-<Import from="/_/sm/tech.html">
-	<TechName>GoTrue API</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>GoTrue API</BlurbTitle>
+	<BlurbDescription>
 		I used the <a href="//github.com/netlify/gotrue">GoTrue API</a> to handle user signup, authentication and custom user data. GoTrue is based on OAuth2 and JWT.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/auth.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>lit-html</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>lit-html</BlurbTitle>
+	<BlurbDescription>
 		I used this templating library from Google's <a href="//www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/lit-html.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>esbuild</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>esbuild</BlurbTitle>
+	<BlurbDescription>
 	 The source code was split up into components and templates, so <a href="//github.com/evanw/esbuild">esbuild</a> was the fastest way to bundle and minify the application.
-	</TechUse>
+	</BlurbDescription>
+	<BlurbImage>
+		<img src="/_assets/images/technologies/esbuild.svg" />
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>Netlify</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Netlify</BlurbTitle>
+	<BlurbDescription>
 		I'm hosting Flintstone on Netlify and deploying from its GitHub repository.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/netlify.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
 </div>

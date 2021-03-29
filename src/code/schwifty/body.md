@@ -23,33 +23,36 @@ Finally, Schwifty is built for the lightest possible client-side load. That's wh
 
 ## Technologies
 
-<div class="technologies grid">
+<div class="post--grid">
 
-<Import from="/_/sm/tech.html">
-	<TechName>Git & Github</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Git & Github</BlurbTitle>
+	<BlurbDescription>
 		I used git branches to add new features, and <a target="_blank" href="//github.com/bradeneast/schwifty">published the library</a> on Github with comprehensive documentation.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/github.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>Javascript ES6</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Javascript ES6</BlurbTitle>
+	<BlurbDescription>
 		I leveraged several features of modern Javascript, including Classes, new Array methods, and the Intersection Observer API.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/javascript.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>esbuild</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>esbuild</BlurbTitle>
+	<BlurbDescription>
 		I used the <a target="_blank" href="//github.com/evanw/esbuild">esbuild</a> bundler to generate a minified version of the library.
-	</TechUse>
+	</BlurbDescription>
+	<BlurbImage>
+		<img src="/_assets/images/technologies/esbuild.svg" />
+	</BlurbImage>
 </Import>
 
 </div>

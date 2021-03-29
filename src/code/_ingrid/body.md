@@ -1,45 +1,45 @@
 ## Technologies
 
-<div class="technologies grid">
+<div class="post--grid">
 
-<Import from="/_/sm/tech.html">
-	<TechName>React</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>React</BlurbTitle>
+	<BlurbDescription>
 		I used React to render Ingrid's user interface.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/react.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>MongoDB</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>MongoDB</BlurbTitle>
+	<BlurbDescription>
 		I used MongoDB to securely store user data.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/mongodb.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>Passport.js</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Passport.js</BlurbTitle>
+	<BlurbDescription>
 		I used this library to handle authentication for users who opted to save their work.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/passport.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>Netlify</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Netlify</BlurbTitle>
+	<BlurbDescription>
 		I hosted this app on Netlify for fast load times and easy deployment.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/netlify.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
 </div>

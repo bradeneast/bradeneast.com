@@ -8,8 +8,8 @@
 		aside,
 		.feed,
 		.post--info,
+		.post--grid,
 		.blurb,
-		.technologies,
 		li {
 			display: block !important;
 		}
@@ -101,7 +101,7 @@
 			background: $g7;
 		}
 
-		.technology {
+		.blurb {
 			margin-bottom: $flow3;
 		}
 

@@ -18,43 +18,46 @@ My objective with this project was to make something that was easy to scale as I
 
 ## Technologies
 
-<div class="technologies grid">
+<div class="post--grid">
 
-<Import from="/_/sm/tech.html">
-	<TechName>Typescript</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Typescript</BlurbTitle>
+	<BlurbDescription>
 		I used Typescript's compiler to generate an accessible bundle from source code written in ES6+ syntax.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/typescript.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>lit-html</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>lit-html</BlurbTitle>
+	<BlurbDescription>
 		I used this templating library from Google's <a href="//www.polymer-project.org/">Polymer Project</a> to render a reactive user interface.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/lit-html.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>esbuild</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>esbuild</BlurbTitle>
+	<BlurbDescription>
 		Since the source code was split up into components and templates, I used <a href="//github.com/evanw/esbuild">esbuild</a> to bundle and minify the application.
-	</TechUse>
+	</BlurbDescription>
+	<BlurbImage>
+		<img src="/_assets/images/technologies/esbuild.svg" />
+	</BlurbImage>
 </Import>
 
-<Import from="/_/sm/tech.html">
-	<TechName>Netlify</TechName>
-	<TechUse>
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Netlify</BlurbTitle>
+	<BlurbDescription>
 		I'm hosting WRDS on Netlify and deploying from its GitHub repository.
-	</TechUse>
-	<TechLogo>
+	</BlurbDescription>
+	<BlurbImage>
 		<img src="/_assets/images/technologies/netlify.svg" />
-	</TechLogo>
+	</BlurbImage>
 </Import>
 
 </div>

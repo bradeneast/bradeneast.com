@@ -1,10 +1,7 @@
-.technologies {
+.post--grid {
   padding-top: $flow1;
-}
-
-.technologies {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   margin-bottom: $flow4;
   gap: $flow4;
 
@@ -18,7 +15,7 @@
     margin-bottom: 0;
   }
 
-  img {
+  img[src*=".svg"] {
     height: 4em;
     width: auto;
     opacity: 0.85;
