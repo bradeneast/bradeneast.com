@@ -7,14 +7,14 @@
 			Here you'll find the front-end things I'm building lately.
 		</p>
 		<div class="feed">
-			<Each match="code/." from="/_/md/feedItem.html"></Each>
+			<Each match="code/." sort="Order" from="/_/md/feedItem.html"></Each>
 		</div>
 	</Content>
 
 	<Aside>
 		<Import from="/_/md/selectDropdown.html">
 			<Scope>
-				<Each match="code/." from="/_/md/selectOption.html"></Each>
+				<Each match="code/." sort="Order" from="/_/md/selectOption.html"></Each>
 			</Scope>
 			<Placeholder>Select a project</Placeholder>
 		</Import>
