@@ -61,6 +61,10 @@ blockquote {
 	}
 }
 
+blockquote {
+	border: $borderWidth $borderStyle var(--primary);
+}
+
 br {
 	appearance: none;
 	display: block;

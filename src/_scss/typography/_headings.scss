@@ -36,14 +36,11 @@ main {
       top: 50%;
       right: calc(100% + #{$flow1});
       height: $borderWidth;
-      background: currentColor;
+      background: var(--accent);
     }
   }
 
-  h2 {
-    color: var(--accent);
-  }
-
+  h2,
   h3 {
     color: var(--primary);
   }
@@ -58,10 +55,12 @@ main {
 
   h4::before {
     width: 2em;
+    color: currentColor;
   }
 
   h5::before {
     width: 1em;
+    color: currentColor;
   }
 }
 
