@@ -1,8 +1,9 @@
 The Elderberry Wine Company is a winery owned and operated by [360 Farms](/design/360-farms), who makes specialty wines for health-conscious moms and those who prefer natural alternatives to pharmaceutical products.
 
-![The signature mark featuring an elderberry seal](/_assets/images/wine/berries.png)
-
-![The secondary mark, featuring an elderflower](/_assets/images/wine/flower.png)
+<div class="post--grid">
+  <img alt="The signature mark featuring an elderberry seal" src="/_assets/images/wine/berries.png">
+  <img alt="The secondary mark, featuring an elderflower" src="/_assets/images/wine/flower.png">
+</div>
 
 ![Several color variations of the mark](/_assets/images/wine/logos.png)
 

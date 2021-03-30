@@ -1,4 +1,4 @@
-In 2019, the Baptist General Convention of Oklahoma had an opportunity to seek a unified brand that looked and felt the same in every area of ministry and mission. In the process of brand discovery, the question was asked:
+In 2019, the Baptist General Convention of Oklahoma had an opportunity to align every subsidiary toward greater impact in the areas of church attendance, missions sending, baptisms, and giving. To this end, the question was asked:
 
 > How can the work and mission of Oklahoma Baptists be distilled into a single, unifying mark?
 
@@ -41,7 +41,8 @@ Convention ministry websites were a core part of how churches stayed connected, 
 
 ![The universal contact form in the footer of every page on OklahomaBaptists.org](/_assets/images/oklahoma-baptists/contact-form.jpg)
 
-For the remaining &ldquo;free-standing&rdquo; websites, it was important that they reflect the texture and timbre of the Oklahoma Baptists brand.
+<p class="center">For the remaining &ldquo;free-standing&rdquo; websites, it was important that they reflect the texture and timbre of the Oklahoma Baptists brand.
+</p>
 
 <div class="post--grid">
 
