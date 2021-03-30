@@ -48,3 +48,9 @@ main > *:not(.has-media):not(.cp_embed_wrapper) {
 	opacity: 0;
 	pointer-events: none;
 }
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
