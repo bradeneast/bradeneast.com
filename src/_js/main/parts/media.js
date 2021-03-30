@@ -8,7 +8,6 @@ export default function prepMedia() {
 		if (!media.alt?.length)
 			media.alt = media.alt || altFromSrc(media.src);
 		media.parentElement.classList.add('has-media');
-		media.title = media.title || media.alt;
 	}
 
 	for (let table of $$('table')) {

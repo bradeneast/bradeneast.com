@@ -22,7 +22,7 @@ With these goals in mind, I saturated each logo idea with a semblance of *statew
 ![The new identity mark of the Oklahoma Baptist Convention](/_assets/images/oklahoma-baptists/logo.png)
 
 <p class="center">
-I took great care to make informed choices through each step of the design process, and my final concept was collectively refined by our whole creative group. The logo was affirmed by key executives and leadership within the organization.
+  I took great care to make informed choices through each step of the design process, and my final concept was collectively refined by the whole creative group. The logo was affirmed by key executives and leadership within the organization.
 </p>
 
 <div class="post--grid">
@@ -84,6 +84,8 @@ This challenge was addressed by evolving the look of print pieces early on, like
 
 ## Measuring Success
 
-Oklahoma Baptists are “Advancing the Gospel together”, so it was fitting that our mark communicated it all.
+Despite the challenges of Oklahoma Baptists' diversity and aversion to change, the new identity was adopted quickly and well-received. Oklahoma Baptists are “Advancing the Gospel together”, so it was fitting that our mark communicated it all.
+
+Since this project, Churches have continued to associate the new identity more and more with the ways their convention serves and amplifies the mission of Gospel advance.
 
 ![A backpack worn by an attendee of the 2020 Oklahoma Baptists Annual Meeting](/_assets/images/oklahoma-baptists/backpack.jpg)
