@@ -2,6 +2,8 @@
   padding-top: $flow1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  grid-template-rows: minmax(18em, auto);
+  overflow: hidden;
   gap: $flow4;
 
   h2,
@@ -12,6 +14,11 @@
 
   p {
     margin-bottom: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
   img[src*="/technologies"] {
