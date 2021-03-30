@@ -2,6 +2,7 @@ import { $, $$, getRandomPage, togglePref } from "../../utils";
 
 export default function startListeners() {
 
+	$('#back_to_top').addEventListener('click', () => scrollTo(0, 0));
 
 	// Preference Toggles
 	for (let pref of window.__preferences) {

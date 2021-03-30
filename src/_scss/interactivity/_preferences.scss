@@ -10,6 +10,7 @@
 	--on: 1;
 
 	svg {
+		pointer-events: none;
 		--translate: 0, 0, 0;
 		transition: transform $motionTransition, opacity $smoothTransition;
 		transform: translate3d(var(--translate));
