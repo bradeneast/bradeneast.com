@@ -15,7 +15,7 @@ The core values of Oklahoma Baptists were defined in three Gospel-centered aspir
 2. Embracing Brokenness
 3. Making Disciples
 
-With these goals in mind, I saturated each logo idea with a semblance of *statewide Gospel cooperation*.
+With these goals in mind, I curated each logo idea to show *statewide Gospel cooperation*.
 
 ![The new logo icon on a white background.](/_assets/images/oklahoma-baptists/icon-light.svg)
 
@@ -35,9 +35,7 @@ With these goals in mind, I saturated each logo idea with a semblance of *statew
 
 ## Identity System
 
-To supplement the logo properly, I worked closely with our Creative Director to develop an identity system that would serve the diverse needs of Oklahoma Baptists. The Pantone-standardized colors were chosen to be functional and true to the Oklahoma Baptists brand messaging.
-
-Each design guideline was especially tailored for clear and concise communication.
+To supplement the logo, I worked closely with our Creative Director on developing an identity system that would serve the diverse needs of the convention. Each design guideline was especially selected to be concise, functional, and true to the Oklahoma Baptists brand messaging.
 
 ![A glimpse into the Oklahoma Baptists style guide](/_assets/images/oklahoma-baptists/style-guide.jpg)
 
@@ -48,7 +46,7 @@ Each design guideline was especially tailored for clear and concise communicatio
 
 Until the rebrand, a strong online presence and smooth user experience were lacking for Oklahoma Baptists. Convention ministry websites were a core part of how churches stayed connected, but the user experience was found to be disjointed and fragmented.
 
-> The consolidation of over 20 websites into one online home required elements like navigation labels, page structure, and layout to be tested with pastors and convention staff.
+> The consolidation of over 20 websites into one online home required elements like navigation labels, page structure, and layout to be tested with pastors and convention staff. Once the data was collected, we strategically implemented the elements that felt the ***most like home*** to Oklahoma Baptist users.
 
 ![A homepage concept for the website of Oklahoma Baptists](/_assets/images/oklahoma-baptists/homepage.jpg)
 
@@ -66,9 +64,9 @@ Until the rebrand, a strong online presence and smooth user experience were lack
 
 ## Collateral
 
-Any departure from tradition needs a tactful and sensitive introduction. Studying the Oklahoma Baptists demographic showed that that the rebrand could easily be ill-received, ***if not handled with special care***.
+Departing from tradition sometimes means rocking the boat. Studying the Oklahoma Baptists demographic showed that that the rebrand could easily be ill-received ***without a tactful and sensitive introduction.***.
 
-This challenge was addressed by evolving the look of print pieces early on, like prayer guides and event programs. By putting these items in the hands of Oklahoma Baptist churches, we were able to familiarize them with what was to come.
+To solve this challenge, we immediately began evolving the style of print pieces like prayer guides and event programs. By putting these items in the hands of Oklahoma Baptist churches early on, we were able to familiarize them with the style of the coming rebrand.
 
 ![A bifold brochure to introduce the new Oklahoma Baptists brand and vision](/_assets/images/oklahoma-baptists/bifold.jpg)
 
@@ -86,8 +84,8 @@ This challenge was addressed by evolving the look of print pieces early on, like
 
 ## Measuring Success
 
-Despite the challenges of Oklahoma Baptists' diversity and aversion to change, the new identity was adopted quickly and well-received. Oklahoma Baptists are “Advancing the Gospel together”, so it was fitting that our mark communicated it all.
+Although Oklahoma Baptists are diverse and often slow to change, the new identity was adopted quickly and with great enthusiasm. The convention and churches alike are “Advancing the Gospel together”, so it was fitting that this new brand identity communicated it all.
 
-Since this project, Churches have continued to associate the new identity more and more with the ways their convention serves and amplifies the mission of Gospel advance.
+Since this project, Oklahoma Baptist churches have continued to associate the new identity more and more with the ways their convention serves and amplifies the mission of Gospel advance.
 
 ![A backpack worn by an attendee of the 2020 Oklahoma Baptists Annual Meeting](/_assets/images/oklahoma-baptists/backpack.jpg)
