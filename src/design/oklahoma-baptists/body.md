@@ -1,11 +1,13 @@
-In 2019, the Baptist General Convention of Oklahoma had an opportunity to align every subsidiary toward greater impact in the areas of church attendance, missions sending, baptisms, and giving. To this end, the question was asked:
-
-> How can the work and mission of Oklahoma Baptists be distilled into a single, unifying mark?
+In 2019, the Baptist General Convention of Oklahoma had an opportunity to align every subsidiary toward greater impact in the areas of church attendance, missions sending, baptisms, and giving.
 
 ![A missionary baptizing new converts to Christianity](/_assets/images/oklahoma-baptists/river-baptism.jpg)
 
 
 ## Why rebrand?
+
+The Oklahoma Baptist convention has not always represented itself and its entities as one family. Bringing every entity under one umbrella in the minds of churches required that the work and mission of Oklahoma Baptists be distilled into a single, unifying mark.
+
+![A collection of many previous Oklahoma Baptists logos](/_assets/images/oklahoma-baptists/old-logos.png)
 
 The core values of Oklahoma Baptists were defined in three Gospel-centered aspirations.
 
@@ -64,9 +66,9 @@ Until the rebrand, a strong online presence and smooth user experience were lack
 
 ## Collateral
 
-Any departure from tradition needs a tactful and sensitive introduction. The nature of our audience meant that changes to the status quo could be ill-received, ***if not handled with special care***.
+Any departure from tradition needs a tactful and sensitive introduction. Studying the Oklahoma Baptists demographic showed that that the rebrand could easily be ill-received, ***if not handled with special care***.
 
-This challenge was addressed by evolving the look of print pieces early on, like prayer guides and event programs. By putting these items in the hands of Oklahoma Baptist churches, we were able to familiarize them with the look and feel of what was to come.
+This challenge was addressed by evolving the look of print pieces early on, like prayer guides and event programs. By putting these items in the hands of Oklahoma Baptist churches, we were able to familiarize them with what was to come.
 
 ![A bifold brochure to introduce the new Oklahoma Baptists brand and vision](/_assets/images/oklahoma-baptists/bifold.jpg)
 
