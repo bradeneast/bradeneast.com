@@ -5,7 +5,7 @@ In 2019, the Baptist General Convention of Oklahoma had an opportunity to align 
 
 ## Why rebrand?
 
-The Oklahoma Baptist convention has not always represented itself and its entities as one family. Bringing every entity under one umbrella in the minds of churches required that the work and mission of Oklahoma Baptists be distilled into a single, unifying mark.
+The Oklahoma Baptist convention has not always represented itself and its entities as one family. Bringing every entity under a single umbrella required that the work and mission of Oklahoma Baptists be distilled into a single, unifying mark.
 
 ![A collection of many previous Oklahoma Baptists logos](/_assets/images/oklahoma-baptists/old-logos.png)
 
