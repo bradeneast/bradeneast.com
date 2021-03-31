@@ -18,12 +18,13 @@
         width: 0.63em;
         height: 0.63em;
         position: absolute;
-        top: 0.15em;
+        top: 0;
         right: 0;
         border-right: $borderWidth $borderStyle;
         border-bottom: $borderWidth $borderStyle;
         border-color: currentColor;
-        transform: rotate(45deg);
+        transform: translateY(0.15em) rotate(45deg);
+        transition: transform $colorTransition;
       }
     }
 
@@ -31,8 +32,13 @@
     input:checked ~ .select {
       .select__options {
         opacity: 1;
+        transform: scaleY(1);
         pointer-events: all;
       }
+    }
+
+    input:checked ~ label::after {
+      transform: translateY(0.45em) rotate(45deg) scale(-1);
     }
 
     input {
@@ -53,7 +59,9 @@
     overflow-y: auto;
     opacity: 0;
     pointer-events: none;
-    transition: opacity $colorTransition;
+    transform-origin: top;
+    transform: scaleY(0.9);
+    transition: opacity $colorTransition, transform $smoothTransition;
   }
 
   * {
