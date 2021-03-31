@@ -24,7 +24,7 @@ With these goals in mind, I saturated each logo idea with a semblance of *statew
 ![The new identity mark of the Oklahoma Baptist Convention](/_assets/images/oklahoma-baptists/logo.png)
 
 <p class="center">
-  I took great care to make informed choices through each step of the design process, and my final concept was collectively refined by the whole creative group. The logo was affirmed by key executives and leadership within the organization.
+  I took great care to make informed creative decisions through each step of the design process, and my final concept was collectively refined by the creative group. The logo was then approved by key executives and leadership within the organization.
 </p>
 
 <div class="post--grid">
