@@ -3,42 +3,22 @@
 <div class="post--grid">
 
 <Import from="/_/sm/blurb.html">
-	<BlurbTitle>React</BlurbTitle>
+	<BlurbTitle>Node.js</BlurbTitle>
 	<BlurbDescription>
-		I used React to render Ingrid's user interface.
+		I learned about best practices for publishing an NPM package to make sure Ingrid's setup was intuitive and user-friendly.
 	</BlurbDescription>
 	<BlurbImage>
-		<img src="/_assets/images/technologies/react.svg" />
+		<img src="/_assets/images/technologies/node.svg" />
 	</BlurbImage>
 </Import>
 
 <Import from="/_/sm/blurb.html">
-	<BlurbTitle>MongoDB</BlurbTitle>
+	<BlurbTitle>Semantic Versioning</BlurbTitle>
 	<BlurbDescription>
-		I used MongoDB to securely store user data.
+		I learned how to use major versions, minor versions, and patches to help keep Ingrid secure and up-to-date.
 	</BlurbDescription>
 	<BlurbImage>
-		<img src="/_assets/images/technologies/mongodb.svg" />
-	</BlurbImage>
-</Import>
-
-<Import from="/_/sm/blurb.html">
-	<BlurbTitle>Passport.js</BlurbTitle>
-	<BlurbDescription>
-		I used this library to handle authentication for users who opted to save their work.
-	</BlurbDescription>
-	<BlurbImage>
-		<img src="/_assets/images/technologies/passport.svg" />
-	</BlurbImage>
-</Import>
-
-<Import from="/_/sm/blurb.html">
-	<BlurbTitle>Netlify</BlurbTitle>
-	<BlurbDescription>
-		I hosted this app on Netlify for fast load times and easy deployment.
-	</BlurbDescription>
-	<BlurbImage>
-		<img src="/_assets/images/technologies/netlify.svg" />
+		<img src="/_assets/images/technologies/generic.svg" />
 	</BlurbImage>
 </Import>
 
