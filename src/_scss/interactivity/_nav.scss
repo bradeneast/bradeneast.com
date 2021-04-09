@@ -69,7 +69,7 @@
     margin: 0;
   }
 
-  .option {
+  [role="menuitem"] {
     transition: background $colorTransition, color $colorTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);

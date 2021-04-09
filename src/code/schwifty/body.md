@@ -3,12 +3,12 @@ Schwfity is my first published Javascript library. It aims to help static sites 
 ## Aren't static sites already fast?
 *Yes!* Static sites can have serious performance advantages. However, there are several "gotchas" where they can be slowed down ***dramatically***.
 
-1. Slow DNS lookup
-2. Slow server response
-3. Slow SSL negotiation
-4. No asset compression (GZIP, Brotli, etc.)
-5. No server-side caching
-6. Resources spread out over lots of domains (CDNs, third-party scripts, Google fonts, etc.)
+- [x] Slow DNS lookup
+- [x] Slow server response
+- [x] Slow SSL negotiation
+- [x] No asset compression (GZIP, Brotli, etc.)
+- [x] No server-side caching
+- [x] Resources spread out over lots of domains (CDNs, third-party scripts, Google fonts, etc.)
 
 It's possible to have these all dialed in, but even a highly-optimized server is sometimes not able to deliver smooth, instantaneous navigation.
 
