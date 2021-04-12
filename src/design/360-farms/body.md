@@ -1,17 +1,39 @@
 360 Farms is the only business that makes start-to-finish elderberry products for people seeking value and quality. The goal was to reinforce their brand with those wanting improved health and well-being in an era of McDonald’s and WalMart.
 
-360 Farms felt their previous brand identity was not striking a chord with customers, and did not represent their brand clearly.
-
-In this design project, family was an extremely important brand attribute. The land on which the farm operated had been kept in the family since 1947. This made it important to convey a sense of heritage and belonging.
+The demand for elderberry products had increased in recent years, and 360 Farms' core demographic was shifting. They felt their brand was not striking a chord with customers. For 360 Farms, family was an extremely important brand attribute. The land on which the farm operated had been kept in the family since 1947. This made it important to start from a place of heritage and belonging.
 
 <div class="post--grid">
   <img alt="The 360 Farms logo in an inline layout" src="/_assets/images/360/360-inline.svg" />
   <img alt="The 360 Farms logo as a seal" src="/_assets/images/360/360-seal.svg" />
 </div>
 
-The demand for elderberry products had increased in recent years, and 360 Farms' core demographic was shifting. Before designing their brand, we needed a checkup to help 360 Farms be as relevant as possible to their new customer base.
+## Customer Profiles
 
-We discovered two core customer profiles to help ensure that the brand would resonate with as much of 360 Farms audience as possible. These profiles included Julia, a crunchy mom who is interested in organic, novel products, and Richard, a middle-aged man who wants an alternative to prescription drugs for health and longevity.
+Before designing their identity, we studied customer archetypes to help 360 Farms be as relevant as possible to their purveyors. We discovered two core customer profiles to help ensure that the brand would resonate with as much of 360 Farms audience as possible.
+
+<div class="post--grid">
+
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Julia</BlurbTitle>
+	<BlurbDescription>
+		Julia is a crunchy mom who is interested in organic, novel products.
+	</BlurbDescription>
+	<BlurbImage>
+		<img src="/_assets/images/360/julia.jpg" />
+	</BlurbImage>
+</Import>
+
+<Import from="/_/sm/blurb.html">
+	<BlurbTitle>Richard</BlurbTitle>
+	<BlurbDescription>
+		A middle-aged man who wants an alternative to prescription drugs for health and longevity.
+	</BlurbDescription>
+	<BlurbImage>
+		<img src="/_assets/images/360/richard.jpg" />
+	</BlurbImage>
+</Import>
+
+</div>
 
 ![The 360 Farms office, featuring a steel sign to welcome visitors](/_assets/images/360/360-office.jpg)
 
