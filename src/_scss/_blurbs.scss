@@ -1,5 +1,11 @@
+h1,
+h2 {
+  & + .post--grid {
+    padding-top: $flow2;
+  }
+}
+
 .post--grid {
-  padding-top: $flow1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   gap: $flow4;
