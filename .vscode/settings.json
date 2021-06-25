@@ -1,4 +1,5 @@
 {
+	"netlify.site_id": "bradeneast.netlify.com",
 	"liveSassCompile.settings.formats": [
 		{
 			"format": "compressed",
