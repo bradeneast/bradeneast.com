@@ -2,6 +2,7 @@
 title: Flintstone
 image: /img/flintstone/logo.svg
 purpose: Web App
+order: 2
 links:
   Try the demo: //flintstone.app
   Check the source code: //github.com/bradeneast/flintstone

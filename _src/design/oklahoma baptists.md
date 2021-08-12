@@ -7,8 +7,8 @@ tags:
   - Print
   - Digital
 links:
-  Rebrand Explainer: https://oklahomabaptists.org/2020-vision
-  Style Guide: https://oklahomabaptists.org/styleguide
+  Rebrand Explainer: //oklahomabaptists.org/2020-vision
+  Style Guide: //oklahomabaptists.org/styleguide
 ---
 
 In 2019, the Baptist General Convention of Oklahoma had an opportunity to align every subsidiary toward greater impact in the areas of church attendance, missions sending, baptisms, and giving.

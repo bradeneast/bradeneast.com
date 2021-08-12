@@ -7,8 +7,8 @@ tags:
   - Print
   - Color
 links:
-  Featured image by Tony Dillard: https://www.facebook.com/farawaymedia
-  View the full guide: https://cdn.oklahomabaptists.org/20210812074740/Spiritual-Commitment-Guide-2021.pdf
+  Featured image by Tony Dillard: //www.facebook.com/farawaymedia
+  View the full guide: //cdn.oklahomabaptists.org/20210812074740/Spiritual-Commitment-Guide-2021.pdf
 ---
 
 Falls Creek is the largest youth camp in Oklahoma, with more than 50,000 students in attendance each summer. It exists to help churches reach lost students in their communities and to raise up a generation of godly, evangelistic teenagers.

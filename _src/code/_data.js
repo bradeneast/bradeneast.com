@@ -3,7 +3,6 @@ export const layout = "layouts/codePost.njk";
 export const templateEngine = "njk,md";
 export const areaDescription = "Explorations in web development";
 export const parentTitle = "Code";
-export const sortBy = "date";
 
 export function url(page) {
   return `/code/${page.data.title}/`

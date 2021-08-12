@@ -3,7 +3,7 @@
 <div class="select-wrapper">
 
   <input type="checkbox" name="dropdown" id="{{ id }}" oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" />
-  <label class="compress" for="{{ id }}">{{ placeholder | truncate(35) }}</label>
+  <label class="compress" for="{{ id }}">{{ placeholder | truncate(30) }}</label>
 
   <div role="menu" class="select">
     <div class="select__options stagger-child-transitions">

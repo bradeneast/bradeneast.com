@@ -11,25 +11,3 @@ bodyClass: post
 {{ content | safe }}
 
 <hr />
-
-<h2>More like this:</h2>
-
-<div class="grid feed">
-  {% set previousItem = search.previousPage(url, "type=" + type, sort_by) %}
-  {% set nextItem = search.nextPage(url, "type=" + type, sort_by) %}
-  {% set postsList  = false %}
-
-  {% if nextItem or previousItem %}
-    {% if nextItem and not previousItem %}
-      {% set postsList = [nextItem] %}
-    {% elif previousItem and not nextItem %}
-      {% set postsList = [previousItem] %}
-    {% else %}
-      {% set postsList = [nextItem, previousItem] %}
-    {% endif %}
-  {% endif %}
-
-  {% if postsList %}
-    {% include "templates/postsList.njk" %}
-  {% endif %}
-</div>

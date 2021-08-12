@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Code
+sortBy: order
 menu:
   showInMenu: true
   label: See what I'm coding
@@ -10,6 +11,6 @@ menu:
 <p>Here you'll find the front-end things I'm building lately.</p>
 
 <div class="feed">
-{% set postsList = search.pages("type=codePost", sortBy + "=desc") %}
+{% set postsList = search.pages("type=codePost", sortBy + "=asc") %}
 {% include "templates/postsList.njk" %}
 </div>

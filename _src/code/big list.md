@@ -2,6 +2,7 @@
 title: Big List
 image: /img/big-list/logo.svg
 purpose: Web App
+order: 1
 links:
   Try the demo: //biglist.netlify.app
   Check the source code: //github.com/bradeneast/big-list

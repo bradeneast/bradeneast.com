@@ -1,19 +1,19 @@
 ---
 title: Cooperative Program Marketing Campaign
 entity: Southern Baptist Convention
-image: /img/cooperative-program/cooperative-program-marketing-campaign-poster.jpg
+image: /img/cooperative-program/imb-street-evangelism.jpg
 tags:
   - Posters
   - Campaign
   - Print
   - Digital
 links:
-  CP Ambassador Page: https://oklahomabaptists.org/cooperative-program/ambassadors/
+  CP Ambassador Page: //oklahomabaptists.org/cooperative-program/ambassadors/
 ---
 
 The [Cooperative Program](//sbc.net/cp) is the plan through which Southern Baptist churches give to support their state conventions and the Southern Baptist Convention. In 2021, the [Oklahoma Baptist Convention](//oklahomabaptists.org) launched a promotional campaign to bring awareness of the Cooperative Program's mission and ministry into Oklahoma Baptist churches.
 
-![An IMB missionary evangelizes on a busy street in South Africa](/img/cooperative-program/imb-street-evangelism.jpg)
+![An IMB missionary evangelizes on a busy street in South Africa](/img/cooperative-program/cooperative-program-marketing-campaign-poster.jpg)
 
 ## Why market the Cooperative Program?
 Despite its prevalance and widespread effects, many Oklahoma Baptists either have never heard of the Cooperative Program, or have heard of it but don't know how it works.
@@ -28,7 +28,6 @@ Despite its prevalance and widespread effects, many Oklahoma Baptists either hav
 
 ![An ad for Oklahoma Baptist church members to become ambassadors for the Cooperative Program in their church](/img/cooperative-program/ambassador-ad.jpg)
 
-<div class="post--grid">
-  <img alt="A brochure detailing the way Cooperative Program funds are allocated" src="/img/cooperative-program/allocations-card.jpg" />
-  <img alt="A brochure showing how to give digitally through the Cooperative Program" src="/img/cooperative-program/giving-card.jpg" />
-</div>
+![A brochure detailing the way Cooperative Program funds are allocated](/img/cooperative-program/allocations-card.jpg)
+
+![A brochure showing how to give digitally through the Cooperative Program](/img/cooperative-program/giving-card.jpg)
