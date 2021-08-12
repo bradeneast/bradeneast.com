@@ -1,24 +1,14 @@
-html,
-body {
+html {
+  height: 100vh;
+  background: var(--g8);
   overflow-x: hidden;
 }
 
-html {
-  scrollbar-width: initial;
-  background: var(--g8);
-}
-
 body {
-  height: 100vh;
-  min-height: 100vh;
   display: flex;
   flex-flow: row wrap;
   place-items: start;
-}
-
-main,
-aside {
-  margin-top: 40vmin;
+  padding-top: 40vmin;
 }
 
 main {
@@ -27,18 +17,19 @@ main {
   padding-left: $flow2;
   padding-right: $flow2;
   min-width: 20rem;
+}
 
-  iframe {
-    height: 24rem;
-    margin-bottom: $flow2;
-  }
+iframe {
+  height: 24rem;
+  margin-bottom: $flow2;
 }
 
 aside {
   z-index: 9;
   position: sticky;
   top: $flow2;
-  display: inline-flex;
+  align-self: flex-start;
+  display: flex;
   place-items: start;
   place-content: start;
   flex-flow: row wrap;
