@@ -1,7 +1,4 @@
-node_modules
-# Everything that gets rebuilt in the published directory
-dist/[!_]*
-# Environment variables
+.DS_Store
+_site
 .env
-# Local Netlify folder
-.netlify
+oldsrc

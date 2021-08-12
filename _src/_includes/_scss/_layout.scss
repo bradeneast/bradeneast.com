@@ -1,0 +1,152 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scrollbar-width: initial;
+  background: var(--g8);
+}
+
+body {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  place-items: start;
+}
+
+main,
+aside {
+  margin-top: 40vmin;
+}
+
+main {
+  width: 60%;
+  padding-bottom: $flow4;
+  padding-left: $flow2;
+  padding-right: $flow2;
+  min-width: 20rem;
+
+  iframe {
+    height: 24rem;
+    margin-bottom: $flow2;
+  }
+}
+
+aside {
+  z-index: 9;
+  position: sticky;
+  top: $flow2;
+  display: inline-flex;
+  place-items: start;
+  place-content: start;
+  flex-flow: row wrap;
+  width: 40%;
+  padding-right: $flow2;
+
+  section {
+    max-width: 20rem;
+    width: 19vw;
+    min-width: 14rem;
+    padding-left: 2vw;
+
+    a {
+      line-height: 1.2;
+      display: block;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  align-self: end;
+  width: 100%;
+  flex-shrink: 0;
+  padding: $flow1;
+
+  & > * > *:not(:last-child) {
+    padding-right: $flow1;
+    margin-right: $flow1;
+    border-right: $borderWidth $borderStyle var(--g7);
+  }
+
+  & > :last-child {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .modal {
+    transition: opacity $smoothTransition;
+    pointer-events: none;
+    opacity: 0;
+
+    &.visible {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+
+  .socials > a {
+    margin-left: $flow1 / 2;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  body {
+    padding: $flow2 $flow1;
+  }
+
+  main,
+  aside {
+    position: relative;
+    margin-top: 0;
+  }
+
+  aside section {
+    padding: 0;
+    margin-bottom: $flow4;
+  }
+
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer {
+    display: block;
+    text-align: right;
+    padding: 0;
+
+    & > .flex,
+    .socials,
+    .copyright {
+      flex-flow: column;
+    }
+
+    .copyright,
+    .modal,
+    .socials {
+      margin: 0;
+      margin-bottom: $flow1;
+    }
+
+    .modal {
+      order: 9;
+      margin-bottom: 0;
+    }
+
+    .toggles {
+      margin-top: 0.5em;
+      margin-bottom: $flow1;
+      justify-content: flex-end;
+    }
+
+    .socials,
+    .modal {
+      display: block;
+      padding: 0;
+      border: none;
+    }
+  }
+}

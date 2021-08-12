@@ -1,0 +1,9 @@
+{% for post in postsList %}
+<a href="{{ post.data.url | url }}" class="feed__item">
+  <img class="feed__item--image" aria-hidden="true" alt="" src="{{ post.data.image }}" />
+  <div class="feed__item--text">
+    {{ post.data.title }}
+    <div class="light-text">{{ post.data.tags | join(", ") }}</div>
+  </div>
+</a>
+{% endfor %}

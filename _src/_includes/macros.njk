@@ -1,0 +1,48 @@
+{# DROPDOWN #}
+{% macro dropdown(id, placeholder, options) %}
+<div class="select-wrapper">
+
+  <input type="checkbox" name="dropdown" id="{{ id }}" oninput="document.getElementsByName(this.name).forEach(i => i.id != this.id ? i.checked = 0 : 1)" />
+  <label class="compress" for="{{ id }}">{{ placeholder | truncate(35) }}</label>
+
+  <div role="menu" class="select">
+    <div class="select__options stagger-child-transitions">
+      {% for option in options %}
+        <a role="menuitem" class="option" href="{{ option.data.url | url }}">
+          <h2>{{ option.data.menu.label or option.data.title }}</h2>
+          <div class="light-text">{{ option.data.tags | join(", ") }}</div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+{% endmacro %}
+
+
+{# VIDEO #}
+{% macro video(source) %}
+<video loop autoplay muted playsinline src="/img{{ source | url }}"></video>
+{% endmacro %}
+
+
+{# BLURB #}
+{% macro blurb(image, title, description) %}
+<div class="blurb">
+	<div><img src="/img/{{ image }}" alt="" /></div>
+	<h3>{{ title }}</h3>
+	<p>{{ description | md | safe }}</p>
+</div>
+{% endmacro %}
+
+
+{# PERSON #}
+{% macro person(image, name, bio) %}
+<div class="post--grid">
+	<img src="/img/{{ image }}" alt="" />
+  <div>
+    <h3>{{ name }}</h3>
+    <p>{{ bio | md | safe }}</p>
+  </div>
+</div>
+{% endmacro %}

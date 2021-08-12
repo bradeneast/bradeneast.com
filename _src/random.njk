@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: Random
+---
+
+<ul style="display:none">
+  {% for post in search.pages("type=blogPost") %}
+    <li>{{ post.data.url }}</li>
+  {% endfor %}
+</ul>
+
+<script>
+  var items = document.getElementsByTagName("li");
+  var links = items.map(item => item.innerText);
+  var index = Math.floor(Math.random() * links.length);
+  location = links[index];
+</script>

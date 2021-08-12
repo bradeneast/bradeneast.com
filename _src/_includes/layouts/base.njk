@@ -1,0 +1,31 @@
+{%- import "macros.njk" as macros -%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.njk" %}
+
+<body class="{{ bodyClass }}">
+
+	<aside>
+		<section>
+			{% set primaryMenuPages = search.pages("menu.showInMenu=true") %}
+			{{ macros.dropdown("primary", parentTitle or title, primaryMenuPages) }}
+		</section>
+		{% if showSecondaryMenu %}
+		<section>
+			{% set secondaryMenuPages = search.pages("type=" + type) %}
+			{{ macros.dropdown("secondary", title, secondaryMenuPages) }}
+		</section>
+		{% endif %}
+	</aside>
+
+	<main>
+		{{ content | safe }}
+	</main>
+
+	{% include "footer.njk" %}
+
+</body>
+
+</html>

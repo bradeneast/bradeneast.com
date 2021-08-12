@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: Blog
+menu:
+  showInMenu: true
+  label: Read my blog
+---
+
+<h1>The blog for <em>dev-signers</em></h1>
+<p>For moments of spontaneity, <a href="/random">here's a random post</a>.</p>
+
+<div class="feed">
+{% set postsList = search.pages("type=blogPost", sortBy + "=desc") %}
+{% include "templates/postsList.njk" %}
+</div>

@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: Design
+menu:
+  showInMenu: true
+  label: See my designs
+---
+
+<h1>A small showcase</h1>
+<p>There are several of these in the shop. I just want to put some tender love and care into documenting each piece properly.</p>
+
+<div class="feed">
+{% set postsList = search.pages("type=designPost", sortBy + "=desc") %}
+{% include "templates/postsList.njk" %}
+</div>

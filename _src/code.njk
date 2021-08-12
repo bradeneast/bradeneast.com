@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: Code
+menu:
+  showInMenu: true
+  label: See what I'm coding
+---
+
+<h1>Making the web <em data-tooltip="more fun">funner</em> and easier.</h1>
+<p>Here you'll find the front-end things I'm building lately.</p>
+
+<div class="feed">
+{% set postsList = search.pages("type=codePost", sortBy + "=desc") %}
+{% include "templates/postsList.njk" %}
+</div>

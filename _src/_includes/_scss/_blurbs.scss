@@ -1,0 +1,34 @@
+h1,
+h2 {
+  & + .post--grid {
+    padding-top: $flow2;
+  }
+}
+
+.post--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  gap: $flow2 $flow3;
+  margin: $flow3 0;
+
+  h2,
+  h3,
+  h4 {
+    margin: $flow1 0 !important;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img[src*="/technologies"] {
+    height: 4em;
+    width: auto;
+    opacity: 0.85;
+  }
+}

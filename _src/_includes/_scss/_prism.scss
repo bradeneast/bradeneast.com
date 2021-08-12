@@ -1,0 +1,122 @@
+code,
+pre,
+textarea {
+	background: var(--g7);
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	overflow-x: auto;
+	line-height: 1.4;
+	tab-size: 2;
+	hyphens: none;
+	font-size: 0.9em;
+	font-family: $altFontFamily;
+	max-width: calc(100vw - #{$flow4});
+	font-variation-settings: "slnt" 0, "CASL" 0, "MONO" 1;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	span {
+		font-family: inherit;
+	}
+}
+
+@media screen and (min-width: $mobile) {
+	code,
+	pre,
+	textarea {
+		font-size: 0.94em;
+	}
+}
+
+:not(pre) > code {
+	cursor: text;
+	color: var(--g2);
+	padding: 0.1em 0.2em;
+	white-space: normal;
+}
+
+.hljs {
+	color: inherit;
+	$a: #eb4a4a;
+	$b: #7764c9;
+	$c: #459fe9;
+	$d: #3cbbc4;
+	$e: #e0a332;
+
+	&-property,
+	&-selector-tag,
+	&-selector-class,
+	&-selector-id,
+	&-selector-pseudo {
+		color: $b;
+	}
+
+	&-number,
+	&-built_in,
+	&-keyword {
+		color: $b;
+	}
+
+	&-title,
+	&-attr,
+	&-name,
+	&-attribute {
+		color: $c;
+	}
+
+	&-subst,
+	&-params,
+	&-tag,
+	&-variable {
+		color: $d;
+	}
+
+	&-string {
+		color: $e;
+	}
+
+	&-comment {
+		color: var(--g5);
+	}
+}
+
+.function_ {
+	font-weight: $fontWeightHeavy;
+	font-variation-settings: "slnt" -13, "CRSV" 1, "CASL" 1;
+}
+
+pre.line-numbers {
+	counter-reset: linenumber;
+	padding-left: 3em;
+
+	.line-numbers-rows {
+		position: absolute;
+		pointer-events: none;
+		left: 0;
+		top: 0;
+		padding-top: inherit;
+		padding-bottom: inherit;
+		width: 3em;
+		user-select: none;
+
+		& > span {
+			display: block;
+			counter-increment: linenumber;
+			padding-right: 1.2em;
+
+			&:last-child {
+				display: none;
+			}
+
+			&::before {
+				content: counter(linenumber);
+				color: var(--g6);
+				display: block;
+				text-align: right;
+			}
+		}
+	}
+}

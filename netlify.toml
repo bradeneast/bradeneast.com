@@ -1,36 +1,22 @@
-#############
-# PLUGINS #
-#############
+[build]
+command = "curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts --location=https://bradeneast.com/"
+publish = "_site"
 
-[[plugins]]
-package = "@netlify/plugin-sitemap"
-
-[plugins.inputs]
-exclude = [
-  '**/404/*',
-  '**/random/*',
-]
-
-#############
-# REDIRECTS #
-#############
-
-[[redirects]]
-from = "/"
-status = 301
-to = "/about/"
+[dev]
+autoLaunch = true
+command = "lume --serve"
+framework = "#custom"
+port = 8888
+publish = "_site"
+targetPort = 3000
 
 [[redirects]]
 from = "/*"
 status = 404
-to = "/404/"
+to = "/404"
 
-###########
-# HEADERS #
-###########
-
-[[headers]]
-# Define which paths this specific [[headers]] block will cover.
-for = "/*"
-[headers.values]
-Access-Control-Allow-Origin = "*"
+[[redirects]]
+force = true
+from = "https://bradeneast.netlify.app"
+status = 301
+to = "https://bradeneast.com"
