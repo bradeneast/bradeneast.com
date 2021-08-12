@@ -62,7 +62,30 @@ blockquote {
 }
 
 blockquote {
-	border: $borderWidth $borderStyle var(--primary);
+	margin: $flow4 0;
+	text-align: center;
+	font-family: $altFontFamily;
+
+	&::before {
+		content: "“";
+		top: 0;
+		left: 0;
+		line-height: 0.5;
+	}
+
+	&::after {
+		content: "”";
+		bottom: -0.2em;
+		right: 0.1em;
+		line-height: 0;
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		font-size: 3em;
+		color: var(--g6);
+	}
 }
 
 br {
