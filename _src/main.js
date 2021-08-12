@@ -20,6 +20,5 @@ init();
 
 new Schwifty({
 	onload: init,
-	preserveAttributes: true,
-	preserveScroll: false,
+	preserveAttributes: true
 })
