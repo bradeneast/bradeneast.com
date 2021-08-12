@@ -22,3 +22,8 @@ In my current role I've been involved in everything from designing web experienc
 Email me and I'll make myself available for a call or a coffee run.
 
 [{{ site.email }}](mailto:{{site.email}})
+
+> Unless the LORD builds a house, the work of the builders is wasted.
+>
+> Unless the LORD protects a city, guarding it with sentries will do no good.
+> <div class="light-text">Psalm 127</div>
