@@ -8,8 +8,7 @@ tags:
   - Print
   - Digital
 links:
-  Rebrand Explainer: https://oklahomabaptists.org/2020-vision
-  Style Guide: https://oklahomabaptists.org/styleguide
+  CP Ambassador Page: https://oklahomabaptists.org/cooperative-program/ambassadors/
 ---
 
 The [Cooperative Program](//sbc.net/cp) is the plan through which Southern Baptist churches give to support their state conventions and the Southern Baptist Convention. In 2021, the [Oklahoma Baptist Convention](//oklahomabaptists.org) launched a promotional campaign to bring awareness of the Cooperative Program's mission and ministry into Oklahoma Baptist churches.
@@ -21,10 +20,9 @@ Despite its prevalance and widespread effects, many Oklahoma Baptists either hav
 
 ![Two campaign posters promoting Baptist Collegiate Ministries and the Send Relief program of the North American Mission Board](/img/cooperative-program/horizontal-posters-navy.jpg)
 
-<div class="post--grid">
-  <img alt="A campaign poster of an IMB missionary evangelizing to promote the Cooperative Program" src="/img/cooperative-program/horizontal-a4-poster.jpg" />
-  <img alt="Two campaign posters promoting Baptist Collegiate Ministries and the Send Relief program of the North American Mission Board" src="/img/cooperative-program/vertical-imb-baptism-navy.jpg" />
-</div>
+![A campaign poster of an IMB missionary evangelizing to promote the Cooperative Program](/img/cooperative-program/horizontal-a4-poster.jpg)
+
+![Two campaign posters promoting Baptist Collegiate Ministries and the Send Relief program of the North American Mission Board](/img/cooperative-program/vertical-imb-baptism-navy.jpg)
 
 ![A computer displaying the CP presentation with custom-made data visualizations.](/img/cooperative-program/pie-chart.jpg)
 
