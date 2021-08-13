@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+templateEngine: njk,md
 title: Code
 sortBy: order
 menu:
@@ -7,8 +8,9 @@ menu:
   label: See what I'm coding
 ---
 
-<h1>Making the web <em data-tooltip="more fun">funner</em> and easier.</h1>
-<p>Here you'll find the front-end things I'm building lately.</p>
+# Making the web <em data-tooltip="more fun">funner</em> and easier.
+
+Here you'll find the front-end things I'm building lately.
 
 <div class="feed">
 {% set postsList = search.pages("type=codePost", sortBy + "=asc") %}

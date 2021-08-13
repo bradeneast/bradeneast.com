@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+templateEngine: njk,md
 title: Blog
 sortBy: date
 menu:
@@ -7,8 +8,9 @@ menu:
   label: Read my blog
 ---
 
-<h1>The blog for <em>dev-signers</em></h1>
-<p>For moments of spontaneity, <a href="/random">here's a random post</a>.</p>
+# The blog for *dev-signers*
+
+For moments of spontaneity, [here's a random post](/random).
 
 <div class="feed">
 {% set postsList = search.pages("type=blogPost", sortBy + "=desc") %}

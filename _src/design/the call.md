@@ -1,5 +1,5 @@
 ---
-title: The Call Conference Program
+title: Program for 'The Call' Conference
 entity: Oklahoma Baptists
 image: /img/the-call-program/hero.jpg
 tags:

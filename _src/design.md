@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: Design
 templateEngine: njk,md
+title: Design
 sortBy: date
 menu:
   showInMenu: true
@@ -10,9 +10,7 @@ menu:
 
 # Uniting the digital and the material.
 
-If it's a design, it's a story.
-
-More than one, and it's a system.
+It used to be called &ldquo;multi-media.&rdquo; I'm not particularly fond of that name, but it's a badge of experience and knowledge in many disciplines. I specialize in visual storytelling across all mediums, and if that makes me a multi-media designer, then so be it.
 
 <div class="feed">
 {% set postsList = search.pages("type=designPost", sortBy + "=desc") %}

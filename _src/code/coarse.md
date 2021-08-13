@@ -13,7 +13,7 @@ tags:
 technologies:
   - 
     name: Javascript ES6
-    description: I used vanilla Javascript to write clean, minimal code that outperforms carousel libraries.
+    description: I used vanilla Javascript to write clean, maintainable code that outperforms other carousel libraries.
     image: javascript.svg
 ---
 
