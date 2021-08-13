@@ -26,7 +26,7 @@ This event is normally used to confirm that a user wants to leave a page with un
 
 > ***Be careful!*** This event is easy to abuse, and is also triggered by updating the url with `history.replaceState()`.
 
-![A confirmation prompt on CodePen that encourages users to save their work.](/_assets/images/window-confirm-prompt.png)
+![A confirmation prompt on CodePen that encourages users to save their work.](/img/window-confirm-prompt.png)
 
 
 ### 2. `window.pagehide`
@@ -69,4 +69,4 @@ This event fires when the `visibilityState` of the document changes. The visibil
 - [The Page Lifecycle API](//developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)
 - [MDN readyState reference](//developer.mozilla.org/en-US/docs/Web/API/Document/readyState)
 
-![The page lifecycle API](/_assets/images/page-lifecycle-api-state-event-flow.png "Philip Walton, Google Developers Reference")
+![The page lifecycle API](/img/page-lifecycle-api-state-event-flow.png "Philip Walton, Google Developers Reference")

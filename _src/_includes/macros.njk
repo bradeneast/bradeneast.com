@@ -40,7 +40,7 @@
 {% macro person(image, name, bio) %}
 <div class="post--grid">
 	<img src="/img/{{ image }}" alt="" />
-  <div>
+  <div class="post--grid__text">
     <h3>{{ name }}</h3>
     <p>{{ bio | md | safe }}</p>
   </div>
