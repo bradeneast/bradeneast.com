@@ -20,5 +20,5 @@ init();
 
 new Schwifty({
 	onload: init,
-	preserveAttributes: true
+	preserveAttributes: { documentElement: true }
 })

@@ -3,6 +3,7 @@
 }
 
 .grid {
+	--columns: 18em;
 	display: grid;
 	gap: $flow4;
 	grid-template-columns: repeat(auto-fill, minmax(var(--columns), 1fr));
@@ -35,21 +36,6 @@ main > *:not(.has-media):not(.cp_embed_wrapper) {
 	}
 }
 
-.float-children {
-	& > * {
-		min-width: 33%;
-	}
-
-	& > :first-child {
-		margin-right: $flow4;
-	}
-
-	& > :last-child {
-		text-align: right;
-		margin-left: auto;
-	}
-}
-
 .pad-vertical {
 	padding: $flow6 0;
 }
@@ -63,4 +49,11 @@ main > *:not(.has-media):not(.cp_embed_wrapper) {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+@media screen and (max-width: $mobile) {
+	.grid {
+		padding-left: $flow1;
+		padding-right: $flow1;
+	}
 }

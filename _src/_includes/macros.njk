@@ -38,11 +38,11 @@
 
 {# PERSON #}
 {% macro person(image, name, bio) %}
-<div class="post--grid">
+<div class="grid">
 	<img src="/img/{{ image }}" alt="" />
-  <div class="post--grid__text">
+  <div class="pad-horizontal">
     <h3>{{ name }}</h3>
-    <p>{{ bio | md | safe }}</p>
+    {{ bio | md | safe }}
   </div>
 </div>
 {% endmacro %}

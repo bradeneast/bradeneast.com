@@ -13,7 +13,7 @@ layout: layouts/post.njk
 
 <h2>Technologies</h2>
 
-<div class="post--grid">
+<div class="grid">
 {% for tech in technologies %}
   {{ macros.blurb("technologies/" + tech.image, tech.name, tech.description) }}
 {% endfor %}

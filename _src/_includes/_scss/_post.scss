@@ -1,20 +1,14 @@
-h1,
-h2 {
-  & + .post--grid {
+.post h2,
+.post h3 {
+  & + .grid {
     padding-top: $flow2;
   }
 }
 
-.post--grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+.post .grid {
   gap: $flow2 $flow3;
   margin-top: $flow3;
   margin-bottom: $flow3;
-
-  &__text {
-    padding: 0 $flow1;
-  }
 
   h2,
   h3,
@@ -22,7 +16,7 @@ h2 {
     margin: $flow1 0 !important;
   }
 
-  p {
+  & > :last-child {
     margin-bottom: 0;
   }
 

@@ -15,7 +15,7 @@ Falls Creek is the largest youth camp in Oklahoma, with more than 50,000 student
 
 During each night's worship service, there is an invitation for students to act on a calling they may have from God, and the Oklahoma Baptist convention had written ***a Spiritual Commitment Guide*** to help them process their calling in a biblical way.
 
-<div class="post--grid">
+<div class="grid">
   <img src="/img/spiritual-commitment-guide/old-cover.jpg" alt="The cover of the old Spiritual Commitment Guide">
   <img src="/img/spiritual-commitment-guide/old-inside.jpg" alt="A page from the old Spiritual Commitment Guide">
   <p class="light-text">Members of the decision team for previous Falls Creek years had expressed that the guide's design made it difficult to use and unclear in some areas.</p>
