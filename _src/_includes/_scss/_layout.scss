@@ -91,7 +91,8 @@ footer {
   main,
   aside {
     position: relative;
-    margin-top: 0;
+    width: 100%;
+    max-width: none;
   }
 
   aside section {
