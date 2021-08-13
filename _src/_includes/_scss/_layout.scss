@@ -85,7 +85,21 @@ footer {
 
 @media screen and (max-width: $mobile) {
   body {
-    padding: $flow2 $flow1;
+    padding: $flow2 0;
+  }
+
+  main,
+  aside,
+  footer {
+    & > * {
+      margin-left: $flow1;
+      margin-right: $flow1;
+
+      &.has-media {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 
   main,
@@ -119,7 +133,6 @@ footer {
     .copyright,
     .modal,
     .socials {
-      margin: 0;
       margin-bottom: $flow1;
     }
 
@@ -139,6 +152,7 @@ footer {
       display: block;
       padding: 0;
       border: none;
+      margin-right: 0;
     }
   }
 }
