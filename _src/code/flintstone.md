@@ -8,8 +8,8 @@ links:
   Check the source code: //github.com/bradeneast/flintstone
 tags:
   - State Management
-  - Downloads
-  - Productivity
+  - User Authentication
+  - Data Portability
 technologies:
   - 
     name: GoTrue API
