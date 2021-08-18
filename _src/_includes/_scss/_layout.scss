@@ -86,6 +86,7 @@ footer {
 @media screen and (max-width: $mobile) {
   body {
     padding: $flow2 0;
+    overflow-x: hidden;
   }
 
   main,
@@ -107,6 +108,7 @@ footer {
     position: relative;
     width: 100%;
     max-width: none;
+    min-width: 0;
   }
 
   aside section {

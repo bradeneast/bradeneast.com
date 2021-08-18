@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+templateEngine: njk,md
 title: Random
 ---
 
@@ -8,6 +9,10 @@ title: Random
     <li>{{ post.data.url }}</li>
   {% endfor %}
 </ul>
+
+# Whoops! Something went wrong.
+
+Let's take a moment to appreciate the irony of a randomizer acting unpredictably.
 
 <script>
   var items = document.getElementsByTagName("li");
