@@ -2,6 +2,7 @@
 title: Cooperative Program Marketing Campaign
 entity: Southern Baptist Convention
 image: /img/cooperative-program/imb-street-evangelism.jpg
+draft: true
 tags:
   - Posters
   - Campaign
