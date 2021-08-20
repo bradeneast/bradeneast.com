@@ -14,7 +14,7 @@
 		</section>
 		{% if showSecondaryMenu %}
 		<section>
-			{% set secondaryMenuPages = search.pages("type=" + type) %}
+			{% set secondaryMenuPages = search.pages("type=" + type, site.sorting[parentTitle]) %}
 			{{ macros.dropdown("secondary", title, secondaryMenuPages) }}
 		</section>
 		{% endif %}

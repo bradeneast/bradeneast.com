@@ -13,6 +13,6 @@ menu:
 For moments of spontaneity, [here's a random post](/random).
 
 <div class="feed">
-{% set postsList = search.pages("type=blogPost", sortBy + "=desc") %}
+{% set postsList = search.pages("type=blogPost", site.sorting.Blog) %}
 {% include "templates/postsList.njk" %}
 </div>

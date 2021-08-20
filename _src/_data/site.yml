@@ -7,3 +7,7 @@ socials:
   Twitter: //twitter.com/bradenthehair
   Github: //github.com/bradeneast
   Codepen: //codepen.io/bradeneast
+sorting:
+  Design: order=desc title=asc date=desc
+  Code: order=desc date=desc
+  Blog: date=desc

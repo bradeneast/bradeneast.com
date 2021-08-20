@@ -2,6 +2,7 @@
 title: Oklahoma Baptists
 entity: Nonprofit
 image: /img/oklahoma-baptists/backpack.jpg
+order: 1
 tags:
   - Identity
   - Print
