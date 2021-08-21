@@ -2,7 +2,7 @@ import lume from "lume";
 import date from "lume/plugins/date.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
-import textLoader from "lume/loaders/text.ts";
+import textLoader from "lume/core/loaders/text.ts";
 import * as processors from "./_processors.js";
 
 export const siteSrc = "_src";
