@@ -5,12 +5,36 @@
 	}
 }
 
+@keyframes slideIn {
+	from {
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+		transform: translate3d(1em, 0, 0);
+	}
+}
+
 @keyframes bg-pulse {
 	from {
 		background-position-x: 30%;
 	}
 	to {
 		background-position-x: 70%;
+	}
+}
+
+.splitting {
+	&[style*="break-word"] .word {
+		flex-flow: row wrap;
+	}
+
+	.word {
+		display: inline-flex;
+	}
+
+	.char {
+		display: inline-block;
+		clip-path: polygon(-15% 0, 115% 0, 115% 125%, 0 125%);
+		animation: slideIn $smoothTransition both;
+		animation-delay: calc(0.3s + var(--char-index) * 20ms);
 	}
 }
 

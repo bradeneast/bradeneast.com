@@ -1,9 +1,10 @@
+// @ts-nocheck
 import lume from "lume";
 import date from "lume/plugins/date.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import textLoader from "lume/core/loaders/text.ts";
-import * as processors from "./_processors.js";
+import * as processors from "./_processors.ts";
 
 export const siteSrc = "_src";
 export const siteDest = "_site";
@@ -24,6 +25,8 @@ site
 
   .loadAssets([".js"], textLoader)
   .process([".js"], processors.js)
+
+  .process([".html"], processors.html)
 
   .use(slugifyUrls())
   .use(codeHighlight())
