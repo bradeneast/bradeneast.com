@@ -9,5 +9,5 @@ socials:
   Codepen: //codepen.io/bradeneast
 sorting:
   Design: order=desc title=asc date=desc
-  Code: order=desc date=desc
+  Code: order=asc date=desc
   Blog: date=desc
