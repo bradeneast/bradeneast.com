@@ -7,6 +7,7 @@
 	display: grid;
 	gap: $flow1;
 	grid-template-columns: repeat(auto-fill, minmax(var(--columns), 1fr));
+	margin-bottom: $flow2;
 }
 
 .left {
@@ -52,8 +53,8 @@ main > *:not(.has-media):not(.cp_embed_wrapper) {
 }
 
 @media screen and (max-width: $mobile) {
-	.grid {
-		padding-left: $flow1;
-		padding-right: $flow1;
-	}
+	// .grid {
+	// 	padding-left: $flow1;
+	// 	padding-right: $flow1;
+	// }
 }

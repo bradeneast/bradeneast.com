@@ -37,9 +37,7 @@ With these goals in mind, I curated each logo idea to show *statewide Gospel coo
 
 ![The new identity mark of the Oklahoma Baptist Convention](/img/oklahoma-baptists/logo.png)
 
-<p class="center">
-  I took great care to make informed creative decisions through each step of the design process, and my final concept was collectively refined by the creative group. The logo was then approved by key executives and leadership within the organization.
-</p>
+I took great care to make informed creative decisions through each step of the design process, and my final concept was collectively refined by the creative group. The logo was then approved by key executives and leadership within the organization.
 
 <div class="grid">
   <img alt="A version of the Oklahoma Baptists logo pointing to oklahomabaptists.org" src="/img/oklahoma-baptists/logo-web.png" />
@@ -66,9 +64,7 @@ Until the rebrand, a strong online presence and smooth user experience were lack
 
 ![The universal contact form in the footer of every page on OklahomaBaptists.org](/img/oklahoma-baptists/contact-form.jpg)
 
-<p class="center">
-  For the remaining &ldquo;free-standing&rdquo; websites, it was important that they reflect the texture and timbre of the Oklahoma Baptists brand.
-</p>
+For the remaining &ldquo;free-standing&rdquo; websites, it was important that they reflect the texture and timbre of the Oklahoma Baptists brand.
 
 <div class="grid">
   <img alt="The Baptist Messenger website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/messenger.jpg" />
@@ -84,9 +80,7 @@ To solve this challenge, we immediately began evolving the style of print pieces
 
 ![A bifold brochure to introduce the new Oklahoma Baptists brand and vision](/img/oklahoma-baptists/bifold.jpg)
 
-<p class="center">
-  Print collateral was initially produced with a limited color palette. This decision was made to emphasize the unity and clarity of Oklahoma Baptists brand despite its newness.
-</p>
+Print collateral was initially produced with a limited color palette. This decision was made to emphasize the unity and clarity of Oklahoma Baptists brand despite its newness.
 
 <div class="grid">
   <img alt="A lively conversation of pastors and convention staff at the 2019 Oklahoma Baptists Annual Meeting" src="/img/oklahoma-baptists/party-2.jpg" />
@@ -102,4 +96,4 @@ Although Oklahoma Baptists are diverse and often slow to change, the new identit
 
 Since this project, Oklahoma Baptist churches have continued to associate the new identity more and more with the ways their convention serves and amplifies the mission of Gospel advance.
 
-![](/img/oklahoma-baptists/wheat.jpg)
+![The Oklahoma Baptists logo over an image of wheat in an Oklahoma field.](/img/oklahoma-baptists/wheat.jpg)

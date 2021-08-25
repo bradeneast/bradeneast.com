@@ -39,8 +39,10 @@
 {# PERSON #}
 {% macro person(image, name, bio) %}
 <div class="grid">
-	<img src="/img/{{ image }}" alt="" />
-  <div class="pad-horizontal">
+  <div>
+    <img src="/img/{{ image }}" alt="" />
+  </div>
+  <div style="margin-top:0;">
     <h3>{{ name }}</h3>
     {{ bio | md | safe }}
   </div>
