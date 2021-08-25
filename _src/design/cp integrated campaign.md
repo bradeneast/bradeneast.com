@@ -3,6 +3,7 @@ title: Cooperative Program Marketing Campaign
 entity: Southern Baptist Convention
 image: /img/cooperative-program/wall-bike.jpg
 draft: false
+order: 6
 tags:
   - Posters
   - Campaign
