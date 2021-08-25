@@ -64,6 +64,10 @@ input {
 		transform: translateY(0.12em);
 		background: var(--g7);
 
+		& + label {
+			margin-left: 0.2em;
+		}
+
 		&::before,
 		&::after {
 			content: "";

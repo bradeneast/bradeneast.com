@@ -1,8 +1,8 @@
 :root {
 	font-size: calc(12px + 0.63vmin);
-	font-family: $fontFamily;
+	font-family: $ff_main;
 	line-height: 1.5;
-	color: var(--g1);
+	color: var(--g0);
 }
 
 body {
@@ -64,7 +64,7 @@ blockquote {
 blockquote {
 	margin: $flow4 0;
 	text-align: center;
-	font-family: $altFontFamily;
+	font-family: $ff_alt;
 
 	&::before {
 		content: "“";

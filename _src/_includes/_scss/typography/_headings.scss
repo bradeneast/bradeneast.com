@@ -12,9 +12,12 @@ h6 {
 
 main {
   h1 {
-    line-height: 0.8;
-    font-size: 6rem;
-    letter-spacing: -0.06em;
+    font-family: $ff_h1;
+    line-height: 0.73;
+    text-transform: uppercase;
+    font-size: 10rem;
+    margin-bottom: $flow2;
+    margin-top: $flow2;
     padding-top: 0;
 
     em {

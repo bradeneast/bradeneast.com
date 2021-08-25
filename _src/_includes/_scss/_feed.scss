@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   grid-auto-rows: 20em;
+  padding: $flow2 0;
 
   &__item {
     overflow: hidden;

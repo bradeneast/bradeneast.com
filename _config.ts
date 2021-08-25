@@ -5,6 +5,7 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import * as processors from "./_processors.ts";
+import markdownItCheckbox from "https://jspm.dev/markdown-it-checkbox";
 
 export const siteSrc = "_src";
 export const siteDest = "_site";
@@ -14,6 +15,9 @@ const site = lume({
   location: new URL(siteRoot),
   src: siteSrc,
   dest: siteDest,
+},
+{
+  markdown: { plugins: [[markdownItCheckbox]] }
 });
 
 site

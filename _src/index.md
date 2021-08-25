@@ -15,9 +15,9 @@ I'm Braden.
 
 I currently live in Bartlesville, Oklahoma, working as part of the creative group for the Oklahoma Baptist Convention ⛪.
 
-{{ person("braden-2.jpg", "", "Since 2015, I've been designing logos for local Oklahoma businesses. As I started learning more about design, I began learning complementary skills in technology, especially those related to the web. Along the way I started fusing these common skills with one another for uncommonly good results.") }}
+{{ person("braden-2.jpg", "", "Since 2015, I've been designing logos for local Oklahoma businesses. While learning design, I began accumulating complementary skills in technology, especially those related to the web. Along the way I started fusing these skills together for uncommonly good results.") }}
 
-In my current role I've been involved in everything from designing web experiences to nationwide marketing campaigns. My best work revolves around [designing identities](/design), but I srpinkle in a little [coding](/code) every now and then.
+In my current role I've been involved in everything from designing web experiences to nationwide marketing campaigns. My best work revolves around [designing identities](//oakstudio.co), but I srpinkle in a little [coding](/code) every now and then.
 
 Email me and I'll make myself available for a call or a coffee run.
 
@@ -26,4 +26,5 @@ Email me and I'll make myself available for a call or a coffee run.
 > Unless the LORD builds a house, the work of the builders is wasted.
 >
 > Unless the LORD protects a city, guarding it with sentries will do no good.
+>
 > <div class="light-text">Psalm 127</div>
