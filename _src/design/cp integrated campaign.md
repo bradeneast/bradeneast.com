@@ -9,8 +9,6 @@ tags:
   - Campaign
   - Print
   - Digital
-links:
-  CP Ambassador Page: //oklahomabaptists.org/cooperative-program/ambassadors/
 ---
 
 The [Cooperative Program](//sbc.net/cp) is the plan through which Southern Baptist churches give to support their state conventions and the Southern Baptist Convention. In 2021, the [Oklahoma Baptist Convention](//oklahomabaptists.org) launched a promotional campaign to bring awareness of the Cooperative Program's mission and ministry into Oklahoma Baptist churches.
@@ -19,7 +17,7 @@ The [Cooperative Program](//sbc.net/cp) is the plan through which Southern Bapti
 
 ## Why market the Cooperative Program?
 
-Despite its prevalance and widespread effects, many Oklahoma Baptists either have never heard of the Cooperative Program. Even of those who have, they may not know how it works, or how their church is able to participate.
+Despite its prevalance and widespread effects, many Oklahoma Baptists have never heard of the Cooperative Program. Even of those who have, they may not know how it works or how their church is able to participate.
 
 ![A front and back view of a mug designed with a QR code to encourage giving online for church secrateries.](/img/cooperative-program/mugs.jpg)
 
