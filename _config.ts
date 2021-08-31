@@ -11,29 +11,28 @@ export const siteSrc = "_src";
 export const siteDest = "_site";
 export const siteRoot = "https://bradeneast.com";
 
-const site = lume({
+const lumeOptions = {
   location: new URL(siteRoot),
   src: siteSrc,
   dest: siteDest,
-},
-{
+};
+const pluginOptions = {
   markdown: { plugins: [[markdownItCheckbox]] }
-});
+};
 
-site
-  .copy("img")
-  .copy("_includes/assets/", "/")
-  .copy("main.css")
-  .copy("retro.css")
-  .copy("cms.css")
+export default
+  lume(lumeOptions, pluginOptions)
+    .copy("img")
+    .copy("_includes/assets/", "/")
+    .copy("main.css")
+    .copy("retro.css")
+    .copy("cms.css")
 
-  .loadAssets([".js"], textLoader)
-  .process([".js"], processors.js)
+    .loadAssets([".js"], textLoader)
+    .process([".js"], processors.js)
 
-  .process([".html"], processors.html)
+    .process([".html"], processors.html)
 
-  .use(slugifyUrls())
-  .use(codeHighlight())
-  .use(date())
-
-export default site;
+    .use(slugifyUrls())
+    .use(codeHighlight())
+    .use(date())
