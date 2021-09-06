@@ -57,6 +57,11 @@ html {
 	}
 
 	&.reduced_motion {
+		body::after {
+			display: none !important;
+			animation-play-state: paused !important;
+		}
+
 		aside,
 		main {
 			*,
