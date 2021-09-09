@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+templateEngine: njk,md
+title: Random
+---
+
+<ul style="display:none">
+  {% for post in search.pages("type=blogPost") %}
+    <li>{{ post.data.url }}</li>
+  {% endfor %}
+</ul>
+
+# Whoops! Something went wrong.
+
+Let's take a moment to appreciate the irony of a randomizer acting unpredictably.
+
+<script>
+  var items = document.getElementsByTagName("li");
+  var links = items.map(item => item.innerText);
+  var index = Math.floor(Math.random() * links.length);
+  location = links[index];
+</script>

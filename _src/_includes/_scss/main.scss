@@ -1,0 +1,89 @@
+@import "./variables";
+
+:root {
+	--g0: #{$g0};
+	--g1: #{$g1};
+	--g2: #{$g2};
+	--g3: #{$g3};
+	--g4: #{$g4};
+	--g5: #{$g5};
+	--g6: #{$g6};
+	--g7: #{$g7};
+	--g8: #{$g8};
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+	--accent: #{$accent};
+	--fontWeightRegular: #{$fontWeightRegular};
+	--fontWeightHeavy: #{$fontWeightHeavy};
+	--shadowColor: rgba(0, 0, 0, 0.3);
+	--shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
+	--largeShadow: 0.3rem 2rem 3rem -0.6rem var(--shadowColor);
+	--blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
+	--animationSize: 24rem;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	position: relative;
+	scrollbar-width: thin;
+	scrollbar-color: var(--g6) transparent;
+}
+
+*:focus {
+	outline: $borderWidth $borderStyle var(--g6);
+	outline-offset: $borderWidth;
+}
+
+::-webkit-scrollbar {
+	background: transparent;
+
+	&-thumb {
+		background: var(--g6);
+	}
+}
+
+body {
+	background: var(--g8);
+	transition: background $colorTransition, color $colorTransition;
+}
+
+img,
+video,
+iframe,
+svg {
+	width: 100%;
+	user-select: none;
+}
+
+img,
+video,
+svg {
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+img:not([src*="png"]):not([src*="svg"]),
+iframe,
+video {
+	background: var(--g5);
+}
+
+@import "./layout";
+@import "./util";
+@import "./typography/mod";
+@import "./interactivity/mod";
+@import "./post";
+@import "./feed";
+@import "./table";
+@import "./form";
+@import "./prism";
+@import "./print";

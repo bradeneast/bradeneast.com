@@ -1,0 +1,52 @@
+strong,
+.strong {
+  font-weight: $fontWeightHeavy;
+}
+
+em {
+  font-family: $ff_alt;
+  font-weight: $fontWeightRegular;
+  font-style: normal;
+  font-variation-settings: "slnt" -13, "CRSV" 1, "CASL" 1;
+  transition: color $colorTransition;
+}
+
+del {
+  color: var(--g5);
+  display: inline;
+  overflow-wrap: break-word;
+}
+
+.light-text {
+  color: var(--g4);
+}
+
+::selection,
+mark {
+  background: var(--primary);
+  color: var(--g8);
+}
+
+a {
+  color: var(--g3);
+  touch-action: manipulation;
+  text-decoration-thickness: 0.08em;
+  transition: color $colorTransition, text-decoration-color $colorTransition;
+
+  &[href="undefined"] {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--g0);
+  }
+
+  &:hover {
+    text-decoration-color: var(--primary);
+  }
+
+  &:focus {
+    text-decoration-color: var(--accent);
+  }
+}

@@ -1,31 +1,11 @@
 {
 	"netlify.site_id": "bradeneast.netlify.com",
+	"liveServer.settings.root": "/_site",
 	"liveSassCompile.settings.formats": [
 		{
 			"format": "compressed",
 			"extensionName": ".css",
-			"savePath": "/dist/_assets/css"
+			"savePath": "/_src/"
 		}
-	],
-	"liveServer.settings.root": "/dist",
-	"liveServer.settings.file": "/404/index.html",
-	"saveAndRun": {
-		"commands": [
-			{
-				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/main/main.js --outfile=./dist/_assets/js/main.js",
-				"match": ".*src.*js",
-				"silent": true,
-			},
-			{
-				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/search.js --outfile=./dist/_assets/js/search.js",
-				"match": ".*src.*js",
-				"silent": true,
-			},
-			{
-				"cmd": "esbuild --target=es6 --bundle --minify ./src/_js/admin/admin.js --outfile=./dist/_assets/js/admin.js",
-				"match": ".*src.*js",
-				"silent": true,
-			},
-		]
-	},
+	]
 }

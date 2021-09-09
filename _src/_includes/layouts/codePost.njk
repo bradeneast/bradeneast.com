@@ -1,0 +1,29 @@
+---
+layout: layouts/post.njk
+---
+
+{% import "macros.njk" as macros %}
+
+<div class="pad-vertical" style="margin-top: 0;">
+  <div class="tags">{{ tags | join(", ") }}</div>
+  <div class="light-text">{{ purpose }}</div>
+</div>
+
+{{ content | safe }}
+
+<h2>Technologies</h2>
+
+<div class="grid">
+{% for tech in technologies %}
+  {{ macros.blurb("technologies/" + tech.image, tech.name, tech.description) }}
+{% endfor %}
+</div>
+
+<p class="pad-vertical">
+  {% for label, link in links %}
+    {% if loop.index > 1 %}<br>{% endif %}
+    <a target="_blank" rel="noopener noreferrer" href="{{ link }}">
+      {{ label }}
+    </a>
+  {% endfor %}
+</p>

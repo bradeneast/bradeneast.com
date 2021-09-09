@@ -1,0 +1,14 @@
+<footer>
+  <div class="copyright">
+    &copy; 2019-2021 Braden East
+  </div>
+  <div class="flex">
+    <div class="modal">&nbsp;</div>
+    <div class="flex socials">
+      {% for platform, url in site.socials %}
+        <a href="{{ url }}">{{ platform }}</a>
+      {% endfor %}
+    </div>
+    {% include "toggles.njk" %}
+  </div>
+</footer>

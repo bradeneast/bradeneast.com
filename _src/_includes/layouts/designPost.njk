@@ -1,0 +1,21 @@
+---
+layout: layouts/post.njk
+---
+
+{% import "macros.njk" as macros %}
+
+<div class="pad-vertical" style="margin-top: 0;">
+  <div class="tags light-text">{{ tags | join(", ") }}</div>
+  Completed for: <strong>{{ entity }}</strong>
+</div>
+
+{{ content | safe }}
+
+<p class="pad-vertical">
+  {% for label, link in links %}
+    {% if loop.index > 1 %}<br>{% endif %}
+    <a target="_blank" rel="noopener noreferrer" href="{{ link }}">
+      {{ label }}
+    </a>
+  {% endfor %}
+</p>
