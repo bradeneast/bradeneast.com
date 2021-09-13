@@ -6,7 +6,6 @@ order: 4
 tags:
   - Layout
   - Print
-  - Color
 links:
   Featured image by Tony Dillard: //www.facebook.com/farawaymedia
   View the full guide: //cdn.oklahomabaptists.org/20210812074740/Spiritual-Commitment-Guide-2021.pdf

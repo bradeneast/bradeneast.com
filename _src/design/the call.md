@@ -6,7 +6,6 @@ order: 2
 tags:
   - Layout
   - Print
-  - Color
 links:
   View the full program: //cdn.oklahomabaptists.org/20210812102548/The-Call-Conference-Program.pdf
 ---

@@ -5,7 +5,8 @@ entity: Fun
 image: /img/redi-mix/hard-hat.jpg
 order: 7
 tags:
-  - Logo Design
+  - Logo
+  - Identity
 ---
 
 Redi-Mix is a well-known and trusted supplier of pre-mixed concrete for Bartlesville and the surrounding areas.
