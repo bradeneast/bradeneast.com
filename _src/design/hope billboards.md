@@ -11,10 +11,10 @@ links:
   Learn about Hope: //hopepresbyterian.church
 ---
 
-![A triple-sided billboard with two advertisements.](/img/hope-billboards/dual-billboard.jpg)
+![A triple-sided billboard with two advertisements visible.](/img/hope-billboards/dual-billboard.jpg)
 
 ![Fear not.](/img/hope-billboards/fear-not.jpg)
 
-![Patiently endure.](/img/hope-billboards/patiently-endure.jpg)
+![Hold fast to the truth.](/img/hope-billboards/hold-fast-to-the-truth.jpg)
 
 ![Be on guard.](/img/hope-billboards/be-on-guard.jpg)
