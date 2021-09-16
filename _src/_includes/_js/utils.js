@@ -59,17 +59,6 @@ export function togglePref(prefName) {
 }
 
 
-/**Tries to extract a human-readable filename from urls
- * @param {string} src
-*/
-export function altFromSrc(src) {
-	let decoded = decodeURIComponent(src) || '';
-	let name = decoded.split('/').pop();
-	let result = name?.split('.')?.shift()?.replace(/-|\+/g, ' ');
-	return result || '';
-}
-
-
 /**Fetches /sitemap.xml and runs a callback on the document response
  * @param {function} callback
 */
