@@ -19,7 +19,7 @@ technologies:
 
 {% from "macros.njk" import video %}
 
-[Coarse](//coarse.netlify.app) is a totally design agnostic, minimal carousel library for modern websites. This means the developer has complete style control, custom transitions with pure CSS, and is highly configurable from the ground up.
+[Coarse](//coarse.netlify.app) is a totally design agnostic, minimal carousel library for modern websites.
 
 {{ video("coarse/basic.mp4") }}
 
