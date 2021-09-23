@@ -9,7 +9,7 @@ menu:
 
 # The blog for _dev-signers_
 
-For moments of spontaneity, [here's a random post](/random).
+For moments of spontaneity, <a data-no-schwifty href="/random">here's a random post</a>
 
 <div class="feed">
 {% set postsList = search.pages("type=blogPost", site.sorting.Blog) %}
