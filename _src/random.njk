@@ -5,9 +5,9 @@ title: Random
 ---
 
 <ul style="display:none">
-  {% for post in search.pages("type=blogPost") %}
-    <li>{{ post.data.url }}</li>
-  {% endfor %}
+  {%- for post in search.pages("type=blogPost") -%}
+    <li class="urlset">{{ post.data.url }}</li>
+  {%- endfor -%}
 </ul>
 
 # Whoops! Something went wrong.
@@ -15,8 +15,7 @@ title: Random
 Let's take a moment to appreciate the irony of a randomizer acting unpredictably.
 
 <script>
-  var items = document.getElementsByTagName("li");
-  var links = items.map(item => item.innerText);
-  var index = Math.floor(Math.random() * links.length);
-  location = links[index];
+  var items = document.getElementsByClassName("urlset");
+  var index = Math.floor(Math.random() * items.length);
+  location = items[index].innerText;
 </script>
