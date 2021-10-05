@@ -1,7 +1,7 @@
 ---
 title: Cooperative Program Marketing Campaign
 entity: Southern Baptist Convention
-image: /img/cooperative-program/wall-bike.jpg
+image: /img/cooperative-program/street-pedestrians.jpg
 draft: false
 order: 6
 tags:
@@ -18,12 +18,12 @@ The [Cooperative Program](//sbc.net/cp) is the plan through which Southern Bapti
 
 Despite its prevalance and widespread effects, many Oklahoma Baptists have never heard of the Cooperative Program. Even of those who have, they may not know how it works or how their church is able to participate.
 
-![A poster on a busy street, depicting an IMB missionary baptizing a recent convert.](/img/cooperative-program/street-pedestrians.jpg)
+![A poster mounted to the side of a building, depicting a missionary doctor examining a patient.](/img/cooperative-program/wall-bike.jpg)
 
 ![The guide for Cooperative Program Ambassadors](/img/cooperative-program/ambassador-guide.jpg)
 
 ![A poster displayed on tiled wall, showing a young woman being baptized outside a local Oklahoma church.](/img/cooperative-program/wall-stairs.jpg)
 
-![A billboard over an empty courtyard, encouraging viewers to become a Cooperative Progarm ambassador.](/img/cooperative-program/billboard-horizontal.jpg)
-
 ![A poster displayed in a dark subway, showing a young man being baptized at a NAMB-funded church plant.](/img/cooperative-program/subway.jpg)
+
+![A billboard over an empty courtyard, encouraging viewers to become a Cooperative Progarm ambassador.](/img/cooperative-program/billboard-horizontal.jpg)
