@@ -57,6 +57,36 @@
       pointer-events: none;
       transition: opacity $smoothTransition;
     }
+
+    &:first-child::after {
+      $s: 10%;
+      $c: 100% - $s;
+      position: absolute;
+      content: "New";
+      text-transform: uppercase;
+      left: $flow1;
+      color: $g8;
+      top: 0;
+      padding: $flow1;
+      padding-bottom: calc(#{$flow1} + $s);
+      background: var(--primary);
+      box-shadow: ($flow1 / 2) ($flow1 / 2) 0 $g0;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        90% $c,
+        80% 100%,
+        70% $c,
+        60% 100%,
+        50% $c,
+        40% 100%,
+        30% $c,
+        20% 100%,
+        10% $c,
+        0 100%
+      );
+    }
   }
 }
 
