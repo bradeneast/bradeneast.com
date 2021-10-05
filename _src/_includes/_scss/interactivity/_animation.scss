@@ -5,6 +5,18 @@
 	}
 }
 
+@keyframes wave {
+	0% {
+		transform: skewX(0);
+	}
+	33% {
+		transform: skewX(-3deg);
+	}
+	66% {
+		transform: skewX(3deg);
+	}
+}
+
 @keyframes slideIn {
 	from {
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
