@@ -2,7 +2,7 @@
 title: Coarse
 image: /img/coarse/logo.svg
 purpose: Library
-order: 1
+order: 3
 links:
   Try the demo: //coarse.netlify.app
   Check the source code: //github.com/bradeneast/coarse

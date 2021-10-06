@@ -2,7 +2,7 @@
 title: Schwifty
 image: /img/schwifty/logo.svg
 purpose: Library
-order: 3
+order: 4
 links:
   Check the source code: //github.com/bradeneast/schwifty
 tags:
