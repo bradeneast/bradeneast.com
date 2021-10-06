@@ -75,7 +75,7 @@ For the remaining &ldquo;free-standing&rdquo; websites, it was important that th
 
 ## Collateral
 
-Departing from tradition sometimes means rocking the boat. Studying the Oklahoma Baptists demographic showed that that the rebrand could easily be ill-received ***without a tactful and sensitive introduction.***.
+Departing from tradition sometimes means rocking the boat. Studying the Oklahoma Baptists demographic showed that that the rebrand could easily be ill-received ***without a tactful and sensitive introduction...***
 
 To solve this challenge, we immediately began evolving the style of print pieces like prayer guides and event programs. By putting these items in the hands of Oklahoma Baptist churches early on, we were able to familiarize them with the style of the coming rebrand.
 
