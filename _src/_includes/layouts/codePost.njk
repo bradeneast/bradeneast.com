@@ -19,6 +19,7 @@ layout: layouts/post.njk
 {% endfor %}
 </div>
 
+{% if links %}
 <p class="pad-vertical">
   {% for label, link in links %}
     {% if loop.index > 1 %}<br>{% endif %}
@@ -27,3 +28,4 @@ layout: layouts/post.njk
     </a>
   {% endfor %}
 </p>
+{% endif %}
