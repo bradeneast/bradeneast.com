@@ -7,7 +7,7 @@
   </div>
   <div class="feed__item--badges">
     {%- for badge in post.data.badges -%}
-    <div class="badge" style="--index:{{ loop.index0 }}">{{ badge }}</div>
+    <div class="badge" style="--index:{{ loop.index0 }}; --color:{{ badge.color or 'var(--primary)' }}">{{ badge.name or badge }}</div>
     {%- endfor -%}
   </div>
 </a>

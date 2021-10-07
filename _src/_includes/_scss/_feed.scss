@@ -28,7 +28,8 @@
 
       .feed__item--badges .badge {
         animation: wave 0.6s ease both;
-        line-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
         color: transparent;
         transition-delay: calc(var(--index) * 0.1s);
       }
@@ -80,8 +81,10 @@
         text-transform: uppercase;
         color: $g8;
         margin-right: $flow1 / 2;
+        max-width: 30%;
+        line-height: 1;
         padding: calc(#{$flow1} - #{$borderWidth}) $flow1;
-        background: var(--primary);
+        background: var(--color);
         border-radius: 0 $o 0 0;
         transform-origin: top;
         transition: $colorTransition;
@@ -99,7 +102,8 @@
           left: -$o;
           width: $o;
           height: $o;
-          background: $g2;
+          background: var(--color);
+          filter: brightness(0.63);
         }
 
         &::after {
@@ -110,17 +114,17 @@
           height: $toothSize;
           background: linear-gradient(
               45deg,
-              var(--primary) 33.333%,
+              var(--color) 33.333%,
               transparent 33.333%,
               transparent 66.667%,
-              var(--primary) 66.667%
+              var(--color) 66.667%
             ),
             linear-gradient(
               -45deg,
-              var(--primary) 33.333%,
+              var(--color) 33.333%,
               transparent 33.333%,
               transparent 66.667%,
-              var(--primary) 66.667%
+              var(--color) 66.667%
             );
           background-repeat: repeat-x;
           background-size: $toothSize * 2 $toothSize * 4;

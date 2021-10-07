@@ -9,7 +9,9 @@ tags:
   - Print
   - Digital
 badges:
-  - Award-Winning
+  - 
+    name: Award Winning
+    color: "#cc9344"
 links:
   Rebrand Explainer: //oklahomabaptists.org/2020-vision
   Style Guide: //oklahomabaptists.org/styleguide
