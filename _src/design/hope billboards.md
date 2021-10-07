@@ -7,6 +7,8 @@ order: 8
 tags:
   - Advertising
   - Marketing
+badges:
+  - New
 links:
   Learn about Hope: //hopepresbyterian.church
 ---

@@ -10,6 +10,8 @@ tags:
   - State Management
   - Downloads
   - Productivity
+badges:
+  - New
 technologies:
   - 
     name: Javascript ES6

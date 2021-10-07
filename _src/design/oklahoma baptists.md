@@ -8,6 +8,8 @@ tags:
   - Identity
   - Print
   - Digital
+badges:
+  - Award-Winning
 links:
   Rebrand Explainer: //oklahomabaptists.org/2020-vision
   Style Guide: //oklahomabaptists.org/styleguide

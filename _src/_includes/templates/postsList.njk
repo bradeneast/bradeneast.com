@@ -5,8 +5,10 @@
     {{ post.data.title }}
     <div class="light-text">{{ post.data.tags | join(", ") }}</div>
   </div>
-  {% if loop.index == 1 %}
-  <div class="feed__item--badge">New</div>
-  {% endif %}
+  <div class="feed__item--badges">
+    {%- for badge in post.data.badges -%}
+    <div class="badge" style="--index:{{ loop.index0 }}">{{ badge }}</div>
+    {%- endfor -%}
+  </div>
 </a>
 {% endfor %}
