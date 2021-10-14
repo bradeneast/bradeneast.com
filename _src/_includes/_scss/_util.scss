@@ -52,6 +52,11 @@ main > *:not(.has-media):not(.cp_embed_wrapper) {
 	margin-right: auto;
 }
 
+.subtext {
+	font-size: $fontSizeSmall;
+	text-transform: uppercase;
+}
+
 @media screen and (max-width: $mobile) {
 	// .grid {
 	// 	padding-left: $flow1;

@@ -3,8 +3,8 @@
   <img class="feed__item--image" aria-hidden="true" alt="" src="{{ post.data.image }}" />
   <div class="feed__item--text">
     {{ post.data.title }}
-    <div class="light-text">{{ post.data.tags | join(", ") }}</div>
   </div>
+  <div class="light-text subtext">{{ post.data.tags | join(", ") }}</div>
   <div class="feed__item--badges">
     {%- for badge in post.data.badges -%}
     <div class="badge" style="--index:{{ loop.index0 }}; --color:{{ badge.color or 'var(--primary)' }}">{{ badge.name or badge }}</div>

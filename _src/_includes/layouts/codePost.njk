@@ -5,8 +5,8 @@ layout: layouts/post.njk
 {% import "macros.njk" as macros %}
 
 <div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags">{{ tags | join(", ") }}</div>
-  <div class="light-text">{{ purpose }}</div>
+  <div class="tags light-text subtext">{{ tags | join(", ") }}</div>
+  <div>{{ purpose }}</div>
 </div>
 
 {{ content | safe }}
