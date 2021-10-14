@@ -30,7 +30,8 @@ export async function html(page: any) {
   images.forEach(img => {
     if (!img.alt?.length)
       img.alt = img.alt || altFromSrc(img.src);
-    img.parentElement.classList.add('has-media');
+    if (!img.hasAttribute('aria-hidden'))
+      img.parentElement.classList.add('has-media');
   })
 }
 

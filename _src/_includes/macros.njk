@@ -9,7 +9,7 @@
     <div class="select__options stagger-child-transitions">
       {% for option in options %}
         <a role="menuitem" class="option" href="{{ option.data.url | url }}">
-          <div>{{ option.data.menu.label or option.data.title }}</div>
+          <div class="option__title">{{ option.data.menu.label or option.data.title }}</div>
           <div class="light-text subtext">{{ option.data.tags | join(", ") }}</div>
         </a>
       {% endfor %}

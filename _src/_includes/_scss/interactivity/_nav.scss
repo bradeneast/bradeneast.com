@@ -57,6 +57,7 @@
   &__options {
     position: absolute;
     background: var(--g8);
+    border-radius: $borderRadius;
     z-index: 9;
     width: 100%;
     top: 100%;
@@ -69,6 +70,10 @@
     transform-origin: top;
     transform: scaleY(0.9);
     transition: opacity $colorTransition, transform $smoothTransition;
+  }
+
+  .option__title {
+    margin-bottom: $borderWidth * 2;
   }
 
   * {
