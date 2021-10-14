@@ -3,10 +3,11 @@ title: Billboards of Hope
 entity: Hope Presbyterian Church of Bartlesville
 image: /img/hope-billboards/take-courage.jpg
 order: 8
-# draft: true
 tags:
+  - Billboards
   - Advertising
-  - Marketing
+  - Large Format
+  - Campaign
 badges:
   - New
 links:

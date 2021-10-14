@@ -1,11 +1,10 @@
 ---
 title: Zion National Park Playing Cards
 entity: Fun
-# draft: true
 image: /img/zion/cards-out-of-box.jpg
 order: 5
 tags:
-  - Package Design
+  - Packaging
   - Playing Cards
   - Print
 ---

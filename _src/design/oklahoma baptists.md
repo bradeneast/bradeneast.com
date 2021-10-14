@@ -7,7 +7,7 @@ tags:
   - Logo
   - Identity
   - Print
-  - Digital
+  - Campaign
 badges:
   - 
     name: Award Winning
