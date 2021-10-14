@@ -26,23 +26,31 @@
       --start-end: #{$borderRadius};
     }
 
-    &.next-to-last {
-      --end-start: #{$borderRadius};
-    }
-
-    &:last-child {
-      --end-end: #{$borderRadius};
-      --end-start: #{$borderRadius};
-    }
-
     &:nth-child(2n) {
-      --end-end: 0;
+      &.next-to-last {
+        --end-start: #{$borderRadius};
+      }
+
+      &:last-child {
+        --end-start: #{$borderRadius};
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      &.next-to-last {
+        --end-end: #{$borderRadius};
+      }
+
+      &:last-child {
+        --end-end: #{$borderRadius};
+        --end-start: #{$borderRadius};
+      }
     }
 
     &:hover,
     &:focus {
       &::before {
-        opacity: 0.94;
+        opacity:1;
       }
 
       .feed__item--text,
@@ -81,6 +89,10 @@
       transition: opacity $colorTransition, transform $smoothTransition;
     }
 
+    &--text {
+      margin-bottom: $flow1;
+    }
+
     &--image,
     &::before {
       position: absolute;
@@ -99,10 +111,11 @@
     --end-end: calc(var(--end-end) - 1px);
       content: "";
       z-index: 1;
-      background: var(--g8);
+      background: var(--translucent);
       opacity: 0;
       pointer-events: none;
       transition: opacity $smoothTransition;
+      backdrop-filter: blur(10px);
     }
 
     &--badges {

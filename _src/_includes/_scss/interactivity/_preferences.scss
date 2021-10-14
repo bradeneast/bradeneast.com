@@ -42,6 +42,7 @@ html {
 		--secondary: #{$primary};
 		--fontWeightRegular: 300;
 		--shadowColor: rgba(0, 0, 0, 0.85);
+		--translucent: rgba(0, 0, 0, 0.85);
 
 		body {
 			color: var(--g1);
