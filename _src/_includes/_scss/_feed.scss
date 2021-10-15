@@ -222,10 +222,6 @@
         &::before {
           opacity: 0;
         }
-
-        .feed__item--image img {
-          transform: translate3d(0,0,0) scale(1.1);
-        }
       }
 
       &--image {
