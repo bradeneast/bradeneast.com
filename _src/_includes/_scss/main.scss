@@ -18,8 +18,8 @@
 	--shadowColor: rgba(0, 0, 0, 0.3);
 	--translucent: rgba(255, 255, 255, 0.85);
 	--shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
-	--largeShadow: 0.3rem 2rem 3rem -0.6rem var(--shadowColor);
-	--blockShadow: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
+	--shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
+	--shadowBlock: 0.4rem 0.4rem 0 var(--g6), 0.8rem 0.8rem 0 var(--g7);
 	--animationSize: 24rem;
 }
 

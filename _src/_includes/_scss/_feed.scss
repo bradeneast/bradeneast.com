@@ -6,6 +6,7 @@
   gap: $borderWidth;
 
   &__item {
+    --backdrop-blur: 8px;
     --start-start: 0;
     --start-end: 0;
     --end-start: 0;
@@ -17,35 +18,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-
-    &:first-child {
-      --start-start: #{$borderRadius};
-    }
-
-    &:nth-child(2) {
-      --start-end: #{$borderRadius};
-    }
-
-    &:nth-child(2n) {
-      &.next-to-last {
-        --end-start: #{$borderRadius};
-      }
-
-      &:last-child {
-        --end-start: #{$borderRadius};
-      }
-    }
-
-    &:nth-child(2n + 1) {
-      &.next-to-last {
-        --end-end: #{$borderRadius};
-      }
-
-      &:last-child {
-        --end-end: #{$borderRadius};
-        --end-start: #{$borderRadius};
-      }
-    }
 
     &:hover,
     &:focus {
@@ -93,17 +65,6 @@
       margin-bottom: $flow1;
     }
 
-    &--image,
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      border-radius: var(--start-start) var(--start-end) var(--end-start) var(--end-end);
-    }
-
     &::before {
     --start-start: calc(var(--start-start) - 1px);
     --start-end: calc(var(--start-end) - 1px);
@@ -115,7 +76,22 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity $smoothTransition;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(var(--backdrop-blur));
+    }
+
+    &--image,
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: var(--start-start) var(--start-end) var(--end-start) var(--end-end);
+    }
+
+    &--image img {
+      transition: $smoothTransition;
     }
 
     &--badges {
@@ -186,6 +162,39 @@
   }
 }
 
+@media screen and (min-width: $mobile) {
+  .feed__item {
+    &:first-child {
+      --start-start: #{$borderRadius};
+    }
+
+    &:nth-child(2) {
+      --start-end: #{$borderRadius};
+    }
+
+    &:nth-child(2n) {
+      &.next-to-last {
+        --end-start: #{$borderRadius};
+      }
+
+      &:last-child {
+        --end-start: #{$borderRadius};
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      &.next-to-last {
+        --end-end: #{$borderRadius};
+      }
+
+      &:last-child {
+        --end-end: #{$borderRadius};
+        --end-start: #{$borderRadius};
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $mobile) {
   .feed {
     gap: $flow1;
@@ -195,28 +204,53 @@
       flex-flow: row wrap;
       align-content: flex-end;
       justify-content: center;
+      filter: drop-shadow(var(--shadowLarge));
       --start-start: #{$borderRadius};
       --start-end: #{$borderRadius};
       --end-start: #{$borderRadius};
       --end-end: #{$borderRadius};
 
+      &:hover,
+      &:focus {
+        .feed__item--text,
+        .subtext {
+          opacity: 0;
+          transform: none;
+          transition: $smoothTransition;
+        }
+
+        &::before {
+          opacity: 0;
+        }
+
+        .feed__item--image img {
+          transform: translate3d(0,0,0) scale(1.1);
+        }
+      }
+
+      &--image {
+        border-radius: calc(var(--end-end) + 1px);
+      }
+
       &--text,
       .subtext {
         position: relative;
         padding: $flow1;
-        background: var(--g8);
-        opacity: 1;
-        background: var(--shadowColor);
+        background: var(--translucent);
         transform: none;
+        opacity: 1;
+        margin: 0;
       }
 
       &--text {
-        line-height: 1.2;
+        color: var(--g0);
         padding-bottom: $flow1 / 2;
       }
 
       .subtext {
+        color: var(--g3);
         padding-top: 0;
+        border-radius: 0 0 var(--end-start) var(--end-end);
       }
 
       &::before {
