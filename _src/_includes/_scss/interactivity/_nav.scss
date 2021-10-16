@@ -12,7 +12,7 @@
       display: inline-flex;
       padding: 0 $flow2 0.37em 0;
       border-bottom: $borderStyle $borderWidth var(--g7);
-      color: var(--g4);
+      color: var(--g3);
       cursor: pointer;
       user-select: none;
 
@@ -57,7 +57,6 @@
   &__options {
     position: absolute;
     background: var(--g8);
-    border-radius: $borderRadius;
     z-index: 9;
     width: 100%;
     top: 100%;
@@ -85,6 +84,14 @@
     transition: background $colorTransition, color $colorTransition;
     padding: $flow1;
     border: $borderWidth $borderStyle var(--g7);
+
+    &:first-child {
+      border-radius: $borderRadius $borderRadius 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 $borderRadius $borderRadius;
+    }
 
     & + [role="menuitem"] {
       border-top: none;
