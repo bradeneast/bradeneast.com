@@ -1,6 +1,7 @@
 @import "./variables";
 
 :root {
+	font-size: 18px;
 	--g0: #{$g0};
 	--g1: #{$g1};
 	--g2: #{$g2};
@@ -76,6 +77,10 @@ img:not([src*="png"]):not([src*="svg"]),
 iframe,
 video {
 	background: var(--g5);
+}
+
+#arrow {
+	fill: var(--g6);
 }
 
 @import "./layout";

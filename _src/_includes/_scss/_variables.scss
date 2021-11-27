@@ -7,9 +7,9 @@ $g5: #9faabd;
 $g6: #c5cacf;
 $g7: #edeeef;
 $g8: white;
-$primary: #2f60e6;
-$secondary: #694bd8;
-$accent: #8541d3;
+$primary: #0eb499;
+$secondary: #04be77;
+$accent: #9c6f61;
 $gold: #f09a43;
 $flow1: 1rem;
 $flow2: 1.63rem;
@@ -37,10 +37,9 @@ $fallback: showFallback 5s forwards;
 }
 
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("/SpaceGrotesk.woff2") format("woff2-variations");
-  font-feature-settings: "ss02" 1, "ss03" 1, "ss04" 1, "case" 1, "zero" 1;
-  font-weight: 300 700;
+  font-family: "Inter";
+  src: url("/Inter.var.woff2") format("woff2-variations");
+  font-weight: 100 900;
   font-display: swap;
 }
 
@@ -53,5 +52,5 @@ $fallback: showFallback 5s forwards;
 
 $fallbackFonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Nueue", "Roboto", sans-serif;
 $ff_alt: "Recursive", $fallbackFonts;
-$ff_main: "Space Grotesk", $fallbackFonts;
-$ff_h1: "Thunder", "Space Grotesk", $fallbackFonts;
+$ff_main: "Inter", $fallbackFonts;
+$ff_h1: "Thunder", "Inter", $fallbackFonts;

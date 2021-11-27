@@ -15,7 +15,7 @@ main {
     font-family: $ff_h1;
     line-height: 0.73;
     text-transform: uppercase;
-    font-size: 10rem;
+    font-size: 9rem;
     margin-bottom: $flow2;
     margin-top: $flow2;
     padding-top: 0;
@@ -38,7 +38,7 @@ main {
       top: 50%;
       right: calc(100% + #{$flow1});
       height: $borderWidth;
-      background: var(--accent);
+      background: var(--g6);
     }
   }
 

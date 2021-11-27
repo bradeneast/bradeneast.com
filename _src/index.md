@@ -7,7 +7,7 @@ menu:
   label: Learn about me
 ---
 
-{% from "macros.njk" import person %}
+{% from "macros.njk" import person, arrow %}
 
 I'm Braden.
 
@@ -18,6 +18,8 @@ I currently live in Bartlesville, Oklahoma, working as part of the creative team
 {{ person("braden-3.png", "", "Since 2015, I've been designing logos for local Oklahoma businesses. While learning design, I began accumulating complementary skills in technology, especially those related to the web. Along the way I started fusing these skills together for uncommonly good results.") }}
 
 In past roles I've been involved in everything from designing web experiences to nationwide marketing campaigns. My best work revolves around [designing identities](//oakstudio.co), but I srpinkle in a little [coding](/code) every now and then.
+
+{{ arrow(1, -320, 0, 30) }}
 
 Email me and I'll make myself available for a call or a coffee run.
 

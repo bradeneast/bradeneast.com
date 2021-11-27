@@ -4,9 +4,10 @@
 
 table {
 	text-align: left;
-	margin-bottom: $flow1;
+	margin-bottom: $flow2;
 	border-collapse: collapse;
 	min-width: 100%;
+	font-family: $ff_alt;
 
 	td:first-of-type,
 	thead {
