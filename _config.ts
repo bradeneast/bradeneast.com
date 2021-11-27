@@ -26,7 +26,6 @@ export default
     .copy("_includes/assets/", "/")
     .copy("main.css")
     .copy("retro.css")
-    .copy("cms.css")
 
     .loadAssets([".js"], textLoader)
     .process([".js"], processors.js)
