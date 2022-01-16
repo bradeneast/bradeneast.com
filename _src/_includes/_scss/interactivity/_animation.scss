@@ -42,6 +42,8 @@
 }
 
 html {
+	scroll-behavior: smooth;
+
 	main {
 		transition: opacity $smoothTransition;
 	}

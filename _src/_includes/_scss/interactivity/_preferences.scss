@@ -58,6 +58,8 @@ html {
 	}
 
 	&.reduced_motion {
+		scroll-behavior: auto;
+
 		body::after {
 			display: none !important;
 			animation-play-state: paused !important;

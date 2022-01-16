@@ -37,6 +37,7 @@
 	position: relative;
 	scrollbar-width: thin;
 	scrollbar-color: var(--g6) transparent;
+	scroll-behavior: inherit;
 }
 
 *:focus {

@@ -42,11 +42,6 @@ main {
     }
   }
 
-  h2,
-  h3 {
-    color: var(--g4);
-  }
-
   h2::before {
     width: 5em;
   }
