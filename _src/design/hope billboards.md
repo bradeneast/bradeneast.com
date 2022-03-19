@@ -16,6 +16,8 @@ links:
 
 ![A triple-sided billboard with two advertisements visible.](/img/hope-billboards/dual-billboard.jpg)
 
+![A billboard showing the four conservative distinctives of Hope.](/img/hope-billboards/conservative-points.jpg)
+
 ![Fear not.](/img/hope-billboards/fear-not.jpg)
 
 ![Hold fast to the truth.](/img/hope-billboards/hold-fast-to-the-truth.jpg)
