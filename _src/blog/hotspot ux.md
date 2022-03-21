@@ -22,10 +22,10 @@ The home internet connects as soon as I turned my laptop on, while the hotpsot t
 
 Here's the thing:
 
-> Most people prefer the reliably sub-par option over the option that's a gamble.
+> I prefer the reliably sub-par option over the option that's a gamble.
 
-If an experience is outstanding sometimes, but completely fails other times, the net result is negative.
+If an experience is outstanding sometimes, but completely fails other times, the net result for me is negative.
 
-Going back to my example, our home internet regularly gave us fast downloads, instant page loads, and high-def streaming, but we still managed to leave with an overall poor impression.
+Going back to my example, our home internet regularly gave us fast downloads, instant page loads, and high-def streaming, but I still managed to end up with an overall poor impression.
 
-When it comes to designing a user experience, ***opt for reliability***.
+When it comes to designing a user experience, *__opt for reliability__*.
