@@ -7,9 +7,9 @@ menu:
   label: See my designs
 ---
 
-# Uniting the digital and the material.
+# Recovering what was lost.
 
-It used to be called &ldquo;multi-media.&rdquo; I'm not particularly fond of that name, but it's a badge of experience and knowledge in many disciplines. If my specialty in visual storytelling across all mediums makes me a multi-media designer, then so be it.
+My approach to design involves helping friends and family stick to what they're amazing at. I think we do best playing on our home feild, and design is a fun way to get us there.
 
 <div class="feed">
 {% set postsList = search.pages("type=designPost", site.sorting.Design) %}

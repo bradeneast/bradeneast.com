@@ -1,5 +1,5 @@
 // @ts-nocheck
-import lume from "lume";
+import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
