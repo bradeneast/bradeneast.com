@@ -4,7 +4,7 @@
 	height: 1.8em;
 	width: 1.8em;
 	padding: 0.2em;
-	margin-right: $flow1 / 2;
+	margin-right: math.div($flow1, 2);
 	overflow: hidden;
 	background: none;
 	--on: 1;
@@ -67,6 +67,7 @@ html {
 
 		aside,
 		main {
+
 			*,
 			*::before,
 			*::after {

@@ -1,4 +1,5 @@
-@import "./variables";
+@use "sass:math";
+@import "_scss/variables";
 
 :root {
 	font-size: 18px;
@@ -84,13 +85,13 @@ video {
 	fill: var(--g6);
 }
 
-@import "./layout";
-@import "./util";
-@import "./typography/mod";
-@import "./interactivity/mod";
-@import "./post";
-@import "./feed";
-@import "./table";
-@import "./form";
-@import "./prism";
-@import "./print";
+@import "_scss/layout";
+@import "_scss/util";
+@import "_scss/typography/mod";
+@import "_scss/interactivity/mod";
+@import "_scss/post";
+@import "_scss/feed";
+@import "_scss/table";
+@import "_scss/form";
+@import "_scss/prism";
+@import "_scss/print";

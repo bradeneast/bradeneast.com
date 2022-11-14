@@ -56,13 +56,13 @@ footer {
   flex-shrink: 0;
   padding: $flow1;
 
-  & > * > *:not(:last-child) {
+  &>*>*:not(:last-child) {
     padding-right: $flow1;
     margin-right: $flow1;
     border-right: $borderWidth $borderStyle var(--g7);
   }
 
-  & > :last-child {
+  &> :last-child {
     text-align: right;
     margin-left: auto;
   }
@@ -78,8 +78,8 @@ footer {
     }
   }
 
-  .socials > a {
-    margin-left: $flow1 / 2;
+  .socials>a {
+    margin-left: math.div($flow1, 2);
   }
 }
 
@@ -92,7 +92,7 @@ footer {
   main,
   aside,
   footer {
-    & > * {
+    &>* {
       margin-left: $flow1;
       margin-right: $flow1;
 
@@ -126,7 +126,7 @@ footer {
     text-align: right;
     padding: 0;
 
-    & > .flex,
+    &>.flex,
     .socials,
     .copyright {
       flex-flow: column;

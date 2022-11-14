@@ -22,7 +22,7 @@
     &:hover,
     &:focus {
       &::before {
-        opacity:1;
+        opacity: 1;
       }
 
       .feed__item--text,
@@ -66,10 +66,10 @@
     }
 
     &::before {
-    --start-start: calc(var(--start-start) - 1px);
-    --start-end: calc(var(--start-end) - 1px);
-    --end-start: calc(var(--end-start) - 1px);
-    --end-end: calc(var(--end-end) - 1px);
+      --start-start: calc(var(--start-start) - 1px);
+      --start-end: calc(var(--start-end) - 1px);
+      --end-start: calc(var(--end-start) - 1px);
+      --end-end: calc(var(--end-end) - 1px);
       content: "";
       z-index: 1;
       background: var(--translucent);
@@ -108,7 +108,7 @@
         font-size: $fontSizeSmall;
         text-transform: uppercase;
         color: $g8;
-        margin-right: $flow1 / 2;
+        margin-right: math.div($flow1, 2);
         line-height: 1;
         padding: calc(1em - #{$borderWidth}) 1em;
         background: var(--color);
@@ -139,20 +139,16 @@
           top: 100%;
           width: 100%;
           height: $toothSize;
-          background: linear-gradient(
-              45deg,
+          background: linear-gradient(45deg,
               var(--color) 33.333%,
               transparent 33.333%,
               transparent 66.667%,
-              var(--color) 66.667%
-            ),
-            linear-gradient(
-              -45deg,
+              var(--color) 66.667%),
+            linear-gradient(-45deg,
               var(--color) 33.333%,
               transparent 33.333%,
               transparent 66.667%,
-              var(--color) 66.667%
-            );
+              var(--color) 66.667%);
           background-repeat: repeat-x;
           background-size: $toothSize * 2 $toothSize * 4;
           background-position: 0 (-$toothSize);
@@ -212,6 +208,7 @@
 
       &:hover,
       &:focus {
+
         .feed__item--text,
         .subtext {
           opacity: 0;
@@ -240,7 +237,7 @@
 
       &--text {
         color: var(--g0);
-        padding-bottom: $flow1 / 2;
+        padding-bottom: math.div($flow1, 2);
       }
 
       .subtext {

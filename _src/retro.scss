@@ -1,8 +1,9 @@
-@import "./variables";
+@import "_scss/variables";
 
 // IE-9+ Styles
 @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
 	html {
+
 		body,
 		main,
 		aside,
@@ -75,6 +76,7 @@
 		}
 
 		.post {
+
 			&--image,
 			&--header__image {
 				margin: 0;
@@ -84,7 +86,7 @@
 				padding: 1rem 0;
 				transform: none;
 
-				& > * {
+				&>* {
 					display: block;
 				}
 			}
@@ -113,7 +115,7 @@
 			}
 		}
 
-		body main > * {
+		body main>* {
 			margin-left: 0;
 		}
 

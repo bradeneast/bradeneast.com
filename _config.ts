@@ -1,6 +1,7 @@
 // @ts-nocheck
 import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
+import sass from "lume/plugins/sass.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import textLoader from "lume/core/loaders/text.ts";
@@ -22,7 +23,6 @@ const pluginOptions = {
 
 export default
   lume(lumeOptions, pluginOptions)
-    .copy("img")
     .copy("assets", ".")
     .copy("main.css")
     .copy("retro.css")
@@ -34,4 +34,5 @@ export default
 
     .use(slugifyUrls())
     .use(codeHighlight())
+    .use(sass())
     .use(date())
