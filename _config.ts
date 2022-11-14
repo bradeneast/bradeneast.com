@@ -23,7 +23,7 @@ const pluginOptions = {
 export default
   lume(lumeOptions, pluginOptions)
     .copy("img")
-    .copy("_includes/assets/", "/")
+    .copy("assets", ".")
     .copy("main.css")
     .copy("retro.css")
 
