@@ -7,6 +7,7 @@ tags:
   - Posters
   - Campaign
   - Print
+draft: true
 ---
 
 The [Cooperative Program](//sbc.net/cp) is the plan through which Southern Baptist churches give to support their state conventions and the Southern Baptist Convention. In 2021, the [Oklahoma Baptist Convention](/design/oklahoma-baptists/) launched a promotional campaign to bring awareness of the Cooperative Program's mission and ministry into Oklahoma Baptist churches.
