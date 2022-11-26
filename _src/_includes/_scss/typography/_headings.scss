@@ -25,7 +25,11 @@ main {
     }
   }
 
-  h2,
+  h2 {
+    text-transform: uppercase;
+    // font-size: 2em;
+  }
+
   h3,
   h4,
   h5,
@@ -61,8 +65,8 @@ main {
   }
 }
 
-h2:not(:first-child) {
-  margin-top: $flow3;
+h2:not(:first-of-type) {
+  margin-top: $flow4;
   margin-bottom: $flow2;
 }
 
