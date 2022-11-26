@@ -2,13 +2,11 @@
 title: 5 Solas for Reformation Sunday
 entity: Hope Presbyterian Church
 image: /img/solas-banners/close-up.jpg
-order: 9
+order: 8
 tags:
   - Banners
   - Large Format
   - Print
-badges:
-  - New
 links:
   Learn about Hope: //hopepresbyterian.church
 ---

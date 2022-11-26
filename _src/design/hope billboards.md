@@ -2,7 +2,7 @@
 title: Billboards of Hope
 entity: Hope Presbyterian Church of Bartlesville
 image: /img/hope-billboards/nailing-it.jpg
-order: 8
+order: 9
 tags:
   - Billboards
   - Advertising
