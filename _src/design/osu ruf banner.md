@@ -4,8 +4,8 @@ entity: OSU Reformed University Fellowship
 image: /img/osu-ruf-banner/banner-door.jpg
 order: 13
 tags:
+  - Banners
   - Large Format
-  - Print
 badges:
   - New
 ---

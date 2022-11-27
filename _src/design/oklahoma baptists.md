@@ -6,7 +6,6 @@ order: 1
 tags:
   - Logo
   - Identity
-  - Print
   - Campaign
 badges:
   - 

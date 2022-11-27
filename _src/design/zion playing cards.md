@@ -5,8 +5,7 @@ image: /img/zion/cards-out-of-box.jpg
 order: 5
 tags:
   - Packaging
-  - Playing Cards
-  - Print
+  - Product
 ---
 
 The purpose of this project is to demonstrate a package design concept that was

@@ -5,9 +5,8 @@ image: /img/hope-billboards/nailing-it.jpg
 order: 9
 tags:
   - Billboards
-  - Advertising
-  - Large Format
   - Campaign
+  - Large Format
 badges:
   - New
 links:
