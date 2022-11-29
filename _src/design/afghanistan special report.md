@@ -1,8 +1,8 @@
 ---
 title: Afghanistan Special Report
 entity: The Voice of the Martyrs
-image: /img/afghanistan-sr/[none].jpg
-order: 10
+image: /img/afghanistan-sr/hero.jpg
+order: 11
 tags:
   - Mailer
   - Multi-Piece
@@ -14,22 +14,24 @@ links:
 draft: true
 ---
 
+{% from "macros.njk" import video %}
+
 
 ## Objective
 
-The Voice of the Martyrs works in the worlds most difficult mission fields, but ome nations are almost impossible to access for Christians outside the borders. At this moment in history, Afghanistan is one such nation.
+The Voice of the Martyrs works in the worlds most difficult mission fields, but some nations are almost impossible to access for Christians outside the borders. At this moment in history, Afghanistan is one such nation.
 
 My goal was to design a package for mailing that illustrated what the written stories described: cold isolation and looming danger for Christians inside the country.
 
-![Collected mockup of all pieces](/img/afghanistan-sr/)
+{{ video("afghanistan-sr/opening.mp4") }}
 
 
 ## Project details
 
-This was a multi-piece mailer comprised of:
-- 4-color coated no.10 envelope with an address window
-- 17x11 uncoated report
-- 8 1/2x11 uncoated response device
+This was a multi-piece mailing package comprised of:
+- 4-color no.10 envelope with an address window (coated)
+- 17 x 11 multi-fold piece (uncoated)
+- 8 1/2 x 11 response device (uncoated)
 - Single-color no.9 business reply envelope
 
 
@@ -39,7 +41,7 @@ VOM's visual language relies heavily on photography, aiming to bring readers int
 
 > At the end of the day, there was only **one** safe-to-use photo of actual Aghan Christians.
 
-![Our one image of believers?](/img/afghanistan-sr/)
+![Inside Spread](/img/afghanistan-sr/interior-spread.jpg)
 
 
 ## Solutions
@@ -48,13 +50,18 @@ By this point we were behind schedule, with only one medium-resolution photo ava
 
 I designed the report with photos, color, and layout choices which demonstrated how Christians are undeterred by the grim reality of Taliban control.
 
-![Interior spread](/img/afghanistan-sr/)
+![Outside Spread](/img/afghanistan-sr/outside-spread.jpg)
+
+I also participated in an art-direction role to guide the design of [a landing page](//vom.org/2022-10-afghanistan), the digital version of this report. This helped additional readers experience the printed report within a web context.
+
+<div class="grid">
+  <img alt="A screenshot from the hero section of the Afghanistan Special Report web page." src="/img/afghanistan-sr/web-top.jpg" />
+  <img alt="A screenshot from the Afghanistan Special Report web page with an opportunity to give." src="/img/afghanistan-sr/web-bottom.jpg" />
+</div>
 
 
 ## Outcome
 
 The final design of the special report was enthusiastically approved by organizational leadership in July 2022. At this point, I began working with our team and vendor to print and produce the mailing. In October, it arrived in over 700,000 mailboxes across the US and internationally, bringing widespread awareness of God's work in Afghanistan to the larger body of Christ.
 
-I also participated in an art-direction role to guide the design of [a landing page](//vom.org/2022-10-afghanistan), the digital version of this report. This helped additional readers experience the printed report within a web context.
-
-![landing page screen recording](/img/afghanistan-sr)
+![A completed gift slip being returned in a business-reply envelope](/img/afghanistan-sr/gift-slip.jpg)
