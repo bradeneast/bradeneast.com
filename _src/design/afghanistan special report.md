@@ -11,7 +11,7 @@ badges:
   - New
 links:
   Learn about VOM: //vom.org
-draft: true
+# draft: true
 ---
 
 {% from "macros.njk" import video %}
@@ -39,14 +39,14 @@ This was a multi-piece mailing package comprised of:
 
 VOM's visual language relies heavily on photography, aiming to bring readers into fellowship with their persecuted brothers and sisters in Christ. The media archive they maintain has over 1 million assets. However, the situation in Afghanistan made many of the photos in VOM's archive unsafe to publish. For approval to publish such photos, it takes between 1-2 weeks to get word from workers in the field.
 
-> At the end of the day, there was only **one** safe-to-use photo of actual Aghan Christians.
+> At the end of the day, there was only **one** safe-to-use photo of confirmed Christians in Aghanistan.
 
 ![Inside Spread](/img/afghanistan-sr/interior-spread.jpg)
 
 
 ## Solutions
 
-By this point we were behind schedule, with only one medium-resolution photo available to use. I turned to representative photos not necessarily from Afghanistan. Finally, as a last resort, I pulled the final few images from stock resources like Unsplash.
+By this point we were behind schedule, with only one medium-resolution photo available to use. I turned to representative photos, some from Afghanistan and some from the surrounding region. Finally, as a last resort, I pulled the final few images from stock resources like Unsplash.
 
 I designed the report with photos, color, and layout choices which demonstrated how Christians are undeterred by the grim reality of Taliban control.
 
