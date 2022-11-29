@@ -7,8 +7,6 @@ tags:
   - Billboards
   - Campaign
   - Large Format
-badges:
-  - New
 links:
   Learn about Hope: //hopepresbyterian.church
 ---

@@ -2,7 +2,7 @@
 title: RUF Welcome Banner
 entity: OSU Reformed University Fellowship
 image: /img/osu-ruf-banner/banner-door.jpg
-order: 13
+order: 10
 tags:
   - Banners
   - Large Format
