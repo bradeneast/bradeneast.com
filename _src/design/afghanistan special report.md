@@ -21,7 +21,7 @@ links:
 
 The Voice of the Martyrs works in the worlds most difficult mission fields, but some nations are almost impossible to access for Christians outside the borders. At this moment in history, Afghanistan is one such nation.
 
-My goal was to design a package for mailing that illustrated what the written stories described: cold isolation and looming danger for Christians inside the country.
+My goal was to design a package for mailing that illustrated what the written stories described: **_cold isolation and looming danger for Christians inside the country._**
 
 {{ video("afghanistan-sr/opening.mp4") }}
 

@@ -1,0 +1,54 @@
+---
+title: Africa Special Report
+entity: The Voice of the Martyrs
+image: /img/africa-sr/hero.jpg
+order: 12
+tags:
+  - Mailer
+  - Multi-Piece
+  - Print
+badges:
+  - New
+links:
+  Learn about VOM: //vom.org
+draft: true
+---
+
+{% from "macros.njk" import video %}
+
+
+## Objective
+
+
+
+{{ video("africa-sr/opening.mp4") }}
+
+
+## Project details
+
+This was a multi-piece mailing package comprised of:
+- 4-color no.10 envelope with an address window (coated)
+- 17 x 11 multi-fold piece (uncoated)
+- 8 1/2 x 11 response device (uncoated)
+- Single-color no.9 business reply envelope
+
+
+## Unique challenges
+
+After final approval in September 2022, I started collaborating with our print vendor. Although the proofs looked good, I requested a second set of color proofs to make absolutely sure the natural color tones in the photography were dialed in. As part of this process, I used a color-calibrated monitor and proofing lightbox to make subtle tweaks for accuracy in the final product.
+
+![Inside Spread](/img/africa-sr/interior-spread.jpg)
+
+![Outside Spread](/img/africa-sr/outside-spread.jpg)
+
+I also participated in an art-direction role to guide the design of [a landing page](//vom.org/2022-12-africa), the digital version of this report. This helped additional readers experience the printed report within a web context.
+
+{{ video("africa-sr/web-animation.mp4") }}
+
+![A screenshot from the hero section of the Africa Special Report web page](/img/africa-sr/web-top.jpg)
+
+## Outcome
+
+The final design of the special report was enthusiastically approved by organizational leadership in September 2022. At this point, I began working with our team and vendor to print and produce the mailing. In December, this report was mailed to roughly 500,000 recipients all over the world, showing how African Christians are standing firm in the face of Islamic extremism.
+
+![A completed gift slip being returned in a business-reply envelope](/img/africa-sr/gift-slip.jpg)
