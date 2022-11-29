@@ -26,7 +26,7 @@ export async function html(page: any) {
     h1.innerHTML = splitting(h1.innerText);
   }
 
-  let images = $$("img");
+  let images = $$("img,video");
   images.forEach(img => {
     if (!img.alt?.length)
       img.alt = img.alt || altFromSrc(img.src);
