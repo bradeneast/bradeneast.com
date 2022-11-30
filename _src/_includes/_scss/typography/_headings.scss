@@ -65,12 +65,18 @@ main {
   }
 }
 
+h2 {
+  margin-bottom: $flow2;
+}
+
+h3 {
+  margin-bottom: $flow1;
+}
+
 h2:not(:first-of-type) {
   margin-top: $flow4;
-  margin-bottom: $flow2;
 }
 
 h3:not(:first-child) {
   margin-top: $flow2;
-  margin-bottom: $flow1;
 }
