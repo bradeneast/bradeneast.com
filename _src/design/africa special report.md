@@ -11,7 +11,7 @@ badges:
   - New
 links:
   Learn about VOM: //vom.org
-draft: true
+# draft: true
 ---
 
 {% from "macros.njk" import video %}
@@ -19,6 +19,9 @@ draft: true
 
 ## Objective
 
+In recent years, Christians in Africa have faced a rise in violence and persecution from Islamic extremist groups. Militant groups have gone to great lengths in attempts to stamp out church activities and evangelism in Africa. The stories of these believers needed to be shared with the global Church.
+
+Through the report's design, I wanted to show the energy and fervor with which Christianity is resisting and overcoming persecution in Africa.
 
 
 {{ video("africa-sr/opening.mp4") }}
@@ -45,10 +48,8 @@ I also participated in an art-direction role to guide the design of [a landing p
 
 {{ video("africa-sr/web-animation.mp4") }}
 
-![A screenshot from the hero section of the Africa Special Report web page](/img/africa-sr/web-top.jpg)
-
 ## Outcome
 
 The final design of the special report was enthusiastically approved by organizational leadership in September 2022. At this point, I began working with our team and vendor to print and produce the mailing. In December, this report was mailed to roughly 500,000 recipients all over the world, showing how African Christians are standing firm in the face of Islamic extremism.
 
-![A completed gift slip being returned in a business-reply envelope](/img/africa-sr/gift-slip.jpg)
+![A screenshot from the hero section of the Africa Special Report web page](/img/africa-sr/web-mac.jpg)
