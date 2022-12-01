@@ -1,8 +1,8 @@
 ---
 title: Ministry Kit for Hispanic Pastors
 entity: The Voice of the Martyrs
-image: /img/spanish-box/
-order: 11
+image: /img/hispanic-box/closed.jpg
+order: 14
 tags:
   - Multimedia
   - Product Design
@@ -10,14 +10,17 @@ tags:
 badges:
   - New
 links:
-  Learn about VOM: //vom.org
-draft: true
+  See VOM Spanish materials: //persecution.com/es
 ---
+
+{% from "macros.njk" import video %}
 
 
 ## Objective
 
 This project was intended to provide Hispanic pastors in Latin America with a beautiful and useful gift of appreciation for their ministry. In order to make this gift extra special, the stakeholders wanted a premium look and feel. The intent was that recipients would keep the box for a long time, maybe even put it on display in their home or office.
+
+![The black ministry kit box opened up to display the resources inside](/img/hispanic-box/open.jpg)
 
 
 ## Project details
@@ -28,6 +31,10 @@ The designed elements of the ministry kit included:
 - Two small boxes for USB sticks
 - The USB sticks themselves
 
+{{ video("hispanic-box/usb-boxes.mp4") }}
+
+![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/usb-sticks.jpg)
+
 
 ## Unique challenges
 
@@ -37,10 +44,8 @@ To raise this box above the rest, I suggested a foil treatment for the decorativ
 
 Another challenge to overcome was that our vendor was based overseas, so things like samples and wet proofs took up to three weeks.
 
-
+![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/top.jpg)
 
 ## Outcome
 
-Throughout the latter half of 2022, roughly 30,000 boxes were distributed to Hispanic pastors throughout Latin America. One recipient said, "The kit is very beautiful. Opening it was exciting over and over again."
-
-> The kit is very beautiful. Opening it was exciting over and over again.
+In the first quarter of 2023, roughly 30,000 boxes will be distributed to Hispanic pastors throughout Latin America, beginning in Mexico City. One recipient said, "The kit is very beautiful. Opening it was exciting over and over again."
