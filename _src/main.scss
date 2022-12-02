@@ -76,8 +76,7 @@ svg {
 }
 
 img:not([src*="png"]):not([src*="svg"]),
-iframe,
-video {
+iframe {
 	background: var(--g5);
 }
 

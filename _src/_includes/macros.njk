@@ -22,7 +22,12 @@
 
 {# VIDEO #}
 {% macro video(source) %}
-<video loop autoplay muted playsinline src="/img{{ source | url }}"></video>
+<div class="video">
+  <div class="loader"></div>
+  <video loop autoplay muted playsinline>
+    <source type="video/mp4" src="/img{{ source | url }}" />
+  </video>
+</div>
 {% endmacro %}
 
 
