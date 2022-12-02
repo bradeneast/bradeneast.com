@@ -31,7 +31,7 @@ My goal was to design a package for mailing that illustrated what the written st
 This was a multi-piece mailing package comprised of:
 - 4-color no.10 envelope with an address window (coated)
 - 17 x 11 multi-fold piece (uncoated)
-- 8 1/2 x 11 response device (uncoated)
+- 8 1/2 x 11 tri-fold response device (uncoated)
 - Single-color no.9 business reply envelope
 
 
