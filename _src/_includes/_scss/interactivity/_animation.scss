@@ -9,9 +9,11 @@
 	0% {
 		transform: skewX(0);
 	}
+
 	33% {
 		transform: skewX(3deg);
 	}
+
 	66% {
 		transform: skewX(-1deg);
 	}
@@ -22,6 +24,35 @@
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 		transform: translate3d(1em, 0, 0);
 	}
+}
+
+@keyframes loader {
+	from {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		border-radius: 50%;
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.video {
+	display: grid;
+	place-items: center;
+	background: var(--g7);
+}
+
+.loader {
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	border: 2px solid var(--primary);
+	border-radius: 5px;
+	animation: loader 1s ease-in-out infinite;
 }
 
 .splitting {
@@ -113,14 +144,12 @@ h6 {
 		transform: translate(50%, 1em);
 		transition: opacity $smoothTransition, transform $smoothTransition;
 		--pt: calc(100% - #{$space});
-		clip-path: polygon(
-			0 0,
+		clip-path: polygon(0 0,
 			100% 0,
 			100% var(--pt),
 			calc(50% + #{$space}) var(--pt),
 			50% 100%,
 			calc(50% - #{$space}) var(--pt),
-			0 var(--pt)
-		);
+			0 var(--pt));
 	}
 }
