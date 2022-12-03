@@ -1,5 +1,5 @@
 ---
-title: Oklahoma Baptists
+title: Oklahoma Baptists Branding
 entity: Nonprofit
 image: /img/oklahoma-baptists/backpack.jpg
 order: 1

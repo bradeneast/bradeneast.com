@@ -1,5 +1,5 @@
 ---
-title: Bartlesville Redi-Mix Concrete
+title: Bartlesville Redi-Mix Concrete Branding
 entity: Fun
 image: /img/redi-mix/business-card-back.jpg
 order: 7
