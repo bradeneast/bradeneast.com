@@ -11,3 +11,12 @@ bodyClass: post
 {{ content | safe }}
 
 <hr />
+
+Related case studies:
+
+<div class="feed">
+  {# Search pages by type that aren't the current page #}
+  {# Filter posts by tags matching the current page #}
+  {% set postsList = search.pages("title!='" + title + "' type='" + type + "'") | getRelatedPosts(tags) %}
+  {% include "templates/postsList.njk" %}
+</div>

@@ -18,3 +18,10 @@ export function splitting(text: string) {
 
   return lines.map(lineTemplate).join("\n");
 }
+
+export function getRelatedPosts(postsList, tags) {
+  return postsList.filter(post => {
+    for (let tag of tags)
+      if (post.data.tags.includes(tag)) return post;
+  })
+}

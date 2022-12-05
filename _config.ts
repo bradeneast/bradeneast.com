@@ -6,6 +6,7 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import * as processors from "./_processors.ts";
+import * as filters from "./_filters.ts";
 import markdownItCheckbox from "https://jspm.dev/markdown-it-checkbox";
 
 export const siteSrc = "_src";
@@ -32,6 +33,7 @@ export default
 
     .process([".html"], processors.html)
 
+    .filter("getRelatedPosts", filters.getRelatedPosts)
     .use(slugifyUrls())
     .use(codeHighlight())
     .use(sass())

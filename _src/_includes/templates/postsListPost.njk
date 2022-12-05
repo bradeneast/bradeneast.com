@@ -1,0 +1,17 @@
+<a href="{{ post.data.url | url }}" class="feed__item {{ "next-to-last" if loop.index == postsList.length - 1 }}">
+  {# Image used as background #}
+  <div class="feed__item--image">
+    <img aria-hidden="true" alt="" src="{{ post.data.image }}" />
+  </div>
+  {# Post Title #}
+  <div class="compress bold feed__item--text">{{ post.data.title }}</div>
+  {# Post Tags #}
+  <div class="light-text subtext">{{ post.data.tags | join(", ") }}</div>
+  {# Post Badges #}
+  <div class="feed__item--badges">
+    {%- for badge in post.data.badges -%}
+    <div class="badge" style="--index:{{ loop.index0 }}; --color:{{ badge.color or 'var(--primary)' }}">{{ badge.name or badge }}</div>
+    {%- endfor -%}
+  </div>
+  {#  #}
+</a>
