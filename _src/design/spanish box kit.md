@@ -4,8 +4,8 @@ entity: The Voice of the Martyrs
 image: /img/hispanic-box/closed.jpg
 order: 14
 tags:
-  - Multimedia
-  - Product Design
+  - Product
+  - Packaging
   - Print
 badges:
   - New
