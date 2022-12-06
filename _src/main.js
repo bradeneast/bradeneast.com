@@ -62,7 +62,7 @@ function init() {
 init();
 
 
-new Schwifty({
-	onload: init,
-	preserveAttributes: { documentElement: true }
-})
+// new Schwifty({
+// 	onload: init,
+// 	preserveAttributes: { documentElement: true }
+// })
