@@ -4,10 +4,10 @@ strong,
 }
 
 em {
-  font-family: $ff_alt;
+  font-family: $ff_code;
   font-weight: $fontWeightRegular;
-  font-style: normal;
-  font-variation-settings: "slnt" -13, "CRSV" 1, "CASL" 1;
+  font-style: italic;
+  font-variation-settings: $recursive;
   transition: color $colorTransition;
 }
 

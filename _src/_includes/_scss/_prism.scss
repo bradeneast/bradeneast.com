@@ -10,7 +10,7 @@ textarea {
 	tab-size: 2;
 	hyphens: none;
 	font-size: 0.9em;
-	font-family: $ff_alt;
+	font-family: $ff_code;
 	max-width: calc(100vw - #{$flow4});
 	font-variation-settings: "slnt" 0, "CASL" 0, "MONO" 1;
 
@@ -24,6 +24,7 @@ textarea {
 }
 
 @media screen and (min-width: $mobile) {
+
 	code,
 	pre,
 	textarea {
@@ -31,7 +32,7 @@ textarea {
 	}
 }
 
-:not(pre) > code {
+:not(pre)>code {
 	cursor: text;
 	color: var(--g2);
 	padding: 0.1em 0.2em;
@@ -85,7 +86,7 @@ textarea {
 
 .function_ {
 	font-weight: $fontWeightHeavy;
-	font-variation-settings: "slnt" -13, "CRSV" 1, "CASL" 1;
+	font-variation-settings: $recursive;
 }
 
 pre.line-numbers {
@@ -102,7 +103,7 @@ pre.line-numbers {
 		width: 3em;
 		user-select: none;
 
-		& > span {
+		&>span {
 			display: block;
 			counter-increment: linenumber;
 			padding-right: 1.2em;
