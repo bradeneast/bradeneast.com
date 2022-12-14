@@ -2,7 +2,7 @@
 title: Ministry Kit for Hispanic Pastors
 entity: The Voice of the Martyrs
 image: /img/hispanic-box/closed.jpg
-order: 14
+order: 13
 tags:
   - Product
   - Packaging
