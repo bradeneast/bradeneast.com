@@ -7,9 +7,11 @@ menu:
   label: See my designs
 ---
 
-# Recovering what was lost.
+# Building brands
 
-My approach to design involves helping friends and family stick to what they're amazing at. I think we do best playing on our home feild, and design is a fun way to get us there.
+My approach to design involves helping my friends and family stick to what
+they're amazing at. I take the guesswork out of branding and bring my experience
+to bear on your unique needs.
 
 <div class="feed">
 {% set postsList = search.pages("type=designPost", site.sorting.Design) %}
