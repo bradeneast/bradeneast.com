@@ -1,5 +1,5 @@
 ---
-title: Billboards for a local church
+title: Billboard Series for a Local Church
 entity: Hope Presbyterian Church of Bartlesville
 image: /img/hope-billboards/nailing-it.jpg
 order: 9

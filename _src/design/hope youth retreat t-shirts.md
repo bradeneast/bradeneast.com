@@ -1,8 +1,10 @@
 ---
-title: "Dead is Dead: T-Shirts and theme for a youth retreat"
+title: "Dead is Dead: T-Shirts and Theme for a Youth Retreat"
 entity: Hope Presbyterian Church of Bartlesville
 image: /img/hope-youth-retreat/cropped.jpg
 order: 15
+badges:
+  - New
 tags:
   - T-Shirts
   - Identity
@@ -11,9 +13,11 @@ links:
   Learn about Hope: //hopepresbyterian.church
 ---
 
-Even though we are “dry bones” (Ezekiel 37), the unregenerate man tries to
-appear spiritually alive in order to acheive the glory of God and earn his
-grace.
+Scripture teaches that apart from God's intervention, we are as “dry bones”
+(Ezekiel 37), and there is nothing we can do to earn God's grace.
+
+This retreat was themed "Dead is Dead" with a teaching and study centered around
+three words: "_**Pray, Live, Speak.**_"
 
 The skull is a universal symbol of death, which is smiling to show how we
 delight in our folly and sin apart from God. The texture of ocean waves

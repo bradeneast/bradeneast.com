@@ -8,11 +8,12 @@ tags:
   - Identity
 ---
 
-Redi-Mix is a well-known and trusted supplier of pre-mixed concrete for Bartlesville and the surrounding areas.
+Redi-Mix is a well-known and trusted supplier of pre-mixed concrete for
+Bartlesville and the surrounding areas. This logo was designed to mimic the
+shape of a magnesium trowel or "float" used to prepare the surface of
+freshly-poured concrete.
 
 ![The icon of the Bartlesville Redi-Mix logo concept](/img/redi-mix/logo.svg)
-
-This logo was designed to mimic the shape of a magnesium trowel or "float" used to prepare the surface of freshly-poured concrete.
 
 ![The conceptual brand book of Bartlesville Redi-Mix](/img/redi-mix/brand-book.jpg)
 
