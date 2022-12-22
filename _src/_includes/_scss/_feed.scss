@@ -200,7 +200,7 @@
       flex-flow: row wrap;
       align-content: flex-end;
       justify-content: center;
-      filter: drop-shadow(var(--shadowLarge));
+      // filter: drop-shadow(var(--shadowLarge));
       --start-start: #{$borderRadius};
       --start-end: #{$borderRadius};
       --end-start: #{$borderRadius};
