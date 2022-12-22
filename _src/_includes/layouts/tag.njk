@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>{{ title }}</h1>
+
+<div class="feed">
+{% set postsList = search.pages(tag) %}
+{% include "templates/postsList.njk" %}
+</div>
