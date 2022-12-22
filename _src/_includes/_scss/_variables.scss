@@ -31,23 +31,6 @@ $fallback: showFallback 5s forwards;
 $recursive: "slnt" -13, "CRSV" 1, "CASL" 1;
 
 @font-face {
-  font-family: "Recursive";
-  src: url("/Recursive.woff2") format("woff2-variations");
-  font-variation-settings: $recursive;
-  font-style: italic;
-  font-feature-settings: "dlig" "on";
-  font-weight: 300 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("/Inter.var.woff2") format("woff2-variations");
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Thunder";
   src: url("/Thunder-ExtraBoldLC.woff2") format("woff2-variations");
   font-weight: 700;
