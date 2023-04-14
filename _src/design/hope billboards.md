@@ -11,6 +11,8 @@ links:
   Learn about Hope: //hopepresbyterian.church
 ---
 
-![A triple-sided billboard with two advertisements visible.](/img/hope-billboards/conservative-points.jpg)
+![A floral billboard inviting passers-by to come celebrate the hope of the resurrection.](/img/hope-billboards/easter.jpg)
 
-![A billboard showing the four conservative distinctives of Hope.](/img/hope-billboards/lessons-and-carols.jpg)
+![An artistic warm billboard promoting a Christmas Eve service.](/img/hope-billboards/lessons-and-carols.jpg)
+
+![A simple white billboard listing some characteristics of Hope Presbyterian Church.](/img/hope-billboards/conservative-points.jpg)
