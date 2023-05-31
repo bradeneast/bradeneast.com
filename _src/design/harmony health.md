@@ -6,8 +6,6 @@ order: 14
 tags:
   - Logo
   - Identity
-badges:
-  - New
 links:
   Learn more about Harmony Health: //harmonyhealthok.com
 ---
