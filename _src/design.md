@@ -11,7 +11,7 @@ menu:
 
 My approach to design involves helping my friends and family stick to what
 they're amazing at. I take the guesswork out of branding and bring my experience
-to grow brands that fulfill your hopes and dreams.
+to design identities that last a lifetime.
 
 <div class="feed">
 {% set postsList = search.pages("type=designPost", site.sorting.Design) %}
