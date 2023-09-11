@@ -13,9 +13,9 @@ I'm Braden.
 
 # I must become less and less.
 
-I currently live in Bartlesville, Oklahoma, working as part of the creative team at a nonprofit called Voice of the Martyrs.
+I currently live in Bartlesville, Oklahoma, working as part of the creative team at a nonprofit called The Voice of the Martyrs.
 
-Since 2015, I've been designing logos for local Oklahoma businesses. While learning design, I began accumulating complementary skills in technology, especially those related to the web. Along the way I started fusing these skills together for uncommonly good results.
+Since 2015, I've been designing for Oklahoma churches and businesses. While learning design, I gained complementary skills in web technologies and animation. Along the way I started fusing these skills together for results my clients love.
 
 In past roles I've been involved in everything from designing web experiences to nationwide marketing campaigns. My best work revolves around [graphic design](/design), but I sprinkle in a little [coding](/code) every now and then.
 
