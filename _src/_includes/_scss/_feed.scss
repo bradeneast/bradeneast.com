@@ -188,6 +188,10 @@
         --end-start: #{$borderRadius};
       }
     }
+
+    &:first-child:last-child {
+      --start-end: #{$borderRadius};
+    }
   }
 }
 
