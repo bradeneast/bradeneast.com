@@ -29,7 +29,7 @@ technologies:
 
 {% from "macros.njk" import video %}
 
-[Big List](//biglist.netlify.app) is, well... a big list.
+<a href="//biglist.netlify.app" target="_blank">Big List</a> is, well... a big list.
 
 Seriously, that's it! It's a checklist designed with oversized type. It's probably for designers, but maybe it will catch on with others too.
 

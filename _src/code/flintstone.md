@@ -16,9 +16,9 @@ technologies:
     description: I used the [GoTrue API](//github.com/netlify/gotrue) to handle user signup, authentication and custom user data. GoTrue is based on OAuth2 and JWT.
     image: auth.svg
   - 
-    name: lit-html
-    description: I used this templating library from Google's [Polymer Project](//polymer-project.org) to render a reactive user interface.
-    image: lit-html.svg
+    name: Lit
+    description: I used this [templating library](https://lit.dev/) from Google's to render a reactive user interface.
+    image: lit.svg
   - 
     name: esbuild
     description: The source code was split up into components and templates, so [esbuild](//github.com/evanw/esbuild) was the fastest way to bundle and minify the application.
