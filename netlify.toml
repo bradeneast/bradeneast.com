@@ -4,7 +4,7 @@ publish = "_site"
 
 [dev]
 autoLaunch = true
-command = "lume --serve"
+command = "deno task lume --serve"
 framework = "#custom"
 port = 8888
 publish = "_site"
