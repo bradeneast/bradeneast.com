@@ -50,3 +50,8 @@ a {
     text-decoration-color: var(--accent);
   }
 }
+
+p a {
+  font-weight: bold;
+  color: var(--primary);
+}
