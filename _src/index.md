@@ -25,7 +25,7 @@ Email me and I'll make myself available for a call or a coffee run.
 
 [{{ site.email }}](mailto:{{site.email}})
 
-![Braden East in a casual crag of red rock.](/img/braden-climbing.jpg)
+![Braden East in a casual crag of red rock.](/img/braden-4.jpg)
 
 > Unless the LORD builds a house, the work of the builders is wasted.
 >
