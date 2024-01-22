@@ -13,6 +13,7 @@ For moments of spontaneity, <a data-no-schwifty href="/random">here's a random
 post</a>
 
 <div class="feed">
-{% set postsList = search.pages("type=blogPost", site.sorting.Blog) %}
+{% set sorting = site.sorting.Blog %}
+{% set postsList = search.pages("type=blogPost", sorting) %}
 {% include "templates/postsList.njk" %}
 </div>

@@ -12,6 +12,7 @@ menu:
 Here you'll find the front-end things I'm building lately.
 
 <div class="feed">
-{% set postsList = search.pages("type=codePost", site.sorting.Code) %}
+{% set sorting = site.sorting.Code %}
+{% set postsList = search.pages("type=codePost", sorting) %}
 {% include "templates/postsList.njk" %}
 </div>
