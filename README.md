@@ -1,5 +1,5 @@
 # bradeneast.com
 
-This website was designed by me as an extension of how I organize my creative work, learnings, and thoughts.
+Braden East's portfolio of uncategorized, unpolished work.
 
-It's a static site, generated with [Lume](//lume.land) and hosted on [Netlify](//netlify.com).
+This is a static site, generated with [Lume](//lume.land) and hosted on [Netlify](//netlify.com).
