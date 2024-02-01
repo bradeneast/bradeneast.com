@@ -1,0 +1,33 @@
+{{ import "macros.vto" as macros }}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{{ include "head.vto" }}
+
+<body class="{{ bodyClass }}">
+
+	{# <div class="logo">{{ include "assets/east_seal.svg" }}</div> #}
+
+	<aside>
+		<section>
+			{{ set primaryMenuPages = search.pages("menu.showInMenu=true") }}
+			{{ macros.dropdown("primary", parentTitle || title, primaryMenuPages) }}
+		</section>
+		{{ if showSecondaryMenu }}
+		<section>
+			{{ set secondaryMenuPages = search.pages("type=" + type, site.sorting[parentTitle]) }}
+			{{ macros.dropdown("secondary", title, secondaryMenuPages) }}
+		</section>
+		{{ /if }}
+	</aside>
+
+	<main>
+		{{ content |>safe }}
+	</main>
+
+	{{ include "footer.vto" }}
+
+</body>
+
+</html>

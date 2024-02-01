@@ -5,10 +5,10 @@
 	<title>
 		{{ title }}, from Braden East
 	</title>
-	<meta name="description" content="{{ description | truncate(50) }}" />
+	<meta name="description" content="{{ description |>truncate(50) }}" />
 
 	<meta property="og:title" content="{{ title }}" />
-	<meta property="og:description" content="{{ description | truncate(50) }}" />
+	<meta property="og:description" content="{{ description |>truncate(50) }}" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:url" content="{{ site.root }}{{ url }}" />
 	<meta property="og:type" content="website" />

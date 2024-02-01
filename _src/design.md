@@ -1,6 +1,6 @@
 ---
-layout: layouts/base.njk
-templateEngine: njk,md
+layout: layouts/base.vto
+templateEngine: vto,md
 title: Design
 menu:
   showInMenu: true
@@ -12,7 +12,7 @@ menu:
 My approach to design involves helping my friends and family stick to what they're amazing at. I take the guesswork out of graphics and use my wide experience in the design industry to bring your ideas to life.
 
 <div class="feed">
-{% set sorting = site.sorting.Design %}
-{% set postsList = search.pages("type=designPost", sorting) %}
-{% include "templates/postsList.njk" %}
+{{ set sorting = site.sorting.Design }}
+{{ set postsList = search.pages("type=designPost", sorting) }}
+{{ include "templates/postsList.vto" }}
 </div>

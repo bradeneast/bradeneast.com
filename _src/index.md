@@ -1,13 +1,13 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.vto
 title: About me
-templateEngine: njk,md
+templateEngine: vto,md
 menu:
   showInMenu: true
   label: Learn about me
 ---
 
-{% from "macros.njk" import person, arrow %}
+{{ from "macros.vto" import person, arrow }}
 
 I'm Braden.
 

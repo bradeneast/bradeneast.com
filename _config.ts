@@ -28,9 +28,9 @@ export default
     .copy("main.css")
     .copy("retro.css")
 
-    .process([".html"], processors.html)
+    // .process([".html"], processors.html)
 
-    .filter("getRelatedPosts", filters.getRelatedPosts)
+    // .filter("getRelatedPosts", filters.getRelatedPosts)
     .use(slugifyUrls())
     .use(codeHighlight())
     .use(esbuild({ target: "es6" }))

@@ -5,10 +5,10 @@
   <div class="flex">
     <div class="modal">&nbsp;</div>
     <div class="flex socials">
-      {% for platform, url in site.socials %}
+      {{ for platform, url in site.socials }}
         <a href="{{ url }}">{{ platform }}</a>
-      {% endfor %}
+      {{ /for }}
     </div>
-    {% include "toggles.njk" %}
+    {{ include "toggles.vto" }}
   </div>
 </footer>

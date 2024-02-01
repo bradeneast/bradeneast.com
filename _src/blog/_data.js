@@ -1,7 +1,7 @@
 export default {
   type: "blogPost",
-  layout: "layouts/blogPost.njk",
-  templateEngine: "njk,md",
+  layout: "layouts/blogPost.vto",
+  templateEngine: "vto,md",
   parentTitle: "Blog",
   sortBy: "date"
 }

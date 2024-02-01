@@ -1,7 +1,7 @@
 export default {
   type: "designPost",
-  layout: "layouts/designPost.njk",
-  templateEngine: "njk,md",
+  layout: "layouts/designPost.vto",
+  templateEngine: "vto,md",
   parentTitle: "Design"
 }
 

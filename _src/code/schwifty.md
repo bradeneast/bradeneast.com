@@ -24,7 +24,7 @@ technologies:
     image: esbuild.svg
 ---
 
-{% from "macros.njk" import video %}
+{{ from "macros.vto" import video }}
 
 Schwfity is my first published Javascript library. It aims to help static sites join the instant-load party 🥳 with native and progressive apps.
 

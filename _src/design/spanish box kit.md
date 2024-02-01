@@ -11,7 +11,7 @@ links:
   See VOM Spanish materials: //persecution.com/es
 ---
 
-{% from "macros.njk" import video %}
+{{ from "macros.vto" import video }}
 
 ## Objective
 

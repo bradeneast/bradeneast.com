@@ -27,7 +27,7 @@ technologies:
     image: netlify.svg
 ---
 
-{% from "macros.njk" import video %}
+{{ from "macros.vto" import video }}
 
 <a href="//biglist.netlify.app" target="_blank">Big List</a> is, well... a big list.
 

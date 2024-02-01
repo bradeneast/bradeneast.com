@@ -29,7 +29,7 @@ technologies:
     image: netlify.svg
 ---
 
-{% from "macros.njk" import video %}
+{{ from "macros.vto" import video }}
 
 [Flintstone](//flintstone.app) is a high-performance web app that refines the document editing process. I designed it with a clear, responsive interface for changing data, text, and styles in real-time.
 

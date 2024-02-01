@@ -1,13 +1,13 @@
 ---
-layout: layouts/base.njk
-templateEngine: njk,md
+layout: layouts/base.vto
+templateEngine: vto,md
 title: Random
 ---
 
 <ul style="display:none">
-  {%- for post in search.pages("type=blogPost") -%}
+  {{ for post in search.pages("type=blogPost") }}
     <li class="urlset">{{ post.data.url }}</li>
-  {%- endfor -%}
+  {{ /for }}
 </ul>
 
 # Whoops! Something went wrong.

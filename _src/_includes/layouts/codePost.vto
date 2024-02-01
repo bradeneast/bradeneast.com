@@ -1,31 +1,31 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.vto
 ---
 
-{% import "macros.njk" as macros %}
+{{ import "macros.vto" as macros }}
 
 <div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags light-text subtext">{{ tags | join(", ") }}</div>
+  <div class="tags light-text subtext">{{ tags |>join(", ") }}</div>
   <div>{{ purpose }}</div>
 </div>
 
-{{ content | safe }}
+{{ content |>safe }}
 
 <h2>Technologies</h2>
 
 <div class="grid">
-{% for tech in technologies %}
+{{ for tech in technologies }}
   {{ macros.blurb("technologies/" + tech.image, tech.name, tech.description) }}
-{% endfor %}
+{{ /for }}
 </div>
 
-{% if links %}
+{{ if links }}
 <p class="pad-vertical">
-  {% for label, link in links %}
-    {% if loop.index > 1 %}<br>{% endif %}
+  {{ for label, link in links }}
+    {{ if loop.index > 1 }}<br>{{ /if }}
     <a target="_blank" rel="noopener noreferrer" href="{{ link }}">
       {{ label }}
     </a>
-  {% endfor %}
+  {{ /for }}
 </p>
-{% endif %}
+{{ /if }}

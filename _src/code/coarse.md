@@ -17,7 +17,7 @@ technologies:
     image: javascript.svg
 ---
 
-{% from "macros.njk" import video %}
+{{ from "macros.vto" import video }}
 
 [Coarse](//coarse.netlify.app) is a totally design agnostic, minimal carousel library for modern websites.
 

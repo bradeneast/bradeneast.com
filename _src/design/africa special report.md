@@ -12,7 +12,7 @@ links:
 # draft: true
 ---
 
-{% from "macros.njk" import video %}
+{{ from "macros.vto" import video }}
 
 ## Objective
 

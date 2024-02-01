@@ -1,17 +1,17 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.vto
 ---
 
-{% from "macros.njk" import arrow %}
+{{ from "macros.vto" import arrow }}
 
-{% set readTime = content.length / 2000 %}
+{{ set readTime = content.length / 2000 }}
 
 <div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags light-text subtext">{{ tags | join(", ") }}</div>
-  <div>{{ readTime | round() }}-minute read</div>
+  <div class="tags light-text subtext">{{ tags |>join(", ") }}</div>
+  <div>{{ readTime |>round() }}-minute read</div>
 </div>
 
-{{ content | safe }}
+{{ content |>safe }}
 
 <p style="margin: 6em 0;">
   {{ arrow(1, -320, -52, 30) }}

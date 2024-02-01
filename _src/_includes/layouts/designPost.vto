@@ -1,0 +1,23 @@
+---
+layout: layouts/post.vto
+---
+
+{{ import "macros.vto" as macros }}
+
+<div class="pad-vertical" style="margin-top: 0;">
+  <div class="tags light-text subtext">{{ tags |>join(", ") }}</div>
+  Completed for: <strong>{{ entity }}</strong>
+</div>
+
+{{ content |>safe }}
+
+{{ if links }}
+<p class="pad-vertical">
+  {{ for label, link in links }}
+    {{ if loop.index > 1 }}<br>{{ /if }}
+    <a target="_blank" rel="noopener noreferrer" href="{{ link }}">
+      {{ label }}
+    </a>
+  {{ /for }}
+</p>
+{{ /if }}

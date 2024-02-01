@@ -1,6 +1,6 @@
 ---
-layout: layouts/base.njk
-templateEngine: njk,md
+layout: layouts/base.vto
+templateEngine: vto,md
 title: Code
 menu:
   showInMenu: true
@@ -12,7 +12,7 @@ menu:
 Here you'll find the front-end things I'm building lately.
 
 <div class="feed">
-{% set sorting = site.sorting.Code %}
-{% set postsList = search.pages("type=codePost", sorting) %}
-{% include "templates/postsList.njk" %}
+{{ set sorting = site.sorting.Code }}
+{{ set postsList = search.pages("type=codePost", sorting) }}
+{{ include "templates/postsList.vto" }}
 </div>

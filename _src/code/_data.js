@@ -1,7 +1,7 @@
 export default {
   type: "codePost",
-  layout: "layouts/codePost.njk",
-  templateEngine: "njk,md",
+  layout: "layouts/codePost.vto",
+  templateEngine: "vto,md",
   parentTitle: "Code"
 }
 
