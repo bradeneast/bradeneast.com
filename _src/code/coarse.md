@@ -17,16 +17,14 @@ technologies:
     image: javascript.svg
 ---
 
-{{ from "macros.vto" import video }}
-
 [Coarse](//coarse.netlify.app) is a totally design agnostic, minimal carousel library for modern websites.
 
-{{ video("coarse/basic.mp4") }}
+{{ comp.video({ src:"coarse/basic.mp4" }) }}
 
 Coarse supports swiping gestures on mobile devices, and uses performance optimizations like [event bubbling](//developer.mozilla.org/en-US/docs/Web/API/Event/bubbles) to stay fast and responsive.
 
-{{ video("coarse/swiping.mp4") }}
+{{ comp.video({ src:"coarse/swiping.mp4" }) }}
 
 It allows for total style control, custom transitions with pure CSS, and is highly configurable from the ground up.
 
-{{ video("coarse/icons.mp4") }}
+{{ comp.video({ src:"coarse/icons.mp4" }) }}

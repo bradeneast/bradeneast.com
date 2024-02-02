@@ -1,7 +1,7 @@
 ---
 title: Bartlesville Redi-Mix Concrete Branding
 entity: Fun
-image: /img/redi-mix/business-card-back.jpg
+image: /img/redi-mix/business-card-back.webp
 order: 7
 tags:
   - Logo
@@ -15,10 +15,10 @@ freshly-poured concrete.
 
 ![The icon of the Bartlesville Redi-Mix logo concept](/img/redi-mix/logo.svg)
 
-![The conceptual brand book of Bartlesville Redi-Mix](/img/redi-mix/brand-book.jpg)
+![The conceptual brand book of Bartlesville Redi-Mix](/img/redi-mix/brand-book.webp)
 
-![An orange hard hat featuring the Bartlesville Redi-Mix logo concept](/img/redi-mix/hard-hat.jpg)
+![An orange hard hat featuring the Bartlesville Redi-Mix logo concept](/img/redi-mix/hard-hat.webp)
 
-![An orange billboard with a wide lockup of the Bartlesville Redi-Mix logo concept](/img/redi-mix/billboard.jpg)
+![An orange billboard with a wide lockup of the Bartlesville Redi-Mix logo concept](/img/redi-mix/billboard.webp)
 
-![An orange mug with a stacked lockup of the Bartlesville Redi-Mix logo concept](/img/redi-mix/mug.jpg)
+![An orange mug with a stacked lockup of the Bartlesville Redi-Mix logo concept](/img/redi-mix/mug.webp)

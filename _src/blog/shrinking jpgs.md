@@ -1,6 +1,6 @@
 ---
 title: Resize vs compression on 100 high-res JPGs
-image: /img/black-pentax-digital-camera.jpg
+image: /img/black-pentax-digital-camera.webp
 tags:
   - Accessibility
   - Performance

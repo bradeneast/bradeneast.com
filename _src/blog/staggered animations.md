@@ -1,6 +1,6 @@
 ---
 title: Staggered Animations
-image: /img/clone-troopers-in-a-staggered-pattern.jpg
+image: /img/clone-troopers-in-a-staggered-pattern.webp
 tags:
   - UI
   - Animation

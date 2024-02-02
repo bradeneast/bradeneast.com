@@ -1,7 +1,7 @@
 ---
 title: Africa Special Report
 entity: The Voice of the Martyrs
-image: /img/africa-sr/hero.jpg
+image: /img/africa-sr/hero.webp
 order: 12
 tags:
   - Mailer
@@ -11,8 +11,6 @@ links:
   Learn about VOM: //vom.org
 # draft: true
 ---
-
-{{ from "macros.vto" import video }}
 
 ## Objective
 
@@ -24,7 +22,7 @@ stories of these believers needed to be shared with the global Church.
 Through the report's design, I wanted to show the energy and fervor with which
 Christianity is resisting and overcoming persecution in Africa.
 
-{{ video("africa-sr/opening.mp4") }}
+{{ comp.video({ src:"africa-sr/opening.mp4" }) }}
 
 ## Project details
 
@@ -43,16 +41,16 @@ proofs to make absolutely sure the natural color tones in the photography were
 dialed in. As part of this process, I used a color-calibrated monitor and
 proofing lightbox to make subtle tweaks for accuracy in the final product.
 
-![Inside Spread](/img/africa-sr/interior-spread.jpg)
+![Inside Spread](/img/africa-sr/interior-spread.webp)
 
-![Outside Spread](/img/africa-sr/outside-spread.jpg)
+![Outside Spread](/img/africa-sr/outside-spread.webp)
 
 I also participated in an art-direction role to guide the design of
 [a landing page](//vom.org/2022-12-africa), the digital version of this report.
 This helped additional readers experience the printed report within a web
 context.
 
-{{ video("africa-sr/web-animation.mp4") }}
+{{ comp.video({ src:"africa-sr/web-animation.mp4" }) }}
 
 ## Outcome
 
@@ -62,4 +60,4 @@ our team and vendor to print and produce the mailing. In December, this report
 was mailed to roughly 500,000 recipients all over the world, showing how African
 Christians are standing firm in the face of Islamic extremism.
 
-![A screenshot from the hero section of the Africa Special Report web page](/img/africa-sr/web-mac.jpg)
+![A screenshot from the hero section of the Africa Special Report web page](/img/africa-sr/web-mac.webp)

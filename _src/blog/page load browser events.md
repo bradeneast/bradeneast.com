@@ -1,7 +1,7 @@
 ---
 draft: true
 title: What browser events happen during page navigation?
-image: /img/liquid-splashing-out-of-a-mug.jpg
+image: /img/liquid-splashing-out-of-a-mug.webp
 tags:
   - Javascript
   - HTML

@@ -1,6 +1,6 @@
 ---
 title: Stop using GIFs on your website
-image: /img/storm-troopers-lined-up-in-formation.jpg
+image: /img/storm-troopers-lined-up-in-formation.webp
 tags:
   - HTML
   - Accessibility

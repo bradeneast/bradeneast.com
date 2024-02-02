@@ -1,5 +1,4 @@
-import Schwifty from './_includes/_js/schwifty.js';
-import { $, $$, elem, togglePref } from './_includes/_js/utils.js';
+import { $, $$, elem, togglePref } from './_includes/js/utils.js';
 
 
 function init() {
@@ -60,9 +59,3 @@ function init() {
 
 
 init();
-
-
-// new Schwifty({
-// 	onload: init,
-// 	preserveAttributes: { documentElement: true }
-// })

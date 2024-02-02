@@ -1,6 +1,6 @@
 ---
 title: Using Noscript
-image: /img/staring-at-a-blank-screen.jpg
+image: /img/staring-at-a-blank-screen.webp
 tags:
   - Javascript
   - Accessibility

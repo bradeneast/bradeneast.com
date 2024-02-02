@@ -1,7 +1,7 @@
 ---
 title: "Dead is Dead: T-Shirts and Theme for a Youth Retreat"
 entity: Hope Presbyterian Church of Bartlesville
-image: /img/hope-youth-retreat/cropped.jpg
+image: /img/hope-youth-retreat/cropped.webp
 order: 15
 badges:
   - New
@@ -24,7 +24,7 @@ delight in our folly and sin apart from God. The texture of ocean waves
 represents how our spiritual bankruptcy has left us dead at the bottom of the
 ocean, beneath the waves, with no desire to be made alive or rescued.
 
-![A flat view of the t-shirt, showing the back of the design](/img/hope-youth-retreat/back.jpg)
-![The t-shirt for this youth retreat, suspended on a wooden hanger against a teal background](/img/hope-youth-retreat/front.jpg)
+![A flat view of the t-shirt, showing the back of the design](/img/hope-youth-retreat/back.webp)
+![The t-shirt for this youth retreat, suspended on a wooden hanger against a teal background](/img/hope-youth-retreat/front.webp)
 
-![The group of youth who attended the retreat](/img/hope-youth-retreat/group.jpg)
+![The group of youth who attended the retreat](/img/hope-youth-retreat/group.webp)

@@ -24,8 +24,6 @@ technologies:
     image: esbuild.svg
 ---
 
-{{ from "macros.vto" import video }}
-
 Schwfity is my first published Javascript library. It aims to help static sites join the instant-load party 🥳 with native and progressive apps.
 
 ## Aren't static sites already fast?
@@ -42,7 +40,7 @@ It's possible to have these all dialed in, but even a highly-optimized server is
 
 > Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections can wait at least 300ms for page loads.
 
-{{ video("schwifty/speedDemo.mp4") }}
+{{ comp.video({ src:"schwifty/speedDemo.mp4" }) }}
 
 ## How does Schwifty solve this problem?
 Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It essentially ~lazy-loads~ *lazy-preloads* links as they scroll into view. When a link is clicked, the content is swapped out and navigation happens.

@@ -1,5 +1,5 @@
 @use "sass:math";
-@import "_scss/variables";
+@import "css/variables.scss";
 
 :root {
 	font-size: 18px;
@@ -84,13 +84,13 @@ iframe {
 	fill: var(--g6);
 }
 
-@import "_scss/layout";
-@import "_scss/util";
-@import "_scss/typography/mod";
-@import "_scss/interactivity/mod";
-@import "_scss/post";
-@import "_scss/feed";
-@import "_scss/table";
-@import "_scss/form";
-@import "_scss/prism";
-@import "_scss/print";
+@import "css/layout.scss";
+@import "css/util.scss";
+@import "css/typography/mod.scss";
+@import "css/interactivity/mod.scss";
+@import "css/post.scss";
+@import "css/feed.scss";
+@import "css/table.scss";
+@import "css/form.scss";
+@import "css/prism.scss";
+@import "css/print.scss";

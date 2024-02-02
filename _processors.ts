@@ -5,9 +5,9 @@ import { splitting } from "./_filters.ts";
 export async function html(page: any) {
 
   /**Helper to select an element on the page */
-  let $ = (selector: string, context = page.document) => context.querySelector(selector);
+  let $ = (selector: string, context = page.document) => context?.querySelector(selector);
   /**Helper to select many elements on the page */
-  let $$ = (selector: string, context = page.document) => context.querySelectorAll(selector);
+  let $$ = (selector: string, context = page.document) => context?.querySelectorAll(selector);
 
   /**Tries to extract a human-readable filename from urls */
   function altFromSrc(src: string) {
@@ -25,7 +25,7 @@ export async function html(page: any) {
   }
 
   let images = $$("img,video");
-  images.forEach(img => {
+  images?.forEach(img => {
     if (!img.alt?.length)
       img.alt = img.alt || altFromSrc(img.src);
     if (!img.hasAttribute('aria-hidden'))

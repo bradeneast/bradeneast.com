@@ -5,8 +5,8 @@ title: Random
 ---
 
 <ul style="display:none">
-  {{ for post in search.pages("type=blogPost") }}
-    <li class="urlset">{{ post.data.url }}</li>
+  {{ for post of search.pages("type=blogPost") }}
+    <li class="urlset">{{ post.url }}</li>
   {{ /for }}
 </ul>
 

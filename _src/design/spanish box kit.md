@@ -1,7 +1,7 @@
 ---
 title: Ministry Kit for Hispanic Pastors
 entity: The Voice of the Martyrs
-image: /img/hispanic-box/closed.jpg
+image: /img/hispanic-box/closed.webp
 order: 13
 tags:
   - Product
@@ -11,8 +11,6 @@ links:
   See VOM Spanish materials: //persecution.com/es
 ---
 
-{{ from "macros.vto" import video }}
-
 ## Objective
 
 This project was intended to provide Hispanic pastors in Latin America with a
@@ -21,7 +19,7 @@ this gift extra special, the stakeholders wanted a premium look and feel. The
 intent was that recipients would keep the box for a long time, maybe even put it
 on display in their home or office.
 
-![The black ministry kit box opened up to display the resources inside](/img/hispanic-box/open.jpg)
+![The black ministry kit box opened up to display the resources inside](/img/hispanic-box/open.webp)
 
 ## Project details
 
@@ -32,9 +30,9 @@ The designed elements of the ministry kit included:
 - Two small boxes for USB sticks
 - The USB sticks themselves
 
-{{ video("hispanic-box/usb-boxes.mp4") }}
+{{ comp.video({ src:"hispanic-box/usb-boxes.mp4" }) }}
 
-![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/usb-sticks.jpg)
+![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/usb-sticks.webp)
 
 ## Unique challenges
 
@@ -51,7 +49,7 @@ budget constraints.
 Another challenge to overcome was that our vendor was based overseas, so things
 like samples and wet proofs took up to three weeks.
 
-![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/top.jpg)
+![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/top.webp)
 
 ## Outcome
 

@@ -7,8 +7,6 @@ menu:
   label: Learn about me
 ---
 
-{{ from "macros.vto" import person, arrow }}
-
 I'm Braden.
 
 # I must become less and less.
@@ -19,13 +17,13 @@ Since 2015, I've been designing for Oklahoma churches and businesses. While lear
 
 In past roles I've been involved in everything from designing web experiences to nationwide marketing campaigns. My best work revolves around [graphic design](/design), but I sprinkle in a little [coding](/code) every now and then.
 
-{{ arrow(1, -320, 0, 30) }}
+{{ comp.arrow({ s:1, x:-320, y:0, r:30 }) }}
 
 Email me and I'll make myself available for a call or a coffee run.
 
 [{{ site.email }}](mailto:{{site.email}})
 
-![Braden East in a casual crag of red rock.](/img/braden-4.jpg)
+![Braden East in a casual crag of red rock.](/img/braden-4.webp)
 
 > Unless the LORD builds a house, the work of the builders is wasted.
 >

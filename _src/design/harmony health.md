@@ -1,7 +1,7 @@
 ---
 title: Harmony Health Branding
 entity: Medical Practice
-image: /img/harmony-health/clothing.jpg
+image: /img/harmony-health/clothing.webp
 order: 14
 tags:
   - Logo
@@ -28,9 +28,9 @@ discovery process, music and sound emerged as the dominant theme.
 Although Harmony Health doesn't specialize in music therapy, the logo needed to
 include a musical element.
 
-![An iPhone with the Harmony Health logo loading screen.](/img/harmony-health/iphone.jpg)
+![An iPhone with the Harmony Health logo loading screen.](/img/harmony-health/iphone.webp)
 
-![An iMac with the Harmony Health website displayed.](/img/harmony-health/website.jpg)
+![An iMac with the Harmony Health website displayed.](/img/harmony-health/website.webp)
 
 ## Outcome
 
@@ -39,4 +39,4 @@ with an identity that serves well in their primarily digital contexts. The final
 mark is confident, bold, and balanced, showing that direct healthcare helps to
 harmonize every aspect of patient well-being.
 
-![A billboard ad targeting moms with an affinity for natural remedies.](/img/harmony-health/billboard.jpg)
+![A billboard ad targeting moms with an affinity for natural remedies.](/img/harmony-health/billboard.webp)

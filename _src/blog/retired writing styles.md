@@ -1,6 +1,6 @@
 ---
 title: Two retired writing styles and CSS logical properties
-image: /img/black-typewriter.jpg
+image: /img/black-typewriter.webp
 tags:
   - CSS
   - Design
@@ -28,7 +28,7 @@ Boustrophedon writing was literally “as the ox plows.”  Ancient Greeks would
 
 #### Rapanui | Easter Island Script 🗿
 
-![A picture of a Tohau rongorongo writing board (source: //boloji.com)](/img/tohau-rongorongo.jpg)
+![A picture of a Tohau rongorongo writing board (source: //boloji.com)](/img/tohau-rongorongo.webp)
 
 Rongorongo is a form of boustrophedonic writing that was found on Easter Island in the 1800’s.  It reads left-to-right starting at the bottom line working its way up. Here's the catch: it is written upside-down on every other line, in this pattern: left-to-right right-side-up, right-to-left upside-down, and so on...
 
@@ -49,7 +49,7 @@ Writing/reading direction also [impacts our abstraction](//www.frontiersin.org/a
 
 Even with English as a second language, cultures with bi-directional writing systems do spatial reasoning differently from western cultures. Progress is naturally expected to happen from bottom-to-top or left-to-right. Designing wholistically with these considerations in mind is a mountain to climb on its own.
 
-![A screenshot from Andy Barefoot's extremely creative website](/img/andy-barefoot-screengrab.jpg)
+![A screenshot from Andy Barefoot's extremely creative website](/img/andy-barefoot-screengrab.webp)
 
 One of my favorite examples is [Andy Barefoot](http://andybarefoot.com/), who specializes in eccentric layouts, and making them semantic, accessible, and user-friendly.
 

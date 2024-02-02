@@ -29,22 +29,20 @@ technologies:
     image: netlify.svg
 ---
 
-{{ from "macros.vto" import video }}
-
 [Flintstone](//flintstone.app) is a high-performance web app that refines the document editing process. I designed it with a clear, responsive interface for changing data, text, and styles in real-time.
 
 Initial users have told me they felt more in control of their documents than ever with something so simple and powerful.
 
-{{ video("flintstone/signin.mp4") }}
+{{ comp.video({ src:"flintstone/signin.mp4" }) }}
 
 Flintstone handles secure individual user accounts through Netlify's GoTrue API. I designed the user experience to be seamless and unobtrusive, while authentication is handled nearly instantly in the background.
 
-{{ video("flintstone/data-fields.mp4") }}
+{{ comp.video({ src:"flintstone/data-fields.mp4" }) }}
 
 The interface is modeled after a text-editor, where the majority of real-estate is reserved for the long form text. Data auto-completion (sometimes called &ldquo;intellisense&rdquo;) was one feature I was excited to integrate.
 
-{{ video("flintstone/document-editor.mp4") }}
+{{ comp.video({ src:"flintstone/document-editor.mp4" }) }}
 
 Rich text features have been shown to frustrate many users, so I opted for a richly-applied style editor. This approach makes consistent styling a no-brainer, and doesn't require knowledge of CSS or HTML to use.
 
-{{ video("flintstone/style-editor.mp4") }}
+{{ comp.video({ src:"flintstone/style-editor.mp4" }) }}

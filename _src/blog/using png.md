@@ -1,6 +1,6 @@
 ---
 title: When is it better to use PNG?
-image: /img/polaroid-camera-on-the-ground.jpg
+image: /img/polaroid-camera-on-the-ground.webp
 tags:
   - Accessibility
   - Performance

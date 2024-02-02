@@ -1,7 +1,7 @@
 ---
 title: "'5 Solas' Banners for Reformation Sunday 2021"
 entity: Hope Presbyterian Church
-image: /img/solas-banners/dual.jpg
+image: /img/solas-banners/dual.webp
 order: 8
 tags:
   - Banners
@@ -16,11 +16,11 @@ This set of five banners was designed as a part of Reformation Sunday on October
 31, 2021. They creatively display the "Five Solas", that were resolved by the
 protestant Christian reformers in the 16th century.
 
-![](/img/solas-banners/single-straight.jpg)
+![](/img/solas-banners/single-straight.webp)
 
-![A roll-up banner](/img/solas-banners/single-wide.jpg)
+![A roll-up banner](/img/solas-banners/single-wide.webp)
 
-![A close-up shot of the description at the bottom of each banner](/img/solas-banners/close-up.jpg)
+![A close-up shot of the description at the bottom of each banner](/img/solas-banners/close-up.webp)
 
 <!-- ## Sola Fide
 

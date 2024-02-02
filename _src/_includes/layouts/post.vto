@@ -8,20 +8,20 @@ bodyClass: post
   <img src="{{ image }}" />
 </div>
 
-{{ content |>safe }}
+{{ content }}
 
 <hr />
 
-{# Search pages by type that aren't the current page #}
-{# Filter posts by tags matching the current page #}
-{{ set postsList = search.pages("title!='" + title + "' type='" + type + "'") |>getRelatedPosts(tags) }}
+{{# Search pages by type that aren't the current page #}}
+{{# Filter posts by tags matching the current page #}}
+{{ set postsList = search.pages("title!='" + title + "' type='" + type + "'") }}
 
-{{ if postsList |>length }}
+{{ if postsList.length }}
 
 <h2>Related Posts:</h2>
 
 <div class="feed">
-  {{ include "templates/postsList.vto" }}
+  {{ include "templates/postsList.vto" { postsList } }}
 </div>
 
 {{ /if }}

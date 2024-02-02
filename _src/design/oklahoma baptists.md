@@ -1,7 +1,7 @@
 ---
 title: Oklahoma Baptists Branding
 entity: Nonprofit
-image: /img/oklahoma-baptists/backpack.jpg
+image: /img/oklahoma-baptists/backpack.webp
 order: 1
 tags:
   - Logo
@@ -18,7 +18,7 @@ links:
 
 In 2019, the Baptist General Convention of Oklahoma had an opportunity to align every subsidiary toward greater impact in the areas of church attendance, missions sending, baptisms, and giving.
 
-![A missionary baptizing new converts to Christianity](/img/oklahoma-baptists/river-baptism.jpg)
+![A missionary baptizing new converts to Christianity](/img/oklahoma-baptists/river-baptism.webp)
 
 
 ## Why rebrand?
@@ -53,9 +53,9 @@ I took great care to make informed creative decisions through each step of the d
 
 To supplement the logo, I worked closely with our Creative Director on developing an identity system that would serve the diverse needs of the convention. Each design guideline was especially selected to be concise, functional, and true to the Oklahoma Baptists brand messaging.
 
-![A glimpse into the Oklahoma Baptists style guide](/img/oklahoma-baptists/style-guide.jpg)
+![A glimpse into the Oklahoma Baptists style guide](/img/oklahoma-baptists/style-guide.webp)
 
-![A second glimpse into the Oklahoma Baptists style guide](/img/oklahoma-baptists/style-guide-2.jpg)
+![A second glimpse into the Oklahoma Baptists style guide](/img/oklahoma-baptists/style-guide-2.webp)
 
 
 ## Website
@@ -64,15 +64,15 @@ Until the rebrand, a strong online presence and smooth user experience were lack
 
 > The consolidation of over 20 websites into one online home required elements like navigation labels, page structure, and layout to be tested with pastors and convention staff. Once the data was collected, we strategically implemented the elements that felt the ***most like home*** to Oklahoma Baptist users.
 
-![A homepage concept for the website of Oklahoma Baptists](/img/oklahoma-baptists/homepage.jpg)
+![A homepage concept for the website of Oklahoma Baptists](/img/oklahoma-baptists/homepage.webp)
 
-![The universal contact form in the footer of every page on OklahomaBaptists.org](/img/oklahoma-baptists/contact-form.jpg)
+![The universal contact form in the footer of every page on OklahomaBaptists.org](/img/oklahoma-baptists/contact-form.webp)
 
 For the remaining &ldquo;free-standing&rdquo; websites, it was important that they reflect the texture and timbre of the Oklahoma Baptists brand.
 
 <div class="grid">
-  <img alt="The Baptist Messenger website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/messenger.jpg" />
-  <img alt="The Oklahoma Baptists Disaster Relief website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/dr.jpg" />
+  <img alt="The Baptist Messenger website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/messenger.webp" />
+  <img alt="The Oklahoma Baptists Disaster Relief website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/dr.webp" />
 </div>
 
 
@@ -82,15 +82,15 @@ Departing from tradition sometimes means rocking the boat. Studying the Oklahoma
 
 To solve this challenge, we immediately began evolving the style of print pieces like prayer guides and event programs. By putting these items in the hands of Oklahoma Baptist churches early on, we were able to familiarize them with the style of the coming rebrand.
 
-![A bifold brochure to introduce the new Oklahoma Baptists brand and vision](/img/oklahoma-baptists/bifold.jpg)
+![A bifold brochure to introduce the new Oklahoma Baptists brand and vision](/img/oklahoma-baptists/bifold.webp)
 
 Print collateral was initially produced with a limited color palette. This decision was made to emphasize the unity and clarity of Oklahoma Baptists brand despite its newness.
 
 <div class="grid">
-  <img alt="A lively conversation of pastors and convention staff at the 2019 Oklahoma Baptists Annual Meeting" src="/img/oklahoma-baptists/party-2.jpg" />
-  <img alt="A collection of handout items branded out of the Oklahoma Baptists identity system" src="/img/oklahoma-baptists/swag.jpg" />
-  <img alt="The business cards shared by Oklahoma Baptist Convention employees" src="/img/oklahoma-baptists/business-cards.jpg" />
-  <img alt="Two Oklahoma Baptists laugh, in the background is a banner using the Oklahoma Baptists logo icon." src="/img/oklahoma-baptists/party.jpg" />
+  <img alt="A lively conversation of pastors and convention staff at the 2019 Oklahoma Baptists Annual Meeting" src="/img/oklahoma-baptists/party-2.webp" />
+  <img alt="A collection of handout items branded out of the Oklahoma Baptists identity system" src="/img/oklahoma-baptists/swag.webp" />
+  <img alt="The business cards shared by Oklahoma Baptist Convention employees" src="/img/oklahoma-baptists/business-cards.webp" />
+  <img alt="Two Oklahoma Baptists laugh, in the background is a banner using the Oklahoma Baptists logo icon." src="/img/oklahoma-baptists/party.webp" />
 </div>
 
 
@@ -100,4 +100,4 @@ Although Oklahoma Baptists are diverse and often slow to change, the new identit
 
 Since this project, Oklahoma Baptist churches have continued to associate the new identity more and more with the ways their convention serves and amplifies the mission of Gospel advance.
 
-![The Oklahoma Baptists logo over an image of wheat in an Oklahoma field.](/img/oklahoma-baptists/wheat.jpg)
+![The Oklahoma Baptists logo over an image of wheat in an Oklahoma field.](/img/oklahoma-baptists/wheat.webp)

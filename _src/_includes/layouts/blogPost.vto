@@ -2,18 +2,16 @@
 layout: layouts/post.vto
 ---
 
-{{ from "macros.vto" import arrow }}
-
 {{ set readTime = content.length / 2000 }}
 
 <div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags light-text subtext">{{ tags |>join(", ") }}</div>
-  <div>{{ readTime |>round() }}-minute read</div>
+  <div class="tags light-text subtext">{{ it.tags |> join(", ") }}</div>
+  <div>{{ readTime |> round }}-minute read</div>
 </div>
 
-{{ content |>safe }}
+{{ content }}
 
 <p style="margin: 6em 0;">
-  {{ arrow(1, -320, -52, 30) }}
-  <a href="//twitter.com/intent/tweet?text={{ title }}&amp;url={{ site.root }}{{ sys.href }}&amp;via=bradenthehair">Share this on Twitter</a>
+  {{ comp.arrow({ s:1, x:-320, y:-52, r:30 }) }}
+  <a href="//twitter.com/intent/tweet?text={{ title }}&amp;url={{ site.root }}{{ url }}">Share this on Twitter</a>
 </p>

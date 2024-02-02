@@ -1,7 +1,7 @@
 ---
 title: Afghanistan Special Report
 entity: The Voice of the Martyrs
-image: /img/afghanistan-sr/hero.jpg
+image: /img/afghanistan-sr/hero.webp
 order: 11
 tags:
   - Mailer
@@ -11,8 +11,6 @@ links:
   Learn about VOM: //vom.org
 # draft: true
 ---
-
-{{ from "macros.vto" import video }}
 
 ## Objective
 
@@ -24,7 +22,7 @@ My goal was to design a package for mailing that illustrated what the written
 stories described: **_cold isolation and looming danger for Christians inside
 the country._**
 
-{{ video("afghanistan-sr/opening.mp4") }}
+{{ comp.video({ src:"afghanistan-sr/opening.mp4" }) }}
 
 ## Project details
 
@@ -47,7 +45,7 @@ workers in the field.
 > At the end of the day, there was only **one** safe-to-use photo of confirmed
 > Christians in Aghanistan.
 
-![Inside Spread](/img/afghanistan-sr/interior-spread.jpg)
+![Inside Spread](/img/afghanistan-sr/interior-spread.webp)
 
 ## Solutions
 
@@ -59,7 +57,7 @@ few images from stock resources like Unsplash.
 I designed the report with photos, color, and layout choices which demonstrated
 how Christians are undeterred by the grim reality of Taliban control.
 
-![Outside Spread](/img/afghanistan-sr/outside-spread.jpg)
+![Outside Spread](/img/afghanistan-sr/outside-spread.webp)
 
 I also participated in an art-direction role to guide the design of
 [a landing page](//vom.org/2022-10-afghanistan), the digital version of this
@@ -67,8 +65,8 @@ report. This helped additional readers experience the printed report within a
 web context.
 
 <div class="grid">
-  <img alt="A screenshot from the hero section of the Afghanistan Special Report web page." src="/img/afghanistan-sr/web-top.jpg" />
-  <img alt="A screenshot from the Afghanistan Special Report web page with an opportunity to give." src="/img/afghanistan-sr/web-bottom.jpg" />
+  <img alt="A screenshot from the hero section of the Afghanistan Special Report web page." src="/img/afghanistan-sr/web-top.webp" />
+  <img alt="A screenshot from the Afghanistan Special Report web page with an opportunity to give." src="/img/afghanistan-sr/web-bottom.webp" />
 </div>
 
 ## Outcome
@@ -79,4 +77,4 @@ team and vendor to print and produce the mailing. In October, it arrived in over
 700,000 mailboxes across the US and internationally, bringing widespread
 awareness of God's work in Afghanistan to the larger body of Christ.
 
-![A completed gift slip being returned in a business-reply envelope](/img/afghanistan-sr/gift-slip.jpg)
+![A completed gift slip being returned in a business-reply envelope](/img/afghanistan-sr/gift-slip.webp)

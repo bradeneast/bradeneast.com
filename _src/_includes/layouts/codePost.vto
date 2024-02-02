@@ -2,29 +2,32 @@
 layout: layouts/post.vto
 ---
 
-{{ import "macros.vto" as macros }}
-
 <div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags light-text subtext">{{ tags |>join(", ") }}</div>
+  <div class="tags light-text subtext">{{ tags |> join(", ") }}</div>
   <div>{{ purpose }}</div>
 </div>
 
-{{ content |>safe }}
+{{ content }}
 
 <h2>Technologies</h2>
 
 <div class="grid">
-{{ for tech in technologies }}
-  {{ macros.blurb("technologies/" + tech.image, tech.name, tech.description) }}
+{{ for tech of technologies }}
+  {{ comp.blurb({
+      image:"technologies/" + tech.image,
+      title:tech.name,
+      description:tech.description
+    }) 
+  }}
 {{ /for }}
 </div>
 
 {{ if links }}
 <p class="pad-vertical">
-  {{ for label, link in links }}
-    {{ if loop.index > 1 }}<br>{{ /if }}
-    <a target="_blank" rel="noopener noreferrer" href="{{ link }}">
-      {{ label }}
+  {{ for index, data of links }}
+    {{ if index > 1 }}<br>{{ /if }}
+    <a target="_blank" rel="noopener noreferrer" href="{{ data.link }}">
+      {{ data.label }}
     </a>
   {{ /for }}
 </p>

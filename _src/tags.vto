@@ -4,7 +4,7 @@ layout: layouts/base.vto
 <h1>Tags</h1>
 
 <section>
-  {{ for tagPage in search.pages("type=tag", "tag") }}
-    <a href="{{ tagPage.data.url |>url }}" class="tag large">{{ tagPage.data.tag }}</a> 
+  {{ for tagPage of search.pages("type=tag", "tag") }}
+    <a href="{{ tagPage.url }}" class="tag large">{{ tagPage.tag }}</a> 
   {{ /for }}
 </section>

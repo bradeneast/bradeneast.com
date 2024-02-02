@@ -1,7 +1,7 @@
 ---
 title: Program for 'The Call' Conference
 entity: Oklahoma Baptists
-image: /img/the-call-program/hero.jpg
+image: /img/the-call-program/hero.webp
 order: 2
 tags:
   - Layout
@@ -11,6 +11,6 @@ links:
 draft: true
 ---
 
-![The front of the Call Conference program](/img/the-call-program/front.jpg)
+![The front of the Call Conference program](/img/the-call-program/front.webp)
 
-![The back of the Call Conference program](/img/the-call-program/back.jpg)
+![The back of the Call Conference program](/img/the-call-program/back.webp)

@@ -1,6 +1,6 @@
 ---
 title: The hotspot user experience
-image: /img/black-rotary-telephone.jpg
+image: /img/black-rotary-telephone.webp
 tags:
   - UX
   - Product Design

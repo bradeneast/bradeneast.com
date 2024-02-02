@@ -22,6 +22,14 @@ export function splitting(text: string) {
 export function getRelatedPosts(postsList, tags) {
   return postsList.filter(post => {
     for (let tag of tags)
-      if (post.data.tags.includes(tag)) return post;
+      if (post.tags.includes(tag)) return post;
   })
+}
+
+export function truncate(str = "", count) {
+  return str.substring(0, count);
+}
+
+export function round(num) {
+  return Math.round(parseInt(num));
 }
