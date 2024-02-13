@@ -2,16 +2,4 @@
 layout: layouts/post.vto
 ---
 
-{{ set readTime = content.length / 2000 }}
-
-<div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags light-text subtext">{{ it.tags |> join(", ") }}</div>
-  <div>{{ readTime |> round }}-minute read</div>
-</div>
-
 {{ content }}
-
-<p style="margin: 6em 0;">
-  {{ comp.arrow({ s:1, x:-320, y:-52, r:30 }) }}
-  <a href="//twitter.com/intent/tweet?text={{ title }}&amp;url={{ site.root }}{{ url }}">Share this on Twitter</a>
-</p>

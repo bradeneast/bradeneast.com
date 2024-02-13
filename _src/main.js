@@ -1,17 +1,21 @@
-import { $, $$, elem, togglePref } from './_includes/js/utils.js';
+import observer from './_includes/js/observer.js';
+import watchShowcase from './_includes/js/showcase.js';
+import { $, $$, elem } from './_includes/js/utils.js';
 
 
 function init() {
 
+	// Observe animating elements
+	$$("[data-animate]").forEach(elem => {
+		elem.style.setProperty("--onscreen", 0);
+		setTimeout(() => observer.observe(elem), 100);
+	});
+
+	$$(".showcase").forEach(elem => watchShowcase(elem));
 
 	// Set aria-current
 	$$(`a[href="${location.pathname}"]`)
 		.forEach(a => a.setAttribute('aria-current', 'page'));
-
-
-	// Remove paused class from animating elements
-	for (let paused of $$('.paused'))
-		paused.classList.remove('.paused');
 
 
 	// Add line numbers to code blocks
@@ -31,11 +35,6 @@ function init() {
 	}
 
 
-	// Add wrapper div to tables
-	for (let table of $$('table'))
-		table.outerHTML = `<div class="table-wrapper">${table.outerHTML}</div>`;
-
-
 	// Add codepen script for embedded Codepens
 	if ($('.codepen')) {
 		let script = elem('script');
@@ -44,16 +43,7 @@ function init() {
 		document.body.append(script);
 	}
 
-
-	// Listen on back-to-top button
-	$('#back_to_top').onclick = () => scrollTo(0, 0);
-
-
-	// Listen on preference toggles
-	for (let pref of window.__preferences) {
-		let toggle = $(`#${pref}_toggle`);
-		toggle.onclick = () => togglePref(pref);
-	}
+	new Rellax('.rellax');
 
 }
 

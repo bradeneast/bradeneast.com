@@ -1,167 +1,108 @@
-html {
-  height: 100vh;
-  background: var(--g8);
-  overflow-x: hidden;
+header {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
-body {
+nav,
+footer {
   display: flex;
+  align-items: center;
   flex-flow: row wrap;
-  place-items: start;
-  padding-top: 15vmin;
+  padding: 1rem 2rem;
 }
 
 .logo {
-  position: absolute;
-  width: 4rem;
-  top: $flow1;
-  left: $flow1;
+  display: inline-flex;
+  gap: .2em;
+  align-items: center;
+  width: auto;
+  height: 2em;
+  fill: white;
 
-  svg {
-    fill: var(--g0);
+  &::after {
+    display: none;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: auto;
+    transition: var(--transitionShort);
+  }
+
+  &__wordmark {
+    height: 1em;
+  }
+
+  &:hover,
+  &:focus {
+    .logo__icon {
+      transform: rotate(45deg);
+    }
   }
 }
 
-main {
-  width: 60%;
-  padding-bottom: $flow4;
-  padding-left: $flow2;
-  padding-right: $flow2;
-  min-width: 20rem;
+body {
+  overflow-x: hidden;
 }
 
-iframe {
-  height: 24rem;
-  margin-bottom: $flow2;
-}
+section {
+  min-height: var(--sectionHeight);
+  padding: 0 var(--sectionPaddingX);
 
-aside {
-  z-index: 9;
-  position: sticky;
-  top: $flow2;
-  align-self: flex-start;
-  display: flex;
-  place-items: start;
-  place-content: start;
-  flex-flow: row wrap;
-  width: 40%;
-  padding-right: $flow2;
+  &.space-y {
+    margin-top: var(--sectionMarginY);
+    margin-bottom: var(--sectionMarginY);
+  }
 
-  section {
-    max-width: 20rem;
-    width: 19vw;
-    min-width: 14rem;
-    padding-left: 2vw;
+  &.hero {
+    max-width: none;
+    padding-top: var(--sectionPaddingY);
+    padding-bottom: var(--sectionPaddingY);
+  }
 
-    a {
-      line-height: 1.2;
-      display: block;
-    }
+  &.align-center {
+    display: grid;
+    align-items: center;
+    align-content: center;
   }
 }
 
 footer {
-  display: flex;
-  align-self: end;
-  width: 100%;
-  flex-shrink: 0;
-  padding: $flow1;
+  background: var(--blue);
+  color: var(--lightgrey);
 
-  &>*>*:not(:last-child) {
-    padding-right: $flow1;
-    margin-right: $flow1;
-    border-right: $borderWidth $borderStyle var(--g7);
+  .copyright {
+    margin-right: auto;
   }
 
-  &> :last-child {
-    text-align: right;
-    margin-left: auto;
-  }
-
-  .modal {
-    transition: opacity $smoothTransition;
-    pointer-events: none;
-    opacity: 0;
-
-    &.visible {
-      pointer-events: all;
-      opacity: 1;
-    }
-  }
-
-  .socials>a {
-    margin-left: math.div($flow1, 2);
+  .socials {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5rem;
   }
 }
 
 @media screen and (max-width: $mobile) {
-  body {
-    padding: $flow2 0;
-    overflow-x: hidden;
+  :root {
+    --sectionPaddingX: 5vw;
   }
 
-  main,
-  aside,
+  nav,
   footer {
-    &>* {
-      margin-left: $flow1;
-      margin-right: $flow1;
+    padding: .5rem var(--sectionPaddingX);
+  }
 
-      &.has-media {
-        margin-left: 0;
-        margin-right: 0;
-      }
+  .logo {
+    &__wordmark {
+      display: none;
     }
   }
 
-  main,
-  aside {
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-  }
-
-  main {
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: $flow4;
-  }
-
-  footer {
-    display: block;
-    text-align: right;
-    padding: 0;
-
-    &>.flex,
-    .socials,
-    .copyright {
-      flex-flow: column;
-    }
-
-    .copyright,
-    .modal,
-    .socials {
-      margin-bottom: $flow1;
-    }
-
-    .modal {
-      order: 9;
-      margin-bottom: 0;
-    }
-
-    .toggles {
-      margin-top: 0.5em;
-      margin-bottom: $flow1;
-      justify-content: flex-end;
-    }
-
-    .socials,
-    .modal {
-      display: block;
-      padding: 0;
-      border: none;
-      margin-right: 0;
-    }
+  section.hero::after {
+    bottom: calc(var(--sectionPaddingY) + 3rem);
   }
 }

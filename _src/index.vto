@@ -1,0 +1,140 @@
+---
+layout: layouts/base.vto
+title: Home
+menu:
+  showInMenu: true
+
+hero:
+  headline: Branding, print production, and web design are where Braden shines.
+  primary_button: 
+    text: Hire Him Here
+    link: /contact
+  secondary_button:
+    text: See work samples.
+    link: /design
+
+resume:
+  - 
+    headline: Summary
+    body: |-
+      Since 2015, Braden has expertly crafted award-winning brand identities, web experiences, and nationwide marketing campaigns for incredible results that his clients and coworkers can't stop talking about.
+      
+      Braden currently lives in Nowata, Oklahoma, pursuing his passion of homesteading with his wife, 3 goats, 10 chickens, and too many rabbits.
+  -
+    headline: Graphic Designer
+    meta:
+      Timeline: Oct 2021 - Present
+      At: The Voice of the Martyrs
+      Skills: Print, International Design
+    body: |-
+      Braden collaborates with a team of talented designers to create innovative designs that support the global body of Christ.
+      
+      Braden is responsible for dozens of annual and semi-annual projects in both print and digital media.
+      
+      His work includes direct mailings, digital advertising graphics, presentations, calendars, and book covers, many of which have printed over 100,000 copies.
+      
+      In this role, he has also art directed several internationally-based designers to localize translated works and guard brand integrity.
+  -
+    headline: Associate Creative Lead
+    meta:
+      Timeline: June 2018 - Oct 2021
+      At: Oklahoma Baptist Convention
+      Skills: Digital Marketing, Web Design
+    body: |-
+      Braden used graphic and web design to make a broad expanse of ministries feel familiar and transparent to Oklahoma Baptists.
+
+      While here, Braden helped unify dozens of websites into one and designed hundreds of web pages within a single brand identity system.
+      
+      In 2019, he was instrumental in re-branding the convention, designing an identity system that became the cornerstone of its messaging. 
+      
+      He took 1st Place Logo Mark in the Baptist Communicators Association awards two years in a row.
+  -
+    headline: Identity Designer
+    meta:
+      Timeline: 2018 - Present
+      At: Freelance
+      Specialization: Branding, Identity
+    body: |-
+      Since 2018, Braden has served his local church and community network through design.
+
+      He runs a creative agency called Restore Graphics, which helps churches rebuild trust and clarify their brands with timeless strategy and identity design.
+  -
+    headline: Communications Student Teaching
+    meta:
+      Timeline: 4 Semesters
+      At: Oklahoma Baptist University
+      Skills: Project Management, MS Office
+    body: |-
+      Braden helped professors in the OBU Communication Arts program provide a better learning experience for their students.
+
+      He gained competence in Excel, PowerPoint, Canvas, and other desktop publishing softwares, as well as project management platforms.
+      
+---
+
+<section class="hero align-items columns-2" data-animate="background">
+  <div class="rellax" data-rellax-speed="-5">
+
+    <h2 data-animate="thin-in" class="splitting" style="--delay:1s; z-index:1">
+      {{ hero.headline |> splitting }}
+    </h2>
+
+    <div class="flex-wrap gap-1 align-items">
+      <div class="button__wrapper special" data-animate style="--delay:3s;">
+        <a class="button" href="{{ hero.primary_button.link }}">
+          {{ hero.primary_button.text }}
+        </a>
+      </div>
+      <a data-animate style="--delay:4s" href="{{ hero.secondary_button.link }}">
+        {{ hero.secondary_button.text }}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="showcase" data-animate style="--delay:1s; --play-state:running;">
+
+  {{ set projects = search.pages("type='designPost'") }}
+
+  {{ for index, project of projects }}
+  <div class="showcase__featured overlap {{ if index < 1 }}selected{{ /if }}" data-showcase-id="{{ project.title |> idify }}">
+    <img class="showcase__featured--image" src="{{ project.image }}" />
+    <div class="showcase__featured--info limited-width rellax" data-rellax-speed="3">
+      <div class="subtext" data-animate="from-top">{{ project.tags[0] }}</div>
+      <h3 class="splitting" data-animate="thin-in">{{ project.title |> splitting }}</h3>
+      <a class="button" data-animate="from-bottom" href="{{ project.url }}">View Case Study</a>
+    </div>
+  </div>
+  {{ /for }}
+
+  <div class="showcase__tray">
+    <div class="showcase__tray--title subtext">More Projects</div>
+    <div class="showcase__tray--track">
+    {{ for index, project of projects }}
+      <div tabindex="0" data-animate="from-right" class="showcase__tray--item" for="{{ project.title |> idify }}">
+        <img src="{{ project.image }}">
+      </div>
+    {{ /for }}
+    </div>
+  </div>
+
+</section>
+
+<section class="space-y columns-3 gap-2" style="z-index:3; align-items:start">
+
+  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="-4" data-rellax-percentage="0.3"  style="height:50rem;">
+    <img src="/img/braden-4.webp" />
+  </div>
+
+  <div class="limited-width center span-2 grid gap-1">
+    <div class="subtext space-y-2">Work Experience</div>
+    {{ for index, item of resume }}
+      {{ comp.toggle({ item, index }) }}
+    {{ /for }}
+  </div>
+
+</section>
+
+<section data-animate="background" class="background-blue">
+
+</section>

@@ -4,9 +4,9 @@ root: https://bradeneast.com
 email: bradeneastdesign@gmail.com
 netlify_site_id: a398d413-5c2c-430f-8318-8a3add053a22
 socials:
-  Twitter: //twitter.com/bradenthehair
   Github: //github.com/bradeneast
   Codepen: //codepen.io/bradeneast
+  Dribbble: //dribbble.com/bradeneast
 sorting:
   Design: order=desc title=asc date=desc
   Code: order=asc date=desc

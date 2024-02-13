@@ -1,0 +1,28 @@
+<details class="toggle" {{ if index < 1 }}open{{ /if }}>
+
+  <summary data-animate class="toggle__header">
+
+    <h3 class="splitting toggle__header--title" data-animate="thin-in">
+      {{ item.headline |> splitting }}
+    </h3>
+    <div data-animate="thin-in" class="toggle__header--button">+</div>
+    
+  </summary>
+
+  <div class="toggle__content">
+  
+    {{ if item.meta }}
+    <div class="columns-3 gap-1 toggle__content--meta">
+    {{ for key, value of item.meta }}
+      <div class="subtext">
+        <strong class="splitting" data-animate="thin-in">{{ key |> splitting }}</strong>
+        <div class="splitting" data-animate="thin-in">{{ value |> splitting }}</div>
+      </div>
+    {{ /for }}
+    </div>
+    {{ /if }}
+
+    <div data-animate class="toggle__content--body text-columns-2">{{ item.body |> md }}</div>
+
+  </div>
+</details>

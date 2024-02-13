@@ -1,69 +1,127 @@
-.flex {
-	display: flex;
+.red {
+  color: var(--red);
+}
+
+.background-red {
+  --background: var(--red);
+  background: var(--red);
+}
+
+.background-blue {
+  --background: var(--blue);
+  background: var(--blue);
 }
 
 .grid {
-	--columns: 18em;
-	display: grid;
-	gap: $flow1;
-	grid-template-columns: repeat(auto-fill, minmax(var(--columns), 1fr));
-	margin-bottom: $flow2;
+  display: grid;
 }
 
-.left {
-	text-align: left;
-	margin-right: auto;
+.flex {
+  display: flex;
 }
 
-.right {
-	text-align: right;
-	margin-left: auto;
+.flex-wrap {
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.bold {
-	font-weight: $fontWeightHeavy;
+.gap-1 {
+  column-gap: 1rem;
+  gap: 1rem;
 }
 
-.compress {
-	line-height: 1.2;
+.gap-2 {
+  column-gap: 1rem;
+  gap: 2rem;
 }
 
-.limited-width,
-main > *:not(.has-media):not(.cp_embed_wrapper) {
-	max-width: 44rem;
+.span-2 {
+  grid-column: span 2;
 }
 
-.stagger-child-transitions {
-	@for $i from 2 through 12 {
-		& > :nth-child(#{$i}) {
-			transition-delay: #{($i - 1) * 0.05}s, 0s, 0s;
-		}
-	}
+.text-columns-2 {
+  column-count: 2;
 }
 
-.pad-vertical {
-	padding: $flow6 0;
+.text-columns-3 {
+  column-count: 3;
 }
 
-.hidden {
-	opacity: 0;
-	pointer-events: none;
+.columns-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.columns-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.columns-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.breakout-left {
+  height: 100%;
+  margin-left: calc(var(--sectionPaddingX) * -1);
+}
+
+.breakout-right {
+  height: 100%;
+  margin-right: calc(var(--sectionPaddingX) * -1);
+}
+
+.limited-width {
+  width: 100%;
+  max-width: 32rem;
+}
+
+.space-y-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.space-y-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.space-y-3 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.align-items {
+  align-items: center;
 }
 
 .center {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+  justify-self: center;
+  margin: 0 auto;
 }
 
-.subtext {
-	font-size: $fontSizeSmall;
-	text-transform: uppercase;
+.rounded {
+  border-radius: 3rem;
 }
 
-@media screen and (max-width: $mobile) {
-	// .grid {
-	// 	padding-left: $flow1;
-	// 	padding-right: $flow1;
-	// }
+.overlap {
+  margin-top: -5rem;
+}
+
+@media screen and (max-width:$mobile) {
+
+  .columns-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .columns-3,
+  .columns-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text-columns-2,
+  .text-columns-3 {
+    column-count: 1;
+  }
 }

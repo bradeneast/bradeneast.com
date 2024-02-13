@@ -18,21 +18,27 @@ const pluginOptions = {
   markdown: { plugins: [[markdownItCheckbox]] }
 };
 
-export default
-  lume(lumeOptions, pluginOptions)
-    .copy("assets", ".")
-    .copy("main.css")
-    .copy("retro.css")
+const site = lume(lumeOptions, pluginOptions);
 
-    .process([".html"], (pages) => pages.forEach(processors.html))
+// Copy assets
+site.copy("_");
+site.copy([".mp4"]);
+site.copy([".svg"]);
 
-    .filter("getRelatedPosts", filters.getRelatedPosts)
-    .filter("truncate", filters.truncate)
-    .filter("round", filters.round)
+// Run all filters
+for (let f in filters)
+  site.filter(f, filters[f]);
 
-    .use(codeHighlight())
-    .use(esbuild({ target: "es6" }))
-    .use(slugify_urls({ extensions: [".html"] }))
-    .use(sass())
-    .use(transformImages())
-    .use(date())
+// Run all processors
+for (let p in processors)
+  site.process([`.${p}`], processors[p]);
+
+// Use plugins
+site.use(codeHighlight());
+site.use(esbuild({ target: "es6" }));
+site.use(slugify_urls({ extensions: [".html"] }));
+site.use(sass());
+site.use(transformImages());
+site.use(date());
+
+export default site;

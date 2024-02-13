@@ -1,0 +1,100 @@
+$mobile: 54em;
+
+:root {
+  --red: #ff3b1b;
+  --green: #17f5c3;
+  --blue: #000096;
+  --lightgrey: #e2efe8;
+  --borderWidth: 2px;
+  --borderStyle: solid;
+  --borderRadius: 0px;
+  --transitionShort: 0.45s cubic-bezier(0.3, 0.5, 0.1, 1.4);
+  --transitionMedium: 1s cubic-bezier(0.3, 0.3, 0.1, 1);
+  --transitionLong: 2s cubic-bezier(.8, 0, 0, 1);
+  --shadowColor: rgba(0, 0, 0, 0.3);
+  --translucent: rgba(255, 255, 255, 0.85);
+  --shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
+  --shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
+  --fontFamilyPrimary: "Sentient", serif;
+  --fontFamilySecondary: "Space Grotesk", sans-serif;
+  --sectionHeight: 80lvh;
+  --sectionPaddingX: 10vw;
+  --sectionPaddingY: 10rem;
+  --sectionMarginY: 5rem;
+  --borderRadius: 3rem;
+  --fontSizeH1: calc(1.8rem + 5vw);
+  --fontSizeH2: calc(1.4rem + 2vw);
+  --fontSizeH3: calc(1.2rem + 1vw);
+  --clipSquare: polygon(-5% -5%, 105% -5%, 105% 105%, -5% 105%);
+  --clipOffsetTop: polygon(0 0, 100% 0, 100% calc(100% - var(--onscreen) * 100%), 0 calc(100% - var(--onscreen) * 100%));
+  --clipOffsetRight: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  --clipOffsetBottom: polygon(0 100%, 100% 100%, 100% 150%, 0 100%);
+  --clipOffsetLeft: polygon(0 0, -50% 0, 0 100%, 0 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  scrollbar-width: thin;
+  scroll-behavior: inherit;
+}
+
+*:focus {
+  outline: var(--borderWidth) var(--borderStyle) black;
+  outline-offset: var(--borderWidth);
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+body {
+  background: var(--lightgrey);
+}
+
+img,
+video,
+iframe,
+svg {
+  width: 100%;
+  user-select: none;
+}
+
+img,
+video,
+svg {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+img:not([src*="png"]):not([src*="svg"]),
+iframe {
+  background: white;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("/_/Sentient-Variable.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("/_/Sentient-VariableItalic.woff2") format("woff2");
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/_/SpaceGrotesk[wght].woff2") format("woff2");
+  font-display: block;
+}

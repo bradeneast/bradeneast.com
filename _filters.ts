@@ -33,3 +33,7 @@ export function truncate(str = "", count) {
 export function round(num) {
   return Math.round(parseInt(num));
 }
+
+export function idify(text: string) {
+  return text.replace(/[0-9]+/g, "").replace(/\s|[^A-z0-9]/g, "_");
+}

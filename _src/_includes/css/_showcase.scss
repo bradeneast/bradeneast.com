@@ -1,0 +1,126 @@
+.showcase {
+  padding: 0;
+  height: 100vh;
+
+  &__featured {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    height: 100%;
+    align-items: center;
+    transition: var(--transitionMedium);
+    width: calc(100% + var(--sectionPaddingX) * 2 * (var(--onscreen, 0) - 1));
+    border-radius: calc(var(--borderRadius) * (var(--onscreen, 0) - 1) * -1);
+    overflow: hidden;
+
+    &:not(.selected) {
+      display: none;
+    }
+
+    &--image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &--info {
+      z-index: 2;
+      color: white;
+      opacity: var(--onscreen);
+      transition: var(--transitionMedium), transform 0s;
+      transition-delay: calc(1s * var(--onscreen)), transform 0s;
+      display: grid;
+      place-items: start;
+      gap: .5rem;
+      padding: 4rem 2rem;
+      transform: translate3d(0, 0, 1px);
+      filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
+
+      &--title {
+        margin-bottom: .5em;
+      }
+    }
+
+    &::before,
+    &::after {
+      --blur-amt: 4rem;
+      content: "";
+      position: absolute;
+      width: 50%;
+      transform: translate3d(0, 0, 1px);
+      height: calc(100% + var(--blur-amt) * 2);
+      top: calc(var(--blur-amt) * -1);
+      left: calc(var(--blur-amt) * -1);
+      opacity: calc(var(--onscreen) * .3);
+      transition: var(--transitionLong);
+      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.2), transparent);
+      mix-blend-mode: multiply;
+    }
+
+    &::after {
+      left: auto;
+      right: -4rem;
+      z-index: -1;
+      transform: scaleX(-1);
+    }
+  }
+
+  &__tray {
+    color: white;
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    z-index: 9;
+
+    &--track {
+      width: 100%;
+      max-width: 100vw;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      overflow: scroll;
+      height: 10rem;
+    }
+
+    &--title {
+      margin-left: 2rem;
+    }
+
+    &--item {
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      border: 2px solid currentColor;
+      cursor: pointer;
+      height: 7rem;
+      width: 10rem;
+      flex-shrink: 0;
+      transition: var(--transitionShort);
+      border-radius: calc(var(--borderRadius) / 2);
+      transform: translate3d(0, 0, 1px);
+
+      img {
+        width: calc(100% + 2rem);
+        pointer-events: none;
+        height: calc(100% + 2rem);
+      }
+
+      &:hover {
+        height: 8rem;
+      }
+
+      &:first-child {
+        margin-left: 2rem;
+      }
+
+      &:last-child {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
