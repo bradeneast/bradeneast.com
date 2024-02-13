@@ -45,29 +45,6 @@
         margin-bottom: .5em;
       }
     }
-
-    &::before,
-    &::after {
-      --blur-amt: 4rem;
-      content: "";
-      position: absolute;
-      width: 50%;
-      transform: translate3d(0, 0, 1px);
-      height: calc(100% + var(--blur-amt) * 2);
-      top: calc(var(--blur-amt) * -1);
-      left: calc(var(--blur-amt) * -1);
-      opacity: calc(var(--onscreen) * .3);
-      transition: var(--transitionLong);
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.2), transparent);
-      mix-blend-mode: multiply;
-    }
-
-    &::after {
-      left: auto;
-      right: -4rem;
-      z-index: -1;
-      transform: scaleX(-1);
-    }
   }
 
   &__tray {
