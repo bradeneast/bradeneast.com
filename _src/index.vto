@@ -11,7 +11,7 @@ hero:
     link: /contact
   secondary_button:
     text: See work samples.
-    link: /design
+    link: \#work
 
 resume:
   - 
@@ -68,40 +68,26 @@ resume:
       Braden helped professors in the OBU Communication Arts program provide a better learning experience for their students.
 
       He gained competence in Excel, PowerPoint, Canvas, and other desktop publishing softwares, as well as project management platforms.
-      
+
+review:
+  text: I highly recommend Braden, a talented designer with a strong command of the Adobe suite. He excels in both classic and contemporary design.
+  author:
+    name: Jon Green
+    position: Art Director      
 ---
 
-<section class="hero align-items columns-2" data-animate="background">
-  <div class="rellax" data-rellax-speed="-5">
+{{ comp.hero(hero) }}
 
-    <h2 data-animate="thin-in" class="splitting" style="--delay:1s; z-index:1">
-      {{ hero.headline |> splitting }}
-    </h2>
+<section id="work" class="showcase" data-animate style="--delay:1s; --play-state:running;">
 
-    <div class="flex-wrap gap-1 align-items">
-      <div class="button__wrapper special" data-animate style="--delay:3s;">
-        <a class="button" href="{{ hero.primary_button.link }}">
-          {{ hero.primary_button.text }}
-        </a>
-      </div>
-      <a data-animate style="--delay:4s" href="{{ hero.secondary_button.link }}">
-        {{ hero.secondary_button.text }}
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<section class="showcase" data-animate style="--delay:1s; --play-state:running;">
-
-  {{ set projects = search.pages("type='designPost'") }}
+  {{ set projects = search.pages("type=designPost", "order=desc") }}
 
   {{ for index, project of projects }}
   <div class="showcase__featured overlap {{ if index < 1 }}selected{{ /if }}" data-showcase-id="{{ project.title |> idify }}">
     <img class="showcase__featured--image" src="{{ project.image }}" />
-    <div class="showcase__featured--info limited-width rellax" data-rellax-speed="3">
+    <div class="showcase__featured--info limited-width rellax" data-rellax-speed="-1" data-rellax-percentage=".5">
       <div class="subtext" data-animate="from-top">{{ project.tags[0] }}</div>
-      <h3 class="splitting" data-animate="thin-in">{{ project.title |> splitting }}</h3>
+      <h2 class="splitting" data-animate="thin-in">{{ project.title |> splitting }}</h2>
       <a class="button" data-animate="from-bottom" href="{{ project.url }}">View Case Study</a>
     </div>
   </div>
@@ -122,7 +108,7 @@ resume:
 
 <section class="space-y columns-3 gap-2" style="z-index:3; align-items:start">
 
-  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="-4" data-rellax-percentage="0.3"  style="height:50rem;">
+  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="3" data-rellax-percentage="0.3"  style="height:50rem;">
     <img src="/img/braden-4.webp" />
   </div>
 
@@ -136,5 +122,14 @@ resume:
 </section>
 
 <section data-animate="background" class="background-blue">
+
+  <div class="columns-3 gap-2 align-items">
+    <img data-animate style="--delay:1s" class="bw rounded limited-width" src="/img/jon_green.webp" />
+    <div class="span-2 red">
+      <h2 class="lightgrey" data-animate="from-right" style="--delay:1.5s">{{ review.text }}</h2>
+      <strong class="subtext splitting" data-animate="thin-in" style="--delay:2s">{{ review.author.name |> splitting }}</strong>
+      <div class="subtext splitting" data-animate="thin-in" style="--delay:2s">{{ review.author.position |> splitting }}</div>
+    </div>
+  </div>
 
 </section>
