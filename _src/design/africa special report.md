@@ -22,7 +22,7 @@ stories of these believers needed to be shared with the global Church.
 Through the report's design, I wanted to show the energy and fervor with which
 Christianity is resisting and overcoming persecution in Africa.
 
-{{ comp.video({ src:"africa-sr/opening.mp4" }) }}
+{{ comp.video({ src:"/img/africa-sr/opening.mp4" }) }}
 
 ## Project details
 
@@ -50,7 +50,7 @@ I also participated in an art-direction role to guide the design of
 This helped additional readers experience the printed report within a web
 context.
 
-{{ comp.video({ src:"africa-sr/web-animation.mp4" }) }}
+{{ comp.video({ src:"/img/africa-sr/web-animation.mp4" }) }}
 
 ## Outcome
 

@@ -25,7 +25,7 @@ In 2019, the Baptist General Convention of Oklahoma had an opportunity to align 
 
 The Oklahoma Baptist convention has not always represented itself and its entities as one family. Bringing every entity under a single umbrella required that the work and mission of Oklahoma Baptists be distilled into a single, unifying mark.
 
-![A collection of many previous Oklahoma Baptists logos](/img/oklahoma-baptists/old-logos.png)
+![A collection of many previous Oklahoma Baptists logos](/img/oklahoma-baptists/old-logos.webp)
 
 The core values of Oklahoma Baptists were defined in three Gospel-centered aspirations.
 
@@ -39,13 +39,13 @@ With these goals in mind, I curated each logo idea to show *statewide Gospel coo
 
 ![The new logo icon on a black background.](/img/oklahoma-baptists/icon-dark.svg)
 
-![The new identity mark of the Oklahoma Baptist Convention](/img/oklahoma-baptists/logo.png)
+![The new identity mark of the Oklahoma Baptist Convention](/img/oklahoma-baptists/logo.webp)
 
 I took great care to make informed creative decisions through each step of the design process, and my final concept was collectively refined by the creative group. The logo was then approved by key executives and leadership within the organization.
 
-<div class="grid">
-  <img alt="A version of the Oklahoma Baptists logo pointing to oklahomabaptists.org" src="/img/oklahoma-baptists/logo-web.png" />
-  <img alt="A version of the Oklahoma Baptists logo with the tagline 'Advancing the Gospel together'" src="/img/oklahoma-baptists/logo-tagline.png" />
+<div class="grid columns-2 gap-1">
+  <img alt="A version of the Oklahoma Baptists logo pointing to oklahomabaptists.org" src="/img/oklahoma-baptists/logo-web.webp" />
+  <img alt="A version of the Oklahoma Baptists logo with the tagline 'Advancing the Gospel together'" src="/img/oklahoma-baptists/logo-tagline.webp" />
 </div>
 
 
@@ -70,7 +70,7 @@ Until the rebrand, a strong online presence and smooth user experience were lack
 
 For the remaining &ldquo;free-standing&rdquo; websites, it was important that they reflect the texture and timbre of the Oklahoma Baptists brand.
 
-<div class="grid">
+<div class="grid columns-2 gap-1">
   <img alt="The Baptist Messenger website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/messenger.webp" />
   <img alt="The Oklahoma Baptists Disaster Relief website, themed with the new Oklahoma Baptists identity system" src="/img/oklahoma-baptists/dr.webp" />
 </div>
@@ -86,7 +86,7 @@ To solve this challenge, we immediately began evolving the style of print pieces
 
 Print collateral was initially produced with a limited color palette. This decision was made to emphasize the unity and clarity of Oklahoma Baptists brand despite its newness.
 
-<div class="grid">
+<div class="grid columns-2 gap-1">
   <img alt="A lively conversation of pastors and convention staff at the 2019 Oklahoma Baptists Annual Meeting" src="/img/oklahoma-baptists/party-2.webp" />
   <img alt="A collection of handout items branded out of the Oklahoma Baptists identity system" src="/img/oklahoma-baptists/swag.webp" />
   <img alt="The business cards shared by Oklahoma Baptist Convention employees" src="/img/oklahoma-baptists/business-cards.webp" />

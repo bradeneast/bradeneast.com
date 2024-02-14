@@ -1,5 +1,5 @@
 ---
-title: "'5 Solas' Banners for Reformation Sunday 2021"
+title: '"5 Solas" Banners for Reformation Sunday'
 entity: Hope Presbyterian Church
 image: /img/solas-banners/dual.webp
 order: 8

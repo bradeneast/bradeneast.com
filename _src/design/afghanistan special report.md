@@ -22,7 +22,7 @@ My goal was to design a package for mailing that illustrated what the written
 stories described: **_cold isolation and looming danger for Christians inside
 the country._**
 
-{{ comp.video({ src:"afghanistan-sr/opening.mp4" }) }}
+{{ comp.video({ src:"/img/afghanistan-sr/opening.mp4" }) }}
 
 ## Project details
 
@@ -64,7 +64,7 @@ I also participated in an art-direction role to guide the design of
 report. This helped additional readers experience the printed report within a
 web context.
 
-<div class="grid">
+<div class="grid columns-2 gap-1">
   <img alt="A screenshot from the hero section of the Afghanistan Special Report web page." src="/img/afghanistan-sr/web-top.webp" />
   <img alt="A screenshot from the Afghanistan Special Report web page with an opportunity to give." src="/img/afghanistan-sr/web-bottom.webp" />
 </div>

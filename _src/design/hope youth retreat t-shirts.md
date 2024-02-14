@@ -25,6 +25,7 @@ represents how our spiritual bankruptcy has left us dead at the bottom of the
 ocean, beneath the waves, with no desire to be made alive or rescued.
 
 ![A flat view of the t-shirt, showing the back of the design](/img/hope-youth-retreat/back.webp)
+
 ![The t-shirt for this youth retreat, suspended on a wooden hanger against a teal background](/img/hope-youth-retreat/front.webp)
 
 ![The group of youth who attended the retreat](/img/hope-youth-retreat/group.webp)

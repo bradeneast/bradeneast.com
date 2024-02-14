@@ -13,13 +13,13 @@ links:
 Harmony Health is a direct primary care practice in Newcastle, Oklahoma. Their
 brand messaging is summed up in their tagline: “Optimal health comes from harmony of body, mind, and spirit.”
 
-![The Harmony Health wordmark with glyph modifications highlighted.](/img/harmony-health/wordmark.png)
+![The Harmony Health wordmark with glyph modifications highlighted.](/img/harmony-health/wordmark.webp)
 
 I selected Inter, a modern, trustworthy typeface befitting of this small
 business. Some letterforms were tweaked to make the mark slightly more
 approachable for moms with an affinity for natural remedies.
 
-![The logo icon on a white background.](/img/harmony-health/icon.png)
+![The logo icon on a white background.](/img/harmony-health/icon.webp)
 
 By analyzing business goals and customer demographics, I was able to arrive at a
 logo identity which complements the Harmony Health message. Throughout the

@@ -49,7 +49,7 @@ online. To help with that, we designed a set of icons to supplement content on
 their website. These icons were a great visual aid to catch and hold attention
 of potential customers.
 
-![](/img/ete/icons.png)
+![](/img/ete/icons.webp)
 
 In the end, we helped East Texas Elderberries establish a brand identity that
 works in every area they needed. They are a family business that is
