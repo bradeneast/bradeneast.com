@@ -85,7 +85,7 @@ review:
   {{ for index, project of projects }}
   <div class="showcase__featured overlap {{ if index < 1 }}selected{{ /if }}" data-showcase-id="{{ project.title |> idify }}">
     <img class="showcase__featured--image" src="{{ project.image }}" />
-    <div class="showcase__featured--info limited-width rellax" data-rellax-speed="-1" data-rellax-percentage=".5">
+    <div class="showcase__featured--info limited-width rellax" data-rellax-speed="-1" data-rellax-mobile-speed="1" data-rellax-xs-speed="1" data-rellax-percentage=".3">
       <div class="subtext" data-animate="from-top">{{ project.tags[0] }}</div>
       <h2 class="splitting" data-animate="thin-in">{{ project.title |> splitting }}</h2>
       <a class="button" data-animate="from-bottom" href="{{ project.url }}">View Case Study</a>
@@ -108,7 +108,7 @@ review:
 
 <section class="space-y columns-3 gap-2" style="z-index:3; align-items:start">
 
-  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="3" data-rellax-percentage="0.3"  style="height:50rem;">
+  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="3" data-rellax-percentage="0.3" >
     <img src="/img/braden-4.webp" />
   </div>
 

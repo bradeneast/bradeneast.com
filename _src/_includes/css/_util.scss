@@ -144,4 +144,12 @@
   .text-columns-3 {
     column-count: 1;
   }
+
+  .breakout-left,
+  .breakout-right {
+    width: 100vw;
+    margin-right: 0;
+    margin-left: calc(var(--sectionPaddingX) * -1);
+    grid-column: span 2;
+  }
 }

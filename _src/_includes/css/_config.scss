@@ -1,6 +1,7 @@
 $mobile: 54em;
 
 :root {
+  font-size: 19px;
   --red: #ff3b1b;
   --green: #17f5c3;
   --blue: #000096;
@@ -99,4 +100,12 @@ iframe {
   font-family: "Space Grotesk";
   src: url("/_/SpaceGrotesk[wght].woff2") format("woff2");
   font-display: block;
+}
+
+@media screen and (max-width:$mobile) {
+  :root {
+    font-size: 17px;
+    --sectionPaddingY: 5rem;
+    --borderRadius: 2rem;
+  }
 }

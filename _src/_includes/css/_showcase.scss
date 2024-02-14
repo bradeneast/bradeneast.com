@@ -26,6 +26,7 @@
       height: 100%;
       width: 100%;
       z-index: -1;
+      filter: brightness(.9);
     }
 
     &--info {
@@ -39,7 +40,7 @@
       gap: .5rem;
       padding: 4rem 2rem;
       transform: translate3d(0, 0, 1px);
-      filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
+      filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.3));
 
       &--title {
         margin-bottom: .5em;
@@ -98,6 +99,14 @@
       &:last-child {
         margin-right: 2rem;
       }
+    }
+  }
+}
+
+@media screen and (max-width:$mobile) {
+  .showcase {
+    &__featured--image {
+      filter: brightness(.7);
     }
   }
 }
