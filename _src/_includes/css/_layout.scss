@@ -5,6 +5,7 @@ header {
   left: 0;
   right: 0;
   width: 100%;
+  mix-blend-mode: difference;
 }
 
 nav,
@@ -21,7 +22,7 @@ footer {
   align-items: center;
   width: auto;
   height: 2em;
-  fill: white;
+  fill: #17f5c3;
 
   &::after {
     display: none;
@@ -50,8 +51,11 @@ body {
 }
 
 section {
+  display: grid;
   min-height: var(--sectionHeight);
   padding: 0 var(--sectionPaddingX);
+  align-items: center;
+  align-content: center;
 
   &.space-y {
     margin-top: var(--sectionMarginY);
@@ -63,16 +67,31 @@ section {
     padding-top: var(--sectionPaddingY);
     padding-bottom: var(--sectionPaddingY);
   }
+}
 
-  &.align-center {
-    display: grid;
-    align-items: center;
-    align-content: center;
+.post {
+
+  &__body {
+
+    p:has(img, video),
+    .grid {
+      max-width: none;
+      margin: var(--sectionMarginY) 0;
+    }
+
+    img,
+    video {
+      border-radius: var(--borderRadius);
+    }
+
+    h2 {
+      margin-top: var(--sectionMarginY);
+    }
   }
 }
 
 footer {
-  background: var(--blue);
+  background: var(--red);
   color: var(--lightgrey);
 
   .copyright {

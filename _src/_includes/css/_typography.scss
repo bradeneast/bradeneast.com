@@ -35,16 +35,21 @@ h5 {
   margin-bottom: .5rem;
 }
 
-h1 {
+h1,
+h2 {
   margin-left: -.04em;
-  font-size: var(--fontSizeH1);
   letter-spacing: -.04em;
+  margin-bottom: .4em;
+}
+
+h1 {
+  color: var(--red);
+  font-size: var(--fontSizeH1);
 }
 
 h2 {
+  line-height: 1.2;
   font-size: var(--fontSizeH2);
-  letter-spacing: -.04em;
-  margin-bottom: .4em;
 }
 
 h3 {
@@ -157,7 +162,6 @@ a {
 
     &:hover::before,
     &:focus::before {
-      transition: var(--transitionLong);
       transform: translate(-50%, -50%) scale(1);
     }
   }

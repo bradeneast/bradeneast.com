@@ -2,6 +2,18 @@
   color: var(--red);
 }
 
+.blue {
+  color: var(--blue);
+}
+
+.lightgrey {
+  color: var(--lightgrey);
+}
+
+.bw {
+  filter: grayscale(1);
+}
+
 .background-red {
   --background: var(--red);
   background: var(--red);
@@ -10,6 +22,10 @@
 .background-blue {
   --background: var(--blue);
   background: var(--blue);
+}
+
+.italic {
+  font-style: italic;
 }
 
 .grid {
@@ -99,6 +115,10 @@
 .center {
   justify-self: center;
   margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .rounded {

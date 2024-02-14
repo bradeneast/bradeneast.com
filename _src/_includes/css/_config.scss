@@ -22,9 +22,9 @@ $mobile: 54em;
   --sectionPaddingY: 10rem;
   --sectionMarginY: 5rem;
   --borderRadius: 4rem;
-  --fontSizeH1: calc(1.8rem + 5vw);
-  --fontSizeH2: calc(1.4rem + 2vw);
-  --fontSizeH3: calc(1.2rem + 1vw);
+  --fontSizeH1: calc(1.4rem + 2vw);
+  --fontSizeH2: calc(1.2rem + 1vw);
+  --fontSizeH3: calc(1rem + .4vw);
   --clipSquare: polygon(-5% -5%, 105% -5%, 105% 105%, -5% 105%);
   --clipOffsetTop: polygon(0 0, 100% 0, 100% calc(100% - var(--onscreen) * 100%), 0 calc(100% - var(--onscreen) * 100%));
   --clipOffsetRight: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -55,7 +55,9 @@ $mobile: 54em;
   background: transparent;
 }
 
+html,
 body {
+  scroll-behavior: smooth;
   background: var(--lightgrey);
 }
 

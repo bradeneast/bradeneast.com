@@ -1,13 +1,22 @@
 ---
 layout: layouts/post.vto
+bodyClass: post
 ---
 
-<div class="pad-vertical" style="margin-top: 0;">
-  <div class="tags light-text subtext">{{ tags |> join(", ") }}</div>
-  Completed for: <strong>{{ entity }}</strong>
-</div>
+<section class="columns-2">
+  <div class="grid limited-width">
+    <h1 data-animate="thin-in" class="splitting">{{ title |> splitting }}</h1>
+    <div class="splitting subtext" data-animate="thin-in" style="--delay:1s;">{{ tags |> join(", ") |> splitting }}</div>
+    <div class="subtext" data-animate="thin-in" style="--delay:2s;">Client type: <strong>{{ entity }}</strong></div>
+  </div>
+  <div class="breakout-right" data-animate="clip-left">
+    <img class="rellax" data-rellax-speed="-4" src="{{ image }}" />
+  </div>
+</section>
 
-{{ content }}
+<section class="post__body">
+  {{ content }}
+</section>
 
 {{ if it.links }}
 <p class="pad-vertical">

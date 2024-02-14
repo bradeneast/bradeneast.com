@@ -1,0 +1,20 @@
+<section class="hero align-items columns-2" data-animate="background">
+  <div class="rellax" data-rellax-speed="-5">
+
+    <h1 data-animate="thin-in" class="splitting blue" style="--delay:1s; z-index:1">
+      {{ headline |> splitting }}
+    </h1>
+
+    <div class="flex-wrap gap-1 align-items">
+      <div class="button__wrapper special" data-animate style="--delay:3s;">
+        <a class="button" href="{{ primary_button.link }}">
+          {{ primary_button.text }}
+        </a>
+      </div>
+      <a data-animate style="--delay:4s" href="{{ secondary_button.link }}">
+        {{ secondary_button.text }}
+      </a>
+    </div>
+
+  </div>
+</section>
