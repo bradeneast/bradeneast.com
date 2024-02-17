@@ -47,13 +47,31 @@ footer {
 }
 
 body {
+  display: grid;
   overflow-x: hidden;
+  min-height: 100lvh;
+
+  &.landing_page,
+  &.post {
+
+    main {
+      padding: 0;
+    }
+
+    section {
+      padding-left: var(--sectionPaddingX);
+      padding-right: var(--sectionPaddingX);
+    }
+  }
+}
+
+main {
+  padding: var(--sectionPaddingY) var(--sectionPaddingX) 0 var(--sectionPaddingX);
 }
 
 section {
   display: grid;
   min-height: var(--sectionHeight);
-  padding: 0 var(--sectionPaddingX);
   align-items: center;
   align-content: center;
 
@@ -73,6 +91,7 @@ section {
   padding-top: var(--sectionPaddingY);
 
   &__body {
+    padding-bottom: var(--sectionPaddingY);
 
     p:has(img, video),
     .grid {
@@ -92,6 +111,7 @@ section {
 }
 
 footer {
+  align-self: end;
   background: var(--red);
   color: var(--lightgrey);
 

@@ -1,14 +1,15 @@
 ---
 layout: layouts/base.vto
 title: Home
+bodyClass: landing_page
 menu:
   showInMenu: true
 
 hero:
-  headline: Branding, print production, and web design are where Braden shines.
+  headline: Branding and web design are where Braden shines.
   primary_button: 
     text: Hire Him Here
-    link: /contact
+    link: mailto:bradeneastdesign@gmail.com
   secondary_button:
     text: See work samples.
     link: \#work
@@ -85,7 +86,7 @@ review:
   {{ for index, project of projects }}
   <div class="showcase__featured overlap {{ if index < 1 }}selected{{ /if }}" data-showcase-id="{{ project.title |> idify }}">
     <img class="showcase__featured--image" src="{{ project.image }}" />
-    <div class="showcase__featured--info limited-width rellax" data-rellax-speed="-1" data-rellax-mobile-speed="1" data-rellax-xs-speed="1" data-rellax-percentage=".3">
+    <div class="showcase__featured--info limited-width">
       <div class="subtext" data-animate="from-top">{{ project.tags[0] }}</div>
       <h2 class="splitting" data-animate="thin-in">{{ project.title |> splitting }}</h2>
       <a class="button" data-animate="from-bottom" href="{{ project.url }}">View Case Study</a>
@@ -97,7 +98,7 @@ review:
     <div class="showcase__tray--title subtext">More Projects</div>
     <div class="showcase__tray--track">
     {{ for index, project of projects }}
-      <div tabindex="0" data-animate="from-right" class="showcase__tray--item" for="{{ project.title |> idify }}">
+      <div tabindex="0" data-animate="from-right" style="--delay:0s" class="showcase__tray--item" for="{{ project.title |> idify }}">
         <img src="{{ project.image }}">
       </div>
     {{ /for }}
@@ -108,7 +109,7 @@ review:
 
 <section class="space-y columns-3 gap-2" style="z-index:3; align-items:start">
 
-  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="3" data-rellax-percentage="0.3" >
+  <div data-animate="clip-right" class="breakout-left rellax" data-rellax-speed="3" data-rellax-percentage="0.3" style="max-height:40rem">
     <img src="/img/braden-4.webp" />
   </div>
 
