@@ -3,6 +3,7 @@ title: Bartlesville Redi-Mix Concrete Branding
 entity: Fun
 image: /img/redi-mix/business-card-back.webp
 order: 7
+draft: true
 tags:
   - Logo
   - Identity

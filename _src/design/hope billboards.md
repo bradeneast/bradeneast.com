@@ -3,6 +3,7 @@ title: Billboard Series for a Local Church
 entity: Hope Presbyterian Church of Bartlesville
 image: /img/hope-billboards/nailing-it.webp
 order: 9
+draft: true
 tags:
   - Billboards
   - Campaign
