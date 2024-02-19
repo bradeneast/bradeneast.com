@@ -1,13 +1,11 @@
 @keyframes thin-in {
   from {
     opacity: 0;
-    font-weight: 100;
     margin-left: .035em;
   }
 
   to {
     opacity: 1;
-    font-weight: var(--weight, 400);
     margin-left: 0;
   }
 }
@@ -157,7 +155,6 @@
 [data-animate="thin-in"].splitting .char {
   animation-name: thin-in;
   opacity: 0;
-  font-weight: 100;
 }
 
 [data-animate*="clip-"] {

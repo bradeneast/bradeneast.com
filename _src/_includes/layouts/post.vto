@@ -1,7 +1,32 @@
 ---
 layout: layouts/base.vto
-showSecondaryMenu: true
 bodyClass: post
 ---
 
-{{ content }}
+<section class="columns-2">
+  <div class="grid limited-width">
+    <h1 data-animate="thin-in" class="splitting">{{ title |> splitting }}</h1>
+    <div class="splitting subtext" data-animate="thin-in" style="--delay:1s;">{{ tags |> join(", ") |> splitting }}</div>
+    {{ if it.subtitle }}
+    <strong class="subtext" data-animate="thin-in" style="--delay:2s;">{{ subtitle }}</strong>
+    {{ /if }}
+  </div>
+  <div class="breakout-right" data-animate="clip-left">
+    <img class="rellax" data-rellax-speed="-4" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" src="{{ image }}" />
+  </div>
+</section>
+
+<section class="post__body">
+  {{ content }}
+</section>
+
+{{ if it.links }}
+<p class="pad-vertical">
+  {{ for index, data of links }}
+    {{ if index > 1 }}<br>{{ /if }}
+    <a target="_blank" rel="noopener noreferrer" href="{{ data.link }}">
+      {{ data.label }}
+    </a>
+  {{ /for }}
+</p>
+{{ /if }}

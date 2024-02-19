@@ -1,6 +1,6 @@
 ---
 title: Zion National Park Playing Cards
-entity: Fun
+subtitle: Completed for Fun
 image: /img/zion/cards-out-of-box.webp
 order: 16
 tags:

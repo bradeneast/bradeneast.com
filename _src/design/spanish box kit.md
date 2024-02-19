@@ -1,6 +1,6 @@
 ---
 title: Ministry Kit for Hispanic Pastors
-entity: The Voice of the Martyrs
+subtitle: Completed for The Voice of the Martyrs
 image: /img/hispanic-box/closed.webp
 order: 13
 tags:
@@ -30,7 +30,7 @@ The designed elements of the ministry kit included:
 - Two small boxes for USB sticks
 - The USB sticks themselves
 
-{{ comp.video({ src:"hispanic-box/usb-boxes.mp4" }) }}
+{{ comp.video({ src:"img/hispanic-box/usb-boxes.mp4" }) }}
 
 ![USB thumb drive sticks with their respective emblems printed on the metal casing.](/img/hispanic-box/usb-sticks.webp)
 

@@ -1,6 +1,6 @@
 ---
 title: Cooperative Program Marketing Campaign
-entity: Southern Baptist Convention
+subtitle: Completed for Southern Baptist Convention
 image: /img/cooperative-program/street-pedestrians.webp
 order: 6
 tags:

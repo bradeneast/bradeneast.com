@@ -1,6 +1,6 @@
 export default {
   type: "codePost",
-  layout: "layouts/codePost.vto",
+  layout: "layouts/post.vto",
   templateEngine: "vto,md",
   parentTitle: "Code"
 }

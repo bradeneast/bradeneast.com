@@ -1,6 +1,6 @@
 ---
 title: RUF Welcome Banner
-entity: OSU Reformed University Fellowship
+subtitle: Completed for OSU Reformed University Fellowship
 image: /img/osu-ruf-banner/hero.webp
 order: 10
 tags:

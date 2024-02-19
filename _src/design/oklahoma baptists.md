@@ -1,6 +1,6 @@
 ---
 title: Oklahoma Baptists Branding
-entity: Nonprofit
+subtitle: Completed for Nonprofit
 image: /img/oklahoma-baptists/backpack.webp
 order: 1
 tags:

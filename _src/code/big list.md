@@ -1,7 +1,7 @@
 ---
 title: Big List
 image: /img/big-list/logo.svg
-purpose: Web App
+subtitle: Web App
 order: 1
 links:
   Try the demo: //biglist.netlify.app
@@ -31,16 +31,16 @@ technologies:
 
 Seriously, that's it! It's a checklist designed with oversized type. It's probably for designers, but maybe it will catch on with others too.
 
-{{ comp.video({ src:"big-list/typing.mp4" }) }}
+{{ comp.video({ src:"img/big-list/typing.mp4" }) }}
 
 This was a fun weekend project to complete and is my best example of several areas where I've been improving my proficiency and understanding. One of these features was a proprietary drag-and-drop implementation, which is even supported on mobile devices for this web app.
 
-{{ comp.video({ src:"big-list/dragging.mp4" }) }}
+{{ comp.video({ src:"img/big-list/dragging.mp4" }) }}
 
 Big List uses the browser's `localStorage` API to make sure user data is never exposed to the internet. To allow moving lists between devices, I added an import/export feature which lets users combine multiple lists or replace an old list.
 
 This feature supports file imports and pasted imports, with error handling for unexpected inputs.
 
-{{ comp.video({ src:"big-list/importing.mp4" }) }}
+{{ comp.video({ src:"img/big-list/importing.mp4" }) }}
 
 Finally, Big List also tracks revision history of the current session, so you can undo or redo up to 50 consecutive actions.

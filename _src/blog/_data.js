@@ -1,6 +1,6 @@
 export default {
   type: "blogPost",
-  layout: "layouts/blogPost.vto",
+  layout: "layouts/post.vto",
   templateEngine: "vto,md",
   parentTitle: "Blog",
   sortBy: "date"

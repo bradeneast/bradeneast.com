@@ -1,6 +1,6 @@
 ---
-title: Afghanistan Special Report
-entity: The Voice of the Martyrs
+title: Afghanistan Special Report Mailing
+subtitle: Completed for The Voice of the Martyrs
 image: /img/afghanistan-sr/hero.webp
 order: 11
 tags:
@@ -22,7 +22,7 @@ My goal was to design a package for mailing that illustrated what the written
 stories described: **_cold isolation and looming danger for Christians inside
 the country._**
 
-{{ comp.video({ src:"/img/afghanistan-sr/opening.mp4" }) }}
+{{ comp.video({ src:"img/afghanistan-sr/opening.mp4" }) }}
 
 ## Project details
 

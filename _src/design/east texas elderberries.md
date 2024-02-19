@@ -1,7 +1,7 @@
 ---
 title: East Texas Elderberries Branding
 image: /img/ete/mailer-bag.webp
-entity: Elderberry Farm
+subtitle: Completed for Elderberry Farm
 order: 14
 tags:
   - Identity

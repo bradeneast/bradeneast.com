@@ -66,11 +66,19 @@
 .columns-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  &>* {
+    max-width: 70rem;
+  }
 }
 
 .columns-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+
+  &>* {
+    max-width: 70rem;
+  }
 }
 
 .columns-4 {

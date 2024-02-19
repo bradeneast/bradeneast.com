@@ -1,7 +1,7 @@
 ---
 title: Schwifty
 image: /img/schwifty/logo.svg
-purpose: Library
+subtitle: Library
 order: 4
 links:
   Check the source code: //github.com/bradeneast/schwifty
@@ -40,7 +40,7 @@ It's possible to have these all dialed in, but even a highly-optimized server is
 
 > Popular hosting services like Netlify and Github Pages do a lot of these optimizations for you. That said, users on average connections can wait at least 300ms for page loads.
 
-{{ comp.video({ src:"schwifty/speedDemo.mp4" }) }}
+{{ comp.video({ src:"img/schwifty/speedDemo.mp4" }) }}
 
 ## How does Schwifty solve this problem?
 Schwifty acheives crazy-fast speeds by preloading and caching same-origin pages. It essentially ~lazy-loads~ *lazy-preloads* links as they scroll into view. When a link is clicked, the content is swapped out and navigation happens.

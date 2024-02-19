@@ -1,6 +1,6 @@
 export default {
   type: "designPost",
-  layout: "layouts/designPost.vto",
+  layout: "layouts/post.vto",
   templateEngine: "vto,md",
   parentTitle: "Design"
 }

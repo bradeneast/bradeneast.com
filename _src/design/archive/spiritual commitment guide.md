@@ -1,6 +1,6 @@
 ---
 title: Falls Creek Spiritual Commitment Guide
-entity: Falls Creek Youth Camps
+subtitle: Completed for Falls Creek Youth Camps
 image: /img/spiritual-commitment-guide/falls-creek-worship.webp
 order: 4
 tags:

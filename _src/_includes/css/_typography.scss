@@ -2,6 +2,7 @@ body {
   font-family: var(--fontFamilySecondary);
   font-weight: 400;
   color: var(--blue);
+  line-height: 1.4;
 }
 
 h1,
@@ -66,6 +67,20 @@ p {
   margin-bottom: 1rem;
   break-inside: avoid;
   max-width: math.div($mobile, 1.61);
+}
+
+ul,
+ol {
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+
+li {
+  padding-left: 1em;
+
+  &+li {
+    margin-top: .5em;
+  }
 }
 
 hr {

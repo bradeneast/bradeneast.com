@@ -1,6 +1,6 @@
 ---
 title: Program for 'The Call' Conference
-entity: Oklahoma Baptists
+subtitle: Completed for Oklahoma Baptists
 image: /img/the-call-program/hero.webp
 order: 2
 tags:

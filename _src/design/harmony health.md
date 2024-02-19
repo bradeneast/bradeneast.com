@@ -1,6 +1,6 @@
 ---
 title: Harmony Health Branding
-entity: Medical Practice
+subtitle: Completed for Medical Practice
 image: /img/harmony-health/clothing.webp
 order: 14
 tags:

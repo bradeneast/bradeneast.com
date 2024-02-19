@@ -1,7 +1,7 @@
 ---
 title: Coarse
 image: /img/coarse/logo.svg
-purpose: Library
+subtitle: Library
 order: 3
 links:
   Try the demo: //coarse.netlify.app
@@ -19,12 +19,12 @@ technologies:
 
 [Coarse](//coarse.netlify.app) is a totally design agnostic, minimal carousel library for modern websites.
 
-{{ comp.video({ src:"coarse/basic.mp4" }) }}
+{{ comp.video({ src:"img/coarse/basic.mp4" }) }}
 
 Coarse supports swiping gestures on mobile devices, and uses performance optimizations like [event bubbling](//developer.mozilla.org/en-US/docs/Web/API/Event/bubbles) to stay fast and responsive.
 
-{{ comp.video({ src:"coarse/swiping.mp4" }) }}
+{{ comp.video({ src:"img/coarse/swiping.mp4" }) }}
 
 It allows for total style control, custom transitions with pure CSS, and is highly configurable from the ground up.
 
-{{ comp.video({ src:"coarse/icons.mp4" }) }}
+{{ comp.video({ src:"img/coarse/icons.mp4" }) }}

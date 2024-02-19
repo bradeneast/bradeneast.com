@@ -1,7 +1,7 @@
 ---
 title: Flintstone
 image: /img/flintstone/logo.svg
-purpose: Web App
+subtitle: Web App
 order: 2
 links:
   Try the demo: //flintstone-app.netlify.app
@@ -33,16 +33,16 @@ technologies:
 
 Initial users have told me they felt more in control of their documents than ever with something so simple and powerful.
 
-{{ comp.video({ src:"flintstone/signin.mp4" }) }}
+{{ comp.video({ src:"img/flintstone/signin.mp4" }) }}
 
 Flintstone handles secure individual user accounts through Netlify's GoTrue API. I designed the user experience to be seamless and unobtrusive, while authentication is handled nearly instantly in the background.
 
-{{ comp.video({ src:"flintstone/data-fields.mp4" }) }}
+{{ comp.video({ src:"img/flintstone/data-fields.mp4" }) }}
 
 The interface is modeled after a text-editor, where the majority of real-estate is reserved for the long form text. Data auto-completion (sometimes called &ldquo;intellisense&rdquo;) was one feature I was excited to integrate.
 
-{{ comp.video({ src:"flintstone/document-editor.mp4" }) }}
+{{ comp.video({ src:"img/flintstone/document-editor.mp4" }) }}
 
 Rich text features have been shown to frustrate many users, so I opted for a richly-applied style editor. This approach makes consistent styling a no-brainer, and doesn't require knowledge of CSS or HTML to use.
 
-{{ comp.video({ src:"flintstone/style-editor.mp4" }) }}
+{{ comp.video({ src:"img/flintstone/style-editor.mp4" }) }}
