@@ -43,8 +43,6 @@ function init() {
 		document.body.append(script);
 	}
 
-	new Rellax('.rellax');
-
 }
 
 
