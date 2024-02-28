@@ -8,6 +8,7 @@ tags:
   - Identity
 links:
   Learn more about Harmony Health: //harmonyhealthok.com
+draft: true
 ---
 
 Harmony Health is a direct primary care practice in Newcastle, Oklahoma. Their
