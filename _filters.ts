@@ -13,7 +13,7 @@ export function splitting(text: string) {
   }
 
   function lineTemplate(line: string, i: number) {
-    return line.split(" ").map(wordTemplate).join(`<span class="whitespace"> </span>`);
+    return line.split(" ").map(wordTemplate).join(`<span class="var(--tertiary)space"> </span>`);
   }
 
   return lines.map(lineTemplate).join("\n");

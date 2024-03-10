@@ -2,10 +2,9 @@ $mobile: 54em;
 
 :root {
   font-size: 19px;
-  --red: #ff501b;
-  --green: #00f0a0;
-  --blue: #00256a;
-  --lightgrey: #e2efe8;
+  --primary: #000000;
+  --secondary: red;
+  --tertiary: #ffffff;
   --borderWidth: 2px;
   --borderStyle: solid;
   --borderRadius: 0px;
@@ -48,7 +47,7 @@ $mobile: 54em;
 }
 
 *:focus {
-  outline: var(--borderWidth) var(--borderStyle) black;
+  outline: var(--borderWidth) var(--borderStyle) var(--primary);
   outline-offset: var(--borderWidth);
 }
 
@@ -59,7 +58,7 @@ $mobile: 54em;
 html,
 body {
   scroll-behavior: smooth;
-  background: var(--lightgrey);
+  background: var(--primary);
 }
 
 img,
@@ -80,7 +79,7 @@ svg {
 
 img:not([src*="png"]):not([src*="svg"]),
 iframe {
-  background: white;
+  background: var(--tertiary);
 }
 
 @font-face {

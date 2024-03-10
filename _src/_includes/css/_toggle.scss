@@ -2,7 +2,7 @@ details {
   transition: var(--transitionMedium);
 
   summary {
-    color: var(--red);
+    color: var(--primary);
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -19,7 +19,7 @@ details {
 
     &:hover {
       outline: none;
-      color: var(--blue);
+      color: var(--primary);
     }
 
     &:focus {
@@ -53,7 +53,7 @@ details {
     padding-bottom: 2rem;
 
     summary {
-      color: var(--blue);
+      color: var(--primary);
     }
 
     .toggle__header--button {
@@ -61,7 +61,7 @@ details {
     }
 
     .toggle__content--body {
-      padding-top: 2rem;
+      padding-top: 1rem;
     }
   }
 }

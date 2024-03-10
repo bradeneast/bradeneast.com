@@ -1,7 +1,7 @@
 body {
   font-family: var(--fontFamilySecondary);
   font-weight: 400;
-  color: var(--blue);
+  color: var(--primary);
   line-height: 1.4;
 }
 
@@ -40,7 +40,6 @@ h2 {
 }
 
 h1 {
-  color: var(--red);
   font-size: var(--fontSizeH1);
 }
 
@@ -117,8 +116,8 @@ a {
 }
 
 ::selection {
-  background: var(--green);
-  color: var(--blue);
+  background: var(--secondary);
+  color: var(--primary);
 }
 
 .button {
@@ -163,7 +162,7 @@ a {
       width: 100vh;
       height: 100vh;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--secondary);
       top: 50%;
       left: 50%;
       pointer-events: none;

@@ -60,15 +60,13 @@ resume:
 
       He runs a creative agency called Restore Graphics, which helps churches rebuild trust and clarify their brands with timeless strategy and identity design.
   -
-    headline: Communications Student Teaching
+    headline: Social Media Intern
     meta:
-      Timeline: 4 Semesters
-      At: Oklahoma Baptist University
-      Skills: Project Management, MS Office
+      Timeline: 2 Semesters
+      At: Shawnee Public Schools
+      Skills: Public Relations, Social Media Marketing
     body: |-
-      Braden helped professors in the OBU Communication Arts program provide a better learning experience for their students.
-
-      He gained competence in Excel, PowerPoint, Canvas, and other desktop publishing softwares, as well as project management platforms.
+      Braden helped Shawnee Public Schools grow their online presence by creating content and managing social media accounts.
 
 review:
   text: I highly recommend Braden, a talented designer with a strong command of the Adobe suite. He excels in both classic and contemporary design.
@@ -107,13 +105,13 @@ review:
 
 </section>
 
-<section class="space-y columns-3 gap-2" style="z-index:3; align-items:start">
+<section class="space-y columns-3 gap-2" style="z-index:3; align-items:start;">
 
   <div data-animate="clip-right" class="breakout-left" style="max-height:40rem">
     <img src="/img/braden-4.webp" />
   </div>
 
-  <div class="limited-width center span-2 grid gap-1">
+  <div class="limited-width center span-2 grid gap-1" style="min-height:40rem">
     <div class="subtext space-y-2">Work Experience</div>
     {{ for index, item of resume }}
       {{ comp.toggle({ item, index }) }}
@@ -122,14 +120,14 @@ review:
 
 </section>
 
-<section data-animate="background" class="background-blue">
+<section data-animate="background">
 
   <div class="columns-3 gap-2 align-items">
     <img data-animate style="--delay:1s" class="bw rounded limited-width" src="/img/jon_green.webp" />
-    <div class="span-2 red">
-      <h2 class="lightgrey" data-animate="from-right" style="--delay:1.5s">{{ review.text }}</h2>
-      <strong class="subtext splitting" data-animate="thin-in" style="--delay:2s">{{ review.author.name |> splitting }}</strong>
-      <div class="subtext splitting" data-animate="thin-in" style="--delay:2s">{{ review.author.position |> splitting }}</div>
+    <div class="span-2">
+      <h2 class="tertiary" data-animate="from-right" style="--delay:1.5s">{{ review.text }}</h2>
+      <strong class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.name |> splitting }}</strong>
+      <div class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.position |> splitting }}</div>
     </div>
   </div>
 

@@ -1,27 +1,17 @@
-.red {
-  color: var(--red);
+.primary {
+  color: var(--primary);
 }
 
-.blue {
-  color: var(--blue);
+.secondary {
+  color: var(--secondary);
 }
 
-.lightgrey {
-  color: var(--lightgrey);
+.tertiary {
+  color: var(--tertiary);
 }
 
 .bw {
   filter: grayscale(1);
-}
-
-.background-red {
-  --background: var(--red);
-  background: var(--red);
-}
-
-.background-blue {
-  --background: var(--blue);
-  background: var(--blue);
 }
 
 .italic {

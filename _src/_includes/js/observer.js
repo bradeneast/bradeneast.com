@@ -14,8 +14,8 @@ let observer = new IntersectionObserver(entries => {
   entries.forEach(setOffscreen);
 },
   {
-    threshold: .4,
-    rootMargin: "-100px 0%"
+    threshold: .3,
+    rootMargin: "-80px 0%"
   }
 );
 

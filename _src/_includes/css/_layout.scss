@@ -66,6 +66,7 @@ body {
 }
 
 main {
+  background: var(--tertiary);
   padding: var(--sectionPaddingY) var(--sectionPaddingX) 0 var(--sectionPaddingX);
 }
 
@@ -112,8 +113,8 @@ section {
 
 footer {
   align-self: end;
-  background: var(--red);
-  color: var(--lightgrey);
+  background: var(--primary);
+  color: var(--tertiary);
 
   .copyright {
     margin-right: auto;
