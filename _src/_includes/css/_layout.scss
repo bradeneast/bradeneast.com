@@ -18,10 +18,10 @@ footer {
 
 .logo {
   display: inline-flex;
-  gap: .2em;
+  gap: .2rem;
   align-items: center;
   width: auto;
-  height: 2em;
+  height: 2rem;
   fill: #00f5e0;
 
   &::after {
@@ -89,7 +89,11 @@ section {
 }
 
 .post {
-  padding-top: var(--sectionPaddingY);
+
+  main {
+    margin-top: 4rem;
+    padding-top: calc(var(--sectionPaddingY) * 2);
+  }
 
   &__body {
     padding-bottom: var(--sectionPaddingY);
