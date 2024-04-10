@@ -41,7 +41,7 @@
 
 <body class="{{ it.bodyClass }}">
 
-	{{# <header>
+	<header>
 		<nav>
 			<a class="logo" href="/">
 				<svg class="logo__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.14 105.14">
@@ -52,20 +52,20 @@
 				</svg>
 			</a>
 		</nav>
-	</header> #}}
+	</header>
 
 	<main>
 		{{ content }}
 	</main>
 
-	{{# <footer>
+	<footer>
 		<div class="copyright">&copy; 2024 Braden East</div>
 		<div class="socials">
 			{{ for platform, url of site.socials }}
 				<a href="{{ url }}">{{ platform }}</a>
 			{{ /for }}
 		</div>
-	</footer> #}}
+	</footer>
 
 </body>
 

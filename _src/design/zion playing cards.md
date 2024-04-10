@@ -6,7 +6,7 @@ order: 16
 tags:
   - Packaging
   - Product
-draft: true
+# draft: true
 ---
 
 The purpose of this project is to demonstrate a package design concept that was

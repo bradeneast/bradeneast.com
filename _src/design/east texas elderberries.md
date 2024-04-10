@@ -11,7 +11,7 @@ badges:
   - New
 links:
   Check out East Texas Elderberries on Facebook: //facebook.com/EastTexasElderberries
-draft: true
+# draft: true
 ---
 
 East Texas Elderberries is the elderberry farm that produces organically grown
