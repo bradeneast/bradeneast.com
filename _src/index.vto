@@ -8,7 +8,7 @@ menu:
 hero:
   headline: Meet Oklahoma's award-winning parachurch graphic designer.
   primary_button: 
-    text: Hire Him Here
+    text: Email Braden
     link: mailto:bradeneastdesign@gmail.com
   secondary_button:
     text: See work samples.
@@ -120,15 +120,20 @@ review:
 
 </section>
 
-<section data-animate="background">
+<section data-animate="background" class="columns-2 gap-2 align-items">
 
-  <div class="columns-3 gap-2 align-items">
-    <img data-animate style="--delay:1s" class="bw rounded limited-width" src="/img/jon_green.webp" />
-    <div class="span-2">
-      <h2 class="tertiary" data-animate="from-right" style="--delay:1.5s">{{ review.text }}</h2>
+  <div class="grid gap-1 center-text">
+    <img data-animate style="--delay:1s; max-width:6rem; margin: 0 auto;" class="bw rounded" src="/img/jon_green.webp" />
+    <div>
+      <h2 class="tertiary" data-animate="from-right" style="--delay:1.5s">&ldquo;{{ review.text }}&rdquo;</h2>
       <strong class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.name |> splitting }}</strong>
       <div class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.position |> splitting }}</div>
     </div>
+  </div>
+
+  <div class="grid gap-1 justify-content justify-items center-text">
+    <div>Share your design needs and see if we should partner up!</div>
+    <div><a class="button" href="mailto:bradeneastdesign@gmail.com">Email Braden</a></div>
   </div>
 
 </section>

@@ -110,6 +110,14 @@
   align-items: center;
 }
 
+.justify-items {
+  justify-items: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
 .center {
   justify-self: center;
   margin: 0 auto;
@@ -117,6 +125,10 @@
 
 .center-text {
   text-align: center;
+
+  * {
+    text-align: inherit;
+  }
 }
 
 .rounded {
