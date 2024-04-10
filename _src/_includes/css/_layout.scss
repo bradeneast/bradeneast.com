@@ -134,6 +134,13 @@ footer {
     --sectionPaddingX: 5vw;
   }
 
+  body.post {
+
+    main {
+      padding-top: 4rem;
+    }
+  }
+
   nav,
   footer {
     padding: .5rem var(--sectionPaddingX);
