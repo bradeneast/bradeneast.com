@@ -105,13 +105,13 @@ review:
 
 </section>
 
-<section class="space-y columns-3 gap-2" style="z-index:3; align-items:start;">
+<section class="space-y columns-2 gap-2" style="align-items:start;">
 
-  <div data-animate="clip-right" class="breakout-left" style="max-height:40rem">
-    <img src="/img/braden-4.webp" />
+  <div data-animate="clip-right">
+    <img src="/img/braden-5.webp" />
   </div>
 
-  <div class="limited-width center span-2 grid gap-1" style="min-height:40rem">
+  <div class="limited-width center grid gap-1" style="min-height:40rem">
     <div class="subtext space-y-2">Work Experience</div>
     {{ for index, item of resume }}
       {{ comp.toggle({ item, index }) }}
@@ -120,20 +120,20 @@ review:
 
 </section>
 
-<section data-animate="background" class="columns-2 gap-2 align-items">
+<section class="columns-2 gap-2 align-items">
 
   <div class="grid gap-1 center-text">
     <img data-animate style="--delay:1s; max-width:6rem; margin: 0 auto;" class="bw rounded" src="/img/jon_green.webp" />
     <div>
-      <h2 class="tertiary" data-animate="from-right" style="--delay:1.5s">&ldquo;{{ review.text }}&rdquo;</h2>
+      <h2 data-animate="from-right" style="--delay:1.5s">&ldquo;{{ review.text }}&rdquo;</h2>
       <strong class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.name |> splitting }}</strong>
       <div class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.position |> splitting }}</div>
     </div>
   </div>
 
-  <div class="grid gap-1 justify-content justify-items center-text">
+  <div class="space-y-3 grid gap-1 justify-content justify-items center-text">
     <div>Share your design needs and see if we should partner up!</div>
-    <div><a class="button" href="mailto:bradeneastdesign@gmail.com">Email Braden</a></div>
+    <div><a class="button button__primary" href="mailto:bradeneastdesign@gmail.com">Email Braden</a></div>
   </div>
 
 </section>

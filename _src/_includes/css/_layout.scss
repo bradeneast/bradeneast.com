@@ -31,7 +31,7 @@ footer {
   &__icon {
     display: inline-block;
     width: auto;
-    transition: var(--transitionShort);
+    transition: transform var(--transitionShort);
   }
 
   &__wordmark {
@@ -117,8 +117,6 @@ section {
 
 footer {
   align-self: end;
-  background: var(--primary);
-  color: var(--tertiary);
 
   .copyright {
     margin-right: auto;

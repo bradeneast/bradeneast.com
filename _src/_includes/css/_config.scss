@@ -2,7 +2,7 @@ $mobile: 54em;
 
 :root {
   font-size: 19px;
-  --primary: #000000;
+  --primary: #272831;
   --secondary: red;
   --tertiary: #ffffff;
   --borderWidth: 2px;
@@ -16,7 +16,7 @@ $mobile: 54em;
   --shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
   --shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
   --fontFamilyPrimary: "Sentient", serif;
-  --fontFamilySecondary: "Clash Display", sans-serif;
+  --fontFamilySecondary: "Clash", sans-serif;
   --sectionHeight: 80lvh;
   --sectionPaddingX: 10%;
   --sectionPaddingY: 5rem;
@@ -58,7 +58,6 @@ $mobile: 54em;
 html,
 body {
   scroll-behavior: smooth;
-  background: var(--primary);
 }
 
 img,
@@ -96,13 +95,13 @@ iframe {
 }
 
 @font-face {
-  font-family: "Clash Display";
-  src: url("/_/ClashDisplay-Regular.woff2") format("woff2");
+  font-family: "Clash";
+  src: url("/_/ClashGrotesk-Regular.woff2") format("woff2");
   font-display: block;
 }
 
 @font-face {
-  font-family: "Clash Display";
+  font-family: "Clash";
   src: url("/_/ClashDisplay-Bold.woff2") format("woff2");
   font-display: block;
   font-weight: 700;

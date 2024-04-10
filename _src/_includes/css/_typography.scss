@@ -2,6 +2,7 @@ body {
   font-family: var(--fontFamilySecondary);
   font-weight: 400;
   color: var(--primary);
+  letter-spacing: .02em;
   line-height: 1.4;
 }
 
@@ -117,7 +118,7 @@ a {
 
 ::selection {
   background: var(--secondary);
-  color: var(--primary);
+  color: var(--tertiary);
 }
 
 .button {
@@ -129,6 +130,17 @@ a {
   text-decoration: none;
   border: 2px solid currentColor;
   transition: var(--transitionShort);
+
+  &.button__primary {
+    background: var(--primary);
+    border: none;
+    color: var(--tertiary);
+
+    &:hover,
+    &:focus {
+      background: var(--secondary);
+    }
+  }
 
   &::after {
     border: none;
