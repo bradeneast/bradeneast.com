@@ -16,7 +16,7 @@ $mobile: 54em;
   --shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
   --shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
   --fontFamilyPrimary: "Sentient", serif;
-  --fontFamilySecondary: "Space Grotesk", sans-serif;
+  --fontFamilySecondary: "Clash Display", sans-serif;
   --sectionHeight: 80lvh;
   --sectionPaddingX: 10vw;
   --sectionPaddingY: 10lvh;
@@ -96,9 +96,16 @@ iframe {
 }
 
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("/_/SpaceGrotesk[wght].woff2") format("woff2");
+  font-family: "Clash Display";
+  src: url("/_/ClashDisplay-Regular.woff2") format("woff2");
   font-display: block;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/_/ClashDisplay-Bold.woff2") format("woff2");
+  font-display: block;
+  font-weight: 700;
 }
 
 @media screen and (max-width:$mobile) {
