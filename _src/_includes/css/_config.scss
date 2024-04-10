@@ -18,9 +18,9 @@ $mobile: 54em;
   --fontFamilyPrimary: "Sentient", serif;
   --fontFamilySecondary: "Clash Display", sans-serif;
   --sectionHeight: 80lvh;
-  --sectionPaddingX: 10vw;
-  --sectionPaddingY: 10lvh;
-  --sectionMarginY: 5lvh;
+  --sectionPaddingX: 10%;
+  --sectionPaddingY: 5rem;
+  --sectionMarginY: 3rem;
   --borderRadius: 3rem;
   --fontSizeH1: calc(1.4rem + 2vw);
   --fontSizeH2: calc(1.2rem + 1vw);
@@ -111,7 +111,6 @@ iframe {
 @media screen and (max-width:$mobile) {
   :root {
     font-size: 17px;
-    --sectionPaddingY: 5rem;
     --borderRadius: 2rem;
   }
 }
