@@ -136,39 +136,39 @@
   }
 }
 
-[data-animate="from-top"] {
-  animation-name: fade-in-from-top;
-}
+// [data-animate="from-top"] {
+//   animation-name: fade-in-from-top;
+// }
 
-[data-animate="from-bottom"] {
-  animation-name: fade-in-from-bottom;
-}
+// [data-animate="from-bottom"] {
+//   animation-name: fade-in-from-bottom;
+// }
 
-[data-animate="from-left"] {
-  animation-name: fade-in-from-left;
-}
+// [data-animate="from-left"] {
+//   animation-name: fade-in-from-left;
+// }
 
-[data-animate="from-right"] {
-  animation-name: fade-in-from-right;
-}
+// [data-animate="from-right"] {
+//   animation-name: fade-in-from-right;
+// }
 
-[data-animate="thin-in"].splitting .char {
-  animation-name: thin-in;
-  opacity: 0;
-}
+// [data-animate="thin-in"].splitting .char {
+//   animation-name: thin-in;
+//   opacity: 0;
+// }
 
-[data-animate*="clip-"] {
-  animation: clip-in var(--transitionLong) forwards;
-  animation-play-state: var(--play-state);
-}
+// [data-animate*="clip-"] {
+//   animation: clip-in var(--transitionLong) forwards;
+//   animation-play-state: var(--play-state);
+// }
 
-[data-animate="clip-left"] {
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-}
+// [data-animate="clip-left"] {
+//   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+// }
 
-[data-animate="clip-right"] {
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-}
+// [data-animate="clip-right"] {
+//   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+// }
 
 
 [data-animate="background"] {
