@@ -7,7 +7,7 @@
   <div class="light-text subtext">{{ post.tags |> join(", ") }}</div>
   <div class="feed__item--badges">
     {{ for badge of post.badges }}
-    <div class="badge" style="--color:{{ badge.color || 'var(--primary)' }}">{{ badge.name || badge }}</div>
+    <div class="badge" style="--color:{{ badge.color || 'var(--black)' }}">{{ badge.name || badge }}</div>
     {{ /for }}
   </div>
 </a>

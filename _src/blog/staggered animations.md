@@ -47,7 +47,7 @@ Our brains like smooth, sequential motion that overlaps, speeds up, and slows do
     height: 2rem;
     border-radius: 50%;
     background: dodgerblue;
-    background: var(--primary);
+    background: var(--black);
     -webkit-animation: move 4s ease-in-out alternate infinite running;
     animation: move 4s ease-in-out alternate infinite running;
   }

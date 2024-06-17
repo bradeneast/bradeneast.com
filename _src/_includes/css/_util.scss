@@ -1,17 +1,21 @@
 .primary {
-  color: var(--primary);
+  color: var(--black);
 }
 
 .secondary {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 .tertiary {
-  color: var(--tertiary);
+  color: var(--pastel);
 }
 
 .bw {
   filter: grayscale(1);
+}
+
+.rounded {
+  border-radius: var(--borderRadius);
 }
 
 .italic {

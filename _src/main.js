@@ -1,5 +1,5 @@
 import observer from './_includes/js/observer.js';
-import watchShowcase from './_includes/js/showcase.js';
+// import watchShowcase from './_includes/js/showcase.js';
 import { $, $$, elem } from './_includes/js/utils.js';
 
 
@@ -11,7 +11,7 @@ function init() {
 		setTimeout(() => observer.observe(elem), 100);
 	});
 
-	$$(".showcase").forEach(elem => watchShowcase(elem));
+	// $$(".showcase").forEach(elem => watchShowcase(elem));
 
 	// Set aria-current
 	$$(`a[href="${location.pathname}"]`)

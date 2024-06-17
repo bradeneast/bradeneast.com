@@ -1,7 +1,7 @@
 body {
   font-family: var(--fontFamilySecondary);
   font-weight: 400;
-  color: var(--primary);
+  color: var(--black);
   letter-spacing: .02em;
   line-height: 1.4;
 }
@@ -117,8 +117,8 @@ a {
 }
 
 ::selection {
-  background: var(--secondary);
-  color: var(--tertiary);
+  background: var(--accent);
+  color: var(--pastel);
 }
 
 .button {
@@ -132,13 +132,13 @@ a {
   transition: var(--transitionShort);
 
   &.button__primary {
-    background: var(--primary);
+    background: var(--black);
     border: none;
-    color: var(--tertiary);
+    color: var(--pastel);
 
     &:hover,
     &:focus {
-      background: var(--secondary);
+      background: var(--accent);
     }
   }
 
@@ -148,7 +148,7 @@ a {
     background: none;
     content: "→";
     margin-left: .3em;
-    line-height: 1.1;
+    line-height: 1.25;
     width: 0;
     opacity: 0;
     transform: translateX(.5rem);
@@ -174,7 +174,7 @@ a {
       width: 100vh;
       height: 100vh;
       border-radius: 50%;
-      background: var(--secondary);
+      background: var(--accent);
       top: 50%;
       left: 50%;
       pointer-events: none;

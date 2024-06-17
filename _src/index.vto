@@ -6,7 +6,7 @@ menu:
   showInMenu: true
 
 hero:
-  headline: Meet Oklahoma's award-winning visual designer.
+  headline: Meet Oklahoma's award-winning visual designer *who codes*
   primary_button: 
     text: Email Braden
     link: mailto:bradeneastdesign@gmail.com
@@ -58,7 +58,7 @@ resume:
     body: |-
       Since 2018, Braden has served his local church and community network through design. From primary care clinics to elderberry farms, he continues to create exceptional results for diverse clients.
 
-      He runs a creative agency called Restore Graphics, which helps churches rebuild trust and clarify their brands with timeless strategy and identity design.
+      He runs a creative agency called Restore Graphics, which helps churches rebuild trust and clarify their brands with timeless strategy, identity, and web design.
   -
     headline: Social Media Intern
     meta:
@@ -77,38 +77,26 @@ review:
 
 {{ comp.hero(hero) }}
 
-<section id="work" class="showcase" data-animate style="--delay:1s; --play-state:running;">
+<section id="work" class="showcase" data-animate style="--delay:2s; --play-state:running; margin-top:-3rem;">
 
   {{ set projects = search.pages("type=designPost", "order=desc") }}
 
   {{ for index, project of projects }}
-  <div class="showcase__featured overlap {{ if index < 1 }}selected{{ /if }}" data-showcase-id="{{ project.title |> idify }}">
-    <img class="showcase__featured--image" src="{{ project.image }}" />
-    <div class="showcase__featured--info limited-width">
-      <div class="subtext" data-animate="from-top">{{ project.tags[0] }}</div>
-      <h2 class="splitting" data-animate="thin-in">{{ project.title |> splitting }}</h2>
-      <a class="button" data-animate="from-bottom" href="{{ project.url }}">View Case Study</a>
+  <a class="showcase__project" href="{{ project.url }}" data-type="" style="--date:{{ project.date |> date('yyMMdd') }}">
+    <img class="showcase__project--image" src="{{ project.image }}">
+    <div class="showcase__project--info">
+      <h3 class="showcase__project--title">{{ project.title }}</h3>
+      <div class="showcase__project--tags">{{ project.tags |> join(', ') }}</div>
     </div>
-  </div>
+  </a>
   {{ /for }}
-
-  <div class="showcase__tray">
-    <div class="showcase__tray--title subtext">More Projects</div>
-    <div class="showcase__tray--track">
-    {{ for index, project of projects }}
-      <div tabindex="0" data-animate="from-right" style="--delay:0s" class="showcase__tray--item" for="{{ project.title |> idify }}">
-        <img src="{{ project.image }}">
-      </div>
-    {{ /for }}
-    </div>
-  </div>
 
 </section>
 
 <section class="space-y columns-2 gap-2" style="align-items:start;">
 
   <div data-animate="clip-right">
-    <img src="/img/braden-5.webp" />
+    <img class="rounded" src="/img/braden-5.webp" />
   </div>
 
   <div class="limited-width center grid gap-1" style="min-height:40rem">

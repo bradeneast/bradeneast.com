@@ -2,9 +2,9 @@ $mobile: 54em;
 
 :root {
   font-size: 19px;
-  --primary: #272831;
-  --secondary: red;
-  --tertiary: #ffffff;
+  --black: #272831;
+  --accent: red;
+  --pastel: #ffffff;
   --borderWidth: 2px;
   --borderStyle: solid;
   --borderRadius: 0px;
@@ -16,12 +16,12 @@ $mobile: 54em;
   --shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
   --shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
   --fontFamilyPrimary: "Sentient", serif;
-  --fontFamilySecondary: "Clash", sans-serif;
+  --fontFamilySecondary: "Inter", sans-serif;
   --sectionHeight: 80lvh;
   --sectionPaddingX: 10%;
   --sectionPaddingY: 5rem;
   --sectionMarginY: 3rem;
-  --borderRadius: 3rem;
+  --borderRadius: 1rem;
   --fontSizeH1: calc(1.4rem + 2vw);
   --fontSizeH2: calc(1.2rem + 1vw);
   --fontSizeH3: calc(1rem + .4vw);
@@ -47,7 +47,7 @@ $mobile: 54em;
 }
 
 *:focus {
-  outline: var(--borderWidth) var(--borderStyle) var(--primary);
+  outline: var(--borderWidth) var(--borderStyle) var(--black);
   outline-offset: var(--borderWidth);
 }
 
@@ -79,31 +79,31 @@ svg {
 
 img:not([src*="png"]):not([src*="svg"]),
 iframe {
-  background: var(--tertiary);
+  background: var(--pastel);
 }
 
 @font-face {
   font-family: "Sentient";
-  src: url("/_/Sentient-Variable.woff2") format("woff2");
+  src: url("/_/fonts/sentient/Sentient-Variable.woff2") format("woff2");
   font-display: block;
 }
 
 @font-face {
   font-family: "Sentient";
-  src: url("/_/Sentient-VariableItalic.woff2") format("woff2");
+  src: url("/_/fonts/sentient/Sentient-VariableItalic.woff2") format("woff2");
   font-style: italic;
   font-display: block;
 }
 
 @font-face {
-  font-family: "Clash";
-  src: url("/_/ClashGrotesk-Regular.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("/_/fonts/inter/Inter-Regular.woff2") format("woff2");
   font-display: block;
 }
 
 @font-face {
-  font-family: "Clash";
-  src: url("/_/ClashDisplay-Bold.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("/_/fonts/inter/Inter-Bold.woff2") format("woff2");
   font-display: block;
   font-weight: 700;
 }

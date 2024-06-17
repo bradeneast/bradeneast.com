@@ -173,7 +173,7 @@
 
 [data-animate="background"] {
   background: none !important;
-  color: var(--color, var(--tertiary));
+  color: var(--color, var(--pastel));
 
   &::before {
     content: "";
@@ -184,7 +184,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--background, var(--primary));
+    background: var(--background, var(--black));
     transform: scaleY(-.003);
     transform-origin: top;
     animation: scale-up var(--transitionLong) forwards;
