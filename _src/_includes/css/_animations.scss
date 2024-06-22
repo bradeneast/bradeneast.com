@@ -184,7 +184,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--background, var(--black));
+    background: var(--background, var(--accent2));
     transform: scaleY(-.003);
     transform-origin: top;
     animation: scale-up var(--transitionLong) forwards;

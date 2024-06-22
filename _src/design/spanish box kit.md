@@ -53,7 +53,4 @@ like samples and wet proofs took up to three weeks.
 
 ## Outcome
 
-In the first quarter of 2023, roughly 30,000 boxes will be distributed to
-Hispanic pastors throughout Latin America, beginning in Mexico City. One
-recipient said, "The kit is very beautiful. Opening it was exciting over and
-over again."
+In 2023-2024, roughly 30,000 boxes were distributed to Hispanic pastors throughout Latin America, beginning in Mexico City.

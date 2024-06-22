@@ -117,7 +117,7 @@ a {
 }
 
 ::selection {
-  background: var(--accent);
+  background: var(--accent1);
   color: var(--pastel);
 }
 
@@ -132,13 +132,13 @@ a {
   transition: var(--transitionShort);
 
   &.button__primary {
-    background: var(--black);
+    background: var(--accent1);
     border: none;
     color: var(--pastel);
 
     &:hover,
     &:focus {
-      background: var(--accent);
+      background: var(--accent1);
     }
   }
 
@@ -171,20 +171,33 @@ a {
     &::before {
       content: "";
       position: absolute;
-      width: 100vh;
-      height: 100vh;
+      width: 75vh;
+      height: 75vh;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--accent1);
+      border: calc(var(--borderWidth) * 2) var(--borderStyle) var(--black);
       top: 50%;
       left: 50%;
       pointer-events: none;
-      transform: translate(-50%, -50%) scale(0);
       transition: var(--transitionMedium);
+      animation: buttonEffectOn 5s cubic-bezier(0.16, 1, 0.3, 1) forwards paused;
+    }
+
+    @keyframes buttonEffectOn {
+      0% {
+        border-radius: 0;
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+      }
+
+      100% {
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1) rotate(360deg);
+      }
     }
 
     &:hover::before,
     &:focus::before {
-      transform: translate(-50%, -50%) scale(1);
+      animation-play-state: running;
     }
   }
 }

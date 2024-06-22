@@ -1,9 +1,14 @@
 $mobile: 54em;
+$accent1: #b48d3a;
+$accent2: #767c7b;
+$accent3: #76785c;
+$accent4: #a26644;
 
 :root {
   font-size: 19px;
-  --black: #272831;
-  --accent: red;
+  --black: #47403f;
+  --accent1: #a26644;
+  --accent2: #767c7b;
   --pastel: #ffffff;
   --borderWidth: 2px;
   --borderStyle: solid;
@@ -16,7 +21,7 @@ $mobile: 54em;
   --shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
   --shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
   --fontFamilyPrimary: "Sentient", serif;
-  --fontFamilySecondary: "Inter", sans-serif;
+  --fontFamilySecondary: "Clash", sans-serif;
   --sectionHeight: 80lvh;
   --sectionPaddingX: 10%;
   --sectionPaddingY: 5rem;
@@ -96,14 +101,14 @@ iframe {
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("/_/fonts/inter/Inter-Regular.woff2") format("woff2");
+  font-family: "Clash";
+  src: url("/_/fonts/clash/ClashGrotesk-Regular.woff2") format("woff2");
   font-display: block;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("/_/fonts/inter/Inter-Bold.woff2") format("woff2");
+  font-family: "Clash";
+  src: url("/_/fonts/clash/ClashGrotesk-Bold.woff2") format("woff2");
   font-display: block;
   font-weight: 700;
 }

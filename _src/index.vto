@@ -6,7 +6,7 @@ menu:
   showInMenu: true
 
 hero:
-  headline: Meet Oklahoma's award-winning visual designer *who codes*
+  headline: Meet Oklahoma's award-winning creative powerhouse.
   primary_button: 
     text: Email Braden
     link: mailto:bradeneastdesign@gmail.com
@@ -15,18 +15,12 @@ hero:
     link: \#work
 
 resume:
-  - 
-    headline: Summary
-    body: |-
-      Since 2015, Braden has expertly crafted award-winning brand identities, web experiences, and nationwide marketing campaigns for incredible results that his clients and coworkers can't stop talking about.
-      
-      Braden currently lives in Nowata, Oklahoma, pursuing his passion of homesteading with his wife, 3 goats, 10 chickens, and too many rabbits.
   -
     headline: Graphic Designer
     meta:
       Timeline: Oct 2021 - Present
       At: The Voice of the Martyrs
-      Skills: Print, International Design
+      Skills: Print, Digital Design
     body: |-
       Braden collaborates with a team of talented designers to create innovative designs that support the global body of Christ.
       
@@ -50,19 +44,19 @@ resume:
       
       He took 1st Place Logo Mark in the Baptist Communicators Association awards two years in a row.
   -
-    headline: Identity Designer
+    headline: Digital Agency
     meta:
       Timeline: 2018 - Present
-      At: Freelance
+      At: Restore Graphics
       Specialization: Branding, Identity
     body: |-
-      Since 2018, Braden has served his local church and community network through design. From primary care clinics to elderberry farms, he continues to create exceptional results for diverse clients.
+      Since 2018, Braden has served his local church and community through rebrand partnerships. From medical practices to elderberry farms, his diverse clientele could not be happier.
 
-      He runs a creative agency called Restore Graphics, which helps churches rebuild trust and clarify their brands with timeless strategy, identity, and web design.
+      In 2023, he started [Restore Graphics](//restore.graphics){target=_blank}, which helps churches rebuild trust and clarify their brands with timeless strategy, identity, and web design.
   -
     headline: Social Media Intern
     meta:
-      Timeline: 2 Semesters
+      Timeline: "2017"
       At: Shawnee Public Schools
       Skills: Public Relations, Social Media Marketing
     body: |-
@@ -82,13 +76,7 @@ review:
   {{ set projects = search.pages("type=designPost", "order=desc") }}
 
   {{ for index, project of projects }}
-  <a class="showcase__project" href="{{ project.url }}" data-type="" style="--date:{{ project.date |> date('yyMMdd') }}">
-    <img class="showcase__project--image" src="{{ project.image }}">
-    <div class="showcase__project--info">
-      <h3 class="showcase__project--title">{{ project.title }}</h3>
-      <div class="showcase__project--tags">{{ project.tags |> join(', ') }}</div>
-    </div>
-  </a>
+    {{ include "showcase-project.vto" { project } }}
   {{ /for }}
 
 </section>
@@ -108,20 +96,28 @@ review:
 
 </section>
 
-<section class="columns-2 gap-2 align-items">
+<section class="align-items justify-items">
 
-  <div class="grid gap-1 center-text">
-    <img data-animate style="--delay:1s; max-width:6rem; margin: 0 auto;" class="bw rounded" src="/img/jon_green.webp" />
+  <div class="grid gap-1 center-text limited-width">
+    <img data-animate style="--delay:.6s; max-width:6rem; margin: 0 auto;" class="bw rounded" src="/img/jon_green.webp" />
     <div>
-      <h2 data-animate="from-right" style="--delay:1.5s">&ldquo;{{ review.text }}&rdquo;</h2>
-      <strong class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.name |> splitting }}</strong>
-      <div class="subtext splitting secondary" data-animate="thin-in" style="--delay:2s">{{ review.author.position |> splitting }}</div>
+      <h2 data-animate="from-right" style="--delay:.7s">&ldquo;{{ review.text }}&rdquo;</h2>
+      <strong class="subtext splitting secondary" data-animate="thin-in" style="--delay:1.2s">{{ review.author.name |> splitting }}</strong>
+      <div class="subtext splitting secondary" data-animate="thin-in" style="--delay:1.2s">{{ review.author.position |> splitting }}</div>
     </div>
   </div>
 
-  <div class="space-y-3 grid gap-1 justify-content justify-items center-text">
-    <div>Share your design needs and see if we should partner up!</div>
-    <div><a class="button button__primary" href="mailto:bradeneastdesign@gmail.com">Email Braden</a></div>
-  </div>
+</section>
 
+
+
+<section class="grid justify-items center-text" data-animate="background">
+  <div class="limited-width grid gap-1 justify-items">
+    <h2 class="splitting" data-animate="thin-in" style="--delay:.5s; z-index:2">
+      {{ "Bring creative speed and reliability to your next project." |> splitting }}
+    </h2>
+    <div class="button__wrapper special" data-animate style="--delay:.8s;">
+      <a class="button" href="mailto:bradeneastdesign@gmail.com">Email Braden</a>
+    </div>
+  </div>
 </section>

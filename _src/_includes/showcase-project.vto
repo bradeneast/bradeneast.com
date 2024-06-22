@@ -1,0 +1,7 @@
+<a class="showcase__project" href="{{ project.url }}" data-type="" style="--date:{{ project.date |> date('yyMMdd') }}">
+  <img class="showcase__project--image" src="{{ project.image }}">
+  <div class="showcase__project--info">
+    <h3 class="showcase__project--title">{{ project.title }}</h3>
+    <div class="showcase__project--tags">{{ project.tags |> join(', ') }}</div>
+  </div>
+</a>
