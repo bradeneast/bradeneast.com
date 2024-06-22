@@ -57,6 +57,6 @@ well-equipped to look attractive and trustworthy for many generations to come.
 
 ![The East Texas Elderberries logo in red](/img/ete/hero.webp)
 
-> "I had a wonderful experience with the team. The outstanding quality and the
-> attention to detail was beyond compare. I highly recommend their services."
+> "I had a wonderful experience with Braden. The outstanding quality and the
+> attention to detail was beyond compare. I highly recommend his services."
 > <br> **Ed Wells, CEO, East Texas Elderberries**
