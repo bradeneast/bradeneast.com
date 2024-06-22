@@ -10,6 +10,10 @@
   color: var(--pastel);
 }
 
+.black {
+  color: var(--black);
+}
+
 .bw {
   filter: grayscale(1);
 }
@@ -124,7 +128,8 @@
 
 .center {
   justify-self: center;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .center-text {

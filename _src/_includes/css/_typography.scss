@@ -180,7 +180,7 @@ a {
       left: 50%;
       pointer-events: none;
       transition: var(--transitionMedium);
-      animation: buttonEffectOn 5s cubic-bezier(0.16, 1, 0.3, 1) forwards paused;
+      animation: buttonEffectOn 4s cubic-bezier(0.16, 1, 0.3, 1) forwards paused;
     }
 
     @keyframes buttonEffectOn {

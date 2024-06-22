@@ -71,15 +71,22 @@ review:
 
 {{ comp.hero(hero) }}
 
-<section id="work" class="showcase" data-animate style="--delay:2s; --play-state:running; margin-top:-3rem;">
+<section id="work"data-animate style="--delay:2s; --play-state:running; margin-top:-3rem;">
 
-  {{ set projects = search.pages("type=designPost", "order=desc") }}
+  <div class="showcase">
+    {{ set projects = search.pages("type=designPost", "order=desc") }}
 
-  {{ for index, project of projects }}
-    {{ include "showcase-project.vto" { project } }}
-  {{ /for }}
+    {{ for index, project of projects }}
+      {{ include "showcase-project.vto" { project } }}
+    {{ /for }}
+  </div>
+
+  <div class="center center-text limited-width space-y-3">
+    <a href="//dribbble.com/bradeneast" target="_blank">See more of my work on Dribbble.</a>
+  </div>
 
 </section>
+
 
 <section class="space-y columns-2 gap-2" style="align-items:start;">
 
