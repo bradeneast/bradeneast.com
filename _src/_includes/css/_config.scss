@@ -1,121 +1,107 @@
-$mobile: 54em;
-$accent1: #b48d3a;
-$accent2: #767c7b;
-$accent3: #76785c;
-$accent4: #a26644;
+/* Colors */
+$g8: #111822;
+$g7: #121e29;
+$g6: #192734;
+$g5: #5a6078;
+$g4: #a0a0a0;
+$g3: #dbdbdb;
+$g2: #e4e4e4;
+$g1: #f1f1f1;
+$g0: #ffffff;
+$primary: #1dff9e;
+$secondary: #7e50ff;
+$tertiary: #4066ff;
 
+/* Effects */
+$transition: 0.3s ease;
+$transition-long: 1s cubic-bezier(.6, 0, .1, 1);
+$transition-extra-long: 10s cubic-bezier(.1, 0.5, 0.4, 1);
+$shadow: 0 0 0.63em -0.12em lighten($primary, 20%);
+$border-width: 1px;
+$border: $border-width solid var(--g7);
+$border-radius: 2rem;
+
+/* Dimensions */
+$mobile: 45rem;
+$paragraph-width: 34rem;
+
+/* Fonts */
+$font-family-text: "Clash Grotesk", sans-serif;
+$font-family-display: "Panchang", sans-serif;
+
+$font-size-extra-large-desktop: calc(30px + 2vw);
+$font-size-large-desktop: calc(18px + 1.3vw);
+$font-size-medium-desktop: calc(17px + 1vw);
+$font-size-body-desktop: calc(16px + .2vw);
+$font-size-small-desktop: calc(11px + .2vw);
+$font-size-extra-large-mobile: calc(25px + 2vw);
+$font-size-large-mobile: calc(30px + 1.4vw);
+$font-size-body-mobile: 18px;
+$font-size-small-mobile: 12px;
+
+/* Custom Property Declarations */
 :root {
-  font-size: 19px;
-  --black: #2a2a30;
-  --accent1: #a26644;
-  --accent2: #6f7f7e;
-  --pastel: #ffffff;
-  --borderWidth: 2px;
-  --borderStyle: solid;
-  --borderRadius: 0px;
-  --transitionShort: 0.45s cubic-bezier(0.3, 0.5, 0.1, 1.4);
-  --transitionMedium: 1s cubic-bezier(0.3, 0.3, 0.1, 1);
-  --transitionLong: 2s cubic-bezier(.8, 0, 0, 1);
-  --shadowColor: rgba(0, 0, 0, 0.3);
-  --translucent: rgba(255, 255, 255, 0.85);
-  --shadow: 0 0.1rem 0.63rem -0.1rem var(--shadowColor);
-  --shadowLarge: 0.3rem 2rem 3rem var(--shadowColor);
-  --fontFamilyPrimary: "Sentient", serif;
-  --fontFamilySecondary: "Clash", sans-serif;
-  --sectionHeight: 80lvh;
-  --sectionPaddingX: 10%;
-  --sectionPaddingY: 5rem;
-  --sectionMarginY: 3rem;
-  --borderRadius: 1rem;
-  --fontSizeH1: calc(1.4rem + 2vw);
-  --fontSizeH2: calc(1.2rem + 1vw);
-  --fontSizeH3: calc(1rem + .4vw);
-  --clipSquare: polygon(-5% -5%, 105% -5%, 105% 105%, -5% 105%);
-  --clipOffsetTop: polygon(0 0, 100% 0, 100% calc(100% - var(--onscreen) * 100%), 0 calc(100% - var(--onscreen) * 100%));
-  --clipOffsetRight: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  --clipOffsetBottom: polygon(0 100%, 100% 100%, 100% 150%, 0 100%);
-  --clipOffsetLeft: polygon(0 0, -50% 0, 0 100%, 0 100%);
+  --font-size-extra-large: #{$font-size-extra-large-desktop};
+  --font-size-small: #{$font-size-small-desktop};
+  --font-size-body: #{$font-size-body-desktop};
+  --font-size-medium: #{$font-size-medium-desktop};
+  --font-size-large: #{$font-size-large-desktop};
+  --g0: #{$g0};
+  --g1: #{$g1};
+  --g2: #{$g2};
+  --g3: #{$g3};
+  --g4: #{$g4};
+  --g5: #{$g5};
+  --g6: #{$g6};
+  --g7: #{$g7};
+  --g8: #{$g8};
+  --primary: #{$secondary};
+  --secondary: #{$primary};
+  --tertiary: #{$tertiary};
+  --border-width: #{$border-width};
+  --border-radius: #{$border-radius};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  font-size: var(--font-size-body);
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  position: relative;
-  font: inherit;
-  line-height: inherit;
-  color: inherit;
-  scrollbar-width: thin;
-  scroll-behavior: inherit;
-}
-
-*:focus {
-  outline: var(--borderWidth) var(--borderStyle) var(--black);
-  outline-offset: var(--borderWidth);
-}
-
-::-webkit-scrollbar {
-  background: transparent;
-}
-
-html,
-body {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-img,
-video,
-iframe,
-svg {
-  width: 100%;
-  user-select: none;
-}
-
-img,
-video,
-svg {
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-img:not([src*="png"]):not([src*="svg"]),
-iframe {
-  background: var(--pastel);
-}
-
-@font-face {
-  font-family: "Sentient";
-  src: url("/_/fonts/sentient/Sentient-Variable.woff2") format("woff2");
-  font-display: block;
-}
-
-@font-face {
-  font-family: "Sentient";
-  src: url("/_/fonts/sentient/Sentient-VariableItalic.woff2") format("woff2");
-  font-style: italic;
-  font-display: block;
-}
-
-@font-face {
-  font-family: "Clash";
-  src: url("/_/fonts/clash/ClashGrotesk-Regular.woff2") format("woff2");
-  font-display: block;
-}
-
-@font-face {
-  font-family: "Clash";
-  src: url("/_/fonts/clash/ClashGrotesk-Bold.woff2") format("woff2");
-  font-display: block;
-  font-weight: 700;
-}
-
-@media screen and (max-width:$mobile) {
+@media screen and (max-width: $mobile) {
   :root {
-    font-size: 17px;
-    --borderRadius: 2rem;
+    --font-size-extra-large: #{$font-size-extra-large-mobile};
+    --font-size-small: #{$font-size-small-mobile};
+    --font-size-body: #{$font-size-body-mobile};
   }
+}
+
+@font-face {
+  font-family: "Panchang";
+  src: url("/_/fonts/Panchang-Variable.woff2") format("woff2-variations"), url("/_/fonts/Panchang-Variable.woff") format("woff");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/_/fonts/ClashGrotesk-Regular.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/_/fonts/ClashGrotesk-Medium.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Medium.woff") format("woff");
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/_/fonts/ClashGrotesk-Semibold.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Semibold.woff") format("woff");
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Alien";
+  src: url("/_/fonts/alien.woff2") format("woff2");
+  font-display: block;
 }

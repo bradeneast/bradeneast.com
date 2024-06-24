@@ -1,130 +1,41 @@
 ---
-layout: layouts/base.vto
 title: Home
-bodyClass: landing_page
-menu:
-  showInMenu: true
+layout: layouts/base.vto
 
-hero:
-  headline: Meet Oklahoma's award-winning creative powerhouse.
-  primary_button: 
-    text: Email Braden
-    link: mailto:bradeneastdesign@gmail.com
-  secondary_button:
-    text: See work samples.
-    link: \#work
+section_hero:
+  title: Stellar design at warp speed
+  body: Don't let your business continue to fly unidentified. I'll take your marketing and branding to astronomical levels.
 
-resume:
-  -
-    headline: Graphic Designer
-    meta:
-      Timeline: Oct 2021 - Present
-      At: The Voice of the Martyrs
-      Skills: Print, Digital Design
-    body: |-
-      Braden collaborates with a team of talented designers to create innovative designs that support the global body of Christ.
-      
-      Braden is responsible for dozens of annual and semi-annual projects in both print and digital media.
-      
-      His work includes direct mailings, digital advertising graphics, presentations, calendars, and book covers, many of which have printed over 100,000 copies.
-      
-      In this role, he has also art directed several internationally-based designers to localize translated works and guard brand integrity.
-  -
-    headline: Associate Creative Lead
-    meta:
-      Timeline: June 2018 - Oct 2021
-      At: Oklahoma Baptist Convention
-      Skills: Digital Marketing, Web Design
-    body: |-
-      Braden used graphic and web design to make a broad expanse of ministries feel familiar and transparent to Oklahoma Baptists.
+section_about:
+  title: Take your leaders to me.
+  body: |-
+    Braden East is the creative starting a new era for businesses and nonprofits in planet Bartlesville. He's usually down to earth, but he sometimes thinks outside the atmosphere. [Learn more](/about).
 
-      While here, Braden helped unify dozens of websites into one and designed hundreds of web pages within a single brand identity system.
-      
-      In 2019, he was instrumental in re-branding the convention, designing an identity system that became the cornerstone of its messaging. 
-      
-      He took 1st Place Logo Mark in the Baptist Communicators Association awards two years in a row.
-  -
-    headline: Digital Agency
-    meta:
-      Timeline: 2018 - Present
-      At: Restore Graphics
-      Specialization: Branding, Identity
-    body: |-
-      Since 2018, Braden has served his local church and community through rebrand partnerships. From medical practices to elderberry farms, his diverse clientele could not be happier.
-
-      In 2023, he started [Restore Graphics](//restore.graphics){target=_blank}, which helps churches rebuild trust and clarify their brands with timeless strategy, identity, and web design.
-  -
-    headline: Social Media Intern
-    meta:
-      Timeline: "2017"
-      At: Shawnee Public Schools
-      Skills: Public Relations, Social Media Marketing
-    body: |-
-      Braden helped Shawnee Public Schools grow their online presence by creating content and managing social media accounts.
-
-review:
-  text: I highly recommend Braden, a talented designer with a strong command of the Adobe suite. He excels in both classic and contemporary design.
-  author:
-    name: Jon Green
-    position: Art Director      
 ---
 
-{{ comp.hero(hero) }}
+<section class="hero center" style="padding:0 1rem;">
 
-<section id="work"data-animate style="--delay:2s; --play-state:running; margin-top:-3rem;">
-
-  <div class="showcase">
-    {{ set projects = search.pages("type=designPost", "order=desc") }}
-
-    {{ for index, project of projects }}
-      {{ include "showcase-project.vto" { project } }}
-    {{ /for }}
+  <div class="everfault alien">
+    <div class="everfault__gradient"></div>
+    <div class="everfault__letters"></div>
   </div>
 
-  <div class="center center-text limited-width space-y-3">
-    <a href="//dribbble.com/bradeneast" target="_blank">See more of my work on Dribbble.</a>
-  </div>
+  <h1 data-glitch="{{ section_hero.title }}" style="z-index:9; user-select:none; max-width:70rem">
+    {{ section_hero.title }}
+  </h1>
+  <p style="max-width:24rem">{{ section_hero.body }}</p>
 
 </section>
 
-
-<section class="space-y columns-2 gap-2" style="align-items:start;">
-
-  <div data-animate="clip-right">
-    <img class="rounded" src="/img/braden-5.webp" />
-  </div>
-
-  <div class="limited-width center grid gap-1" style="min-height:40rem">
-    <div class="subtext space-y-2">Work Experience</div>
-    {{ for index, item of resume }}
-      {{ comp.toggle({ item, index }) }}
-    {{ /for }}
-  </div>
-
-</section>
-
-<section class="align-items justify-items">
-
-  <div class="grid gap-1 center-text limited-width">
-    <img data-animate style="--delay:.6s; max-width:6rem; margin: 0 auto;" class="bw rounded" src="/img/jon_green.webp" />
-    <div>
-      <h2 data-animate="from-right" style="--delay:.7s">&ldquo;{{ review.text }}&rdquo;</h2>
-      <strong class="subtext splitting secondary" data-animate="thin-in" style="--delay:1.2s">{{ review.author.name |> splitting }}</strong>
-      <div class="subtext splitting secondary" data-animate="thin-in" style="--delay:1.2s">{{ review.author.position |> splitting }}</div>
-    </div>
-  </div>
-
+<section style="place-items:initial; place-content:initial;">
+    {{ set posts = search.pages("type=designPost", "order=desc") }}
+    {{ include "posts_list.vto" { posts } }}
 </section>
 
 
+<section class="center">
 
-<section class="grid justify-items center-text" data-animate="background">
-  <div class="limited-width grid gap-1 justify-items">
-    <h2 class="splitting" data-animate="thin-in" style="--delay:.5s; z-index:2">
-      {{ "Bring creative speed and reliability to your next project." |> splitting }}
-    </h2>
-    <div class="button__wrapper special" data-animate style="--delay:.8s;">
-      <a class="button" href="mailto:bradeneastdesign@gmail.com">Email Braden</a>
-    </div>
-  </div>
+  <h2>{{ section_about.title }}</h2>
+  {{ section_about.body |> md }}
+
 </section>

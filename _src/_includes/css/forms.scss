@@ -1,0 +1,87 @@
+form {
+
+  &.success {
+    &::after {
+      font-size: var(--font-size-small);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      content: attr(data-success);
+    }
+
+    * {
+      pointer-events: none;
+      opacity: 0;
+      height: 0;
+      padding: 0;
+    }
+  }
+
+  input,
+  button {
+    transition: $transition;
+    --bg-opacity: .05;
+    border-radius: .1em;
+    padding: .1em .3em;
+    border: $border;
+    background: var(--g8);
+
+    &:hover,
+    &:focus {
+      border-color: var(--secondary);
+    }
+  }
+
+  button {
+    --bg-color: transparent;
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0;
+
+    &::before {
+      content: "";
+      width: .5rem;
+      height: .5rem;
+      position: absolute;
+      background: var(--primary);
+      filter: blur(.5rem);
+      opacity: 0;
+      transition: opacity $transition;
+    }
+
+    &:hover,
+    &:focus {
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  input {
+    min-width: 16rem;
+
+    &+button {
+      background: none;
+      border: none;
+      margin-left: -1.4em;
+    }
+
+    &::placeholder {
+      color: var(--g0);
+      opacity: .2;
+      transition: opacity $transition;
+    }
+
+    &:placeholder-shown {
+      background-color: rgba(255, 255, 255, var(--bg-opacity));
+
+      &+button {
+        opacity: 0;
+        transform: translateX(.2em);
+      }
+    }
+  }
+}

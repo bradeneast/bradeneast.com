@@ -3,30 +3,32 @@ layout: layouts/base.vto
 bodyClass: post
 ---
 
-<section class="columns-2">
-  <div class="grid limited-width">
-    <h1 data-animate="thin-in" class="splitting">{{ title |> splitting }}</h1>
-    <div class="splitting subtext" data-animate="thin-in" style="--delay:1s;">{{ tags |> join(", ") |> splitting }}</div>
-    {{ if it.subtitle }}
-    <strong class="subtext" data-animate="thin-in" style="--delay:2s;">{{ subtitle }}</strong>
-    {{ /if }}
-  </div>
-  <div class="breakout-right" data-animate="clip-left">
-    <img src="{{ image }}" />
-  </div>
+<section class="hero">
+  <h1 class="center">{{ title }}</h1>
+  <div class="small">{{ tags |> join(", ") }}</div>
 </section>
 
-<section class="post__body">
+<section class="content">
+
+  <p class="has-media bleed">
+    <img src="{{ image }}">
+  </div>
+
+  <p class="small">{{ subtitle }}</p>
+
   {{ content }}
+
 </section>
 
-{{ if it.links }}
-<p class="pad-vertical">
-  {{ for index, data of links }}
-    {{ if index > 1 }}<br>{{ /if }}
-    <a target="_blank" rel="noopener noreferrer" href="{{ data.link }}">
-      {{ data.label }}
-    </a>
-  {{ /for }}
-</p>
-{{ /if }}
+<section style="place-items:initial; place-content:initial;">
+
+  {{ set posts = search.pages("url!='" + url + "' type=" + type) |> getRelatedPosts(tags) }}
+
+  {{ if posts }}
+    {{ if posts.length }}
+      <h3 class="center">Related Projects</h3>
+      {{ include "posts_list.vto" { posts } }}
+    {{ /if }}
+  {{ /if }}
+  
+</section>

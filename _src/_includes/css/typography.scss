@@ -1,0 +1,169 @@
+body {
+  font-family: $font-family-text, sans-serif;
+  line-height: 1.5;
+  color: var(--g2);
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-family-display, sans-serif;
+  font-kerning: none;
+  line-height: 1;
+  color: var(--g1);
+}
+
+h1 {
+  font-size: var(--font-size-extra-large);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .26em;
+  line-height: .97;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: var(--font-size-large);
+  margin-left: -.07em;
+  margin-top: 3rem;
+  margin-bottom: .5rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  font-weight: 600;
+  color: var(--accent1);
+  font-size: var(--font-size-medium);
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+h2,
+h3,
+h4,
+ul,
+ol,
+blockquote,
+p {
+  max-width: $paragraph-width;
+}
+
+blockquote {
+  padding: 1rem;
+  background: var(--g7);
+  border-left: 4px solid var(--primary);
+}
+
+ul,
+ol {
+
+  li {
+    margin-top: .5em;
+    padding-left: .5em;
+    margin-left: .8em;
+    list-style: "★";
+
+    &::marker {
+      content: "★";
+      color: var(--primary);
+    }
+  }
+
+  &.underline {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      padding-left: 0;
+      margin-left: 0;
+      border-bottom: var(--border-width) solid var(--g6);
+
+      &::marker {
+        content: "";
+      }
+    }
+  }
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+hr {
+  margin: 4rem auto;
+  border-bottom: 2px solid var(--g6);
+  width: $paragraph-width;
+  max-width: 80vw;
+}
+
+a {
+  color: var(--g0);
+  text-decoration-color: var(--primary);
+  text-decoration-style: dashed;
+  text-underline-offset: 15%;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    color: var(--primary);
+    text-decoration-color: var(--g5);
+    text-underline-offset: 25%;
+
+    &.small {
+      opacity: 1;
+      transition: $transition-long;
+    }
+  }
+}
+
+details {
+  display: block;
+
+  * {
+    margin: 0;
+  }
+
+  &[open] {
+    summary {
+
+      &::before,
+      &::after {
+        content: "-";
+      }
+    }
+  }
+
+  summary {
+    cursor: pointer;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+      content: none;
+    }
+
+    &::before,
+    &::after {
+      content: "+";
+      margin: 0 .2em;
+    }
+  }
+}
+
+@media screen and (max-width:$mobile) {
+  body {
+    line-height: 1.4;
+    letter-spacing: .5px;
+  }
+}

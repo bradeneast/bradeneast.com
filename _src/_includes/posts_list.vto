@@ -1,0 +1,11 @@
+<div class="posts_list">
+{{ for index, post of posts }}
+<a class="posts_list__post shadow" href="{{ post.url }}" data-type="" style="--date:{{ post.date |> date('yyMMdd') }}">
+  <img class="posts_list__post--image" src="{{ post.image }}">
+  <div class="posts_list__post--info">
+    <h3 data-glitch="{{ post.title }}" class="posts_list__post--title">{{ post.title }}</h3>
+    <div class="posts_list__post--tags">{{ post.tags |> join(', ') }}</div>
+  </div>
+</a>
+{{ /for }}
+</div>

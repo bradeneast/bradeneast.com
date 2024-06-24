@@ -1,44 +1,40 @@
-// @ts-nocheck
+//@ts-nocheck
 import lume from "lume/mod.ts";
-import date from "lume/plugins/date.ts";
-import slugify_urls from "lume/plugins/slugify_urls.ts";
-import sass from "lume/plugins/sass.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import transformImages from "lume/plugins/transform_images.ts";
-import codeHighlight from "lume/plugins/code_highlight.ts";
-import markdownItCheckbox from "https://jspm.dev/markdown-it-checkbox";
-import * as processors from "./_processors.ts";
-import * as filters from "./_filters.ts";
+import sass from "lume/plugins/sass.ts";
+import date from "lume/plugins/date.ts";
+import slugify_urls from "lume/plugins/slugify_urls.ts";
 
-const lumeOptions = {
-  src: "_src",
-  location: new URL("https://bradeneast.com")
-};
-const pluginOptions = {
-  markdown: { plugins: [[markdownItCheckbox]] }
-};
-
-const site = lume(lumeOptions, pluginOptions);
+// Create site
+const site = lume({ src: "_src" });
 
 // Copy assets
 site.copy("_");
 site.copy([".mp4"]);
 site.copy([".svg"]);
 
-// Run all filters
-for (let f in filters)
-  site.filter(f, filters[f]);
+site.filter(
+  "getRelatedPosts",
+  (postsList, tags) => postsList.filter(post => {
+    for (let tag of tags)
+      if (post.tags.includes(tag)) return post;
+  })
+);
 
-// Run all processors
-for (let p in processors)
-  site.process([`.${p}`], processors[p]);
+site.process([".html"], (pages) => {
+  for (const page of pages) {
+    page.document.querySelectorAll("img, video").forEach(elem => {
+      if (!elem.hasAttribute('aria-hidden'))
+        elem.parentElement.classList.add('has-media');
+    })
+  }
+});
 
-// Use plugins
-site.use(codeHighlight());
 site.use(esbuild({ target: "es6" }));
-site.use(slugify_urls({ extensions: [".html"] }));
-site.use(sass());
 site.use(transformImages());
+site.use(sass());
+site.use(slugify_urls());
 site.use(date());
 
 export default site;

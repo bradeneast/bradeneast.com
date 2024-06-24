@@ -1,22 +1,16 @@
 let setOffscreen = entry => {
-  if (entry.isIntersecting) {
-    entry.target.style.setProperty('--onscreen', 1);
-    entry.target.removeAttribute("data-offscreen");
-    // observer.unobserve(entry.target);
-  }
-  else {
-    entry.target.style.setProperty('--onscreen', 0);
-    entry.target.setAttribute("data-offscreen", "");
+  if (!entry.isIntersecting)
+    entry.target.setAttribute('data-offscreen', true);
+  else if (entry.isIntersecting) {
+    entry.target.removeAttribute('data-offscreen');
+    observer.unobserve(entry.target);
   }
 }
 
 let observer = new IntersectionObserver(entries => {
   entries.forEach(setOffscreen);
 },
-  {
-    threshold: .3,
-    rootMargin: "-80px 0%"
-  }
+  { rootMargin: "-140px 0px" }
 );
 
 export default observer;

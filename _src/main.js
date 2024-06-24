@@ -1,49 +1,28 @@
-import observer from './_includes/js/observer.js';
-// import watchShowcase from './_includes/js/showcase.js';
-import { $, $$, elem } from './_includes/js/utils.js';
+import { $, $$ } from "./_includes/js/utils.js";
+import observer from "./_includes/js/observer.js";
+import { watchForms } from "./_includes/js/forms.js";
+import { watchEverfault } from "./_includes/js/everfault_hover.js";
 
-
+/** Run initial functions for each page */
 function init() {
 
-	// Observe animating elements
-	$$("[data-animate]").forEach(elem => {
-		elem.style.setProperty("--onscreen", 0);
-		setTimeout(() => observer.observe(elem), 100);
-	});
+  watchForms();
 
-	// $$(".showcase").forEach(elem => watchShowcase(elem));
+  $$("[data-animate]").forEach(elem => {
+    elem.setAttribute("data-offscreen", true);
+    setTimeout(() => observer.observe(elem), 100);
+  });
 
-	// Set aria-current
-	$$(`a[href="${location.pathname}"]`)
-		.forEach(a => a.setAttribute('aria-current', 'page'));
+  watchEverfault();
 
-
-	// Add line numbers to code blocks
-	for (let code of $$('code[class*="language-"')) {
-
-		let pre = code.closest('pre');
-		let lineNumbers = elem('span');
-		let lineCount = code.innerHTML.split(/\n/).length;
-
-		lineNumbers.classList.add('line-numbers-rows');
-		lineNumbers.setAttribute('aria-hidden', true);
-		for (let i = 0; i < lineCount; i++)
-			lineNumbers.append(elem('span'));
-
-		pre.classList.add('line-numbers');
-		pre.append(lineNumbers);
-	}
-
-
-	// Add codepen script for embedded Codepens
-	if ($('.codepen')) {
-		let script = elem('script');
-		script.src = 'https://static.codepen.io/assets/embed/ei.js';
-		script.async = true;
-		document.body.append(script);
-	}
+  // Add codepen script for embedded Codepens
+  if ($('.codepen')) {
+    let script = elem('script');
+    script.src = 'https://static.codepen.io/assets/embed/ei.js';
+    script.async = true;
+    document.body.append(script);
+  }
 
 }
-
 
 init();
