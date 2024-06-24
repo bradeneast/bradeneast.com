@@ -46,6 +46,24 @@ nav {
     padding: 0;
   }
 
+  .grid {
+
+    video:first-child,
+    img:first-child {
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+
+    img:not(:first-child):not(:last-child),
+    video:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    video:last-child,
+    img:last-child {
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+  }
+
   p:has(img, video),
   .grid {
     margin: 4rem 0;
