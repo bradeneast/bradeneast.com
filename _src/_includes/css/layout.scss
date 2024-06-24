@@ -34,15 +34,28 @@ nav {
 
 .post {
 
-  main {
-    margin-top: 4rem;
-    padding-top: 4rem;
+  &>section:first-of-type {
+    display: grid;
+    gap: 4rem;
+    padding-top: 16rem;
+  }
+
+  .featured-image {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
   }
 
   p:has(img, video),
   .grid {
-    max-width: none;
     margin: 4rem 0;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p:has(img, video) {
+    display: flex;
   }
 
   img,
@@ -95,31 +108,6 @@ section {
       height: 20rem;
       background: linear-gradient(transparent, var(--g8));
     }
-  }
-}
-
-.post {
-
-  main {
-    margin-top: 4rem;
-    padding-top: 4rem;
-  }
-
-  p:has(img, video),
-  .grid {
-    margin: 4rem 0;
-    max-width: 50rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  img,
-  video {
-    border-radius: var(--border-radius);
-  }
-
-  h2 {
-    margin-top: 4rem;
   }
 }
 
@@ -183,6 +171,63 @@ form {
 
       * {
         grid-column: 1;
+      }
+    }
+  }
+
+  .post {
+
+    &>section:first-of-type {
+      margin-bottom: 4rem;
+    }
+
+    .content {
+      padding-left: 0;
+      padding-right: 0;
+      display: block;
+
+      p,
+      blockquote,
+      ul,
+      ol {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      p:has(img, video),
+      .grid {
+        margin: 0;
+      }
+    }
+
+    img,
+    video {
+      border-radius: 0;
+    }
+
+    .featured-image {
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      height: 100%;
+
+      &::after {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, transparent, transparent, var(--g8));
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        opacity: .4;
       }
     }
   }

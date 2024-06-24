@@ -3,18 +3,22 @@ layout: layouts/base.vto
 bodyClass: post
 ---
 
-<section class="hero">
-  <h1 class="center">{{ title }}</h1>
-  <div class="small">{{ tags |> join(", ") }}</div>
+<section>
+  <div>
+    <h1 class="center">{{ title }}</h1>
+    <div class="small center">{{ tags |> join(", ") }}</div>
+  </div>
+
+  <p class="has-media bleed featured-image">
+    <img src="{{ image }}">
+  </div>
+
 </section>
 
 <section class="content">
 
-  <p class="has-media bleed">
-    <img src="{{ image }}">
-  </div>
-
-  <p class="small">{{ subtitle }}</p>
+  <p>{{ subtitle }}</p>
+  <br>
 
   {{ content }}
 
