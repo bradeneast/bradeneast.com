@@ -6,6 +6,7 @@ order: 8
 tags:
   - Banners
   - Large Format
+  - Church
 links:
   Learn about Hope: //hopepresbyterian.church
 ---
