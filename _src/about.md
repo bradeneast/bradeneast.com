@@ -26,3 +26,7 @@ How my model of service works:
 - Quality-checks and review at every step. Each element of the project is carefully crafted and delivered for review in a shareable format.
 
 I pride myself in tailoring each project to your unique needs. If you want to work with an agency at arms length, this might not be a good fit.
+
+> P.S. Are you a leader in your church?
+> 
+> Aside from partnering with Bartlesville-area businesses, my [agency for churches](//restore.graphics) is featured as an Oklahoma [Best Branding Agency](https://www.designrush.com/agency/logo-branding/oklahoma).
