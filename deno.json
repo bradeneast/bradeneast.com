@@ -1,11 +1,16 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.2.2/"
+    "lume/": "https://deno.land/x/lume@v2.4.2/"
   },
   "lock": false,
   "tasks": {
     "build": "deno task lume",
     "serve": "deno task lume -s",
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -"
+  },
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ]
   }
 }

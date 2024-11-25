@@ -1,3 +1,5 @@
+@use "vars";
+
 *+* {
   margin-top: 1rem;
 }
@@ -116,12 +118,12 @@ section {
   display: grid;
   place-items: start;
   place-content: start;
-  transition: opacity $transition;
+  transition: opacity vars.$transition;
   width: 100%;
   padding: 5%;
 
   &.content {
-    grid-template-columns: 1fr $paragraph-width 1fr;
+    grid-template-columns: 1fr vars.$paragraph-width 1fr;
     justify-content: center;
     align-items: center;
     column-gap: 2rem;
@@ -174,11 +176,11 @@ footer {
   width: 2.5rem;
   fill: var(--g0);
   mix-blend-mode: overlay;
-  transition: $transition;
+  transition: vars.$transition;
 }
 
 form {
-  transition: opacity $transition;
+  transition: opacity vars.$transition;
 
   &:hover,
   &:focus,
@@ -191,7 +193,7 @@ form {
   }
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: vars.$mobile) {
 
   nav {
     .logo {

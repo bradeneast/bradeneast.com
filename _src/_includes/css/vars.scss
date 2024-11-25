@@ -1,0 +1,42 @@
+@use "sass:color";
+
+/* Colors */
+$g8: #111822;
+$g7: #121e29;
+$g6: #192734;
+$g5: #5a6078;
+$g4: #a0a0a0;
+$g3: #dbdbdb;
+$g2: #e4e4e4;
+$g1: #f1f1f1;
+$g0: #ffffff;
+$primary: #1dff9e;
+$secondary: #7e50ff;
+$tertiary: #4066ff;
+
+/* Effects */
+$transition: 0.3s ease;
+$transition-long: 1s cubic-bezier(.6, 0, .1, 1);
+$transition-extra-long: 10s cubic-bezier(.1, 0.5, 0.4, 1);
+$shadow: 0 0 0.63em -0.12em color.adjust($primary, $lightness: 20%);
+$border-width: 1px;
+$border: $border-width solid var(--g7);
+$border-radius: 2rem;
+
+/* Dimensions */
+$mobile: 45rem;
+$paragraph-width: 34rem;
+
+/* Fonts */
+$font-family-text: "Clash Grotesk", sans-serif;
+$font-family-display: "Panchang", sans-serif;
+
+$font-size-extra-large-desktop: calc(30px + 2vw);
+$font-size-large-desktop: calc(18px + 1.3vw);
+$font-size-medium-desktop: calc(17px + 1vw);
+$font-size-body-desktop: calc(16px + .2vw);
+$font-size-small-desktop: calc(11px + .2vw);
+$font-size-extra-large-mobile: calc(19px + 2vw);
+$font-size-large-mobile: calc(25px + 1.4vw);
+$font-size-body-mobile: 17px;
+$font-size-small-mobile: 12px;

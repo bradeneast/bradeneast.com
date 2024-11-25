@@ -1,3 +1,5 @@
+@use "vars";
+
 form {
 
   &.success {
@@ -18,11 +20,11 @@ form {
 
   input,
   button {
-    transition: $transition;
+    transition: vars.$transition;
     --bg-opacity: .05;
     border-radius: .1em;
     padding: .1em .3em;
-    border: $border;
+    border: vars.$border;
     background: var(--g8);
 
     &:hover,
@@ -48,7 +50,7 @@ form {
       background: var(--primary);
       filter: blur(.5rem);
       opacity: 0;
-      transition: opacity $transition;
+      transition: opacity vars.$transition;
     }
 
     &:hover,
@@ -72,7 +74,7 @@ form {
     &::placeholder {
       color: var(--g0);
       opacity: .2;
-      transition: opacity $transition;
+      transition: opacity vars.$transition;
     }
 
     &:placeholder-shown {

@@ -1,0 +1,123 @@
+@use "vars";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  border: none;
+  outline: none;
+  background-color: none;
+  box-shadow: none;
+  scrollbar-width: thin;
+}
+
+*:focus {
+  outline: var(--border-width) solid var(--g6);
+  outline-offset: var(--border-width);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+html {
+  background: var(--g8);
+  color: var(--g0);
+  transition: background vars.$transition;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body,
+head {
+  margin-top: 0;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Custom Property Declarations */
+:root {
+  --font-size-extra-large: #{vars.$font-size-extra-large-desktop};
+  --font-size-small: #{vars.$font-size-small-desktop};
+  --font-size-body: #{vars.$font-size-body-desktop};
+  --font-size-medium: #{vars.$font-size-medium-desktop};
+  --font-size-large: #{vars.$font-size-large-desktop};
+  --g0: #{vars.$g0};
+  --g1: #{vars.$g1};
+  --g2: #{vars.$g2};
+  --g3: #{vars.$g3};
+  --g4: #{vars.$g4};
+  --g5: #{vars.$g5};
+  --g6: #{vars.$g6};
+  --g7: #{vars.$g7};
+  --g8: #{vars.$g8};
+  --primary: #{vars.$secondary};
+  --secondary: #{vars.$primary};
+  --tertiary: #{vars.$tertiary};
+  --border-width: #{vars.$border-width};
+  --border-radius: #{vars.$border-radius};
+  --primary: #{vars.$primary};
+  --secondary: #{vars.$secondary};
+  font-size: var(--font-size-body);
+}
+
+@media screen and (max-width: vars.$mobile) {
+  :root {
+    --font-size-extra-large: #{vars.$font-size-extra-large-mobile};
+    --font-size-small: #{vars.$font-size-small-mobile};
+    --font-size-body: #{vars.$font-size-body-mobile};
+  }
+}
+
+@font-face {
+  font-family: "Panchang";
+  src: url("/_/fonts/Panchang-Variable.woff2") format("woff2-variations"), url("/_/fonts/Panchang-Variable.woff") format("woff");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/_/fonts/ClashGrotesk-Regular.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/_/fonts/ClashGrotesk-Medium.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Medium.woff") format("woff");
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/_/fonts/ClashGrotesk-Semibold.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Semibold.woff") format("woff");
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Alien";
+  src: url("/_/fonts/alien.woff2") format("woff2");
+  font-display: block;
+}

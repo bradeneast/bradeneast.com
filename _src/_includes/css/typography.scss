@@ -1,5 +1,7 @@
+@use "vars";
+
 body {
-  font-family: $font-family-text, sans-serif;
+  font-family: vars.$font-family-text, sans-serif;
   line-height: 1.5;
   color: var(--g2);
   letter-spacing: 1px;
@@ -8,7 +10,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: $font-family-display, sans-serif;
+  font-family: vars.$font-family-display, sans-serif;
   font-kerning: none;
   line-height: 1;
   color: var(--g1);
@@ -50,7 +52,7 @@ ul,
 ol,
 blockquote,
 p {
-  max-width: $paragraph-width;
+  max-width: vars.$paragraph-width;
 }
 
 blockquote {
@@ -103,7 +105,7 @@ b {
 hr {
   margin: 4rem auto;
   border-bottom: 2px solid var(--g6);
-  width: $paragraph-width;
+  width: vars.$paragraph-width;
   max-width: 80vw;
 }
 
@@ -112,7 +114,7 @@ a {
   text-decoration-color: var(--primary);
   text-decoration-style: dashed;
   text-underline-offset: 15%;
-  transition: $transition;
+  transition: vars.$transition;
 
   &:hover,
   &:focus {
@@ -122,7 +124,7 @@ a {
 
     &.small {
       opacity: 1;
-      transition: $transition-long;
+      transition: vars.$transition-long;
     }
   }
 }
@@ -161,7 +163,7 @@ details {
   }
 }
 
-@media screen and (max-width:$mobile) {
+@media screen and (max-width:vars.$mobile) {
   body {
     line-height: 1.4;
     letter-spacing: .5px;

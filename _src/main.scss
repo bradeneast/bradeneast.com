@@ -1,9 +1,8 @@
-@import "css/config.scss";
-@import "css/reset.scss";
-@import "css/typography.scss";
-@import "css/layout.scss";
-@import "css/posts_list.scss";
-@import "css/everfault.scss";
-@import "css/forms.scss";
-@import "css/animation.scss";
-@import "css/util.scss";
+@use "css/reset";
+@use "css/typography";
+@use "css/layout";
+@use "css/posts_list";
+@use "css/everfault";
+@use "css/forms";
+@use "css/animation";
+@use "css/util";

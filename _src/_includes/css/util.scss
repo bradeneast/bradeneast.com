@@ -1,3 +1,5 @@
+@use "vars";
+
 .center {
   text-align: center;
   margin-left: auto;
@@ -11,7 +13,7 @@
   letter-spacing: .2em;
   opacity: .4;
   font-size: var(--font-size-small);
-  transition: opacity $transition;
+  transition: opacity vars.$transition;
 }
 
 .big {
@@ -46,7 +48,7 @@
   outline: 2px dashed var(--primary);
   outline-offset: 4px;
   border-radius: 50%;
-  max-width: calc($paragraph-width / 3);
+  max-width: calc(vars.$paragraph-width / 3);
 }
 
 .shadow {
@@ -65,7 +67,7 @@
   align-items: center;
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: vars.$mobile) {
   .flex {
     flex-flow: row wrap;
   }

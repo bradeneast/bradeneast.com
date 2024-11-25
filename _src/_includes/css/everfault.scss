@@ -1,3 +1,5 @@
+@use "vars";
+
 .everfault {
   font-size: .75em;
   line-height: 1;
@@ -38,6 +40,10 @@
     word-wrap: break-word;
     opacity: 1;
     scale: 1.01;
+    mask-image: radial-gradient(circle calc(20vmax + 12rem) at var(--x) var(--y),
+        rgb(255 255 255) 20%,
+        rgb(255 255 255 / 25%),
+        transparent);
     -webkit-mask-image: radial-gradient(circle calc(20vmax + 12rem) at var(--x) var(--y),
         rgb(255 255 255) 20%,
         rgb(255 255 255 / 25%),
@@ -45,7 +51,7 @@
   }
 }
 
-@media screen and (max-width:$mobile) {
+@media screen and (max-width:vars.$mobile) {
   .everfault {
     &__gradient {
       background-size: 300%;

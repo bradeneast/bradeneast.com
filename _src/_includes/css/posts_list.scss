@@ -1,3 +1,5 @@
+@use "vars";
+
 .posts_list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(calc(22rem + 5vw), 1fr));
@@ -25,7 +27,7 @@
       top: 0;
       bottom: 0;
       right: 0;
-      transition: $transition;
+      transition: vars.$transition;
       z-index: 1;
       opacity: 0;
     }
@@ -43,7 +45,7 @@
       z-index: 2;
       color: white;
       opacity: 0;
-      transition: $transition;
+      transition: vars.$transition;
     }
 
     &--tags {
@@ -65,19 +67,19 @@
     &:focus {
       &::before {
         opacity: .5;
-        transition: $transition-long;
+        transition: vars.$transition-long;
       }
 
       .posts_list__post--info,
       &::after {
         opacity: 1;
-        transition: $transition-long;
+        transition: vars.$transition-long;
       }
     }
   }
 }
 
-@media screen and (max-width:$mobile) {
+@media screen and (max-width:vars.$mobile) {
   .posts_list {
     display: flex;
     flex-direction: column;
