@@ -1,4 +1,4 @@
 _site
 .netlify
 .vscode
-.DS-store
+.DS_store
