@@ -5,16 +5,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>{{ site.name }}</title>
-	<meta name="description" content="{{ site.description |> truncate(200) }}" />
+	<title>{{ website.name }}</title>
+	<meta name="description" content="{{ website.description }}" />
 
 	<meta property="og:title" content="{{ title }}" />
-	<meta property="og:description" content="{{ site.description |> truncate(200) }}" />
+	<meta property="og:description" content="{{ website.description }}" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:url" content="{{ site.root }}{{ url }}" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="{{ site.title }}" />
-	<meta property="og:image" content="{{ site.root }}{{ it.image || it.featured_image }}" />
+	<meta property="og:url" content="{{ website.root }}{{ url }}" />
+	<meta property="og:type" content="webwebsite" />
+	<meta property="og:website_name" content="{{ website.title }}" />
+	<meta property="og:image" content="{{ website.root }}{{ it.image || it.featured_image }}" />
 	<meta property="og:image:width" content="1620" />
 	<meta property="og:image:height" content="1080" />
 
@@ -24,7 +24,7 @@
 	<link rel="apple-touch-icon" href="/_/apple-touch-icon.png"><!-- 180×180 -->
 
 	<base href="/" />
-	<link rel="canonical" href="{{ site.root }}{{ url }}">
+	<link rel="canonical" href="{{ website.root }}{{ url }}">
 
   {{# Preconnect to Netlify CDN #}}
 	<link rel="preconnect" href="//d33wubrfki0l68.cloudfront.net" />
@@ -39,60 +39,11 @@
   <script src="/main.js" defer></script>
 </head>
 
-<body class="{{ it.bodyClass }}">
+<body>
 	<!-- THIS FIXES FLASH OF UNSTYLED CONTENT IN FIREFOX -->
 	<script>0</script>
 
-	<nav>
-		<a href="/" class="logo">{{ include "wordmark.svg" }}</a>
-		<div role="menu">
-		{{ for entry of search.pages("menu.visible=true", "menu.order") }}
-			<a role="menuitem" class="{{ entry.menu.cta ? 'button bg' : '' }}" href="{{ entry.url }}" {{ if entry.url==url }}aria-current="page"{{ /if }}>
-				{{ entry.menu.label || entry.title }}
-			</a>
-		{{ /for }}
-		</div>
-	</nav>
-
 	{{- content -}}
-
-	<hr>
-
-	<section class="center">
-	
-		<div class="everfault alien">
-			<div class="everfault__gradient"></div>
-			{{# <div class="everfault__letters"></div> #}}
-		</div>
-	
-		<div class="small">Launch a project</div>
-		<a class="big" href="mailto:{{ site.email }}">{{ site.email }}</a>
-
-		{{# <br>
-
-		<form name="prelaunch" data-success="Success" netlify>
-			<label class="required">
-				<div class="small">Receive Transmissions</div>
-				<div class="flex">
-					<input required type="email" inputmode="email" name="email" placeholder="bartian@spacemail.com" />
-					<button type="submit" style="z-index:2">&rang;</button>
-				</div>
-			</label>
-		</form> #}}
-
-		<div class="center">
-			<div class="bartian center" style="margin-bottom:1rem;">{{ include "bartian.svg" }}</div>
-			<div class="small">
-    		&copy; {{ site.year }} {{ site.name }}
-			</div>
-			<div class="socials">
-				{{ for platform, url of site.socials }}
-					<a class="small" href="{{ url }}">{{ platform }}</a>
-				{{ /for }}
-			</div>
-		</div>
-		
-	</section>
 
 </body>
 

@@ -1,41 +1,33 @@
 ---
 title: Home
 layout: layouts/base.vto
-
-section_hero:
-  title: Stellar design at warp speed
-  body: Don't let your business continue to fly unidentified. I'll take your marketing and branding to astronomical levels.
-
-section_cta:
-  title: Take your leaders to me.
-  body: |-
-    Braden East is the creative starting a new era for businesses and nonprofits in planet Bartlesville. He's usually down to earth, but he sometimes thinks outside the atmosphere. [Learn more](/about).
-
 ---
 
-<section class="hero center" style="padding:0 1rem;">
+<div class="background-vid">
+  {{ comp.video({ src: "/img/branding-reel.mp4" }) }}
+</div>
 
-  <div class="everfault alien">
-    <div class="everfault__gradient"></div>
-    <div class="everfault__letters"></div>
+<section class="headline">
+  <div class="eyebrow">
+    <span>B</span>
+    <span>r</span>
+    <span>a</span>
+    <span>d</span>
+    <span>e</span>
+    <span>n</span>
+    <span>E</span>
+    <span>a</span>
+    <span>s</span>
+    <span>t</span>
   </div>
-
-  <h1 data-glitch="{{ section_hero.title }}" style="z-index:9; user-select:none; max-width:70rem">
-    {{ section_hero.title }}
-  </h1>
-  <p style="max-width:24rem">{{ section_hero.body }}</p>
-
+  <h1><span>Graphic Designer<span> <em>&</em> <span>Brand Development Partner<span></h1>
 </section>
 
-<section style="place-items:initial; place-content:initial;">
-    {{ set posts = search.pages("type=designPost", "order=desc") }}
-    {{ include "posts_list.vto" { posts } }}
-</section>
-
-
-<section class="center">
-
-  <h2>{{ section_cta.title }}</h2>
-  {{ section_cta.body |> md }}
-
+<section>
+  <hr>
+  <div class="small">
+    {{ for platform, url of website.socials }}
+      <a class="small" href="{{ url }}">{{ platform }}</a>
+    {{ /for }}
+  </div>
 </section>

@@ -1,6 +1,7 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.4.2/"
+    "lume/": "https://deno.land/x/lume@v3.0.4/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.10/jsx-runtime.ts"
   },
   "lock": false,
   "tasks": {
@@ -11,6 +12,17 @@
   "compilerOptions": {
     "types": [
       "lume/types.ts"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
+  },
+  "unstable": [
+    "temporal",
+    "fmt-component"
+  ],
+  "lint": {
+    "plugins": [
+      "https://deno.land/x/lume@v3.0.4/lint.ts"
     ]
   }
 }

@@ -1,18 +1,17 @@
 @use "sass:color";
 
 /* Colors */
-$g8: #111822;
-$g7: #121e29;
-$g6: #192734;
-$g5: #5a6078;
-$g4: #a0a0a0;
-$g3: #dbdbdb;
+$g8: #000000;
+$g7: #1f1f1f;
+$g6: #3d3d3d;
+$g5: #646464;
+$g4: #9c9c97;
+$g3: #dbd7d2;
 $g2: #e4e4e4;
 $g1: #f1f1f1;
-$g0: #ffffff;
-$primary: #1dff9e;
-$secondary: #7e50ff;
-$tertiary: #4066ff;
+$g0: #f7f4f0;
+$primary: #bbafa2;
+$secondary: #518393;
 
 /* Effects */
 $transition: 0.3s ease;
@@ -29,12 +28,12 @@ $paragraph-width: 34rem;
 
 /* Fonts */
 $font-family-text: "Clash Grotesk", sans-serif;
-$font-family-display: "Panchang", sans-serif;
+$font-family-display: "Instrument Serif", serif;
 
 $font-size-extra-large-desktop: calc(30px + 2vw);
 $font-size-large-desktop: calc(18px + 1.3vw);
 $font-size-medium-desktop: calc(17px + 1vw);
-$font-size-body-desktop: calc(16px + .2vw);
+$font-size-body-desktop: calc(20px + .2vw);
 $font-size-small-desktop: calc(11px + .2vw);
 $font-size-extra-large-mobile: calc(19px + 2vw);
 $font-size-large-mobile: calc(25px + 1.4vw);

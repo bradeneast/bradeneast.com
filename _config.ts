@@ -10,26 +10,13 @@ import slugify_urls from "lume/plugins/slugify_urls.ts";
 const site = lume({ src: "_src" });
 
 // Copy assets
-site.copy("_");
-site.copy([".mp4"]);
-site.copy([".svg"]);
-
-site.filter(
-  "getRelatedPosts",
-  (postsList, tags) => postsList.filter(post => {
-    for (let tag of tags)
-      if (post.tags.includes(tag)) return post;
-  })
-);
-
-site.process([".html"], (pages) => {
-  for (const page of pages) {
-    page.document.querySelectorAll("img, video").forEach(elem => {
-      if (!elem.hasAttribute('aria-hidden'))
-        elem.parentElement.classList.add('has-media');
-    })
-  }
-});
+site.add("_");
+site.add([".mp4"]);
+site.add([".svg"]);
+site.add([".gif"]);
+site.add("/main.scss");
+site.add("/main.js");
+site.add("/img");
 
 site.use(esbuild({ target: "es6" }));
 site.use(transformImages());

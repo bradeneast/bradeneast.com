@@ -71,13 +71,9 @@ video {
   --g6: #{vars.$g6};
   --g7: #{vars.$g7};
   --g8: #{vars.$g8};
-  --primary: #{vars.$secondary};
-  --secondary: #{vars.$primary};
-  --tertiary: #{vars.$tertiary};
+  --primary: #{vars.$primary};
   --border-width: #{vars.$border-width};
   --border-radius: #{vars.$border-radius};
-  --primary: #{vars.$primary};
-  --secondary: #{vars.$secondary};
   font-size: var(--font-size-body);
 }
 
@@ -90,8 +86,15 @@ video {
 }
 
 @font-face {
-  font-family: "Panchang";
-  src: url("/_/fonts/Panchang-Variable.woff2") format("woff2-variations"), url("/_/fonts/Panchang-Variable.woff") format("woff");
+  font-family: "Instrument Serif";
+  src: url("/_/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+  font-display: block;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/_/fonts/InstrumentSerif-Regular.woff2") format("woff2");
   font-display: block;
 }
 
@@ -114,10 +117,4 @@ video {
   src: url("/_/fonts/ClashGrotesk-Semibold.woff2") format("woff2"), url("/_/fonts/ClashGrotesk-Semibold.woff") format("woff");
   font-display: swap;
   font-weight: 600;
-}
-
-@font-face {
-  font-family: "Alien";
-  src: url("/_/fonts/alien.woff2") format("woff2");
-  font-display: block;
 }

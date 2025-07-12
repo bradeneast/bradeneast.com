@@ -1,9 +1,6 @@
 ---
 title: Who I Am
-layout: layouts/page.vto
-menu:
-  visible: true
-  label: About
+layout: layouts/base.vto
 ---
 
 ![](/img/braden.webp){.headshot .shadow .float .noshrink aria-hidden=true}
